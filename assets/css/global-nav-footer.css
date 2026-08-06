@@ -252,3 +252,105 @@
 
 .social-icon-vector { color: #64748B !important; text-decoration: none !important; }
 .social-icon-vector svg { width: 16px !important; height: 16px !important; fill: currentColor !important; }
+
+/* ==========================================================================
+   RESPONSIVE MOBILE HEADER & HAMBURGER MENU
+   ========================================================================== */
+.ll-burger-input,
+.ll-burger-btn {
+  display: none !important;
+}
+
+.ll-header-logo img {
+  height: 38px !important;
+  max-height: 38px !important;
+  width: auto !important;
+  display: block !important;
+}
+
+@media (max-width: 768px) {
+  .ll-site-header {
+    padding: 12px 16px !important;
+  }
+
+  .ll-header-wrap {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    position: relative !important;
+  }
+
+  .ll-burger-btn {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around !important;
+    width: 28px !important;
+    height: 22px !important;
+    cursor: pointer !important;
+    z-index: 1002 !important;
+  }
+
+  .ll-burger-btn span {
+    display: block !important;
+    height: 2.5px !important;
+    width: 100% !important;
+    background-color: #0B1120 !important;
+    border-radius: 2px !important;
+    transition: all 0.3s ease-in-out !important;
+  }
+
+  .ll-header-nav {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 80% !important;
+    max-width: 300px !important;
+    height: 100vh !important;
+    background: #FFFFFF !important;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.15) !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 80px 24px 32px 24px !important;
+    gap: 20px !important;
+    transition: right 0.3s ease-in-out !important;
+    z-index: 1001 !important;
+  }
+
+  .ll-header-nav a,
+  .ll-dropdown-trigger {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+  }
+
+  .ll-dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 8px 0 0 16px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+  }
+
+  .ll-dropdown-menu a {
+    font-size: 15px !important;
+    padding: 6px 0 !important;
+    color: #4B5768 !important;
+  }
+
+  .ll-burger-input:checked ~ .ll-header-nav {
+    right: 0 !important;
+  }
+
+  .ll-burger-input:checked ~ .ll-burger-btn span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg) !important;
+  }
+  .ll-burger-input:checked ~ .ll-burger-btn span:nth-child(2) {
+    opacity: 0 !important;
+  }
+  .ll-burger-input:checked ~ .ll-burger-btn span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg) !important;
+  }
+}
