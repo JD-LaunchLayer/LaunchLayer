@@ -1,19 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
-  document.addEventListener('click', function(e) {
-    const trigger = e.target.closest('.service-coverage-accordion-header, .footer-matrix-title, [data-accordion]');
-    if (!trigger) return;
+document.addEventListener('click', function(e) {
+  const trigger = e.target.closest('.footer-matrix-title, .service-coverage-accordion-header');
+  if (!trigger) return;
 
-    e.preventDefault();
-    e.stopPropagation();
+  e.preventDefault();
+  e.stopPropagation();
 
-    trigger.classList.toggle('active');
+  trigger.classList.toggle('active');
 
-    // Find the sibling or child list panel
-    const container = trigger.closest('.footer-matrix-column, .service-coverage-block') || trigger.parentElement;
-    const panel = trigger.nextElementSibling || (container ? container.querySelector('.footer-matrix-list, .service-coverage-panel, ul, grid') : null);
-
-    if (panel) {
-      panel.classList.toggle('open');
-    }
-  });
-});
+  const panel = trigger.nextElementSibling;
+  if (panel) {
+    panel.classList.toggle('open');
+  }
+}, true);

@@ -630,7 +630,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .service-coverage-accordion-header,
 .footer-matrix-title,
-[data-accordion] {
+[class*="service-coverage"] {
   cursor: pointer !important;
   touch-action: manipulation !important;
   user-select: none !important;
@@ -644,7 +644,7 @@ document.addEventListener('DOMContentLoaded', function() {
   .footer-matrix-grid {
     display: none !important;
   }
-  
+
   .footer-matrix-list.open,
   .service-coverage-panel.open,
   .service-coverage-grid.open,
@@ -659,8 +659,7 @@ document.addEventListener('DOMContentLoaded', function() {
 @media (min-width: 768px) {
   .footer-matrix-list,
   .service-coverage-panel,
-  .service-coverage-grid,
-  .footer-matrix-grid {
+  .service-coverage-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
   }
@@ -984,4 +983,32 @@ document.addEventListener('DOMContentLoaded', function() {
 main#page {
   padding-bottom: 30px !important;
   margin-bottom: 0 !important;
+}
+
+/* Ensure there's no excessive bottom margin/padding above the footer on the privacy policy page */
+.privacy-policy main#page,
+.privacy-policy #siteWrapper,
+.privacy-policy .content-wrapper,
+.privacy-policy section {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Overwrite Squarespace fluid engine grid height forced empty space on privacy policy page */
+#collection-68384089436e8d64e2cf6d74 .fluid-engine,
+#collection-68384089436e8d64e2cf6d74 .fe-68384089436e8d64e2cf6d79,
+.privacy-policy .fluid-engine,
+.privacy-policy [data-fluid-engine="true"] {
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+#collection-68384089436e8d64e2cf6d74 .fe-block,
+#collection-68384089436e8d64e2cf6d74 .fe-block-yui_3_17_2_1_1780043316368_3327,
+.privacy-policy .fe-block {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  grid-area: auto !important;
 }
