@@ -910,7 +910,55 @@
     <div class="form-wrapper"
       
     >
-      
+      <div class="form-inner-wrapper">
+        <form action="https://formsubmit.co/hello@launchlayer.uk" method="POST">
+          <input type="hidden" name="_next" value="https://launchlayer.uk/contact/index.html?submitted=true">
+          <input type="hidden" name="_subject" value="New Contact Form Submission - LaunchLayer">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="field-list">
+            <div class="form-item fields name required">
+              <label class="title">Name <span class="required" aria-hidden="true">*</span></label>
+              <fieldset>
+                <div class="field first-name">
+                  <label class="caption">First Name</label>
+                  <input class="field-element" name="First Name" type="text" autocomplete="given-name" required>
+                </div>
+                <div class="field last-name">
+                  <label class="caption">Last Name</label>
+                  <input class="field-element" name="Last Name" type="text" autocomplete="family-name" required>
+                </div>
+              </fieldset>
+            </div>
+            <div class="form-item fields email required">
+              <label class="title" for="ll-contact-email">Email <span class="required" aria-hidden="true">*</span></label>
+              <input id="ll-contact-email" class="field-element" name="Email" type="email" autocomplete="email" required>
+            </div>
+            <div class="form-item fields phone">
+              <label class="title" for="ll-contact-phone">Phone</label>
+              <input id="ll-contact-phone" class="field-element" name="Phone" type="tel" autocomplete="tel">
+            </div>
+            <div class="form-item fields select required">
+              <label class="title" for="ll-contact-service">Which service does this relate to? <span class="required" aria-hidden="true">*</span></label>
+              <select id="ll-contact-service" class="field-element" name="Service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="General Enquiry">General Enquiry</option>
+                <option value="PC Repair &amp; Tech Support">PC Repair &amp; Tech Support</option>
+                <option value="Scam Support">Scam Support</option>
+                <option value="E-Waste or Tech Donation">E-Waste or Tech Donation</option>
+                <option value="Startup IT Setup">Startup IT Setup</option>
+                <option value="Website Setup">Website Setup</option>
+              </select>
+            </div>
+            <div class="form-item fields textarea required">
+              <label class="title" for="ll-contact-message">How can we help? <span class="required" aria-hidden="true">*</span></label>
+              <textarea id="ll-contact-message" class="field-element" name="Message" rows="5" required></textarea>
+            </div>
+            <div class="form-button-wrapper form-button-wrapper--align-center">
+              <button type="submit" class="button sqs-system-button sqs-editable-button">Request My Free Diagnostic</button>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
     <style>
       #block-6c1dceaebe135ff2c7df .form-wrapper {
@@ -1793,5 +1841,13 @@ n.innerHTML='<style>#ncx-local-notice{position:fixed;left:50%;bottom:18px;transf
 +'<button class="ncx-x" type="button" aria-label="Dismiss" onclick="this.parentNode.remove()">✕</button>';
 (document.body||document.documentElement).appendChild(n);
 }catch(e){}})();</script>
-<!-- /NoCodeXport Local Notice --><script src="/assets/js/global-nav-footer.js" defer></script></body>
+<!-- /NoCodeXport Local Notice --><script>
+if (window.location.search.includes('submitted=true')) {
+  const formContainer = document.querySelector('form');
+  if (formContainer) {
+    formContainer.innerHTML = '<div style="padding: 20px; background: #1e293b; color: #4ade80; border-radius: 8px; text-align: center; font-weight: bold;">Thank you! Your message has been sent successfully to hello@launchlayer.uk.</div>';
+  }
+}
+</script>
+<script src="/assets/js/global-nav-footer.js" defer></script></body>
 </html>
