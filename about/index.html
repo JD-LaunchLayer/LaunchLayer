@@ -16,35 +16,36 @@
   <meta property="og:url" content="https://www.launchlayer.uk/about">
   <meta property="og:image" content="/assets/meta/meta-520e4abe.png">
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
 
-  <!-- Existing Main Site CSS -->
-  <link rel="stylesheet" type="text/css" href="/assets/css/style-d13a73e3.css">
-
-  <!-- SCOPED ABOUT PAGE STYLES -->
+  <!-- STYLES SYSTEM -->
   <style>
-    /* SVG SAFETY FIX */
+    *, *::before, *::after {
+      box-sizing: border-box !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      background-color: #FFFFFF !important;
+      color: #0B1120 !important;
+      line-height: 1.5;
+    }
+
+    /* SVG SAFETY */
     svg:not([width]) {
       max-width: 100%;
       height: auto;
     }
 
-    .llabt-fact svg,
-    .llabt-promise-icon svg,
-    .llabt-impact-tag svg,
-    .llabt-btn-green svg {
-      width: 18px !important;
-      height: 18px !important;
-      max-width: 18px !important;
-      max-height: 18px !important;
-      flex-shrink: 0 !important;
-      display: inline-block !important;
-    }
-
-    /* ABOUT CONTAINER */
+    /* ----------------------------------------------------
+       ABOUT PAGE CONTENT
+       ---------------------------------------------------- */
     .llabt-page {
       --lla-ink: #0B1120;
       --lla-body: #4B5768;
@@ -57,8 +58,6 @@
       max-width: 1080px !important;
       margin: 40px auto 60px auto !important;
       padding: 0 20px !important;
-      font-family: 'Inter', -apple-system, sans-serif !important;
-      color: var(--lla-ink) !important;
     }
 
     .llabt-eyebrow {
@@ -75,7 +74,6 @@
       margin-bottom: 14px !important;
     }
 
-    /* HERO SECTION */
     .llabt-hero {
       display: flex !important;
       flex-direction: column !important;
@@ -86,10 +84,7 @@
     }
 
     @media (min-width: 768px) {
-      .llabt-hero {
-        flex-direction: row !important;
-        align-items: center !important;
-      }
+      .llabt-hero { flex-direction: row !important; align-items: center !important; }
       .llabt-hero-content { flex: 1.2 !important; }
       .llabt-hero-image { flex: 0.8 !important; }
     }
@@ -107,6 +102,7 @@
       font-weight: 600 !important;
       line-height: 1.55 !important;
       color: var(--lla-body) !important;
+      margin-bottom: 12px !important;
     }
 
     .llabt-facts {
@@ -129,9 +125,13 @@
       border-radius: 8px !important;
     }
 
-    .llabt-hero-image img,
-    .llabt-impact-image img,
-    .llabt-founder-image img {
+    .llabt-fact svg, .llabt-promise-icon svg, .llabt-btn-green svg {
+      width: 18px !important;
+      height: 18px !important;
+      flex-shrink: 0 !important;
+    }
+
+    .llabt-hero-image img, .llabt-impact-image img, .llabt-founder-image img {
       width: 100% !important;
       height: auto !important;
       border-radius: 18px !important;
@@ -140,17 +140,8 @@
       border: 1px solid var(--lla-line) !important;
     }
 
-    /* PROMISE SECTION & CARDS */
-    .llabt-promise {
-      margin-bottom: 60px !important;
-    }
-
-    .llabt-section-header h2 {
-      font-family: 'Space Grotesk', sans-serif !important;
-      font-size: 28px !important;
-      font-weight: 700 !important;
-      margin: 8px 0 12px 0 !important;
-    }
+    .llabt-promise { margin-bottom: 60px !important; }
+    .llabt-section-header h2 { font-family: 'Space Grotesk', sans-serif !important; font-size: 28px !important; font-weight: 700 !important; margin: 8px 0 12px 0 !important; }
 
     .llabt-promise-grid {
       display: grid !important;
@@ -178,23 +169,10 @@
       margin-bottom: 18px !important;
     }
 
-    .llabt-promise-card h3 {
-      font-family: 'Space Grotesk', sans-serif !important;
-      font-size: 18px !important;
-      font-weight: 700 !important;
-      margin: 0 0 8px 0 !important;
-    }
+    .llabt-promise-card h3 { font-family: 'Space Grotesk', sans-serif !important; font-size: 18px !important; font-weight: 700 !important; margin: 0 0 8px 0 !important; }
+    .llabt-promise-card p { font-size: 14px !important; color: var(--lla-body) !important; line-height: 1.55 !important; }
 
-    .llabt-promise-card p {
-      font-size: 14px !important;
-      color: var(--lla-body) !important;
-      line-height: 1.55 !important;
-      margin: 0 !important;
-    }
-
-    /* IMPACT & FOUNDER SECTIONS */
-    .llabt-impact,
-    .llabt-founder {
+    .llabt-impact, .llabt-founder {
       display: flex !important;
       flex-direction: column !important;
       gap: 32px !important;
@@ -206,62 +184,29 @@
     }
 
     @media (min-width: 768px) {
-      .llabt-impact,
-      .llabt-founder {
-        flex-direction: row !important;
-        align-items: center !important;
-      }
-      .llabt-impact-content,
-      .llabt-founder-content { flex: 1.2 !important; }
-      .llabt-impact-image,
-      .llabt-founder-image { flex: 0.8 !important; }
+      .llabt-impact, .llabt-founder { flex-direction: row !important; align-items: center !important; }
+      .llabt-impact-content, .llabt-founder-content { flex: 1.2 !important; }
+      .llabt-impact-image, .llabt-founder-image { flex: 0.8 !important; }
     }
 
-    .llabt-impact h2,
-    .llabt-founder h2 {
-      font-family: 'Space Grotesk', sans-serif !important;
-      font-size: 26px !important;
-      margin: 10px 0 14px 0 !important;
-    }
+    .llabt-impact h2, .llabt-founder h2 { font-family: 'Space Grotesk', sans-serif !important; font-size: 26px !important; margin: 10px 0 14px 0 !important; }
+    .llabt-impact p, .llabt-founder p { color: var(--lla-body) !important; line-height: 1.6 !important; margin-bottom: 12px !important; }
 
-    .llabt-impact p,
-    .llabt-founder p {
-      color: var(--lla-body) !important;
-      line-height: 1.6 !important;
-      margin-bottom: 12px !important;
-    }
-
-    /* BUTTONS & CTA */
-    .llabt-btn-green,
-    .llabt-btn-primary,
-    .llabt-btn-secondary {
+    .llabt-btn-green, .llabt-btn-primary, .llabt-btn-secondary {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
       gap: 8px !important;
       padding: 12px 22px !important;
-      border-radius: 10px !important;
+      border-radius: 100px !important;
       font-weight: 600 !important;
       font-size: 14px !important;
       text-decoration: none !important;
-      transition: opacity 0.2s ease !important;
     }
 
-    .llabt-btn-green {
-      background: #10B981 !important;
-      color: #FFFFFF !important;
-      margin-top: 8px !important;
-    }
-
-    .llabt-btn-primary {
-      background: var(--lla-blue) !important;
-      color: #FFFFFF !important;
-    }
-
-    .llabt-btn-secondary {
-      background: #E0E7FF !important;
-      color: var(--lla-blue-deep) !important;
-    }
+    .llabt-btn-green { background: #10B981 !important; color: #FFFFFF !important; }
+    .llabt-btn-primary { background: var(--lla-blue) !important; color: #FFFFFF !important; }
+    .llabt-btn-secondary { background: #E0E7FF !important; color: var(--lla-blue-deep) !important; }
 
     .llabt-cta-wrap {
       background: var(--lla-ink) !important;
@@ -271,28 +216,12 @@
       text-align: center !important;
     }
 
-    .llabt-cta h2 {
-      font-family: 'Space Grotesk', sans-serif !important;
-      font-size: 30px !important;
-      margin: 0 0 10px 0 !important;
-      color: #FFFFFF !important;
-    }
-
-    .llabt-cta p {
-      color: #94A3B8 !important;
-      font-size: 16px !important;
-      margin-bottom: 26px !important;
-    }
-
-    .llabt-cta-actions {
-      display: flex !important;
-      flex-wrap: wrap !important;
-      gap: 12px !important;
-      justify-content: center !important;
-    }
+    .llabt-cta h2 { font-family: 'Space Grotesk', sans-serif !important; font-size: 30px !important; margin: 0 0 10px 0 !important; color: #FFFFFF !important; }
+    .llabt-cta p { color: #94A3B8 !important; font-size: 16px !important; margin-bottom: 26px !important; }
+    .llabt-cta-actions { display: flex !important; flex-wrap: wrap !important; gap: 12px !important; justify-content: center !important; }
   </style>
 
-  <!-- Schema.org Data -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -320,129 +249,209 @@
 </head>
 
 <body>
-  <div id="siteWrapper" class="site-wrapper">
-    
-    <main id="page" class="container" role="main">
-      <article class="sections">
-        <section class="page-section">
-          
-          <!-- SCOPED ABOUT CONTENT -->
-          <div class="llabt-page">
 
-            <!-- HERO SECTION -->
-            <header class="llabt-hero">
-              <div class="llabt-hero-content">
-                <span class="llabt-eyebrow">Our Origin Story</span>
-                <h1>Honest, Transparent PC &amp; Laptop Repair in Wickford &amp; Essex</h1>
-                <p class="llabt-lead">LaunchLayer was built on a simple idea: computer support should be honest, highly accessible, and completely stress-free.</p>
-                <p style="color: var(--lla-body); line-height: 1.6;">Born right here in Wickford, LaunchLayer brings fair pricing, careful diagnostics, and a strict No-Fix, No-Fee promise to local homes and businesses.</p>
+  <!-- MASTER HEADER -->
+  <header class="ll-site-header">
+    <div class="ll-header-wrap">
+      <a href="/" class="ll-header-logo">
+        <img src="/assets/images/image-0961fde4.png" alt="LaunchLayer Logo">
+      </a>
+      <ul class="ll-header-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about" class="active">About</a></li>
+        
+        <!-- SERVICES DROPDOWN -->
+        <li class="ll-dropdown-container">
+          <span class="ll-dropdown-trigger">
+            Services
+            <svg class="ll-dropdown-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
+          </span>
+          <ul class="ll-dropdown-menu">
+            <li><a href="/services">All Services &amp; Pricing</a></li>
+            <li><a href="/custom-pc-builds">Custom PC Builds</a></li>
+            <li><a href="/business">Business Solutions</a></li>
+          </ul>
+        </li>
 
-                <!-- BADGES -->
-                <div class="llabt-facts">
-                  <span class="llabt-fact">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    Wickford, Essex (SS11)
-                  </span>
-                  <span class="llabt-fact">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"></path><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"></path></svg>
-                    No-Fix, No-Fee Promise
-                  </span>
-                  <span class="llabt-fact">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
-                    Free Local Doorstep Pickup
-                  </span>
-                </div>
-              </div>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
 
-              <div class="llabt-hero-image">
-                <img src="/assets/images/image-4307083f.png" alt="LaunchLayer Workshop Bench - PC Repairs & Upgrades in Wickford" loading="eager">
-              </div>
-            </header>
+  <!-- ABOUT PAGE CONTENT -->
+  <main class="llabt-page">
 
-            <!-- PROMISE GRID -->
-            <section class="llabt-promise">
-              <div class="llabt-section-header">
-                <span class="llabt-eyebrow">Our Promise</span>
-                <h2>The LaunchLayer "No-Jargon" Guarantee</h2>
-                <p style="color: var(--lla-body);">We explain every fault in plain English, never push unneeded upgrades, and never charge hidden workshop fees.</p>
-              </div>
+    <!-- HERO SECTION -->
+    <header class="llabt-hero">
+      <div class="llabt-hero-content">
+        <span class="llabt-eyebrow">Our Origin Story</span>
+        <h1>Honest, Transparent PC &amp; Laptop Repair in Wickford &amp; Essex</h1>
+        <p class="llabt-lead">LaunchLayer was built on a simple idea: computer support should be honest, highly accessible, and completely stress-free.</p>
+        <p style="color: var(--lla-body); line-height: 1.6;">Born right here in Wickford, LaunchLayer brings fair pricing, careful diagnostics, and a strict No-Fix, No-Fee promise to local homes and businesses.</p>
 
-              <div class="llabt-promise-grid">
-                <div class="llabt-promise-card">
-                  <div class="llabt-promise-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-                  </div>
-                  <h3>100% Free Diagnostics</h3>
-                  <p>Fixed-price quotes before any work begins. You'll never be surprised by workshop bills.</p>
-                </div>
+        <div class="llabt-facts">
+          <span class="llabt-fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Wickford, Essex (SS11)
+          </span>
+          <span class="llabt-fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"></path><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"></path></svg>
+            No-Fix, No-Fee Promise
+          </span>
+          <span class="llabt-fact">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            Free Local Doorstep Pickup
+          </span>
+        </div>
+      </div>
 
-                <div class="llabt-promise-card">
-                  <div class="llabt-promise-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                  </div>
-                  <h3>Free Local Doorstep Pickup</h3>
-                  <p>Complimentary device collection and safe return delivery across Wickford, Rayleigh, and Basildon.</p>
-                </div>
+      <div class="llabt-hero-image">
+        <img src="/assets/images/image-4307083f.png" alt="LaunchLayer Workshop Bench - PC Repairs & Upgrades in Wickford" loading="eager">
+      </div>
+    </header>
 
-                <div class="llabt-promise-card">
-                  <div class="llabt-promise-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                  </div>
-                  <h3>Absolute Data Privacy</h3>
-                  <p>Your photos, documents, and credentials remain strictly confidential while under our care.</p>
-                </div>
-              </div>
-            </section>
+    <!-- PROMISE GRID -->
+    <section class="llabt-promise">
+      <div class="llabt-section-header">
+        <span class="llabt-eyebrow">Our Promise</span>
+        <h2>The LaunchLayer "No-Jargon" Guarantee</h2>
+        <p style="color: var(--lla-body);">We explain every fault in plain English, never push unneeded upgrades, and never charge hidden workshop fees.</p>
+      </div>
 
-            <!-- COMMUNITY IMPACT SECTION -->
-            <section class="llabt-impact">
-              <div class="llabt-impact-content">
-                <span class="llabt-eyebrow">Backing Our Community</span>
-                <h2>Keeping Wickford Vibrant, Clean &amp; Connected</h2>
-                <p>LaunchLayer is proud to support local initiatives like <strong>Wickford in Bloom</strong>, helping keep our local high street welcoming for residents and visitors alike.</p>
-                <p>Dedicated, personal support for local independent businesses, families, and seniors across South Essex.</p>
-                <a href="https://www.wickfordinbloom.co.uk/" target="_blank" rel="noopener" class="llabt-btn-green">
-                  <span>Discover Wickford in Bloom</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                </a>
-              </div>
-              <div class="llabt-impact-image">
-                <img src="/assets/images/image-d26fc546.png" alt="Wickford Community Support" loading="lazy">
-              </div>
-            </section>
-
-            <!-- FOUNDER SECTION -->
-            <section class="llabt-founder">
-              <div class="llabt-founder-image">
-                <img src="/assets/images/image-c4673dc1.png" alt="Jordan - Founder and Lead Engineer at LaunchLayer" loading="lazy">
-              </div>
-              <div class="llabt-founder-content">
-                <span class="llabt-eyebrow">Founder &amp; Lead Engineer</span>
-                <h2>Meet Jordan</h2>
-                <p>Jordan founded LaunchLayer to bring technical clarity and hands-on repair skills directly to local residents and small businesses in Essex.</p>
-                <p>Whether configuring high-performance custom PCs or performing delicate laptop motherboard diagnoses, Jordan's focus remains on clear communication, reliability, and fair pricing.</p>
-              </div>
-            </section>
-
-            <!-- CTA BANNER -->
-            <section class="llabt-cta-wrap">
-              <div class="llabt-cta">
-                <h2>Ready to Fix Your Tech?</h2>
-                <p>Book a free diagnostic check or speak directly with our workshop today.</p>
-                <div class="llabt-cta-actions">
-                  <a href="/contact" class="llabt-btn-primary">Book Free Diagnostic</a>
-                  <a href="tel:07367652987" class="llabt-btn-secondary">Call Workshop: 07367 652987</a>
-                </div>
-              </div>
-            </section>
-
+      <div class="llabt-promise-grid">
+        <div class="llabt-promise-card">
+          <div class="llabt-promise-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
           </div>
-        </section>
-      </article>
-    </main>
+          <h3>100% Free Diagnostics</h3>
+          <p>Fixed-price quotes before any work begins. You'll never be surprised by workshop bills.</p>
+        </div>
 
-  </div>
-  
-  <script src="/assets/animate/bundle.js" defer></script>
+        <div class="llabt-promise-card">
+          <div class="llabt-promise-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Free Local Doorstep Pickup</h3>
+          <p>Complimentary device collection and safe return delivery across Wickford, Rayleigh, and Basildon.</p>
+        </div>
+
+        <div class="llabt-promise-card">
+          <div class="llabt-promise-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3>Absolute Data Privacy</h3>
+          <p>Your photos, documents, and credentials remain strictly confidential while under our care.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY IMPACT -->
+    <section class="llabt-impact">
+      <div class="llabt-impact-content">
+        <span class="llabt-eyebrow">Backing Our Community</span>
+        <h2>Keeping Wickford Vibrant, Clean &amp; Connected</h2>
+        <p>LaunchLayer is proud to support local initiatives like <strong>Wickford in Bloom</strong>, helping keep our local high street welcoming for residents and visitors alike.</p>
+        <p>Dedicated, personal support for local independent businesses, families, and seniors across South Essex.</p>
+        <a href="https://www.wickfordinbloom.co.uk/" target="_blank" rel="noopener" class="llabt-btn-green">
+          <span>Discover Wickford in Bloom</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="llabt-impact-image">
+        <img src="/assets/images/image-d26fc546.png" alt="Wickford Community Support" loading="lazy">
+      </div>
+    </section>
+
+    <!-- FOUNDER SECTION -->
+    <section class="llabt-founder">
+      <div class="llabt-founder-image">
+        <img src="/assets/images/image-c4673dc1.png" alt="Jordan - Founder and Lead Engineer at LaunchLayer" loading="lazy">
+      </div>
+      <div class="llabt-founder-content">
+        <span class="llabt-eyebrow">Founder &amp; Lead Engineer</span>
+        <h2>Meet Jordan</h2>
+        <p>Jordan founded LaunchLayer to bring technical clarity and hands-on repair skills directly to local residents and small businesses in Essex.</p>
+        <p>Whether configuring high-performance custom PCs or performing delicate laptop motherboard diagnoses, Jordan's focus remains on clear communication, reliability, and fair pricing.</p>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="llabt-cta-wrap">
+      <div class="llabt-cta">
+        <h2>Ready to Fix Your Tech?</h2>
+        <p>Book a free diagnostic check or speak directly with our workshop today.</p>
+        <div class="llabt-cta-actions">
+          <a href="/contact" class="llabt-btn-primary">Book Free Diagnostic</a>
+          <a href="tel:07367652987" class="llabt-btn-secondary">Call Workshop: 07367 652987</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MASTER FOOTER -->
+  <footer class="launchlayer-master-footer">
+    
+    <div class="footer-top-segment">
+      <div class="footer-brand-block">
+        <a href="/" title="LaunchLayer Home">
+          <img src="/assets/images/image-0961fde4.png" alt="LaunchLayer Local Tech Specialist Logo" class="brand-master-logo">
+        </a>
+        <p class="brand-tagline-text">Honest, jargon-free PC &amp; laptop repairs, fast speed upgrades, custom gaming builds, and simple tech support for local homes and businesses.</p>
+      </div>
+
+      <ul class="inline-nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/brands-supported">Brands Supported</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/faqs">FAQs</a></li>
+        <li><a href="/privacy-policy">Privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-matrix-section">
+      <div class="footer-matrix-title">Our South Essex Service Coverage</div>
+      <div class="footer-matrix-grid">
+        <div class="matrix-node"><a href="/wickford-pc-repair">Wickford PC Repair (SS11)</a></div>
+        <div class="matrix-node"><a href="/wickford-laptop-repair">Wickford Laptop Repair (SS12)</a></div>
+        <div class="matrix-node"><a href="/wickford-virus-removal">Wickford Virus Removal</a></div>
+        <div class="matrix-node"><a href="/basildon-pc-repair">Basildon PC Repair (SS13-SS16)</a></div>
+        <div class="matrix-node"><a href="/billericay-pc-repair">Billericay PC Repair (CM11)</a></div>
+        <div class="matrix-node"><a href="/brentwood-pc-repair">Brentwood PC Repair (CM13-CM15)</a></div>
+        <div class="matrix-node"><a href="/chelmsford-pc-repair">Chelmsford PC Repair (CM1)</a></div>
+        <div class="matrix-node"><a href="/southend-pc-repair">Southend PC Repairs (SS0)</a></div>
+        <div class="matrix-node"><a href="/rayleigh-laptop-service">Rayleigh Laptop Service (SS6)</a></div>
+        <div class="matrix-node data-recovery-special-node"><a href="/data-recovery">🛡️ Data Recovery Essex</a></div>
+      </div>
+    </div>
+
+    <div class="footer-compliance-bar">
+      <p class="copyright-text-notice">&copy; 2026 LaunchLayer Ltd. All rights reserved.</p>
+
+      <div class="footer-right-assets">
+        <div class="bark-widget-box">
+          ★ PROFESSIONAL ★<br>LaunchLayer
+        </div>
+        <div class="footer-social-strip">
+          <a href="https://www.instagram.com/launchlayeruk/" target="_blank" class="social-icon-vector" title="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/LaunchLayerWickford" target="_blank" class="social-icon-vector" title="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/launchlayeruk" target="_blank" class="social-icon-vector" title="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+          </a>
+          <a href="https://x.com/LaunchLayerUK" target="_blank" class="social-icon-vector" title="X">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </footer>
+
 </body>
 </html>
