@@ -385,12 +385,14 @@
     align-items: start !important;
   }
 
-  /* Sticky Card Positioning override across all service pages */
-  .llbrand-sidebar-sticky {
+  /* Sticky Card Positioning override across all service pages (highly specific to beat inline styles) */
+  .llbrand-sidebar-sticky,
+  body .llbrand-page .llbrand-sidebar-sticky,
+  body .llbrand-page .llbrand-layout .llbrand-sidebar .llbrand-sidebar-sticky {
     position: -webkit-sticky !important;
     position: sticky !important;
-    top: 90px !important; /* Clears the site header */
-    z-index: 10 !important;
+    top: 120px !important; /* Clears the site header with a generous, fully-visible offset */
+    z-index: 99 !important; /* Higher z-index to stay above other page content, but below site header (999) */
     height: auto !important; /* Prevent stretching */
   }
 }
