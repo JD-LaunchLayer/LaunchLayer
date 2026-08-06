@@ -1,0 +1,123 @@
+[1mdiff --git a/about/index.html b/about/index.html[m
+[1mindex 5b5d569..1ede766 100644[m
+[1m--- a/about/index.html[m
+[1m+++ b/about/index.html[m
+[36m@@ -23,6 +23,118 @@[m
+ [m
+   <!-- Main Website Stylesheet -->[m
+   <link rel="stylesheet" type="text/css" href="/assets/css/style-d13a73e3.css">[m
+[32m+[m[32m  <link rel="stylesheet" type="text/css" href="/assets/css/custom.css">[m
+[32m+[m
+[32m+[m[32m  <!-- SCOPED STYLES & SVG SAFETY FIX -->[m
+[32m+[m[32m  <style>[m
+[32m+[m[32m    /* SVG SAFETY FIX (Prevents giant icons) */[m
+[32m+[m[32m    svg:not([width]) {[m
+[32m+[m[32m      max-width: 100%;[m
+[32m+[m[32m      height: auto;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    .llabt-fact svg,[m
+[32m+[m[32m    .llabt-promise-icon svg,[m
+[32m+[m[32m    .llabt-impact-tag svg,[m
+[32m+[m[32m    .llabt-btn-green svg,[m
+[32m+[m[32m    .matrix-chevron {[m
+[32m+[m[32m      width: 16px !important;[m
+[32m+[m[32m      height: 16px !important;[m
+[32m+[m[32m      max-width: 16px !important;[m
+[32m+[m[32m      max-height: 16px !important;[m
+[32m+[m[32m      flex-shrink: 0 !important;[m
+[32m+[m[32m      display: inline-block !important;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /* ABOUT PAGE SCOPED SYSTEM */[m
+[32m+[m[32m    .llabt-page {[m
+[32m+[m[32m      --lla-ink: #0B1120;[m
+[32m+[m[32m      --lla-body: #4B5768;[m
+[32m+[m[32m      --lla-line: #E4E9F1;[m
+[32m+[m[32m      --lla-surface: #FFFFFF;[m
+[32m+[m[32m      --lla-canvas: #F7F8FB;[m
+[32m+[m[32m      --lla-blue: #1D4ED8;[m
+[32m+[m[32m      --lla-blue-deep: #16309C;[m
+[32m+[m
+[32m+[m[32m      max-width: 1080px !important;[m
+[32m+[m[32m      margin: 32px auto 0 auto !important;[m
+[32m+[m[32m      padding: 0 20px !important;[m
+[32m+[m[32m      font-family: 'Inter', -apple-system, sans-serif !important;[m
+[32m+[m[32m      color: var(--lla-ink) !important;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    .llabt-eyebrow {[m
+[32m+[m[32m      display: inline-flex !important;[m
+[32m+[m[32m      font-size: 11px !important;[m
+[32m+[m[32m      font-weight: 700 !important;[m
+[32m+[m[32m      letter-spacing: 0.09em !important;[m
+[32m+[m[32m      text-transform: uppercase !important;[m
+[32m+[m[32m      color: var(--lla-blue-deep) !important;[m
+[32m+[m[32m      background: rgba(29, 78, 216, 0.07) !important;[m
+[32m+[m[32m      border: 1px solid rgba(29, 78, 216, 0.16) !important;[m
+[32m+[m[32m      padding: 6px 13px !important;[m
+[32m+[m[32m      border-radius: 100px !important;[m
+[32m+[m[32m      margin-bottom: 14px !important;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    .llabt-hero {[m
+[32m+[m[32m      display: flex !important;[m
+[32m+[m[32m      flex-direction: column !important;[m
+[32m+[m[32m      gap: 28px !important;[m
+[32m+[m[32m      margin-bottom: 44px !important;[m
+[32m+[m[32m      border-bottom: 1px solid var(--lla-line) !important;[m
+[32m+[m[32m      padding-bottom: 36px !important;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @media (min-width: 768px) {[m
+[32m+[m[32m      .llabt-hero {[m
+[32m+[m[32m        flex-direction: row !important;[m
+[32m+[m[32m        align-items: center !important;[m
+[32m+[m[32m        gap: 48px !important;[m
+[32m+[m[32m      }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    .llabt-hero h1 {[m
+[32m+[m[32m      font-family: 'Space Grotesk', sans-serif !important;[m
+[32m+[m[32m      font-size: clamp(28px, 3.6vw, 38px) !important;[m
+[32m+[m[32m      font-weight: 700 !important;[m
+[32m+[m[32m      line-height: 1.16 !important;[m
+[32m+[m[32m      margin: 0 0 18px 0 !important;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    .llabt-lead {[m
+[32m+[m[32m      font-size: 17.5px !important;[m
+[32m+[m[32m      font-weight: 600 !important;[m
+[32m+[m[32m      line-height: 1.55 !important;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    .llabt-facts {[m
+[32m+[m[32m      display: flex !important;[m
+[32m+[m[32m      flex-wrap: wrap !important;[m
+[32m+[m[32m      gap: 10px !important;[m
+[32m+[m[32m      margin-top: 20px !important;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    .llabt-fact {[m
+[32m+[m[32m      display: inline-flex !important;[m
+[32m+[m[32m      align-items: center !important;[m
+[32m+[m[32m      gap: 7px !important;[m
+[32m+[m[32m      font-size: 11.5px !important;[m
+[32m+[m[32m      font-weight: 700 !important;[m
+[32m+[m[32m      color: var(--lla-blue-deep) !important;[m
+[32m+[m[32m      background: var(--lla-canvas) !important;[m
+[32m+[m[32m      border: 1px solid var(--lla-line) !important;[m
+[32m+[m[32m      padding: 7px 12px !important;[m
+[32m+[m[32m      border-radius: 8px !important;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    .llabt-hero-image img {[m
+[32m+[m[32m      width: 100% !important;[m
+[32m+[m[32m      height: auto !important;[m
+[32m+[m[32m      border-radius: 18px !important;[m
+[32m+[m[32m      object-fit: cover !important;[m
+[32m+[m[32m    }[m
+[32m+[m[32m  </style>[m
+ [m
+   <!-- Optimized JSON-LD Structured Data for AI & Google SEO -->[m
+   <script type="application/ld+json">[m

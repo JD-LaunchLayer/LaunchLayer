@@ -1,0 +1,231 @@
+/* ==========================================================================
+   LAUNCHLAYER MASTER CUSTOM CSS
+   Brand Palette:
+   --ll-ink: #0B1120 | --ll-blue: #1D4ED8 | --ll-cyan: #22D3E0 
+   --ll-green: #10B981 | --ll-red: #DC2626
+   ========================================================================== */
+
+/* ── 1. CORE ROOT VARIABLES ── */
+:root {
+  --ll-ink: #0b1120;
+  --ll-ink-soft: #131b2e;
+  --ll-blue: #1d4ed8;
+  --ll-blue-hover: #1e40af;
+  --ll-cyan: #22d3e0;
+  --ll-green: #10b981;
+  --ll-red: #dc2626;
+  
+  --ll-text-dark: #0f172a;
+  --ll-text-muted: #475569;
+  --ll-border-light: #e2e8f0;
+  
+  --ll-radius-sm: 8px;
+  --ll-radius-md: 12px;
+  --ll-radius-lg: 16px;
+}
+
+/* ── 2. GLOBAL RESET & BASE STYLES ── */
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure smooth scrolling site-wide */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── 3. CODE BLOCK CONTAINER OVERRIDES ── */
+/* Prevents Squarespace Fluid Engine from clipping custom HTML/CSS blocks */
+.sqs-block-code .sqs-block-content {
+  overflow: visible !important;
+}
+
+/* ── 4. STICKY SIDEBAR ENGINE (Service Pages) ── */
+@media (min-width: 960px) {
+  .sqs-layout, 
+  .sqs-row, 
+  .sqs-block-html, 
+  .sqs-block-content, 
+  .sqs-block {
+    height: 100% !important;
+    overflow: visible !important;
+  }
+  
+  .svc-sidebar .sidebar-container {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 40px !important;
+    z-index: 99 !important;
+  }
+}
+
+/* ── 5. FLOATING PHONE BUTTON (Mobile Call Pill) ── */
+.launchlayer-floating-pill-container {
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.launchlayer-floating-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ll-blue);
+  color: #ffffff !important;
+  padding: 12px 20px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none !important;
+  box-shadow: 0 10px 25px -5px rgba(29, 78, 216, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.launchlayer-floating-btn:hover {
+  background: var(--ll-blue-hover);
+  transform: translateY(-2px);
+}
+
+.floating-phone-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+/* Hide floating call pill on larger screens if desired */
+@media (min-width: 1024px) {
+  .launchlayer-floating-pill-container {
+    display: none;
+  }
+}
+
+/* ── 6. FOOTER STYLING & SEO COVERAGE MATRIX ── */
+.launchlayer-master-footer {
+  border-top: 1px solid var(--ll-border-light);
+  padding: 44px 20px 24px 20px !important;
+}
+
+.footer-top-segment {
+  max-width: 1120px;
+  margin: 0 auto 32px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 850px) {
+  .footer-top-segment {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    gap: 40px !important;
+    margin-bottom: 40px;
+  }
+}
+
+/* Inline navigation in footer */
+.inline-nav-links {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  gap: 24px !important;
+}
+
+.inline-nav-links a {
+  font-size: 14px !important;
+  color: var(--ll-text-muted) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: color 0.2s ease !important;
+}
+
+.inline-nav-links a:hover {
+  color: var(--ll-blue) !important;
+}
+
+/* Footer SEO Matrix Collapsible Details */
+.launchlayer-seo-footer {
+  max-width: 1120px;
+  margin: 0 auto 36px auto;
+}
+
+.footer-matrix-title {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  cursor: pointer !important;
+  list-style: none !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: var(--ll-text-muted) !important;
+  margin-bottom: 16px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}
+
+.footer-matrix-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 12px 24px !important;
+}
+
+@media (max-width: 959px) {
+  .footer-matrix-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media (max-width: 739px) {
+  .footer-matrix-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+.matrix-node a {
+  font-size: 13.5px !important;
+  color: var(--ll-text-muted) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color 0.2s ease !important;
+}
+
+.matrix-node a:hover {
+  color: var(--ll-blue) !important;
+}
+
+.data-recovery-special-node a {
+  color: var(--ll-blue) !important;
+  font-weight: 700 !important;
+}
+
+/* ── 7. ACCESSIBILITY & UTILITY FIXES ── */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Fix vertical spacing patches on custom service pages */
+.gap-collapse-patch {
+  margin-bottom: -60px !important;
+  padding-bottom: 0 !important;
+  clear: both !important;
+  display: block !important;
+}
+
+@media (max-width: 959px) {
+  .gap-collapse-patch {
+    margin-bottom: -40px !important;
+  }
+}
