@@ -32,6 +32,7 @@
 
 .ll-header-logo img {
   height: 38px !important;
+  max-height: 38px !important;
   width: auto !important;
   display: block !important;
 }
