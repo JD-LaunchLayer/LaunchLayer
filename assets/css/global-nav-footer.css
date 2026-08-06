@@ -475,24 +475,47 @@ main#page {
     gap: 10px !important;
   }
 
-  /* Clean 3-column CSS grid layout for mobile footer nav links */
-  .inline-nav-links,
-  .footer-nav-links,
   footer .sqs-block-content ul,
-  footer .nav-links-container {
+  footer .footer-nav-links {
     display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 12px 16px !important;
-    text-align: center !important;
-    justify-items: center !important;
-    margin-bottom: 24px !important;
-    padding-left: 0 !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px 24px !important;
+    text-align: left !important;
+    padding: 0 16px !important;
   }
 
-  .inline-nav-links a,
-  .footer-nav-links a {
+  footer .sqs-block-content ul li a,
+  footer .footer-nav-links a {
     font-size: 14px !important;
+    font-weight: 600 !important;
     white-space: nowrap !important;
+  }
+
+  /* Target ANY list or paragraph container holding main nav links inside footer */
+  footer p:has(a),
+  footer ul:has(a),
+  footer .sqs-layout .sqs-block-content p,
+  footer .sqs-layout .sqs-block-content ul {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px 8px !important;
+    text-align: center !important;
+    justify-items: center !important;
+    margin: 0 auto 24px auto !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 340px !important;
+  }
+
+  /* Force links to be clean block flex items */
+  footer p:has(a) a,
+  footer ul:has(a) a,
+  footer .sqs-layout .sqs-block-content a {
+    display: inline-block !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    padding: 4px !important;
   }
 }
 
