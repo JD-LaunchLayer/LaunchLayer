@@ -82,7 +82,7 @@
   position: absolute !important;
   top: 100% !important;
   left: 50% !important;
-  transform: translateX(-50%) translateY(8px) !important;
+  transform: translateX(-50%) !important;
   background: #FFFFFF !important;
   border: 1px solid #E2E8F0 !important;
   border-top: 3px solid #1D4ED8 !important;
@@ -92,16 +92,17 @@
   min-width: 220px !important;
   opacity: 0 !important;
   visibility: hidden !important;
-  transition: all 0.2s ease !important;
+  transition: opacity 0.2s ease, visibility 0.2s ease !important;
   z-index: 1000 !important;
   list-style: none !important;
+  overflow: hidden !important;
 }
 
 .ll-dropdown-container:hover .ll-dropdown-menu,
 .ll-dropdown-container:focus-within .ll-dropdown-menu {
   opacity: 1 !important;
   visibility: visible !important;
-  transform: translateX(-50%) translateY(0px) !important;
+  transform: translateX(-50%) !important;
 }
 
 .ll-dropdown-container:hover .ll-dropdown-chevron {
@@ -534,3 +535,80 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 */
+
+/* ==========================================================================
+   MOBILE NAVIGATION SUBMENU & SEARCH BAR MOBILES UX CORRECTIONS
+   ========================================================================== */
+
+/* Goal 1: Mobile Submenu Alignment */
+@media (max-width: 991px) {
+  .dropdown-menu, .sub-menu, .nav-dropdown, .ll-dropdown-menu {
+    position: static !important;
+    transform: none !important;
+  }
+
+  .dropdown-menu a, .sub-menu a, .nav-dropdown a, .ll-dropdown-menu a {
+    padding-left: 16px !important;
+    text-align: left !important;
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Prevent any hover/focus active states from forcing absolute or translate on mobile/tablet */
+  .ll-dropdown-container:hover .ll-dropdown-menu,
+  .ll-dropdown-container:focus-within .ll-dropdown-menu,
+  body .ll-dropdown-container:hover .ll-dropdown-menu,
+  body .ll-dropdown-container:focus-within .ll-dropdown-menu {
+    position: static !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 8px 0 0 16px !important;
+  }
+}
+
+/* Goal 2: Search Bar Mobile UX & Placeholder Fix */
+@media (max-width: 991px) {
+  .search-container, .search-wrapper, .search-form, .llprc-finder {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  body .llprc-finder-inputwrap,
+  body .llprc-finder .llprc-finder-inputwrap {
+    position: relative !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .search-container input,
+  .search-wrapper input,
+  .search-form input,
+  .llprc-finder-input {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 999px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+    width: 100% !important;
+    padding: 12px 16px 12px 42px !important;
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .search-container input::placeholder,
+  .search-wrapper input::placeholder,
+  .search-form input::placeholder,
+  .llprc-finder-input::placeholder,
+  input::placeholder {
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+  }
+}
