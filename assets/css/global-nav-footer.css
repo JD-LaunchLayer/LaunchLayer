@@ -445,6 +445,17 @@ main#page {
     cursor: pointer !important;
   }
 
+  .service-coverage-accordion-header,
+  [class*="service-coverage"] {
+    cursor: pointer !important;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: auto !important;
+    position: relative;
+    z-index: 10;
+  }
+
   /* Dropdown/accordion indicator arrow on mobile */
   .footer-matrix-title::after {
     content: "▼" !important;
@@ -455,25 +466,17 @@ main#page {
     display: inline-block !important;
   }
 
-  .footer-matrix-section.active .footer-matrix-title::after {
+  .footer-matrix-section.active .footer-matrix-title::after,
+  .service-coverage-accordion-header.active::after,
+  .footer-matrix-title.active::after {
     transform: rotate(180deg) !important;
   }
 
-  /* Mobile accordion collapse: hide link grid by default */
   .footer-matrix-grid,
   .footer-matrix-section .grid-section {
-    display: none !important;
     padding-top: 12px !important;
     margin-top: 12px !important;
     border-top: 1px solid #E4E9F1 !important;
-  }
-
-  /* Expand when details/open or toggled class is present */
-  .footer-matrix-section.active .footer-matrix-grid,
-  details[open] .footer-matrix-grid {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
   }
 
   footer .sqs-block-content ul,
@@ -610,5 +613,61 @@ document.addEventListener('DOMContentLoaded', function() {
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
     overflow: hidden !important;
+  }
+}
+
+/* Constrain FAQ Chevron SVGs */
+.sqs-block-accordion svg,
+.accordion-item-icon svg,
+.faq-chevron,
+[class*="accordion"] svg {
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  display: inline-block;
+}
+
+/* Force Interactive CSS Props for Service Coverage Accordion */
+.service-coverage-accordion-header,
+[class*="service-coverage"] {
+  cursor: pointer !important;
+  touch-action: manipulation !important;
+  user-select: none !important;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 999;
+}
+
+/* Hide panel by default on mobile screens */
+@media (max-width: 767px) {
+  .service-coverage-panel,
+  .footer-matrix-list,
+  .service-coverage-grid,
+  .footer-matrix-grid {
+    display: none !important;
+  }
+
+  /* Show when 'open' class is toggled by JS */
+  .service-coverage-panel.open,
+  .footer-matrix-list.open,
+  .service-coverage-grid.open,
+  .footer-matrix-grid.open {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    margin-top: 15px !important;
+  }
+}
+
+/* Always visible on desktop */
+@media (min-width: 768px) {
+  .service-coverage-panel,
+  .footer-matrix-list,
+  .service-coverage-grid,
+  .footer-matrix-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
