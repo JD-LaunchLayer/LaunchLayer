@@ -640,18 +640,16 @@ document.addEventListener('DOMContentLoaded', function() {
   z-index: 999;
 }
 
-/* Hide panel by default on mobile screens */
 @media (max-width: 767px) {
-  .service-coverage-panel,
   .footer-matrix-list,
+  .service-coverage-panel,
   .service-coverage-grid,
   .footer-matrix-grid {
     display: none !important;
   }
-
-  /* Show when 'open' class is toggled by JS */
-  .service-coverage-panel.open,
+  
   .footer-matrix-list.open,
+  .service-coverage-panel.open,
   .service-coverage-grid.open,
   .footer-matrix-grid.open {
     display: grid !important;
@@ -661,13 +659,318 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 }
 
-/* Always visible on desktop */
 @media (min-width: 768px) {
-  .service-coverage-panel,
   .footer-matrix-list,
+  .service-coverage-panel,
   .service-coverage-grid,
   .footer-matrix-grid {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
   }
+}
+
+/* ==========================================================================
+   FAQS PAGE (NATIVE DETAILS & SUMMARY STYLING)
+   ========================================================================== */
+.llfaqpg-page {
+  max-width: 850px !important;
+  margin: 0 auto !important;
+  padding: 60px 24px !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.llfaqpg-header {
+  text-align: center !important;
+  margin-bottom: 48px !important;
+}
+
+.llfaqpg-eyebrow {
+  display: inline-block !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: #1D4ED8 !important;
+  margin-bottom: 8px !important;
+}
+
+.llfaqpg-header h1 {
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  color: #0B1120 !important;
+  margin: 0 !important;
+}
+
+.llfaqpg-group {
+  margin-bottom: 48px !important;
+}
+
+.llfaqpg-group-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #0B1120 !important;
+  margin-bottom: 20px !important;
+  border-bottom: 2px solid #E2E8F0 !important;
+  padding-bottom: 12px !important;
+}
+
+.llfaqpg-group-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #1D4ED8 !important;
+}
+
+.llfaqpg-item {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 12px !important;
+  margin-bottom: 14px !important;
+  overflow: hidden !important;
+  transition: all 0.2s ease !important;
+}
+
+.llfaqpg-item:hover {
+  border-color: #CBD5E1 !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03) !important;
+}
+
+.llfaqpg-item[open] {
+  border-color: #1D4ED8 !important;
+  box-shadow: 0 4px 20px rgba(29, 78, 216, 0.05) !important;
+}
+
+.llfaqpg-question {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 18px 24px !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  font-size: 15.5px !important;
+  color: #0B1120 !important;
+  user-select: none !important;
+  list-style: none !important;
+}
+
+/* Hide default markers */
+.llfaqpg-question::-webkit-details-marker {
+  display: none !important;
+}
+.llfaqpg-question::marker {
+  display: none !important;
+}
+
+.llfaqpg-chevron {
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  color: #64748B !important;
+  transition: transform 0.2s ease, color 0.2s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.llfaqpg-item[open] .llfaqpg-chevron {
+  transform: rotate(180deg) !important;
+  color: #1D4ED8 !important;
+}
+
+.llfaqpg-answer {
+  padding: 0 24px 20px 24px !important;
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  color: #334155 !important;
+  border-top: 1px dashed transparent !important;
+}
+
+.llfaqpg-item[open] .llfaqpg-answer {
+  border-top-color: #E2E8F0 !important;
+  padding-top: 16px !important;
+}
+
+.llfaqpg-answer p {
+  margin: 0 0 12px 0 !important;
+}
+
+.llfaqpg-answer p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.llfaqpg-answer ul {
+  margin: 10px 0 10px 20px !important;
+  padding: 0 !important;
+}
+
+.llfaqpg-answer li {
+  margin-bottom: 6px !important;
+}
+
+
+/* ==========================================================================
+   LEGAL DOCUMENTATION / PRIVACY POLICY STYLING
+   ========================================================================== */
+.llegal-page {
+  max-width: 850px !important;
+  margin: 0 auto !important;
+  padding: 60px 24px !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.llegal-header {
+  margin-bottom: 40px !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  padding-bottom: 24px !important;
+}
+
+.llegal-header h1 {
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  color: #0B1120 !important;
+  margin: 0 0 12px 0 !important;
+}
+
+.llegal-meta {
+  font-size: 14.5px !important;
+  color: #475569 !important;
+  margin: 0 0 16px 0 !important;
+}
+
+.llegal-identity-badge {
+  background: #F1F5F9 !important;
+  border-left: 4px solid #1D4ED8 !important;
+  border-radius: 4px 8px 8px 4px !important;
+  padding: 16px 20px !important;
+  margin-top: 16px !important;
+}
+
+.llegal-identity-badge p {
+  margin: 0 !important;
+  font-size: 13.5px !important;
+  line-height: 1.6 !important;
+  color: #334155 !important;
+}
+
+.llegal-code {
+  font-family: monospace !important;
+  background: #E2E8F0 !important;
+  padding: 2px 6px !important;
+  border-radius: 4px !important;
+  font-size: 12.5px !important;
+  color: #0B1120 !important;
+  font-weight: 600 !important;
+}
+
+.llegal-segment {
+  margin-bottom: 48px !important;
+}
+
+.llegal-segment h2 {
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  color: #0B1120 !important;
+  margin: 32px 0 16px 0 !important;
+}
+
+.llegal-segment h3 {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #1E293B !important;
+  margin: 24px 0 12px 0 !important;
+}
+
+.llegal-segment p {
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  color: #334155 !important;
+  margin: 0 0 16px 0 !important;
+}
+
+.llegal-segment ul {
+  margin: 0 0 20px 20px !important;
+  padding: 0 !important;
+}
+
+.llegal-segment li {
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  color: #334155 !important;
+  margin-bottom: 8px !important;
+}
+
+.llegal-sub-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 12px !important;
+  padding: 20px 24px !important;
+  margin-bottom: 20px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03) !important;
+}
+
+.llegal-sub-card h5 {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #1D4ED8 !important;
+  margin: 0 0 12px 0 !important;
+}
+
+.llegal-capsule {
+  border-radius: 8px !important;
+  padding: 16px 20px !important;
+  margin: 24px 0 !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.llegal-capsule-info {
+  background: #EFF6FF !important;
+  border-left: 4px solid #3B82F6 !important;
+  color: #1E3A8A !important;
+}
+
+.llegal-capsule-trust {
+  background: #ECFDF5 !important;
+  border-left: 4px solid #10B981 !important;
+  color: #064E3B !important;
+}
+
+.llegal-capsule-alert {
+  background: #FEF2F2 !important;
+  border-left: 4px solid #DC2626 !important;
+  color: #7F1D1D !important;
+}
+
+.llegal-capsule strong {
+  display: block !important;
+  font-size: 14.5px !important;
+  margin-bottom: 6px !important;
+}
+
+.llegal-link {
+  color: #1D4ED8 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  border-bottom: 1px solid transparent !important;
+  transition: border-bottom-color 0.15s ease !important;
+}
+
+.llegal-link:hover {
+  border-bottom-color: #1D4ED8 !important;
+}
+
+.llegal-divider {
+  border: none !important;
+  border-top: 1px solid #E2E8F0 !important;
+  margin: 40px 0 !important;
+}
+
+.llegal-footnote {
+  font-size: 13.5px !important;
+  color: #64748B !important;
+  font-style: italic !important;
 }
