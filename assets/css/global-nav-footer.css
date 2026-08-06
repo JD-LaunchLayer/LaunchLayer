@@ -628,16 +628,13 @@ document.addEventListener('DOMContentLoaded', function() {
   display: inline-block;
 }
 
-/* Force Interactive CSS Props for Service Coverage Accordion */
 .service-coverage-accordion-header,
-[class*="service-coverage"] {
+.footer-matrix-title,
+[data-accordion] {
   cursor: pointer !important;
   touch-action: manipulation !important;
   user-select: none !important;
-  -webkit-tap-highlight-color: transparent;
   pointer-events: auto !important;
-  position: relative;
-  z-index: 999;
 }
 
 @media (max-width: 767px) {
@@ -973,4 +970,18 @@ document.addEventListener('DOMContentLoaded', function() {
   font-size: 13.5px !important;
   color: #64748B !important;
   font-style: italic !important;
+}
+
+/* Fix giant gap and collapse spacers on privacy policy/legal pages */
+.llegal-page .sqs-block-spacer,
+.privacy-policy .sqs-block-spacer,
+.sqs-block-spacer {
+  display: none !important;
+}
+
+.llegal-page,
+.llegal-container,
+main#page {
+  padding-bottom: 30px !important;
+  margin-bottom: 0 !important;
 }
