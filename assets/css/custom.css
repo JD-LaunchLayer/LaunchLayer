@@ -43,20 +43,48 @@ html {
 }
 
 /* ── 4. STICKY SIDEBAR ENGINE (Service Pages) ── */
-@media (min-width: 960px) {
+@media (min-width: 768px) {
+  /* Ensure parent grid/section containers have overflow visible so sticky sidebar doesn't get clipped */
+  section,
+  [data-test="page-section"],
+  .page-section,
+  .fluid-engine,
+  div[data-fluid-engine="true"],
   .sqs-layout, 
   .sqs-row, 
+  .sqs-block,
   .sqs-block-html, 
-  .sqs-block-content, 
-  .sqs-block {
-    height: 100% !important;
+  .sqs-block-content,
+  .fe-block,
+  .content-wrapper,
+  .content,
+  .llbrand-page,
+  .llbrand-sidebar {
     overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
   }
-  
+
+  /* Ensure parent grid containers use align-items: start; so sticky container can float */
+  .llbrand-layout {
+    align-items: start !important;
+  }
+
+  /* Sticky Card Positioning override across all service pages */
+  .llbrand-sidebar-sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 90px !important; /* Clears the site header */
+    z-index: 10 !important;
+    height: auto !important; /* Prevent stretching */
+  }
+}
+
+@media (min-width: 960px) {
   .svc-sidebar .sidebar-container {
     position: -webkit-sticky !important;
     position: sticky !important;
-    top: 40px !important;
+    top: 90px !important;
     z-index: 99 !important;
   }
 }
