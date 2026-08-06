@@ -396,3 +396,23 @@
     height: auto !important; /* Prevent stretching */
   }
 }
+
+/* REDUCE EXCESS TOP PADDING ABOVE HERO CONTENT ON SERVICE PAGES */
+main#page {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+#sections .page-section:first-of-type,
+.page-section:first-of-type,
+#sections [data-test="page-section"]:first-of-type,
+[data-test="page-section"]:first-of-type {
+  padding-top: 24px !important;
+}
+
+#sections .page-section:first-of-type .content-wrapper,
+.page-section:first-of-type .content-wrapper,
+#sections [data-test="page-section"]:first-of-type .content-wrapper,
+[data-test="page-section"]:first-of-type .content-wrapper {
+  padding-top: 24px !important;
+}
