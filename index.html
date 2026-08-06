@@ -39,11 +39,6 @@
 <link rel="preload" href="/assets/meta/meta-facf7627.png" as="image" type="image/png">
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" as="style">
 
-<link rel="stylesheet" href="/assets/css/style-9df075ea.css?nocustom=true" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/css/style-9df075ea.css?nocustom=true"></noscript>
-<link rel="stylesheet" href="/assets/css/style-9ab831d9.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/css/style-9ab831d9.css"></noscript>
-<link rel="stylesheet" href="/assets/css/style-d13a73e3.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/css/style-d13a73e3.css"></noscript>
-<link rel="stylesheet" href="/assets/css/style-67693283.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/css/style-67693283.css"></noscript>
-
 <script defer src="/assets/animate/website.components.code.visitor.js"></script>
 <script type="application/ld+json">{"url":"https://www.launchlayer.uk","name":"LaunchLayer","description":"","image":"//images.squarespace-cdn.com/content/v1/682e44baef3a173ba5190072/ee32af8c-fafc-437b-abc5-587eea035f02/1-022.png","@context":"http://schema.org","@type":"WebSite"}</script>
 <script type="application/ld+json">{"legalName":"LaunchLayer","address":"32 Glebe Road\nWickford, England, SS11 8EU\nUnited Kingdom","email":"hello@launchlayer.uk","telephone":"07367 652987","sameAs":["https://www.instagram.com/launchlayeruk/","https://www.facebook.com/LaunchLayerWickford/","https://www.linkedin.com/company/launchlayeruk","https://x.com/LaunchLayerUK"],"@context":"http://schema.org","@type":"Organization"}</script>
@@ -293,7 +288,7 @@
   <header class="ll-site-header">
     <div class="ll-header-wrap">
       <a href="/" class="ll-header-logo">
-        <img src="/assets/images/image-0961fde4.png" alt="LaunchLayer" width="139" height="66" style="height: 38px; width: auto; display: block;" onError="this.onerror=null;this.src='/assets/images/image-cbf4c0a5.ico';">
+        <img src="/assets/images/image-0961fde4.png" srcset="/assets/images/image-0961fde4.png?format=300w 300w, /assets/images/image-0961fde4.png 600w" sizes="(max-width: 639px) 280px, 139px" alt="LaunchLayer" width="139" height="66" style="height: 38px; width: auto; display: block;" onError="this.onerror=null;this.src='/assets/images/image-cbf4c0a5.ico';">
       </a>
 
       <input type="checkbox" id="ll-burger-toggle" class="ll-burger-input" style="display:none;">
@@ -1805,7 +1800,7 @@
         <div class="llmap-frame-wrap">
             <div class="llmap-frame">
                 <iframe
-                    src="https://www.google.com/maps?q=51.6106503,0.5329518&z=16&output=embed"
+                    data-src="https://www.google.com/maps?q=51.6106503,0.5329518&z=16&output=embed"
                     width="100%"
                     height="100%"
                     style="border:0;"
@@ -1814,6 +1809,24 @@
                     referrerpolicy="no-referrer-when-downgrade"
                     title="Map showing LaunchLayer's workshop at 32 Glebe Road, Wickford">
                 </iframe>
+                <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  var mapIframe = document.querySelector(".llmap-frame iframe");
+                  if ('IntersectionObserver' in window && mapIframe) {
+                    var observer = new IntersectionObserver(function(entries, observer) {
+                      entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                          mapIframe.src = mapIframe.getAttribute("data-src");
+                          observer.unobserve(entry.target);
+                        }
+                      });
+                    }, { rootMargin: "0px 0px 300px 0px" });
+                    observer.observe(mapIframe);
+                  } else if (mapIframe) {
+                    mapIframe.src = mapIframe.getAttribute("data-src");
+                  }
+                });
+                </script>
             </div>
         </div>
 
@@ -2189,6 +2202,11 @@
         <span class="floating-btn-text">Call Workshop</span>
     </a>
 </div><svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none" data-usage="social-icons-svg"><symbol id="instagram-unauth-icon" viewBox="0 0 64 64"><path d="M46.91,25.816c-0.073-1.597-0.326-2.687-0.697-3.641c-0.383-0.986-0.896-1.823-1.73-2.657c-0.834-0.834-1.67-1.347-2.657-1.73c-0.954-0.371-2.045-0.624-3.641-0.697C36.585,17.017,36.074,17,32,17s-4.585,0.017-6.184,0.09c-1.597,0.073-2.687,0.326-3.641,0.697c-0.986,0.383-1.823,0.896-2.657,1.73c-0.834,0.834-1.347,1.67-1.73,2.657c-0.371,0.954-0.624,2.045-0.697,3.641C17.017,27.415,17,27.926,17,32c0,4.074,0.017,4.585,0.09,6.184c0.073,1.597,0.326,2.687,0.697,3.641c0.383,0.986,0.896,1.823,1.73,2.657c0.834,0.834,1.67,1.347,2.657,1.73c0.954,0.371,2.045,0.624,3.641,0.697C27.415,46.983,27.926,47,32,47s4.585-0.017,6.184-0.09c1.597-0.073,2.687-0.326,3.641-0.697c0.986-0.383,1.823-0.896,2.657-1.73c0.834-0.834,1.347-1.67,1.73-2.657c0.371-0.954,0.624-2.045,0.697-3.641C46.983,36.585,47,36.074,47,32S46.983,27.415,46.91,25.816z M44.21,38.061c-0.067,1.462-0.311,2.257-0.516,2.785c-0.272,0.7-0.597,1.2-1.122,1.725c-0.525,0.525-1.025,0.85-1.725,1.122c-0.529,0.205-1.323,0.45-2.785,0.516c-1.581,0.072-2.056,0.087-6.061,0.087s-4.48-0.015-6.061-0.087c-1.462-0.067-2.257-0.311-2.785-0.516c-0.7-0.272-1.2-0.597-1.725-1.122c-0.525-0.525-0.85-1.025-1.122-1.725c-0.205-0.529-0.45-1.323-0.516-2.785c-0.072-1.582-0.087-2.056-0.087-6.061s0.015-4.48,0.087-6.061c0.067-1.462,0.311-2.257,0.516-2.785c0.272-0.7,0.597-1.2,1.122-1.725c0.525-0.525,1.025-0.85,1.725-1.122c0.529-0.205,1.323-0.45,2.785-0.516c1.582-0.072,2.056-0.087,6.061-0.087s4.48,0.015,6.061,0.087c1.462,0.067,2.257,0.311,2.785,0.516c0.7,0.272,1.2,0.597,1.725,1.122c0.525,0.525,0.85,1.025,1.122,1.725c0.205,0.529,0.45,1.323,0.516,2.785c0.072,1.582,0.087,2.056,0.087,6.061S44.282,36.48,44.21,38.061z M32,24.297c-4.254,0-7.703,3.449-7.703,7.703c0,4.254,3.449,7.703,7.703,7.703c4.254,0,7.703-3.449,7.703-7.703C39.703,27.746,36.254,24.297,32,24.297z M32,37c-2.761,0-5-2.239-5-5c0-2.761,2.239-5,5-5s5,2.239,5,5C37,34.761,34.761,37,32,37z M40.007,22.193c-0.994,0-1.8,0.806-1.8,1.8c0,0.994,0.806,1.8,1.8,1.8c0.994,0,1.8-0.806,1.8-1.8C41.807,22.999,41.001,22.193,40.007,22.193z"/></symbol><symbol id="instagram-unauth-mask" viewBox="0 0 64 64"><path d="M43.693,23.153c-0.272-0.7-0.597-1.2-1.122-1.725c-0.525-0.525-1.025-0.85-1.725-1.122c-0.529-0.205-1.323-0.45-2.785-0.517c-1.582-0.072-2.056-0.087-6.061-0.087s-4.48,0.015-6.061,0.087c-1.462,0.067-2.257,0.311-2.785,0.517c-0.7,0.272-1.2,0.597-1.725,1.122c-0.525,0.525-0.85,1.025-1.122,1.725c-0.205,0.529-0.45,1.323-0.516,2.785c-0.072,1.582-0.087,2.056-0.087,6.061s0.015,4.48,0.087,6.061c0.067,1.462,0.311,2.257,0.516,2.785c0.272,0.7,0.597,1.2,1.122,1.725s1.025,0.85,1.725,1.122c0.529,0.205,1.323,0.45,2.785,0.516c1.581,0.072,2.056,0.087,6.061,0.087s4.48-0.015,6.061-0.087c1.462-0.067,2.257-0.311,2.785-0.516c0.7-0.272,1.2-0.597,1.725-1.122s0.85-1.025,1.122-1.725c0.205-0.529,0.45-1.323,0.516-2.785c0.072-1.582,0.087-2.056,0.087-6.061s-0.015-4.48-0.087-6.061C44.143,24.476,43.899,23.682,43.693,23.153z M32,39.703c-4.254,0-7.703-3.449-7.703-7.703s3.449-7.703,7.703-7.703s7.703,3.449,7.703,7.703S36.254,39.703,32,39.703z M40.007,25.793c-0.994,0-1.8-0.806-1.8-1.8c0-0.994,0.806-1.8,1.8-1.8c0.994,0,1.8,0.806,1.8,1.8C41.807,24.987,41.001,25.793,40.007,25.793z M0,0v64h64V0H0z M46.91,38.184c-0.073,1.597-0.326,2.687-0.697,3.641c-0.383,0.986-0.896,1.823-1.73,2.657c-0.834,0.834-1.67,1.347-2.657,1.73c-0.954,0.371-2.044,0.624-3.641,0.697C36.585,46.983,36.074,47,32,47s-4.585-0.017-6.184-0.09c-1.597-0.073-2.687-0.326-3.641-0.697c-0.986-0.383-1.823-0.896-2.657-1.73c-0.834-0.834-1.347-1.67-1.73-2.657c-0.371-0.954-0.624-2.044-0.697-3.641C17.017,36.585,17,36.074,17,32c0-4.074,0.017-4.585,0.09-6.185c0.073-1.597,0.326-2.687,0.697-3.641c0.383-0.986,0.896-1.823,1.73-2.657c0.834-0.834,1.67-1.347,2.657-1.73c0.954-0.371,2.045-0.624,3.641-0.697C27.415,17.017,27.926,17,32,17s4.585,0.017,6.184,0.09c1.597,0.073,2.687,0.326,3.641,0.697c0.986,0.383,1.823,0.896,2.657,1.73c0.834,0.834,1.347,1.67,1.73,2.657c0.371,0.954,0.624,2.044,0.697,3.641C46.983,27.415,47,27.926,47,32C47,36.074,46.983,36.585,46.91,38.184z M32,27c-2.761,0-5,2.239-5,5s2.239,5,5,5s5-2.239,5-5S34.761,27,32,27z"/></symbol><symbol id="facebook-unauth-icon" viewBox="0 0 64 64"><path d="M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z"/></symbol><symbol id="facebook-unauth-mask" viewBox="0 0 64 64"><path d="M0,0v64h64V0H0z M39.6,22l-2.8,0c-2.2,0-2.6,1.1-2.6,2.6V28h5.3l-0.7,5.3h-4.6V47h-5.5V33.3H24V28h4.6V24 c0-4.6,2.8-7,6.9-7c2,0,3.6,0.1,4.1,0.2V22z"/></symbol><symbol id="linkedin-unauth-icon" viewBox="0 0 64 64"><path d="M20.4,44h5.4V26.6h-5.4V44z M23.1,18c-1.7,0-3.1,1.4-3.1,3.1c0,1.7,1.4,3.1,3.1,3.1 c1.7,0,3.1-1.4,3.1-3.1C26.2,19.4,24.8,18,23.1,18z M39.5,26.2c-2.6,0-4.4,1.4-5.1,2.8h-0.1v-2.4h-5.2V44h5.4v-8.6 c0-2.3,0.4-4.5,3.2-4.5c2.8,0,2.8,2.6,2.8,4.6V44H46v-9.5C46,29.8,45,26.2,39.5,26.2z"/></symbol><symbol id="linkedin-unauth-mask" viewBox="0 0 64 64"><path d="M0,0v64h64V0H0z M25.8,44h-5.4V26.6h5.4V44z M23.1,24.3c-1.7,0-3.1-1.4-3.1-3.1c0-1.7,1.4-3.1,3.1-3.1 c1.7,0,3.1,1.4,3.1,3.1C26.2,22.9,24.8,24.3,23.1,24.3z M46,44h-5.4v-8.4c0-2,0-4.6-2.8-4.6c-2.8,0-3.2,2.2-3.2,4.5V44h-5.4V26.6 h5.2V29h0.1c0.7-1.4,2.5-2.8,5.1-2.8c5.5,0,6.5,3.6,6.5,8.3V44z"/></symbol><symbol id="x-formerly-twitter-unauth-icon" viewBox="0 0 64 64"><g class="svg-icon"><path d="M34.426 29.9327L43.9189 18.5H41.6694L33.4267 28.4268L26.8432 18.5H19.25L29.2055 33.5111L19.25 45.5H21.4997L30.2042 35.0169L37.1568 45.5H44.75L34.426 29.9327ZM22.3102 20.2546H25.7656L41.6704 43.8252H38.2151L22.3102 20.2546Z"/></g></symbol><symbol id="x-formerly-twitter-unauth-mask" viewBox="0 0 64 64"><g class="svg-mask"><path d="M38.2151 43.8252H41.6704L25.7656 20.2546H22.3102L38.2151 43.8252Z" /><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H64V64H0V0ZM43.9189 18.5L34.426 29.9327L44.75 45.5H37.1568L30.2042 35.0169L21.4997 45.5H19.25L29.2055 33.5111L19.25 18.5H26.8432L33.4267 28.4268L41.6694 18.5H43.9189Z"/></g></symbol></svg>
+
+<link rel="stylesheet" href="/assets/css/style-9df075ea.css?nocustom=true" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/css/style-9df075ea.css?nocustom=true"></noscript>
+<link rel="stylesheet" href="/assets/css/style-9ab831d9.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/css/style-9ab831d9.css"></noscript>
+<link rel="stylesheet" href="/assets/css/style-d13a73e3.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/css/style-d13a73e3.css"></noscript>
+<link rel="stylesheet" href="/assets/css/style-67693283.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="/assets/css/style-67693283.css"></noscript>
 
   <style>#__framer-badge-container,#__framer-badge,[data-framer-badge],a[href*="framer.com/?utm_source=framer-banner-"]{display:none!important;visibility:hidden!important;height:0!important;width:0!important;overflow:hidden!important;pointer-events:none!important}</style><script>(function(){var SEL='#__framer-badge-container,#__framer-badge,a[href*="framer.com/?utm_source=framer-banner-"]';function k(n){if(!n||!n.matches)return;if(n.id==="__framer-badge-container"||n.id==="__framer-badge"||n.matches('a[href*="framer.com/?utm_source=framer-banner-"]')){n.remove()}}new MutationObserver(function(m){m.forEach(function(r){r.addedNodes.forEach(function(n){k(n);if(n.querySelectorAll){n.querySelectorAll(SEL).forEach(function(e){e.remove()})}})})}).observe(document.documentElement,{childList:true,subtree:true});function sweep(){document.querySelectorAll(SEL).forEach(function(e){e.remove()})}if(document.readyState==='complete'){setTimeout(sweep,0)}else{window.addEventListener('load',function(){setTimeout(sweep,0)},{once:true})}})()</script></body>
 </html>
