@@ -58,7 +58,7 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "Gaming PC tower with GeForce RTX graphics and RGB lighting",
     ),
     "eco-recycling": (
-        "/assets/images/image-fe3dd07f.jpg",
+        "/assets/images/image-eco-donate-hero.jpg",
         "Laptop donation and responsible recycling — LaunchLayer community support",
     ),
     "basildon-pc-repair": (

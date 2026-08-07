@@ -1,54 +1,55 @@
-# Service page glass overhaul — review checklist
+# Service pages to check after glass overhaul
 
-Copy, titles, meta/OG images, and FAQ schema were preserved. Layout moved to the Laptop MOT glass standard.
+Wording, titles, meta/OG images, and FAQ schema were kept. Layout now matches the Laptop MOT glass standard.
 
-## Layout key
+## Two layouts
 
-- **Floaty hero** — split glass banner with workshop image (same logic as Laptop MOT)
+1. **Floaty hero** — split glass banner + image (same logic as Laptop MOT). Used on pages that previously had the sticky booking card.
 
-- **Compact hero** — centered glass hero + image band (for pages that never had a sticky booking card)
+2. **Compact hero** — centered glass hero + image band (new format for local SEO / pages without a floaty banner).
 
-## Pages to check
+## Checklist (34 pages)
 
-| # | URL | Layout | Hero image | Notes |
-|---|-----|--------|------------|-------|
-| 1 | /basildon-pc-repair | floaty | `/assets/images/image-b364e9f8.jpg` — PC thermal servicing — dust and cooling care for Basildon machines | review hero relevance + layout |
-| 2 | /billericay-pc-repair | floaty | `/assets/images/image-4307083f.png` — LaunchLayer workshop bench — PC and laptop repair for Billericay | review hero relevance + layout |
-| 3 | /brentwood-pc-repair | floaty | `/assets/images/image-4307083f.png` — LaunchLayer workshop bench — PC and laptop repair for Brentwood | review hero relevance + layout |
-| 4 | /chelmsford-pc-repair | floaty | `/assets/images/image-4307083f.png` — LaunchLayer workshop bench — PC and laptop repair for Chelmsford | review hero relevance + layout |
-| 5 | /custom-pc-builds | floaty | `/assets/images/image-29700a14.webp` — Gaming PC tower with GeForce RTX graphics and RGB lighting | review hero relevance + layout |
-| 6 | /data-recovery | floaty | `/assets/images/image-ce1e457a.jpg` — Data recovery and file retrieval guidance imagery | review hero relevance + layout |
-| 7 | /eco-recycling | floaty | `/assets/images/image-fe3dd07f.jpg` — Laptop donation and responsible recycling — LaunchLayer community support | review hero relevance + layout |
-| 8 | /laptop-mot-wickford | floaty (MOT reference) | `/assets/images/image-4307083f.png` — LaunchLayer Wickford workshop bench ready for a laptop MOT | review hero relevance + layout |
-| 9 | /laptop-mot-wickford-essex | floaty (MOT reference) | `/assets/images/image-4307083f.png` — LaunchLayer Wickford workshop bench ready for a laptop MOT | review hero relevance + layout |
-| 10 | /laptop-screen-repair-wickford | compact | `/assets/images/image-4307083f.png` — Laptop screen repair on LaunchLayer Wickford workshop bench | review hero relevance + layout |
-| 11 | /liquid-damage-repair-basildon | compact | `/assets/images/image-4307083f.png` — Liquid damage laptop recovery bench for Basildon | review hero relevance + layout |
-| 12 | /liquid-damage-repair-billericay | compact | `/assets/images/image-4307083f.png` — Liquid damage laptop recovery bench for Billericay | review hero relevance + layout |
-| 13 | /liquid-damage-repair-brentwood | compact | `/assets/images/image-4307083f.png` — Liquid damage laptop recovery bench for Brentwood | review hero relevance + layout |
-| 14 | /liquid-damage-repair-chelmsford | compact | `/assets/images/image-4307083f.png` — Liquid damage laptop recovery bench for Chelmsford | review hero relevance + layout |
-| 15 | /liquid-damage-repair-rayleigh | compact | `/assets/images/image-4307083f.png` — Liquid damage laptop recovery bench for Rayleigh | review hero relevance + layout |
-| 16 | /liquid-damage-repair-southend | compact | `/assets/images/image-4307083f.png` — Liquid damage laptop recovery bench for Southend | review hero relevance + layout |
-| 17 | /liquid-damage-repair-wickford | floaty | `/assets/images/image-4307083f.png` — LaunchLayer workshop bench for liquid damage laptop recovery | review hero relevance + layout |
-| 18 | /macbook-repair | compact | `/assets/images/image-c27f7c59.jpg` — MacBook care and performance — Apple laptop repair | review hero relevance + layout |
-| 19 | /macbook-repair-basildon | compact | `/assets/images/image-c27f7c59.jpg` — MacBook repair for Basildon customers | review hero relevance + layout |
-| 20 | /macbook-repair-billericay | compact | `/assets/images/image-69f0c879.jpg` — MacBook repair for Billericay remote workers | review hero relevance + layout |
-| 21 | /macbook-repair-brentwood | compact | `/assets/images/image-c27f7c59.jpg` — MacBook repair for Brentwood customers | review hero relevance + layout |
-| 22 | /macbook-repair-chelmsford | compact | `/assets/images/image-c27f7c59.jpg` — MacBook repair for Chelmsford customers | review hero relevance + layout |
-| 23 | /macbook-repair-rayleigh | compact | `/assets/images/image-69f0c879.jpg` — MacBook repair for Rayleigh customers | review hero relevance + layout |
-| 24 | /macbook-repair-southend | compact | `/assets/images/image-c27f7c59.jpg` — MacBook repair for Southend customers | review hero relevance + layout |
-| 25 | /macbook-repair-wickford | compact | `/assets/images/image-69f0c879.jpg` — MacBook longevity and repair in Wickford | review hero relevance + layout |
-| 26 | /rayleigh-laptop-service | floaty | `/assets/images/image-a3d158c7.jpg` — Laptop diagnostics and repair for Rayleigh customers | review hero relevance + layout |
-| 27 | /screen-repair-brentwood | compact | `/assets/images/image-4307083f.png` — Laptop screen repair workshop bench for Brentwood | review hero relevance + layout |
-| 28 | /screen-repair-chelmsford | compact | `/assets/images/image-4307083f.png` — Laptop screen repair workshop bench for Chelmsford | review hero relevance + layout |
-| 29 | /screen-repair-rayleigh | compact | `/assets/images/image-4307083f.png` — Laptop screen repair workshop bench for Rayleigh | review hero relevance + layout |
-| 30 | /screen-repair-southend | compact | `/assets/images/image-4307083f.png` — Laptop screen repair workshop bench for Southend | review hero relevance + layout |
-| 31 | /southend-pc-repair | floaty | `/assets/images/image-4307083f.png` — LaunchLayer workshop bench — PC and laptop repair for Southend | review hero relevance + layout |
-| 32 | /wickford-laptop-repair | floaty | `/assets/images/image-4307083f.png` — Laptop on LaunchLayer Wickford repair bench | review hero relevance + layout |
-| 33 | /wickford-pc-repair | floaty | `/assets/images/image-29700a14.webp` — Custom desktop PC build showing internal components | review hero relevance + layout |
-| 34 | /wickford-virus-removal | compact | `/assets/images/image-9258d33d.jpg` — Online scam and malware protection guidance | review hero relevance + layout |
+| # | Page | Layout | Hero image to verify |
+|---|------|--------|----------------------|
+| 1 | [/basildon-pc-repair](https://www.launchlayer.uk/basildon-pc-repair) | floaty | `image-b364e9f8.jpg` · PC thermal servicing — dust and cooling care for Basildon machines — **PC dust/thermal blog image — confirm OK for PC repair hub** |
+| 2 | [/billericay-pc-repair](https://www.launchlayer.uk/billericay-pc-repair) | floaty | `image-4307083f.png` · LaunchLayer workshop bench — PC and laptop repair for Billericay |
+| 3 | [/brentwood-pc-repair](https://www.launchlayer.uk/brentwood-pc-repair) | floaty | `image-4307083f.png` · LaunchLayer workshop bench — PC and laptop repair for Brentwood |
+| 4 | [/chelmsford-pc-repair](https://www.launchlayer.uk/chelmsford-pc-repair) | floaty | `image-4307083f.png` · LaunchLayer workshop bench — PC and laptop repair for Chelmsford |
+| 5 | [/custom-pc-builds](https://www.launchlayer.uk/custom-pc-builds) | floaty | `image-29700a14.webp` · Gaming PC tower with GeForce RTX graphics and RGB lighting — **Gaming PC tower with RGB — confirm OK for builds** |
+| 6 | [/data-recovery](https://www.launchlayer.uk/data-recovery) | floaty | `image-ce1e457a.jpg` · Data recovery and file retrieval guidance imagery — **HDD platter close-up — confirm OK for data recovery** |
+| 7 | [/eco-recycling](https://www.launchlayer.uk/eco-recycling) | floaty | `image-eco-donate-hero.jpg` · Laptop donation and responsible recycling — LaunchLayer community support — **Ukraine donation / flag photo — confirm OK for recycling** |
+| 8 | [/laptop-mot-wickford](https://www.launchlayer.uk/laptop-mot-wickford) | floaty (MOT reference) | `image-4307083f.png` · LaunchLayer Wickford workshop bench ready for a laptop MOT |
+| 9 | [/laptop-mot-wickford-essex](https://www.launchlayer.uk/laptop-mot-wickford-essex) | floaty (MOT reference) | `image-4307083f.png` · LaunchLayer Wickford workshop bench ready for a laptop MOT |
+| 10 | [/laptop-screen-repair-wickford](https://www.launchlayer.uk/laptop-screen-repair-wickford) | compact | `image-4307083f.png` · Laptop screen repair on LaunchLayer Wickford workshop bench |
+| 11 | [/liquid-damage-repair-basildon](https://www.launchlayer.uk/liquid-damage-repair-basildon) | compact | `image-4307083f.png` · Liquid damage laptop recovery bench for Basildon |
+| 12 | [/liquid-damage-repair-billericay](https://www.launchlayer.uk/liquid-damage-repair-billericay) | compact | `image-4307083f.png` · Liquid damage laptop recovery bench for Billericay |
+| 13 | [/liquid-damage-repair-brentwood](https://www.launchlayer.uk/liquid-damage-repair-brentwood) | compact | `image-4307083f.png` · Liquid damage laptop recovery bench for Brentwood |
+| 14 | [/liquid-damage-repair-chelmsford](https://www.launchlayer.uk/liquid-damage-repair-chelmsford) | compact | `image-4307083f.png` · Liquid damage laptop recovery bench for Chelmsford |
+| 15 | [/liquid-damage-repair-rayleigh](https://www.launchlayer.uk/liquid-damage-repair-rayleigh) | compact | `image-4307083f.png` · Liquid damage laptop recovery bench for Rayleigh |
+| 16 | [/liquid-damage-repair-southend](https://www.launchlayer.uk/liquid-damage-repair-southend) | compact | `image-4307083f.png` · Liquid damage laptop recovery bench for Southend |
+| 17 | [/liquid-damage-repair-wickford](https://www.launchlayer.uk/liquid-damage-repair-wickford) | floaty | `image-4307083f.png` · LaunchLayer workshop bench for liquid damage laptop recovery |
+| 18 | [/macbook-repair](https://www.launchlayer.uk/macbook-repair) | compact | `image-c27f7c59.jpg` · MacBook care and performance — Apple laptop repair — **Open MacBook Pro internals** |
+| 19 | [/macbook-repair-basildon](https://www.launchlayer.uk/macbook-repair-basildon) | compact | `image-c27f7c59.jpg` · MacBook repair for Basildon customers |
+| 20 | [/macbook-repair-billericay](https://www.launchlayer.uk/macbook-repair-billericay) | compact | `image-69f0c879.jpg` · MacBook repair for Billericay remote workers |
+| 21 | [/macbook-repair-brentwood](https://www.launchlayer.uk/macbook-repair-brentwood) | compact | `image-c27f7c59.jpg` · MacBook repair for Brentwood customers |
+| 22 | [/macbook-repair-chelmsford](https://www.launchlayer.uk/macbook-repair-chelmsford) | compact | `image-c27f7c59.jpg` · MacBook repair for Chelmsford customers |
+| 23 | [/macbook-repair-rayleigh](https://www.launchlayer.uk/macbook-repair-rayleigh) | compact | `image-69f0c879.jpg` · MacBook repair for Rayleigh customers |
+| 24 | [/macbook-repair-southend](https://www.launchlayer.uk/macbook-repair-southend) | compact | `image-c27f7c59.jpg` · MacBook repair for Southend customers |
+| 25 | [/macbook-repair-wickford](https://www.launchlayer.uk/macbook-repair-wickford) | compact | `image-69f0c879.jpg` · MacBook longevity and repair in Wickford |
+| 26 | [/rayleigh-laptop-service](https://www.launchlayer.uk/rayleigh-laptop-service) | floaty | `image-a3d158c7.jpg` · Laptop diagnostics and repair for Rayleigh customers — **“Slow laptop” blog image — confirm OK** |
+| 27 | [/screen-repair-brentwood](https://www.launchlayer.uk/screen-repair-brentwood) | compact | `image-4307083f.png` · Laptop screen repair workshop bench for Brentwood |
+| 28 | [/screen-repair-chelmsford](https://www.launchlayer.uk/screen-repair-chelmsford) | compact | `image-4307083f.png` · Laptop screen repair workshop bench for Chelmsford |
+| 29 | [/screen-repair-rayleigh](https://www.launchlayer.uk/screen-repair-rayleigh) | compact | `image-4307083f.png` · Laptop screen repair workshop bench for Rayleigh |
+| 30 | [/screen-repair-southend](https://www.launchlayer.uk/screen-repair-southend) | compact | `image-4307083f.png` · Laptop screen repair workshop bench for Southend |
+| 31 | [/southend-pc-repair](https://www.launchlayer.uk/southend-pc-repair) | floaty | `image-4307083f.png` · LaunchLayer workshop bench — PC and laptop repair for Southend |
+| 32 | [/wickford-laptop-repair](https://www.launchlayer.uk/wickford-laptop-repair) | floaty | `image-4307083f.png` · Laptop on LaunchLayer Wickford repair bench |
+| 33 | [/wickford-pc-repair](https://www.launchlayer.uk/wickford-pc-repair) | floaty | `image-29700a14.webp` · Custom desktop PC build showing internal components |
+| 34 | [/wickford-virus-removal](https://www.launchlayer.uk/wickford-virus-removal) | compact | `image-9258d33d.jpg` · Online scam and malware protection guidance — **Red “pirate flag” laptop — confirm OK for virus/scam** |
 
-## Shared assets
+## Shared files
 
-- `/assets/css/service-glass.css` — shared glass styles
-
-- Generator: `scripts/rebuild_service_glass_pages.py`
+- `assets/css/service-glass.css`
+- `assets/images/image-eco-donate-hero.jpg` (converted from mislabeled webp)
+- `scripts/rebuild_service_glass_pages.py`
+- PR screenshots under artifacts for a sample of pages
