@@ -404,7 +404,7 @@
       gap: 12px;
     }
 
-    @media (min-width: 720px) {
+    @media (min-width: 900px) {
       .llsvc-featured-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
@@ -413,7 +413,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      min-height: 250px;
+      min-height: 240px;
       padding: 18px;
       text-decoration: none;
       color: #fff;
@@ -456,7 +456,7 @@
       inset: 0;
       z-index: 1;
       background:
-        linear-gradient(180deg, rgba(11, 17, 32, 0.18) 0%, rgba(11, 17, 32, 0.55) 48%, rgba(11, 17, 32, 0.88) 100%);
+        linear-gradient(180deg, rgba(11, 17, 32, 0.22) 0%, rgba(11, 17, 32, 0.58) 45%, rgba(11, 17, 32, 0.9) 100%);
     }
 
     .llsvc-feature-body {
@@ -464,37 +464,39 @@
       z-index: 2;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
+      min-width: 0;
     }
 
+    /* Price first, full width — never fights the title */
     .llsvc-feature-top {
       display: flex;
+      flex-direction: column;
       align-items: flex-start;
-      justify-content: space-between;
       gap: 10px;
+      min-width: 0;
     }
 
     .llsvc-feature h3 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.15rem;
+      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1.2;
-      max-width: 16ch;
+      max-width: none;
     }
 
     .llsvc-feature p {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       line-height: 1.45;
-      color: rgba(255, 255, 255, 0.86);
-      max-width: 34ch;
+      color: rgba(255, 255, 255, 0.88);
     }
 
     .llsvc-feature-cta {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-top: 4px;
+      margin-top: 2px;
       font-size: 13px;
       font-weight: 700;
       color: #fff;
@@ -503,24 +505,26 @@
     .llsvc-feature-cta svg { width: 14px; height: 14px; }
 
     .llsvc-feature .llsvc-price {
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.28);
-      backdrop-filter: blur(0);
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       box-shadow: none;
       color: #fff;
-      min-width: 6.5rem;
+      min-width: 0;
+      max-width: 100%;
+      overflow: visible;
     }
 
     .llsvc-feature .llsvc-price.is-free {
-      background: rgba(236, 253, 245, 0.95);
+      background: rgba(236, 253, 245, 0.96);
       color: var(--ll-green);
       border-color: rgba(4, 120, 87, 0.25);
     }
 
     /* Compact price-list panels */
     .llsvc-panel {
-      padding: 6px;
-      overflow: hidden;
+      padding: 4px;
+      overflow: visible;
     }
 
     .llsvc-list {
@@ -530,10 +534,13 @@
 
     .llsvc-row {
       display: grid;
-      grid-template-columns: 48px minmax(0, 1fr) auto;
-      gap: 12px 14px;
-      align-items: center;
-      padding: 14px 14px;
+      grid-template-columns: 48px minmax(0, 1fr);
+      grid-template-areas:
+        "icon copy"
+        "side side";
+      gap: 10px 12px;
+      align-items: start;
+      padding: 14px 12px;
       text-decoration: none;
       color: inherit;
       border-radius: 16px;
@@ -553,6 +560,7 @@
     .llsvc-row:focus-visible { outline: 2px solid var(--ll-blue); outline-offset: -2px; }
 
     .llsvc-icon {
+      grid-area: icon;
       width: 48px;
       height: 48px;
       border-radius: 14px;
@@ -592,6 +600,7 @@
     }
 
     .llsvc-row-copy {
+      grid-area: copy;
       min-width: 0;
     }
 
@@ -602,32 +611,31 @@
       letter-spacing: -0.02em;
       color: var(--ll-ink);
       line-height: 1.25;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
 
     .llsvc-row-copy p {
-      font-size: 0.86rem;
+      font-size: 0.88rem;
       color: var(--ll-body);
-      line-height: 1.4;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      line-height: 1.45;
     }
 
     .llsvc-row-side {
+      grid-area: side;
       display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 8px;
-      flex-shrink: 0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-left: 60px; /* align under copy */
+      min-width: 0;
     }
 
     .llsvc-row-cta {
-      display: none;
+      display: inline-flex;
       align-items: center;
       gap: 4px;
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 700;
       color: var(--ll-blue);
       white-space: nowrap;
@@ -635,13 +643,22 @@
 
     .llsvc-row-cta svg { width: 13px; height: 13px; }
 
-    @media (min-width: 720px) {
+    @media (min-width: 820px) {
       .llsvc-row {
         grid-template-columns: 52px minmax(0, 1fr) auto;
-        padding: 15px 16px;
+        grid-template-areas: "icon copy side";
+        align-items: center;
+        padding: 16px;
+        gap: 14px;
       }
-      .llsvc-row-cta { display: inline-flex; }
-      .llsvc-row-copy p { -webkit-line-clamp: 1; }
+
+      .llsvc-row-side {
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        padding-left: 0;
+        gap: 8px;
+      }
     }
 
     .llsvc-price {
@@ -650,14 +667,17 @@
       flex-direction: column;
       align-items: flex-end;
       justify-content: center;
-      min-width: 6.75rem;
-      padding: 9px 11px;
+      min-width: 5.75rem;
+      max-width: 100%;
+      padding: 10px 12px;
       border-radius: 14px;
       background: var(--ll-price-bg);
       color: var(--ll-price-ink);
       box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
       text-align: right;
-      line-height: 1.15;
+      line-height: 1.2;
+      box-sizing: border-box;
+      overflow: visible;
     }
 
     .llsvc-price.is-free {
@@ -668,26 +688,34 @@
     }
 
     .llsvc-price-prefix {
+      display: block;
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       opacity: 0.72;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
+      line-height: 1.2;
     }
 
     .llsvc-price-value {
+      display: block;
       font-family: 'Space Grotesk', sans-serif;
       font-size: 1.25rem;
       font-weight: 700;
       letter-spacing: -0.02em;
+      line-height: 1.15;
+      padding: 1px 0;
     }
 
     .llsvc-price-note {
+      display: block;
       font-size: 10.5px;
       font-weight: 600;
       opacity: 0.72;
-      margin-top: 2px;
+      margin-top: 3px;
+      white-space: nowrap;
+      line-height: 1.2;
     }
 
     .llsvc-empty {
@@ -763,12 +791,13 @@
         border-radius: 12px;
       }
       .llsvc-search { font-size: 14px; padding: 12px 40px 12px 38px; }
-      .llsvc-price { min-width: 6.5rem; padding: 9px 10px; }
-      .llsvc-price-value { font-size: 1.2rem; }
-      .llsvc-row { padding: 13px 12px; }
-      .llsvc-price { min-width: 6.1rem; }
+      .llsvc-price { padding: 8px 10px; }
+      .llsvc-price-value { font-size: 1.15rem; }
+      .llsvc-row { padding: 14px 12px; }
+      .llsvc-row-side { padding-left: 0; }
       .llsvc-meta { flex-direction: column; align-items: flex-start; gap: 4px; }
       .llsvc-note { font-size: 11.5px; }
+      .llsvc-feature { min-height: 220px; }
     }
 
     @media (min-width: 720px) {
@@ -1029,7 +1058,7 @@
       "priceKind": "from",
       "pricePrefix": "From",
       "priceLabel": "£149",
-      "priceNote": "build labour",
+      "priceNote": "labour",
       "badge": "Popular",
       "popular": true,
       "href": "/custom-pc-builds",
@@ -1050,7 +1079,7 @@
       "priceKind": "from",
       "pricePrefix": "From",
       "priceLabel": "£99",
-      "priceNote": "typical entry panel",
+      "priceNote": "+ panel",
       "href": "/laptop-screen-repair-wickford",
       "cta": "View screen options",
       "problems": [
@@ -1158,7 +1187,7 @@
       "priceKind": "from",
       "pricePrefix": "From",
       "priceLabel": "£95",
-      "priceNote": "assessment + clean",
+      "priceNote": "+ clean",
       "href": "/liquid-damage-repair-wickford",
       "cta": "See spill repair options",
       "problems": [
@@ -1249,7 +1278,7 @@
       "blurb": "BIOS tweaks, printer quirks, email accounts, browser issues or one-off settings jobs — up to 30 minutes of hands-on workshop time.",
       "priceKind": "fixed",
       "priceLabel": "£55",
-      "priceNote": "up to 30 mins",
+      "priceNote": "/ 30 mins",
       "href": "/contact",
       "cta": "Ask about a custom fix",
       "problems": [],
@@ -1697,8 +1726,8 @@
           '</div>' +
           '<div class="llsvc-feature-body">' +
             '<div class="llsvc-feature-top">' +
-              '<h3>' + escapeHtml(svc.title) + '</h3>' +
               priceBlock(svc) +
+              '<h3>' + escapeHtml(svc.title) + '</h3>' +
             '</div>' +
             '<p>' + escapeHtml(svc.blurb) + '</p>' +
             '<span class="llsvc-feature-cta">' + escapeHtml(svc.cta) +
@@ -1718,10 +1747,10 @@
             '<p>' + escapeHtml(svc.blurb) + '</p>' +
           '</div>' +
           '<div class="llsvc-row-side">' +
-            priceBlock(svc) +
             '<span class="llsvc-row-cta">' + escapeHtml(svc.cta) +
               ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
             '</span>' +
+            priceBlock(svc) +
           '</div>' +
         '</a>'
       );
