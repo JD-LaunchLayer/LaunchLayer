@@ -907,11 +907,11 @@
 
     
 
-    <div class="form-wrapper sqs-background-enabled"
+    <div class="form-wrapper sqs-background-enabled ll-contact-shell"
       
     >
-      <div class="react-form-contents">
-        <form class="react-form-contents" action="https://api.web3forms.com/submit" method="POST">
+      <div class="react-form-contents ll-contact-panel">
+        <form class="react-form-contents ll-contact-form" action="https://api.web3forms.com/submit" method="POST">
           <input type="hidden" name="access_key" value="96029321-6b20-4b14-abf2-a13104aa9d48">
           <input type="hidden" name="subject" value="New Contact Form Submission - LaunchLayer">
           <input type="hidden" name="from_name" value="LaunchLayer Website">
@@ -922,41 +922,43 @@
               <fieldset>
                 <legend class="title">Name <span class="required" aria-hidden="true">*</span></legend>
                 <div class="field first-name">
-                  <input class="field-element" name="First Name" type="text" autocomplete="given-name" aria-label="First Name" required>
-                  <div class="caption"><div class="caption-text">First Name</div></div>
+                  <div class="caption"><label class="caption-text" for="ll-contact-first">First Name</label></div>
+                  <input id="ll-contact-first" class="field-element" name="First Name" type="text" autocomplete="given-name" placeholder="Alex" required>
                 </div>
                 <div class="field last-name">
-                  <input class="field-element" name="Last Name" type="text" autocomplete="family-name" aria-label="Last Name" required>
-                  <div class="caption"><div class="caption-text">Last Name</div></div>
+                  <div class="caption"><label class="caption-text" for="ll-contact-last">Last Name</label></div>
+                  <input id="ll-contact-last" class="field-element" name="Last Name" type="text" autocomplete="family-name" placeholder="Taylor" required>
                 </div>
               </fieldset>
             </div>
             <div class="form-item fields email required">
               <label class="title" for="ll-contact-email">Email <span class="required" aria-hidden="true">*</span></label>
-              <input id="ll-contact-email" class="field-element" name="Email" type="email" autocomplete="email" required>
+              <input id="ll-contact-email" class="field-element" name="Email" type="email" autocomplete="email" placeholder="you@example.com" required>
             </div>
             <div class="form-item fields phone">
               <label class="title" for="ll-contact-phone">Phone</label>
-              <input id="ll-contact-phone" class="field-element" name="Phone" type="tel" autocomplete="tel">
+              <input id="ll-contact-phone" class="field-element" name="Phone" type="tel" autocomplete="tel" placeholder="07xxx xxxxxx">
             </div>
             <div class="form-item fields select required">
               <label class="title" for="ll-contact-service">Which service does this relate to? <span class="required" aria-hidden="true">*</span></label>
-              <select id="ll-contact-service" class="field-element" name="Service" required>
-                <option value="" disabled selected>Select a service</option>
-                <option value="General Enquiry">General Enquiry</option>
-                <option value="PC Repair &amp; Tech Support">PC Repair &amp; Tech Support</option>
-                <option value="Scam Support">Scam Support</option>
-                <option value="E-Waste or Tech Donation">E-Waste or Tech Donation</option>
-                <option value="Startup IT Setup">Startup IT Setup</option>
-                <option value="Website Setup">Website Setup</option>
-              </select>
+              <div class="ll-select-wrap">
+                <select id="ll-contact-service" class="field-element" name="Service" required>
+                  <option value="" disabled selected>Select a service</option>
+                  <option value="General Enquiry">General Enquiry</option>
+                  <option value="PC Repair &amp; Tech Support">PC Repair &amp; Tech Support</option>
+                  <option value="Scam Support">Scam Support</option>
+                  <option value="E-Waste or Tech Donation">E-Waste or Tech Donation</option>
+                  <option value="Startup IT Setup">Startup IT Setup</option>
+                  <option value="Website Setup">Website Setup</option>
+                </select>
+              </div>
             </div>
             <div class="form-item fields textarea required">
               <label class="title" for="ll-contact-message">How can we help? <span class="required" aria-hidden="true">*</span></label>
-              <textarea id="ll-contact-message" class="field-element" name="Message" rows="5" required></textarea>
+              <textarea id="ll-contact-message" class="field-element" name="Message" rows="5" placeholder="Tell us what’s going on with the device, and we’ll take it from there." required></textarea>
             </div>
             <div class="form-button-wrapper form-button-wrapper--align-center">
-              <button type="submit" class="button sqs-system-button sqs-editable-button sqs-button-element--primary">Request My Free Diagnostic</button>
+              <button type="submit" class="button sqs-system-button sqs-editable-button sqs-button-element--primary ll-contact-submit">Request My Free Diagnostic</button>
             </div>
           </div>
         </form>
@@ -975,118 +977,262 @@
         display: block;
       }
 
-      /* FormSubmit static fields: restore visible input cells */
-      #block-6c1dceaebe135ff2c7df .form-wrapper {
-        --dynamic-fill-color: #f8fafc;
-        --dynamic-fill-color-hsl: 210, 40%, 98%;
-        --dynamic-fill-color-a: 1;
-        --dynamic-border-color: rgba(255, 255, 255, 0.35);
+      /* LaunchLayer modern contact form */
+      #block-6c1dceaebe135ff2c7df .ll-contact-shell {
+        --ll-form-ink: #e8eefc;
+        --ll-form-muted: rgba(232, 238, 252, 0.72);
+        --ll-form-field: rgba(8, 15, 32, 0.55);
+        --ll-form-field-hover: rgba(8, 15, 32, 0.72);
+        --ll-form-line: rgba(255, 255, 255, 0.14);
+        --ll-form-line-strong: rgba(34, 211, 224, 0.55);
+        --ll-form-accent: #22d3e0;
+        --ll-form-accent-2: #1d4ed8;
         width: 100%;
         max-width: 100%;
+        padding-bottom: 5.5rem;
       }
 
-      #block-6c1dceaebe135ff2c7df .form-wrapper .field-list {
+      #block-6c1dceaebe135ff2c7df .ll-contact-panel {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        border-radius: 22px;
+        padding: clamp(1.15rem, 3.5vw, 1.75rem);
+        background:
+          linear-gradient(155deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04) 42%, rgba(29, 78, 216, 0.12)),
+          rgba(11, 17, 32, 0.52);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow:
+          0 24px 60px rgba(0, 0, 0, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(18px) saturate(1.25);
+        -webkit-backdrop-filter: blur(18px) saturate(1.25);
+        animation: ll-contact-rise 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-panel::before {
+        content: "";
+        position: absolute;
+        inset: -40% auto auto 45%;
+        width: 220px;
+        height: 220px;
+        border-radius: 999px;
+        background: radial-gradient(circle, rgba(34, 211, 224, 0.28), transparent 68%);
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      @keyframes ll-contact-rise {
+        from { opacity: 0; transform: translateY(14px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .field-list {
         display: grid;
-        gap: 1.1rem;
+        gap: 1.15rem;
       }
 
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item {
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item {
         margin: 0;
       }
 
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item .title,
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item legend.title {
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item .title,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item legend.title {
         display: block;
-        margin: 0 0 0.45rem;
+        margin: 0 0 0.55rem;
         padding: 0;
-        color: #fff;
-        font-size: 0.95rem;
-        font-weight: 600;
-        line-height: 1.3;
+        color: var(--ll-form-ink);
+        font-size: 0.78rem;
+        font-weight: 650;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        line-height: 1.35;
       }
 
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item.fields.name fieldset {
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item .title .required,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item legend.title .required {
+        color: var(--ll-form-accent);
+        margin-left: 0.15rem;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name fieldset {
         border: 0;
         margin: 0;
         padding: 0;
         min-width: 0;
-      }
-
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item.fields.name {
-        display: grid;
-      }
-
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item.fields.name fieldset {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 0.75rem;
+        gap: 0.85rem;
       }
 
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item.fields.name .field {
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .field {
         min-width: 0;
+        display: grid;
+        gap: 0.4rem;
       }
 
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item.fields.name .caption,
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item.fields.name .caption-text {
-        margin-top: 0.35rem;
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .caption,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .caption-text {
+        margin: 0;
         font-size: 0.8rem;
-        color: rgba(255, 255, 255, 0.82);
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        text-transform: none;
+        color: var(--ll-form-muted);
       }
 
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item select,
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item textarea {
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item select,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item textarea {
         display: block;
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
         margin: 0;
-        min-height: 48px;
-        padding: 12px 14px;
-        border: 1px solid rgba(15, 23, 42, 0.12);
-        border-radius: 10px;
-        background: #f8fafc !important;
-        color: #0f172a !important;
+        min-height: 52px;
+        padding: 0.9rem 1rem;
+        border: 1px solid var(--ll-form-line);
+        border-radius: 14px;
+        background: var(--ll-form-field) !important;
+        color: #f8fafc !important;
         font-size: 16px;
         line-height: 1.4;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        transition:
+          border-color 180ms ease,
+          background-color 180ms ease,
+          box-shadow 180ms ease,
+          transform 180ms ease;
         appearance: none;
         -webkit-appearance: none;
       }
 
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item textarea {
-        min-height: 120px;
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item input::placeholder,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item textarea::placeholder {
+        color: rgba(232, 238, 252, 0.42);
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item textarea {
+        min-height: 140px;
         resize: vertical;
       }
 
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item select {
-        background-image: linear-gradient(45deg, transparent 50%, #0f172a 50%),
-          linear-gradient(135deg, #0f172a 50%, transparent 50%);
-        background-position: calc(100% - 18px) calc(50% - 3px), calc(100% - 12px) calc(50% - 3px);
-        background-size: 6px 6px, 6px 6px;
-        background-repeat: no-repeat;
-        padding-right: 2.25rem;
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-select-wrap {
+        position: relative;
       }
 
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item input:focus,
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item select:focus,
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-item textarea:focus {
-        outline: 2px solid #22d3e0;
-        outline-offset: 2px;
-        background: #ffffff !important;
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-select-wrap::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 1.05rem;
+        width: 0.55rem;
+        height: 0.55rem;
+        border-right: 2px solid rgba(232, 238, 252, 0.75);
+        border-bottom: 2px solid rgba(232, 238, 252, 0.75);
+        transform: translateY(-65%) rotate(45deg);
+        pointer-events: none;
       }
 
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-button-wrapper {
-        margin-top: 0.5rem;
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item select {
+        padding-right: 2.6rem;
+        background-image: none !important;
+        cursor: pointer;
       }
 
-      #block-6c1dceaebe135ff2c7df .form-wrapper .form-button-wrapper .button {
-        min-height: 48px;
-        padding: 0.9rem 1.6rem;
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item select option {
+        color: #0f172a;
+        background: #f8fafc;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item input:hover,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item select:hover,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item textarea:hover {
+        background: var(--ll-form-field-hover) !important;
+        border-color: rgba(255, 255, 255, 0.24);
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item input:focus,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item select:focus,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item textarea:focus {
+        outline: none;
+        border-color: var(--ll-form-line-strong);
+        background: rgba(8, 15, 32, 0.82) !important;
+        box-shadow:
+          0 0 0 3px rgba(34, 211, 224, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-button-wrapper {
+        margin-top: 0.35rem;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-submit {
+        width: 100%;
+        min-height: 54px;
+        padding: 0.95rem 1.4rem;
+        border: 0 !important;
+        border-radius: 999px !important;
+        background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 45%, #0891b2 100%) !important;
+        color: #fff !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.01em;
+        box-shadow:
+          0 14px 30px rgba(29, 78, 216, 0.35),
+          inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-submit:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.05);
+        box-shadow:
+          0 18px 34px rgba(29, 78, 216, 0.42),
+          inset 0 1px 0 rgba(255, 255, 255, 0.28);
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-submit:active {
+        transform: translateY(0);
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-success {
+        display: grid;
+        gap: 0.45rem;
+        padding: 1.35rem 1.2rem;
+        border-radius: 16px;
+        text-align: center;
+        background: rgba(16, 185, 129, 0.12);
+        border: 1px solid rgba(74, 222, 128, 0.35);
+        color: #bbf7d0;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-success p {
+        margin: 0;
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: #86efac;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-success span {
+        font-size: 0.92rem;
+        color: rgba(187, 247, 208, 0.86);
       }
 
       @media (max-width: 640px) {
-        #block-6c1dceaebe135ff2c7df .form-wrapper .form-item.fields.name fieldset {
+        #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name fieldset {
           grid-template-columns: 1fr;
+        }
+
+        #block-6c1dceaebe135ff2c7df .ll-contact-shell {
+          padding-bottom: 6.5rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        #block-6c1dceaebe135ff2c7df .ll-contact-panel,
+        #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-submit {
+          animation: none;
+          transition: none;
         }
       }
     </style>
@@ -1962,7 +2108,7 @@ n.innerHTML='<style>#ncx-local-notice{position:fixed;left:50%;bottom:18px;transf
 if (window.location.search.includes('submitted=true')) {
   const formContainer = document.querySelector('form');
   if (formContainer) {
-    formContainer.innerHTML = '<div style="padding: 20px; background: #1e293b; color: #4ade80; border-radius: 8px; text-align: center; font-weight: bold;">Thank you! Your message has been sent successfully to hello@launchlayer.uk.</div>';
+    formContainer.innerHTML = '<div class="ll-contact-success"><p>Thank you — your message is on its way.</p><span>We’ll reply to you at hello@launchlayer.uk within our 09:00–22:00 window.</span></div>';
   }
 }
 </script>
