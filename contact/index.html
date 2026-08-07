@@ -1060,15 +1060,29 @@
         margin: 0;
         padding: 0;
         min-width: 0;
+        display: contents;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.85rem;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 0.85rem;
+        row-gap: 0.4rem;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name legend.title {
+        grid-column: 1 / -1;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .field {
         min-width: 0;
+        width: 100%;
         display: grid;
         gap: 0.4rem;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .field input {
+        width: 100%;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .caption,
@@ -1219,8 +1233,9 @@
       }
 
       @media (max-width: 640px) {
-        #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name fieldset {
-          grid-template-columns: 1fr;
+        #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name {
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          column-gap: 0.7rem;
         }
 
         #block-6c1dceaebe135ff2c7df .ll-contact-shell {
