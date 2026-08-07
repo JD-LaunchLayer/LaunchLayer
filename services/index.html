@@ -155,6 +155,25 @@
       padding: 7px 12px;
     }
 
+    .llsvc-cats,
+    .llsvc-chips {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 8px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      padding-bottom: 2px;
+      margin-right: -4px;
+    }
+
+    .llsvc-cats { margin-bottom: 14px; }
+
+    .llsvc-cat,
+    .llsvc-chip {
+      flex: 0 0 auto;
+    }
+
     .llsvc-trust svg {
       width: 14px;
       height: 14px;
@@ -173,13 +192,6 @@
       font-weight: 600;
       color: var(--ll-muted);
       margin-bottom: 10px;
-    }
-
-    .llsvc-cats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 14px;
     }
 
     .llsvc-cat {
@@ -284,12 +296,6 @@
       font-weight: 600;
       color: var(--ll-muted);
       margin-bottom: 8px;
-    }
-
-    .llsvc-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
     }
 
     .llsvc-chip {
@@ -565,12 +571,27 @@
 
     @media (max-width: 560px) {
       .llsvc-hero { padding: 28px 20px 22px; }
-      .llsvc-finder { padding: 16px; }
-      .llsvc-search-row { grid-template-columns: 1fr; }
-      .llsvc-reset { padding: 12px 16px; }
+      .llsvc-finder { padding: 14px 14px 12px; }
+      .llsvc-search-row { grid-template-columns: 1fr auto; gap: 8px; }
+      .llsvc-reset {
+        padding: 0 12px;
+        font-size: 12px;
+        border-radius: 12px;
+      }
+      .llsvc-search { font-size: 14px; padding: 12px 40px 12px 38px; }
       .llsvc-price { min-width: 6.5rem; padding: 9px 10px; }
       .llsvc-price-value { font-size: 1.2rem; }
       .llsvc-card { padding: 16px; }
+      .llsvc-meta { flex-direction: column; align-items: flex-start; gap: 4px; }
+      .llsvc-note { font-size: 11.5px; }
+    }
+
+    @media (min-width: 720px) {
+      .llsvc-cats,
+      .llsvc-chips {
+        flex-wrap: wrap;
+        overflow: visible;
+      }
     }
   </style>
 
@@ -1006,11 +1027,11 @@
           No-Fix-No-Fee
         </span>
         <span>
-          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/></svg>
-          Prices inc. VAT guidance
+          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Fixed quotes before work
         </span>
         <span>
-          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
           Free local collection
         </span>
       </div>
