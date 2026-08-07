@@ -313,9 +313,9 @@
     }
     .llsvc-chip:hover { border-color: rgba(29, 78, 216, 0.35); color: var(--ll-blue); }
     .llsvc-chip.is-active {
-      background: #eff6ff;
-      border-color: rgba(29, 78, 216, 0.4);
-      color: var(--ll-blue-deep);
+      background: var(--ll-ink);
+      border-color: var(--ll-ink);
+      color: #fff;
     }
 
     .llsvc-meta {
@@ -343,11 +343,12 @@
     .llsvc-group {
       margin-bottom: 18px;
       content-visibility: auto;
-      contain-intrinsic-size: 400px;
+      contain-intrinsic-size: 280px;
     }
 
     .llsvc-group[hidden],
-    .llsvc-card[hidden] { display: none !important; }
+    .llsvc-row[hidden],
+    .llsvc-feature[hidden] { display: none !important; }
 
     .llsvc-group-head {
       display: flex;
@@ -371,65 +372,276 @@
       color: var(--ll-muted);
     }
 
-    .llsvc-grid {
+    /* Featured visual strip */
+    .llsvc-featured {
+      margin-bottom: 18px;
+    }
+
+    .llsvc-featured-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 0 4px 10px;
+    }
+
+    .llsvc-featured-head h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .llsvc-featured-head span {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ll-muted);
+    }
+
+    .llsvc-featured-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 10px;
+      gap: 12px;
     }
 
     @media (min-width: 720px) {
-      .llsvc-grid { grid-template-columns: 1fr 1fr; }
+      .llsvc-featured-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
-    .llsvc-card {
+    .llsvc-feature {
+      position: relative;
       display: flex;
       flex-direction: column;
-      padding: 18px 18px 16px;
+      justify-content: flex-end;
+      min-height: 250px;
+      padding: 18px;
       text-decoration: none;
-      color: inherit;
+      color: #fff;
+      border-radius: 22px;
+      overflow: hidden;
+      isolation: isolate;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
       transition: transform 180ms ease, box-shadow 180ms ease;
-      min-height: 100%;
     }
 
-    .llsvc-card:hover {
-      transform: translateY(-2px);
-      box-shadow:
-        0 16px 32px rgba(15, 23, 42, 0.08),
-        0 1px 3px rgba(15, 23, 42, 0.04),
-        inset 0 1px 0 #ffffff;
+    .llsvc-feature:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
     }
 
-    .llsvc-card:focus-visible {
+    .llsvc-feature:focus-visible {
       outline: 2px solid var(--ll-blue);
       outline-offset: 3px;
     }
 
-    .llsvc-card-top {
+    .llsvc-feature-media {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .llsvc-feature-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transform: scale(1.02);
+      transition: transform 320ms ease;
+    }
+
+    .llsvc-feature:hover .llsvc-feature-media img { transform: scale(1.06); }
+
+    .llsvc-feature-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(11, 17, 32, 0.18) 0%, rgba(11, 17, 32, 0.55) 48%, rgba(11, 17, 32, 0.88) 100%);
+    }
+
+    .llsvc-feature-body {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .llsvc-feature-top {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 12px;
+      gap: 10px;
     }
 
-    .llsvc-badge {
+    .llsvc-feature h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      max-width: 16ch;
+    }
+
+    .llsvc-feature p {
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.86);
+      max-width: 34ch;
+    }
+
+    .llsvc-feature-cta {
       display: inline-flex;
       align-items: center;
-      font-size: 11px;
+      gap: 6px;
+      margin-top: 4px;
+      font-size: 13px;
       font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--ll-blue-deep);
-      background: #eff6ff;
-      border: 1px solid rgba(29, 78, 216, 0.18);
-      border-radius: 999px;
-      padding: 4px 9px;
+      color: #fff;
     }
 
-    .llsvc-badge.is-popular {
-      color: #9a3412;
+    .llsvc-feature-cta svg { width: 14px; height: 14px; }
+
+    .llsvc-feature .llsvc-price {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(0);
+      box-shadow: none;
+      color: #fff;
+      min-width: 6.5rem;
+    }
+
+    .llsvc-feature .llsvc-price.is-free {
+      background: rgba(236, 253, 245, 0.95);
+      color: var(--ll-green);
+      border-color: rgba(4, 120, 87, 0.25);
+    }
+
+    /* Compact price-list panels */
+    .llsvc-panel {
+      padding: 6px;
+      overflow: hidden;
+    }
+
+    .llsvc-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .llsvc-row {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr) auto;
+      gap: 12px 14px;
+      align-items: center;
+      padding: 14px 14px;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 16px;
+      transition: background 160ms ease;
+    }
+
+    .llsvc-row + .llsvc-row {
+      border-top: 1px solid var(--ll-line);
+      border-radius: 0;
+    }
+
+    .llsvc-row:first-child { border-radius: 16px 16px 0 0; }
+    .llsvc-row:last-child { border-radius: 0 0 16px 16px; }
+    .llsvc-row:only-child { border-radius: 16px; }
+
+    .llsvc-row:hover { background: rgba(239, 246, 255, 0.72); }
+    .llsvc-row:focus-visible { outline: 2px solid var(--ll-blue); outline-offset: -2px; }
+
+    .llsvc-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: #eff6ff;
+      color: var(--ll-blue-deep);
+      border: 1px solid rgba(29, 78, 216, 0.12);
+    }
+
+    .llsvc-icon[data-tone="cyan"] {
+      background: #ecfeff;
+      color: #0e7490;
+      border-color: rgba(8, 145, 178, 0.16);
+    }
+    .llsvc-icon[data-tone="ink"] {
+      background: #0b1120;
+      color: #fff;
+      border-color: #0b1120;
+    }
+    .llsvc-icon[data-tone="green"] {
+      background: #ecfdf5;
+      color: #047857;
+      border-color: rgba(4, 120, 87, 0.16);
+    }
+    .llsvc-icon[data-tone="amber"] {
       background: #fff7ed;
-      border-color: rgba(154, 52, 18, 0.18);
+      color: #9a3412;
+      border-color: rgba(154, 52, 18, 0.16);
+    }
+
+    .llsvc-icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .llsvc-row-copy {
+      min-width: 0;
+    }
+
+    .llsvc-row-copy h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ll-ink);
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+
+    .llsvc-row-copy p {
+      font-size: 0.86rem;
+      color: var(--ll-body);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .llsvc-row-side {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .llsvc-row-cta {
+      display: none;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ll-blue);
+      white-space: nowrap;
+    }
+
+    .llsvc-row-cta svg { width: 13px; height: 13px; }
+
+    @media (min-width: 720px) {
+      .llsvc-row {
+        grid-template-columns: 52px minmax(0, 1fr) auto;
+        padding: 15px 16px;
+      }
+      .llsvc-row-cta { display: inline-flex; }
+      .llsvc-row-copy p { -webkit-line-clamp: 1; }
     }
 
     .llsvc-price {
@@ -438,8 +650,8 @@
       flex-direction: column;
       align-items: flex-end;
       justify-content: center;
-      min-width: 7.5rem;
-      padding: 10px 12px;
+      min-width: 6.75rem;
+      padding: 9px 11px;
       border-radius: 14px;
       background: var(--ll-price-bg);
       color: var(--ll-price-ink);
@@ -466,7 +678,7 @@
 
     .llsvc-price-value {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-weight: 700;
       letter-spacing: -0.02em;
     }
@@ -477,34 +689,6 @@
       opacity: 0.72;
       margin-top: 2px;
     }
-
-    .llsvc-card h3 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--ll-ink);
-      margin-bottom: 6px;
-      line-height: 1.25;
-    }
-
-    .llsvc-card p {
-      font-size: 0.92rem;
-      color: var(--ll-body);
-      margin-bottom: 14px;
-      flex: 1;
-    }
-
-    .llsvc-card-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--ll-blue);
-    }
-
-    .llsvc-card-cta svg { width: 14px; height: 14px; }
 
     .llsvc-empty {
       display: none;
@@ -581,7 +765,8 @@
       .llsvc-search { font-size: 14px; padding: 12px 40px 12px 38px; }
       .llsvc-price { min-width: 6.5rem; padding: 9px 10px; }
       .llsvc-price-value { font-size: 1.2rem; }
-      .llsvc-card { padding: 16px; }
+      .llsvc-row { padding: 13px 12px; }
+      .llsvc-price { min-width: 6.1rem; }
       .llsvc-meta { flex-direction: column; align-items: flex-start; gap: 4px; }
       .llsvc-note { font-size: 11.5px; }
     }
@@ -602,376 +787,583 @@
     Optional: pricePrefix, priceNote, badge, popular, schemaPrice, schemaMinPrice
   -->
   <script type="application/json" id="llsvc-catalog">
-  {
-    "categories": [
-      { "id": "all", "label": "All services" },
-      { "id": "diagnostics", "label": "Diagnostics & speed" },
-      { "id": "hardware", "label": "Hardware repairs" },
-      { "id": "apple", "label": "Apple Mac" },
-      { "id": "software", "label": "Software & security" },
-      { "id": "data", "label": "Data & setup" }
-    ],
-    "problems": [
-      { "id": "slow", "label": "Running slow", "match": ["slow", "speed", "ssd", "ram", "mot", "tune", "startup", "lag"] },
-      { "id": "screen", "label": "Cracked / blank screen", "match": ["screen", "display", "crack", "flicker", "lines", "black screen"] },
-      { "id": "power", "label": "Won't turn on / charge", "match": ["power", "charge", "battery", "dead", "boot", "wont turn on", "won't turn on", "no power"] },
-      { "id": "spill", "label": "Liquid spill", "match": ["spill", "liquid", "water", "coffee", "wet", "drink"] },
-      { "id": "virus", "label": "Virus / pop-ups", "match": ["virus", "malware", "scam", "popup", "pop-up", "security", "ransomware"] },
-      { "id": "hot", "label": "Overheating / loud fans", "match": ["hot", "overheat", "fan", "dust", "thermal", "noise"] },
-      { "id": "data", "label": "Lost files / new laptop", "match": ["data", "recovery", "files", "transfer", "backup", "new device", "migrate"] },
-      { "id": "apple", "label": "MacBook / iMac", "match": ["mac", "apple", "macbook", "imac", "macos"] }
-    ],
-    "groups": [
-      { "id": "diagnostics", "title": "Diagnostics & speed" },
-      { "id": "hardware", "title": "Hardware repairs & builds" },
-      { "id": "apple", "title": "Apple Mac repairs" },
-      { "id": "software", "title": "Software & security" },
-      { "id": "data", "title": "Data, setup & recycling" }
-    ],
-    "services": [
-      {
-        "id": "diagnostics",
-        "category": "diagnostics",
-        "title": "PC & Laptop Diagnostics",
-        "blurb": "Plain-English fault finding for any desktop or laptop in Wickford. We identify the issue and give a fixed quote — with no obligation to proceed.",
-        "priceKind": "free",
-        "priceLabel": "FREE",
-        "href": "/contact",
-        "cta": "Book free diagnostic",
-        "problems": ["power", "slow", "hot", "screen", "spill", "virus"],
-        "keywords": "diagnose fault finding not sure check assessment no obligation",
-        "schemaPrice": "0"
-      },
-      {
-        "id": "mot",
-        "category": "diagnostics",
-        "title": "50-Point Full System MOT",
-        "blurb": "Deep tune-up for sluggish Windows PCs and laptops: startup clean-up, junk removal, driver health checks and performance optimisation.",
-        "priceKind": "fixed",
-        "priceLabel": "£75",
-        "href": "/laptop-mot-wickford-essex",
-        "cta": "View MOT details",
-        "problems": ["slow"],
-        "keywords": "slow tune up speed clean junk startup optimisation optimization",
-        "schemaPrice": "75"
-      },
-      {
-        "id": "dust-clean",
-        "category": "diagnostics",
-        "title": "Dust Clean & Overheating Fix",
-        "blurb": "Stop thermal throttling and noisy fans. We clear dust blockages and refresh dry thermal paste so your machine runs cooler and quieter.",
-        "priceKind": "fixed",
-        "priceLabel": "£55",
-        "href": "/contact",
-        "cta": "Book a clean",
-        "problems": ["hot", "slow"],
-        "keywords": "hot overheating loud fan dust thermal paste cooling",
-        "schemaPrice": "55"
-      },
-      {
-        "id": "ssd-ram",
-        "category": "diagnostics",
-        "title": "SSD & RAM Speed Upgrades",
-        "blurb": "Replace a slow hard drive with a fast SSD and add RAM for smoother multitasking. Full data migration included in the labour.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£65",
-        "priceNote": "+ parts",
-        "href": "/contact",
-        "cta": "Get an upgrade quote",
-        "problems": ["slow"],
-        "keywords": "ssd ram upgrade memory storage hard drive migration",
-        "schemaMinPrice": "65"
-      },
-      {
-        "id": "custom-pc",
-        "category": "hardware",
-        "title": "Custom Gaming PC & Workstation Builds",
-        "blurb": "Bespoke PC builds matched to your budget — parts selection, cable management and 24-hour stability testing included.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£149",
-        "priceNote": "build labour",
-        "badge": "Popular",
-        "popular": true,
-        "href": "/custom-pc-builds",
-        "cta": "Configure your build",
-        "problems": [],
-        "keywords": "gaming pc build custom workstation assembly",
-        "schemaMinPrice": "149"
-      },
-      {
-        "id": "screen",
-        "category": "hardware",
-        "title": "Laptop Screen Replacement",
-        "blurb": "Cracked glass, bleeding pixels, vertical lines or flickering displays — precision panel fitting for major Windows laptop brands.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£99",
-        "priceNote": "typical entry panel",
-        "href": "/laptop-screen-repair-wickford",
-        "cta": "View screen options",
-        "problems": ["screen"],
-        "keywords": "crack cracked screen display flicker black screen panel hinge lid",
-        "schemaMinPrice": "99"
-      },
-      {
-        "id": "battery",
-        "category": "hardware",
-        "title": "Laptop Battery Replacement",
-        "blurb": "Dying after 20 minutes or shutting down under load? We fit quality replacement batteries and verify charge health.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£55",
-        "priceNote": "+ battery",
-        "href": "/wickford-laptop-repair",
-        "cta": "Get a battery quote",
-        "problems": ["power"],
-        "keywords": "battery charge swollen power drain runtime",
-        "schemaMinPrice": "55"
-      },
-      {
-        "id": "charging-port",
-        "category": "hardware",
-        "title": "Charging Port & DC Jack Repair",
-        "blurb": "Loose barrels, damaged USB-C ports, or laptops that only charge at an angle — tested and repaired with the right connector for your model.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£65",
-        "priceNote": "+ parts",
-        "href": "/contact",
-        "cta": "Book charging repair",
-        "problems": ["power"],
-        "keywords": "charging port dc jack usb-c socket power connector not charging",
-        "schemaMinPrice": "65"
-      },
-      {
-        "id": "keyboard",
-        "category": "hardware",
-        "title": "Laptop Keyboard Replacement",
-        "blurb": "Sticky, missing or unresponsive keys after wear or a spill. We source compatible keyboards and refit them cleanly.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£55",
-        "priceNote": "+ keyboard",
-        "href": "/contact",
-        "cta": "Get a keyboard quote",
-        "problems": ["spill", "power"],
-        "keywords": "keyboard keys sticky trackpad input",
-        "schemaMinPrice": "55"
-      },
-      {
-        "id": "hinge",
-        "category": "hardware",
-        "title": "Laptop Hinge & Lid Repair",
-        "blurb": "Wobbly lids, cracked hinge mounts or screens that won't stay open — structural repairs before the damage spreads to the chassis.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£65",
-        "priceNote": "+ parts",
-        "href": "/contact",
-        "cta": "Book hinge repair",
-        "problems": ["screen"],
-        "keywords": "hinge lid chassis cracked bezel",
-        "schemaMinPrice": "65"
-      },
-      {
-        "id": "component",
-        "category": "hardware",
-        "title": "General Hardware & Component Repair",
-        "blurb": "Trackpads, fans, Wi-Fi cards, USB ports and other component faults — diagnosed free, then fixed at a clear labour + parts rate.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£49",
-        "priceNote": "+ parts",
-        "href": "/contact",
-        "cta": "Get a repair quote",
-        "problems": ["power", "hot"],
-        "keywords": "hardware component trackpad fan wifi usb motherboard part",
-        "schemaMinPrice": "49"
-      },
-      {
-        "id": "liquid",
-        "category": "hardware",
-        "title": "Liquid Spill Damage Repair",
-        "blurb": "Coffee, water or wine on the keyboard? Power off immediately and bring it in — early ultrasonic cleaning dramatically improves recovery odds.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£95",
-        "priceNote": "assessment + clean",
-        "href": "/liquid-damage-repair-wickford",
-        "cta": "See spill repair options",
-        "problems": ["spill"],
-        "keywords": "spilled water coffee drink wet liquid tea wine corrosion",
-        "schemaMinPrice": "95"
-      },
-      {
-        "id": "macbook",
-        "category": "apple",
-        "title": "Apple MacBook & iMac Repairs",
-        "blurb": "Screens, batteries, logic-board diagnostics and macOS tune-ups for MacBook Pro, Air and iMac — specialist care without Apple Store pricing.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£85",
-        "href": "/macbook-repair-wickford",
-        "cta": "See MacBook services",
-        "problems": ["apple", "screen", "power", "slow"],
-        "keywords": "mac apple macbook imac macos retina logic board",
-        "schemaMinPrice": "85"
-      },
-      {
-        "id": "virus",
-        "category": "software",
-        "title": "Virus, Malware & Scam Removal",
-        "blurb": "Full clean-up of pop-ups, fake antivirus warnings and malware, plus hardened browser and Windows protection afterwards.",
-        "priceKind": "fixed",
-        "priceLabel": "£69",
-        "href": "/wickford-virus-removal",
-        "cta": "Learn about protection",
-        "problems": ["virus", "slow"],
-        "keywords": "virus malware scam popup ransomware trojan adware security",
-        "schemaPrice": "69"
-      },
-      {
-        "id": "windows-reinstall",
-        "category": "software",
-        "title": "Fresh Windows Install & Factory Reset",
-        "blurb": "Clean, updated Windows installation to clear corruption and slowdowns — product key preserved and essential drivers restored.",
-        "priceKind": "fixed",
-        "priceLabel": "£59",
-        "href": "/contact",
-        "cta": "Book a reinstall",
-        "problems": ["slow", "virus"],
-        "keywords": "windows reinstall factory reset os corrupt errors",
-        "schemaPrice": "59"
-      },
-      {
-        "id": "windows11",
-        "category": "software",
-        "title": "Windows 11 Upgrade & Compatibility Fix",
-        "blurb": "TPM, Secure Boot and hardware checks, then a guided Windows 11 upgrade with drivers sorted — or an honest assessment if the machine isn't suitable.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£69",
-        "href": "/contact",
-        "cta": "Check Windows 11 readiness",
-        "problems": ["slow"],
-        "keywords": "windows 11 upgrade tpm secure boot compatibility",
-        "schemaMinPrice": "69"
-      },
-      {
-        "id": "general-fix",
-        "category": "software",
-        "title": "General Fix, Settings & Configuration",
-        "blurb": "BIOS tweaks, printer quirks, email accounts, browser issues or one-off settings jobs — up to 30 minutes of hands-on workshop time.",
-        "priceKind": "fixed",
-        "priceLabel": "£55",
-        "priceNote": "up to 30 mins",
-        "href": "/contact",
-        "cta": "Ask about a custom fix",
-        "problems": [],
-        "keywords": "settings configuration bios printers email drivers software help",
-        "schemaPrice": "55"
-      },
-      {
-        "id": "wifi",
-        "category": "software",
-        "title": "Home Wi-Fi & Router Setup",
-        "blurb": "New router installs, dead spots, mesh advice and device reconnects for homes across Wickford, Basildon and Billericay.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£55",
-        "href": "/contact",
-        "cta": "Book Wi-Fi help",
-        "problems": [],
-        "keywords": "wifi wi-fi router broadband mesh internet network signal",
-        "schemaMinPrice": "55"
-      },
-      {
-        "id": "data-recovery",
-        "category": "data",
-        "title": "Data & File Recovery",
-        "blurb": "Recover photos, documents and work files from failing drives, accidental deletes or machines that won't boot.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£79",
-        "href": "/data-recovery",
-        "cta": "View recovery options",
-        "problems": ["data", "power"],
-        "keywords": "deleted lost files recovery drive failed dead photos documents",
-        "schemaMinPrice": "79"
-      },
-      {
-        "id": "backup",
-        "category": "data",
-        "title": "Backup & Cloud Migration",
-        "blurb": "Set up reliable local and cloud backups, or migrate your files to OneDrive, Google Drive or an external drive before something fails.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£49",
-        "href": "/contact",
-        "cta": "Plan a backup",
-        "problems": ["data"],
-        "keywords": "backup cloud onedrive google drive migrate sync",
-        "schemaMinPrice": "49"
-      },
-      {
-        "id": "new-device",
-        "category": "data",
-        "title": "New Device Setup & Data Transfer",
-        "blurb": "Unbox, update and transfer files, photos, browsers and key apps from your old PC or laptop to the new one.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£59",
-        "href": "/contact",
-        "cta": "Get a setup quote",
-        "problems": ["data"],
-        "keywords": "new device laptop computer transfer setup unboxing migrate",
-        "schemaMinPrice": "59"
-      },
-      {
-        "id": "printer",
-        "category": "data",
-        "title": "Printer & Peripheral Setup",
-        "blurb": "Wireless printers, scanners and common peripherals installed and tested on Windows or Mac — without the driver headache.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£35",
-        "href": "/contact",
-        "cta": "Book printer setup",
-        "problems": [],
-        "keywords": "printer scanner peripheral wireless ink driver",
-        "schemaMinPrice": "35"
-      },
-      {
-        "id": "recycling",
-        "category": "data",
-        "title": "Secure Eco Recycling",
-        "blurb": "Drop off unwanted PCs and laptops — we securely wipe personal data and recycle components responsibly across South Essex.",
-        "priceKind": "free",
-        "priceLabel": "FREE",
-        "href": "/eco-recycling",
-        "cta": "Book free recycling",
-        "problems": ["data"],
-        "keywords": "old computer recycle dispose unwanted e-waste wipe",
-        "schemaPrice": "0"
-      },
-      {
-        "id": "business",
-        "category": "software",
-        "title": "Small Business IT Health Check",
-        "blurb": "On-site or workshop review of workstations, backups, updates and basic security for local Essex businesses — with a plain-English action list.",
-        "priceKind": "from",
-        "pricePrefix": "From",
-        "priceLabel": "£95",
-        "href": "/business",
-        "cta": "View business solutions",
-        "problems": [],
-        "keywords": "business office it support health check smb remote",
-        "schemaMinPrice": "95"
-      }
-    ]
-  }
+{
+  "categories": [
+    {
+      "id": "all",
+      "label": "All services"
+    },
+    {
+      "id": "diagnostics",
+      "label": "Diagnostics & speed"
+    },
+    {
+      "id": "hardware",
+      "label": "Hardware repairs"
+    },
+    {
+      "id": "apple",
+      "label": "Apple Mac"
+    },
+    {
+      "id": "software",
+      "label": "Software & security"
+    },
+    {
+      "id": "data",
+      "label": "Data & setup"
+    }
+  ],
+  "problems": [
+    {
+      "id": "slow",
+      "label": "Running slow",
+      "match": [
+        "slow",
+        "speed",
+        "ssd",
+        "ram",
+        "mot",
+        "tune",
+        "startup",
+        "lag"
+      ]
+    },
+    {
+      "id": "screen",
+      "label": "Cracked / blank screen",
+      "match": [
+        "screen",
+        "display",
+        "crack",
+        "flicker",
+        "lines",
+        "black screen"
+      ]
+    },
+    {
+      "id": "power",
+      "label": "Won't turn on / charge",
+      "match": [
+        "power",
+        "charge",
+        "battery",
+        "dead",
+        "boot",
+        "wont turn on",
+        "won't turn on",
+        "no power"
+      ]
+    },
+    {
+      "id": "spill",
+      "label": "Liquid spill",
+      "match": [
+        "spill",
+        "liquid",
+        "water",
+        "coffee",
+        "wet",
+        "drink"
+      ]
+    },
+    {
+      "id": "virus",
+      "label": "Virus / pop-ups",
+      "match": [
+        "virus",
+        "malware",
+        "scam",
+        "popup",
+        "pop-up",
+        "security",
+        "ransomware"
+      ]
+    },
+    {
+      "id": "hot",
+      "label": "Overheating / loud fans",
+      "match": [
+        "hot",
+        "overheat",
+        "fan",
+        "dust",
+        "thermal",
+        "noise"
+      ]
+    },
+    {
+      "id": "data",
+      "label": "Lost files / new laptop",
+      "match": [
+        "data",
+        "recovery",
+        "files",
+        "transfer",
+        "backup",
+        "new device",
+        "migrate"
+      ]
+    },
+    {
+      "id": "apple",
+      "label": "MacBook / iMac",
+      "match": [
+        "mac",
+        "apple",
+        "macbook",
+        "imac",
+        "macos"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "diagnostics",
+      "title": "Diagnostics & speed",
+      "label": "Diagnostics"
+    },
+    {
+      "id": "hardware",
+      "title": "Hardware repairs & builds",
+      "label": "Hardware"
+    },
+    {
+      "id": "apple",
+      "title": "Apple Mac repairs",
+      "label": "Apple"
+    },
+    {
+      "id": "software",
+      "title": "Software & security",
+      "label": "Software"
+    },
+    {
+      "id": "data",
+      "title": "Data, setup & recycling",
+      "label": "Data"
+    }
+  ],
+  "services": [
+    {
+      "id": "diagnostics",
+      "category": "diagnostics",
+      "title": "PC & Laptop Diagnostics",
+      "blurb": "Plain-English fault finding for any desktop or laptop in Wickford. We identify the issue and give a fixed quote — with no obligation to proceed.",
+      "priceKind": "free",
+      "priceLabel": "FREE",
+      "href": "/contact",
+      "cta": "Book free diagnostic",
+      "problems": [
+        "power",
+        "slow",
+        "hot",
+        "screen",
+        "spill",
+        "virus"
+      ],
+      "keywords": "diagnose fault finding not sure check assessment no obligation",
+      "schemaPrice": "0",
+      "featured": true,
+      "image": "/assets/files/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "Laptop on a repair workbench",
+      "featuredRank": 1
+    },
+    {
+      "id": "mot",
+      "category": "diagnostics",
+      "title": "50-Point Full System MOT",
+      "blurb": "Deep tune-up for sluggish Windows PCs and laptops: startup clean-up, junk removal, driver health checks and performance optimisation.",
+      "priceKind": "fixed",
+      "priceLabel": "£75",
+      "href": "/laptop-mot-wickford-essex",
+      "cta": "View MOT details",
+      "problems": [
+        "slow"
+      ],
+      "keywords": "slow tune up speed clean junk startup optimisation optimization",
+      "schemaPrice": "75"
+    },
+    {
+      "id": "dust-clean",
+      "category": "diagnostics",
+      "title": "Dust Clean & Overheating Fix",
+      "blurb": "Stop thermal throttling and noisy fans. We clear dust blockages and refresh dry thermal paste so your machine runs cooler and quieter.",
+      "priceKind": "fixed",
+      "priceLabel": "£55",
+      "href": "/contact",
+      "cta": "Book a clean",
+      "problems": [
+        "hot",
+        "slow"
+      ],
+      "keywords": "hot overheating loud fan dust thermal paste cooling",
+      "schemaPrice": "55"
+    },
+    {
+      "id": "ssd-ram",
+      "category": "diagnostics",
+      "title": "SSD & RAM Speed Upgrades",
+      "blurb": "Replace a slow hard drive with a fast SSD and add RAM for smoother multitasking. Full data migration included in the labour.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£65",
+      "priceNote": "+ parts",
+      "href": "/contact",
+      "cta": "Get an upgrade quote",
+      "problems": [
+        "slow"
+      ],
+      "keywords": "ssd ram upgrade memory storage hard drive migration",
+      "schemaMinPrice": "65",
+      "featured": true,
+      "image": "/assets/files/photo-1591405351990-4726e331f141?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "SSD and memory components",
+      "featuredRank": 6
+    },
+    {
+      "id": "custom-pc",
+      "category": "hardware",
+      "title": "Custom Gaming PC & Workstation Builds",
+      "blurb": "Bespoke PC builds matched to your budget — parts selection, cable management and 24-hour stability testing included.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£149",
+      "priceNote": "build labour",
+      "badge": "Popular",
+      "popular": true,
+      "href": "/custom-pc-builds",
+      "cta": "Configure your build",
+      "problems": [],
+      "keywords": "gaming pc build custom workstation assembly",
+      "schemaMinPrice": "149",
+      "featured": true,
+      "image": "/assets/files/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "Custom gaming PC build",
+      "featuredRank": 3
+    },
+    {
+      "id": "screen",
+      "category": "hardware",
+      "title": "Laptop Screen Replacement",
+      "blurb": "Cracked glass, bleeding pixels, vertical lines or flickering displays — precision panel fitting for major Windows laptop brands.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£99",
+      "priceNote": "typical entry panel",
+      "href": "/laptop-screen-repair-wickford",
+      "cta": "View screen options",
+      "problems": [
+        "screen"
+      ],
+      "keywords": "crack cracked screen display flicker black screen panel hinge lid",
+      "schemaMinPrice": "99",
+      "featured": true,
+      "image": "/assets/files/photo-1611078489935-0cb964de46d6?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "Laptop display screen",
+      "featuredRank": 2
+    },
+    {
+      "id": "battery",
+      "category": "hardware",
+      "title": "Laptop Battery Replacement",
+      "blurb": "Dying after 20 minutes or shutting down under load? We fit quality replacement batteries and verify charge health.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£55",
+      "priceNote": "+ battery",
+      "href": "/wickford-laptop-repair",
+      "cta": "Get a battery quote",
+      "problems": [
+        "power"
+      ],
+      "keywords": "battery charge swollen power drain runtime",
+      "schemaMinPrice": "55"
+    },
+    {
+      "id": "charging-port",
+      "category": "hardware",
+      "title": "Charging Port & DC Jack Repair",
+      "blurb": "Loose barrels, damaged USB-C ports, or laptops that only charge at an angle — tested and repaired with the right connector for your model.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£65",
+      "priceNote": "+ parts",
+      "href": "/contact",
+      "cta": "Book charging repair",
+      "problems": [
+        "power"
+      ],
+      "keywords": "charging port dc jack usb-c socket power connector not charging",
+      "schemaMinPrice": "65"
+    },
+    {
+      "id": "keyboard",
+      "category": "hardware",
+      "title": "Laptop Keyboard Replacement",
+      "blurb": "Sticky, missing or unresponsive keys after wear or a spill. We source compatible keyboards and refit them cleanly.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£55",
+      "priceNote": "+ keyboard",
+      "href": "/contact",
+      "cta": "Get a keyboard quote",
+      "problems": [
+        "spill",
+        "power"
+      ],
+      "keywords": "keyboard keys sticky trackpad input",
+      "schemaMinPrice": "55"
+    },
+    {
+      "id": "hinge",
+      "category": "hardware",
+      "title": "Laptop Hinge & Lid Repair",
+      "blurb": "Wobbly lids, cracked hinge mounts or screens that won't stay open — structural repairs before the damage spreads to the chassis.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£65",
+      "priceNote": "+ parts",
+      "href": "/contact",
+      "cta": "Book hinge repair",
+      "problems": [
+        "screen"
+      ],
+      "keywords": "hinge lid chassis cracked bezel",
+      "schemaMinPrice": "65"
+    },
+    {
+      "id": "component",
+      "category": "hardware",
+      "title": "General Hardware & Component Repair",
+      "blurb": "Trackpads, fans, Wi-Fi cards, USB ports and other component faults — diagnosed free, then fixed at a clear labour + parts rate.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£49",
+      "priceNote": "+ parts",
+      "href": "/contact",
+      "cta": "Get a repair quote",
+      "problems": [
+        "power",
+        "hot"
+      ],
+      "keywords": "hardware component trackpad fan wifi usb motherboard part",
+      "schemaMinPrice": "49"
+    },
+    {
+      "id": "liquid",
+      "category": "hardware",
+      "title": "Liquid Spill Damage Repair",
+      "blurb": "Coffee, water or wine on the keyboard? Power off immediately and bring it in — early ultrasonic cleaning dramatically improves recovery odds.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£95",
+      "priceNote": "assessment + clean",
+      "href": "/liquid-damage-repair-wickford",
+      "cta": "See spill repair options",
+      "problems": [
+        "spill"
+      ],
+      "keywords": "spilled water coffee drink wet liquid tea wine corrosion",
+      "schemaMinPrice": "95"
+    },
+    {
+      "id": "macbook",
+      "category": "apple",
+      "title": "Apple MacBook & iMac Repairs",
+      "blurb": "Screens, batteries, logic-board diagnostics and macOS tune-ups for MacBook Pro, Air and iMac — specialist care without Apple Store pricing.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£85",
+      "href": "/macbook-repair-wickford",
+      "cta": "See MacBook services",
+      "problems": [
+        "apple",
+        "screen",
+        "power",
+        "slow"
+      ],
+      "keywords": "mac apple macbook imac macos retina logic board",
+      "schemaMinPrice": "85",
+      "featured": true,
+      "image": "/assets/files/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "Apple MacBook on a desk",
+      "featuredRank": 4
+    },
+    {
+      "id": "virus",
+      "category": "software",
+      "title": "Virus, Malware & Scam Removal",
+      "blurb": "Full clean-up of pop-ups, fake antivirus warnings and malware, plus hardened browser and Windows protection afterwards.",
+      "priceKind": "fixed",
+      "priceLabel": "£69",
+      "href": "/wickford-virus-removal",
+      "cta": "Learn about protection",
+      "problems": [
+        "virus",
+        "slow"
+      ],
+      "keywords": "virus malware scam popup ransomware trojan adware security",
+      "schemaPrice": "69",
+      "featured": true,
+      "image": "/assets/files/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=900&q=80",
+      "imageAlt": "Cyber security abstract",
+      "featuredRank": 5
+    },
+    {
+      "id": "windows-reinstall",
+      "category": "software",
+      "title": "Fresh Windows Install & Factory Reset",
+      "blurb": "Clean, updated Windows installation to clear corruption and slowdowns — product key preserved and essential drivers restored.",
+      "priceKind": "fixed",
+      "priceLabel": "£59",
+      "href": "/contact",
+      "cta": "Book a reinstall",
+      "problems": [
+        "slow",
+        "virus"
+      ],
+      "keywords": "windows reinstall factory reset os corrupt errors",
+      "schemaPrice": "59"
+    },
+    {
+      "id": "windows11",
+      "category": "software",
+      "title": "Windows 11 Upgrade & Compatibility Fix",
+      "blurb": "TPM, Secure Boot and hardware checks, then a guided Windows 11 upgrade with drivers sorted — or an honest assessment if the machine isn't suitable.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£69",
+      "href": "/contact",
+      "cta": "Check Windows 11 readiness",
+      "problems": [
+        "slow"
+      ],
+      "keywords": "windows 11 upgrade tpm secure boot compatibility",
+      "schemaMinPrice": "69"
+    },
+    {
+      "id": "general-fix",
+      "category": "software",
+      "title": "General Fix, Settings & Configuration",
+      "blurb": "BIOS tweaks, printer quirks, email accounts, browser issues or one-off settings jobs — up to 30 minutes of hands-on workshop time.",
+      "priceKind": "fixed",
+      "priceLabel": "£55",
+      "priceNote": "up to 30 mins",
+      "href": "/contact",
+      "cta": "Ask about a custom fix",
+      "problems": [],
+      "keywords": "settings configuration bios printers email drivers software help",
+      "schemaPrice": "55"
+    },
+    {
+      "id": "wifi",
+      "category": "software",
+      "title": "Home Wi-Fi & Router Setup",
+      "blurb": "New router installs, dead spots, mesh advice and device reconnects for homes across Wickford, Basildon and Billericay.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£55",
+      "href": "/contact",
+      "cta": "Book Wi-Fi help",
+      "problems": [],
+      "keywords": "wifi wi-fi router broadband mesh internet network signal",
+      "schemaMinPrice": "55"
+    },
+    {
+      "id": "data-recovery",
+      "category": "data",
+      "title": "Data & File Recovery",
+      "blurb": "Recover photos, documents and work files from failing drives, accidental deletes or machines that won't boot.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£79",
+      "href": "/data-recovery",
+      "cta": "View recovery options",
+      "problems": [
+        "data",
+        "power"
+      ],
+      "keywords": "deleted lost files recovery drive failed dead photos documents",
+      "schemaMinPrice": "79"
+    },
+    {
+      "id": "backup",
+      "category": "data",
+      "title": "Backup & Cloud Migration",
+      "blurb": "Set up reliable local and cloud backups, or migrate your files to OneDrive, Google Drive or an external drive before something fails.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£49",
+      "href": "/contact",
+      "cta": "Plan a backup",
+      "problems": [
+        "data"
+      ],
+      "keywords": "backup cloud onedrive google drive migrate sync",
+      "schemaMinPrice": "49"
+    },
+    {
+      "id": "new-device",
+      "category": "data",
+      "title": "New Device Setup & Data Transfer",
+      "blurb": "Unbox, update and transfer files, photos, browsers and key apps from your old PC or laptop to the new one.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£59",
+      "href": "/contact",
+      "cta": "Get a setup quote",
+      "problems": [
+        "data"
+      ],
+      "keywords": "new device laptop computer transfer setup unboxing migrate",
+      "schemaMinPrice": "59"
+    },
+    {
+      "id": "printer",
+      "category": "data",
+      "title": "Printer & Peripheral Setup",
+      "blurb": "Wireless printers, scanners and common peripherals installed and tested on Windows or Mac — without the driver headache.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£35",
+      "href": "/contact",
+      "cta": "Book printer setup",
+      "problems": [],
+      "keywords": "printer scanner peripheral wireless ink driver",
+      "schemaMinPrice": "35"
+    },
+    {
+      "id": "recycling",
+      "category": "data",
+      "title": "Secure Eco Recycling",
+      "blurb": "Drop off unwanted PCs and laptops — we securely wipe personal data and recycle components responsibly across South Essex.",
+      "priceKind": "free",
+      "priceLabel": "FREE",
+      "href": "/eco-recycling",
+      "cta": "Book free recycling",
+      "problems": [
+        "data"
+      ],
+      "keywords": "old computer recycle dispose unwanted e-waste wipe",
+      "schemaPrice": "0"
+    },
+    {
+      "id": "business",
+      "category": "software",
+      "title": "Small Business IT Health Check",
+      "blurb": "On-site or workshop review of workstations, backups, updates and basic security for local Essex businesses — with a plain-English action list.",
+      "priceKind": "from",
+      "pricePrefix": "From",
+      "priceLabel": "£95",
+      "href": "/business",
+      "cta": "View business solutions",
+      "problems": [],
+      "keywords": "business office it support health check smb remote",
+      "schemaMinPrice": "95"
+    }
+  ]
+}
   </script>
 </head>
 <body>
@@ -1255,36 +1647,88 @@
       );
     }
 
-    function cardHtml(svc) {
-      var badge = '';
-      if (svc.popular || svc.badge) {
-        badge = '<span class="llsvc-badge' + (svc.popular ? ' is-popular' : '') + '">' + escapeHtml(svc.badge || 'Popular') + '</span>';
-      } else {
-        badge = '<span class="llsvc-badge">' + escapeHtml(groupLabel(svc.category)) + '</span>';
-      }
+    var ICONS = {
+      diagnostics: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-3.8-3.8"/><path d="M11 8v6M8 11h6"/></svg>',
+      mot: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19h16"/><path d="M7 19V9l5-5 5 5v10"/><path d="M10 19v-4h4v4"/></svg>',
+      'dust-clean': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18c-3 0-5-2-5-5 0-4 4-6 5-9 1 3 5 5 5 9 0 1-.3 2-.8 2.8"/><path d="M14 18h5a2 2 0 0 0 0-4h-1"/></svg>',
+      'ssd-ram': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="7" width="16" height="10" rx="2"/><path d="M8 7V5M12 7V5M16 7V5M8 17v2M12 17v2M16 17v2"/></svg>',
+      'custom-pc': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8M12 18v4"/><path d="M7 9h4M7 12h2"/></svg>',
+      screen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M7 8l10 5"/></svg>',
+      battery: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M20 10h2v4h-2"/><path d="M6 10v4M10 10v4"/></svg>',
+      'charging-port': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v7"/><path d="M8 5h8"/><rect x="7" y="9" width="10" height="11" rx="2"/><path d="M10 13h4"/></svg>',
+      keyboard: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="11" rx="2"/><path d="M6 11h.01M10 11h.01M14 11h.01M18 11h.01M8 15h8"/></svg>',
+      hinge: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h10a4 4 0 0 1 0 8H4"/><path d="M14 11h6"/><circle cx="8" cy="11" r="1.5"/></svg>',
+      component: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/></svg>',
+      liquid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11z"/></svg>',
+      macbook: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M2 19h20"/></svg>',
+      virus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>',
+      'windows-reinstall': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l7-2v16l-7-2V6zM13 5l7-1v16l-7-1V5z"/></svg>',
+      windows11: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h7v7H4zM13 5h7v7h-7zM4 14h7v7H4zM13 14h7v7h-7z"/></svg>',
+      'general-fix': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.2a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9c.3.6.9 1 1.5 1H21a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.4 1z"/></svg>',
+      wifi: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5a9 9 0 0 1 14 0"/><path d="M8.5 15a5 5 0 0 1 7 0"/><circle cx="12" cy="18" r="1.2"/></svg>',
+      'data-recovery': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>',
+      backup: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v10"/><path d="M8 9l4 4 4-4"/><path d="M5 17h14v3H5z"/></svg>',
+      'new-device': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M10 17h4"/></svg>',
+      printer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 9V4h10v5"/><rect x="5" y="9" width="14" height="8" rx="2"/><path d="M8 17h8v3H8z"/></svg>',
+      recycling: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 8l2-4h6l2 4"/><path d="M5 12l-2 4h6"/><path d="M19 12l2 4h-6"/><path d="M9 20l1.5-3M15 20l-1.5-3"/></svg>',
+      business: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>'
+    };
 
+    function iconTone(svc) {
+      if (svc.priceKind === 'free') return 'green';
+      if (svc.popular) return 'amber';
+      if (svc.category === 'apple') return 'ink';
+      if (svc.category === 'diagnostics') return 'cyan';
+      return 'blue';
+    }
+
+    function iconHtml(svc) {
+      var svg = ICONS[svc.id] || ICONS.component;
+      var tone = iconTone(svc);
+      return '<span class="llsvc-icon" data-tone="' + tone + '" aria-hidden="true">' + svg + '</span>';
+    }
+
+    function featureHtml(svc) {
       return (
-        '<a class="llsvc-card llsvc-glass" href="' + escapeHtml(svc.href) + '" data-id="' + escapeHtml(svc.id) + '" data-category="' + escapeHtml(svc.category) + '">' +
-          '<div class="llsvc-card-top">' +
-            badge +
-            priceBlock(svc) +
+        '<a class="llsvc-feature" href="' + escapeHtml(svc.href) + '" data-id="' + escapeHtml(svc.id) + '">' +
+          '<div class="llsvc-feature-media" aria-hidden="true">' +
+            '<img src="' + escapeHtml(svc.image) + '" alt="" loading="lazy" decoding="async" width="900" height="600">' +
+            '<div class="llsvc-feature-scrim"></div>' +
           '</div>' +
-          '<h3>' + escapeHtml(svc.title) + '</h3>' +
-          '<p>' + escapeHtml(svc.blurb) + '</p>' +
-          '<span class="llsvc-card-cta">' + escapeHtml(svc.cta) +
-            ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
-          '</span>' +
+          '<div class="llsvc-feature-body">' +
+            '<div class="llsvc-feature-top">' +
+              '<h3>' + escapeHtml(svc.title) + '</h3>' +
+              priceBlock(svc) +
+            '</div>' +
+            '<p>' + escapeHtml(svc.blurb) + '</p>' +
+            '<span class="llsvc-feature-cta">' + escapeHtml(svc.cta) +
+              ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+            '</span>' +
+          '</div>' +
         '</a>'
       );
     }
 
-    function groupLabel(id) {
-      var g = (catalog.groups || []).find(function (x) { return x.id === id; });
-      if (g) return g.title.replace(/ & .*/, '').split(' ')[0];
-      return id;
+    function rowHtml(svc) {
+      return (
+        '<a class="llsvc-row" href="' + escapeHtml(svc.href) + '" data-id="' + escapeHtml(svc.id) + '" data-category="' + escapeHtml(svc.category) + '">' +
+          iconHtml(svc) +
+          '<div class="llsvc-row-copy">' +
+            '<h3>' + escapeHtml(svc.title) + '</h3>' +
+            '<p>' + escapeHtml(svc.blurb) + '</p>' +
+          '</div>' +
+          '<div class="llsvc-row-side">' +
+            priceBlock(svc) +
+            '<span class="llsvc-row-cta">' + escapeHtml(svc.cta) +
+              ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
+            '</span>' +
+          '</div>' +
+        '</a>'
+      );
     }
 
     function renderChrome() {
+
       catsEl.innerHTML = (catalog.categories || []).map(function (cat) {
         return '<button type="button" class="llsvc-cat' + (state.category === cat.id ? ' is-active' : '') + '" role="tab" aria-selected="' + (state.category === cat.id) + '" data-cat="' + escapeHtml(cat.id) + '">' + escapeHtml(cat.label) + '</button>';
       }).join('');
@@ -1297,6 +1741,8 @@
     function renderResults() {
       var services = catalog.services || [];
       var matched = services.filter(matchesService);
+      var filtering = state.category !== 'all' || state.problem || normalize(state.query);
+
       var byGroup = {};
       (catalog.groups || []).forEach(function (g) { byGroup[g.id] = []; });
       matched.forEach(function (svc) {
@@ -1305,20 +1751,37 @@
       });
 
       var html = '';
+
+      // Featured visual picks — top 3 matching featured services (or fewer when filtered)
+      var featured = matched
+        .filter(function (s) { return s.featured && s.image; })
+        .sort(function (a, b) { return (a.featuredRank || 99) - (b.featuredRank || 99); })
+        .slice(0, 3);
+
+      if (featured.length) {
+        html +=
+          '<section class="llsvc-featured">' +
+            '<div class="llsvc-featured-head"><h2>Popular right now</h2><span>Quick picks</span></div>' +
+            '<div class="llsvc-featured-grid">' + featured.map(featureHtml).join('') + '</div>' +
+          '</section>';
+      }
+
+      var featuredIds = {};
+      featured.forEach(function (s) { featuredIds[s.id] = true; });
+
       (catalog.groups || []).forEach(function (g) {
-        var list = byGroup[g.id] || [];
+        var list = (byGroup[g.id] || []).filter(function (s) { return !featuredIds[s.id]; });
         if (!list.length) return;
         html +=
           '<section class="llsvc-group" data-group="' + escapeHtml(g.id) + '">' +
             '<div class="llsvc-group-head"><h2>' + escapeHtml(g.title) + '</h2><span>' + list.length + ' service' + (list.length === 1 ? '' : 's') + '</span></div>' +
-            '<div class="llsvc-grid">' + list.map(cardHtml).join('') + '</div>' +
+            '<div class="llsvc-panel llsvc-glass"><div class="llsvc-list">' + list.map(rowHtml).join('') + '</div></div>' +
           '</section>';
       });
 
       resultsEl.innerHTML = html;
       emptyEl.classList.toggle('is-on', matched.length === 0);
 
-      var filtering = state.category !== 'all' || state.problem || normalize(state.query);
       countEl.textContent = filtering
         ? ('Showing ' + matched.length + ' of ' + services.length + ' services')
         : (services.length + ' services');
