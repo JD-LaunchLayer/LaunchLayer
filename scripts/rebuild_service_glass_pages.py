@@ -37,12 +37,12 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "LaunchLayer Wickford workshop bench ready for a laptop MOT",
     ),
     "wickford-laptop-repair": (
-        "/assets/images/image-a07b70ec.webp",
-        "Technician repairing open laptop motherboard and cooling fan",
+        "/assets/images/image-d26fc546.png",
+        "Wickford in Bloom — LaunchLayer’s home town",
     ),
     "wickford-pc-repair": (
-        "/assets/images/image-b364e9f8.jpg",
-        "Desktop PC internals needing thermal dust care",
+        "/assets/images/towns/wickford-town.jpg",
+        "Wickford — local PC repair from our Glebe Road workshop",
     ),
     "liquid-damage-repair-wickford": (
         "/assets/images/image-5e7c1f44.jpg",
@@ -77,28 +77,28 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "Silver MacBook on desk — Wickford MacBook repair",
     ),
     "basildon-pc-repair": (
-        "/assets/images/image-29700a14.webp",
-        "Gaming desktop PC tower with GeForce RTX graphics",
+        "/assets/images/towns/basildon-town.jpg",
+        "Basildon town square — local PC & laptop repair coverage",
     ),
     "billericay-pc-repair": (
-        "/assets/images/image-de2f0024.jpg",
-        "Home office laptop setup — Billericay remote-work repairs",
+        "/assets/images/towns/billericay-town.jpg",
+        "Billericay High Street — local PC & laptop repair coverage",
     ),
     "brentwood-pc-repair": (
-        "/assets/images/image-5043df46.jpg",
-        "Laptop with business dashboard — Brentwood PC support",
+        "/assets/images/towns/brentwood-town.jpg",
+        "Brentwood High Street — local PC & laptop repair coverage",
     ),
     "chelmsford-pc-repair": (
-        "/assets/images/image-9241379c.jpg",
-        "PC ready for modern Windows updates — Chelmsford repairs",
+        "/assets/images/towns/chelmsford-town.jpg",
+        "Chelmsford High Street — local PC & laptop repair coverage",
     ),
     "southend-pc-repair": (
-        "/assets/images/image-a3d158c7.jpg",
-        "Slow or dead laptop diagnostics — Southend PC repair",
+        "/assets/images/towns/southend-town.jpg",
+        "Southend High Street — local PC & laptop repair coverage",
     ),
     "rayleigh-laptop-service": (
-        "/assets/images/image-bdd8886f.jpg",
-        "Modern laptop on stand — Rayleigh laptop service",
+        "/assets/images/towns/rayleigh-town.jpg",
+        "Rayleigh High Street — local laptop service coverage",
     ),
     "macbook-repair-basildon": (
         "/assets/images/image-c27f7c59.jpg",
