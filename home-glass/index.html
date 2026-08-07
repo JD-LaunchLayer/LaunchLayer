@@ -147,64 +147,105 @@
       box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18);
     }
 
-    /* Hero — brand-forward, one CTA group, one dominant image */
+    /* Hero — full-bleed media cell + readable overlay */
     .llhm-hero {
-      display: grid;
-      gap: 28px;
+      display: block;
       margin-bottom: 28px;
-      padding: clamp(1.25rem, 3.5vw, 1.9rem);
+      min-height: clamp(420px, 58vw, 560px);
+      padding: clamp(1.4rem, 4vw, 2.4rem);
     }
 
-    @media (min-width: 860px) {
-      .llhm-hero {
-        grid-template-columns: 1.15fr 0.85fr;
-        align-items: center;
-        gap: 36px;
-      }
+    .llhm-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .llhm-hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 70% 50%;
+      display: block;
+    }
+
+    .llhm-hero-scrim {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(100deg, rgba(11, 17, 32, 0.88) 0%, rgba(11, 17, 32, 0.62) 48%, rgba(11, 17, 32, 0.28) 100%);
+      pointer-events: none;
+    }
+
+    .llhm-hero-copy {
+      position: relative;
+      z-index: 2;
+      max-width: 36rem;
+    }
+
+    .llhm-hero .llhm-eyebrow {
+      color: #e0f2fe;
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
     .llhm-brand {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(34px, 5vw, 48px);
+      font-size: clamp(38px, 6vw, 56px);
       font-weight: 700;
       letter-spacing: -0.03em;
-      line-height: 1.05;
-      color: var(--ll-ink);
-      margin: 0 0 10px 0;
+      line-height: 1.02;
+      color: #ffffff;
+      margin: 0 0 8px 0;
     }
 
-    .llhm-brand span {
-      color: var(--ll-blue);
+    .llhm-grad {
+      background: linear-gradient(100deg, #3b82f6 0%, #22d3e0 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .llhm-hero h1 {
       font-family: 'Space Grotesk', sans-serif;
-      font-size: clamp(22px, 2.8vw, 28px);
+      font-size: clamp(22px, 3vw, 30px);
       font-weight: 700;
       line-height: 1.2;
       letter-spacing: -0.02em;
-      color: var(--ll-ink);
+      color: #ffffff;
+      margin: 0 0 12px 0;
+    }
+
+    .llhm-kicker {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(18px, 2.4vw, 24px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
       margin: 0 0 14px 0;
+      color: #ffffff;
     }
 
     .llhm-lead {
       font-size: 16.5px;
       font-weight: 500;
-      color: var(--ll-muted);
+      color: rgba(226, 232, 240, 0.92);
       line-height: 1.6;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .llhm-highlight {
       display: inline-block;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
-      color: var(--ll-blue-deep);
-      background: rgba(29, 78, 216, 0.08);
-      border: 1px solid rgba(29, 78, 216, 0.14);
+      letter-spacing: 0.01em;
+      color: #67e8f9;
+      background: rgba(34, 211, 224, 0.12);
+      border: 1px solid rgba(34, 211, 224, 0.28);
       border-radius: 999px;
       padding: 7px 12px;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .llhm-actions {
@@ -224,33 +265,49 @@
       font-weight: 700;
       font-size: 14px;
       text-decoration: none;
-      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
     }
 
     .llhm-btn-primary {
       background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 45%, #0891b2 100%);
       color: #fff;
-      box-shadow: 0 10px 22px rgba(29, 78, 216, 0.26);
+      box-shadow: 0 10px 22px rgba(29, 78, 216, 0.35);
     }
 
     .llhm-btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 12px 26px rgba(29, 78, 216, 0.3);
+      box-shadow: 0 12px 26px rgba(29, 78, 216, 0.42);
     }
 
     .llhm-btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .llhm-btn-secondary:hover {
+      background: rgba(34, 211, 224, 0.12);
+      border-color: rgba(34, 211, 224, 0.45);
+      transform: translateY(-1px);
+    }
+
+    /* Non-hero secondary buttons stay light-theme */
+    .llhm-section .llhm-btn-secondary,
+    .llhm-split .llhm-btn-secondary,
+    .llhm-visit-actions .llhm-btn-secondary {
       background: #ffffff;
       color: var(--ll-blue-deep);
       border: 1px solid rgba(29, 78, 216, 0.18);
     }
 
-    .llhm-btn-secondary:hover {
+    .llhm-section .llhm-btn-secondary:hover,
+    .llhm-split .llhm-btn-secondary:hover,
+    .llhm-visit-actions .llhm-btn-secondary:hover {
       background: #f8fafc;
       border-color: rgba(29, 78, 216, 0.35);
-      transform: translateY(-1px);
     }
 
-    .llhm-hero-media img {
+    .llhm-media img {
       width: 100%;
       height: auto;
       display: block;
@@ -275,10 +332,6 @@
       letter-spacing: -0.02em;
       color: var(--ll-ink);
       margin: 8px 0 12px 0;
-    }
-
-    .llhm-section h2 span {
-      color: var(--ll-blue);
     }
 
     .llhm-section > p {
@@ -499,29 +552,31 @@
   <main class="llhm-page">
 
     <header class="llhm-hero llhm-glass">
+      <div class="llhm-hero-bg" aria-hidden="true">
+        <img
+          src="/assets/images/image-29700a14.webp"
+          alt=""
+          width="1250"
+          height="750"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high">
+      </div>
+      <div class="llhm-hero-scrim" aria-hidden="true"></div>
       <div class="llhm-hero-copy">
         <span class="llhm-eyebrow">
           <span class="llhm-eyebrow-dot" aria-hidden="true"></span>
           Wickford &amp; Essex · No-Fix-No-Fee
         </span>
-        <p class="llhm-brand">Launch<span>Layer</span></p>
+        <p class="llhm-brand">Launch<span class="llhm-grad">Layer</span></p>
         <h1>Modern PC, Laptop &amp; Mac Repair in Wickford</h1>
+        <p class="llhm-kicker"><span class="llhm-grad">Better Than The High Street</span></p>
         <p class="llhm-lead">Fast, friendly repairs for laptops, PCs, Macs and gaming rigs — with free diagnostics and clear, jargon-free advice.</p>
         <span class="llhm-highlight">No fix, no fee. Free collection across Essex.</span>
         <div class="llhm-actions">
           <a href="/contact" class="llhm-btn-primary">Get a Free Quote</a>
           <a href="/services" class="llhm-btn-secondary">View Our Services</a>
         </div>
-      </div>
-      <div class="llhm-hero-media">
-        <img
-          src="/assets/images/image-29700a14.webp"
-          alt="LaunchLayer home workshop banner"
-          width="1250"
-          height="750"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high">
       </div>
     </header>
 
@@ -530,7 +585,7 @@
         <span class="llhm-eyebrow-dot" aria-hidden="true"></span>
         Local workshop — accepting bookings
       </span>
-      <h2>The Local Advantage: <span>Better Than The High Street</span></h2>
+      <h2>The Local Advantage:<br><span class="llhm-grad">Better Than The High Street</span></h2>
       <p>Skip the high-street queues, the heavy lifting, and the parking charges. Our workshop service is built around your schedule — honest advice, fair prices, no pressure.</p>
 
       <div class="llhm-grid">
@@ -581,7 +636,7 @@
         </div>
         <a href="/business" class="llhm-btn-secondary">Explore Business Solutions</a>
       </div>
-      <div class="llhm-hero-media">
+      <div class="llhm-media">
         <img
           src="/assets/images/image-4307083f.png"
           alt="LaunchLayer workshop bench"
@@ -606,7 +661,7 @@
           </div>
         </div>
       </div>
-      <div class="llhm-hero-media">
+      <div class="llhm-media">
         <!-- Lightweight map placeholder link instead of heavy embed for mock perf -->
         <a href="https://maps.google.com/?q=32+Glebe+Road+Wickford+SS11+8EU" target="_blank" rel="noopener" aria-label="Open workshop location in Google Maps">
           <img
