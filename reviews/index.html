@@ -239,6 +239,7 @@
     
     
     <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
+<link rel="stylesheet" href="/assets/css/site-glass.css">
 </head>
 
   <body
@@ -250,7 +251,7 @@
           
         
       
-    "
+     llsite-body"
     tabindex="-1"
   >
     <div
@@ -557,10 +558,11 @@
   
 >
   
-    <div class="llrevpg-page">
+    <div class="llrevpg-page llsite-page">
 
   <div class="llrevpg-header">
-    <span class="llrevpg-eyebrow">Customer Verification</span>
+    <span class="llrevpg-eyebrow"><span class="llsite-eyebrow-dot" aria-hidden="true"></span> Customer Verification</span>
+    <p class="llsite-brand">LaunchLayer</p>
     <h1>What Our Clients Say</h1>
     <p class="llrevpg-lead">Real, unfiltered feedback from residential households, home offices, and small businesses across Wickford and the wider South Essex region.</p>
   </div>
@@ -605,139 +607,7 @@
 
 <script src="/assets/animate/bundle.js" defer charset="UTF-8"></script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
 
-.llrevpg-page, .llrevpg-page * {
-    box-sizing: border-box !important;
-    margin: 0;
-    padding: 0;
-}
-
-.llrevpg-page {
-    --lrv-ink: #0B1120;
-    --lrv-body: #4B5768;
-    --lrv-muted: #8792A2;
-    --lrv-line: #E4E9F1;
-    --lrv-surface: #FFFFFF;
-    --lrv-canvas: #F7F8FB;
-    --lrv-blue: #1D4ED8;
-    --lrv-blue-deep: #16309C;
-    --lrv-cyan: #0FB6C9;
-    --lrv-amber: #F59E0B;
-
-    --lrv-font-display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
-    --lrv-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --lrv-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-
-    max-width: 1100px !important;
-    margin: 32px auto 0 auto !important;
-    padding: 0 16px !important;
-    font-family: var(--lrv-font-body) !important;
-    color: var(--lrv-ink) !important;
-    -webkit-font-smoothing: antialiased;
-}
-
-.llrevpg-header {
-    text-align: center !important;
-    max-width: 720px !important;
-    margin: 0 auto 40px auto !important;
-}
-.llrevpg-eyebrow {
-    display: inline-block !important;
-    font-family: var(--lrv-font-mono) !important;
-    font-size: 11px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.09em !important;
-    text-transform: uppercase !important;
-    color: var(--lrv-blue-deep) !important;
-    background: rgba(29,78,216,0.07) !important;
-    border: 1px solid rgba(29,78,216,0.16) !important;
-    padding: 6px 13px !important;
-    border-radius: 100px !important;
-    margin-bottom: 16px !important;
-}
-.llrevpg-header h1 {
-    font-family: var(--lrv-font-display) !important;
-    font-size: clamp(30px, 3.6vw, 38px) !important;
-    font-weight: 700 !important;
-    color: var(--lrv-ink) !important;
-    letter-spacing: -0.02em !important;
-    line-height: 1.2 !important;
-    margin: 0 0 12px 0 !important;
-}
-.llrevpg-lead {
-    font-size: 16px !important;
-    color: var(--lrv-body) !important;
-    line-height: 1.6 !important;
-}
-
-/* ---------- Stat cards ---------- */
-.llrevpg-stats {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 18px !important;
-    margin-bottom: 48px !important;
-}
-@media (min-width: 700px) {
-    .llrevpg-stats { grid-template-columns: repeat(3, 1fr) !important; }
-}
-
-.llrevpg-stat-card {
-    border-radius: 15px;
-    padding: 1px;
-    background: linear-gradient(160deg, rgba(29,78,216,0.14), rgba(15,23,42,0.03));
-    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
-}
-.llrevpg-stat-card:hover { transform: translateY(-4px); }
-.llrevpg-stat-inner {
-    background: var(--lrv-surface) !important;
-    border-radius: 14px !important;
-    padding: 24px !important;
-    text-align: center !important;
-    height: 100%;
-    box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 8px 20px -16px rgba(15,23,42,0.1);
-}
-
-.llrevpg-stat-icon {
-    width: 42px !important;
-    height: 42px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    border-radius: 11px !important;
-    margin: 0 auto 14px auto !important;
-    background: linear-gradient(155deg, rgba(29,78,216,0.1), rgba(15,182,201,0.08)) !important;
-    border: 1px solid rgba(29,78,216,0.14) !important;
-}
-.llrevpg-stat-icon svg { width: 20px !important; height: 20px !important; color: var(--lrv-blue) !important; }
-.llrevpg-stat-card:first-child .llrevpg-stat-icon svg { color: var(--lrv-amber) !important; }
-
-.llrevpg-stat-inner h3 {
-    font-family: var(--lrv-font-display) !important;
-    font-size: 16.5px !important;
-    font-weight: 700 !important;
-    color: var(--lrv-ink) !important;
-    margin: 0 0 8px 0 !important;
-}
-.llrevpg-stat-inner p {
-    font-size: 13.5px !important;
-    color: var(--lrv-muted) !important;
-    line-height: 1.55 !important;
-}
-
-/* ---------- Live widget ---------- */
-.llrevpg-widget-wrap {
-    width: 100% !important;
-    display: block !important;
-    min-height: 240px !important; /* holds height while the widget script loads, avoids layout jump */
-    margin-bottom: 40px !important;
-}
-
-@media screen and (min-width: 960px) {
-    .llrevpg-page { margin-bottom: 0 !important; }
-}
-</style>
   
   
 

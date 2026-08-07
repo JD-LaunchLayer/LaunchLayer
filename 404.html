@@ -202,6 +202,7 @@
     
     
     <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
+<link rel="stylesheet" href="/assets/css/site-glass.css">
 </head>
 
   <body
@@ -213,7 +214,7 @@
           
         
       
-    "
+     llsite-body"
     tabindex="-1"
   >
     <div
@@ -532,6 +533,7 @@
         <img src="/assets/images/image-2ca0b865.png" alt="LaunchLayer Logo">
     </div>
 
+    <p class="llsite-brand" style="font-size:clamp(1.7rem,3.5vw,2.2rem);margin:0 0 8px;">LaunchLayer</p>
     <h1>Looks like a broken link...</h1>
 
     <p class="error-lead">Don't worry — while this specific page isn't here, fixing technical faults is our exact specialty. Let's get your home office setup or laptop repair back on track.</p>
@@ -549,245 +551,7 @@
 
 </div>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
 
-.ll404-card, .ll404-card * {
-    box-sizing: border-box !important;
-    margin: 0;
-}
-
-.ll404-card {
-    --ll4-ink: #0B1120;
-    --ll4-body: #4B5768;
-    --ll4-muted: #8792A2;
-    --ll4-line: #E4E9F1;
-    --ll4-surface: #FFFFFF;
-    --ll4-canvas: #F7F8FB;
-    --ll4-blue: #1D4ED8;
-    --ll4-blue-deep: #16309C;
-    --ll4-cyan: #0FB6C9;
-
-    --ll4-font-display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
-    --ll4-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --ll4-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-
-    text-align: center !important;
-    max-width: 600px !important;
-    margin: 40px auto 0 auto !important;
-    padding: 32px 24px !important;
-    font-family: var(--ll4-font-body) !important;
-    -webkit-font-smoothing: antialiased;
-}
-
-/* ---------- The fun bit: glitchy error readout ---------- */
-.ll404-error-display {
-    position: relative;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 28px 44px;
-    margin-bottom: 20px;
-    background: var(--ll4-canvas);
-    border-radius: 20px;
-}
-.ll404-code {
-    font-family: var(--ll4-font-display) !important;
-    font-size: 72px !important;
-    font-weight: 700 !important;
-    line-height: 1 !important;
-    letter-spacing: -0.02em !important;
-    background: linear-gradient(100deg, var(--ll4-blue) 0%, var(--ll4-cyan) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    display: inline-block;
-    transition: transform 0.2s cubic-bezier(0.16,1,0.3,1), filter 0.2s ease;
-    cursor: default;
-}
-.ll404-error-display:hover .ll404-code {
-    animation: ll404-glitch 0.4s steps(2, end) 2;
-}
-@keyframes ll404-glitch {
-    0%   { transform: translate(0, 0); filter: hue-rotate(0deg); }
-    25%  { transform: translate(-2px, 1px); filter: hue-rotate(20deg); }
-    50%  { transform: translate(2px, -1px); filter: hue-rotate(-15deg); }
-    75%  { transform: translate(-1px, -1px); filter: hue-rotate(10deg); }
-    100% { transform: translate(0, 0); filter: hue-rotate(0deg); }
-}
-.ll404-readout {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 2px !important;
-    font-family: var(--ll4-font-mono) !important;
-    font-size: 11.5px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.06em !important;
-    color: var(--ll4-muted) !important;
-}
-.ll404-cursor {
-    display: inline-block !important;
-    width: 6px !important;
-    height: 12px !important;
-    margin-left: 3px !important;
-    background: var(--ll4-cyan) !important;
-    animation: ll404-blink 1s step-end infinite;
-}
-@keyframes ll404-blink {
-    0%, 49% { opacity: 1; }
-    50%, 100% { opacity: 0; }
-}
-
-/* scan-corner brackets — same signature as the homepage dashboard cards */
-.ll404-scan-corner {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    border: 2px solid var(--ll4-blue);
-    opacity: 0.5;
-}
-.ll404-tl { top: 10px; left: 10px; border-right: none; border-bottom: none; }
-.ll404-tr { top: 10px; right: 10px; border-left: none; border-bottom: none; }
-.ll404-bl { bottom: 10px; left: 10px; border-right: none; border-top: none; }
-.ll404-br { bottom: 10px; right: 10px; border-left: none; border-top: none; }
-
-/* ---------- Logo / heading / body ---------- */
-.logo-wrapper {
-    margin: 0 auto 16px auto !important;
-    line-height: 1 !important;
-}
-.logo-wrapper img {
-    max-width: 200px !important;
-    height: auto !important;
-    display: inline-block !important;
-}
-
-.ll404-card h1 {
-    font-family: var(--ll4-font-display) !important;
-    font-size: 30px !important;
-    font-weight: 700 !important;
-    color: var(--ll4-ink) !important;
-    letter-spacing: -0.02em !important;
-    margin: 0 0 12px 0 !important;
-    line-height: 1.25 !important;
-}
-
-.error-lead {
-    font-size: 15px !important;
-    color: var(--ll4-body) !important;
-    line-height: 1.55 !important;
-    margin: 0 0 24px 0 !important;
-}
-
-/* ---------- Search box ---------- */
-.search-box-container {
-    max-width: 380px !important;
-    margin: 0 auto 28px auto !important;
-}
-.search-box-container label {
-    display: block !important;
-    font-family: var(--ll4-font-mono) !important;
-    font-size: 10.5px !important;
-    font-weight: 700 !important;
-    color: var(--ll4-muted) !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.07em !important;
-    margin-bottom: 8px !important;
-    text-align: center !important;
-}
-.search-box-container input {
-    width: 100% !important;
-    padding: 12px 16px !important;
-    border: 1px solid var(--ll4-line) !important;
-    border-radius: 9px !important;
-    font-size: 14px !important;
-    background-color: var(--ll4-surface) !important;
-    box-shadow: inset 0 1px 3px rgba(15,23,42,0.02) !important;
-    font-family: inherit !important;
-    color: var(--ll4-ink) !important;
-    transition: border-color 0.25s cubic-bezier(0.16,1,0.3,1) !important;
-}
-.search-box-container input:focus {
-    outline: none !important;
-    border-color: var(--ll4-blue) !important;
-}
-
-/* ---------- Actions ---------- */
-.action-stack {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
-    max-width: 320px !important;
-    margin: 0 auto !important;
-}
-.cta-primary-btn {
-    display: block !important;
-    background: linear-gradient(100deg, var(--ll4-blue) 0%, var(--ll4-blue-deep) 100%) !important;
-    color: #ffffff !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    font-weight: 700 !important;
-    font-size: 14.5px !important;
-    padding: 13px !important;
-    border-radius: 9px !important;
-    box-shadow: 0 8px 18px -10px rgba(29,78,216,0.5) !important;
-    transition: transform 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease !important;
-}
-.cta-primary-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 22px -10px rgba(29,78,216,0.6) !important;
-}
-.cta-secondary-btn {
-    display: block !important;
-    text-align: center !important;
-    text-decoration: none !important;
-    font-weight: 700 !important;
-    color: var(--ll4-blue) !important;
-    border: 1px solid rgba(29,78,216,0.2) !important;
-    padding: 12px !important;
-    border-radius: 9px !important;
-    background: var(--ll4-surface) !important;
-    font-size: 14px !important;
-    transition: background-color 0.25s ease, transform 0.25s cubic-bezier(0.16,1,0.3,1) !important;
-}
-.cta-secondary-btn:hover {
-    background-color: var(--ll4-canvas) !important;
-    transform: translateY(-2px);
-}
-.home-link {
-    font-size: 13.5px !important;
-    color: var(--ll4-muted) !important;
-    text-decoration: underline !important;
-    margin-top: 6px !important;
-    font-weight: 600 !important;
-    display: inline-block !important;
-}
-
-.ll404-card a:focus-visible,
-.search-box-container input:focus-visible {
-    outline: 2px solid var(--ll4-blue) !important;
-    outline-offset: 2px !important;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .ll404-card *, .ll404-code, .ll404-cursor { animation: none !important; transition: none !important; }
-}
-
-/* ---------- Mobile ---------- */
-@media (max-width: 899px) {
-    .ll404-card {
-        margin: 16px auto 0 auto !important;
-        padding: 20px 16px !important;
-    }
-    .ll404-error-display { padding: 22px 30px !important; }
-    .ll404-code { font-size: 54px !important; }
-    .logo-wrapper img { max-width: 170px !important; }
-    .ll404-card h1 { font-size: 25px !important; }
-    .error-lead { margin-bottom: 20px !important; }
-    .search-box-container { margin-bottom: 24px !important; }
-}
-</style>
   
   
 

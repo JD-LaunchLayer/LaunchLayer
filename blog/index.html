@@ -350,6 +350,7 @@
     
     
     <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
+<link rel="stylesheet" href="/assets/css/site-glass.css">
 </head>
 
   <body
@@ -361,7 +362,7 @@
           
         
       
-    "
+     llsite-body"
     tabindex="-1"
   >
     <div
@@ -665,119 +666,7 @@
   
 >
   
-    <style>
-  /* ── Core Variables (New Theme) ── */
-  .blog-hero-wrap *, .blog-hero-wrap *::before, .blog-hero-wrap *::after { box-sizing: border-box; }
-  
-  .blog-hero-wrap {
-    --blue:        #1d4ed8;   
-    --blue-hover:  #1e40af;   
-    --blue-light:  #eff6ff;   
     
-    --text-primary:   #0f172a;
-    --text-secondary: #475569;
-    --text-tertiary:  #64748b;
-    
-    --bg-primary:   #ffffff;
-    --bg-secondary: #f8fafc;
-    --border:       #e2e8f0;
-    
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    max-width: 900px;
-    margin: 40px auto 20px auto;
-    padding: 0 20px;
-    text-align: center;
-  }
-
-  /* ── Header Typography ── */
-  .blog-subtag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-weight: 800;
-    color: var(--blue);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    background: var(--blue-light);
-    padding: 6px 14px;
-    border-radius: 8px;
-  }
-  .blog-subtag svg {
-    width: 16px;
-    height: 16px;
-    stroke-width: 2.5;
-  }
-
-  .blog-hero-wrap h1 {
-    font-size: 36px;
-    font-weight: 800;
-    color: var(--text-primary);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    margin: 0 0 16px 0;
-  }
-  @media (min-width: 768px) {
-    .blog-hero-wrap h1 { font-size: 42px; }
-  }
-
-  .blog-lead {
-    font-size: 16px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto 32px auto;
-  }
-
-  /* ── Interactive Category Filters ── */
-  .blog-filters {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding-bottom: 32px;
-    border-bottom: 1px solid var(--border);
-  }
-  
-  .filter-pill {
-    font-size: 13.5px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border);
-    padding: 8px 16px;
-    border-radius: 999px;
-    text-decoration: none;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-  }
-  .filter-pill:hover {
-    color: var(--text-primary);
-    border-color: #cbd5e1;
-    background-color: var(--bg-primary);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05);
-  }
-  
-  /* The Active State (Handled by JS) */
-  .filter-pill.active-filter {
-    background-color: var(--blue);
-    color: #ffffff;
-    border-color: var(--blue);
-    box-shadow: 0 4px 10px rgba(29, 78, 216, 0.2);
-  }
-  .filter-pill.active-filter:hover {
-    background-color: var(--blue-hover);
-    border-color: var(--blue-hover);
-  }
-
-  @media (max-width: 600px) {
-    .blog-hero-wrap { margin-top: 24px; padding: 0 16px; }
-    .filter-pill { font-size: 13px; padding: 6px 14px; }
-    .blog-filters { gap: 8px; padding-bottom: 24px; }
-  }
-</style>
 
 <div class="blog-hero-wrap">
   
@@ -786,7 +675,8 @@
     Technical Knowledge Base
   </span>
   
-  <h1>LaunchLayer Tech Blog &amp; Insights</h1>
+  <p class="llsite-brand">LaunchLayer</p>
+  <h1>Tech Blog &amp; Insights</h1>
   
   <p class="blog-lead">
     Simple, jargon-free technology guides, security warnings, and digital maintenance checklists designed to protect and power South Essex households and growing businesses.

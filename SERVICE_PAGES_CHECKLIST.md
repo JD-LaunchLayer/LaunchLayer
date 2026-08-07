@@ -1,5 +1,21 @@
 # Glass overhaul checklist
 
+## Site chrome (this pass)
+
+| Page | Notes |
+|------|-------|
+| /contact | Intro + coverage glass; **form untouched** |
+| /faqs | Glass header + groups |
+| /privacy-policy | Glass legal panels |
+| /reviews | Glass header/stats; Featurable kept |
+| /blog (+ categories) | Glass hero + filters |
+| /blog/* posts | Glass article shell |
+| /404 | Glass card |
+
+Shared CSS: `/assets/css/site-glass.css`
+
+## Service / local SEO pages
+
 | Page | Type | Hero |
 |------|------|------|
 | /basildon-pc-repair | Town hub | `basildon-town.jpg` |
