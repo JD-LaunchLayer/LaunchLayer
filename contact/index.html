@@ -989,7 +989,7 @@
         --ll-form-accent-2: #1d4ed8;
         width: 100%;
         max-width: 100%;
-        padding-bottom: 5.5rem;
+        padding-bottom: 0;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-panel {
@@ -1239,7 +1239,28 @@
         }
 
         #block-6c1dceaebe135ff2c7df .ll-contact-shell {
-          padding-bottom: 6.5rem;
+          padding-bottom: 0;
+        }
+      }
+
+      /* Collapse oversized Squarespace section space under the form */
+      [data-section-id="682e44bcef3a173ba519019d"].page-section {
+        min-height: 0 !important;
+      }
+
+      [data-section-id="682e44bcef3a173ba519019d"].page-section > .content-wrapper {
+        padding-top: clamp(1.25rem, 4vw, 2.5rem) !important;
+        padding-bottom: clamp(1rem, 3vw, 1.75rem) !important;
+      }
+
+      @media (max-width: 767px) {
+        [data-section-id="682e44bcef3a173ba519019d"].page-section > .content-wrapper {
+          padding-top: 1.25rem !important;
+          padding-bottom: 0.85rem !important;
+        }
+
+        .fe-block-6c1dceaebe135ff2c7df {
+          align-self: start;
         }
       }
 
