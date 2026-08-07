@@ -515,7 +515,7 @@
   display: grid;
   position: relative;
   grid-area: 1/1/-1/-1;
-  grid-template-rows: repeat(101,minmax(24px, auto));
+  grid-template-rows: repeat(6,minmax(24px, auto));
   grid-template-columns:
     minmax(var(--grid-gutter), 1fr)
     repeat(8, minmax(0, var(--cell-max-width)))
@@ -539,7 +539,7 @@
     --row-height-scaling-factor: 0.0215;
     --container-width: min(var(--sqs-site-max-width, 1500px), calc(100vw - var(--sqs-site-gutter, 4vw) * 2 - var(--inset-padding) ));
 
-    grid-template-rows: repeat(63,minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
+    grid-template-rows: repeat(1,minmax(calc(var(--container-width) * var(--row-height-scaling-factor)), auto));
     grid-template-columns:
       minmax(var(--grid-gutter), 1fr)
       repeat(24, minmax(0, var(--cell-max-width)))
@@ -549,7 +549,7 @@
 
 
   .fe-block-debe1f9c96b1d850580e {
-    grid-area: 1/2/102/10;
+    grid-area: 1/2/7/10;
     z-index: 1;
 
     @media (max-width: 767px) {
@@ -570,7 +570,7 @@
 
   @media (min-width: 768px) {
     .fe-block-debe1f9c96b1d850580e {
-      grid-area: 1/2/64/26;
+      grid-area: 1/2/2/26;
       z-index: 1;
 
       
