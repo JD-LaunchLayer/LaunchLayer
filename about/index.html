@@ -21,6 +21,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
 
   <!-- STYLES SYSTEM -->
   <style>
@@ -32,32 +33,84 @@
 
     body {
       font-family: 'Inter', -apple-system, sans-serif !important;
-      background-color: #FFFFFF !important;
-      color: #0B1120 !important;
+      background-color: #ececec !important;
+      color: #0b1120 !important;
       line-height: 1.5;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* SVG SAFETY */
     svg:not([width]) {
       max-width: 100%;
       height: auto;
     }
 
     /* ----------------------------------------------------
-       ABOUT PAGE CONTENT
+       ABOUT PAGE — light glass (site grey + readable ink)
+       Same frosted-panel logic as Contact, light-theme palette
        ---------------------------------------------------- */
-    .llabt-page {
-      --lla-ink: #0B1120;
-      --lla-body: #4B5768;
-      --lla-line: #E4E9F1;
-      --lla-surface: #FFFFFF;
-      --lla-canvas: #F7F8FB;
-      --lla-blue: #1D4ED8;
-      --lla-blue-deep: #16309C;
+    .llabt-atmosphere {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse 65% 45% at 85% 8%, rgba(29, 78, 216, 0.10), transparent 58%),
+        radial-gradient(ellipse 55% 40% at 8% 78%, rgba(34, 211, 224, 0.08), transparent 55%),
+        linear-gradient(180deg, #f4f5f7 0%, #ececec 48%, #e6e8ec 100%);
+    }
 
+    .llabt-page {
+      --lla-ink: #0b1120;
+      --lla-body: #334155;
+      --lla-muted: #475569;
+      --lla-line: rgba(15, 23, 42, 0.10);
+      --lla-blue: #1d4ed8;
+      --lla-blue-deep: #1e40af;
+      --lla-cyan: #0891b2;
+      --lla-glass:
+        linear-gradient(155deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.72) 48%, rgba(239, 246, 255, 0.78)),
+        rgba(255, 255, 255, 0.62);
+
+      position: relative;
+      z-index: 1;
       max-width: 1080px !important;
-      margin: 40px auto 60px auto !important;
+      margin: 32px auto 72px auto !important;
       padding: 0 20px !important;
+    }
+
+    .llabt-glass {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      border-radius: 22px;
+      background: var(--lla-glass);
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.08),
+        0 2px 8px rgba(15, 23, 42, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(18px) saturate(1.2);
+      -webkit-backdrop-filter: blur(18px) saturate(1.2);
+      animation: llabt-rise 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .llabt-glass::before {
+      content: "";
+      position: absolute;
+      inset: -38% auto auto 58%;
+      width: 220px;
+      height: 220px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(29, 78, 216, 0.12), transparent 68%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    @keyframes llabt-rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .llabt-eyebrow {
@@ -67,8 +120,8 @@
       letter-spacing: 0.09em !important;
       text-transform: uppercase !important;
       color: var(--lla-blue-deep) !important;
-      background: rgba(29, 78, 216, 0.07) !important;
-      border: 1px solid rgba(29, 78, 216, 0.16) !important;
+      background: rgba(29, 78, 216, 0.08) !important;
+      border: 1px solid rgba(29, 78, 216, 0.18) !important;
       padding: 6px 13px !important;
       border-radius: 100px !important;
       margin-bottom: 14px !important;
@@ -77,16 +130,19 @@
     .llabt-hero {
       display: flex !important;
       flex-direction: column !important;
-      gap: 32px !important;
-      margin-bottom: 50px !important;
-      border-bottom: 1px solid var(--lla-line) !important;
-      padding-bottom: 40px !important;
+      gap: 28px !important;
+      margin-bottom: 28px !important;
+      padding: clamp(1.25rem, 3.5vw, 1.9rem) !important;
     }
 
     @media (min-width: 768px) {
-      .llabt-hero { flex-direction: row !important; align-items: center !important; }
-      .llabt-hero-content { flex: 1.2 !important; }
-      .llabt-hero-image { flex: 0.8 !important; }
+      .llabt-hero {
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 36px !important;
+      }
+      .llabt-hero-content { flex: 1.15 !important; min-width: 0; }
+      .llabt-hero-image { flex: 0.85 !important; min-width: 0; }
     }
 
     .llabt-hero h1 {
@@ -94,7 +150,9 @@
       font-size: clamp(28px, 3.6vw, 38px) !important;
       font-weight: 700 !important;
       line-height: 1.16 !important;
-      margin: 0 0 18px 0 !important;
+      margin: 0 0 16px 0 !important;
+      color: var(--lla-ink) !important;
+      letter-spacing: -0.02em;
     }
 
     .llabt-lead {
@@ -105,11 +163,16 @@
       margin-bottom: 12px !important;
     }
 
+    .llabt-copy {
+      color: var(--lla-muted) !important;
+      line-height: 1.65 !important;
+    }
+
     .llabt-facts {
       display: flex !important;
       flex-wrap: wrap !important;
       gap: 10px !important;
-      margin-top: 24px !important;
+      margin-top: 22px !important;
     }
 
     .llabt-fact {
@@ -119,42 +182,85 @@
       font-size: 12px !important;
       font-weight: 700 !important;
       color: var(--lla-blue-deep) !important;
-      background: var(--lla-canvas) !important;
+      background: rgba(255, 255, 255, 0.72) !important;
       border: 1px solid var(--lla-line) !important;
       padding: 8px 14px !important;
-      border-radius: 8px !important;
+      border-radius: 999px !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+      transition: border-color 180ms ease, transform 180ms ease, background 180ms ease;
     }
 
-    .llabt-fact svg, .llabt-promise-icon svg, .llabt-btn-green svg {
+    .llabt-fact:hover {
+      border-color: rgba(29, 78, 216, 0.28);
+      background: #ffffff !important;
+      transform: translateY(-1px);
+    }
+
+    .llabt-fact svg,
+    .llabt-promise-icon svg,
+    .llabt-btn-green svg {
       width: 18px !important;
       height: 18px !important;
       flex-shrink: 0 !important;
+      color: var(--lla-blue);
     }
 
-    .llabt-hero-image img, .llabt-impact-image img, .llabt-founder-image img {
+    .llabt-hero-image img,
+    .llabt-impact-image img,
+    .llabt-founder-image img {
       width: 100% !important;
       height: auto !important;
       border-radius: 18px !important;
       object-fit: cover !important;
-      background: var(--lla-canvas) !important;
-      border: 1px solid var(--lla-line) !important;
+      background: #f1f5f9 !important;
+      border: 1px solid rgba(15, 23, 42, 0.08) !important;
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
     }
 
-    .llabt-promise { margin-bottom: 60px !important; }
-    .llabt-section-header h2 { font-family: 'Space Grotesk', sans-serif !important; font-size: 28px !important; font-weight: 700 !important; margin: 8px 0 12px 0 !important; }
+    .llabt-promise {
+      margin-bottom: 28px !important;
+      padding: clamp(1.25rem, 3.5vw, 1.9rem) !important;
+      animation-delay: 80ms;
+    }
+
+    .llabt-section-header h2,
+    .llabt-impact h2,
+    .llabt-founder h2 {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: clamp(24px, 3vw, 28px) !important;
+      font-weight: 700 !important;
+      margin: 8px 0 12px 0 !important;
+      color: var(--lla-ink) !important;
+      letter-spacing: -0.02em;
+    }
+
+    .llabt-section-header p {
+      color: var(--lla-muted) !important;
+      max-width: 46rem;
+      line-height: 1.6;
+    }
 
     .llabt-promise-grid {
       display: grid !important;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-      gap: 20px !important;
-      margin-top: 28px !important;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+      gap: 16px !important;
+      margin-top: 24px !important;
     }
 
     .llabt-promise-card {
-      background: var(--lla-canvas) !important;
+      background: rgba(255, 255, 255, 0.7) !important;
       border: 1px solid var(--lla-line) !important;
       border-radius: 16px !important;
-      padding: 28px !important;
+      padding: 22px !important;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+      transition: transform 200ms ease, border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
+    }
+
+    .llabt-promise-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(29, 78, 216, 0.22);
+      background: #ffffff !important;
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
     }
 
     .llabt-promise-icon {
@@ -162,63 +268,178 @@
       height: 42px !important;
       background: rgba(29, 78, 216, 0.1) !important;
       color: var(--lla-blue) !important;
+      border: 1px solid rgba(29, 78, 216, 0.14);
       border-radius: 12px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      margin-bottom: 18px !important;
+      margin-bottom: 16px !important;
     }
 
-    .llabt-promise-card h3 { font-family: 'Space Grotesk', sans-serif !important; font-size: 18px !important; font-weight: 700 !important; margin: 0 0 8px 0 !important; }
-    .llabt-promise-card p { font-size: 14px !important; color: var(--lla-body) !important; line-height: 1.55 !important; }
+    .llabt-promise-card h3 {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: 18px !important;
+      font-weight: 700 !important;
+      margin: 0 0 8px 0 !important;
+      color: var(--lla-ink) !important;
+    }
 
-    .llabt-impact, .llabt-founder {
+    .llabt-promise-card p {
+      font-size: 14px !important;
+      color: var(--lla-muted) !important;
+      line-height: 1.55 !important;
+    }
+
+    .llabt-impact,
+    .llabt-founder {
       display: flex !important;
       flex-direction: column !important;
-      gap: 32px !important;
-      background: var(--lla-canvas) !important;
-      border: 1px solid var(--lla-line) !important;
-      border-radius: 20px !important;
-      padding: 32px !important;
-      margin-bottom: 50px !important;
+      gap: 28px !important;
+      padding: clamp(1.25rem, 3.5vw, 1.9rem) !important;
+      margin-bottom: 28px !important;
     }
+
+    .llabt-impact { animation-delay: 140ms; }
+    .llabt-founder { animation-delay: 200ms; }
 
     @media (min-width: 768px) {
-      .llabt-impact, .llabt-founder { flex-direction: row !important; align-items: center !important; }
-      .llabt-impact-content, .llabt-founder-content { flex: 1.2 !important; }
-      .llabt-impact-image, .llabt-founder-image { flex: 0.8 !important; }
+      .llabt-impact,
+      .llabt-founder {
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 36px !important;
+      }
+      .llabt-impact-content,
+      .llabt-founder-content { flex: 1.15 !important; min-width: 0; }
+      .llabt-impact-image,
+      .llabt-founder-image { flex: 0.85 !important; min-width: 0; }
     }
 
-    .llabt-impact h2, .llabt-founder h2 { font-family: 'Space Grotesk', sans-serif !important; font-size: 26px !important; margin: 10px 0 14px 0 !important; }
-    .llabt-impact p, .llabt-founder p { color: var(--lla-body) !important; line-height: 1.6 !important; margin-bottom: 12px !important; }
+    .llabt-impact p,
+    .llabt-founder p {
+      color: var(--lla-muted) !important;
+      line-height: 1.65 !important;
+      margin-bottom: 12px !important;
+    }
 
-    .llabt-btn-green, .llabt-btn-primary, .llabt-btn-secondary {
+    .llabt-impact strong,
+    .llabt-founder strong {
+      color: var(--lla-ink);
+      font-weight: 700;
+    }
+
+    .llabt-btn-green,
+    .llabt-btn-primary,
+    .llabt-btn-secondary {
       display: inline-flex !important;
       align-items: center !important;
       justify-content: center !important;
       gap: 8px !important;
       padding: 12px 22px !important;
-      border-radius: 100px !important;
-      font-weight: 600 !important;
+      border-radius: 999px !important;
+      font-weight: 700 !important;
       font-size: 14px !important;
       text-decoration: none !important;
+      transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease, background 180ms ease;
     }
 
-    .llabt-btn-green { background: #10B981 !important; color: #FFFFFF !important; }
-    .llabt-btn-primary { background: var(--lla-blue) !important; color: #FFFFFF !important; }
-    .llabt-btn-secondary { background: #E0E7FF !important; color: var(--lla-blue-deep) !important; }
+    .llabt-btn-green {
+      background: linear-gradient(135deg, #059669 0%, #10b981 55%, #34d399 100%) !important;
+      color: #ffffff !important;
+      box-shadow: 0 12px 28px rgba(16, 185, 129, 0.24);
+      margin-top: 8px;
+    }
 
+    .llabt-btn-green:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.04);
+    }
+
+    .llabt-btn-primary {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 45%, #0891b2 100%) !important;
+      color: #ffffff !important;
+      box-shadow:
+        0 14px 30px rgba(29, 78, 216, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    }
+
+    .llabt-btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.04);
+      box-shadow:
+        0 18px 34px rgba(29, 78, 216, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    }
+
+    .llabt-btn-secondary {
+      background: rgba(255, 255, 255, 0.85) !important;
+      color: var(--lla-blue-deep) !important;
+      border: 1px solid rgba(29, 78, 216, 0.18);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    }
+
+    .llabt-btn-secondary:hover {
+      border-color: rgba(29, 78, 216, 0.35);
+      background: #ffffff !important;
+      transform: translateY(-1px);
+    }
+
+    /* CTA keeps a dark glass panel for contrast (still readable white text) */
     .llabt-cta-wrap {
-      background: var(--lla-ink) !important;
-      color: #FFFFFF !important;
-      border-radius: 20px !important;
-      padding: 48px 24px !important;
+      padding: clamp(2rem, 5vw, 3rem) 24px !important;
       text-align: center !important;
+      animation-delay: 260ms;
+      background:
+        linear-gradient(155deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.04) 42%, rgba(29, 78, 216, 0.18)),
+        rgba(11, 17, 32, 0.92) !important;
+      border: 1px solid rgba(255, 255, 255, 0.14) !important;
+      box-shadow:
+        0 22px 48px rgba(15, 23, 42, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
     }
 
-    .llabt-cta h2 { font-family: 'Space Grotesk', sans-serif !important; font-size: 30px !important; margin: 0 0 10px 0 !important; color: #FFFFFF !important; }
-    .llabt-cta p { color: #94A3B8 !important; font-size: 16px !important; margin-bottom: 26px !important; }
-    .llabt-cta-actions { display: flex !important; flex-wrap: wrap !important; gap: 12px !important; justify-content: center !important; }
+    .llabt-cta-wrap::before {
+      inset: auto auto -30% 20%;
+      background: radial-gradient(circle, rgba(34, 211, 224, 0.22), transparent 68%);
+    }
+
+    .llabt-cta h2 {
+      font-family: 'Space Grotesk', sans-serif !important;
+      font-size: clamp(26px, 3.2vw, 32px) !important;
+      margin: 0 0 10px 0 !important;
+      color: #ffffff !important;
+      letter-spacing: -0.02em;
+    }
+
+    .llabt-cta p {
+      color: rgba(226, 232, 240, 0.9) !important;
+      font-size: 16px !important;
+      margin-bottom: 26px !important;
+    }
+
+    .llabt-cta .llabt-btn-secondary {
+      background: rgba(255, 255, 255, 0.1) !important;
+      color: #f8fafc !important;
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .llabt-cta .llabt-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.16) !important;
+      border-color: rgba(34, 211, 224, 0.45);
+    }
+
+    .llabt-cta-actions {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 12px !important;
+      justify-content: center !important;
+    }
+
+    .launchlayer-master-footer {
+      position: relative;
+      z-index: 1;
+      background: #ffffff;
+    }
   </style>
 
   <!-- Schema.org -->
@@ -249,6 +470,8 @@
 </head>
 
 <body>
+
+  <div class="llabt-atmosphere" aria-hidden="true"></div>
 
   <!-- MASTER HEADER -->
   <header class="ll-site-header">
@@ -287,12 +510,12 @@
   <main class="llabt-page">
 
     <!-- HERO SECTION -->
-    <header class="llabt-hero">
+    <header class="llabt-hero llabt-glass">
       <div class="llabt-hero-content">
         <span class="llabt-eyebrow">Our Origin Story</span>
         <h1>Honest, Transparent PC &amp; Laptop Repair in Wickford &amp; Essex</h1>
         <p class="llabt-lead">LaunchLayer was built on a simple idea: computer support should be honest, highly accessible, and completely stress-free.</p>
-        <p style="color: var(--lla-body); line-height: 1.6;">Born right here in Wickford, LaunchLayer brings fair pricing, careful diagnostics, and a strict No-Fix, No-Fee promise to local homes and businesses.</p>
+        <p class="llabt-copy">Born right here in Wickford, LaunchLayer brings fair pricing, careful diagnostics, and a strict No-Fix, No-Fee promise to local homes and businesses.</p>
 
         <div class="llabt-facts">
           <span class="llabt-fact">
@@ -316,11 +539,11 @@
     </header>
 
     <!-- PROMISE GRID -->
-    <section class="llabt-promise">
+    <section class="llabt-promise llabt-glass">
       <div class="llabt-section-header">
         <span class="llabt-eyebrow">Our Promise</span>
         <h2>The LaunchLayer "No-Jargon" Guarantee</h2>
-        <p style="color: var(--lla-body);">We explain every fault in plain English, never push unneeded upgrades, and never charge hidden workshop fees.</p>
+        <p>We explain every fault in plain English, never push unneeded upgrades, and never charge hidden workshop fees.</p>
       </div>
 
       <div class="llabt-promise-grid">
@@ -351,7 +574,7 @@
     </section>
 
     <!-- COMMUNITY IMPACT -->
-    <section class="llabt-impact">
+    <section class="llabt-impact llabt-glass">
       <div class="llabt-impact-content">
         <span class="llabt-eyebrow">Backing Our Community</span>
         <h2>Keeping Wickford Vibrant, Clean &amp; Connected</h2>
@@ -368,7 +591,7 @@
     </section>
 
     <!-- FOUNDER SECTION -->
-    <section class="llabt-founder">
+    <section class="llabt-founder llabt-glass">
       <div class="llabt-founder-image">
         <img src="/assets/images/image-c4673dc1.png" alt="Jordan - Founder and Lead Engineer at LaunchLayer" loading="lazy">
       </div>
@@ -381,7 +604,7 @@
     </section>
 
     <!-- CTA BANNER -->
-    <section class="llabt-cta-wrap">
+    <section class="llabt-cta-wrap llabt-glass">
       <div class="llabt-cta">
         <h2>Ready to Fix Your Tech?</h2>
         <p>Book a free diagnostic check or speak directly with our workshop today.</p>
