@@ -164,6 +164,10 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "/assets/images/image-5043df46.jpg",
         "Active laptop display — Southend screen repair",
     ),
+    "brands-supported": (
+        "/assets/files/photo-1588872657578-7efd1f1555ed",
+        "Dell and Windows laptop — brands and devices LaunchLayer repairs",
+    ),
 }
 
 FLOATY_SLUGS = {
@@ -181,6 +185,7 @@ FLOATY_SLUGS = {
     "chelmsford-pc-repair",
     "southend-pc-repair",
     "rayleigh-laptop-service",
+    "brands-supported",
 }
 
 COMPACT_SLUGS = {
