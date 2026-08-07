@@ -743,8 +743,7 @@
     z-index: 2;
 
     @media (max-width: 767px) {
-      
-      
+      /* Overridden below — legacy SQS rows overlapped the intro block */
     }
   }
 
@@ -780,10 +779,38 @@
     z-index: 6;
 
     @media (max-width: 767px) {
-      
-        
-      
-      
+      /* Overridden below — legacy SQS rows overlapped the form block */
+    }
+  }
+
+  /* Mobile: stack intro then form. SQS placed intro rows 1–28 and form 26–55,
+     so the two cells overlapped and fields/cards visually merged. */
+  @media (max-width: 767px) {
+    .fe-682e44bcef3a173ba519019c {
+      display: flex !important;
+      flex-direction: column !important;
+      grid-template-rows: none !important;
+      row-gap: 1.25rem !important;
+      column-gap: 0 !important;
+    }
+
+    .fe-block-yui_3_17_2_1_1780042547748_2925,
+    .fe-block-6c1dceaebe135ff2c7df {
+      grid-area: auto !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      position: relative !important;
+      z-index: 1 !important;
+      align-self: stretch !important;
+      min-width: 0 !important;
+    }
+
+    .fe-block-yui_3_17_2_1_1780042547748_2925 {
+      order: 1 !important;
+    }
+
+    .fe-block-6c1dceaebe135ff2c7df {
+      order: 2 !important;
     }
   }
 
@@ -1071,33 +1098,53 @@
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name fieldset {
-        border: 0;
-        margin: 0;
-        padding: 0;
-        min-width: 0;
-        display: contents;
+        border: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        min-width: 0 !important;
+        display: contents !important;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        column-gap: 0.85rem;
-        row-gap: 0.4rem;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        column-gap: 0.85rem !important;
+        row-gap: 0.65rem !important;
+        align-items: start !important;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name legend.title {
-        grid-column: 1 / -1;
+        grid-column: 1 / -1 !important;
       }
 
-      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .field {
-        min-width: 0;
-        width: 100%;
-        display: grid;
-        gap: 0.4rem;
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .field,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .field.first-name,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .field.last-name {
+        float: none !important;
+        clear: none !important;
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: grid !important;
+        gap: 0.4rem !important;
+        box-sizing: border-box !important;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .field input {
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields {
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        clear: both !important;
+        box-sizing: border-box !important;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .caption,
@@ -1248,13 +1295,38 @@
       }
 
       @media (max-width: 640px) {
+        #block-6c1dceaebe135ff2c7df .ll-contact-panel {
+          padding: 1.05rem !important;
+        }
+
+        #block-6c1dceaebe135ff2c7df .ll-contact-form .field-list {
+          gap: 1rem !important;
+        }
+
+        /* Keep First/Last side-by-side, but with a real gap so cells don’t look fused */
         #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name {
-          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-          column-gap: 0.7rem;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+          column-gap: 0.75rem !important;
+          row-gap: 0.65rem !important;
+        }
+
+        #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
+        #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item select,
+        #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item textarea {
+          min-height: 48px;
+          padding: 0.85rem 0.9rem;
         }
 
         #block-6c1dceaebe135ff2c7df .ll-contact-shell {
           padding-bottom: 0;
+        }
+      }
+
+      @media (max-width: 380px) {
+        /* Very narrow phones: stack name fields so captions/inputs never collide */
+        #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name {
+          grid-template-columns: 1fr !important;
+          row-gap: 0.85rem !important;
         }
       }
 
