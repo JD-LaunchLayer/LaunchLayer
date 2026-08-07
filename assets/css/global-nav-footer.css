@@ -422,8 +422,11 @@
     flex-direction: column !important;
     gap: 4px !important;
     margin-top: 6px !important;
+    margin-bottom: 6px !important;
     padding-top: 10px !important;
+    padding-bottom: 10px !important;
     border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
   }
 
   .ll-dropdown-trigger {
@@ -466,6 +469,7 @@
     -webkit-backdrop-filter: none !important;
     padding: 0 !important;
     margin: 0 !important;
+    list-style: none !important;
     opacity: 1 !important;
     visibility: visible !important;
     display: flex !important;
@@ -476,6 +480,8 @@
 
   .ll-dropdown-menu li {
     width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .ll-dropdown-menu a {
@@ -493,6 +499,11 @@
     background-color: rgba(29, 78, 216, 0.07) !important;
     border-color: rgba(29, 78, 216, 0.14) !important;
     color: #1d4ed8 !important;
+  }
+
+  /* Keep Contact Us visually outside the Services group */
+  .ll-header-nav > li:last-child {
+    margin-top: 2px !important;
   }
 
   .ll-burger-input:checked ~ .ll-header-nav {
@@ -702,7 +713,7 @@ document.addEventListener('DOMContentLoaded', function() {
    MOBILE NAVIGATION SUBMENU & SEARCH BAR MOBILES UX CORRECTIONS
    ========================================================================== */
 
-/* Goal 1: Mobile Submenu Alignment (keep glass styling) */
+/* Goal 1: Mobile Submenu Alignment (flattened Services list) */
 @media (max-width: 991px) {
   .dropdown-menu, .sub-menu, .nav-dropdown, .ll-dropdown-menu {
     position: static !important;
@@ -712,14 +723,13 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   .dropdown-menu a, .sub-menu a, .nav-dropdown a, .ll-dropdown-menu a {
-    padding-left: 12px !important;
     text-align: left !important;
     margin-left: 0 !important;
     width: 100% !important;
     white-space: normal !important;
   }
 
-  /* Keep drawer submenu glass look; only neutralize absolute positioning */
+  /* Keep flattened list visible; never re-enable absolute dropdown in drawer */
   .ll-dropdown-container:hover .ll-dropdown-menu,
   .ll-dropdown-container:focus-within .ll-dropdown-menu,
   body .ll-dropdown-container:hover .ll-dropdown-menu,
@@ -728,7 +738,7 @@ document.addEventListener('DOMContentLoaded', function() {
     transform: none !important;
     opacity: 1 !important;
     visibility: visible !important;
-    display: block !important;
+    display: flex !important;
   }
 }
 
