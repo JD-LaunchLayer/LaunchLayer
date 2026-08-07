@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Glass Mock | LaunchLayer</title>
+  <meta name="description" content="Mock preview: LaunchLayer homepage restyled with the light frosted glass pattern used on About (scroll-friendly, no live backdrop blur).">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="canonical" href="https://www.launchlayer.uk/">
+  <link rel="icon" type="image/x-icon" href="/assets/images/image-cbf4c0a5.ico?format=100w">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      color: #0b1120 !important;
+      line-height: 1.5;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      background-color: #ececec !important;
+      background-image:
+        radial-gradient(ellipse 65% 45% at 85% 8%, rgba(29, 78, 216, 0.10), transparent 58%),
+        radial-gradient(ellipse 55% 40% at 8% 78%, rgba(34, 211, 224, 0.08), transparent 55%),
+        linear-gradient(180deg, #f4f5f7 0%, #ececec 48%, #e6e8ec 100%) !important;
+      background-attachment: scroll !important;
+    }
+
+    svg:not([width]) {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Mock banner — not indexed */
+    .llhm-mock-banner {
+      position: relative;
+      z-index: 2;
+      background: #0b1120;
+      color: #e2e8f0;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      padding: 8px 14px;
+    }
+
+    .llhm-mock-banner a {
+      color: #93c5fd;
+      margin-left: 8px;
+    }
+
+    .llhm-page {
+      --ll-ink: #0b1120;
+      --ll-body: #334155;
+      --ll-muted: #475569;
+      --ll-line: rgba(15, 23, 42, 0.10);
+      --ll-blue: #1d4ed8;
+      --ll-blue-deep: #1e40af;
+      --ll-glass: linear-gradient(155deg, #ffffff 0%, #fbfcfe 48%, #eff6ff 100%);
+
+      position: relative;
+      z-index: 1;
+      max-width: 1080px;
+      margin: 28px auto 72px auto;
+      padding: 0 20px;
+    }
+
+    /* Opaque frosted panels — no live backdrop-filter */
+    .llhm-glass {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      background: var(--ll-glass);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow:
+        0 12px 28px rgba(15, 23, 42, 0.06),
+        0 1px 3px rgba(15, 23, 42, 0.04),
+        inset 0 1px 0 #ffffff;
+      contain: layout paint style;
+    }
+
+    .llhm-glass::before {
+      content: "";
+      position: absolute;
+      inset: -38% auto auto 58%;
+      width: 180px;
+      height: 180px;
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(29, 78, 216, 0.10), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .llhm-glass > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .llhm-hero.llhm-glass {
+      animation: llhm-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes llhm-rise {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .llhm-hero.llhm-glass { animation: none !important; }
+      .llhm-card,
+      .llhm-btn-primary,
+      .llhm-btn-secondary,
+      .llhm-chip { transition: none !important; }
+    }
+
+    .llhm-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--ll-blue-deep);
+      background: rgba(29, 78, 216, 0.08);
+      border: 1px solid rgba(29, 78, 216, 0.18);
+      padding: 6px 13px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+
+    .llhm-eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #16a34a;
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18);
+    }
+
+    /* Hero — brand-forward, one CTA group, one dominant image */
+    .llhm-hero {
+      display: grid;
+      gap: 28px;
+      margin-bottom: 28px;
+      padding: clamp(1.25rem, 3.5vw, 1.9rem);
+    }
+
+    @media (min-width: 860px) {
+      .llhm-hero {
+        grid-template-columns: 1.15fr 0.85fr;
+        align-items: center;
+        gap: 36px;
+      }
+    }
+
+    .llhm-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(34px, 5vw, 48px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--ll-ink);
+      margin: 0 0 10px 0;
+    }
+
+    .llhm-brand span {
+      color: var(--ll-blue);
+    }
+
+    .llhm-hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(22px, 2.8vw, 28px);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--ll-ink);
+      margin: 0 0 14px 0;
+    }
+
+    .llhm-lead {
+      font-size: 16.5px;
+      font-weight: 500;
+      color: var(--ll-muted);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .llhm-highlight {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ll-blue-deep);
+      background: rgba(29, 78, 216, 0.08);
+      border: 1px solid rgba(29, 78, 216, 0.14);
+      border-radius: 999px;
+      padding: 7px 12px;
+      margin-bottom: 20px;
+    }
+
+    .llhm-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .llhm-btn-primary,
+    .llhm-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    }
+
+    .llhm-btn-primary {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 45%, #0891b2 100%);
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(29, 78, 216, 0.26);
+    }
+
+    .llhm-btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(29, 78, 216, 0.3);
+    }
+
+    .llhm-btn-secondary {
+      background: #ffffff;
+      color: var(--ll-blue-deep);
+      border: 1px solid rgba(29, 78, 216, 0.18);
+    }
+
+    .llhm-btn-secondary:hover {
+      background: #f8fafc;
+      border-color: rgba(29, 78, 216, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .llhm-hero-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 18px;
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+      background: #f1f5f9;
+    }
+
+    /* Advantages */
+    .llhm-section {
+      margin-bottom: 28px;
+      padding: clamp(1.25rem, 3.5vw, 1.9rem);
+      content-visibility: auto;
+      contain-intrinsic-size: 520px;
+    }
+
+    .llhm-section h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(24px, 3vw, 30px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ll-ink);
+      margin: 8px 0 12px 0;
+    }
+
+    .llhm-section h2 span {
+      color: var(--ll-blue);
+    }
+
+    .llhm-section > p {
+      color: var(--ll-muted);
+      max-width: 46rem;
+      line-height: 1.6;
+      margin-bottom: 22px;
+    }
+
+    .llhm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .llhm-card {
+      background: #ffffff;
+      border: 1px solid var(--ll-line);
+      border-radius: 16px;
+      padding: 20px;
+      transition: border-color 160ms ease, background 160ms ease;
+    }
+
+    .llhm-card:hover {
+      border-color: rgba(29, 78, 216, 0.22);
+      background: #f8fafc;
+    }
+
+    .llhm-icon {
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      color: var(--ll-blue);
+      background: rgba(29, 78, 216, 0.1);
+      border: 1px solid rgba(29, 78, 216, 0.14);
+    }
+
+    .llhm-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .llhm-card h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ll-ink);
+      margin: 0 0 8px 0;
+    }
+
+    .llhm-card p {
+      font-size: 14px;
+      color: var(--ll-muted);
+      line-height: 1.55;
+    }
+
+    .llhm-section-cta {
+      margin-top: 22px;
+    }
+
+    /* Split sections */
+    .llhm-split {
+      display: grid;
+      gap: 28px;
+      margin-bottom: 28px;
+      padding: clamp(1.25rem, 3.5vw, 1.9rem);
+      content-visibility: auto;
+      contain-intrinsic-size: 360px;
+    }
+
+    @media (min-width: 860px) {
+      .llhm-split {
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        gap: 36px;
+      }
+    }
+
+    .llhm-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 20px 0;
+    }
+
+    .llhm-chip {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ll-blue-deep);
+      background: #ffffff;
+      border: 1px solid var(--ll-line);
+      border-radius: 999px;
+      padding: 7px 12px;
+    }
+
+    .llhm-visit-card {
+      background: #ffffff;
+      border: 1px solid var(--ll-line);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .llhm-visit-card p {
+      color: var(--ll-muted);
+      margin-bottom: 8px;
+      line-height: 1.55;
+    }
+
+    .llhm-visit-card strong {
+      color: var(--ll-ink);
+      display: block;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .llhm-visit-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    /* Dark CTA — solid, no blur */
+    .llhm-cta {
+      text-align: center;
+      padding: clamp(2rem, 5vw, 3rem) 24px;
+      content-visibility: auto;
+      contain-intrinsic-size: 240px;
+      background: linear-gradient(155deg, #152038 0%, #0b1120 55%, #102a56 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.14);
+    }
+
+    .llhm-cta::before {
+      background: radial-gradient(circle, rgba(34, 211, 224, 0.16), transparent 70%);
+      inset: auto auto -30% 20%;
+    }
+
+    .llhm-cta h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(26px, 3.2vw, 32px);
+      color: #fff;
+      letter-spacing: -0.02em;
+      margin: 0 0 10px 0;
+    }
+
+    .llhm-cta p {
+      color: rgba(226, 232, 240, 0.9);
+      margin-bottom: 22px;
+    }
+
+    .llhm-cta .llhm-btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: #f8fafc;
+      border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    .llhm-cta .llhm-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(34, 211, 224, 0.45);
+    }
+
+    .llhm-cta .llhm-actions {
+      justify-content: center;
+    }
+
+    .launchlayer-master-footer {
+      position: relative;
+      z-index: 1;
+      background: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="llhm-mock-banner">
+    MOCK PREVIEW — home + light glass (perf-safe)
+    <a href="/">Live home</a>
+    <a href="/about">About</a>
+  </div>
+
+  <header class="ll-site-header">
+    <div class="ll-header-wrap">
+      <a href="/" class="ll-header-logo">
+        <img src="/assets/images/image-0961fde4.png" alt="LaunchLayer" style="height: 38px; width: auto; display: block;" onError="this.onerror=null;this.src='/assets/images/image-cbf4c0a5.ico';">
+      </a>
+
+      <input type="checkbox" id="ll-burger-toggle" class="ll-burger-input" style="display:none;">
+      <label for="ll-burger-toggle" class="ll-burger-btn" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <ul class="ll-header-nav">
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li class="ll-dropdown-container">
+          <span class="ll-dropdown-trigger">
+            Services
+            <svg class="ll-dropdown-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
+          </span>
+          <ul class="ll-dropdown-menu">
+            <li><a href="/services">All Services & Pricing</a></li>
+            <li><a href="/custom-pc-builds">Custom PC Builds</a></li>
+            <li><a href="/business">Business Solutions</a></li>
+          </ul>
+        </li>
+        <li><a href="/contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="llhm-page">
+
+    <header class="llhm-hero llhm-glass">
+      <div class="llhm-hero-copy">
+        <span class="llhm-eyebrow">
+          <span class="llhm-eyebrow-dot" aria-hidden="true"></span>
+          Wickford &amp; Essex · No-Fix-No-Fee
+        </span>
+        <p class="llhm-brand">Launch<span>Layer</span></p>
+        <h1>Modern PC, Laptop &amp; Mac Repair in Wickford</h1>
+        <p class="llhm-lead">Fast, friendly repairs for laptops, PCs, Macs and gaming rigs — with free diagnostics and clear, jargon-free advice.</p>
+        <span class="llhm-highlight">No fix, no fee. Free collection across Essex.</span>
+        <div class="llhm-actions">
+          <a href="/contact" class="llhm-btn-primary">Get a Free Quote</a>
+          <a href="/services" class="llhm-btn-secondary">View Our Services</a>
+        </div>
+      </div>
+      <div class="llhm-hero-media">
+        <img
+          src="/assets/images/image-29700a14.webp"
+          alt="LaunchLayer home workshop banner"
+          width="1250"
+          height="750"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high">
+      </div>
+    </header>
+
+    <section class="llhm-section llhm-glass">
+      <span class="llhm-eyebrow">
+        <span class="llhm-eyebrow-dot" aria-hidden="true"></span>
+        Local workshop — accepting bookings
+      </span>
+      <h2>The Local Advantage: <span>Better Than The High Street</span></h2>
+      <p>Skip the high-street queues, the heavy lifting, and the parking charges. Our workshop service is built around your schedule — honest advice, fair prices, no pressure.</p>
+
+      <div class="llhm-grid">
+        <article class="llhm-card">
+          <div class="llhm-icon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <h3>No-Fix, No-Fee Promise</h3>
+          <p>If we can't fix it, you don't pay. Every job starts with a free diagnostic on the bench.</p>
+        </article>
+        <article class="llhm-card">
+          <div class="llhm-icon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          </div>
+          <h3>Doorstep Convenience</h3>
+          <p>Free, secure collection and return across South Essex, with evening and weekend slots.</p>
+        </article>
+        <article class="llhm-card">
+          <div class="llhm-icon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <h3>Rapid Workshop Turnaround</h3>
+          <p>Most repairs and upgrades are diagnosed, tested, and back with you within 1 to 3 days.</p>
+        </article>
+        <article class="llhm-card">
+          <div class="llhm-icon" aria-hidden="true">
+            <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          </div>
+          <h3>Sustainable &amp; Local</h3>
+          <p>We'd rather upgrade your kit than replace it — better for your wallet and the planet.</p>
+        </article>
+      </div>
+
+      <div class="llhm-section-cta">
+        <a href="/contact" class="llhm-btn-primary">Book Your Free Diagnostic</a>
+      </div>
+    </section>
+
+    <section class="llhm-split llhm-glass">
+      <div>
+        <span class="llhm-eyebrow">Business IT Support</span>
+        <h2>Managed IT Setup &amp; Support for Essex Startups &amp; Small Businesses</h2>
+        <p style="color: var(--ll-muted); line-height: 1.6; margin-bottom: 4px;">Clear, flat-rate IT support for sole traders, growing teams, and startups across Wickford and South Essex — with no long-term corporate contracts.</p>
+        <div class="llhm-chips">
+          <span class="llhm-chip">Email &amp; Domains</span>
+          <span class="llhm-chip">Device &amp; Data Security</span>
+          <span class="llhm-chip">Growth-Ready Foundations</span>
+        </div>
+        <a href="/business" class="llhm-btn-secondary">Explore Business Solutions</a>
+      </div>
+      <div class="llhm-hero-media">
+        <img
+          src="/assets/images/image-4307083f.png"
+          alt="LaunchLayer workshop bench"
+          width="800"
+          height="600"
+          loading="lazy"
+          decoding="async">
+      </div>
+    </section>
+
+    <section class="llhm-split llhm-glass">
+      <div>
+        <span class="llhm-eyebrow">Find The Workshop</span>
+        <h2>Visit Us In Wickford</h2>
+        <p style="color: var(--ll-muted); line-height: 1.6; margin-bottom: 16px;">Drop off your device in person, or book free collection if you'd rather we came to you.</p>
+        <div class="llhm-visit-card">
+          <strong>32 Glebe Road</strong>
+          <p>Wickford, Essex<br>SS11 8EU</p>
+          <div class="llhm-visit-actions">
+            <a class="llhm-btn-primary" href="https://maps.google.com/?q=32+Glebe+Road+Wickford+SS11+8EU" target="_blank" rel="noopener">Get Directions</a>
+            <a class="llhm-btn-secondary" href="tel:07367652987">Call: 07367 652987</a>
+          </div>
+        </div>
+      </div>
+      <div class="llhm-hero-media">
+        <!-- Lightweight map placeholder link instead of heavy embed for mock perf -->
+        <a href="https://maps.google.com/?q=32+Glebe+Road+Wickford+SS11+8EU" target="_blank" rel="noopener" aria-label="Open workshop location in Google Maps">
+          <img
+            src="/assets/images/image-d26fc546.png"
+            alt="Wickford area — LaunchLayer local coverage"
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async">
+        </a>
+      </div>
+    </section>
+
+    <section class="llhm-cta llhm-glass">
+      <h2>Ready to Fix Your Tech?</h2>
+      <p>Book a free diagnostic check or speak directly with our workshop today.</p>
+      <div class="llhm-actions">
+        <a href="/contact" class="llhm-btn-primary">Book Free Diagnostic</a>
+        <a href="tel:07367652987" class="llhm-btn-secondary">Call Workshop</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="launchlayer-master-footer">
+    <div class="footer-top-segment">
+      <div class="footer-brand-block">
+        <a href="/" title="LaunchLayer Home">
+          <img src="/assets/images/image-0961fde4.png" alt="LaunchLayer" class="brand-master-logo" width="139" height="66" loading="lazy" decoding="async">
+        </a>
+        <p class="brand-tagline-text">Honest, jargon-free PC & laptop repairs, fast speed upgrades, custom gaming builds, and simple tech support for local homes and businesses.</p>
+      </div>
+
+      <ul class="inline-nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/brands-supported">Brands Supported</a></li>
+        <li><a href="/reviews">Reviews</a></li>
+        <li><a href="/faqs">FAQs</a></li>
+        <li><a href="/privacy-policy">Privacy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-matrix-section">
+      <div class="footer-matrix-title service-coverage-accordion-header" data-accordion>Our South Essex Service Coverage</div>
+      <div class="footer-matrix-grid">
+        <div class="matrix-node"><a href="/wickford-pc-repair">Wickford PC Repair (SS11)</a></div>
+        <div class="matrix-node"><a href="/wickford-laptop-repair">Wickford Laptop Repair (SS12)</a></div>
+        <div class="matrix-node"><a href="/wickford-virus-removal">Wickford Virus Removal</a></div>
+        <div class="matrix-node"><a href="/basildon-pc-repair">Basildon PC Repair (SS13-SS16)</a></div>
+        <div class="matrix-node"><a href="/billericay-pc-repair">Billericay PC Repair (CM11)</a></div>
+        <div class="matrix-node"><a href="/brentwood-pc-repair">Brentwood PC Repair (CM13-CM15)</a></div>
+        <div class="matrix-node"><a href="/chelmsford-pc-repair">Chelmsford PC Repair (CM1)</a></div>
+        <div class="matrix-node"><a href="/southend-pc-repair">Southend PC Repairs (SS0)</a></div>
+        <div class="matrix-node"><a href="/rayleigh-laptop-service">Rayleigh Laptop Service (SS6)</a></div>
+        <div class="matrix-node data-recovery-special-node"><a href="/data-recovery">🛡️ Data Recovery Essex</a></div>
+      </div>
+    </div>
+
+    <div class="footer-compliance-bar">
+      <p class="copyright-text-notice">&copy; 2026 LaunchLayer Ltd. All rights reserved. · Glass mock preview</p>
+      <div class="footer-right-assets">
+        <div class="footer-social-strip">
+          <a href="https://www.instagram.com/launchlayeruk/" target="_blank" class="social-icon-vector" title="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="/assets/js/global-nav-footer.js" defer></script>
+</body>
+</html>
