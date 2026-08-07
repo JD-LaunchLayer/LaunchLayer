@@ -28,7 +28,6 @@ CHECK_SVG = (
 
 # Hero images chosen for relevance — see IMAGE_CHECKLIST at bottom of run.
 HERO_BY_SLUG: dict[str, tuple[str, str]] = {
-    # (src, alt)
     "laptop-mot-wickford-essex": (
         "/assets/images/image-4307083f.png",
         "LaunchLayer Wickford workshop bench ready for a laptop MOT",
@@ -38,133 +37,132 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "LaunchLayer Wickford workshop bench ready for a laptop MOT",
     ),
     "wickford-laptop-repair": (
-        "/assets/images/image-4307083f.png",
-        "Laptop on LaunchLayer Wickford repair bench",
+        "/assets/images/image-a07b70ec.webp",
+        "Technician repairing open laptop motherboard and cooling fan",
     ),
     "wickford-pc-repair": (
-        "/assets/images/image-29700a14.webp",
-        "Custom desktop PC build showing internal components",
+        "/assets/images/image-b364e9f8.jpg",
+        "Desktop PC internals needing thermal dust care",
     ),
     "liquid-damage-repair-wickford": (
-        "/assets/images/image-4307083f.png",
-        "LaunchLayer workshop bench for liquid damage laptop recovery",
+        "/assets/images/image-5e7c1f44.jpg",
+        "Water splash on wood — liquid spill damage to electronics",
     ),
     "data-recovery": (
         "/assets/images/image-ce1e457a.jpg",
-        "Data recovery and file retrieval guidance imagery",
+        "Open hard drive platter and read head — data recovery",
     ),
     "custom-pc-builds": (
-        "/assets/images/image-29700a14.webp",
-        "Gaming PC tower with GeForce RTX graphics and RGB lighting",
+        "/assets/images/image-ddefba94.jpg",
+        "Custom gaming PC with Radeon GPU and RGB liquid cooling",
     ),
     "eco-recycling": (
         "/assets/images/image-eco-donate-hero.jpg",
-        "Laptop donation and responsible recycling — LaunchLayer community support",
-    ),
-    "basildon-pc-repair": (
-        "/assets/images/image-b364e9f8.jpg",
-        "PC thermal servicing — dust and cooling care for Basildon machines",
-    ),
-    "billericay-pc-repair": (
-        "/assets/images/image-4307083f.png",
-        "LaunchLayer workshop bench — PC and laptop repair for Billericay",
-    ),
-    "brentwood-pc-repair": (
-        "/assets/images/image-4307083f.png",
-        "LaunchLayer workshop bench — PC and laptop repair for Brentwood",
-    ),
-    "chelmsford-pc-repair": (
-        "/assets/images/image-4307083f.png",
-        "LaunchLayer workshop bench — PC and laptop repair for Chelmsford",
-    ),
-    "southend-pc-repair": (
-        "/assets/images/image-4307083f.png",
-        "LaunchLayer workshop bench — PC and laptop repair for Southend",
-    ),
-    "rayleigh-laptop-service": (
-        "/assets/images/image-a3d158c7.jpg",
-        "Laptop diagnostics and repair for Rayleigh customers",
-    ),
-    # Compact pages — optional band images
-    "macbook-repair": (
-        "/assets/images/image-c27f7c59.jpg",
-        "MacBook care and performance — Apple laptop repair",
-    ),
-    "macbook-repair-wickford": (
-        "/assets/images/image-69f0c879.jpg",
-        "MacBook longevity and repair in Wickford",
-    ),
-    "macbook-repair-basildon": (
-        "/assets/images/image-c27f7c59.jpg",
-        "MacBook repair for Basildon customers",
-    ),
-    "macbook-repair-billericay": (
-        "/assets/images/image-69f0c879.jpg",
-        "MacBook repair for Billericay remote workers",
-    ),
-    "macbook-repair-brentwood": (
-        "/assets/images/image-c27f7c59.jpg",
-        "MacBook repair for Brentwood customers",
-    ),
-    "macbook-repair-chelmsford": (
-        "/assets/images/image-c27f7c59.jpg",
-        "MacBook repair for Chelmsford customers",
-    ),
-    "macbook-repair-rayleigh": (
-        "/assets/images/image-69f0c879.jpg",
-        "MacBook repair for Rayleigh customers",
-    ),
-    "macbook-repair-southend": (
-        "/assets/images/image-c27f7c59.jpg",
-        "MacBook repair for Southend customers",
-    ),
-    "laptop-screen-repair-wickford": (
-        "/assets/images/image-4307083f.png",
-        "Laptop screen repair on LaunchLayer Wickford workshop bench",
+        "Laptop donation for children — LaunchLayer recycling partnership",
     ),
     "wickford-virus-removal": (
         "/assets/images/image-9258d33d.jpg",
-        "Online scam and malware protection guidance",
+        "Laptop showing malware warning — virus and scam recovery",
     ),
-    "screen-repair-brentwood": (
-        "/assets/images/image-4307083f.png",
-        "Laptop screen repair workshop bench for Brentwood",
+    "laptop-screen-repair-wickford": (
+        "/assets/images/image-36da4d28.jpg",
+        "Laptop screen during system update — display and software repair",
     ),
-    "screen-repair-chelmsford": (
-        "/assets/images/image-4307083f.png",
-        "Laptop screen repair workshop bench for Chelmsford",
+    "macbook-repair": (
+        "/assets/images/image-c27f7c59.jpg",
+        "Open MacBook Pro showing fan, logic board and battery",
     ),
-    "screen-repair-rayleigh": (
-        "/assets/images/image-4307083f.png",
-        "Laptop screen repair workshop bench for Rayleigh",
+    "macbook-repair-wickford": (
+        "/assets/images/image-69f0c879.jpg",
+        "Silver MacBook on desk — Wickford MacBook repair",
     ),
-    "screen-repair-southend": (
-        "/assets/images/image-4307083f.png",
-        "Laptop screen repair workshop bench for Southend",
+    "basildon-pc-repair": (
+        "/assets/images/image-29700a14.webp",
+        "Gaming desktop PC tower with GeForce RTX graphics",
+    ),
+    "billericay-pc-repair": (
+        "/assets/images/image-de2f0024.jpg",
+        "Home office laptop setup — Billericay remote-work repairs",
+    ),
+    "brentwood-pc-repair": (
+        "/assets/images/image-5043df46.jpg",
+        "Laptop with business dashboard — Brentwood PC support",
+    ),
+    "chelmsford-pc-repair": (
+        "/assets/images/image-9241379c.jpg",
+        "PC ready for modern Windows updates — Chelmsford repairs",
+    ),
+    "southend-pc-repair": (
+        "/assets/images/image-a3d158c7.jpg",
+        "Slow or dead laptop diagnostics — Southend PC repair",
+    ),
+    "rayleigh-laptop-service": (
+        "/assets/images/image-bdd8886f.jpg",
+        "Modern laptop on stand — Rayleigh laptop service",
+    ),
+    "macbook-repair-basildon": (
+        "/assets/images/image-c27f7c59.jpg",
+        "Open MacBook Pro internals — Basildon MacBook repair",
+    ),
+    "macbook-repair-billericay": (
+        "/assets/images/image-69f0c879.jpg",
+        "MacBook on desk — Billericay MacBook repair",
+    ),
+    "macbook-repair-brentwood": (
+        "/assets/images/image-be974ff5.jpg",
+        "Frustrated MacBook user — Brentwood MacBook repair",
+    ),
+    "macbook-repair-chelmsford": (
+        "/assets/images/image-c27f7c59.jpg",
+        "Open MacBook Pro logic board — Chelmsford MacBook repair",
+    ),
+    "macbook-repair-rayleigh": (
+        "/assets/images/image-69f0c879.jpg",
+        "Silver MacBook — Rayleigh MacBook repair",
+    ),
+    "macbook-repair-southend": (
+        "/assets/images/image-be974ff5.jpg",
+        "MacBook trouble — Southend MacBook repair",
     ),
     "liquid-damage-repair-basildon": (
-        "/assets/images/image-4307083f.png",
-        "Liquid damage laptop recovery bench for Basildon",
+        "/assets/images/image-5e7c1f44.jpg",
+        "Water droplet splash — liquid damage repair Basildon",
     ),
     "liquid-damage-repair-billericay": (
-        "/assets/images/image-4307083f.png",
-        "Liquid damage laptop recovery bench for Billericay",
+        "/assets/images/image-a07b70ec.webp",
+        "Open laptop on the bench after a spill — Billericay",
     ),
     "liquid-damage-repair-brentwood": (
-        "/assets/images/image-4307083f.png",
-        "Liquid damage laptop recovery bench for Brentwood",
+        "/assets/images/image-b673a9d4.jpg",
+        "Bench work on laptop battery and internals after liquid damage",
     ),
     "liquid-damage-repair-chelmsford": (
-        "/assets/images/image-4307083f.png",
-        "Liquid damage laptop recovery bench for Chelmsford",
+        "/assets/images/image-5e7c1f44.jpg",
+        "Water splash — liquid damage laptop repair Chelmsford",
     ),
     "liquid-damage-repair-rayleigh": (
-        "/assets/images/image-4307083f.png",
-        "Liquid damage laptop recovery bench for Rayleigh",
+        "/assets/images/image-a07b70ec.webp",
+        "Technician opening a laptop after liquid spill — Rayleigh",
     ),
     "liquid-damage-repair-southend": (
-        "/assets/images/image-4307083f.png",
-        "Liquid damage laptop recovery bench for Southend",
+        "/assets/images/image-b673a9d4.jpg",
+        "Hardware recovery after liquid damage — Southend",
+    ),
+    "screen-repair-brentwood": (
+        "/assets/images/image-36da4d28.jpg",
+        "Laptop display during use — Brentwood screen repair",
+    ),
+    "screen-repair-chelmsford": (
+        "/assets/images/image-bdd8886f.jpg",
+        "Laptop screen and keyboard close-up — Chelmsford screen repair",
+    ),
+    "screen-repair-rayleigh": (
+        "/assets/images/image-de2f0024.jpg",
+        "Open laptop on desk — Rayleigh screen repair",
+    ),
+    "screen-repair-southend": (
+        "/assets/images/image-5043df46.jpg",
+        "Active laptop display — Southend screen repair",
     ),
 }
 
