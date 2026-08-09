@@ -796,17 +796,23 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 @media (max-width: 767px) {
-  .footer-matrix-list,
-  .service-coverage-panel,
-  .service-coverage-grid,
-  .footer-matrix-grid {
+  /* Higher-specificity selectors so later stylesheet grid rules cannot
+     keep the service-coverage panel forced open on mobile. */
+  .footer-matrix-section > .footer-matrix-list,
+  .footer-matrix-section > .service-coverage-panel,
+  .footer-matrix-section > .service-coverage-grid,
+  .footer-matrix-section > .footer-matrix-grid,
+  footer .footer-matrix-grid,
+  footer .footer-matrix-list {
     display: none !important;
   }
 
-  .footer-matrix-list.open,
-  .service-coverage-panel.open,
-  .service-coverage-grid.open,
-  .footer-matrix-grid.open {
+  .footer-matrix-section > .footer-matrix-list.open,
+  .footer-matrix-section > .service-coverage-panel.open,
+  .footer-matrix-section > .service-coverage-grid.open,
+  .footer-matrix-section > .footer-matrix-grid.open,
+  footer .footer-matrix-grid.open,
+  footer .footer-matrix-list.open {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;

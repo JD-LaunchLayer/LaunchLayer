@@ -214,6 +214,33 @@ html {
   }
 }
 
+/* Keep service-coverage accordion collapsed on mobile.
+   custom.css loads after global-nav-footer.css, so an unconditional
+   display:grid !important above was forcing the panel open forever. */
+@media (max-width: 767px) {
+  .footer-matrix-title,
+  .service-coverage-accordion-header {
+    margin-bottom: 0 !important;
+  }
+
+  .footer-matrix-grid,
+  .footer-matrix-list,
+  .service-coverage-panel,
+  .service-coverage-grid {
+    display: none !important;
+  }
+
+  .footer-matrix-grid.open,
+  .footer-matrix-list.open,
+  .service-coverage-panel.open,
+  .service-coverage-grid.open {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+    margin-top: 15px !important;
+  }
+}
+
 .matrix-node a {
   font-size: 13.5px !important;
   color: var(--ll-text-muted) !important;
