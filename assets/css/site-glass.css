@@ -264,8 +264,16 @@ body.llsite-body .page-section > .content-wrapper {
   flex-direction: column;
   align-items: stretch;
   text-align: left;
-  min-height: 100%;
+  /* Mobile: hug content. Equal-height cards only from 700px (2-col grid). */
+  height: auto;
+  min-height: 0;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 700px) {
+  .llct-card {
+    min-height: 100%;
+  }
 }
 
 .llct-card:hover { transform: translateY(-3px); }
@@ -294,11 +302,22 @@ body.llsite-body .page-section > .content-wrapper {
 .llct-card p {
   margin: 0 0 20px 0 !important;
   padding: 0 !important;
-  flex: 1 1 auto;
+  /* Avoid giant empty stretch inside single-column mobile cards */
+  flex: 0 1 auto;
   font-size: 0.9rem;
   line-height: 1.55;
   color: rgba(232, 238, 252, 0.72) !important;
   text-align: left;
+}
+
+.llct-card > p:last-child {
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 700px) {
+  .llct-card p {
+    flex: 1 1 auto;
+  }
 }
 
 /* Dedicated CTA — do not reuse .llsite-btn-primary here.

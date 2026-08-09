@@ -801,7 +801,9 @@
       max-width: 100% !important;
       position: relative !important;
       z-index: 1 !important;
-      align-self: stretch !important;
+      align-self: flex-start !important;
+      height: auto !important;
+      min-height: 0 !important;
       min-width: 0 !important;
     }
 
@@ -811,6 +813,17 @@
 
     .fe-block-6c1dceaebe135ff2c7df {
       order: 2 !important;
+    }
+
+    .fe-block-yui_3_17_2_1_1780042547748_2925 .sqs-block,
+    .fe-block-6c1dceaebe135ff2c7df .sqs-block,
+    .fe-block-yui_3_17_2_1_1780042547748_2925 .sqs-block-content,
+    .fe-block-6c1dceaebe135ff2c7df .sqs-block-content,
+    .fe-block-yui_3_17_2_1_1780042547748_2925 .sqs-code-container,
+    .fe-block-6c1dceaebe135ff2c7df .form-wrapper,
+    .fe-block-6c1dceaebe135ff2c7df .ll-contact-panel {
+      height: auto !important;
+      min-height: 0 !important;
     }
   }
 
@@ -1342,12 +1355,23 @@
 
       @media (max-width: 767px) {
         [data-section-id="682e44bcef3a173ba519019d"].page-section > .content-wrapper {
-          padding-top: 1.25rem !important;
-          padding-bottom: 0.85rem !important;
+          padding-top: 1rem !important;
+          padding-bottom: 0.5rem !important;
         }
 
+        .fe-block-yui_3_17_2_1_1780042547748_2925,
         .fe-block-6c1dceaebe135ff2c7df {
-          align-self: start;
+          align-self: flex-start !important;
+          height: auto !important;
+        }
+
+        #block-6c1dceaebe135ff2c7df .ll-contact-panel {
+          min-height: 0 !important;
+          height: auto !important;
+        }
+
+        #block-6c1dceaebe135ff2c7df .ll-contact-form .form-button-wrapper {
+          margin-bottom: 0 !important;
         }
       }
 
