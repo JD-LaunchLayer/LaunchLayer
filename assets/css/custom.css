@@ -275,10 +275,14 @@ html {
   transform: none !important;
 }
 
-@media screen and (min-width: 768px) {
-  .tweak-blog-item-width-narrow .blog-item-wrapper .blog-item-inner-wrapper {
-    width: 100% !important;
-  }
+.tweak-blog-item-width-narrow .blog-item-wrapper .blog-item-inner-wrapper,
+.llblog-post-shell .blog-item-inner-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.llblog-post-shell .blog-item-wrapper article.entry {
+  padding: 0 !important;
 }
 
 /* ── 8. ACCESSIBILITY & UTILITY FIXES ── */
