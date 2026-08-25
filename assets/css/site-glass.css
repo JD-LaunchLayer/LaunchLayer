@@ -1144,7 +1144,7 @@ body.llsite-body a.blog-more-link {
 .llblog-post-shell {
   max-width: 900px;
   width: 100%;
-  margin: 28px auto 72px;
+  margin: 28px auto 16px;
   padding: 0 20px;
   box-sizing: border-box;
   /* Squarespace heading-1 is 4rem / fluid ~3rem on phones — titles wrap mid-word. */
@@ -1206,18 +1206,17 @@ body.llsite-body a.blog-more-link {
   font-weight: 600 !important;
 }
 
-/* Prev / next post bar — Squarespace uses h2 titles at heading scale in a
-   gapless 50% flex row, so long titles wrap into a bulky overlapping stack. */
+/* Prev / next — one-line row, not stacked cards. Arrows carry previous/next. */
 .item-pagination.item-pagination--prev-next {
   display: grid !important;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 8px;
   align-items: stretch;
   max-width: 900px;
   width: 100%;
   box-sizing: border-box;
-  margin: 0 auto 40px;
-  padding: 0 20px 8px !important;
+  margin: 0 auto 16px;
+  padding: 0 20px !important;
   background: transparent !important;
 }
 
@@ -1228,64 +1227,68 @@ body.llsite-body a.blog-more-link {
   width: 100% !important;
   margin: 0 !important;
   display: flex !important;
-  align-items: flex-start !important;
-  gap: 10px;
+  align-items: center !important;
+  gap: 8px;
   box-sizing: border-box;
   min-width: 0;
-  padding: 12px 14px;
+  min-height: 0 !important;
+  padding: 6px 10px;
   text-decoration: none !important;
-  background: linear-gradient(155deg, #ffffff 0%, #fbfcfe 48%, #eff6ff 100%);
+  background: #fff;
   border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 14px;
-  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  border-radius: 8px;
+  box-shadow: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
 }
 
 .item-pagination-link:hover {
   border-color: rgba(29, 78, 216, 0.28);
-  box-shadow: 0 8px 18px rgba(29, 78, 216, 0.08);
-  transform: translateY(-1px);
+  transform: none;
+  box-shadow: none;
 }
 
 .item-pagination-link .pagination-title-wrapper {
   min-width: 0;
   flex: 1;
+  overflow: hidden;
 }
 
-.item-pagination-link .visually-hidden {
-  display: none !important;
+.item-pagination-link--next .pagination-title-wrapper,
+.item-pagination-link--next .item-pagination-title {
+  text-align: right;
 }
 
 .item-pagination-link .item-pagination-prev-next {
-  display: block !important;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.07em !important;
-  text-transform: uppercase !important;
-  color: #64748b !important;
-  line-height: 1.2 !important;
-  margin: 0 0 4px !important;
+  display: none !important;
+}
+
+.item-pagination-link .visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 .item-pagination-link .item-pagination-title,
 .item-pagination-link h2.item-pagination-title {
-  font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif !important;
-  font-size: 0.92rem !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 0.78rem !important;
   font-weight: 600 !important;
-  line-height: 1.35 !important;
+  line-height: 1.2 !important;
   letter-spacing: -0.01em !important;
   color: #0b1120 !important;
   margin: 0 !important;
   padding: 0 !important;
   max-width: 100% !important;
-  overflow-wrap: break-word;
-  word-break: normal !important;
-  display: -webkit-box !important;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
+  display: block !important;
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .item-pagination-link:hover .item-pagination-title {
@@ -1293,15 +1296,15 @@ body.llsite-body a.blog-more-link {
 }
 
 .item-pagination-link .item-pagination-icon {
-  width: 14px !important;
-  height: 18px !important;
-  padding: 3px 0 0 !important;
+  width: 8px !important;
+  height: 12px !important;
+  padding: 0 !important;
   flex-shrink: 0;
 }
 
 .item-pagination-link .item-pagination-icon svg {
-  width: 10px !important;
-  height: 16px !important;
+  width: 7px !important;
+  height: 12px !important;
   stroke: #64748b;
 }
 
@@ -1311,9 +1314,8 @@ body.llsite-body a.blog-more-link {
 
 @media (max-width: 639px) {
   .item-pagination.item-pagination--prev-next {
-    grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 0 16px 8px !important;
+    gap: 6px;
+    padding: 0 12px !important;
   }
 }
 
