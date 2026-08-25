@@ -285,6 +285,28 @@ html {
   padding: 0 !important;
 }
 
+.llblog-post-shell {
+  --heading-1-size: clamp(1.45rem, 5.2vw, 2.15rem);
+  --heading-1-size-value: 1.75;
+  --blog-item-title-font-font-size: clamp(1.45rem, 5.2vw, 2.15rem);
+  --blog-item-title-font-font-size-value: 1.75;
+}
+
+.llblog-post-shell h1.entry-title,
+.llblog-post-shell .entry-title,
+.llblog-post-shell .blog-item-title h1,
+.blog-item-wrapper h1.entry-title,
+.blog-item-wrapper .entry-title--large {
+  font-size: clamp(1.45rem, 5.2vw, 2.15rem) !important;
+  line-height: 1.28 !important;
+  max-width: 100% !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+  text-wrap: pretty;
+  text-wrap: balance;
+}
+
 /* ── 8. ACCESSIBILITY & UTILITY FIXES ── */
 .visually-hidden {
   position: absolute !important;
