@@ -258,7 +258,56 @@ html {
   font-weight: 700 !important;
 }
 
-/* ── 7. ACCESSIBILITY & UTILITY FIXES ── */
+/* ── 7. STATIC-EXPORT BLOG REVEAL + POST WIDTH ── */
+/*
+  Squarespace's alternating / side-by-side blog list bakes opacity:0 and a
+  translateY offset onto .blog-item (style-9df075ea.css). Runtime JS is
+  supposed to add .is-loaded to reveal them. That controller does not run
+  in this static export, so the cards stay invisible.
+
+  Individual posts inherit body.tweak-blog-item-width-narrow, which sets
+  .blog-item-inner-wrapper to width:50% from 768px up — a leftover
+  Squarespace "Narrow" tweak that collapses the article into a thin column.
+*/
+.blog-alternating-side-by-side .blog-item,
+.blog-side-by-side .blog-item {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.tweak-blog-item-width-narrow .blog-item-wrapper .blog-item-inner-wrapper,
+.llblog-post-shell .blog-item-inner-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.llblog-post-shell .blog-item-wrapper article.entry {
+  padding: 0 !important;
+}
+
+.llblog-post-shell {
+  --heading-1-size: clamp(1.45rem, 5.2vw, 2.15rem);
+  --heading-1-size-value: 1.75;
+  --blog-item-title-font-font-size: clamp(1.45rem, 5.2vw, 2.15rem);
+  --blog-item-title-font-font-size-value: 1.75;
+}
+
+.llblog-post-shell h1.entry-title,
+.llblog-post-shell .entry-title,
+.llblog-post-shell .blog-item-title h1,
+.blog-item-wrapper h1.entry-title,
+.blog-item-wrapper .entry-title--large {
+  font-size: clamp(1.45rem, 5.2vw, 2.15rem) !important;
+  line-height: 1.28 !important;
+  max-width: 100% !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  hyphens: none !important;
+  text-wrap: pretty;
+  text-wrap: balance;
+}
+
+/* ── 8. ACCESSIBILITY & UTILITY FIXES ── */
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
