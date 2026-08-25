@@ -258,7 +258,30 @@ html {
   font-weight: 700 !important;
 }
 
-/* ── 7. ACCESSIBILITY & UTILITY FIXES ── */
+/* ── 7. STATIC-EXPORT BLOG REVEAL + POST WIDTH ── */
+/*
+  Squarespace's alternating / side-by-side blog list bakes opacity:0 and a
+  translateY offset onto .blog-item (style-9df075ea.css). Runtime JS is
+  supposed to add .is-loaded to reveal them. That controller does not run
+  in this static export, so the cards stay invisible.
+
+  Individual posts inherit body.tweak-blog-item-width-narrow, which sets
+  .blog-item-inner-wrapper to width:50% from 768px up — a leftover
+  Squarespace "Narrow" tweak that collapses the article into a thin column.
+*/
+.blog-alternating-side-by-side .blog-item,
+.blog-side-by-side .blog-item {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@media screen and (min-width: 768px) {
+  .tweak-blog-item-width-narrow .blog-item-wrapper .blog-item-inner-wrapper {
+    width: 100% !important;
+  }
+}
+
+/* ── 8. ACCESSIBILITY & UTILITY FIXES ── */
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
