@@ -168,29 +168,74 @@
       "url": "https://www.launchlayer.uk/data-recovery",
       "name": "Professional Data Recovery & File Retrieval in Wickford | LaunchLayer",
       "description": "Secure file retrieval and data recovery services for dead or clicking hard drives, failed SSDs, and corrupted external backups in Wickford, Essex.",
-      "provider": { "@id": "https://www.launchlayer.uk/#localbusiness" }
+      "isPartOf": { "@id": "https://www.launchlayer.uk/#website" },
+      "about": { "@id": "https://www.launchlayer.uk/data-recovery/#service" },
+      "mainEntity": { "@id": "https://www.launchlayer.uk/data-recovery/#service" }
     },
     {
       "@type": "DataRecoveryService",
       "@id": "https://www.launchlayer.uk/data-recovery/#service",
       "name": "Hard Drive, SSD & File Data Recovery Services",
+      "serviceType": "Data recovery",
       "description": "Professional forensic data recovery and partition rebuild paths for failing mechanical drives, corrupted solid-state components, and accidental deletion extractions.",
       "provider": { "@id": "https://www.launchlayer.uk/#localbusiness" },
       "url": "https://www.launchlayer.uk/data-recovery",
       "offers": {
-        "@type": "Offer",
-        "price": "79.00",
+        "@type": "AggregateOffer",
+        "url": "https://www.launchlayer.uk/data-recovery",
         "priceCurrency": "GBP",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "79.00",
-          "priceCurrency": "GBP",
-          "description": "Logical workspace software data extraction setups scale from £79 base, up to modular tier structures depending on component degradation factors."
-        }
+        "lowPrice": "79.00",
+        "offerCount": "3",
+        "description": "Simple logical recovery from £79. Moderate structural recovery £90–£150. Specialist physical lab recovery from £350."
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Transparent Recovery Pricing Tiers",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "name": "Simple Logical Recovery",
+            "description": "Accidentally deleted files, formatted memory cards, or extracting files from a dead laptop with a physically healthy storage drive.",
+            "url": "https://www.launchlayer.uk/data-recovery",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "79.00",
+              "priceCurrency": "GBP"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Moderate Structural Recovery",
+            "description": "Degraded file systems, corrupted indexes, raw partition errors, or bad-sector imaging.",
+            "url": "https://www.launchlayer.uk/data-recovery",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "90.00",
+              "maxPrice": "150.00",
+              "priceCurrency": "GBP"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Specialist Physical Lab Recovery",
+            "description": "Physical drive damage, locked platters, failed actuator arms, or seized motors requiring clean-room lab extraction.",
+            "url": "https://www.launchlayer.uk/data-recovery",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "350.00",
+              "priceCurrency": "GBP"
+            }
+          }
+        ]
       },
       "areaServed": [
         { "@type": "City", "name": "Wickford" },
-        { "@type": "City", "name": "Basildon" }
+        { "@type": "City", "name": "Basildon" },
+        { "@type": "City", "name": "Billericay" },
+        { "@type": "City", "name": "Brentwood" },
+        { "@type": "City", "name": "Rayleigh" },
+        { "@type": "City", "name": "Southend-on-Sea" },
+        { "@type": "City", "name": "Chelmsford" }
       ]
     },
     {
@@ -235,46 +280,6 @@
   ]
 }
 </script>
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Can you recover data from a laptop that is completely dead?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. If the motherboard has failed or the screen is smashed, but the internal storage drive is still physically healthy, we can extract the drive on our workbench and safely migrate your data to an external USB drive (Level 01 Recovery)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What should I do if my hard drive is clicking?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Turn it off immediately and unplug it. A clicking sound indicates the mechanical reader head is physically striking the data platters. Continued use will permanently scrape your data off the disks. This requires our Level 03 clean-room lab recovery."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does data recovery take?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Standard Level 01 and Level 02 software extractions performed in our Wickford workshop usually take between 2 to 5 days, depending on the volume of data and the severity of the drive corruption. Physical lab recoveries take longer."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will anyone look at my private files?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. We employ strict data privacy protocols. We only verify the file structure to ensure the recovery was successful; we do not browse, copy, or retain your personal photos, financial documents, or sensitive business records."
-        }
-      }
-    ]
-  }
-</script>
 </head>
 <body class="llsg-body">
 <header class="ll-site-header">
@@ -316,8 +321,8 @@
 <p class="llsg-brand">Launch<span>Layer</span></p>
 <h1>Data Recovery in <span class="llsg-accent">Wickford</span> — Hard Drive, SSD &amp; File Retrieval</h1>
 <p class="llsg-lead">Panicking over a clicking hard drive or accidentally deleted files? Stop using the device immediately. We provide secure, professional data recovery in Wickford for dead laptops, corrupted external backup drives, solid-state drives (SSDs), and broken USB sticks. We perform local bench extractions with absolute data privacy and a strict no-fix, no-fee guarantee.</p>
-<div aria-label="Price £55" class="llsg-price-inline">
-<strong>£55</strong>
+<div aria-label="Starting from £79" class="llsg-price-inline">
+<strong>£79</strong>
 <span>Starting from</span>
 </div>
 <div class="llsg-trust"><span>Strict Privacy Protocols</span><span>No-Fix, No-Fee Guarantee</span><span>100% Local Workshop</span></div>
@@ -391,7 +396,7 @@
 </div>
 <div class="llsg-pricing-box">
 <div class="llsg-pricing-box-label">Starting from</div>
-<div class="llsg-pricing-box-amount">£55</div>
+<div class="llsg-pricing-box-amount">£79</div>
 <p class="llsg-pricing-box-note">Local Wickford workshop · South Essex coverage</p>
 <a class="llsg-btn-primary" href="/contact">Book Free Assessment</a>
 <a class="llsg-btn-secondary" href="tel:07367652987">Call Workshop: 07367 652987</a>
