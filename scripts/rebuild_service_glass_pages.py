@@ -914,6 +914,13 @@ def parse_page(slug: str) -> PageData:
         # Prefer known MOT pricing
         price_inline = ("£75", "Fixed fee · clean, tune-up & malware sweep")
 
+    # Data recovery entry point is Simple Logical Recovery from £79 — not the
+    # generic workshop £55 starting price used on other service templates.
+    if slug == "data-recovery":
+        booking.amount = "£79"
+        booking.tag = "Starting from"
+        price_inline = ("£79", "Starting from")
+
     h1_text = clean_text(BeautifulSoup(h1_html, "lxml").get_text())
     cta_title, cta_lead = extract_cta(
         root,
