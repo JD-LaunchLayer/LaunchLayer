@@ -1,3 +1,5 @@
+@import url("design-tokens.css");
+
 /* ==========================================================================
    LAUNCHLAYER GLOBAL HEADER & FOOTER STYLES
    ========================================================================== */
@@ -14,16 +16,16 @@
    GLOBAL HEADER & DROPDOWN NAV — light glass
    ---------------------------------------------------- */
 .ll-site-header {
-  --ll-nav-ink: #0b1120;
-  --ll-nav-muted: #475569;
-  --ll-nav-blue: #1d4ed8;
-  --ll-nav-line: rgba(15, 23, 42, 0.10);
+  --ll-nav-ink: var(--color-ink);
+  --ll-nav-muted: var(--color-muted);
+  --ll-nav-blue: var(--color-accent);
+  --ll-nav-line: var(--color-line);
   /* Opaque frosted bar — sticky + live blur is costly while scrolling */
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+  background: linear-gradient(180deg, var(--color-surface) 0%, var(--color-surface-2) 100%) !important;
+  border-bottom: 1px solid var(--color-line) !important;
   box-shadow:
-    0 8px 20px rgba(15, 23, 42, 0.05),
-    inset 0 1px 0 #ffffff !important;
+    0 8px 20px oklch(0.230 0.032 230 / 0.05),
+    inset 0 1px 0 var(--color-white) !important;
   /* Pull logo further left on desktop */
   padding: 12px 20px 12px 10px !important;
   position: sticky !important;
@@ -98,18 +100,18 @@
 .ll-header-nav > li > a:focus-visible,
 .ll-dropdown-container:hover > .ll-dropdown-trigger,
 .ll-dropdown-trigger:focus-visible {
-  background: rgba(255, 255, 255, 0.78) !important;
-  border-color: rgba(29, 78, 216, 0.16) !important;
+  background: var(--color-surface) !important;
+  border-color: var(--color-accent-a16) !important;
   color: var(--ll-nav-blue) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+  box-shadow: inset 0 1px 0 oklch(1 0 0 / 0.95) !important;
 }
 
 .ll-header-nav a.active {
   font-weight: 700 !important;
-  background: rgba(29, 78, 216, 0.08) !important;
-  border-color: rgba(29, 78, 216, 0.18) !important;
+  background: var(--color-accent-a08) !important;
+  border-color: var(--color-accent-a22) !important;
   color: var(--ll-nav-blue) !important;
-  border-bottom: 1px solid rgba(29, 78, 216, 0.18) !important;
+  border-bottom: 1px solid var(--color-accent-a22) !important;
 }
 
 /* DROPDOWN MENU MODULE — frosted glass panel */
@@ -129,13 +131,13 @@
   top: calc(100% + 10px) !important;
   left: 50% !important;
   transform: translateX(-50%) translateY(6px) !important;
-  background: linear-gradient(155deg, #ffffff 0%, #fbfcfe 55%, #eff6ff 100%) !important;
-  border: 1px solid rgba(15, 23, 42, 0.08) !important;
-  border-radius: 16px !important;
+  background: var(--color-glass) !important;
+  border: 1px solid var(--color-line) !important;
+  border-radius: var(--radius-lg) !important;
   box-shadow:
-    0 14px 28px rgba(15, 23, 42, 0.08),
-    0 2px 6px rgba(15, 23, 42, 0.04),
-    inset 0 1px 0 #ffffff !important;
+    0 14px 28px oklch(0.230 0.032 230 / 0.08),
+    0 2px 6px oklch(0.230 0.032 230 / 0.04),
+    inset 0 1px 0 var(--color-white) !important;
   padding: 8px !important;
   min-width: 230px !important;
   opacity: 0 !important;
@@ -170,7 +172,7 @@
   padding: 10px 14px !important;
   font-size: 14px !important;
   font-weight: 650 !important;
-  color: #1e293b !important;
+  color: var(--color-ink) !important;
   text-decoration: none !important;
   border-radius: 12px !important;
   border: 1px solid transparent !important;
@@ -181,16 +183,16 @@
 
 .ll-dropdown-menu a:hover,
 .ll-dropdown-menu a:focus-visible {
-  background-color: rgba(29, 78, 216, 0.08) !important;
-  border-color: rgba(29, 78, 216, 0.14) !important;
-  color: #1d4ed8 !important;
+  background-color: var(--color-accent-a08) !important;
+  border-color: var(--color-accent-a16) !important;
+  color: var(--color-accent) !important;
 }
 
 /* ----------------------------------------------------
    MATCHING MASTER FOOTER
    ---------------------------------------------------- */
 .launchlayer-master-footer {
-  background-color: #F8F9FA !important;
+  background-color: var(--color-surface-2) !important;
   border-top: 1px solid #EAEAEA !important;
   padding: 48px 24px 32px 24px !important;
   font-family: 'Inter', sans-serif !important;
@@ -214,7 +216,7 @@
 }
 
 .footer-brand-block { max-width: 440px !important; }
-.brand-tagline-text { font-size: 13.5px !important; color: #5A6578 !important; line-height: 1.5 !important; }
+.brand-tagline-text { font-size: var(--text-sm) !important; color: var(--color-muted) !important; line-height: var(--leading-body) !important; }
 
 .inline-nav-links {
   list-style: none !important;
@@ -226,7 +228,7 @@
 .inline-nav-links a {
   font-size: 14px !important;
   font-weight: 600 !important;
-  color: #334155 !important;
+  color: var(--color-body) !important;
   text-decoration: none !important;
 }
 
@@ -254,7 +256,7 @@
 
 .matrix-node a {
   font-size: 13.5px !important;
-  color: #475569 !important;
+  color: var(--color-muted) !important;
   text-decoration: none !important;
   font-weight: 500 !important;
 }
@@ -400,8 +402,8 @@
   }
 
   .ll-header-nav > li > a:hover {
-    background: rgba(29, 78, 216, 0.07) !important;
-    border-color: rgba(29, 78, 216, 0.14) !important;
+    background: var(--color-accent-a08) !important;
+    border-color: var(--color-accent-a16) !important;
   }
 
   /* Mobile/tablet: flatten Services — label + peer links, not a fake dropdown */
@@ -477,7 +479,7 @@
     font-size: 17px !important;
     font-weight: 650 !important;
     padding: 12px 14px !important;
-    color: #0b1120 !important;
+    color: var(--color-ink) !important;
     white-space: normal !important;
     border-radius: 14px !important;
     border: 1px solid transparent !important;
@@ -485,9 +487,9 @@
 
   .ll-dropdown-menu a:hover,
   .ll-dropdown-menu a:focus-visible {
-    background-color: rgba(29, 78, 216, 0.07) !important;
-    border-color: rgba(29, 78, 216, 0.14) !important;
-    color: #1d4ed8 !important;
+    background-color: var(--color-accent-a08) !important;
+    border-color: var(--color-accent-a16) !important;
+    color: var(--color-accent) !important;
   }
 
   /* Keep Contact Us visually outside the Services group */
@@ -500,8 +502,8 @@
   }
 
   .ll-burger-input:checked ~ .ll-burger-btn {
-    background: rgba(29, 78, 216, 0.08) !important;
-    border-color: rgba(29, 78, 216, 0.18) !important;
+    background: var(--color-accent-a08) !important;
+    border-color: var(--color-accent-a22) !important;
   }
 
   .ll-burger-input:checked ~ .ll-burger-btn span:nth-child(1) {
@@ -599,7 +601,7 @@ main#page {
     font-size: 11px !important;
     letter-spacing: 0.08em !important;
     text-transform: uppercase !important;
-    color: #475569 !important;
+    color: var(--color-muted) !important;
     margin-bottom: 0 !important;
     cursor: pointer !important;
   }
@@ -900,7 +902,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .llfaqpg-item[open] {
   border-color: #1D4ED8 !important;
-  box-shadow: 0 4px 20px rgba(29, 78, 216, 0.05) !important;
+  box-shadow: 0 4px 20px oklch(0.455 0.095 196 / 0.05) !important;
 }
 
 .llfaqpg-question {
@@ -943,7 +945,7 @@ document.addEventListener('DOMContentLoaded', function() {
   padding: 0 24px 20px 24px !important;
   font-size: 14.5px !important;
   line-height: 1.6 !important;
-  color: #334155 !important;
+  color: var(--color-body) !important;
   border-top: 1px dashed transparent !important;
 }
 
@@ -995,7 +997,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 .llegal-meta {
   font-size: 14.5px !important;
-  color: #475569 !important;
+  color: var(--color-muted) !important;
   margin: 0 0 16px 0 !important;
 }
 
@@ -1011,7 +1013,7 @@ document.addEventListener('DOMContentLoaded', function() {
   margin: 0 !important;
   font-size: 13.5px !important;
   line-height: 1.6 !important;
-  color: #334155 !important;
+  color: var(--color-body) !important;
 }
 
 .llegal-code {
@@ -1045,7 +1047,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .llegal-segment p {
   font-size: 14.5px !important;
   line-height: 1.6 !important;
-  color: #334155 !important;
+  color: var(--color-body) !important;
   margin: 0 0 16px 0 !important;
 }
 
@@ -1057,7 +1059,7 @@ document.addEventListener('DOMContentLoaded', function() {
 .llegal-segment li {
   font-size: 14.5px !important;
   line-height: 1.6 !important;
-  color: #334155 !important;
+  color: var(--color-body) !important;
   margin-bottom: 8px !important;
 }
 

@@ -1,0 +1,26 @@
+---
+description: Standing LaunchLayer don't-touch rules for every session
+alwaysApply: true
+---
+
+# LaunchLayer standing "don't touch" list
+
+Applies to every session on this project.
+
+- No framework/hosting/CMS switch without a written plan and owner approval.
+- No heavy animation, parallax, auto-playing video, or gamified cursor effects.
+- No purple/indigo gradients, glassmorphism, or dark-mode-by-default.
+- No URL changes or deletion of location/SEO pages.
+- No cookies/analytics/tracking added without a compliant consent banner + telling the owner.
+- No text over busy images without a solid contrast overlay.
+- Never remove the phone number or the no-fix-no-fee / free-collection messaging.
+
+## Working style
+
+- Work in small, reversible steps.
+- Before changing anything, explain in plain English what will change and which files.
+- Do not change site content, prices, phone numbers, or page URLs unless explicitly asked.
+- Do not delete pages.
+- Keep the existing plain-English tone.
+- After each change, give a one-line summary and exact browser check steps.
+- If something is risky or might break existing pages, stop and ask first.

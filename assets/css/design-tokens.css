@@ -1,0 +1,311 @@
+/* ==========================================================================
+   LaunchLayer design tokens
+   Single source of truth for colour, type, space, and radius.
+
+   Accent: Deep Teal — oklch(0.455 0.095 196) / #006668
+   One brand accent (not purple, not indigo). Reads as a trustworthy local
+   tech workshop: marine teal, not a SaaS template.
+
+   Contrast is WCAG 2.2 AA (WebAIM Contrast Checker formula):
+   4.5:1 normal text, 3:1 large text / UI buttons. Ratios below use the
+   sRGB conversion of each OKLCH value. Hex fallbacks are listed so pairs
+   can be pasted into https://webaim.org/resources/contrastchecker/
+
+   Pair                                      FG / BG                 Ratio
+   ---------------------------------------   ---------------------   ------
+   Ink on surface                            #0B2029 / #FBFEFE       16.58:1
+   Ink on canvas                             #0B2029 / #EAF2F3       14.78:1
+   Ink on white                              #0B2029 / #FFFFFF       16.81:1
+   Body on surface                           #364851 / #FBFEFE        9.40:1
+   Body on canvas                            #364851 / #EAF2F3        8.38:1
+   Body on white                             #364851 / #FFFFFF        9.53:1
+   Muted on surface                          #49585F / #FBFEFE        7.29:1
+   Muted on canvas                           #49585F / #EAF2F3        6.50:1
+   Muted on white                            #49585F / #FFFFFF        7.39:1
+   Muted on surface-2                        #49585F / #F4FAFB        6.99:1
+   Accent on white (links, 11–14px)          #006668 / #FFFFFF        6.76:1
+   Accent on surface                         #006668 / #FBFEFE        6.67:1
+   Accent on canvas                          #006668 / #EAF2F3        5.95:1
+   Accent on accent-soft (chips)             #006668 / #D8F3F3        5.81:1
+   Accent-deep on white (eyebrows)           #004C4E / #FFFFFF        9.81:1
+   Accent-deep on accent-soft                #004C4E / #D8F3F3        8.43:1
+   Accent-deep on accent-tint                #004C4E / #EAF9F9        9.10:1
+   White / accent-on on accent (buttons)     #FFFFFF / #006668        6.76:1
+   White on accent-hover                     #FFFFFF / #005557        8.62:1
+   Inverse-ink on inverse                    #F4FCFD / #0B2029       16.13:1
+   Inverse-muted on inverse                  #C1D1D4 / #0B2029       10.69:1
+   Accent-light on inverse (hero highlight)  #85E4E4 / #0B2029       11.36:1
+   Accent-bright on inverse                  #5EDADB / #0B2029       10.04:1
+   Inverse-soft on inverse                   #C0E7E7 / #0B2029       12.65:1
+   Success on white (status, large/UI)       #137738 / #FFFFFF        5.65:1
+   Danger on white                           #B02A2D / #FFFFFF        6.55:1
+   White on danger                           #FFFFFF / #B02A2D        6.55:1
+
+   Do not use --color-accent-light or --color-accent-bright as text on
+   light surfaces — those tokens are for dark / inverse panels only.
+   ========================================================================== */
+
+:root {
+  /* ----- Colour: surfaces ----- */
+  --color-white: #ffffff;
+  --color-white: oklch(1 0 0);
+
+  --color-canvas: #eaf2f3;
+  --color-canvas: oklch(0.955 0.008 210);
+
+  --color-canvas-mid: #e5edee;
+  --color-canvas-mid: oklch(0.940 0.008 210);
+
+  --color-canvas-deep: #dce5e6;
+  --color-canvas-deep: oklch(0.915 0.010 210);
+
+  --color-surface: #fbfefe;
+  --color-surface: oklch(0.995 0.003 210);
+
+  --color-surface-2: #f4fafb;
+  --color-surface-2: oklch(0.980 0.006 210);
+
+  /* ----- Colour: ink ----- */
+  --color-ink: #0b2029;
+  --color-ink: oklch(0.230 0.032 230);
+
+  --color-body: #364851;
+  --color-body: oklch(0.390 0.028 230);
+
+  --color-muted: #49585f;
+  --color-muted: oklch(0.450 0.022 230);
+
+  /* ----- Colour: accent (Deep Teal — the only brand accent) ----- */
+  --color-accent: #006668;
+  --color-accent: oklch(0.455 0.095 196);
+
+  --color-accent-hover: #005557;
+  --color-accent-hover: oklch(0.395 0.095 196);
+
+  --color-accent-deep: #004c4e;
+  --color-accent-deep: oklch(0.365 0.090 196);
+
+  --color-accent-on: #f6ffff;
+  --color-accent-on: oklch(0.995 0.010 196);
+
+  --color-accent-soft: #d8f3f3;
+  --color-accent-soft: oklch(0.945 0.028 196);
+
+  --color-accent-tint: #eaf9f9;
+  --color-accent-tint: oklch(0.972 0.016 196);
+
+  /* Light tints — inverse / dark panels only */
+  --color-accent-light: #85e4e4;
+  --color-accent-light: oklch(0.860 0.090 196);
+
+  --color-accent-bright: #5edadb;
+  --color-accent-bright: oklch(0.820 0.110 196);
+
+  /* ----- Colour: inverse (hero, dark bands) ----- */
+  --color-inverse: #0b2029;
+  --color-inverse: oklch(0.230 0.032 230);
+
+  --color-inverse-mid: #16323e;
+  --color-inverse-mid: oklch(0.300 0.040 230);
+
+  --color-inverse-deep: #051720;
+  --color-inverse-deep: oklch(0.195 0.030 230);
+
+  --color-inverse-ink: #f4fcfd;
+  --color-inverse-ink: oklch(0.985 0.008 210);
+
+  --color-inverse-muted: #c1d1d4;
+  --color-inverse-muted: oklch(0.850 0.018 210);
+
+  --color-inverse-soft: #c0e7e7;
+  --color-inverse-soft: oklch(0.900 0.040 196);
+
+  /* ----- Colour: semantic (not a second brand accent) ----- */
+  --color-success: #137738;
+  --color-success: oklch(0.500 0.130 150);
+
+  --color-danger: #b02a2d;
+  --color-danger: oklch(0.500 0.170 25);
+
+  /* ----- Colour: lines, scrims, alpha ----- */
+  --color-line: oklch(0.230 0.032 230 / 0.12);
+  --color-line-strong: oklch(0.230 0.032 230 / 0.18);
+  --color-accent-a08: oklch(0.455 0.095 196 / 0.08);
+  --color-accent-a12: oklch(0.455 0.095 196 / 0.12);
+  --color-accent-a16: oklch(0.455 0.095 196 / 0.16);
+  --color-accent-a22: oklch(0.455 0.095 196 / 0.22);
+  --color-accent-a35: oklch(0.455 0.095 196 / 0.35);
+  --color-success-a18: oklch(0.500 0.130 150 / 0.18);
+  --color-white-a08: oklch(1 0 0 / 0.08);
+  --color-white-a10: oklch(1 0 0 / 0.10);
+  --color-white-a12: oklch(1 0 0 / 0.12);
+  --color-white-a16: oklch(1 0 0 / 0.16);
+  --color-white-a20: oklch(1 0 0 / 0.20);
+  --color-white-a22: oklch(1 0 0 / 0.22);
+  --color-white-a28: oklch(1 0 0 / 0.28);
+  --color-inverse-a28: oklch(0.230 0.032 230 / 0.28);
+  --color-inverse-a62: oklch(0.230 0.032 230 / 0.62);
+  --color-inverse-a88: oklch(0.230 0.032 230 / 0.88);
+  --color-inverse-a90: oklch(0.230 0.032 230 / 0.90);
+
+  /* ----- Gradients ----- */
+  --color-glass: linear-gradient(
+    155deg,
+    var(--color-surface) 0%,
+    var(--color-surface-2) 48%,
+    var(--color-accent-tint) 100%
+  );
+  --color-atmosphere:
+    radial-gradient(ellipse 65% 45% at 85% 8%, var(--color-accent-a12), transparent 58%),
+    radial-gradient(ellipse 55% 40% at 8% 78%, oklch(0.455 0.095 196 / 0.08), transparent 55%),
+    linear-gradient(180deg, var(--color-surface-2) 0%, var(--color-canvas) 48%, var(--color-canvas-mid) 100%);
+  --color-inverse-panel: linear-gradient(
+    155deg,
+    var(--color-inverse-mid) 0%,
+    var(--color-inverse) 55%,
+    var(--color-inverse-deep) 100%
+  );
+  --gradient-accent-fill: linear-gradient(
+    135deg,
+    var(--color-accent) 0%,
+    var(--color-accent-hover) 100%
+  );
+  /* Both stops pass 4.5:1 on light surfaces */
+  --gradient-accent-text: linear-gradient(
+    100deg,
+    var(--color-accent) 0%,
+    var(--color-accent-deep) 100%
+  );
+  /* Both stops pass 4.5:1 on inverse panels */
+  --gradient-accent-text-on-dark: linear-gradient(
+    100deg,
+    var(--color-accent-bright) 0%,
+    var(--color-accent-light) 100%
+  );
+  --gradient-hero-scrim: linear-gradient(
+    100deg,
+    var(--color-inverse-a90) 0%,
+    var(--color-inverse-a62) 48%,
+    var(--color-inverse-a28) 100%
+  );
+
+  /* ----- Type: fluid scale (clamp) ----- */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+
+  --text-2xs: clamp(0.6875rem, 0.66rem + 0.14vw, 0.75rem);     /* 11–12 */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.16vw, 0.8125rem);      /* 12–13 */
+  --text-sm: clamp(0.8125rem, 0.78rem + 0.2vw, 0.875rem);      /* 13–14 */
+  --text-md: clamp(0.9375rem, 0.9rem + 0.22vw, 1.0625rem);     /* 15–17 */
+  --text-lg: clamp(1.0625rem, 1rem + 0.35vw, 1.1875rem);       /* 17–19 */
+  --text-xl: clamp(1.125rem, 1.02rem + 0.55vw, 1.5rem);        /* 18–24 */
+  --text-2xl: clamp(1.375rem, 1.1rem + 1.1vw, 1.875rem);       /* 22–30 */
+  --text-3xl: clamp(1.5rem, 1.15rem + 1.5vw, 2rem);            /* 24–32 */
+  --text-display: clamp(2.25rem, 1.4rem + 3.2vw, 3.5rem);      /* 36–56 */
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.25;
+  --leading-body: 1.6;
+  --tracking-tight: -0.03em;
+  --tracking-snug: -0.02em;
+  --tracking-wide: 0.06em;
+  --tracking-caps: 0.09em;
+
+  /* ----- Space ----- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-7: 1.75rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-page-x: clamp(1.25rem, 4vw, 1.5rem);
+  --space-section: clamp(1.25rem, 3.5vw, 1.9rem);
+  --space-hero: clamp(1.4rem, 4vw, 2.4rem);
+  --space-cta: clamp(2rem, 5vw, 3rem);
+  --space-stack: clamp(1.5rem, 4vw, 4.5rem);
+
+  /* ----- Radius ----- */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.125rem;
+  --radius-2xl: 1.375rem;
+  --radius-pill: 999px;
+
+  /* ----- Controls ----- */
+  --control-min-size: 44px;
+
+  /* ----- Shadow ----- */
+  --shadow-sm: 0 1px 3px oklch(0.230 0.032 230 / 0.04);
+  --shadow-md:
+    0 12px 28px oklch(0.230 0.032 230 / 0.06),
+    0 1px 3px oklch(0.230 0.032 230 / 0.04),
+    inset 0 1px 0 var(--color-white);
+  --shadow-lg: 0 14px 32px oklch(0.230 0.032 230 / 0.14);
+  --shadow-accent: 0 10px 22px oklch(0.455 0.095 196 / 0.32);
+  --shadow-accent-hover: 0 12px 26px oklch(0.455 0.095 196 / 0.42);
+
+  /* ----- Back-compat aliases (existing --ll-* / --lla-* pages) ----- */
+  --ll-ink: var(--color-ink);
+  --ll-ink-soft: var(--color-inverse-mid);
+  --ll-body: var(--color-body);
+  --ll-muted: var(--color-muted);
+  --ll-line: var(--color-line);
+  --ll-blue: var(--color-accent);
+  --ll-blue-hover: var(--color-accent-hover);
+  --ll-blue-deep: var(--color-accent-deep);
+  --ll-cyan: var(--color-accent);
+  --ll-green: var(--color-success);
+  --ll-red: var(--color-danger);
+  --ll-text-dark: var(--color-ink);
+  --ll-text-muted: var(--color-muted);
+  --ll-border-light: var(--color-canvas-deep);
+  --ll-glass: var(--color-glass);
+  --ll-font-display: var(--font-display);
+  --ll-font-body: var(--font-sans);
+  --ll-nav-ink: var(--color-ink);
+  --ll-nav-muted: var(--color-muted);
+  --ll-nav-blue: var(--color-accent);
+  --ll-nav-line: var(--color-line);
+  --ll-radius-sm: var(--radius-sm);
+  --ll-radius-md: var(--radius-md);
+  --ll-radius-lg: var(--radius-lg);
+}
+
+/* Shared CTA contract: pill shape, 44px minimum hit area, accent fill.
+   :where() keeps specificity at 0 so page CSS can still refine colours. */
+:where(
+  .llhm-btn-primary,
+  .llhm-btn-secondary,
+  .llsite-btn-primary,
+  .llsite-btn-secondary,
+  .llsg-btn-primary,
+  .llsg-btn-secondary,
+  .llsvc-btn-primary,
+  .llsvc-btn-secondary,
+  .llabt-btn-green,
+  .llabt-btn-primary,
+  .llabt-btn-secondary,
+  .llct-btn,
+  .launchlayer-floating-btn
+) {
+  min-height: var(--control-min-size);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-sans);
+  font-weight: 700;
+}
+
+:where(.llhm-btn-primary, .llsite-btn-primary, .llsg-btn-primary, .llsvc-btn-primary, .llabt-btn-primary, .llabt-btn-green, .llct-btn, .launchlayer-floating-btn) {
+  background: var(--gradient-accent-fill);
+  color: var(--color-accent-on);
+}
+
+:where(.llhm-btn-primary, .llsite-btn-primary, .llsg-btn-primary, .llsvc-btn-primary, .llabt-btn-primary, .llabt-btn-green, .llct-btn, .launchlayer-floating-btn):focus-visible,
+:where(.llhm-btn-secondary, .llsite-btn-secondary, .llsg-btn-secondary, .llsvc-btn-secondary, .llabt-btn-secondary):focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}

@@ -1,28 +1,10 @@
 /* ==========================================================================
    LAUNCHLAYER MASTER CUSTOM CSS
-   Brand Palette:
-   --ll-ink: #0B1120 | --ll-blue: #1D4ED8 | --ll-cyan: #22D3E0 
-   --ll-green: #10B981 | --ll-red: #DC2626
+   Palette, type, space, and radius live in design-tokens.css.
+   --ll-* aliases resolve to those tokens (Deep Teal accent).
    ========================================================================== */
 
-/* ── 1. CORE ROOT VARIABLES ── */
-:root {
-  --ll-ink: #0b1120;
-  --ll-ink-soft: #131b2e;
-  --ll-blue: #1d4ed8;
-  --ll-blue-hover: #1e40af;
-  --ll-cyan: #22d3e0;
-  --ll-green: #10b981;
-  --ll-red: #dc2626;
-  
-  --ll-text-dark: #0f172a;
-  --ll-text-muted: #475569;
-  --ll-border-light: #e2e8f0;
-  
-  --ll-radius-sm: 8px;
-  --ll-radius-md: 12px;
-  --ll-radius-lg: 16px;
-}
+@import url("design-tokens.css");
 
 /* ── 2. GLOBAL RESET & BASE STYLES ── */
 body {
@@ -100,20 +82,23 @@ html {
 .launchlayer-floating-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: var(--ll-blue);
-  color: #ffffff !important;
-  padding: 12px 20px;
-  border-radius: 100px;
+  justify-content: center;
+  gap: var(--space-3);
+  min-height: var(--control-min-size);
+  background: var(--gradient-accent-fill);
+  color: var(--color-accent-on) !important;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-pill);
   font-weight: 700;
-  font-size: 14px;
+  font-size: var(--text-sm);
   text-decoration: none !important;
-  box-shadow: 0 10px 25px -5px rgba(29, 78, 216, 0.4);
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: var(--shadow-accent);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .launchlayer-floating-btn:hover {
-  background: var(--ll-blue-hover);
+  background: var(--color-accent-hover);
+  box-shadow: var(--shadow-accent-hover);
   transform: translateY(-2px);
 }
 

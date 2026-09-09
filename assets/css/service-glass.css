@@ -1,16 +1,17 @@
+@import url("design-tokens.css");
+
 /* LaunchLayer service page glass system — shared by service & local SEO pages */
-/* LaunchLayer service page glass system */
 .llsg-page {
-      --ll-ink: #0b1120;
-      --ll-body: #334155;
-      --ll-muted: #475569;
-      --ll-line: rgba(15, 23, 42, 0.10);
-      --ll-blue: #1d4ed8;
-      --ll-blue-deep: #1e40af;
-      --ll-cyan: #0891b2;
-      --ll-green: #047857;
-      --ll-green-bg: #ecfdf5;
-      --ll-glass: linear-gradient(155deg, #ffffff 0%, #fbfcfe 48%, #eff6ff 100%);
+      --ll-ink: var(--color-ink);
+      --ll-body: var(--color-body);
+      --ll-muted: var(--color-muted);
+      --ll-line: var(--color-line);
+      --ll-blue: var(--color-accent);
+      --ll-blue-deep: var(--color-accent-deep);
+      --ll-cyan: var(--color-accent);
+      --ll-green: var(--color-success);
+      --ll-green-bg: var(--color-accent-tint);
+      --ll-glass: var(--color-glass);
 
       position: relative;
       z-index: 1;
@@ -92,7 +93,7 @@
 }
 
 .llsg-brand span {
-      background: linear-gradient(120deg, #1d4ed8 0%, #0891b2 100%);
+      background: var(--gradient-accent-text);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -176,32 +177,33 @@
       align-items: center;
       justify-content: center;
       font: inherit;
-      font-size: 14px;
+      font-size: var(--text-sm);
       font-weight: 700;
       text-decoration: none;
-      border-radius: 14px;
-      padding: 13px 18px;
+      border-radius: var(--radius-pill);
+      min-height: var(--control-min-size);
+      padding: 0 var(--space-5);
       transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
 }
 
 .llsg-btn-primary {
-      background: var(--ll-ink);
-      color: #fff;
-      border: 1px solid var(--ll-ink);
+      background: var(--gradient-accent-fill);
+      color: var(--color-accent-on);
+      border: 1px solid var(--color-accent);
 }
-.llsg-btn-primary:hover { background: #1e293b; transform: translateY(-1px); }
+.llsg-btn-primary:hover { background: var(--color-accent-hover); transform: translateY(-1px); }
 
 .llsg-btn-secondary {
-      background: #fff;
-      color: var(--ll-ink);
-      border: 1px solid var(--ll-line);
+      background: var(--color-surface);
+      color: var(--color-accent-deep);
+      border: 1px solid var(--color-line);
 }
-.llsg-btn-secondary:hover { border-color: rgba(29, 78, 216, 0.35); color: var(--ll-blue); }
+.llsg-btn-secondary:hover { border-color: var(--color-accent-a35); color: var(--color-accent); }
 
 .llsg-hero-visual {
       position: relative;
       min-height: 280px;
-      background: #0b1120;
+      background: var(--color-inverse);
 }
 
 .llsg-hero-visual img {
@@ -275,7 +277,7 @@
       margin-bottom: 12px;
       background: #eff6ff;
       color: var(--ll-blue-deep);
-      border: 1px solid rgba(29, 78, 216, 0.14);
+      border: 1px solid var(--color-accent-a16);
 }
 
 .llsg-check-icon[data-tone="cyan"] {
@@ -550,7 +552,7 @@
 
 .llsg-related a:hover {
       background: #eff6ff;
-      border-color: rgba(29, 78, 216, 0.25);
+      border-color: var(--color-accent-a22);
       transform: translateY(-1px);
 }
 
@@ -654,7 +656,7 @@
 
 /* Accent text inside headings */
 .llsg-accent {
-  background: linear-gradient(120deg, #1d4ed8 0%, #0891b2 100%);
+  background: var(--gradient-accent-text);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -681,7 +683,7 @@
 }
 .llsg-card:hover {
   transform: translateY(-1px);
-  border-color: rgba(29, 78, 216, 0.25);
+  border-color: var(--color-accent-a22);
   background: #eff6ff;
 }
 .llsg-card h3 {
@@ -744,16 +746,13 @@
 
 /* Body page canvas when using shared CSS */
 body.llsg-body {
-  font-family: 'Inter', -apple-system, sans-serif !important;
-  color: #0b1120 !important;
-  line-height: 1.5;
+  font-family: var(--font-sans) !important;
+  color: var(--color-ink) !important;
+  line-height: var(--leading-body);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
-  background-color: #ececec !important;
-  background-image:
-    radial-gradient(ellipse 65% 45% at 85% 8%, rgba(29, 78, 216, 0.10), transparent 58%),
-    radial-gradient(ellipse 55% 40% at 8% 78%, rgba(34, 211, 224, 0.08), transparent 55%),
-    linear-gradient(180deg, #f4f5f7 0%, #ececec 48%, #e6e8ec 100%) !important;
+  background-color: var(--color-canvas) !important;
+  background-image: var(--color-atmosphere) !important;
   background-attachment: scroll !important;
 }
 body.llsg-body *, body.llsg-body *::before, body.llsg-body *::after { box-sizing: border-box; }
@@ -818,14 +817,24 @@ body.llsg-body svg:not([width]) { max-width: 100%; height: auto; }
   object-fit: cover;
   display: block;
 }
+.llsg-hero-band-display {
+  height: 250px;
+}
+.llsg-hero-band-display img {
+  object-position: center 38%;
+}
 .llsg-hero-band .llsg-hero-scrim {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(11,17,32,0.05), rgba(11,17,32,0.35));
 }
+.llsg-hero-band.llsg-hero-band-display .llsg-hero-scrim {
+  background: linear-gradient(180deg, rgba(11,17,32,0.02), rgba(11,17,32,0.28));
+}
 @media (max-width: 819px) {
   .llsg-hero.llsg-hero-compact .llsg-hero-copy { padding: 28px 20px 24px; }
   .llsg-hero-band { height: 140px; }
+  .llsg-hero-band-display { height: 200px; }
 }
 
 .llsg-section-intro {
@@ -954,7 +963,7 @@ body.llsg-body svg:not([width]) { max-width: 100%; height: auto; }
   padding: 24px 26px;
   margin-bottom: 16px;
   background: linear-gradient(155deg, #ffffff 0%, #f8fbff 48%, #eff6ff 100%);
-  border: 1px solid rgba(29, 78, 216, 0.14);
+  border: 1px solid var(--color-accent-a16);
 }
 .llsg-promo h3 {
   font-family: 'Space Grotesk', sans-serif;
