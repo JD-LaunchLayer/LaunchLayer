@@ -83,7 +83,6 @@
     .llsvc-hero {
       padding: var(--space-8) var(--space-7) var(--space-6);
       margin-bottom: var(--space-4);
-      animation: llsvc-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
     @keyframes llsvc-rise {
@@ -91,10 +90,8 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .llsvc-hero { animation: none !important; }
-      .llsvc-card, .llsvc-chip, .llsvc-cat, .llsvc-btn-primary, .llsvc-btn-secondary { transition: none !important; }
-    }
+    
+
 
     .llsvc-eyebrow {
       display: inline-flex;
@@ -203,7 +200,6 @@
       padding: 9px 14px;
       border-radius: 12px;
       cursor: pointer;
-      transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
     }
 
     .llsvc-cat:hover { border-color: var(--color-accent-a35); color: var(--ll-blue); }
@@ -246,7 +242,6 @@
       border-radius: 14px;
       padding: 13px 44px 13px 42px;
       outline: none;
-      transition: border-color 160ms ease, box-shadow 160ms ease;
     }
 
     .llsvc-search::placeholder { color: #94a3b8; }
@@ -307,7 +302,6 @@
       padding: 8px 12px;
       border-radius: 999px;
       cursor: pointer;
-      transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
     }
     .llsvc-chip:hover { border-color: var(--color-accent-a35); color: var(--ll-blue); }
     .llsvc-chip.is-active {
@@ -418,6 +412,7 @@
 
     @media (min-width: 900px) {
       .llsvc-featured-grid {
+
         grid-template-columns: repeat(3, 1fr);
         gap: var(--space-5);
       }
@@ -436,7 +431,6 @@
       overflow: hidden;
       isolation: isolate;
       box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
-      transition: transform 180ms ease, box-shadow 180ms ease;
     }
 
     .llsvc-feature:hover {
@@ -461,7 +455,6 @@
       object-fit: cover;
       display: block;
       transform: scale(1.02);
-      transition: transform 320ms ease;
     }
 
     .llsvc-feature:hover .llsvc-feature-media img { transform: scale(1.06); }
@@ -559,7 +552,6 @@
       text-decoration: none;
       color: inherit;
       border-radius: 16px;
-      transition: background 160ms ease;
     }
 
     .llsvc-row + .llsvc-row {
@@ -660,6 +652,7 @@
 
     @media (min-width: 820px) {
       .llsvc-row {
+
         grid-template-columns: 52px minmax(0, 1fr) auto;
         grid-template-areas: "icon copy side";
         align-items: center;
@@ -668,6 +661,7 @@
       }
 
       .llsvc-row-side {
+
         flex-direction: column;
         align-items: flex-end;
         justify-content: center;
@@ -784,7 +778,6 @@
       border-radius: var(--radius-pill);
       min-height: var(--control-min-size);
       padding: 0 var(--space-5);
-      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
     }
     .llsvc-btn-primary {
       background: var(--gradient-accent-fill);
@@ -801,38 +794,82 @@
     .llsvc-btn-secondary:hover { border-color: var(--color-accent-a35); color: var(--color-accent); }
 
     @media (max-width: 560px) {
-      .llsvc-hero { padding: var(--space-6) var(--space-5) var(--space-5); }
-      .llsvc-finder { padding: var(--space-3); }
+      .llsvc-hero {
+ padding: var(--space-6) var(--space-5) var(--space-5); }
+      .llsvc-finder {
+ padding: var(--space-3); }
       .llsvc-featured,
       .llsvc-group,
       .llsvc-group:nth-of-type(even) {
+
         padding-inline: var(--space-4);
       }
-      .llsvc-cta { padding: var(--space-7) var(--space-5) var(--space-8); }
-      .llsvc-search-row { grid-template-columns: 1fr auto; gap: 8px; }
+      .llsvc-cta {
+ padding: var(--space-7) var(--space-5) var(--space-8); }
+      .llsvc-search-row {
+ grid-template-columns: 1fr auto; gap: 8px; }
       .llsvc-reset {
+
         padding: 0 12px;
         font-size: 12px;
         border-radius: 12px;
       }
-      .llsvc-search { font-size: 14px; padding: 12px 40px 12px 38px; }
-      .llsvc-price { padding: 8px 10px; }
-      .llsvc-price-value { font-size: 1.15rem; }
-      .llsvc-row { padding: 14px 12px; }
-      .llsvc-row-side { padding-left: 0; }
-      .llsvc-meta { flex-direction: column; align-items: flex-start; gap: 4px; }
-      .llsvc-note { font-size: 11.5px; }
-      .llsvc-feature { min-height: 220px; }
+      .llsvc-search {
+ font-size: 14px; padding: 12px 40px 12px 38px; }
+      .llsvc-price {
+ padding: 8px 10px; }
+      .llsvc-price-value {
+ font-size: 1.15rem; }
+      .llsvc-row {
+ padding: 14px 12px; }
+      .llsvc-row-side {
+ padding-left: 0; }
+      .llsvc-meta {
+ flex-direction: column; align-items: flex-start; gap: 4px; }
+      .llsvc-note {
+ font-size: 11.5px; }
+      .llsvc-feature {
+ min-height: 220px; }
     }
 
     @media (min-width: 720px) {
       .llsvc-cats,
       .llsvc-chips {
+
         flex-wrap: wrap;
         overflow: visible;
       }
     }
-  </style>
+
+/* Motion only when the user allows it */
+@media (prefers-reduced-motion: no-preference) {
+  .llsvc-hero {
+    animation: llsvc-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .llsvc-cat {
+    transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+  }
+  .llsvc-search {
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+  .llsvc-chip {
+    transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+  }
+  .llsvc-feature {
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+  .llsvc-feature-media img {
+    transition: transform 320ms ease;
+  }
+  .llsvc-row {
+    transition: background 160ms ease;
+  }
+  .llsvc-btn-primary,
+    .llsvc-btn-secondary {
+    transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  }
+}
+</style>
 
   <!--
     SERVICE CATALOG

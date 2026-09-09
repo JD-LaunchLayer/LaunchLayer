@@ -88,12 +88,6 @@
   display: inline-flex !important;
   align-items: center !important;
   gap: 6px !important;
-  transition:
-    background-color 160ms ease,
-    border-color 160ms ease,
-    color 160ms ease,
-    box-shadow 160ms ease,
-    transform 160ms ease !important;
 }
 
 .ll-header-nav > li > a:hover,
@@ -123,7 +117,6 @@
 .ll-dropdown-chevron {
   width: 10px !important;
   height: 6px !important;
-  transition: transform 0.2s ease !important;
 }
 
 .ll-dropdown-menu {
@@ -142,10 +135,6 @@
   min-width: 230px !important;
   opacity: 0 !important;
   visibility: hidden !important;
-  transition:
-    opacity 180ms ease,
-    visibility 180ms ease,
-    transform 180ms cubic-bezier(0.22, 1, 0.36, 1) !important;
   z-index: 1000 !important;
   list-style: none !important;
   overflow: hidden !important;
@@ -176,7 +165,6 @@
   text-decoration: none !important;
   border-radius: 12px !important;
   border: 1px solid transparent !important;
-  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease !important;
   white-space: nowrap !important;
   border-bottom: none !important;
 }
@@ -209,6 +197,7 @@
 
 @media (min-width: 850px) {
   .footer-top-segment {
+
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: flex-start !important;
@@ -279,6 +268,7 @@
 
 @media (min-width: 768px) {
   .footer-compliance-bar {
+
     flex-direction: row !important;
     justify-content: space-between !important;
   }
@@ -330,10 +320,12 @@
 /* Tablet + mobile: use burger drawer (avoids broken mid-width desktop nav) */
 @media (max-width: 991px) {
   .ll-site-header {
+
     padding: 10px 14px 10px 8px !important;
   }
 
   .ll-header-wrap {
+
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
@@ -341,6 +333,7 @@
   }
 
   .ll-burger-btn {
+
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-around !important;
@@ -357,15 +350,16 @@
   }
 
   .ll-burger-btn span {
+
     display: block !important;
     height: 2.5px !important;
     width: 100% !important;
     background-color: #0B1120 !important;
     border-radius: 2px !important;
-    transition: all 0.3s ease-in-out !important;
   }
 
   .ll-header-nav {
+
     position: fixed !important;
     top: 0 !important;
     right: -100% !important;
@@ -381,17 +375,18 @@
     align-items: stretch !important;
     padding: 88px 18px 32px 18px !important;
     gap: 8px !important;
-    transition: right 0.3s ease-in-out !important;
     z-index: 1001 !important;
     overflow-y: auto !important;
   }
 
   .ll-header-nav > li {
+
     width: 100% !important;
   }
 
   .ll-header-nav a,
   .ll-dropdown-trigger {
+
     font-size: 17px !important;
     font-weight: 650 !important;
     width: 100% !important;
@@ -402,12 +397,14 @@
   }
 
   .ll-header-nav > li > a:hover {
+
     background: var(--color-accent-a08) !important;
     border-color: var(--color-accent-a16) !important;
   }
 
   /* Mobile/tablet: flatten Services — label + peer links, not a fake dropdown */
   .ll-dropdown-container {
+
     width: 100% !important;
     display: flex !important;
     flex-direction: column !important;
@@ -421,6 +418,7 @@
   }
 
   .ll-dropdown-trigger {
+
     cursor: default !important;
     pointer-events: none !important;
     justify-content: flex-start !important;
@@ -436,16 +434,19 @@
   }
 
   .ll-dropdown-trigger:hover {
+
     background: transparent !important;
     border: none !important;
     color: #64748b !important;
   }
 
   .ll-dropdown-chevron {
+
     display: none !important;
   }
 
   .ll-dropdown-menu {
+
     position: static !important;
     transform: none !important;
     left: auto !important;
@@ -470,12 +471,14 @@
   }
 
   .ll-dropdown-menu li {
+
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
   .ll-dropdown-menu a {
+
     font-size: 17px !important;
     font-weight: 650 !important;
     padding: 12px 14px !important;
@@ -487,6 +490,7 @@
 
   .ll-dropdown-menu a:hover,
   .ll-dropdown-menu a:focus-visible {
+
     background-color: var(--color-accent-a08) !important;
     border-color: var(--color-accent-a16) !important;
     color: var(--color-accent) !important;
@@ -494,25 +498,31 @@
 
   /* Keep Contact Us visually outside the Services group */
   .ll-header-nav > li:last-child {
+
     margin-top: 2px !important;
   }
 
   .ll-burger-input:checked ~ .ll-header-nav {
+
     right: 0 !important;
   }
 
   .ll-burger-input:checked ~ .ll-burger-btn {
+
     background: var(--color-accent-a08) !important;
     border-color: var(--color-accent-a22) !important;
   }
 
   .ll-burger-input:checked ~ .ll-burger-btn span:nth-child(1) {
+
     transform: translateY(7.5px) rotate(45deg) !important;
   }
   .ll-burger-input:checked ~ .ll-burger-btn span:nth-child(2) {
+
     opacity: 0 !important;
   }
   .ll-burger-input:checked ~ .ll-burger-btn span:nth-child(3) {
+
     transform: translateY(-7.5px) rotate(-45deg) !important;
   }
 }
@@ -537,6 +547,7 @@
   .content,
   .llbrand-page,
   .llbrand-sidebar {
+
     overflow: visible !important;
     overflow-x: visible !important;
     overflow-y: visible !important;
@@ -544,6 +555,7 @@
 
   /* Ensure parent grid containers use align-items: start; so sticky container can float */
   .llbrand-layout {
+
     align-items: start !important;
   }
 
@@ -551,6 +563,7 @@
   .llbrand-sidebar-sticky,
   body .llbrand-page .llbrand-sidebar-sticky,
   body .llbrand-page .llbrand-layout .llbrand-sidebar .llbrand-sidebar-sticky {
+
     position: -webkit-sticky !important;
     position: sticky !important;
     top: 120px !important; /* Clears the site header with a generous, fully-visible offset */
@@ -586,6 +599,7 @@ main#page {
   /* Wrap the SEO title and links in a card container */
   .footer-matrix-section,
   footer .sqs-block-content:has(.footer-matrix-title) {
+
     background: #F7F8FB !important;
     border: 1px solid #E4E9F1 !important;
     border-radius: 12px !important;
@@ -595,6 +609,7 @@ main#page {
 
   /* Ensure title bar is tappable flex row with chevron */
   .footer-matrix-title {
+
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
@@ -608,6 +623,7 @@ main#page {
 
   .service-coverage-accordion-header,
   [class*="service-coverage"] {
+
     cursor: pointer !important;
     touch-action: manipulation;
     user-select: none;
@@ -619,10 +635,10 @@ main#page {
 
   /* Dropdown/accordion indicator arrow on mobile */
   .footer-matrix-title::after {
+
     content: "▼" !important;
     font-size: 9px !important;
     color: #1D4ED8 !important;
-    transition: transform 0.25s ease !important;
     margin-left: 8px !important;
     display: inline-block !important;
   }
@@ -630,11 +646,13 @@ main#page {
   .footer-matrix-section.active .footer-matrix-title::after,
   .service-coverage-accordion-header.active::after,
   .footer-matrix-title.active::after {
+
     transform: rotate(180deg) !important;
   }
 
   .footer-matrix-grid,
   .footer-matrix-section .grid-section {
+
     padding-top: 12px !important;
     margin-top: 12px !important;
     border-top: 1px solid #E4E9F1 !important;
@@ -642,6 +660,7 @@ main#page {
 
   footer .sqs-block-content ul,
   footer .footer-nav-links {
+
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px 24px !important;
@@ -651,6 +670,7 @@ main#page {
 
   footer .sqs-block-content ul li a,
   footer .footer-nav-links a {
+
     font-size: 14px !important;
     font-weight: 600 !important;
     white-space: nowrap !important;
@@ -661,6 +681,7 @@ main#page {
   footer ul:has(a),
   footer .sqs-layout .sqs-block-content p,
   footer .sqs-layout .sqs-block-content ul {
+
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 12px 8px !important;
@@ -676,6 +697,7 @@ main#page {
   footer p:has(a) a,
   footer ul:has(a) a,
   footer .sqs-layout .sqs-block-content a {
+
     display: inline-block !important;
     font-size: 13px !important;
     font-weight: 600 !important;
@@ -707,6 +729,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /* Goal 1: Mobile Submenu Alignment (flattened Services list) */
 @media (max-width: 991px) {
   .dropdown-menu, .sub-menu, .nav-dropdown, .ll-dropdown-menu {
+
     position: static !important;
     transform: none !important;
     left: auto !important;
@@ -714,6 +737,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   .dropdown-menu a, .sub-menu a, .nav-dropdown a, .ll-dropdown-menu a {
+
     text-align: left !important;
     margin-left: 0 !important;
     width: 100% !important;
@@ -725,6 +749,7 @@ document.addEventListener('DOMContentLoaded', function() {
   .ll-dropdown-container:focus-within .ll-dropdown-menu,
   body .ll-dropdown-container:hover .ll-dropdown-menu,
   body .ll-dropdown-container:focus-within .ll-dropdown-menu {
+
     position: static !important;
     transform: none !important;
     opacity: 1 !important;
@@ -736,6 +761,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /* Goal 2: Search Bar Mobile UX & Placeholder Fix */
 @media (max-width: 991px) {
   .search-container, .search-wrapper, .search-form, .llprc-finder {
+
     background: transparent !important;
     box-shadow: none !important;
     padding: 0 !important;
@@ -743,6 +769,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   body .llprc-finder-inputwrap,
   body .llprc-finder .llprc-finder-inputwrap {
+
     position: relative !important;
     background: transparent !important;
     box-shadow: none !important;
@@ -754,6 +781,7 @@ document.addEventListener('DOMContentLoaded', function() {
   .search-wrapper input,
   .search-form input,
   .llprc-finder-input {
+
     background: #FFFFFF !important;
     border: 1px solid #E2E8F0 !important;
     border-radius: 999px !important;
@@ -770,6 +798,7 @@ document.addEventListener('DOMContentLoaded', function() {
   .search-form input::placeholder,
   .llprc-finder-input::placeholder,
   input::placeholder {
+
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
     overflow: hidden !important;
@@ -806,6 +835,7 @@ document.addEventListener('DOMContentLoaded', function() {
   .footer-matrix-section > .footer-matrix-grid,
   footer .footer-matrix-grid,
   footer .footer-matrix-list {
+
     display: none !important;
   }
 
@@ -815,6 +845,7 @@ document.addEventListener('DOMContentLoaded', function() {
   .footer-matrix-section > .footer-matrix-grid.open,
   footer .footer-matrix-grid.open,
   footer .footer-matrix-list.open {
+
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
@@ -826,6 +857,7 @@ document.addEventListener('DOMContentLoaded', function() {
   .footer-matrix-list,
   .service-coverage-panel,
   .service-coverage-grid {
+
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
   }
@@ -892,7 +924,6 @@ document.addEventListener('DOMContentLoaded', function() {
   border-radius: 12px !important;
   margin-bottom: 14px !important;
   overflow: hidden !important;
-  transition: all 0.2s ease !important;
 }
 
 .llfaqpg-item:hover {
@@ -932,7 +963,6 @@ document.addEventListener('DOMContentLoaded', function() {
   max-width: 18px !important;
   max-height: 18px !important;
   color: #64748B !important;
-  transition: transform 0.2s ease, color 0.2s ease !important;
   flex-shrink: 0 !important;
 }
 
@@ -1118,7 +1148,6 @@ document.addEventListener('DOMContentLoaded', function() {
   text-decoration: none !important;
   font-weight: 500 !important;
   border-bottom: 1px solid transparent !important;
-  transition: border-bottom-color 0.15s ease !important;
 }
 
 .llegal-link:hover {
@@ -1177,4 +1206,51 @@ main#page {
   width: 100% !important;
   height: auto !important;
   grid-area: auto !important;
+}
+
+/* Motion only when the user allows it */
+@media (prefers-reduced-motion: no-preference) {
+  .ll-header-nav a,
+  .ll-dropdown-trigger {
+    transition:
+      background-color 160ms ease,
+      border-color 160ms ease,
+      color 160ms ease,
+      box-shadow 160ms ease,
+      transform 160ms ease !important;
+  }
+  .ll-dropdown-menu {
+    transition:
+      opacity 180ms ease,
+      visibility 180ms ease,
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+  }
+  .ll-dropdown-chevron {
+    transition: transform 0.2s ease !important;
+  }
+  .ll-dropdown-menu a {
+    transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease !important;
+  }
+  .llfaqpg-item {
+    transition: all 0.2s ease !important;
+  }
+  .llfaqpg-chevron {
+    transition: transform 0.2s ease, color 0.2s ease !important;
+  }
+  .llegal-link {
+    transition: border-bottom-color 0.15s ease !important;
+  }
+  @media (max-width: 991px) {
+    .ll-burger-btn span {
+      transition: all 0.3s ease-in-out !important;
+    }
+    .ll-header-nav {
+      transition: right 0.3s ease-in-out !important;
+    }
+  }
+  @media (max-width: 639px) {
+    .footer-matrix-title::after {
+      transition: transform 0.25s ease !important;
+    }
+  }
 }

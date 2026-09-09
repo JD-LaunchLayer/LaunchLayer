@@ -100,7 +100,6 @@
     }
 
     .llabt-hero.llabt-glass {
-      animation: llabt-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
     @keyframes llabt-rise {
@@ -108,14 +107,8 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .llabt-hero.llabt-glass { animation: none !important; }
-      .llabt-fact,
-      .llabt-promise-card,
-      .llabt-btn-green,
-      .llabt-btn-primary,
-      .llabt-btn-secondary { transition: none !important; }
-    }
+    
+
 
     .llabt-eyebrow {
       display: inline-flex !important;
@@ -141,12 +134,15 @@
 
     @media (min-width: 768px) {
       .llabt-hero {
+
         flex-direction: row !important;
         align-items: center !important;
         gap: 36px !important;
       }
-      .llabt-hero-content { flex: 1.15 !important; min-width: 0; }
-      .llabt-hero-image { flex: 0.85 !important; min-width: 0; }
+      .llabt-hero-content {
+ flex: 1.15 !important; min-width: 0; }
+      .llabt-hero-image {
+ flex: 0.85 !important; min-width: 0; }
     }
 
     .llabt-hero h1 {
@@ -190,7 +186,6 @@
       border: 1px solid var(--lla-line) !important;
       padding: 8px 14px !important;
       border-radius: 999px !important;
-      transition: border-color 160ms ease, background 160ms ease;
     }
 
     .llabt-fact:hover {
@@ -255,7 +250,6 @@
       border: 1px solid var(--lla-line) !important;
       border-radius: 16px !important;
       padding: 22px !important;
-      transition: border-color 160ms ease, background 160ms ease;
     }
 
     .llabt-promise-card:hover {
@@ -304,14 +298,17 @@
     @media (min-width: 768px) {
       .llabt-impact,
       .llabt-founder {
+
         flex-direction: row !important;
         align-items: center !important;
         gap: 36px !important;
       }
       .llabt-impact-content,
-      .llabt-founder-content { flex: 1.15 !important; min-width: 0; }
+      .llabt-founder-content {
+ flex: 1.15 !important; min-width: 0; }
       .llabt-impact-image,
-      .llabt-founder-image { flex: 0.85 !important; min-width: 0; }
+      .llabt-founder-image {
+ flex: 0.85 !important; min-width: 0; }
     }
 
     .llabt-impact p,
@@ -340,7 +337,6 @@
       font-weight: 700 !important;
       font-size: var(--text-sm) !important;
       text-decoration: none !important;
-      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
     }
 
     .llabt-btn-green {
@@ -427,7 +423,25 @@
       z-index: 1;
       background: #ffffff;
     }
-  </style>
+
+/* Motion only when the user allows it */
+@media (prefers-reduced-motion: no-preference) {
+  .llabt-hero.llabt-glass {
+    animation: llabt-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .llabt-fact {
+    transition: border-color 160ms ease, background 160ms ease;
+  }
+  .llabt-promise-card {
+    transition: border-color 160ms ease, background 160ms ease;
+  }
+  .llabt-btn-green,
+    .llabt-btn-primary,
+    .llabt-btn-secondary {
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+  }
+}
+</style>
 
   <!-- Schema.org -->
   <script type="application/ld+json">

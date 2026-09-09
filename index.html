@@ -87,7 +87,6 @@
     }
 
     .llhm-hero.llhm-glass {
-      animation: llhm-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
     @keyframes llhm-rise {
@@ -95,15 +94,8 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .llhm-hero.llhm-glass { animation: none !important; }
-      .llhm-card,
-      .llhm-door,
-      .llhm-door-business,
-      .llhm-btn-primary,
-      .llhm-btn-secondary,
-      .llhm-chip { transition: none !important; }
-    }
+    
+
 
     .llhm-eyebrow {
       display: inline-flex;
@@ -255,7 +247,6 @@
       font-weight: 700;
       font-size: var(--text-sm);
       text-decoration: none;
-      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
     }
 
     .llhm-btn-primary {
@@ -333,6 +324,7 @@
 
     @media (min-width: 640px) {
       .llhm-doors-grid {
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
@@ -348,7 +340,6 @@
       border-radius: var(--radius-lg);
       text-decoration: none;
       color: inherit;
-      transition: border-color 160ms ease, background 160ms ease;
     }
 
     a.llhm-door:hover {
@@ -408,7 +399,6 @@
       background: var(--color-accent-tint);
       border: 1px solid var(--color-accent-a16);
       text-decoration: none;
-      transition: border-color 160ms ease, background 160ms ease;
     }
 
     a.llhm-door-business:hover {
@@ -428,6 +418,7 @@
 
     @media (max-width: 560px) {
       a.llhm-door-business {
+
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
@@ -469,6 +460,7 @@
     /* Force 2x2 earlier — avoid awkward 3+1 mid layouts */
     @media (min-width: 560px) {
       .llhm-grid {
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: var(--space-5);
       }
@@ -479,7 +471,6 @@
       border: 1px solid var(--color-line);
       border-radius: var(--radius-lg);
       padding: var(--space-5);
-      transition: border-color 160ms ease, background 160ms ease;
     }
 
     .llhm-card:hover {
@@ -535,6 +526,7 @@
 
     @media (min-width: 960px) {
       .llhm-split {
+
         grid-template-columns: 1.2fr 0.8fr;
         align-items: center;
         gap: 2.25rem;
@@ -610,12 +602,14 @@
 
     @media (min-width: 960px) {
       .llhm-visit-grid {
+
         grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
         gap: var(--space-8);
         align-items: start;
       }
 
       .llhm-visit-details {
+
         order: -1;
         padding-top: var(--space-2);
       }
@@ -789,7 +783,27 @@
       z-index: 1;
       background: var(--color-surface);
     }
-  </style>
+
+/* Motion only when the user allows it */
+@media (prefers-reduced-motion: no-preference) {
+  .llhm-hero.llhm-glass {
+    animation: llhm-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .llhm-btn-primary,
+    .llhm-btn-secondary {
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+  }
+  a.llhm-door {
+    transition: border-color 160ms ease, background 160ms ease;
+  }
+  a.llhm-door-business {
+    transition: border-color 160ms ease, background 160ms ease;
+  }
+  .llhm-card {
+    transition: border-color 160ms ease, background 160ms ease;
+  }
+}
+</style>
 
   <script type="application/ld+json">
   {

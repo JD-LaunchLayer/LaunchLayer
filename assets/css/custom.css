@@ -13,9 +13,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Ensure smooth scrolling site-wide */
-html {
-  scroll-behavior: smooth;
+/* Smooth scrolling only when motion is allowed */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* ── 3. CODE BLOCK CONTAINER OVERRIDES ── */
@@ -42,6 +44,7 @@ html {
   .content,
   .llbrand-page,
   .llbrand-sidebar {
+
     overflow: visible !important;
     overflow-x: visible !important;
     overflow-y: visible !important;
@@ -49,11 +52,13 @@ html {
 
   /* Ensure parent grid containers use align-items: start; so sticky container can float */
   .llbrand-layout {
+
     align-items: start !important;
   }
 
   /* Sticky Card Positioning override across all service pages */
   .llbrand-sidebar-sticky {
+
     position: -webkit-sticky !important;
     position: sticky !important;
     top: 90px !important; /* Clears the site header */
@@ -64,6 +69,7 @@ html {
 
 @media (min-width: 960px) {
   .svc-sidebar .sidebar-container {
+
     position: -webkit-sticky !important;
     position: sticky !important;
     top: 90px !important;
@@ -93,7 +99,6 @@ html {
   font-size: var(--text-sm);
   text-decoration: none !important;
   box-shadow: var(--shadow-accent);
-  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .launchlayer-floating-btn:hover {
@@ -111,6 +116,7 @@ html {
 /* Hide floating call pill on larger screens if desired */
 @media (min-width: 1024px) {
   .launchlayer-floating-pill-container {
+
     display: none;
   }
 }
@@ -131,6 +137,7 @@ html {
 
 @media (min-width: 850px) {
   .footer-top-segment {
+
     flex-direction: row !important;
     justify-content: space-between !important;
     align-items: flex-start !important;
@@ -153,7 +160,6 @@ html {
   color: var(--ll-text-muted) !important;
   text-decoration: none !important;
   font-weight: 600 !important;
-  transition: color 0.2s ease !important;
 }
 
 .inline-nav-links a:hover {
@@ -189,12 +195,14 @@ html {
 
 @media (max-width: 959px) {
   .footer-matrix-grid {
+
     grid-template-columns: repeat(3, 1fr) !important;
   }
 }
 
 @media (max-width: 739px) {
   .footer-matrix-grid {
+
     grid-template-columns: repeat(2, 1fr) !important;
   }
 }
@@ -205,6 +213,7 @@ html {
 @media (max-width: 767px) {
   .footer-matrix-title,
   .service-coverage-accordion-header {
+
     margin-bottom: 0 !important;
   }
 
@@ -212,6 +221,7 @@ html {
   .footer-matrix-list,
   .service-coverage-panel,
   .service-coverage-grid {
+
     display: none !important;
   }
 
@@ -219,6 +229,7 @@ html {
   .footer-matrix-list.open,
   .service-coverage-panel.open,
   .service-coverage-grid.open {
+
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 12px !important;
@@ -231,7 +242,6 @@ html {
   color: var(--ll-text-muted) !important;
   text-decoration: none !important;
   font-weight: 500 !important;
-  transition: color 0.2s ease !important;
 }
 
 .matrix-node a:hover {
@@ -341,6 +351,20 @@ body.llsite-body .blog-item-wrapper [data-animation-role],
 
 @media (max-width: 959px) {
   .gap-collapse-patch {
+
     margin-bottom: -40px !important;
+  }
+}
+
+/* Motion only when the user allows it */
+@media (prefers-reduced-motion: no-preference) {
+  .launchlayer-floating-btn {
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  }
+  .inline-nav-links a {
+    transition: color 0.2s ease !important;
+  }
+  .matrix-node a {
+    transition: color 0.2s ease !important;
   }
 }
