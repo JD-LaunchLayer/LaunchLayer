@@ -286,6 +286,21 @@
   text-wrap: pretty;
 }
 
+/* Gentle same-origin page transitions (MPA). Progressive enhancement only:
+   unsupported browsers ignore this block and navigate instantly — no JS,
+   no console errors. Opt in only when motion is allowed. */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 180ms;
+    animation-timing-function: ease;
+  }
+}
+
 /* Shared CTA contract: pill shape, 44px minimum hit area, accent fill.
    :where() keeps specificity at 0 so page CSS can still refine colours. */
 :where(
