@@ -343,7 +343,7 @@
     
     
     <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
-<link rel="stylesheet" href="/assets/css/site-glass.css">
+<link rel="stylesheet" href="/assets/css/site-glass.css?v=blog-filters">
 <link rel="stylesheet" href="/assets/css/custom.css">
 </head>
 
@@ -687,33 +687,6 @@
 
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const currentUrl = decodeURIComponent(window.location.href);
-    const filterPills = document.querySelectorAll('.filter-pill');
-    let matchFound = false;
-
-    filterPills.forEach(pill => {
-      const pillHref = pill.getAttribute('href');
-      
-      // Prevent the base "/blog" link from falsely triggering when inside a category
-      if (pillHref !== '/blog' && currentUrl.includes(decodeURIComponent(pillHref))) {
-        pill.classList.add('active-filter');
-        matchFound = true;
-      } else {
-        pill.classList.remove('active-filter');
-      }
-    });
-
-    // Fallback: If no specific category matches the URL, illuminate "All Updates"
-    if (!matchFound) {
-      const defaultAllPill = document.querySelector('.filter-pill[href="/blog"]');
-      if (defaultAllPill) {
-        defaultAllPill.classList.add('active-filter');
-      }
-    }
-  });
-</script>
   
   
 
@@ -2345,5 +2318,5 @@ n.innerHTML='<style>#ncx-local-notice{position:fixed;left:50%;bottom:18px;transf
 +'<button class="ncx-x" type="button" aria-label="Dismiss" onclick="this.parentNode.remove()">✕</button>';
 (document.body||document.documentElement).appendChild(n);
 }catch(e){}})();</script>
-<!-- /NoCodeXport Local Notice --><script src="/assets/js/global-nav-footer.js" defer></script></body>
+<!-- /NoCodeXport Local Notice --><script src="/assets/js/global-nav-footer.js?v=blog-filters" defer></script></body>
 </html>
