@@ -1,0 +1,4 @@
+# Soft-retire leftover Squarespace cart (no online checkout).
+# Keep the /cart URL working by sending visitors to Contact.
+/cart    /contact/  301
+/cart/   /contact/  301
