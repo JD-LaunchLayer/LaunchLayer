@@ -79,10 +79,10 @@
 
     .llsvc-glass > * { position: relative; z-index: 1; }
 
-    /* Hero */
+    /* Hero — open intro band above the compact finder */
     .llsvc-hero {
-      padding: 36px 28px 28px;
-      margin-bottom: 16px;
+      padding: var(--space-8) var(--space-7) var(--space-6);
+      margin-bottom: var(--space-4);
       animation: llsvc-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
@@ -179,17 +179,17 @@
       flex-shrink: 0;
     }
 
-    /* Finder */
+    /* Finder — compact tool band (tighter than featured/groups) */
     .llsvc-finder {
-      padding: 18px 20px 16px;
-      margin-bottom: 18px;
+      padding: var(--space-4) var(--space-5) var(--space-3);
+      margin-bottom: var(--space-4);
     }
 
     .llsvc-finder-label {
       font-size: 13px;
       font-weight: 600;
       color: var(--ll-muted);
-      margin-bottom: 10px;
+      margin-bottom: var(--space-2);
     }
 
     .llsvc-cat {
@@ -337,11 +337,17 @@
       color: var(--ll-muted);
     }
 
-    /* Groups + cards */
+    /* Groups + cards — denser list bands vs featured strip */
     .llsvc-group {
-      margin-bottom: 18px;
+      margin-bottom: var(--space-5);
+      padding: var(--space-4) var(--space-5) var(--space-5);
       content-visibility: auto;
       contain-intrinsic-size: 280px;
+    }
+
+    .llsvc-group:nth-of-type(even) {
+      padding: var(--space-5) var(--space-5) var(--space-6);
+      margin-bottom: var(--space-6);
     }
 
     .llsvc-group[hidden],
@@ -352,8 +358,14 @@
       display: flex;
       align-items: baseline;
       justify-content: space-between;
-      gap: 12px;
-      margin: 0 4px 10px;
+      gap: var(--space-3);
+      margin: 0 0 var(--space-3);
+      max-width: 40rem;
+    }
+
+    .llsvc-group:nth-of-type(even) .llsvc-group-head {
+      max-width: none;
+      width: 100%;
     }
 
     .llsvc-group-head h2 {
@@ -370,17 +382,19 @@
       color: var(--ll-muted);
     }
 
-    /* Featured visual strip */
+    /* Featured visual strip — roomier emphasis above dense groups */
     .llsvc-featured {
-      margin-bottom: 18px;
+      margin-bottom: var(--space-6);
+      padding: var(--space-5) var(--space-5) var(--space-6);
     }
 
     .llsvc-featured-head {
       display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      margin: 0 4px 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-1);
+      margin: 0 0 var(--space-5);
+      max-width: 28rem;
     }
 
     .llsvc-featured-head h2 {
@@ -399,11 +413,14 @@
     .llsvc-featured-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: var(--space-4);
     }
 
     @media (min-width: 900px) {
-      .llsvc-featured-grid { grid-template-columns: repeat(3, 1fr); }
+      .llsvc-featured-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-5);
+      }
     }
 
     .llsvc-feature {
@@ -730,26 +747,28 @@
     }
     .llsvc-empty p { color: var(--ll-body); margin-bottom: 14px; }
 
-    /* CTA */
+    /* CTA — centred close, roomier than finder/groups */
     .llsvc-cta {
-      padding: 28px 24px;
+      padding: var(--space-8) var(--space-section) var(--space-cta);
       text-align: center;
+      margin-top: var(--space-2);
     }
     .llsvc-cta h2 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(1.35rem, 3vw, 1.7rem);
       letter-spacing: -0.02em;
-      margin-bottom: 8px;
+      margin: 0 auto var(--space-3);
+      max-width: 24rem;
     }
     .llsvc-cta p {
       color: var(--ll-body);
       max-width: 42ch;
-      margin: 0 auto 18px;
+      margin: 0 auto var(--space-6);
     }
     .llsvc-cta-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: var(--space-3);
       justify-content: center;
     }
 
@@ -782,8 +801,14 @@
     .llsvc-btn-secondary:hover { border-color: var(--color-accent-a35); color: var(--color-accent); }
 
     @media (max-width: 560px) {
-      .llsvc-hero { padding: 28px 20px 22px; }
-      .llsvc-finder { padding: 14px 14px 12px; }
+      .llsvc-hero { padding: var(--space-6) var(--space-5) var(--space-5); }
+      .llsvc-finder { padding: var(--space-3); }
+      .llsvc-featured,
+      .llsvc-group,
+      .llsvc-group:nth-of-type(even) {
+        padding-inline: var(--space-4);
+      }
+      .llsvc-cta { padding: var(--space-7) var(--space-5) var(--space-8); }
       .llsvc-search-row { grid-template-columns: 1fr auto; gap: 8px; }
       .llsvc-reset {
         padding: 0 12px;

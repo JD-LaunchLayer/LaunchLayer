@@ -223,16 +223,16 @@
       z-index: 1;
 }
 
-/* Sections */
+/* Sections — base band; :has() variants alternate rhythm by content type */
 .llsg-section {
-      padding: 28px 26px;
-      margin-bottom: 16px;
+      padding: var(--space-6) var(--space-section);
+      margin-bottom: var(--space-4);
       content-visibility: auto;
       contain-intrinsic-size: 320px;
 }
 
 .llsg-section-head {
-      margin-bottom: 18px;
+      margin-bottom: var(--space-5);
       max-width: 52ch;
 }
 
@@ -241,12 +241,79 @@
       font-size: clamp(1.25rem, 2.6vw, 1.55rem);
       font-weight: 700;
       letter-spacing: -0.02em;
-      margin-bottom: 8px;
+      margin-bottom: var(--space-2);
 }
 
 .llsg-section-head p {
       color: var(--ll-body);
       font-size: 0.98rem;
+}
+
+/* Card grids — roomier editorial band, left-weighted head */
+.llsg-section:has(.llsg-card-grid) {
+      padding: var(--space-8) var(--space-section) var(--space-7);
+      margin-bottom: var(--space-5);
+}
+
+.llsg-section:has(.llsg-card-grid) .llsg-section-head {
+      max-width: 36rem;
+      margin-bottom: var(--space-6);
+}
+
+/* Every other card-grid section — slightly denser */
+.llsg-section:has(.llsg-card-grid):nth-of-type(even) {
+      padding: var(--space-5) var(--space-section) var(--space-6);
+      margin-bottom: var(--space-4);
+}
+
+.llsg-section:has(.llsg-card-grid):nth-of-type(even) .llsg-section-head {
+      max-width: 48ch;
+      margin-bottom: var(--space-4);
+}
+
+.llsg-section:has(.llsg-card-grid):nth-of-type(even) .llsg-card-grid {
+      gap: var(--space-3);
+}
+
+/* Steps — centred process emphasis */
+.llsg-section:has(.llsg-steps) {
+      padding: var(--space-7) var(--space-section) var(--space-8);
+      margin-bottom: var(--space-6);
+}
+
+.llsg-section:has(.llsg-steps) .llsg-section-head {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 36rem;
+}
+
+/* FAQ — narrower measure, denser list */
+.llsg-section:has(.llsg-faq-list) {
+      padding: var(--space-6) var(--space-section) var(--space-8);
+      margin-bottom: var(--space-5);
+}
+
+.llsg-section:has(.llsg-faq-list) .llsg-section-head {
+      max-width: 28rem;
+      margin-bottom: var(--space-4);
+}
+
+/* Related links — compact close band */
+.llsg-section:has(.llsg-related) {
+      padding: var(--space-5) var(--space-section);
+      margin-bottom: var(--space-4);
+}
+
+.llsg-section:has(.llsg-related) .llsg-section-head {
+      margin-bottom: var(--space-4);
+      max-width: 32rem;
+}
+
+/* Story-only callouts — tighter than card grids */
+.llsg-section:has(.llsg-story):not(:has(.llsg-card-grid)):not(:has(.llsg-steps)) {
+      padding: var(--space-5) var(--space-section);
+      margin-bottom: var(--space-4);
 }
 
 /* Checklist columns */
@@ -372,13 +439,13 @@
       color: var(--ll-body);
 }
 
-/* Pricing band */
+/* Pricing band — split layout already distinct; airier vs FAQ/related */
 .llsg-pricing {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 18px;
-      padding: 26px;
-      margin-bottom: 16px;
+      gap: var(--space-5);
+      padding: var(--space-7) var(--space-section);
+      margin-bottom: var(--space-6);
       background: linear-gradient(145deg, #0b1120 0%, #12203a 55%, #0f2744 100%);
       color: #fff;
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -575,9 +642,9 @@
       margin-top: 6px;
 }
 
-/* Final CTA */
+/* Final CTA — centred close, roomier than related/FAQ bands */
 .llsg-cta {
-      padding: 28px 24px;
+      padding: var(--space-8) var(--space-section) var(--space-cta);
       text-align: center;
       margin-bottom: 0;
 }
@@ -586,19 +653,20 @@
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(1.3rem, 2.8vw, 1.65rem);
       letter-spacing: -0.02em;
-      margin-bottom: 8px;
+      margin: 0 auto var(--space-3);
+      max-width: 24rem;
 }
 
 .llsg-cta p {
       color: var(--ll-body);
       max-width: 44ch;
-      margin: 0 auto 18px;
+      margin: 0 auto var(--space-6);
 }
 
 .llsg-cta-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: var(--space-3);
       justify-content: center;
 }
 
@@ -613,7 +681,22 @@
         order: -1;
       }
       .llsg-hero h1 { max-width: none; }
-      .llsg-section { padding: 24px 20px; }
+      .llsg-section,
+      .llsg-section:has(.llsg-card-grid),
+      .llsg-section:has(.llsg-card-grid):nth-of-type(even),
+      .llsg-section:has(.llsg-steps),
+      .llsg-section:has(.llsg-faq-list),
+      .llsg-section:has(.llsg-related),
+      .llsg-section:has(.llsg-story):not(:has(.llsg-card-grid)):not(:has(.llsg-steps)) {
+        padding: var(--space-5) var(--space-5);
+      }
+      .llsg-section:has(.llsg-steps) .llsg-section-head {
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .llsg-pricing { padding: var(--space-6) var(--space-5); }
+      .llsg-cta { padding: var(--space-7) var(--space-5) var(--space-8); }
       .llsg-step + .llsg-step {
         margin-top: 14px;
         padding-top: 14px;
@@ -666,13 +749,13 @@
 .llsg-card-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: var(--space-4);
 }
 @media (min-width: 640px) {
-  .llsg-card-grid { grid-template-columns: 1fr 1fr; }
+  .llsg-card-grid { grid-template-columns: 1fr 1fr; gap: var(--space-4); }
 }
 @media (min-width: 900px) {
-  .llsg-card-grid.llsg-card-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .llsg-card-grid.llsg-card-grid-3 { grid-template-columns: repeat(3, 1fr); gap: var(--space-5); }
 }
 .llsg-card {
   padding: 18px 16px;
