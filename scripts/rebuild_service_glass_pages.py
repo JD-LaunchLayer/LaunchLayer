@@ -65,8 +65,8 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "Laptop showing malware warning — virus and scam recovery",
     ),
     "laptop-screen-repair-wickford": (
-        "/assets/images/image-36da4d28.jpg",
-        "Laptop screen during system update — display and software repair",
+        "/assets/images/image-laptop-display-banner.jpg",
+        "Laptop display — screen replacement in Wickford",
     ),
     "macbook-repair": (
         "/assets/images/image-c27f7c59.jpg",

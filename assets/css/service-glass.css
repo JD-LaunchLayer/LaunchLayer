@@ -818,14 +818,24 @@ body.llsg-body svg:not([width]) { max-width: 100%; height: auto; }
   object-fit: cover;
   display: block;
 }
+.llsg-hero-band-display {
+  height: 250px;
+}
+.llsg-hero-band-display img {
+  object-position: center 38%;
+}
 .llsg-hero-band .llsg-hero-scrim {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(11,17,32,0.05), rgba(11,17,32,0.35));
 }
+.llsg-hero-band.llsg-hero-band-display .llsg-hero-scrim {
+  background: linear-gradient(180deg, rgba(11,17,32,0.02), rgba(11,17,32,0.28));
+}
 @media (max-width: 819px) {
   .llsg-hero.llsg-hero-compact .llsg-hero-copy { padding: 28px 20px 24px; }
   .llsg-hero-band { height: 140px; }
+  .llsg-hero-band-display { height: 200px; }
 }
 
 .llsg-section-intro {
