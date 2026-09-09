@@ -98,6 +98,8 @@
     @media (prefers-reduced-motion: reduce) {
       .llhm-hero.llhm-glass { animation: none !important; }
       .llhm-card,
+      .llhm-door,
+      .llhm-door-business,
       .llhm-btn-primary,
       .llhm-btn-secondary,
       .llhm-chip { transition: none !important; }
@@ -303,6 +305,133 @@
       border: 1px solid var(--color-line);
       box-shadow: var(--shadow-sm);
       background: var(--color-surface-2);
+    }
+
+    /* Two front doors — audience split, directly under the hero */
+    .llhm-doors {
+      margin-bottom: var(--space-7);
+      padding: var(--space-section);
+      content-visibility: auto;
+      contain-intrinsic-size: 280px;
+    }
+
+    .llhm-doors h2 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      letter-spacing: var(--tracking-snug);
+      color: var(--color-ink);
+      margin: 0 0 var(--space-4) 0;
+    }
+
+    .llhm-doors-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.875rem;
+    }
+
+    @media (min-width: 640px) {
+      .llhm-doors-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    a.llhm-door {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 8.5rem;
+      padding: var(--space-5);
+      background: var(--color-surface);
+      border: 1px solid var(--color-line);
+      border-radius: var(--radius-lg);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 160ms ease, background 160ms ease;
+    }
+
+    a.llhm-door:hover {
+      border-color: var(--color-accent-a22);
+      background: var(--color-surface-2);
+    }
+
+    a.llhm-door:focus-visible {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+
+    .llhm-door-label {
+      display: inline-block;
+      font-size: var(--text-2xs);
+      font-weight: 700;
+      letter-spacing: var(--tracking-caps);
+      text-transform: uppercase;
+      color: var(--color-accent-deep);
+      margin-bottom: var(--space-2);
+    }
+
+    .llhm-door h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-ink);
+      margin: 0 0 var(--space-2) 0;
+    }
+
+    .llhm-door p {
+      font-size: var(--text-sm);
+      color: var(--color-muted);
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .llhm-door-go {
+      margin-top: var(--space-3);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+
+    a.llhm-door-business {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      min-height: var(--control-min-size);
+      margin-top: var(--space-3);
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-accent-deep);
+      background: var(--color-accent-tint);
+      border: 1px solid var(--color-accent-a16);
+      text-decoration: none;
+      transition: border-color 160ms ease, background 160ms ease;
+    }
+
+    a.llhm-door-business:hover {
+      background: var(--color-accent-soft);
+      border-color: var(--color-accent-a22);
+    }
+
+    a.llhm-door-business:focus-visible {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+
+    a.llhm-door-business span {
+      font-weight: 600;
+      color: var(--color-muted);
+    }
+
+    @media (max-width: 560px) {
+      a.llhm-door-business {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: var(--space-1);
+      }
     }
 
     /* Advantages */
@@ -750,6 +879,28 @@
         </div>
       </div>
     </header>
+
+    <section class="llhm-doors llhm-glass" aria-labelledby="llhm-doors-heading">
+      <h2 id="llhm-doors-heading">How can we help?</h2>
+      <div class="llhm-doors-grid">
+        <a class="llhm-door" href="/services">
+          <span class="llhm-door-label">For home users</span>
+          <h3>Repairs &amp; Tech Help</h3>
+          <p>Broken laptop, slow PC, or something that won't switch on? Start here.</p>
+          <span class="llhm-door-go">See repairs →</span>
+        </a>
+        <a class="llhm-door" href="/custom-pc-builds">
+          <span class="llhm-door-label">For gamers &amp; creators</span>
+          <h3>Custom PC Builds</h3>
+          <p>Gaming PCs and creator machines, built around your budget.</p>
+          <span class="llhm-door-go">See custom builds →</span>
+        </a>
+      </div>
+      <a class="llhm-door-business" href="/business">
+        Business IT Support
+        <span>Email, security and setup for local firms →</span>
+      </a>
+    </section>
 
     <section class="llhm-section llhm-glass">
       <span class="llhm-eyebrow">
