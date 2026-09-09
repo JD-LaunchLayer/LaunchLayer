@@ -255,6 +255,11 @@ html {
   the hidden state permanently off. Do not restore Squarespace
   animation scripts.
 
+  Scoped to blog listing/post + Squarespace pre* hide classes only.
+  Do not blanket [data-animation-role] on the whole site — later
+  visual/motion polish (View Transitions, reduced-motion-safe
+  effects) must not be killed from here.
+
   Individual posts inherit body.tweak-blog-item-width-narrow, which
   sets .blog-item-inner-wrapper to width:50% from 768px up — a
   leftover Squarespace "Narrow" tweak that collapses the article.
@@ -266,8 +271,10 @@ body.llsite-body article.blog-item,
 body.llsite-body .blog-basic-grid .blog-basic-grid--container,
 body.llsite-body .blog-single-column .blog-single-column--container,
 body.llsite-body .blog-masonry .entry,
-body.llsite-body .blog-item [data-animation-role],
-body.llsite-body [data-animation-role],
+body.llsite-body .blog-alternating-side-by-side [data-animation-role],
+body.llsite-body .blog-side-by-side [data-animation-role],
+body.llsite-body .blog-basic-grid [data-animation-role],
+body.llsite-body .blog-item-wrapper [data-animation-role],
 .preFade,
 .preScale,
 .preSlide,
