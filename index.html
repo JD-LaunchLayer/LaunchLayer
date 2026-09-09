@@ -307,10 +307,10 @@
       background: var(--color-surface-2);
     }
 
-    /* Two front doors — audience split, directly under the hero */
+    /* Two front doors — compact chooser band under the hero */
     .llhm-doors {
-      margin-bottom: var(--space-7);
-      padding: var(--space-section);
+      margin-bottom: var(--space-5);
+      padding: var(--space-5) var(--space-section);
       content-visibility: auto;
       contain-intrinsic-size: 280px;
     }
@@ -321,13 +321,14 @@
       font-weight: 700;
       letter-spacing: var(--tracking-snug);
       color: var(--color-ink);
-      margin: 0 0 var(--space-4) 0;
+      margin: 0 0 var(--space-3) 0;
+      max-width: 28rem;
     }
 
     .llhm-doors-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 0.875rem;
+      gap: var(--space-3);
     }
 
     @media (min-width: 640px) {
@@ -434,10 +435,10 @@
       }
     }
 
-    /* Advantages */
+    /* Advantages — roomier editorial band, left-weighted copy */
     .llhm-section {
-      margin-bottom: var(--space-7);
-      padding: var(--space-section);
+      margin-bottom: var(--space-10);
+      padding: var(--space-8) var(--space-section) var(--space-hero);
       content-visibility: auto;
       contain-intrinsic-size: 520px;
     }
@@ -449,25 +450,27 @@
       letter-spacing: var(--tracking-snug);
       color: var(--color-ink);
       margin: var(--space-2) 0 var(--space-3) 0;
+      max-width: 22rem;
     }
 
     .llhm-section > p {
       color: var(--color-muted);
-      max-width: 46rem;
+      max-width: 36rem;
       line-height: var(--leading-body);
-      margin-bottom: 1.375rem;
+      margin-bottom: var(--space-6);
     }
 
     .llhm-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 0.875rem;
+      gap: var(--space-4);
     }
 
     /* Force 2x2 earlier — avoid awkward 3+1 mid layouts */
     @media (min-width: 560px) {
       .llhm-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-5);
       }
     }
 
@@ -517,7 +520,7 @@
     }
 
     .llhm-section-cta {
-      margin-top: 1.375rem;
+      margin-top: var(--space-6);
     }
 
     /* Split sections */
@@ -538,10 +541,10 @@
       }
     }
 
-    /* B2B — full-width dark panel like production */
+    /* B2B — centred inverse band (contrast to left-weighted sections) */
     .llhm-b2b {
-      margin-bottom: var(--space-7);
-      padding: var(--space-hero);
+      margin-bottom: var(--space-10);
+      padding: var(--space-hero) var(--space-section) var(--space-10);
       text-align: center;
       content-visibility: auto;
       contain-intrinsic-size: 320px;
@@ -567,14 +570,14 @@
       font-weight: 700;
       letter-spacing: var(--tracking-snug);
       color: var(--color-inverse-ink);
-      margin: 0.625rem auto var(--space-3) auto;
-      max-width: 34rem;
+      margin: var(--space-3) auto var(--space-3) auto;
+      max-width: 28rem;
     }
 
     .llhm-b2b > p {
       color: var(--color-inverse-muted);
-      max-width: 40rem;
-      margin: 0 auto 1.125rem auto;
+      max-width: 34rem;
+      margin: 0 auto var(--space-5) auto;
       line-height: var(--leading-body);
     }
 
@@ -592,24 +595,29 @@
       margin-top: var(--space-2);
     }
 
-    /* Visit + map — one glass panel, stack until wide */
+    /* Visit + map — details lead on wide screens; airier split */
     .llhm-visit {
-      margin-bottom: var(--space-7);
-      padding: var(--space-section);
+      margin-bottom: var(--space-8);
+      padding: var(--space-6) var(--space-section) var(--space-8);
       content-visibility: auto;
       contain-intrinsic-size: 520px;
     }
 
     .llhm-visit-grid {
       display: grid;
-      gap: 1.375rem;
+      gap: var(--space-6);
     }
 
     @media (min-width: 960px) {
       .llhm-visit-grid {
-        grid-template-columns: 1.25fr 1fr;
-        gap: var(--space-7);
-        align-items: stretch;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+        gap: var(--space-8);
+        align-items: start;
+      }
+
+      .llhm-visit-details {
+        order: -1;
+        padding-top: var(--space-2);
       }
     }
 
@@ -730,10 +738,10 @@
       margin-top: var(--space-4);
     }
 
-    /* Dark CTA — solid, no blur */
+    /* Dark CTA — tighter centred close vs the roomier B2B band */
     .llhm-cta {
       text-align: center;
-      padding: var(--space-cta) var(--space-6);
+      padding: var(--space-8) var(--space-section) var(--space-cta);
       content-visibility: auto;
       contain-intrinsic-size: 240px;
       background: var(--color-inverse-panel);
@@ -751,12 +759,14 @@
       font-size: var(--text-3xl);
       color: var(--color-inverse-ink);
       letter-spacing: var(--tracking-snug);
-      margin: 0 0 0.625rem 0;
+      margin: 0 auto var(--space-3) auto;
+      max-width: 24rem;
     }
 
     .llhm-cta p {
       color: var(--color-inverse-muted);
-      margin-bottom: 1.375rem;
+      margin: 0 auto var(--space-6) auto;
+      max-width: 32rem;
     }
 
     .llhm-cta .llhm-btn-secondary {
