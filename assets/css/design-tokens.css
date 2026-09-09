@@ -285,6 +285,9 @@
   .llsite-btn-secondary,
   .llsg-btn-primary,
   .llsg-btn-secondary,
+  .llsvc-btn-primary,
+  .llsvc-btn-secondary,
+  .llabt-btn-green,
   .llabt-btn-primary,
   .llabt-btn-secondary,
   .llct-btn,
@@ -296,13 +299,13 @@
   font-weight: 700;
 }
 
-:where(.llhm-btn-primary, .llsite-btn-primary, .llsg-btn-primary, .llabt-btn-primary, .llct-btn, .launchlayer-floating-btn) {
+:where(.llhm-btn-primary, .llsite-btn-primary, .llsg-btn-primary, .llsvc-btn-primary, .llabt-btn-primary, .llabt-btn-green, .llct-btn, .launchlayer-floating-btn) {
   background: var(--gradient-accent-fill);
   color: var(--color-accent-on);
 }
 
-:where(.llhm-btn-primary, .llsite-btn-primary, .llsg-btn-primary, .llabt-btn-primary, .llct-btn, .launchlayer-floating-btn):focus-visible,
-:where(.llhm-btn-secondary, .llsite-btn-secondary, .llsg-btn-secondary, .llabt-btn-secondary):focus-visible {
+:where(.llhm-btn-primary, .llsite-btn-primary, .llsg-btn-primary, .llsvc-btn-primary, .llabt-btn-primary, .llabt-btn-green, .llct-btn, .launchlayer-floating-btn):focus-visible,
+:where(.llhm-btn-secondary, .llsite-btn-secondary, .llsg-btn-secondary, .llsvc-btn-secondary, .llabt-btn-secondary):focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 3px;
 }

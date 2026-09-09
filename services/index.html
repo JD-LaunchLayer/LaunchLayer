@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/design-tokens.css">
   <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
   <link rel="stylesheet" href="/assets/css/custom.css">
 
@@ -30,34 +31,31 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Inter', -apple-system, sans-serif !important;
-      color: #0b1120 !important;
-      line-height: 1.5;
+      font-family: var(--font-sans) !important;
+      color: var(--color-ink) !important;
+      line-height: var(--leading-body);
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
-      background-color: #ececec !important;
-      background-image:
-        radial-gradient(ellipse 65% 45% at 85% 8%, rgba(29, 78, 216, 0.10), transparent 58%),
-        radial-gradient(ellipse 55% 40% at 8% 78%, rgba(34, 211, 224, 0.08), transparent 55%),
-        linear-gradient(180deg, #f4f5f7 0%, #ececec 48%, #e6e8ec 100%) !important;
+      background-color: var(--color-canvas) !important;
+      background-image: var(--color-atmosphere) !important;
       background-attachment: scroll !important;
     }
 
     svg:not([width]) { max-width: 100%; height: auto; }
 
     .llsvc-page {
-      --ll-ink: #0b1120;
-      --ll-body: #334155;
-      --ll-muted: #475569;
-      --ll-line: rgba(15, 23, 42, 0.10);
-      --ll-blue: #1d4ed8;
-      --ll-blue-deep: #1e40af;
-      --ll-cyan: #0891b2;
-      --ll-green: #047857;
-      --ll-green-bg: #ecfdf5;
-      --ll-glass: linear-gradient(155deg, #ffffff 0%, #fbfcfe 48%, #eff6ff 100%);
-      --ll-price-bg: #0b1120;
-      --ll-price-ink: #ffffff;
+      --ll-ink: var(--color-ink);
+      --ll-body: var(--color-body);
+      --ll-muted: var(--color-muted);
+      --ll-line: var(--color-line);
+      --ll-blue: var(--color-accent);
+      --ll-blue-deep: var(--color-accent-deep);
+      --ll-cyan: var(--color-accent);
+      --ll-green: var(--color-success);
+      --ll-green-bg: var(--color-accent-tint);
+      --ll-glass: var(--color-glass);
+      --ll-price-bg: var(--color-inverse);
+      --ll-price-ink: var(--color-inverse-ink);
 
       position: relative;
       z-index: 1;
@@ -115,7 +113,7 @@
       height: 7px;
       border-radius: 50%;
       background: var(--ll-cyan);
-      box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.18);
+      box-shadow: 0 0 0 3px var(--color-accent-a16);
     }
 
     .llsvc-hero h1 {
@@ -208,7 +206,7 @@
       transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
     }
 
-    .llsvc-cat:hover { border-color: rgba(29, 78, 216, 0.35); color: var(--ll-blue); }
+    .llsvc-cat:hover { border-color: var(--color-accent-a35); color: var(--ll-blue); }
     .llsvc-cat.is-active {
       background: var(--ll-ink);
       border-color: var(--ll-ink);
@@ -288,7 +286,7 @@
       cursor: pointer;
       white-space: nowrap;
     }
-    .llsvc-reset:hover { border-color: rgba(29, 78, 216, 0.35); color: var(--ll-blue); }
+    .llsvc-reset:hover { border-color: var(--color-accent-a35); color: var(--ll-blue); }
     .llsvc-reset:disabled { opacity: 0.45; cursor: default; }
 
     .llsvc-chips-label {
@@ -311,7 +309,7 @@
       cursor: pointer;
       transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
     }
-    .llsvc-chip:hover { border-color: rgba(29, 78, 216, 0.35); color: var(--ll-blue); }
+    .llsvc-chip:hover { border-color: var(--color-accent-a35); color: var(--ll-blue); }
     .llsvc-chip.is-active {
       background: var(--ll-ink);
       border-color: var(--ll-ink);
@@ -761,25 +759,27 @@
       align-items: center;
       justify-content: center;
       font: inherit;
-      font-size: 14px;
+      font-size: var(--text-sm);
       font-weight: 700;
       text-decoration: none;
-      border-radius: 14px;
-      padding: 13px 18px;
-      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+      border-radius: var(--radius-pill);
+      min-height: var(--control-min-size);
+      padding: 0 var(--space-5);
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
     }
     .llsvc-btn-primary {
-      background: var(--ll-ink);
-      color: #fff;
-      border: 1px solid var(--ll-ink);
+      background: var(--gradient-accent-fill);
+      color: var(--color-accent-on);
+      border: 1px solid var(--color-accent);
+      box-shadow: var(--shadow-accent);
     }
-    .llsvc-btn-primary:hover { background: #1e293b; transform: translateY(-1px); }
+    .llsvc-btn-primary:hover { background: var(--color-accent-hover); transform: translateY(-1px); }
     .llsvc-btn-secondary {
-      background: #fff;
-      color: var(--ll-ink);
-      border: 1px solid var(--ll-line);
+      background: var(--color-surface);
+      color: var(--color-accent-deep);
+      border: 1px solid var(--color-line);
     }
-    .llsvc-btn-secondary:hover { border-color: rgba(29, 78, 216, 0.35); color: var(--ll-blue); }
+    .llsvc-btn-secondary:hover { border-color: var(--color-accent-a35); color: var(--color-accent); }
 
     @media (max-width: 560px) {
       .llsvc-hero { padding: 28px 20px 22px; }
