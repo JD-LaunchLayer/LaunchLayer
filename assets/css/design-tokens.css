@@ -276,6 +276,16 @@
   --ll-radius-lg: var(--radius-lg);
 }
 
+/* Cleaner line breaks where supported (ignored by older browsers).
+   :where() keeps specificity at 0 so page styles can still override. */
+:where(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
+}
+
+:where(p) {
+  text-wrap: pretty;
+}
+
 /* Shared CTA contract: pill shape, 44px minimum hit area, accent fill.
    :where() keeps specificity at 0 so page CSS can still refine colours. */
 :where(
