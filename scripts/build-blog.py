@@ -27,6 +27,27 @@ ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / "content" / "blog"
 OUT_BLOG = ROOT / "blog"
 SITE = "https://www.launchlayer.uk"
+FEED_START = "<!-- ll-md-feed:start -->"
+FEED_END = "<!-- ll-md-feed:end -->"
+LEGACY_NEXT_SLUG = "fix-pc-game-stuttering-fps-drops-essex"
+LEGACY_NEXT_TITLE = (
+    "Why Your Games are Stuttering (FPS Drops): Software vs. Hardware Bottlenecks"
+)
+CATEGORY_CLASS = {
+    "Useful Tips": "useful-tips",
+    "Cybersecurity": "cybersecurity",
+    "Business IT": "business-it",
+    "PC Gaming": "pc-gaming",
+    "Wickford Community": "wickford-community",
+}
+LISTING_PAGES = {
+    "all": ROOT / "blog" / "index.html",
+    "Useful Tips": ROOT / "blog" / "category" / "Useful+Tips" / "index.html",
+    "Cybersecurity": ROOT / "blog" / "category" / "Cybersecurity" / "index.html",
+    "Business IT": ROOT / "blog" / "category" / "Business+IT" / "index.html",
+    "PC Gaming": ROOT / "blog" / "category" / "PC+Gaming" / "index.html",
+    "Wickford Community": ROOT / "blog" / "category" / "Wickford+Community" / "index.html",
+}
 
 REQUIRED = (
     "slug",
@@ -41,6 +62,96 @@ REQUIRED = (
     "og_image",
     "image_alt",
 )
+
+
+def is_live(meta: dict[str, str], today: datetime.date) -> bool:
+    """A post is public once its frontmatter date has arrived.
+
+    draft: true is only a hold-back when the date is still in the future
+    (scheduled queue). On/after that date the GitHub Action publishes it
+    even if the YAML still says draft, then we stamp draft: false.
+    """
+    d = datetime.strptime(meta["date"], "%Y-%m-%d").date()
+    return d <= today
+
+
+def stamp_published(path: Path, meta: dict[str, str]) -> None:
+    """Flip draft: true to false once a scheduled post has gone live."""
+    if meta.get("draft", "").lower() not in {"true", "yes", "1"}:
+        return
+    text = path.read_text(encoding="utf-8")
+    updated, n = re.subn(
+        r"(?m)^draft:\s*(?:true|yes|1)\s*$",
+        "draft: false",
+        text,
+        count=1,
+    )
+    if n:
+        path.write_text(updated, encoding="utf-8")
+        meta["draft"] = "false"
+
+
+def listing_date(iso_date: str) -> str:
+    dt = datetime.strptime(iso_date, "%Y-%m-%d")
+    return dt.strftime("%d/%m/%Y")
+
+
+def listing_card(meta: dict[str, str]) -> str:
+    slug = html.escape(meta["slug"])
+    headline = html.escape(meta["headline"])
+    image = html.escape(meta["image"])
+    category = html.escape(meta["category"])
+    category_path = html.escape(meta["category_path"])
+    author = html.escape(meta["author"])
+    shown = html.escape(listing_date(meta["date"]))
+    css = CATEGORY_CLASS.get(meta["category"], "useful-tips")
+    return f'''    <article class="hentry category-{css} author-jordan-duggins post-type-text blog-item entry">
+      <section class="blog-image-wrapper">
+      <a href="/blog/{slug}" class="image-wrapper" data-animation-role="image">
+<img data-src="{image}" data-image="{image}" data-image-dimensions="1152x864" data-image-focal-point="0.5,0.5" alt="{headline}" data-load="false" src="{image}" width="1152" height="864" sizes="(max-width:767px)200vw,140vw" class="image" style="display:block;position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: 50% 50%;" loading="lazy" decoding="async">
+</a>
+      </section>
+      <section class="blog-item-summary">
+        <div class="blog-item-text">
+          <div class="blog-meta-section">
+  <span class="blog-meta-primary">
+      <span class="blog-categories-list">
+          <a href="/blog/category/{category_path}" class="blog-categories">{category}</a>
+      </span>
+      <span class="blog-author">{author}</span>
+    <time class="blog-date" pubdate data-animation-role="date">{shown}</time>
+  </span>
+</div>
+<h1 class="blog-title">
+    <a href="/blog/{slug}" data-no-animation>
+    {headline}
+  </a>
+</h1>
+<a class="blog-more-link" href="/blog/{slug}" data-animation-role="content">Read More</a>
+        </div>
+      </section>
+    </article>'''
+
+
+def patch_listing(path: Path, cards_html: str) -> None:
+    if not path.exists():
+        return
+    text = path.read_text(encoding="utf-8")
+    block = f"{FEED_START}\n{cards_html}\n    {FEED_END}" if cards_html.strip() else f"{FEED_START}\n    {FEED_END}"
+    if FEED_START in text and FEED_END in text:
+        text = re.sub(
+            re.escape(FEED_START) + r".*?" + re.escape(FEED_END),
+            block,
+            text,
+            count=1,
+            flags=re.S,
+        )
+    else:
+        needle = '<div class="blog-alternating-side-by-side-wrapper">'
+        if needle not in text:
+            raise ValueError(f"Cannot find listing wrapper in {path}")
+        text = text.replace(needle, needle + "\n    " + block, 1)
+    path.write_text(text, encoding="utf-8")
 
 
 def parse_frontmatter(text: str) -> tuple[dict[str, str], str]:
@@ -147,8 +258,7 @@ def article_schema(meta: dict[str, str], url: str) -> str:
     return json.dumps(payload, ensure_ascii=True, indent=2)
 
 
-def render_post(path: Path) -> Path:
-    meta, body = parse_frontmatter(path.read_text(encoding="utf-8"))
+def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
     missing = [key for key in REQUIRED if not meta.get(key)]
     if missing:
         raise ValueError(f"{path.name} missing frontmatter: {', '.join(missing)}")
@@ -335,14 +445,72 @@ def render_post(path: Path) -> Path:
     return out_file
 
 
+def load_posts() -> list[tuple[Path, dict[str, str], str]]:
+    loaded = []
+    for path in sorted(POSTS_DIR.glob("*.md")):
+        meta, body = parse_frontmatter(path.read_text(encoding="utf-8"))
+        missing = [key for key in REQUIRED if not meta.get(key)]
+        if missing:
+            raise ValueError(f"{path.name} missing frontmatter: {', '.join(missing)}")
+        if path.stem != meta["slug"]:
+            raise ValueError(f"{path.name}: filename must match slug '{meta['slug']}'")
+        loaded.append((path, meta, body))
+    return loaded
+
+
 def main() -> int:
-    posts = sorted(POSTS_DIR.glob("*.md"))
-    if not posts:
-        print(f"No Markdown posts in {POSTS_DIR}")
-        return 1
-    for post in posts:
-        out = render_post(post)
-        print(f"Wrote {out.relative_to(ROOT)}  ←  {post.relative_to(ROOT)}")
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Build Markdown blog posts due on or before today.")
+    parser.add_argument(
+        "--today",
+        help="Override today's date (YYYY-MM-DD) to preview a scheduled publish.",
+    )
+    args = parser.parse_args()
+    today = (
+        datetime.strptime(args.today, "%Y-%m-%d").date()
+        if args.today
+        else datetime.now().date()
+    )
+
+    loaded = load_posts()
+    scheduled = [(p, m, b) for p, m, b in loaded if not is_live(m, today)]
+    live = [(p, m, b) for p, m, b in loaded if is_live(m, today)]
+    live.sort(key=lambda item: (item[1]["date"], item[1]["slug"]), reverse=True)
+
+    for i, (path, meta, _body) in enumerate(live):
+        newer = live[i - 1][1] if i > 0 else None
+        older = live[i + 1][1] if i + 1 < len(live) else None
+        if newer:
+            meta["prev_slug"] = newer["slug"]
+            meta["prev_title"] = newer["headline"]
+        else:
+            meta.pop("prev_slug", None)
+            meta.pop("prev_title", None)
+        if older:
+            meta["next_slug"] = older["slug"]
+            meta["next_title"] = older["headline"]
+        else:
+            meta["next_slug"] = LEGACY_NEXT_SLUG
+            meta["next_title"] = LEGACY_NEXT_TITLE
+        if not args.today:
+            stamp_published(path, meta)
+        out = render_post(path, meta, _body)
+        print(f"Published {out.relative_to(ROOT)}  ({meta['date']})")
+
+    for path, meta, _body in scheduled:
+        print(f"Draft until {meta['date']}: {path.relative_to(ROOT)}")
+
+    all_cards = "\n    \n".join(listing_card(meta) for _p, meta, _b in live)
+    patch_listing(LISTING_PAGES["all"], all_cards)
+    for category, page in LISTING_PAGES.items():
+        if category == "all":
+            continue
+        cards = "\n    \n".join(
+            listing_card(meta) for _p, meta, _b in live if meta["category"] == category
+        )
+        patch_listing(page, cards)
+    print(f"Listings updated for {len(live)} live Markdown post(s).")
     return 0
 
 

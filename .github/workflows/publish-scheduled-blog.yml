@@ -1,0 +1,38 @@
+# Daily 08:00 UTC: render Markdown posts whose frontmatter date has arrived,
+# inject listing cards, stamp draft: false, and commit the HTML on main.
+name: Publish scheduled blog posts
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install builder
+        run: pip install markdown
+      - name: Build posts due today
+        run: python3 scripts/build-blog.py
+      - name: Commit published pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add blog content
+          if git diff --staged --quiet; then
+            echo "No scheduled posts were due."
+            exit 0
+          fi
+          git commit -m "Publish Markdown blog posts due on $(date -u +%F)."
+          git push
