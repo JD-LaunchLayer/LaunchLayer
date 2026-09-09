@@ -260,19 +260,38 @@ html {
 
 /* ── 7. STATIC-EXPORT BLOG REVEAL + POST WIDTH ── */
 /*
-  Squarespace's alternating / side-by-side blog list bakes opacity:0 and a
-  translateY offset onto .blog-item (style-9df075ea.css). Runtime JS is
-  supposed to add .is-loaded to reveal them. That controller does not run
-  in this static export, so the cards stay invisible.
+  Squarespace bakes a hidden starting state onto listing cards
+  (.blog-item { opacity:0; transform:translateY(-15px) } in
+  style-9df075ea.css) and then site-bundle.js adds .preFade /
+  .preScale / etc. onto [data-animation-role] children. Runtime
+  JS is supposed to add .is-loaded / .fadeIn on scroll. That
+  controller never finishes in this static export, and site
+  animations are already disabled (animation-type-none), so force
+  the hidden state permanently off. Do not restore Squarespace
+  animation scripts.
 
-  Individual posts inherit body.tweak-blog-item-width-narrow, which sets
-  .blog-item-inner-wrapper to width:50% from 768px up — a leftover
-  Squarespace "Narrow" tweak that collapses the article into a thin column.
+  Individual posts inherit body.tweak-blog-item-width-narrow, which
+  sets .blog-item-inner-wrapper to width:50% from 768px up — a
+  leftover Squarespace "Narrow" tweak that collapses the article.
 */
-.blog-alternating-side-by-side .blog-item,
-.blog-side-by-side .blog-item {
+body.llsite-body .blog-alternating-side-by-side .blog-item,
+body.llsite-body .blog-side-by-side .blog-item,
+body.llsite-body .blog-basic-grid .blog-item,
+body.llsite-body article.blog-item,
+body.llsite-body .blog-basic-grid .blog-basic-grid--container,
+body.llsite-body .blog-single-column .blog-single-column--container,
+body.llsite-body .blog-masonry .entry,
+body.llsite-body .blog-item [data-animation-role],
+body.llsite-body [data-animation-role],
+.preFade,
+.preScale,
+.preSlide,
+.preClip,
+.preFlex {
   opacity: 1 !important;
+  visibility: visible !important;
   transform: none !important;
+  animation: none !important;
 }
 
 .tweak-blog-item-width-narrow .blog-item-wrapper .blog-item-inner-wrapper,
