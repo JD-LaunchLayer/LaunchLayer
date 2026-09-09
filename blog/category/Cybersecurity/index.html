@@ -60,9 +60,16 @@
   body { margin: 0; }
   .header, .hero-text { visibility: visible !important; }
   .blog-item,
-  .blog-item [data-animation-role] {
+  .blog-item [data-animation-role],
+  .preFade,
+  .preScale,
+  .preSlide,
+  .preClip,
+  .preFlex {
     opacity: 1 !important;
     visibility: visible !important;
+    transform: none !important;
+    animation: none !important;
   }
 </style>
 
