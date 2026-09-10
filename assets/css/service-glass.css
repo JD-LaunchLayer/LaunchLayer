@@ -1,5 +1,3 @@
-@import url("design-tokens.css");
-
 /* LaunchLayer service page glass system — shared by service & local SEO pages */
 .llsg-page {
       --ll-ink: var(--color-ink);

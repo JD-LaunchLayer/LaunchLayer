@@ -4,8 +4,6 @@
    --ll-* aliases resolve to those tokens (Deep Teal accent).
    ========================================================================== */
 
-@import url("design-tokens.css");
-
 /* ── 2. GLOBAL RESET & BASE STYLES ── */
 body {
   margin: 0;
