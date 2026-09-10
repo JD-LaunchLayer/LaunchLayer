@@ -135,49 +135,39 @@
       margin-bottom: 18px;
     }
 
-    .llsvc-trust {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .llsvc-trust span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12.5px;
+    .llsvc-trust-line {
+      font-size: 13px;
       font-weight: 600;
       color: var(--ll-body);
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid var(--ll-line);
-      border-radius: 999px;
-      padding: 7px 12px;
+      line-height: 1.45;
+      max-width: 54ch;
     }
 
-    .llsvc-cats,
-    .llsvc-chips {
+    .llsvc-filters {
       display: flex;
       flex-wrap: nowrap;
+      align-items: center;
       gap: 8px;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: thin;
       padding-bottom: 2px;
+      margin: 12px 0 0;
       margin-right: -4px;
     }
-
-    .llsvc-cats { margin-bottom: 14px; }
 
     .llsvc-cat,
     .llsvc-chip {
       flex: 0 0 auto;
     }
 
-    .llsvc-trust svg {
-      width: 14px;
-      height: 14px;
-      color: var(--ll-blue);
-      flex-shrink: 0;
+    .llsvc-filter-sep {
+      flex: 0 0 auto;
+      width: 1px;
+      height: 22px;
+      background: var(--ll-line);
+      margin: 0 2px;
+      align-self: center;
     }
 
     /* Finder */
@@ -186,21 +176,14 @@
       margin-bottom: 18px;
     }
 
-    .llsvc-finder-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--ll-muted);
-      margin-bottom: 10px;
-    }
-
     .llsvc-cat {
       appearance: none;
-      border: 1px solid var(--ll-line);
-      background: #fff;
-      color: var(--ll-body);
+      border: 1px solid var(--color-accent-a35);
+      background: var(--color-accent-tint);
+      color: var(--ll-blue-deep);
       font: inherit;
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       padding: 9px 14px;
       min-height: var(--control-min-size);
       display: inline-flex;
@@ -211,7 +194,7 @@
       transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
     }
 
-    .llsvc-cat:hover { border-color: var(--color-accent-a35); color: var(--ll-blue); }
+    .llsvc-cat:hover { border-color: var(--ll-blue); color: var(--ll-blue); }
     .llsvc-cat.is-active {
       background: var(--ll-ink);
       border-color: var(--ll-ink);
@@ -220,10 +203,8 @@
     .llsvc-cat:focus-visible { outline: 2px solid var(--ll-blue); outline-offset: 2px; }
 
     .llsvc-search-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 10px;
-      margin-bottom: 12px;
+      display: block;
+      margin-bottom: 0;
     }
 
     .llsvc-search-wrap {
@@ -284,30 +265,23 @@
 
     .llsvc-reset {
       appearance: none;
-      border: 1px solid var(--ll-line);
-      background: #fff;
-      color: var(--ll-body);
+      border: none;
+      background: transparent;
+      color: var(--ll-blue);
       font: inherit;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 0 16px;
-      min-height: var(--control-min-size);
-      display: inline-flex;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 0;
+      min-height: auto;
+      display: none;
       align-items: center;
-      box-sizing: border-box;
-      border-radius: 14px;
       cursor: pointer;
       white-space: nowrap;
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
-    .llsvc-reset:hover { border-color: var(--color-accent-a35); color: var(--ll-blue); }
-    .llsvc-reset:disabled { opacity: 0.45; cursor: default; }
-
-    .llsvc-chips-label {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--ll-muted);
-      margin-bottom: 8px;
-    }
+    .llsvc-reset.is-on { display: inline-flex; }
+    .llsvc-reset:hover { color: var(--ll-blue-deep); }
 
     .llsvc-chip {
       appearance: none;
@@ -316,7 +290,7 @@
       color: var(--ll-body);
       font: inherit;
       font-size: 12.5px;
-      font-weight: 600;
+      font-weight: 500;
       padding: 8px 12px;
       min-height: var(--control-min-size);
       display: inline-flex;
@@ -331,14 +305,16 @@
       background: var(--ll-ink);
       border-color: var(--ll-ink);
       color: #fff;
+      font-weight: 600;
     }
+    .llsvc-chip:focus-visible { outline: 2px solid var(--ll-blue); outline-offset: 2px; }
 
     .llsvc-meta {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      align-items: baseline;
       justify-content: space-between;
-      gap: 8px;
+      gap: 8px 14px;
       margin-top: 12px;
       min-height: 22px;
     }
@@ -347,11 +323,8 @@
       font-size: 13px;
       font-weight: 600;
       color: var(--ll-muted);
-    }
-
-    .llsvc-note {
-      font-size: 12.5px;
-      color: var(--ll-muted);
+      flex: 1 1 auto;
+      min-width: 0;
     }
 
     /* Groups + cards */
@@ -807,25 +780,18 @@
     @media (max-width: 560px) {
       .llsvc-hero { padding: 28px 20px 22px; }
       .llsvc-finder { padding: 14px 14px 12px; }
-      .llsvc-search-row { grid-template-columns: 1fr auto; gap: 8px; }
-      .llsvc-reset {
-        padding: 0 12px;
-        font-size: 12px;
-        border-radius: 12px;
-      }
       .llsvc-search { font-size: 14px; padding: 12px 40px 12px 38px; }
       .llsvc-price { padding: 8px 10px; }
       .llsvc-price-value { font-size: 1.15rem; }
       .llsvc-row { padding: 14px 12px; }
       .llsvc-row-side { padding-left: 0; }
-      .llsvc-meta { flex-direction: column; align-items: flex-start; gap: 4px; }
-      .llsvc-note { font-size: 11.5px; }
       .llsvc-feature { min-height: 220px; }
+      /* Keep meta/count clear of the fixed Call Workshop pill */
+      .llsvc-meta { padding-right: min(148px, 42vw); }
     }
 
     @media (min-width: 720px) {
-      .llsvc-cats,
-      .llsvc-chips {
+      .llsvc-filters {
         flex-wrap: wrap;
         overflow: visible;
       }
@@ -1475,30 +1441,10 @@
       </span>
       <h1>PC &amp; Laptop Repair Services</h1>
       <p class="llsvc-hero-lead">Clear starting prices for everyday fixes. Diagnostics stay free — you only approve a fixed quote once we know what’s wrong.</p>
-      <div class="llsvc-trust">
-        <span>
-          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          Free diagnostics
-        </span>
-        <span>
-          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          No-Fix-No-Fee
-        </span>
-        <span>
-          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          Fixed quotes before work
-        </span>
-        <span>
-          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          Free local collection
-        </span>
-      </div>
+      <p class="llsvc-trust-line">Free diagnostics · No-Fix-No-Fee · Fixed quotes before work · Free local collection</p>
     </header>
 
     <section class="llsvc-finder llsvc-glass" aria-label="Find a service">
-      <p class="llsvc-finder-label">Browse by type, or describe what’s wrong</p>
-      <div class="llsvc-cats" id="llsvc-cats" role="tablist" aria-label="Service categories"></div>
-
       <div class="llsvc-search-row">
         <div class="llsvc-search-wrap">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -1507,15 +1453,13 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
-        <button type="button" id="llsvc-reset" class="llsvc-reset" disabled>Reset</button>
       </div>
 
-      <p class="llsvc-chips-label">Common problems</p>
-      <div class="llsvc-chips" id="llsvc-chips"></div>
+      <div class="llsvc-filters" id="llsvc-filters" role="group" aria-label="Filter by type or common problem"></div>
 
       <div class="llsvc-meta">
         <p id="llsvc-count" class="llsvc-count" aria-live="polite"></p>
-        <p class="llsvc-note">“From” prices are labour starting points — parts quoted before work begins.</p>
+        <button type="button" id="llsvc-reset" class="llsvc-reset" hidden>Clear filters</button>
       </div>
     </section>
 
@@ -1634,14 +1578,22 @@
     try { catalog = JSON.parse(raw.textContent); } catch (e) { return; }
 
     var state = { category: 'all', problem: '', query: '' };
-    var catsEl = document.getElementById('llsvc-cats');
-    var chipsEl = document.getElementById('llsvc-chips');
+    var filtersEl = document.getElementById('llsvc-filters');
     var resultsEl = document.getElementById('llsvc-results');
     var countEl = document.getElementById('llsvc-count');
     var emptyEl = document.getElementById('llsvc-empty');
     var searchEl = document.getElementById('llsvc-search');
     var clearEl = document.getElementById('llsvc-clear');
     var resetEl = document.getElementById('llsvc-reset');
+
+    var CAT_SHORT = {
+      all: 'All',
+      diagnostics: 'Diagnostics',
+      hardware: 'Hardware',
+      apple: 'Apple',
+      software: 'Software',
+      data: 'Data'
+    };
 
     function escapeHtml(str) {
       return String(str)
@@ -1800,14 +1752,16 @@
     }
 
     function renderChrome() {
-
-      catsEl.innerHTML = (catalog.categories || []).map(function (cat) {
-        return '<button type="button" class="llsvc-cat' + (state.category === cat.id ? ' is-active' : '') + '" role="tab" aria-selected="' + (state.category === cat.id) + '" data-cat="' + escapeHtml(cat.id) + '">' + escapeHtml(cat.label) + '</button>';
+      var cats = (catalog.categories || []).map(function (cat) {
+        var label = CAT_SHORT[cat.id] || cat.label;
+        return '<button type="button" class="llsvc-cat' + (state.category === cat.id ? ' is-active' : '') + '" aria-pressed="' + (state.category === cat.id) + '" data-cat="' + escapeHtml(cat.id) + '" title="' + escapeHtml(cat.label) + '">' + escapeHtml(label) + '</button>';
       }).join('');
 
-      chipsEl.innerHTML = (catalog.problems || []).map(function (p) {
-        return '<button type="button" class="llsvc-chip' + (state.problem === p.id ? ' is-active' : '') + '" data-problem="' + escapeHtml(p.id) + '">' + escapeHtml(p.label) + '</button>';
+      var problems = (catalog.problems || []).map(function (p) {
+        return '<button type="button" class="llsvc-chip' + (state.problem === p.id ? ' is-active' : '') + '" aria-pressed="' + (state.problem === p.id) + '" data-problem="' + escapeHtml(p.id) + '">' + escapeHtml(p.label) + '</button>';
       }).join('');
+
+      filtersEl.innerHTML = cats + '<span class="llsvc-filter-sep" aria-hidden="true"></span>' + problems;
     }
 
     function renderResults() {
@@ -1854,10 +1808,13 @@
       resultsEl.innerHTML = html;
       emptyEl.classList.toggle('is-on', matched.length === 0);
 
-      countEl.textContent = filtering
+      var countText = filtering
         ? ('Showing ' + matched.length + ' of ' + services.length + ' services')
         : (services.length + ' services');
+      countEl.textContent = countText + ' · “From” prices are labour starting points';
       clearEl.classList.toggle('is-on', !!normalize(state.query));
+      resetEl.classList.toggle('is-on', filtering);
+      resetEl.hidden = !filtering;
       resetEl.disabled = !filtering;
     }
 
@@ -1866,19 +1823,19 @@
       renderResults();
     }
 
-    catsEl.addEventListener('click', function (e) {
-      var btn = e.target.closest('[data-cat]');
-      if (!btn) return;
-      state.category = btn.getAttribute('data-cat');
-      apply();
-    });
-
-    chipsEl.addEventListener('click', function (e) {
-      var btn = e.target.closest('[data-problem]');
-      if (!btn) return;
-      var id = btn.getAttribute('data-problem');
-      state.problem = state.problem === id ? '' : id;
-      apply();
+    filtersEl.addEventListener('click', function (e) {
+      var catBtn = e.target.closest('[data-cat]');
+      if (catBtn) {
+        state.category = catBtn.getAttribute('data-cat');
+        apply();
+        return;
+      }
+      var problemBtn = e.target.closest('[data-problem]');
+      if (problemBtn) {
+        var id = problemBtn.getAttribute('data-problem');
+        state.problem = state.problem === id ? '' : id;
+        apply();
+      }
     });
 
     searchEl.addEventListener('input', function () {
@@ -1897,6 +1854,7 @@
       state = { category: 'all', problem: '', query: '' };
       searchEl.value = '';
       apply();
+      searchEl.focus();
     });
 
     // JSON-LD from the same catalog
