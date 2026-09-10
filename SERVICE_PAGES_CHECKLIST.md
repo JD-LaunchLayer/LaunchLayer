@@ -22,7 +22,7 @@ Shared CSS: `/assets/css/site-glass.css`
 | /billericay-pc-repair | Town hub | `billericay-town.jpg` |
 | /brands-supported | Brands | `photo-1588872657578-7efd1f1555ed` |
 | /brentwood-pc-repair | Town hub | `brentwood-town.jpg` |
-| /chelmsford-pc-repair | Town hub | `chelmsford-town.jpg` |
+| /chelmsford-pc-repair | Town hub (now includes screen, liquid & MacBook sections) | `chelmsford-town.jpg` |
 | /custom-pc-builds | Dedicated service | `image-ddefba94.jpg` |
 | /data-recovery | Dedicated service | `image-ce1e457a.jpg` |
 | /eco-recycling | Dedicated service | `image-eco-donate-hero.jpg` |
@@ -32,7 +32,7 @@ Shared CSS: `/assets/css/site-glass.css`
 | /liquid-damage-repair-basildon | Dedicated service | `image-5e7c1f44.jpg` |
 | /liquid-damage-repair-billericay | Dedicated service | `image-a07b70ec.webp` |
 | /liquid-damage-repair-brentwood | Dedicated service | `image-b673a9d4.jpg` |
-| /liquid-damage-repair-chelmsford | Dedicated service | `image-5e7c1f44.jpg` |
+| /liquid-damage-repair-chelmsford | Retired → `/chelmsford-pc-repair/#liquid-damage` (301) | — |
 | /liquid-damage-repair-rayleigh | Dedicated service | `image-a07b70ec.webp` |
 | /liquid-damage-repair-southend | Dedicated service | `image-b673a9d4.jpg` |
 | /liquid-damage-repair-wickford | Dedicated service | `image-5e7c1f44.jpg` |
@@ -40,13 +40,13 @@ Shared CSS: `/assets/css/site-glass.css`
 | /macbook-repair-basildon | Dedicated service | `image-c27f7c59.jpg` |
 | /macbook-repair-billericay | Dedicated service | `image-69f0c879.jpg` |
 | /macbook-repair-brentwood | Dedicated service | `image-be974ff5.jpg` |
-| /macbook-repair-chelmsford | Dedicated service | `image-c27f7c59.jpg` |
+| /macbook-repair-chelmsford | Retired → `/chelmsford-pc-repair/#macbook-repair` (301) | — |
 | /macbook-repair-rayleigh | Dedicated service | `image-69f0c879.jpg` |
 | /macbook-repair-southend | Dedicated service | `image-be974ff5.jpg` |
 | /macbook-repair-wickford | Dedicated service | `image-69f0c879.jpg` |
 | /rayleigh-laptop-service | Town hub | `rayleigh-town.jpg` |
 | /screen-repair-brentwood | Dedicated service | `image-36da4d28.jpg` |
-| /screen-repair-chelmsford | Dedicated service | `image-bdd8886f.jpg` |
+| /screen-repair-chelmsford | Retired → `/chelmsford-pc-repair/#screen-repair` (301) | — |
 | /screen-repair-rayleigh | Dedicated service | `image-de2f0024.jpg` |
 | /screen-repair-southend | Dedicated service | `image-5043df46.jpg` |
 | /southend-pc-repair | Town hub | `southend-town.jpg` |

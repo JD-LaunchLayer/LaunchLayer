@@ -112,10 +112,6 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "/assets/images/image-be974ff5.jpg",
         "Frustrated MacBook user — Brentwood MacBook repair",
     ),
-    "macbook-repair-chelmsford": (
-        "/assets/images/image-c27f7c59.jpg",
-        "Open MacBook Pro logic board — Chelmsford MacBook repair",
-    ),
     "macbook-repair-rayleigh": (
         "/assets/images/image-69f0c879.jpg",
         "Silver MacBook — Rayleigh MacBook repair",
@@ -136,10 +132,6 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "/assets/images/image-b673a9d4.jpg",
         "Bench work on laptop battery and internals after liquid damage",
     ),
-    "liquid-damage-repair-chelmsford": (
-        "/assets/images/image-5e7c1f44.jpg",
-        "Water splash — liquid damage laptop repair Chelmsford",
-    ),
     "liquid-damage-repair-rayleigh": (
         "/assets/images/image-a07b70ec.webp",
         "Technician opening a laptop after liquid spill — Rayleigh",
@@ -151,10 +143,6 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
     "screen-repair-brentwood": (
         "/assets/images/image-36da4d28.jpg",
         "Laptop display during use — Brentwood screen repair",
-    ),
-    "screen-repair-chelmsford": (
-        "/assets/images/image-bdd8886f.jpg",
-        "Laptop screen and keyboard close-up — Chelmsford screen repair",
     ),
     "screen-repair-rayleigh": (
         "/assets/images/image-de2f0024.jpg",
@@ -194,19 +182,16 @@ COMPACT_SLUGS = {
     "macbook-repair-basildon",
     "macbook-repair-billericay",
     "macbook-repair-brentwood",
-    "macbook-repair-chelmsford",
     "macbook-repair-rayleigh",
     "macbook-repair-southend",
     "laptop-screen-repair-wickford",
     "wickford-virus-removal",
     "screen-repair-brentwood",
-    "screen-repair-chelmsford",
     "screen-repair-rayleigh",
     "screen-repair-southend",
     "liquid-damage-repair-basildon",
     "liquid-damage-repair-billericay",
     "liquid-damage-repair-brentwood",
-    "liquid-damage-repair-chelmsford",
     "liquid-damage-repair-rayleigh",
     "liquid-damage-repair-southend",
 }

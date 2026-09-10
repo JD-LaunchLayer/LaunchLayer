@@ -6,3 +6,11 @@
 # Startup IT setup content lives on /business/ now.
 /services/startup-it-setup    /business/  301
 /services/startup-it-setup/   /business/  301
+
+# Chelmsford thin service pages consolidated into the town hub.
+/screen-repair-chelmsford              /chelmsford-pc-repair/#screen-repair     301
+/screen-repair-chelmsford/             /chelmsford-pc-repair/#screen-repair     301
+/liquid-damage-repair-chelmsford       /chelmsford-pc-repair/#liquid-damage     301
+/liquid-damage-repair-chelmsford/      /chelmsford-pc-repair/#liquid-damage     301
+/macbook-repair-chelmsford             /chelmsford-pc-repair/#macbook-repair    301
+/macbook-repair-chelmsford/            /chelmsford-pc-repair/#macbook-repair    301
