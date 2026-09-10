@@ -348,6 +348,14 @@ body.llsite-body .blog-item-wrapper [data-animation-role],
   text-wrap: balance;
 }
 
+/* Blog listing category chips — keep copy, enlarge tap target */
+a.blog-categories {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--control-min-size);
+  box-sizing: border-box;
+}
+
 /* ── 8. ACCESSIBILITY & UTILITY FIXES ── */
 .visually-hidden {
   position: absolute !important;

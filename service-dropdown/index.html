@@ -1005,7 +1005,9 @@
     background: var(--llp-surface) !important;
     border: 1.5px solid var(--llp-line) !important;
     border-radius: 12px !important;
-    padding: 14px 44px 14px 44px !important;
+    padding: 14px 48px 14px 44px !important;
+    min-height: var(--control-min-size) !important;
+    box-sizing: border-box !important;
     box-shadow: 0 1px 2px rgba(15,23,42,0.04) !important;
     transition: border-color 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease !important;
 }
@@ -1017,9 +1019,11 @@
 }
 .llprc-finder-clear {
     position: absolute !important;
-    right: 10px !important;
-    width: 26px !important;
-    height: 26px !important;
+    right: 4px !important;
+    width: var(--control-min-size) !important;
+    height: var(--control-min-size) !important;
+    min-width: var(--control-min-size) !important;
+    min-height: var(--control-min-size) !important;
     display: none !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1047,6 +1051,10 @@
     background: var(--llp-canvas) !important;
     border: 1px solid var(--llp-line) !important;
     padding: 8px 14px !important;
+    min-height: var(--control-min-size) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
     border-radius: 100px !important;
     cursor: pointer !important;
     transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1), border-color 0.2s ease, color 0.2s ease, transform 0.2s cubic-bezier(0.16,1,0.3,1) !important;
