@@ -206,6 +206,12 @@
       background: var(--color-inverse);
 }
 
+.llsg-hero-visual picture {
+      display: block;
+      position: absolute;
+      inset: 0;
+}
+
 .llsg-hero-visual img {
       width: 100%;
       height: 100%;

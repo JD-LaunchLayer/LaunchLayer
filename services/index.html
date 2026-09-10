@@ -438,6 +438,12 @@
       z-index: 0;
     }
 
+    .llsvc-feature-media picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
     .llsvc-feature-media img {
       width: 100%;
       height: 100%;
@@ -994,7 +1000,9 @@
       "keywords": "diagnose fault finding not sure check assessment no obligation",
       "schemaPrice": "0",
       "featured": true,
-      "image": "/assets/files/photo-1588508065123-287b28e013da?auto=format&fit=crop&w=900&q=80",
+      "image": "/assets/images/cards/photo-1588508065123-287b28e013da-w800.webp",
+      "imageWidth": 800,
+      "imageHeight": 1200,
       "imageAlt": "Laptop on a repair workbench",
       "featuredRank": 1
     },
@@ -1046,7 +1054,9 @@
       "keywords": "ssd ram upgrade memory storage hard drive migration",
       "schemaMinPrice": "65",
       "featured": true,
-      "image": "/assets/files/photo-1591405351990-4726e331f141?auto=format&fit=crop&w=900&q=80",
+      "image": "/assets/images/cards/photo-1591405351990-4726e331f141-w800.webp",
+      "imageWidth": 800,
+      "imageHeight": 534,
       "imageAlt": "SSD and memory components",
       "featuredRank": 6
     },
@@ -1067,7 +1077,9 @@
       "keywords": "gaming pc build custom workstation assembly",
       "schemaMinPrice": "149",
       "featured": true,
-      "image": "/assets/files/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=900&q=80",
+      "image": "/assets/images/cards/photo-1587202372775-e229f172b9d7-w800.webp",
+      "imageWidth": 800,
+      "imageHeight": 1200,
       "imageAlt": "Custom gaming PC build",
       "featuredRank": 3
     },
@@ -1088,7 +1100,9 @@
       "keywords": "crack cracked screen display flicker black screen panel hinge lid",
       "schemaMinPrice": "99",
       "featured": true,
-      "image": "/assets/files/photo-1611078489935-0cb964de46d6?auto=format&fit=crop&w=900&q=80",
+      "image": "/assets/images/cards/photo-1611078489935-0cb964de46d6-w800.webp",
+      "imageWidth": 800,
+      "imageHeight": 600,
       "imageAlt": "Laptop display screen",
       "featuredRank": 2
     },
@@ -1215,7 +1229,9 @@
       "keywords": "mac apple macbook imac macos retina logic board",
       "schemaMinPrice": "85",
       "featured": true,
-      "image": "/assets/files/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80",
+      "image": "/assets/images/cards/photo-1517336714731-489689fd1ca8-w800.webp",
+      "imageWidth": 800,
+      "imageHeight": 640,
       "imageAlt": "Apple MacBook on a desk",
       "featuredRank": 4
     },
@@ -1235,7 +1251,9 @@
       "keywords": "virus malware scam popup ransomware trojan adware security",
       "schemaPrice": "69",
       "featured": true,
-      "image": "/assets/files/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=900&q=80",
+      "image": "/assets/images/cards/photo-1614064641938-3bbee52942c7-w800.webp",
+      "imageWidth": 800,
+      "imageHeight": 534,
       "imageAlt": "Cyber security abstract",
       "featuredRank": 5
     },
@@ -1721,7 +1739,10 @@
       return (
         '<a class="llsvc-feature" href="' + escapeHtml(svc.href) + '" data-id="' + escapeHtml(svc.id) + '">' +
           '<div class="llsvc-feature-media" aria-hidden="true">' +
-            '<img src="' + escapeHtml(svc.image) + '" alt="" loading="lazy" decoding="async" width="900" height="600">' +
+            '<picture>' +
+              '<source type="image/avif" srcset="' + escapeHtml(String(svc.image || '').replace(/\.webp$/, '.avif')) + '">' +
+              '<img src="' + escapeHtml(svc.image) + '" alt="" loading="lazy" decoding="async" width="' + (svc.imageWidth || 800) + '" height="' + (svc.imageHeight || 534) + '">' +
+            '</picture>' +
             '<div class="llsvc-feature-scrim"></div>' +
           '</div>' +
           '<div class="llsvc-feature-body">' +
