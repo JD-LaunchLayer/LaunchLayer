@@ -47,6 +47,7 @@
   flex-shrink: 0 !important;
   margin-left: 0 !important;
   padding-left: 0 !important;
+  min-height: var(--control-min-size) !important;
 }
 
 .ll-header-logo img {
@@ -78,6 +79,8 @@
   color: var(--ll-nav-ink) !important;
   text-decoration: none !important;
   padding: 8px 12px !important;
+  min-height: var(--control-min-size) !important;
+  box-sizing: border-box !important;
   border-radius: 999px !important;
   position: relative !important;
   cursor: pointer !important;
@@ -166,8 +169,11 @@
 }
 
 .ll-dropdown-menu a {
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
   padding: 10px 14px !important;
+  min-height: var(--control-min-size) !important;
+  box-sizing: border-box !important;
   font-size: 14px !important;
   font-weight: 650 !important;
   color: var(--color-ink) !important;
@@ -228,6 +234,9 @@
   font-weight: 600 !important;
   color: var(--color-body) !important;
   text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: var(--control-min-size) !important;
 }
 
 .footer-matrix-section {
@@ -244,6 +253,7 @@
   color: #94A3B8 !important;
   text-transform: uppercase !important;
   margin-bottom: 18px !important;
+  min-height: var(--control-min-size) !important;
 }
 
 .footer-matrix-grid {
@@ -257,6 +267,9 @@
   color: var(--color-muted) !important;
   text-decoration: none !important;
   font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: var(--control-min-size) !important;
 }
 
 .data-recovery-special-node a {
@@ -307,7 +320,15 @@
   align-items: center !important;
 }
 
-.social-icon-vector { color: #64748B !important; text-decoration: none !important; }
+.social-icon-vector {
+  color: #64748B !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: var(--control-min-size) !important;
+  min-height: var(--control-min-size) !important;
+}
 .social-icon-vector svg { width: 16px !important; height: 16px !important; fill: currentColor !important; }
 
 /* ==========================================================================
@@ -342,8 +363,10 @@
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-around !important;
-    width: 40px !important;
-    height: 40px !important;
+    width: var(--control-min-size) !important;
+    height: var(--control-min-size) !important;
+    min-width: var(--control-min-size) !important;
+    min-height: var(--control-min-size) !important;
     padding: 9px 8px !important;
     cursor: pointer !important;
     z-index: 1002 !important;

@@ -152,6 +152,9 @@ html {
   text-decoration: none !important;
   font-weight: 600 !important;
   transition: color 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: var(--control-min-size) !important;
 }
 
 .inline-nav-links a:hover {
@@ -177,6 +180,7 @@ html {
   margin-bottom: 16px !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
+  min-height: var(--control-min-size) !important;
 }
 
 .footer-matrix-grid {
