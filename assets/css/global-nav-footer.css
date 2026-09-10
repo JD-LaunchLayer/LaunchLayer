@@ -364,7 +364,10 @@ button.footer-matrix-title {
 .footer-right-assets {
   display: flex !important;
   align-items: center !important;
-  gap: 24px !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 16px 24px !important;
+  max-width: 100% !important;
 }
 
 .bark-widget-box {
@@ -380,8 +383,10 @@ button.footer-matrix-title {
 
 .footer-social-strip {
   display: flex !important;
-  gap: 16px !important;
+  flex-wrap: wrap !important;
+  gap: 4px 8px !important;
   align-items: center !important;
+  justify-content: center !important;
 }
 
 .social-icon-vector {
