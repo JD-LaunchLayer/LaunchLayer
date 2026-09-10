@@ -80,7 +80,7 @@
 
     .llsvc-glass > * { position: relative; z-index: 1; }
 
-    /* Finder needs visible horizontal chip scroll; contain/overflow:hidden collapses it in some engines */
+    /* Finder needs overflow visible so wrapped suggestion chips aren't clipped */
     .llsvc-finder.llsvc-glass {
       overflow: visible;
       contain: none;
@@ -151,15 +151,10 @@
 
     .llsvc-filters {
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       align-items: center;
       gap: 8px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      padding-bottom: 2px;
       margin: 12px 0 0;
-      min-height: var(--control-min-size);
       width: 100%;
       max-width: 100%;
     }
@@ -167,15 +162,7 @@
     .llsvc-cat,
     .llsvc-chip {
       flex: 0 0 auto;
-    }
-
-    .llsvc-filter-sep {
-      flex: 0 0 auto;
-      width: 1px;
-      height: 22px;
-      background: var(--ll-line);
-      margin: 0 2px;
-      align-self: center;
+      white-space: nowrap;
     }
 
     /* Finder */
@@ -192,7 +179,7 @@
       font: inherit;
       font-size: 13px;
       font-weight: 700;
-      padding: 9px 14px;
+      padding: 8px 12px;
       min-height: var(--control-min-size);
       display: inline-flex;
       align-items: center;
@@ -302,7 +289,7 @@
       background: rgba(255, 255, 255, 0.85);
       color: var(--ll-body);
       font: inherit;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 500;
       padding: 8px 12px;
       min-height: var(--control-min-size);
@@ -808,13 +795,6 @@
       /* Keep meta/count clear of the fixed Call Workshop pill */
       .llsvc-meta { padding-right: 168px; }
       .llsvc-note { display: none; }
-    }
-
-    @media (min-width: 720px) {
-      .llsvc-filters {
-        flex-wrap: wrap;
-        overflow: visible;
-      }
     }
   </style>
 
@@ -1468,14 +1448,14 @@
       <div class="llsvc-search-row">
         <div class="llsvc-search-wrap">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="search" id="llsvc-search" class="llsvc-search" placeholder="Try “won’t charge”, “MacBook battery”, “pop-ups”…" autocomplete="off" enterkeyhint="search" aria-label="Describe what’s wrong">
+          <input type="search" id="llsvc-search" class="llsvc-search" placeholder="What’s wrong? e.g. won’t charge" autocomplete="off" enterkeyhint="search" aria-label="Describe what’s wrong">
           <button type="button" id="llsvc-clear" class="llsvc-clear" aria-label="Clear search">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
       </div>
 
-      <div class="llsvc-filters" id="llsvc-filters" role="group" aria-label="Filter by type or common problem"></div>
+      <div class="llsvc-filters" id="llsvc-filters" role="group" aria-label="Quick filters"></div>
 
       <div class="llsvc-meta">
         <p id="llsvc-count" class="llsvc-count" aria-live="polite"></p>
@@ -1607,14 +1587,17 @@
     var clearEl = document.getElementById('llsvc-clear');
     var resetEl = document.getElementById('llsvc-reset');
 
-    var CAT_SHORT = {
-      all: 'All',
-      diagnostics: 'Diagnostics',
-      hardware: 'Hardware',
-      apple: 'Apple',
-      software: 'Software',
-      data: 'Data'
-    };
+    /* Short, wrap-friendly suggestions — search covers the rest */
+    var QUICK_FILTERS = [
+      { kind: 'cat', id: 'all', label: 'All' },
+      { kind: 'cat', id: 'hardware', label: 'Hardware' },
+      { kind: 'cat', id: 'apple', label: 'Apple' },
+      { kind: 'problem', id: 'slow', label: 'Slow' },
+      { kind: 'problem', id: 'screen', label: 'Screen' },
+      { kind: 'problem', id: 'power', label: 'Power' },
+      { kind: 'problem', id: 'spill', label: 'Spill' },
+      { kind: 'problem', id: 'virus', label: 'Virus' }
+    ];
 
     function escapeHtml(str) {
       return String(str)
@@ -1773,16 +1756,12 @@
     }
 
     function renderChrome() {
-      var cats = (catalog.categories || []).map(function (cat) {
-        var label = CAT_SHORT[cat.id] || cat.label;
-        return '<button type="button" class="llsvc-cat' + (state.category === cat.id ? ' is-active' : '') + '" aria-pressed="' + (state.category === cat.id) + '" data-cat="' + escapeHtml(cat.id) + '" title="' + escapeHtml(cat.label) + '">' + escapeHtml(label) + '</button>';
+      filtersEl.innerHTML = QUICK_FILTERS.map(function (item) {
+        if (item.kind === 'cat') {
+          return '<button type="button" class="llsvc-cat' + (state.category === item.id ? ' is-active' : '') + '" aria-pressed="' + (state.category === item.id) + '" data-cat="' + escapeHtml(item.id) + '">' + escapeHtml(item.label) + '</button>';
+        }
+        return '<button type="button" class="llsvc-chip' + (state.problem === item.id ? ' is-active' : '') + '" aria-pressed="' + (state.problem === item.id) + '" data-problem="' + escapeHtml(item.id) + '">' + escapeHtml(item.label) + '</button>';
       }).join('');
-
-      var problems = (catalog.problems || []).map(function (p) {
-        return '<button type="button" class="llsvc-chip' + (state.problem === p.id ? ' is-active' : '') + '" aria-pressed="' + (state.problem === p.id) + '" data-problem="' + escapeHtml(p.id) + '">' + escapeHtml(p.label) + '</button>';
-      }).join('');
-
-      filtersEl.innerHTML = cats + '<span class="llsvc-filter-sep" aria-hidden="true"></span>' + problems;
     }
 
     function renderResults() {
