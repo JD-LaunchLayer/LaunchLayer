@@ -1,0 +1,50 @@
+# LaunchLayer
+
+> Independent PC, laptop and MacBook repair workshop in Wickford, Essex, with free local collection across South Essex and a No-Fix-No-Fee approach.
+
+LaunchLayer is a small local repair and IT business based at 32 Glebe Road, Wickford (SS11 8EU). Work covers home users and small businesses: diagnostics, screen and battery repairs, liquid damage, virus/malware cleanup, data recovery, custom PC builds, and straightforward business IT setup. There is no online checkout — contact or phone to book.
+
+Phone: 07367 652987
+Email: hello@launchlayer.uk
+Website: https://launchlayer.uk/
+
+## Main pages
+
+- [Home](https://launchlayer.uk/): Overview of services and how free collection works
+- [Services & pricing](https://launchlayer.uk/services/): Repair prices and common jobs
+- [Contact](https://launchlayer.uk/contact/): Request a quote or book collection
+- [About](https://launchlayer.uk/about/): Who runs the workshop
+- [FAQs](https://launchlayer.uk/faqs/): Common repair and pricing questions
+- [Reviews](https://launchlayer.uk/reviews/): Customer feedback
+- [Brands supported](https://launchlayer.uk/brands-supported/): Makes and models commonly repaired
+- [Privacy policy](https://launchlayer.uk/privacy-policy/): How personal data is handled
+
+## Core services
+
+- [Custom PC builds](https://launchlayer.uk/custom-pc-builds/): Gaming and workstation builds
+- [Data recovery](https://launchlayer.uk/data-recovery/): Failed drives and deleted files
+- [Eco recycling](https://launchlayer.uk/eco-recycling/): Free laptop and PC recycling
+- [Laptop MOT Wickford](https://launchlayer.uk/laptop-mot-wickford-essex/): Fixed-price health check and tune-up
+- [Business IT support](https://launchlayer.uk/business/): Small-business IT help in Essex
+- [Startup IT setup](https://launchlayer.uk/services/startup-it-setup/): Getting a new business online (email, devices, basics)
+- [Business IT pricing](https://launchlayer.uk/business/pricing/): Package pricing for commercial IT setup
+
+## Local repair pages
+
+- [PC repair Wickford](https://launchlayer.uk/wickford-pc-repair/)
+- [Laptop repair Wickford](https://launchlayer.uk/wickford-laptop-repair/)
+- [Virus removal Wickford](https://launchlayer.uk/wickford-virus-removal/)
+- [Laptop screen repair Wickford](https://launchlayer.uk/laptop-screen-repair-wickford/)
+- [MacBook repair Wickford](https://launchlayer.uk/macbook-repair-wickford/)
+- [Liquid damage repair Wickford](https://launchlayer.uk/liquid-damage-repair-wickford/)
+- [PC repair Basildon](https://launchlayer.uk/basildon-pc-repair/)
+- [PC repair Billericay](https://launchlayer.uk/billericay-pc-repair/)
+- [PC repair Brentwood](https://launchlayer.uk/brentwood-pc-repair/)
+- [PC repair Chelmsford](https://launchlayer.uk/chelmsford-pc-repair/)
+- [PC repair Southend](https://launchlayer.uk/southend-pc-repair/)
+- [Laptop service Rayleigh](https://launchlayer.uk/rayleigh-laptop-service/)
+
+## Optional
+
+- [Blog](https://launchlayer.uk/blog/): Practical repair, security and local tech articles
+- [Full sitemap](https://launchlayer.uk/sitemap.xml): Complete list of public HTML pages
