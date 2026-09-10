@@ -282,6 +282,8 @@
 </script>
 </head>
 <body class="llsg-body">
+<a class="ll-skip-link" href="#main">Skip to content</a>
+
 
 <header class="ll-site-header">
     <div class="ll-header-wrap">
@@ -300,10 +302,10 @@
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li class="ll-dropdown-container">
-          <span class="ll-dropdown-trigger">
+          <button type="button" class="ll-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
             Services
             <svg class="ll-dropdown-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
-          </span>
+          </button>
           <ul class="ll-dropdown-menu">
             <li><a href="/services">All Services & Pricing</a></li>
             <li><a href="/custom-pc-builds">Custom PC Builds</a></li>
@@ -315,7 +317,7 @@
     </div>
   </header>
 
-  <main class="llsg-page">
+  <main id="main" class="llsg-page">
     <header class="llsg-hero llsg-hero-compact llsg-glass">
   <div class="llsg-hero-copy">
     <span class="llsg-eyebrow">
@@ -452,7 +454,7 @@
     </div>
 
     <div class="footer-matrix-section">
-      <div class="footer-matrix-title service-coverage-accordion-header" data-accordion>Our South Essex Service Coverage</div>
+      <button type="button" class="footer-matrix-title service-coverage-accordion-header" data-accordion aria-expanded="true">Our South Essex Service Coverage</button>
       <div class="footer-matrix-grid">
         <div class="matrix-node"><a href="/wickford-pc-repair">Wickford PC Repair (SS11)</a></div>
         <div class="matrix-node"><a href="/wickford-laptop-repair">Wickford Laptop Repair (SS12)</a></div>

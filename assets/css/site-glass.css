@@ -1485,8 +1485,10 @@ body.llsite-body a.blog-more-link {
   transition: border-color 0.25s ease !important;
 }
 
-.ll404-card .search-box-container input:focus {
-  outline: none !important;
+.ll404-card .search-box-container input:focus,
+.ll404-card .search-box-container input:focus-visible {
+  outline: 3px solid var(--color-accent) !important;
+  outline-offset: 3px !important;
   border-color: var(--ll4-blue) !important;
 }
 

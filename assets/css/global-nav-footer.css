@@ -71,6 +71,12 @@
   margin: 0 !important;
 }
 
+button.ll-dropdown-trigger {
+  appearance: none !important;
+  font: inherit !important;
+  margin: 0 !important;
+}
+
 .ll-header-nav a,
 .ll-dropdown-trigger {
   font-family: 'Inter', sans-serif !important;
@@ -254,6 +260,16 @@
   text-transform: uppercase !important;
   margin-bottom: 18px !important;
   min-height: var(--control-min-size) !important;
+}
+
+button.footer-matrix-title {
+  appearance: none !important;
+  background: none !important;
+  border: none !important;
+  width: 100% !important;
+  text-align: left !important;
+  font-family: inherit !important;
+  padding: 0 !important;
 }
 
 .footer-matrix-grid {

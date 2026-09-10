@@ -14,6 +14,34 @@ body {
 /* Ensure smooth scrolling site-wide */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+.ll-skip-link {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  z-index: 10000;
+  padding: 10px 16px;
+  min-height: var(--control-min-size);
+  background: var(--color-accent);
+  color: var(--color-accent-on);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  transform: translateY(-120%);
+}
+.ll-skip-link:focus,
+.ll-skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+:where(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 /* ── 3. CODE BLOCK CONTAINER OVERRIDES ── */
