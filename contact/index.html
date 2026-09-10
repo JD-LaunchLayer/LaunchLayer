@@ -1057,12 +1057,24 @@
         letter-spacing: 0.08em;
         text-transform: uppercase;
         line-height: 1.35;
+        text-wrap: pretty;
       }
 
+      /* Keep required * on the same line as the label (hide HTML span;
+         re-attach via ::after so it cannot wrap alone after a space). */
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item .title .required,
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item legend.title .required {
+        display: none !important;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.required .title::after,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.required legend.title::after {
+        content: "\00a0*";
         color: var(--ll-form-accent);
-        margin-left: 0.15rem;
+        font-weight: 650;
+        letter-spacing: 0;
+        text-transform: none;
+        white-space: nowrap;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name fieldset {
@@ -1156,9 +1168,19 @@
         color: rgba(232, 238, 252, 0.42);
       }
 
+      /* Top-left text like a normal textarea (override shared input sizing /
+         Squarespace height:4em that can make content look vertically centred). */
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item textarea {
-        min-height: 140px;
+        min-height: 140px !important;
+        height: auto !important;
         resize: vertical;
+        padding: 0.85rem 1rem !important;
+        line-height: 1.45 !important;
+        text-align: left;
+        vertical-align: top;
+        align-items: unset;
+        justify-content: unset;
+        field-sizing: fixed;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-select-wrap {
