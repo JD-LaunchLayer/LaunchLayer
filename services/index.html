@@ -80,6 +80,12 @@
 
     .llsvc-glass > * { position: relative; z-index: 1; }
 
+    /* Finder needs overflow visible so wrapped suggestion chips aren't clipped */
+    .llsvc-finder.llsvc-glass {
+      overflow: visible;
+      contain: none;
+    }
+
     /* Hero */
     .llsvc-hero {
       padding: 36px 28px 28px;
@@ -94,7 +100,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       .llsvc-hero { animation: none !important; }
-      .llsvc-card, .llsvc-chip, .llsvc-cat, .llsvc-btn-primary, .llsvc-btn-secondary { transition: none !important; }
+      .llsvc-card, .llsvc-btn-primary, .llsvc-btn-secondary { transition: none !important; }
     }
 
     .llsvc-eyebrow {
@@ -135,54 +141,17 @@
       margin-bottom: 18px;
     }
 
-    .llsvc-trust {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .llsvc-trust span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12.5px;
+    .llsvc-trust-line {
+      font-size: 13px;
       font-weight: 600;
       color: var(--ll-body);
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid var(--ll-line);
-      border-radius: 999px;
-      padding: 7px 12px;
-    }
-
-    .llsvc-cats,
-    .llsvc-chips {
-      display: flex;
-      flex-wrap: nowrap;
-      gap: 8px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: thin;
-      padding-bottom: 2px;
-      margin-right: -4px;
-    }
-
-    .llsvc-cats { margin-bottom: 14px; }
-
-    .llsvc-cat,
-    .llsvc-chip {
-      flex: 0 0 auto;
-    }
-
-    .llsvc-trust svg {
-      width: 14px;
-      height: 14px;
-      color: var(--ll-blue);
-      flex-shrink: 0;
+      line-height: 1.45;
+      max-width: 54ch;
     }
 
     /* Finder */
     .llsvc-finder {
-      padding: 18px 20px 16px;
+      padding: 16px 20px 14px;
       margin-bottom: 18px;
     }
 
@@ -190,40 +159,12 @@
       font-size: 13px;
       font-weight: 600;
       color: var(--ll-muted);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
-
-    .llsvc-cat {
-      appearance: none;
-      border: 1px solid var(--ll-line);
-      background: #fff;
-      color: var(--ll-body);
-      font: inherit;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 9px 14px;
-      min-height: var(--control-min-size);
-      display: inline-flex;
-      align-items: center;
-      box-sizing: border-box;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
-    }
-
-    .llsvc-cat:hover { border-color: var(--color-accent-a35); color: var(--ll-blue); }
-    .llsvc-cat.is-active {
-      background: var(--ll-ink);
-      border-color: var(--ll-ink);
-      color: #fff;
-    }
-    .llsvc-cat:focus-visible { outline: 2px solid var(--ll-blue); outline-offset: 2px; }
 
     .llsvc-search-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 10px;
-      margin-bottom: 12px;
+      display: block;
+      margin-bottom: 0;
     }
 
     .llsvc-search-wrap {
@@ -257,6 +198,11 @@
     }
 
     .llsvc-search::placeholder { color: #94a3b8; }
+    .llsvc-search::-webkit-search-cancel-button,
+    .llsvc-search::-webkit-search-decoration {
+      -webkit-appearance: none;
+      appearance: none;
+    }
     .llsvc-search:focus {
       border-color: var(--color-accent-a35);
       box-shadow: 0 0 0 3px var(--color-accent-a12);
@@ -282,64 +228,12 @@
     .llsvc-clear svg { position: static; width: 16px; height: 16px; }
     .llsvc-clear:hover { background: #f1f5f9; color: var(--ll-ink); }
 
-    .llsvc-reset {
-      appearance: none;
-      border: 1px solid var(--ll-line);
-      background: #fff;
-      color: var(--ll-body);
-      font: inherit;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 0 16px;
-      min-height: var(--control-min-size);
-      display: inline-flex;
-      align-items: center;
-      box-sizing: border-box;
-      border-radius: 14px;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-    .llsvc-reset:hover { border-color: var(--color-accent-a35); color: var(--ll-blue); }
-    .llsvc-reset:disabled { opacity: 0.45; cursor: default; }
-
-    .llsvc-chips-label {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--ll-muted);
-      margin-bottom: 8px;
-    }
-
-    .llsvc-chip {
-      appearance: none;
-      border: 1px solid var(--ll-line);
-      background: rgba(255, 255, 255, 0.85);
-      color: var(--ll-body);
-      font: inherit;
-      font-size: 12.5px;
-      font-weight: 600;
-      padding: 8px 12px;
-      min-height: var(--control-min-size);
-      display: inline-flex;
-      align-items: center;
-      box-sizing: border-box;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
-    }
-    .llsvc-chip:hover { border-color: var(--color-accent-a35); color: var(--ll-blue); }
-    .llsvc-chip.is-active {
-      background: var(--ll-ink);
-      border-color: var(--ll-ink);
-      color: #fff;
-    }
-
     .llsvc-meta {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      margin-top: 12px;
+      align-items: baseline;
+      gap: 8px 14px;
+      margin-top: 10px;
       min-height: 22px;
     }
 
@@ -347,11 +241,15 @@
       font-size: 13px;
       font-weight: 600;
       color: var(--ll-muted);
+      flex: 1 1 auto;
+      min-width: 0;
     }
 
     .llsvc-note {
+      flex: 1 1 100%;
       font-size: 12.5px;
       color: var(--ll-muted);
+      margin: 0;
     }
 
     /* Groups + cards */
@@ -807,28 +705,15 @@
     @media (max-width: 560px) {
       .llsvc-hero { padding: 28px 20px 22px; }
       .llsvc-finder { padding: 14px 14px 12px; }
-      .llsvc-search-row { grid-template-columns: 1fr auto; gap: 8px; }
-      .llsvc-reset {
-        padding: 0 12px;
-        font-size: 12px;
-        border-radius: 12px;
-      }
       .llsvc-search { font-size: 14px; padding: 12px 40px 12px 38px; }
       .llsvc-price { padding: 8px 10px; }
       .llsvc-price-value { font-size: 1.15rem; }
       .llsvc-row { padding: 14px 12px; }
       .llsvc-row-side { padding-left: 0; }
-      .llsvc-meta { flex-direction: column; align-items: flex-start; gap: 4px; }
-      .llsvc-note { font-size: 11.5px; }
       .llsvc-feature { min-height: 220px; }
-    }
-
-    @media (min-width: 720px) {
-      .llsvc-cats,
-      .llsvc-chips {
-        flex-wrap: wrap;
-        overflow: visible;
-      }
+      /* Keep meta/count clear of the fixed Call Workshop pill */
+      .llsvc-meta { padding-right: 168px; }
+      .llsvc-note { display: none; }
     }
   </style>
 
@@ -1475,43 +1360,20 @@
       </span>
       <h1>PC &amp; Laptop Repair Services</h1>
       <p class="llsvc-hero-lead">Clear starting prices for everyday fixes. Diagnostics stay free — you only approve a fixed quote once we know what’s wrong.</p>
-      <div class="llsvc-trust">
-        <span>
-          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-          Free diagnostics
-        </span>
-        <span>
-          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          No-Fix-No-Fee
-        </span>
-        <span>
-          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          Fixed quotes before work
-        </span>
-        <span>
-          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-          Free local collection
-        </span>
-      </div>
+      <p class="llsvc-trust-line">Free diagnostics · No-Fix-No-Fee · Fixed quotes before work · Free local collection</p>
     </header>
 
     <section class="llsvc-finder llsvc-glass" aria-label="Find a service">
-      <p class="llsvc-finder-label">Browse by type, or describe what’s wrong</p>
-      <div class="llsvc-cats" id="llsvc-cats" role="tablist" aria-label="Service categories"></div>
-
+      <p class="llsvc-finder-label" id="llsvc-finder-label">Describe what’s wrong</p>
       <div class="llsvc-search-row">
         <div class="llsvc-search-wrap">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="search" id="llsvc-search" class="llsvc-search" placeholder="Try “won’t charge”, “MacBook battery”, “pop-ups”…" autocomplete="off" enterkeyhint="search" aria-label="Describe what’s wrong">
+          <input type="search" id="llsvc-search" class="llsvc-search" placeholder="e.g. won’t charge, cracked screen, virus" autocomplete="off" enterkeyhint="search" aria-labelledby="llsvc-finder-label">
           <button type="button" id="llsvc-clear" class="llsvc-clear" aria-label="Clear search">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
-        <button type="button" id="llsvc-reset" class="llsvc-reset" disabled>Reset</button>
       </div>
-
-      <p class="llsvc-chips-label">Common problems</p>
-      <div class="llsvc-chips" id="llsvc-chips"></div>
 
       <div class="llsvc-meta">
         <p id="llsvc-count" class="llsvc-count" aria-live="polite"></p>
@@ -1633,15 +1495,12 @@
     var catalog;
     try { catalog = JSON.parse(raw.textContent); } catch (e) { return; }
 
-    var state = { category: 'all', problem: '', query: '' };
-    var catsEl = document.getElementById('llsvc-cats');
-    var chipsEl = document.getElementById('llsvc-chips');
+    var state = { query: '' };
     var resultsEl = document.getElementById('llsvc-results');
     var countEl = document.getElementById('llsvc-count');
     var emptyEl = document.getElementById('llsvc-empty');
     var searchEl = document.getElementById('llsvc-search');
     var clearEl = document.getElementById('llsvc-clear');
-    var resetEl = document.getElementById('llsvc-reset');
 
     function escapeHtml(str) {
       return String(str)
@@ -1665,40 +1524,29 @@
     }
 
     function serviceHaystack(svc) {
+      var problemTerms = [];
+      (svc.problems || []).forEach(function (id) {
+        var found = (catalog.problems || []).find(function (p) { return p.id === id; });
+        if (found && found.match) problemTerms = problemTerms.concat(found.match);
+      });
       return normalize([
         svc.title,
         svc.blurb,
         svc.keywords || '',
         (svc.problems || []).join(' '),
+        problemTerms.join(' '),
+        svc.category || '',
         svc.priceLabel,
         svc.priceNote || ''
       ].join(' '));
     }
 
-    function problemMatchTerms(problemId) {
-      var found = (catalog.problems || []).find(function (p) { return p.id === problemId; });
-      return found ? (found.match || []).map(normalize) : [];
-    }
-
     function matchesService(svc) {
-      if (state.category !== 'all' && svc.category !== state.category) return false;
-
-      if (state.problem) {
-        var linked = (svc.problems || []).indexOf(state.problem) !== -1;
-        if (!linked) {
-          var terms = problemMatchTerms(state.problem);
-          var hay = serviceHaystack(svc);
-          var termHit = terms.some(function (t) { return t && hay.indexOf(t) !== -1; });
-          if (!termHit) return false;
-        }
-      }
-
       var q = normalize(state.query);
       if (!q) return true;
 
       var hay = serviceHaystack(svc);
       var qTokens = tokens(q);
-      // Prefer all-token match; also allow full phrase
       if (hay.indexOf(q) !== -1) return true;
       return qTokens.every(function (t) { return hay.indexOf(t) !== -1; });
     }
@@ -1799,21 +1647,10 @@
       );
     }
 
-    function renderChrome() {
-
-      catsEl.innerHTML = (catalog.categories || []).map(function (cat) {
-        return '<button type="button" class="llsvc-cat' + (state.category === cat.id ? ' is-active' : '') + '" role="tab" aria-selected="' + (state.category === cat.id) + '" data-cat="' + escapeHtml(cat.id) + '">' + escapeHtml(cat.label) + '</button>';
-      }).join('');
-
-      chipsEl.innerHTML = (catalog.problems || []).map(function (p) {
-        return '<button type="button" class="llsvc-chip' + (state.problem === p.id ? ' is-active' : '') + '" data-problem="' + escapeHtml(p.id) + '">' + escapeHtml(p.label) + '</button>';
-      }).join('');
-    }
-
     function renderResults() {
       var services = catalog.services || [];
       var matched = services.filter(matchesService);
-      var filtering = state.category !== 'all' || state.problem || normalize(state.query);
+      var filtering = !!normalize(state.query);
 
       var byGroup = {};
       (catalog.groups || []).forEach(function (g) { byGroup[g.id] = []; });
@@ -1857,29 +1694,12 @@
       countEl.textContent = filtering
         ? ('Showing ' + matched.length + ' of ' + services.length + ' services')
         : (services.length + ' services');
-      clearEl.classList.toggle('is-on', !!normalize(state.query));
-      resetEl.disabled = !filtering;
+      clearEl.classList.toggle('is-on', filtering);
     }
 
     function apply() {
-      renderChrome();
       renderResults();
     }
-
-    catsEl.addEventListener('click', function (e) {
-      var btn = e.target.closest('[data-cat]');
-      if (!btn) return;
-      state.category = btn.getAttribute('data-cat');
-      apply();
-    });
-
-    chipsEl.addEventListener('click', function (e) {
-      var btn = e.target.closest('[data-problem]');
-      if (!btn) return;
-      var id = btn.getAttribute('data-problem');
-      state.problem = state.problem === id ? '' : id;
-      apply();
-    });
 
     searchEl.addEventListener('input', function () {
       state.query = searchEl.value;
@@ -1891,12 +1711,6 @@
       state.query = '';
       apply();
       searchEl.focus();
-    });
-
-    resetEl.addEventListener('click', function () {
-      state = { category: 'all', problem: '', query: '' };
-      searchEl.value = '';
-      apply();
     });
 
     // JSON-LD from the same catalog

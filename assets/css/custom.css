@@ -147,6 +147,17 @@ html {
   display: block;
 }
 
+/* Clearance so page content (counts, CTAs, footer) isn't covered by the call pill */
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .launchlayer-floating-pill-container {
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 /* Hide floating call pill on larger screens if desired */
 @media (min-width: 1024px) {
   .launchlayer-floating-pill-container {
