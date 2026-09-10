@@ -83,6 +83,43 @@ document.addEventListener('click', function(e) {
   }
 })();
 
+(function loadFeaturableWhenVisible() {
+  var mount = document.querySelector('[data-featurable-async]');
+  if (!mount) return;
+
+  function inject() {
+    if (document.querySelector('script[data-ll-featurable]')) return;
+    var s = document.createElement('script');
+    s.src = '/assets/animate/bundle.js';
+    s.charset = 'UTF-8';
+    s.dataset.llFeaturable = '1';
+    document.body.appendChild(s);
+  }
+
+  // Empty mount nodes often have 0×0 boxes and never intersect. Observe a
+  // sized parent (reviews section / reviews page) so load still fires.
+  var target =
+    mount.closest('.llhm-section, .llrevpg-page, .llrevpg-widget-wrap, .llhm-reviews-widget') ||
+    mount.parentElement ||
+    mount;
+
+  if (typeof IntersectionObserver !== 'function') {
+    inject();
+    return;
+  }
+
+  var io = new IntersectionObserver(
+    function (entries) {
+      if (entries.some(function (entry) { return entry.isIntersecting; })) {
+        io.disconnect();
+        inject();
+      }
+    },
+    { rootMargin: '200px 0px', threshold: 0 }
+  );
+  io.observe(target);
+})();
+
 (function containReviewsFeaturable() {
   var wrap = document.querySelector('.llrevpg-widget-wrap');
   if (!wrap) return;

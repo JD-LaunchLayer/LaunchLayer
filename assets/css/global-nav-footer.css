@@ -308,7 +308,7 @@ button.ll-dropdown-trigger {
   font-size: 11px !important;
   font-weight: 700 !important;
   letter-spacing: 0.08em !important;
-  color: #94A3B8 !important;
+  color: var(--color-muted) !important;
   text-transform: uppercase !important;
   margin-bottom: 18px !important;
   min-height: var(--control-min-size) !important;
@@ -378,11 +378,11 @@ button.footer-matrix-title {
   }
 }
 
-.copyright-text-notice { font-size: 12.5px !important; color: #94A3B8 !important; margin: 0 !important; }
+.copyright-text-notice { font-size: 12.5px !important; color: var(--color-muted) !important; margin: 0 !important; }
 
 .footer-company-line {
   font-size: 12px !important;
-  color: #94A3B8 !important;
+  color: var(--color-muted) !important;
   line-height: 1.5 !important;
   margin: 0 !important;
 }
