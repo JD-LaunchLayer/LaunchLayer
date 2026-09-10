@@ -1182,6 +1182,7 @@ def render_page(page: PageData) -> str:
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
+  <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/custom.css">
   <link rel="stylesheet" href="/assets/css/service-glass.css">
   {ld}
@@ -1210,6 +1211,7 @@ def render_page(page: PageData) -> str:
 {FOOTER}
 
   <script src="/assets/js/global-nav-footer.js" defer></script>
+  <script src="/assets/js/cookie-consent.js" defer></script>
 </body>
 </html>
 '''
@@ -1236,6 +1238,16 @@ def special_case_mot(slug: str) -> None:
         src = src.replace(
             'href="/assets/css/global-nav-footer.css">',
             'href="/assets/css/global-nav-footer.css">\n  <link rel="stylesheet" href="/assets/css/custom.css">',
+        )
+    if 'cookie-consent.css' not in src:
+        src = src.replace(
+            'href="/assets/css/global-nav-footer.css">',
+            'href="/assets/css/global-nav-footer.css">\n  <link rel="stylesheet" href="/assets/css/cookie-consent.css">',
+        )
+    if 'cookie-consent.js' not in src:
+        src = src.replace(
+            '<script src="/assets/js/global-nav-footer.js" defer></script>',
+            '<script src="/assets/js/global-nav-footer.js" defer></script>\n  <script src="/assets/js/cookie-consent.js" defer></script>',
         )
     (ROOT / slug / "index.html").write_text(src)
 

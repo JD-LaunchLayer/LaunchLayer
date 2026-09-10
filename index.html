@@ -25,6 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/design-tokens.css">
   <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
+  <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/custom.css">
 
   <style>
@@ -1168,7 +1169,7 @@
       <div class="footer-right-assets">
         <div class="bark-widget-wrapper">
           <a href="https://www.bark.com/en/gb/company/launchlayer/2MyKZd/" target="_blank" class="bark-widget" data-type="pro" data-id="2MyKZd" data-image="medium-navy" data-version="3.0" rel="noopener">LaunchLayer</a>
-          <script type="text/javascript" src="https://www.bark.com/assets/js/frontend-v2/widgets-v2.64f07b24c109cff4b977db1f82909516.v2.js" defer></script>
+          <script type="text/plain" data-ll-consent="embeds" src="https://www.bark.com/assets/js/frontend-v2/widgets-v2.64f07b24c109cff4b977db1f82909516.v2.js" defer></script>
         </div>
         <div class="footer-social-strip">
           <a href="https://www.instagram.com/launchlayeruk/" target="_blank" class="social-icon-vector" title="Instagram" rel="noopener">
@@ -1189,31 +1190,37 @@
   </footer>
 
 <script src="/assets/js/global-nav-footer.js" defer></script>
-<script src="/assets/animate/bundle.js" defer charset="UTF-8"></script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+<script type="text/plain" data-ll-consent="embeds" src="/assets/animate/bundle.js" defer charset="UTF-8"></script>
 <script>
-  // Lazy-load map iframe only when near viewport
-  document.addEventListener('DOMContentLoaded', function () {
+  // Load the map only after optional-cookie consent, and only when near view.
+  (function () {
     var map = document.getElementById('llhm-map');
     if (!map) return;
+    var ready = false;
+    var inView = !('IntersectionObserver' in window);
     var load = function () {
-      if (!map.getAttribute('src')) {
-        map.src = map.getAttribute('data-src');
-      }
+      if (ready) return;
+      if (!window.llEmbedsAllowed || !inView) return;
+      var src = map.getAttribute('data-src');
+      if (src && !map.getAttribute('src')) map.src = src;
+      ready = true;
     };
+    document.addEventListener('ll-embeds-allowed', load);
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries, obs) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
+            inView = true;
             load();
             obs.disconnect();
           }
         });
       }, { rootMargin: '0px 0px 280px 0px' });
       io.observe(map);
-    } else {
-      load();
     }
-  });
+    load();
+  })();
 </script>
 
 <div class="launchlayer-floating-pill-container">

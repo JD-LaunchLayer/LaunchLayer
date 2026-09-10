@@ -316,6 +316,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
   <meta name="twitter:url" content="{url}">
 
   <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
+  <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/custom.css">
   <link rel="stylesheet" href="/assets/css/site-glass.css">
   <script type="application/ld+json">
@@ -433,6 +434,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
     </a>
   </div>
   <script src="/assets/js/global-nav-footer.js" defer></script>
+  <script src="/assets/js/cookie-consent.js" defer></script>
 </body>
 </html>
 """
