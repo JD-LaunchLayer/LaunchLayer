@@ -207,6 +207,11 @@
       color: var(--lla-blue);
     }
 
+    .llabt-hero-image picture {
+      display: block;
+      width: 100%;
+    }
+
     .llabt-hero-image img,
     .llabt-impact-image img,
     .llabt-founder-image img {
@@ -519,7 +524,11 @@
       </div>
 
       <div class="llabt-hero-image">
-        <img src="/assets/images/image-4307083f.png" width="640" height="426" alt="LaunchLayer Workshop Bench - PC Repairs & Upgrades in Wickford" loading="eager">
+        <picture>
+          <source type="image/avif" srcset="/assets/images/image-4307083f.avif">
+          <source type="image/webp" srcset="/assets/images/image-4307083f.webp">
+          <img src="/assets/images/image-4307083f.png" width="640" height="426" alt="LaunchLayer Workshop Bench - PC Repairs & Upgrades in Wickford" loading="eager">
+        </picture>
       </div>
     </header>
 
