@@ -958,6 +958,7 @@
                 <select id="ll-contact-service" class="field-element" name="Service" required>
                   <option value="" disabled selected>Select a service</option>
                   <option value="General Enquiry">General Enquiry</option>
+                  <option value="Custom PC Builds">Custom PC Builds</option>
                   <option value="PC Repair &amp; Tech Support">PC Repair &amp; Tech Support</option>
                   <option value="Scam Support">Scam Support</option>
                   <option value="E-Waste or Tech Donation">E-Waste or Tech Donation</option>
@@ -1900,6 +1901,23 @@ if (window.location.search.includes('submitted=true')) {
   if (formContainer) {
     formContainer.innerHTML = '<div class="ll-contact-success"><p>Thank you — your message is on its way.</p><span>We’ll reply to you at hello@launchlayer.uk within our 09:00–22:00 window.</span></div>';
   }
+} else {
+  (function prefillContactFromBuildIntake() {
+    var params = new URLSearchParams(window.location.search);
+    var service = params.get('service');
+    var message = params.get('message');
+    var serviceEl = document.getElementById('ll-contact-service');
+    var messageEl = document.getElementById('ll-contact-message');
+    if (service && serviceEl) {
+      var match = Array.prototype.some.call(serviceEl.options, function (option) {
+        return option.value === service;
+      });
+      if (match) serviceEl.value = service;
+    }
+    if (message && messageEl && !messageEl.value) {
+      messageEl.value = message;
+    }
+  })();
 }
 </script>
 <script src="/assets/js/global-nav-footer.js" defer></script></body>

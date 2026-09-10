@@ -310,6 +310,38 @@
 <p>Whichever system you choose, every build gets the same baseline: cables fully routed and hidden (not just tucked aside), a genuine 24-hour stress test before handover, a completely clean OS install with zero trial-software bloat, and a standard modular ATX layout so future upgrades stay straightforward and affordable.</p>
 </div></div>
 </section>
+<section class="llsg-section llsg-glass" aria-labelledby="ll-build-intake-heading">
+<div class="llsg-section-head">
+<h2 id="ll-build-intake-heading">Tell us what you need</h2>
+<p>Three quick questions. We’ll drop the answers into the enquiry form so you don’t have to type them twice.</p>
+</div>
+<form class="llsg-intake" id="ll-build-intake" action="/contact/" method="get">
+<fieldset class="llsg-intake-field">
+<legend>What will you use it for?</legend>
+<div class="llsg-intake-choices">
+<label class="llsg-intake-choice"><input type="radio" name="use" value="Gaming" required> Gaming</label>
+<label class="llsg-intake-choice"><input type="radio" name="use" value="Work &amp; creative"> Work &amp; creative</label>
+<label class="llsg-intake-choice"><input type="radio" name="use" value="Family &amp; office"> Family &amp; office</label>
+<label class="llsg-intake-choice"><input type="radio" name="use" value="Not sure"> Not sure</label>
+</div>
+</fieldset>
+<fieldset class="llsg-intake-field">
+<legend>Your budget?</legend>
+<div class="llsg-intake-choices">
+<label class="llsg-intake-choice"><input type="radio" name="budget" value="Under £800" required> Under £800</label>
+<label class="llsg-intake-choice"><input type="radio" name="budget" value="£800–£1,200"> £800–£1,200</label>
+<label class="llsg-intake-choice"><input type="radio" name="budget" value="£1,200–£2,000"> £1,200–£2,000</label>
+<label class="llsg-intake-choice"><input type="radio" name="budget" value="£2,000+"> £2,000+</label>
+</div>
+</fieldset>
+<div class="llsg-intake-field">
+<label for="ll-build-games">Any specific games? <span>(optional)</span></label>
+<input id="ll-build-games" name="games" type="text" maxlength="200" autocomplete="off" placeholder="e.g. Cyberpunk, Fortnite, MSFS">
+</div>
+<button class="llsg-btn-primary" type="submit">Continue to enquiry form</button>
+<noscript><p class="llsg-intake-noscript">JavaScript is off — <a href="/contact/">open the enquiry form</a> and mention it’s a custom PC build.</p></noscript>
+</form>
+</section>
 <section class="llsg-section llsg-glass">
 <div class="llsg-section-head">
 <h2>The LaunchLayer "Peace of Mind" Process</h2>
@@ -442,6 +474,26 @@
 </div>
 </footer>
 <script defer="" src="/assets/js/global-nav-footer.js"></script>
+<script>
+(function () {
+  var form = document.getElementById('ll-build-intake');
+  if (!form) return;
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    var useField = form.querySelector('input[name="use"]:checked');
+    var budgetField = form.querySelector('input[name="budget"]:checked');
+    var gamesField = form.querySelector('#ll-build-games');
+    if (!useField || !budgetField) return;
+    var parts = ['Use: ' + useField.value, 'Budget: ' + budgetField.value];
+    var games = gamesField && gamesField.value ? gamesField.value.trim() : '';
+    if (games) parts.push('Games: ' + games);
+    var params = new URLSearchParams();
+    params.set('service', 'Custom PC Builds');
+    params.set('message', parts.join('. ') + '.');
+    window.location.href = '/contact/?' + params.toString();
+  });
+})();
+</script>
 
 <div class="launchlayer-floating-pill-container">
     <a href="tel:07367652987" class="launchlayer-floating-btn" aria-label="Call LaunchLayer Workshop">
