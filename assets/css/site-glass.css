@@ -274,7 +274,7 @@ body.llsite-body .page-section > .content-wrapper {
 
 .llct-card:hover { transform: translateY(-3px); }
 
-.llct-card h3 {
+.llct-card h2 {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -288,7 +288,7 @@ body.llsite-body .page-section > .content-wrapper {
   text-align: left;
 }
 
-.llct-card h3 svg {
+.llct-card h2 svg {
   width: 18px;
   height: 18px;
   color: var(--color-accent-light);
@@ -499,7 +499,7 @@ body.llsite-body .page-section > .content-wrapper {
   color: var(--llcv-blue) !important;
 }
 
-.llcov-ops-text h4 {
+.llcov-ops-text h3 {
   margin: 0 0 4px !important;
   font-family: var(--llcv-font-display) !important;
   font-size: 0.95rem !important;
@@ -819,7 +819,7 @@ body.llsite-body .page-section > .content-wrapper {
   box-shadow: none !important;
 }
 
-.llegal-sub-card h5 {
+.llegal-sub-card h4 {
   font-size: 0.78rem !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
@@ -987,7 +987,7 @@ body.llsite-body .page-section > .content-wrapper {
 .llrevpg-stat-icon svg { width: 18px !important; height: 18px !important; color: var(--color-accent) !important; }
 .llrevpg-stat-card:first-child .llrevpg-stat-icon svg { color: #d97706 !important; }
 
-.llrevpg-stat-inner h3 {
+.llrevpg-stat-inner h2 {
   font-family: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif !important;
   font-size: 1.05rem !important;
   font-weight: 700 !important;
@@ -1526,13 +1526,17 @@ body.llsite-body a.blog-more-link {
 }
 
 .ll404-card .cta-secondary-btn {
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   text-align: center !important;
   text-decoration: none !important;
   font-weight: 700 !important;
   color: var(--ll4-blue) !important;
   border: 1px solid var(--color-accent-a22) !important;
   padding: 12px !important;
+  min-height: var(--control-min-size) !important;
+  box-sizing: border-box !important;
   border-radius: 12px !important;
   background: #fff !important;
   font-size: 0.92rem !important;
