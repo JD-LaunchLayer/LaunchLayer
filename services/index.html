@@ -100,7 +100,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       .llsvc-hero { animation: none !important; }
-      .llsvc-card, .llsvc-chip, .llsvc-cat, .llsvc-btn-primary, .llsvc-btn-secondary { transition: none !important; }
+      .llsvc-card, .llsvc-btn-primary, .llsvc-btn-secondary { transition: none !important; }
     }
 
     .llsvc-eyebrow {
@@ -149,53 +149,11 @@
       max-width: 54ch;
     }
 
-    .llsvc-filters {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-      margin: 12px 0 0;
-      width: 100%;
-      max-width: 100%;
-    }
-
-    .llsvc-cat,
-    .llsvc-chip {
-      flex: 0 0 auto;
-      white-space: nowrap;
-    }
-
     /* Finder */
     .llsvc-finder {
-      padding: 18px 20px 16px;
+      padding: 16px 20px 14px;
       margin-bottom: 18px;
     }
-
-    .llsvc-cat {
-      appearance: none;
-      border: 1.5px solid var(--color-accent-a35);
-      background: color-mix(in oklab, var(--color-accent-tint) 70%, #dbe7ff);
-      color: var(--ll-blue-deep);
-      font: inherit;
-      font-size: 13px;
-      font-weight: 700;
-      padding: 8px 12px;
-      min-height: var(--control-min-size);
-      display: inline-flex;
-      align-items: center;
-      box-sizing: border-box;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
-    }
-
-    .llsvc-cat:hover { border-color: var(--ll-blue); color: var(--ll-blue); background: #dbe7ff; }
-    .llsvc-cat.is-active {
-      background: var(--ll-ink);
-      border-color: var(--ll-ink);
-      color: #fff;
-    }
-    .llsvc-cat:focus-visible { outline: 2px solid var(--ll-blue); outline-offset: 2px; }
 
     .llsvc-search-row {
       display: block;
@@ -263,58 +221,12 @@
     .llsvc-clear svg { position: static; width: 16px; height: 16px; }
     .llsvc-clear:hover { background: #f1f5f9; color: var(--ll-ink); }
 
-    .llsvc-reset {
-      appearance: none;
-      border: none;
-      background: transparent;
-      color: var(--ll-blue);
-      font: inherit;
-      font-size: 12.5px;
-      font-weight: 700;
-      padding: 0;
-      min-height: auto;
-      display: none;
-      align-items: center;
-      cursor: pointer;
-      white-space: nowrap;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-    .llsvc-reset.is-on { display: inline-flex; }
-    .llsvc-reset:hover { color: var(--ll-blue-deep); }
-
-    .llsvc-chip {
-      appearance: none;
-      border: 1px solid var(--ll-line);
-      background: rgba(255, 255, 255, 0.85);
-      color: var(--ll-body);
-      font: inherit;
-      font-size: 13px;
-      font-weight: 500;
-      padding: 8px 12px;
-      min-height: var(--control-min-size);
-      display: inline-flex;
-      align-items: center;
-      box-sizing: border-box;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
-    }
-    .llsvc-chip:hover { border-color: var(--color-accent-a35); color: var(--ll-blue); }
-    .llsvc-chip.is-active {
-      background: var(--ll-ink);
-      border-color: var(--ll-ink);
-      color: #fff;
-      font-weight: 600;
-    }
-    .llsvc-chip:focus-visible { outline: 2px solid var(--ll-blue); outline-offset: 2px; }
-
     .llsvc-meta {
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
       gap: 8px 14px;
-      margin-top: 12px;
+      margin-top: 10px;
       min-height: 22px;
     }
 
@@ -1455,11 +1367,8 @@
         </div>
       </div>
 
-      <div class="llsvc-filters" id="llsvc-filters" role="group" aria-label="Quick filters"></div>
-
       <div class="llsvc-meta">
         <p id="llsvc-count" class="llsvc-count" aria-live="polite"></p>
-        <button type="button" id="llsvc-reset" class="llsvc-reset" hidden>Clear filters</button>
         <p class="llsvc-note">“From” prices are labour starting points — parts quoted before work begins.</p>
       </div>
     </section>
@@ -1578,26 +1487,12 @@
     var catalog;
     try { catalog = JSON.parse(raw.textContent); } catch (e) { return; }
 
-    var state = { category: 'all', problem: '', query: '' };
-    var filtersEl = document.getElementById('llsvc-filters');
+    var state = { query: '' };
     var resultsEl = document.getElementById('llsvc-results');
     var countEl = document.getElementById('llsvc-count');
     var emptyEl = document.getElementById('llsvc-empty');
     var searchEl = document.getElementById('llsvc-search');
     var clearEl = document.getElementById('llsvc-clear');
-    var resetEl = document.getElementById('llsvc-reset');
-
-    /* Short, wrap-friendly suggestions — search covers the rest */
-    var QUICK_FILTERS = [
-      { kind: 'cat', id: 'all', label: 'All' },
-      { kind: 'cat', id: 'hardware', label: 'Hardware' },
-      { kind: 'cat', id: 'apple', label: 'Apple' },
-      { kind: 'problem', id: 'slow', label: 'Slow' },
-      { kind: 'problem', id: 'screen', label: 'Screen' },
-      { kind: 'problem', id: 'power', label: 'Power' },
-      { kind: 'problem', id: 'spill', label: 'Spill' },
-      { kind: 'problem', id: 'virus', label: 'Virus' }
-    ];
 
     function escapeHtml(str) {
       return String(str)
@@ -1621,40 +1516,29 @@
     }
 
     function serviceHaystack(svc) {
+      var problemTerms = [];
+      (svc.problems || []).forEach(function (id) {
+        var found = (catalog.problems || []).find(function (p) { return p.id === id; });
+        if (found && found.match) problemTerms = problemTerms.concat(found.match);
+      });
       return normalize([
         svc.title,
         svc.blurb,
         svc.keywords || '',
         (svc.problems || []).join(' '),
+        problemTerms.join(' '),
+        svc.category || '',
         svc.priceLabel,
         svc.priceNote || ''
       ].join(' '));
     }
 
-    function problemMatchTerms(problemId) {
-      var found = (catalog.problems || []).find(function (p) { return p.id === problemId; });
-      return found ? (found.match || []).map(normalize) : [];
-    }
-
     function matchesService(svc) {
-      if (state.category !== 'all' && svc.category !== state.category) return false;
-
-      if (state.problem) {
-        var linked = (svc.problems || []).indexOf(state.problem) !== -1;
-        if (!linked) {
-          var terms = problemMatchTerms(state.problem);
-          var hay = serviceHaystack(svc);
-          var termHit = terms.some(function (t) { return t && hay.indexOf(t) !== -1; });
-          if (!termHit) return false;
-        }
-      }
-
       var q = normalize(state.query);
       if (!q) return true;
 
       var hay = serviceHaystack(svc);
       var qTokens = tokens(q);
-      // Prefer all-token match; also allow full phrase
       if (hay.indexOf(q) !== -1) return true;
       return qTokens.every(function (t) { return hay.indexOf(t) !== -1; });
     }
@@ -1755,19 +1639,10 @@
       );
     }
 
-    function renderChrome() {
-      filtersEl.innerHTML = QUICK_FILTERS.map(function (item) {
-        if (item.kind === 'cat') {
-          return '<button type="button" class="llsvc-cat' + (state.category === item.id ? ' is-active' : '') + '" aria-pressed="' + (state.category === item.id) + '" data-cat="' + escapeHtml(item.id) + '">' + escapeHtml(item.label) + '</button>';
-        }
-        return '<button type="button" class="llsvc-chip' + (state.problem === item.id ? ' is-active' : '') + '" aria-pressed="' + (state.problem === item.id) + '" data-problem="' + escapeHtml(item.id) + '">' + escapeHtml(item.label) + '</button>';
-      }).join('');
-    }
-
     function renderResults() {
       var services = catalog.services || [];
       var matched = services.filter(matchesService);
-      var filtering = state.category !== 'all' || state.problem || normalize(state.query);
+      var filtering = !!normalize(state.query);
 
       var byGroup = {};
       (catalog.groups || []).forEach(function (g) { byGroup[g.id] = []; });
@@ -1811,31 +1686,12 @@
       countEl.textContent = filtering
         ? ('Showing ' + matched.length + ' of ' + services.length + ' services')
         : (services.length + ' services');
-      clearEl.classList.toggle('is-on', !!normalize(state.query));
-      resetEl.classList.toggle('is-on', filtering);
-      resetEl.hidden = !filtering;
-      resetEl.disabled = !filtering;
+      clearEl.classList.toggle('is-on', filtering);
     }
 
     function apply() {
-      renderChrome();
       renderResults();
     }
-
-    filtersEl.addEventListener('click', function (e) {
-      var catBtn = e.target.closest('[data-cat]');
-      if (catBtn) {
-        state.category = catBtn.getAttribute('data-cat');
-        apply();
-        return;
-      }
-      var problemBtn = e.target.closest('[data-problem]');
-      if (problemBtn) {
-        var id = problemBtn.getAttribute('data-problem');
-        state.problem = state.problem === id ? '' : id;
-        apply();
-      }
-    });
 
     searchEl.addEventListener('input', function () {
       state.query = searchEl.value;
@@ -1845,13 +1701,6 @@
     clearEl.addEventListener('click', function () {
       searchEl.value = '';
       state.query = '';
-      apply();
-      searchEl.focus();
-    });
-
-    resetEl.addEventListener('click', function () {
-      state = { category: 'all', problem: '', query: '' };
-      searchEl.value = '';
       apply();
       searchEl.focus();
     });
