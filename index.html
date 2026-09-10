@@ -337,11 +337,13 @@
     }
 
     a.llhm-door {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 8.5rem;
-      padding: var(--space-5);
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 1fr;
+      align-items: stretch;
+      min-height: 0;
+      padding: 0;
+      overflow: hidden;
       background: var(--color-surface);
       border: 1px solid var(--color-line);
       border-radius: var(--radius-lg);
@@ -358,6 +360,52 @@
     a.llhm-door:focus-visible {
       outline: 3px solid var(--color-accent);
       outline-offset: 3px;
+    }
+
+    .llhm-door-media {
+      display: block;
+      margin: 0;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: var(--color-surface-2);
+    }
+
+    .llhm-door-media img,
+    .llhm-door-media picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .llhm-door-media img {
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .llhm-door-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: var(--space-5);
+      min-height: 8.5rem;
+    }
+
+    @media (min-width: 900px) {
+      a.llhm-door {
+        grid-template-columns: minmax(7.5rem, 38%) 1fr;
+        grid-template-rows: 1fr;
+        min-height: 11rem;
+      }
+
+      .llhm-door-media {
+        aspect-ratio: auto;
+        min-height: 100%;
+        align-self: stretch;
+      }
+
+      .llhm-door-body {
+        min-height: 0;
+      }
     }
 
     .llhm-door-label {
@@ -887,16 +935,41 @@
       <h2 id="llhm-doors-heading">How can we help?</h2>
       <div class="llhm-doors-grid">
         <a class="llhm-door" href="/services">
-          <span class="llhm-door-label">For home users</span>
-          <h3>Repairs &amp; Tech Help</h3>
-          <p>Broken laptop, slow PC, or something that won't switch on? Start here.</p>
-          <span class="llhm-door-go">See repairs →</span>
+          <span class="llhm-door-media" aria-hidden="true">
+            <img
+              src="/assets/images/image-4307083f.png"
+              alt=""
+              width="640"
+              height="426"
+              loading="lazy"
+              decoding="async">
+          </span>
+          <span class="llhm-door-body">
+            <span class="llhm-door-label">For home users</span>
+            <h3>Repairs &amp; Tech Help</h3>
+            <p>Broken laptop, slow PC, or something that won't switch on? Start here.</p>
+            <span class="llhm-door-go">See repairs →</span>
+          </span>
         </a>
         <a class="llhm-door" href="/custom-pc-builds">
-          <span class="llhm-door-label">For gamers &amp; creators</span>
-          <h3>Custom PC Builds</h3>
-          <p>Gaming PCs and creator machines, built around your budget.</p>
-          <span class="llhm-door-go">See custom builds →</span>
+          <span class="llhm-door-media" aria-hidden="true">
+            <picture>
+              <source type="image/avif" srcset="/assets/images/image-29700a14.avif">
+              <img
+                src="/assets/images/image-29700a14.webp"
+                alt=""
+                width="1250"
+                height="750"
+                loading="lazy"
+                decoding="async">
+            </picture>
+          </span>
+          <span class="llhm-door-body">
+            <span class="llhm-door-label">For gamers &amp; creators</span>
+            <h3>Custom PC Builds</h3>
+            <p>Gaming PCs and creator machines, built around your budget.</p>
+            <span class="llhm-door-go">See custom builds →</span>
+          </span>
         </a>
       </div>
       <a class="llhm-door-business" href="/business">
