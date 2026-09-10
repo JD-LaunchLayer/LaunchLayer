@@ -1,0 +1,9 @@
+# LaunchLayer — https://launchlayer.uk
+User-agent: *
+Allow: /
+
+# Redirect stubs and leftover Squarespace routes — keep crawlable for redirects,
+# but do not treat as primary content (also omitted from sitemap.xml).
+# /cart/ /home/ /laptop-mot-wickford/ /macbook-repair/ /service-dropdown/
+
+Sitemap: https://launchlayer.uk/sitemap.xml
