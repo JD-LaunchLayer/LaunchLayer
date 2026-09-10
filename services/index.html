@@ -156,10 +156,12 @@
     }
 
     .llsvc-finder-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--ll-muted);
-      margin-bottom: 8px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ll-ink);
+      margin-bottom: 10px;
     }
 
     .llsvc-search-row {
@@ -854,6 +856,108 @@
       ]
     }
   ],
+  "aliases": [
+    {
+      "terms": ["blue screen", "bsod", "blue screen of death"],
+      "services": ["diagnostics", "windows-reinstall", "virus", "general-fix"]
+    },
+    {
+      "terms": ["black screen", "blank screen", "no display", "screen gone black"],
+      "services": ["screen", "diagnostics", "macbook"]
+    },
+    {
+      "terms": ["cracked screen", "broken screen", "smashed screen", "lines on screen", "flickering screen"],
+      "services": ["screen", "macbook"]
+    },
+    {
+      "terms": ["won't turn on", "wont turn on", "doesn't turn on", "dead laptop", "no power"],
+      "services": ["diagnostics", "battery", "charging-port", "macbook"]
+    },
+    {
+      "terms": ["won't charge", "wont charge", "not charging", "stopped charging"],
+      "services": ["battery", "charging-port", "macbook", "diagnostics"]
+    },
+    {
+      "terms": ["swollen battery", "battery bloated", "battery expanding"],
+      "services": ["battery"]
+    },
+    {
+      "terms": ["charging port", "dc jack", "usb-c port loose"],
+      "services": ["charging-port"]
+    },
+    {
+      "terms": ["running slow", "very slow", "laptop slow", "pc slow", "sluggish"],
+      "services": ["mot", "ssd-ram", "diagnostics", "dust-clean"]
+    },
+    {
+      "terms": ["takes forever", "long startup", "slow to boot"],
+      "services": ["mot", "ssd-ram"]
+    },
+    {
+      "terms": ["needs more ram", "upgrade memory", "hard drive full"],
+      "services": ["ssd-ram"]
+    },
+    {
+      "terms": ["overheating", "gets too hot", "burning hot"],
+      "services": ["dust-clean", "diagnostics"]
+    },
+    {
+      "terms": ["loud fan", "noisy fan", "fan always on"],
+      "services": ["dust-clean"]
+    },
+    {
+      "terms": ["liquid spill", "spilled water", "spilled coffee", "dropped in water", "wet laptop"],
+      "services": ["liquid", "diagnostics", "data-recovery"]
+    },
+    {
+      "terms": ["virus", "malware", "ransomware", "trojan"],
+      "services": ["virus", "windows-reinstall"]
+    },
+    {
+      "terms": ["pop-ups", "popups", "popup ads", "browser hijack"],
+      "services": ["virus"]
+    },
+    {
+      "terms": ["scam call", "support scam", "someone remote access"],
+      "services": ["virus", "general-fix"]
+    },
+    {
+      "terms": ["lost files", "deleted files", "recover photos", "hard drive failed"],
+      "services": ["data-recovery"]
+    },
+    {
+      "terms": ["new laptop", "new pc", "transfer files", "move everything over"],
+      "services": ["new-device", "backup"]
+    },
+    {
+      "terms": ["factory reset", "fresh install", "reinstall windows"],
+      "services": ["windows-reinstall"]
+    },
+    {
+      "terms": ["windows 11", "upgrade to windows 11"],
+      "services": ["windows11"]
+    },
+    {
+      "terms": ["macbook", "imac", "mac repair", "macos"],
+      "services": ["macbook"]
+    },
+    {
+      "terms": ["keyboard not working", "keys stuck", "sticky keys"],
+      "services": ["keyboard", "liquid"]
+    },
+    {
+      "terms": ["hinge broken", "lid won't stay open", "lid wont stay open"],
+      "services": ["hinge"]
+    },
+    {
+      "terms": ["wifi not working", "can't connect", "cant connect", "no internet"],
+      "services": ["wifi", "general-fix"]
+    },
+    {
+      "terms": ["not sure", "don't know", "dont know", "something wrong"],
+      "services": ["diagnostics"]
+    }
+  ],
   "groups": [
     {
       "id": "diagnostics",
@@ -1502,6 +1606,8 @@
     var searchEl = document.getElementById('llsvc-search');
     var clearEl = document.getElementById('llsvc-clear');
 
+    var aliasIndex = null;
+
     function escapeHtml(str) {
       return String(str)
         .replace(/&/g, '&amp;')
@@ -1523,6 +1629,33 @@
       return normalize(text).split(' ').filter(Boolean);
     }
 
+    function buildAliasIndex() {
+      if (aliasIndex) return aliasIndex;
+      aliasIndex = [];
+      (catalog.aliases || []).forEach(function (entry) {
+        var serviceIds = entry.services || [];
+        (entry.terms || []).forEach(function (term) {
+          var n = normalize(term);
+          if (!n || !serviceIds.length) return;
+          aliasIndex.push({ term: n, services: serviceIds });
+        });
+      });
+      // Longer phrases first so "blue screen of death" wins over shorter overlaps
+      aliasIndex.sort(function (a, b) { return b.term.length - a.term.length; });
+      return aliasIndex;
+    }
+
+    function servicesFromAliases(query) {
+      var q = normalize(query);
+      if (!q) return {};
+      var hits = {};
+      buildAliasIndex().forEach(function (entry) {
+        if (q.indexOf(entry.term) === -1) return;
+        entry.services.forEach(function (id) { hits[id] = true; });
+      });
+      return hits;
+    }
+
     function serviceHaystack(svc) {
       var problemTerms = [];
       (svc.problems || []).forEach(function (id) {
@@ -1541,9 +1674,11 @@
       ].join(' '));
     }
 
-    function matchesService(svc) {
+    function matchesService(svc, aliasHits) {
       var q = normalize(state.query);
       if (!q) return true;
+
+      if (aliasHits && aliasHits[svc.id]) return true;
 
       var hay = serviceHaystack(svc);
       var qTokens = tokens(q);
@@ -1649,7 +1784,8 @@
 
     function renderResults() {
       var services = catalog.services || [];
-      var matched = services.filter(matchesService);
+      var aliasHits = servicesFromAliases(state.query);
+      var matched = services.filter(function (svc) { return matchesService(svc, aliasHits); });
       var filtering = !!normalize(state.query);
 
       var byGroup = {};
