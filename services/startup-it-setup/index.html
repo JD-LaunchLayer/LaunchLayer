@@ -260,6 +260,8 @@
     "
     tabindex="-1"
   >
+<a class="ll-skip-link" href="#page">Skip to content</a>
+
     <div
       id="siteWrapper"
       class="clearfix site-wrapper"
@@ -281,10 +283,10 @@
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li class="ll-dropdown-container">
-          <span class="ll-dropdown-trigger">
+          <button type="button" class="ll-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
             Services
             <svg class="ll-dropdown-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
-          </span>
+          </button>
           <ul class="ll-dropdown-menu">
             <li><a href="/services">All Services & Pricing</a></li>
             <li><a href="/custom-pc-builds">Custom PC Builds</a></li>
@@ -680,7 +682,7 @@
           <img src="/assets/images/image-3d425cba.png" width="402" height="236" alt="Startup IT setup" loading="lazy">
         </div>
         <div class="llbiz-card-body">
-          <h3>Startup IT Foundations</h3>
+          <h2>Startup IT Foundations</h2>
           <p>Launching a new business is complex; your tech stack shouldn't be. We design and deploy cohesive, resilient IT environments that scale with you flawlessly.</p>
           <a href="/business/pricing" class="llbiz-link">View Pricing &amp; Packages <span aria-hidden="true">→</span></a>
         </div>
@@ -694,7 +696,7 @@
         </div>
         <div class="llbiz-card-body">
           <span class="llbiz-case-tag">Verified Case Study</span>
-          <h3>Workflow Automation</h3>
+          <h2>Workflow Automation</h2>
           <p>Stop fighting with spreadsheets. We build bespoke internal tools and "no-code" field applications that completely eliminate manual human data entry errors.</p>
           <a href="/blog/introducing-rail-sign-for-rail-shine" class="llbiz-btn-case">Read Case Study: Rail Sign</a>
         </div>
@@ -707,7 +709,7 @@
           <img src="/assets/images/image-2fda97ee.png" width="400" height="235" alt="Strategic IT Consultancy" loading="lazy">
         </div>
         <div class="llbiz-card-body">
-          <h3>Strategic IT Consultancy</h3>
+          <h2>Strategic IT Consultancy</h2>
           <p>Think of us as your trusted fractional CTO. Expert engineering guidance on cloud architecture, data privacy frameworks, and business cybersecurity defences.</p>
           <a href="/contact" class="llbiz-link">Consult an Engineer <span aria-hidden="true">→</span></a>
         </div>
@@ -890,7 +892,7 @@
     border-radius: 6px !important;
     margin-bottom: 12px !important;
 }
-.llbiz-card-body h3 {
+.llbiz-card-body h2 {
     font-family: var(--llz-font-display) !important;
     font-size: 18.5px !important;
     font-weight: 700 !important;
@@ -1381,7 +1383,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
         <div class="llbov-phil-text">
-          <h4>Anti-Jargon Approach</h4>
+          <h3>Anti-Jargon Approach</h3>
           <p>We completely strip away corporate technobabble. Our engineers explain complex network infrastructures and hardware options in plain English.</p>
         </div>
       </div>
@@ -1391,7 +1393,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
         </div>
         <div class="llbov-phil-text">
-          <h4>Modern First Philosophy</h4>
+          <h3>Modern First Philosophy</h3>
           <p>We prioritize lean, cloud-first technology stacks to drastically lower your ongoing IT maintenance overhead while boosting team security.</p>
         </div>
       </div>
@@ -1401,7 +1403,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <div class="llbov-phil-text">
-          <h4>Local Partnership Footprint</h4>
+          <h3>Local Partnership Footprint</h3>
           <p>LaunchLayer isn't an outsourced ticketing queue based overseas. We are your technical neighbors in Wickford, invested in your success.</p>
         </div>
       </div>
@@ -1564,7 +1566,7 @@
     border: 1px solid rgba(29,78,216,0.14) !important;
 }
 .llbov-phil-icon svg { width: 20px !important; height: 20px !important; color: var(--llo-blue) !important; }
-.llbov-phil-text h4 {
+.llbov-phil-text h3 {
     font-family: var(--llo-font-display) !important;
     font-size: 16.5px !important;
     font-weight: 700 !important;
@@ -2164,7 +2166,7 @@
     </div>
 
     <div class="footer-matrix-section">
-      <div class="footer-matrix-title service-coverage-accordion-header" data-accordion>Our South Essex Service Coverage</div>
+      <button type="button" class="footer-matrix-title service-coverage-accordion-header" data-accordion aria-expanded="true">Our South Essex Service Coverage</button>
       <div class="footer-matrix-grid">
         <div class="matrix-node"><a href="/wickford-pc-repair">Wickford PC Repair (SS11)</a></div>
         <div class="matrix-node"><a href="/wickford-laptop-repair">Wickford Laptop Repair (SS12)</a></div>

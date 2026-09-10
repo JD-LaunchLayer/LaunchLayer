@@ -265,6 +265,8 @@
     "
     tabindex="-1"
   >
+<a class="ll-skip-link" href="#page">Skip to content</a>
+
     <div
       id="siteWrapper"
       class="clearfix site-wrapper"
@@ -286,10 +288,10 @@
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
         <li class="ll-dropdown-container">
-          <span class="ll-dropdown-trigger">
+          <button type="button" class="ll-dropdown-trigger" aria-expanded="false" aria-haspopup="true">
             Services
             <svg class="ll-dropdown-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
-          </span>
+          </button>
           <ul class="ll-dropdown-menu">
             <li><a href="/services">All Services & Pricing</a></li>
             <li><a href="/custom-pc-builds">Custom PC Builds</a></li>
@@ -551,7 +553,7 @@
   <div class="llprc-finder">
     <div class="llprc-finder-inputwrap">
       <svg class="llprc-finder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" id="llprc-search" class="llprc-finder-input" placeholder="Describe your problem — e.g. &quot;cracked screen&quot;, &quot;slow&quot;, &quot;spilled&quot;" autocomplete="off">
+      <input type="search" id="llprc-search" class="llprc-finder-input" placeholder="Describe your problem — e.g. &quot;cracked screen&quot;, &quot;slow&quot;, &quot;spilled&quot;" autocomplete="off" aria-label="Describe your problem">
       <button type="button" id="llprc-clear" class="llprc-finder-clear" aria-label="Clear search">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
@@ -1003,7 +1005,9 @@
     background: var(--llp-surface) !important;
     border: 1.5px solid var(--llp-line) !important;
     border-radius: 12px !important;
-    padding: 14px 44px 14px 44px !important;
+    padding: 14px 48px 14px 44px !important;
+    min-height: var(--control-min-size) !important;
+    box-sizing: border-box !important;
     box-shadow: 0 1px 2px rgba(15,23,42,0.04) !important;
     transition: border-color 0.25s cubic-bezier(0.16,1,0.3,1), box-shadow 0.25s ease !important;
 }
@@ -1015,9 +1019,11 @@
 }
 .llprc-finder-clear {
     position: absolute !important;
-    right: 10px !important;
-    width: 26px !important;
-    height: 26px !important;
+    right: 4px !important;
+    width: var(--control-min-size) !important;
+    height: var(--control-min-size) !important;
+    min-width: var(--control-min-size) !important;
+    min-height: var(--control-min-size) !important;
     display: none !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1045,6 +1051,10 @@
     background: var(--llp-canvas) !important;
     border: 1px solid var(--llp-line) !important;
     padding: 8px 14px !important;
+    min-height: var(--control-min-size) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
     border-radius: 100px !important;
     cursor: pointer !important;
     transition: background-color 0.2s cubic-bezier(0.16,1,0.3,1), border-color 0.2s ease, color 0.2s ease, transform 0.2s cubic-bezier(0.16,1,0.3,1) !important;
@@ -1698,7 +1708,7 @@
     </div>
 
     <div class="footer-matrix-section">
-      <div class="footer-matrix-title service-coverage-accordion-header" data-accordion>Our South Essex Service Coverage</div>
+      <button type="button" class="footer-matrix-title service-coverage-accordion-header" data-accordion aria-expanded="true">Our South Essex Service Coverage</button>
       <div class="footer-matrix-grid">
         <div class="matrix-node"><a href="/wickford-pc-repair">Wickford PC Repair (SS11)</a></div>
         <div class="matrix-node"><a href="/wickford-laptop-repair">Wickford Laptop Repair (SS12)</a></div>

@@ -2,6 +2,51 @@
    LAUNCHLAYER GLOBAL HEADER & FOOTER STYLES
    ========================================================================== */
 
+html {
+  scroll-padding-top: 80px;
+}
+
+.ll-skip-link {
+  position: absolute !important;
+  left: 12px !important;
+  top: 8px !important;
+  z-index: 10000 !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.ll-skip-link:focus,
+.ll-skip-link:focus-visible {
+  width: auto !important;
+  height: auto !important;
+  min-height: var(--control-min-size) !important;
+  clip: auto !important;
+  overflow: visible !important;
+  padding: 10px 16px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  line-height: 1.2 !important;
+  background: var(--color-accent) !important;
+  color: var(--color-accent-on) !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  text-decoration: none !important;
+  border-radius: var(--radius-pill) !important;
+  outline: 3px solid var(--color-ink) !important;
+  outline-offset: 3px !important;
+}
+
+:where(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
 /* SAFETY IMAGE CONSTRAINT */
 .ll-header-logo img, .brand-master-logo {
   height: 38px !important;
@@ -47,6 +92,7 @@
   flex-shrink: 0 !important;
   margin-left: 0 !important;
   padding-left: 0 !important;
+  min-height: var(--control-min-size) !important;
 }
 
 .ll-header-logo img {
@@ -70,6 +116,12 @@
   margin: 0 !important;
 }
 
+button.ll-dropdown-trigger {
+  appearance: none !important;
+  font: inherit !important;
+  margin: 0 !important;
+}
+
 .ll-header-nav a,
 .ll-dropdown-trigger {
   font-family: 'Inter', sans-serif !important;
@@ -78,6 +130,9 @@
   color: var(--ll-nav-ink) !important;
   text-decoration: none !important;
   padding: 8px 12px !important;
+  min-height: var(--control-min-size) !important;
+  min-width: var(--control-min-size) !important;
+  box-sizing: border-box !important;
   border-radius: 999px !important;
   position: relative !important;
   cursor: pointer !important;
@@ -166,8 +221,11 @@
 }
 
 .ll-dropdown-menu a {
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
   padding: 10px 14px !important;
+  min-height: var(--control-min-size) !important;
+  box-sizing: border-box !important;
   font-size: 14px !important;
   font-weight: 650 !important;
   color: var(--color-ink) !important;
@@ -228,6 +286,10 @@
   font-weight: 600 !important;
   color: var(--color-body) !important;
   text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: var(--control-min-size) !important;
+  min-width: var(--control-min-size) !important;
 }
 
 .footer-matrix-section {
@@ -244,6 +306,17 @@
   color: #94A3B8 !important;
   text-transform: uppercase !important;
   margin-bottom: 18px !important;
+  min-height: var(--control-min-size) !important;
+}
+
+button.footer-matrix-title {
+  appearance: none !important;
+  background: none !important;
+  border: none !important;
+  width: 100% !important;
+  text-align: left !important;
+  font-family: inherit !important;
+  padding: 0 !important;
 }
 
 .footer-matrix-grid {
@@ -257,6 +330,10 @@
   color: var(--color-muted) !important;
   text-decoration: none !important;
   font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: var(--control-min-size) !important;
+  min-width: var(--control-min-size) !important;
 }
 
 .data-recovery-special-node a {
@@ -307,7 +384,15 @@
   align-items: center !important;
 }
 
-.social-icon-vector { color: #64748B !important; text-decoration: none !important; }
+.social-icon-vector {
+  color: #64748B !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: var(--control-min-size) !important;
+  min-height: var(--control-min-size) !important;
+}
 .social-icon-vector svg { width: 16px !important; height: 16px !important; fill: currentColor !important; }
 
 /* ==========================================================================
@@ -342,8 +427,10 @@
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-around !important;
-    width: 40px !important;
-    height: 40px !important;
+    width: var(--control-min-size) !important;
+    height: var(--control-min-size) !important;
+    min-width: var(--control-min-size) !important;
+    min-height: var(--control-min-size) !important;
     padding: 9px 8px !important;
     cursor: pointer !important;
     z-index: 1002 !important;
@@ -1070,7 +1157,7 @@ document.addEventListener('DOMContentLoaded', function() {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03) !important;
 }
 
-.llegal-sub-card h5 {
+.llegal-sub-card h4 {
   font-size: 14px !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;

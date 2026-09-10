@@ -14,6 +14,47 @@ body {
 /* Ensure smooth scrolling site-wide */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+.ll-skip-link {
+  position: absolute;
+  left: 12px;
+  top: 8px;
+  z-index: 10000;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.ll-skip-link:focus,
+.ll-skip-link:focus-visible {
+  width: auto;
+  height: auto;
+  min-height: var(--control-min-size);
+  clip: auto;
+  overflow: visible;
+  padding: 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  line-height: 1.2;
+  background: var(--color-accent);
+  color: var(--color-accent-on);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  outline: 3px solid var(--color-ink);
+  outline-offset: 3px;
+}
+
+:where(a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
 }
 
 /* ── 3. CODE BLOCK CONTAINER OVERRIDES ── */
@@ -152,6 +193,10 @@ html {
   text-decoration: none !important;
   font-weight: 600 !important;
   transition: color 0.2s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: var(--control-min-size) !important;
+  min-width: var(--control-min-size) !important;
 }
 
 .inline-nav-links a:hover {
@@ -177,6 +222,7 @@ html {
   margin-bottom: 16px !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
+  min-height: var(--control-min-size) !important;
 }
 
 .footer-matrix-grid {
@@ -314,6 +360,14 @@ body.llsite-body .blog-item-wrapper [data-animation-role],
   hyphens: none !important;
   text-wrap: pretty;
   text-wrap: balance;
+}
+
+/* Blog listing category chips — keep copy, enlarge tap target */
+a.blog-categories {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--control-min-size);
+  box-sizing: border-box;
 }
 
 /* ── 8. ACCESSIBILITY & UTILITY FIXES ── */

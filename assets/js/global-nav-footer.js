@@ -19,7 +19,34 @@ document.addEventListener('click', function(e) {
   trigger.classList.toggle('active', willOpen);
   if (section) section.classList.toggle('active', willOpen);
   if (panel) panel.classList.toggle('open', willOpen);
+  trigger.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
 }, true);
+
+(function syncFooterAccordionState() {
+  const mobile = window.matchMedia('(max-width: 767px)').matches;
+  document.querySelectorAll('.footer-matrix-title[data-accordion], .service-coverage-accordion-header[data-accordion]').forEach(function (trigger) {
+    const section = trigger.closest('.footer-matrix-section');
+    const panel =
+      trigger.nextElementSibling ||
+      (section && section.querySelector('.footer-matrix-grid, .footer-matrix-list, .service-coverage-panel, .service-coverage-grid'));
+    const open = mobile ? !!(panel && panel.classList.contains('open')) : true;
+    trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+
+(function syncServicesDropdownExpanded() {
+  document.querySelectorAll('.ll-dropdown-container').forEach(function (box) {
+    const btn = box.querySelector('.ll-dropdown-trigger');
+    if (!btn) return;
+    function sync() {
+      btn.setAttribute('aria-expanded', box.matches(':hover, :focus-within') ? 'true' : 'false');
+    }
+    box.addEventListener('mouseenter', sync);
+    box.addEventListener('mouseleave', sync);
+    box.addEventListener('focusin', sync);
+    box.addEventListener('focusout', sync);
+  });
+})();
 
 (function highlightBlogFilterPills() {
   const pills = document.querySelectorAll('.blog-filters .filter-pill');
