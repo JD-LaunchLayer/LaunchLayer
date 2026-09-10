@@ -82,3 +82,35 @@ document.addEventListener('click', function(e) {
     active.setAttribute('aria-current', 'page');
   }
 })();
+
+(function containReviewsFeaturable() {
+  var wrap = document.querySelector('.llrevpg-widget-wrap');
+  if (!wrap) return;
+
+  var css = [
+    ':host { display: block !important; position: relative !important; height: auto !important; overflow: hidden !important; }',
+    ':host > div { position: relative !important; height: auto !important; top: auto !important; }',
+    '.slick-slider, .slick-list, .slick-track, .slick-slide { height: auto !important; max-height: none !important; }',
+    '.slick-slider { position: relative !important; top: auto !important; transform: none !important; }',
+    '[class*="App-module__container"], [class*="Carousel-module__parent"], [class*="Carousel-module__carousel"] {',
+    '  position: relative !important; top: auto !important; height: auto !important; margin-top: 0 !important;',
+    '}'
+  ].join('\n');
+
+  function inject() {
+    var host = wrap.querySelector('.shadow-wrapper');
+    if (!host || !host.shadowRoot) return false;
+    if (host.shadowRoot.getElementById('ll-reviews-contain')) return true;
+    var style = document.createElement('style');
+    style.id = 'll-reviews-contain';
+    style.textContent = css;
+    host.shadowRoot.appendChild(style);
+    return true;
+  }
+
+  if (inject()) return;
+  var observer = new MutationObserver(function () {
+    if (inject()) observer.disconnect();
+  });
+  observer.observe(wrap, { childList: true, subtree: true });
+})();

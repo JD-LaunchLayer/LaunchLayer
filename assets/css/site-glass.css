@@ -890,13 +890,19 @@ body.llsite-body .page-section > .content-wrapper {
   padding: 0 20px !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 16px !important;
+  gap: 20px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  position: static !important;
+  z-index: auto !important;
+  overflow: visible !important;
 }
 
 .llrevpg-header {
   text-align: left !important;
   max-width: none !important;
-  margin: 0 0 16px 0 !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
   padding: clamp(1.4rem, 3vw, 2rem) !important;
   border-radius: 22px !important;
   background: linear-gradient(155deg, #ffffff 0%, #fbfcfe 48%, #eff6ff 100%) !important;
@@ -947,9 +953,10 @@ body.llsite-body .page-section > .content-wrapper {
   display: grid !important;
   grid-template-columns: 1fr !important;
   gap: 12px !important;
-  margin-bottom: 0 !important;
+  margin: 0 !important;
   position: relative !important;
-  z-index: 2 !important;
+  z-index: 5 !important;
+  flex-shrink: 0 !important;
 }
 
 @media (min-width: 700px) {
@@ -1012,49 +1019,46 @@ body.llsite-body .page-section > .content-wrapper {
   display: block !important;
   position: relative !important;
   z-index: 1 !important;
+  flex-shrink: 0 !important;
   isolation: isolate;
-  transform: translateZ(0);
-  overflow: visible !important;
+  overflow: hidden !important;
   min-height: 240px !important;
-  margin-bottom: 24px !important;
-  padding: 16px !important;
+  margin: 0 0 24px 0 !important;
+  padding: 8px 52px 16px 52px !important;
   border-radius: 22px !important;
-  background: linear-gradient(155deg, #ffffff 0%, #fbfcfe 48%, #eff6ff 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.95) !important;
-  box-shadow:
-    0 12px 28px rgba(15, 23, 42, 0.06),
-    inset 0 1px 0 #ffffff !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
-/* Keep Featurable in flow so its carousel cannot sit over the stat cards. */
 .llrevpg-widget-wrap #featurable-45bf401e-18e6-4818-be5f-51bbb9b69842,
 .llrevpg-widget-wrap .shadow-wrapper {
   position: relative !important;
   top: auto !important;
   left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  inset: auto !important;
   height: auto !important;
+  min-height: 0 !important;
   max-height: none !important;
   display: block !important;
+  overflow: hidden !important;
 }
 
-/* Squarespace Fluid Engine sized this code block to a short 19-row grid.
-   Dynamic Featurable content then painted over the stats above it. */
-body.llsite-body .fe-69553274bf2ec66bbf17c08f {
-  display: flex !important;
-  flex-direction: column !important;
-  height: auto !important;
-  min-height: 0 !important;
-  grid-template-rows: none !important;
-}
-
+body.llsite-body .fe-69553274bf2ec66bbf17c08f,
 body.llsite-body .fe-block-yui_3_17_2_1_1779895246103_11326,
 body.llsite-body .fe-block-yui_3_17_2_1_1779895246103_11326 .sqs-block,
-body.llsite-body .fe-block-yui_3_17_2_1_1779895246103_11326 .sqs-block-content {
-  grid-area: auto !important;
+body.llsite-body .fe-block-yui_3_17_2_1_1779895246103_11326 .sqs-block-content,
+body.llsite-body .sqs-block-code,
+body.llsite-body .sqs-block-code .sqs-block-content {
+  display: block !important;
   height: auto !important;
   min-height: 0 !important;
+  max-height: none !important;
+  grid-area: auto !important;
+  grid-template-rows: none !important;
   position: relative !important;
-  z-index: 1 !important;
   overflow: visible !important;
 }
 
