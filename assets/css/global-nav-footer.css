@@ -359,12 +359,36 @@ button.footer-matrix-title {
   }
 }
 
-.copyright-text-notice { font-size: 12.5px !important; color: #94A3B8 !important; }
+.footer-legal-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  text-align: center !important;
+  max-width: 36rem !important;
+}
+
+@media (min-width: 768px) {
+  .footer-legal-stack {
+    text-align: left !important;
+  }
+}
+
+.copyright-text-notice { font-size: 12.5px !important; color: #94A3B8 !important; margin: 0 !important; }
+
+.footer-company-line {
+  font-size: 12px !important;
+  color: #94A3B8 !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
 
 .footer-right-assets {
   display: flex !important;
   align-items: center !important;
-  gap: 24px !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 16px 24px !important;
+  max-width: 100% !important;
 }
 
 .bark-widget-box {
@@ -380,8 +404,10 @@ button.footer-matrix-title {
 
 .footer-social-strip {
   display: flex !important;
-  gap: 16px !important;
+  flex-wrap: wrap !important;
+  gap: 4px 8px !important;
   align-items: center !important;
+  justify-content: center !important;
 }
 
 .social-icon-vector {
