@@ -2,3 +2,7 @@
 # Keep the /cart URL working by sending visitors to Contact.
 /cart    /contact/  301
 /cart/   /contact/  301
+
+# Startup IT setup content lives on /business/ now.
+/services/startup-it-setup    /business/  301
+/services/startup-it-setup/   /business/  301
