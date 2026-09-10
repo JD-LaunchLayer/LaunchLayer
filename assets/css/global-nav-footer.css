@@ -118,15 +118,19 @@ html {
 
 button.ll-dropdown-trigger {
   appearance: none !important;
-  font: inherit !important;
+  -webkit-appearance: none !important;
   margin: 0 !important;
 }
 
 .ll-header-nav a,
+.ll-header-nav button.ll-dropdown-trigger,
 .ll-dropdown-trigger {
   font-family: 'Inter', sans-serif !important;
   font-size: 14.5px !important;
   font-weight: 600 !important;
+  line-height: 1.2 !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
   color: var(--ll-nav-ink) !important;
   text-decoration: none !important;
   padding: 8px 12px !important;
@@ -152,6 +156,7 @@ button.ll-dropdown-trigger {
 .ll-header-nav > li > a:hover,
 .ll-header-nav > li > a:focus-visible,
 .ll-dropdown-container:hover > .ll-dropdown-trigger,
+.ll-header-nav button.ll-dropdown-trigger:focus-visible,
 .ll-dropdown-trigger:focus-visible {
   background: var(--color-surface) !important;
   border-color: var(--color-accent-a16) !important;
@@ -502,6 +507,7 @@ button.footer-matrix-title {
   }
 
   .ll-header-nav a,
+  .ll-header-nav button.ll-dropdown-trigger,
   .ll-dropdown-trigger {
     font-size: 17px !important;
     font-weight: 650 !important;
@@ -531,6 +537,7 @@ button.footer-matrix-title {
     border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
   }
 
+  .ll-header-nav button.ll-dropdown-trigger,
   .ll-dropdown-trigger {
     cursor: default !important;
     pointer-events: none !important;
@@ -546,6 +553,7 @@ button.footer-matrix-title {
     box-shadow: none !important;
   }
 
+  .ll-header-nav button.ll-dropdown-trigger:hover,
   .ll-dropdown-trigger:hover {
     background: transparent !important;
     border: none !important;
