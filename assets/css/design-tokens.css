@@ -2,9 +2,11 @@
    LaunchLayer design tokens
    Single source of truth for colour, type, space, and radius.
 
-   Accent: Deep Teal — oklch(0.455 0.095 196) / #006668
-   One brand accent (not purple, not indigo). Reads as a trustworthy local
-   tech workshop: marine teal, not a SaaS template.
+   Accent: Logo Blue — oklch(0.435 0.177 260) / #0048B0
+   Sampled from the most common chromatic pixel in
+   assets/images/image-0961fde4.png (header / footer mark). One brand
+   accent (not purple, not indigo). Hover / deep / tints keep the same
+   hue; chroma is capped to sRGB gamut so hex fallbacks match.
 
    Contrast is WCAG 2.2 AA (WebAIM Contrast Checker formula):
    4.5:1 normal text, 3:1 large text / UI buttons. Ratios below use the
@@ -23,20 +25,20 @@
    Muted on canvas                           #49585F / #EAF2F3        6.50:1
    Muted on white                            #49585F / #FFFFFF        7.39:1
    Muted on surface-2                        #49585F / #F4FAFB        6.99:1
-   Accent on white (links, 11–14px)          #006668 / #FFFFFF        6.76:1
-   Accent on surface                         #006668 / #FBFEFE        6.67:1
-   Accent on canvas                          #006668 / #EAF2F3        5.95:1
-   Accent on accent-soft (chips)             #006668 / #D8F3F3        5.81:1
-   Accent-deep on white (eyebrows)           #004C4E / #FFFFFF        9.81:1
-   Accent-deep on accent-soft                #004C4E / #D8F3F3        8.43:1
-   Accent-deep on accent-tint                #004C4E / #EAF9F9        9.10:1
-   White / accent-on on accent (buttons)     #FFFFFF / #006668        6.76:1
-   White on accent-hover                     #FFFFFF / #005557        8.62:1
+   Accent on white (links, 11–14px)          #0048B0 / #FFFFFF        8.22:1
+   Accent on surface                         #0048B0 / #FBFEFE        8.11:1
+   Accent on canvas                          #0048B0 / #EAF2F3        7.24:1
+   Accent on accent-soft (chips)             #0048B0 / #E3EEFF        7.02:1
+   Accent-deep on white (eyebrows)           #003280 / #FFFFFF       11.88:1
+   Accent-deep on accent-soft                #003280 / #E3EEFF       10.15:1
+   Accent-deep on accent-tint                #003280 / #F1F6FF       10.95:1
+   White / accent-on on accent (buttons)     #FFFFFF / #0048B0        8.22:1
+   White on accent-hover                     #FFFFFF / #013A8F       10.48:1
    Inverse-ink on inverse                    #F4FCFD / #0B2029       16.13:1
    Inverse-muted on inverse                  #C1D1D4 / #0B2029       10.69:1
-   Accent-light on inverse (hero highlight)  #85E4E4 / #0B2029       11.36:1
-   Accent-bright on inverse                  #5EDADB / #0B2029       10.04:1
-   Inverse-soft on inverse                   #C0E7E7 / #0B2029       12.65:1
+   Accent-light on inverse (hero highlight)  #B7D2FF / #0B2029       10.92:1
+   Accent-bright on inverse                  #A2C5FF / #0B2029        9.55:1
+   Inverse-soft on inverse                   #CCDFFF / #0B2029       12.42:1
    Success on white (status, large/UI)       #137738 / #FFFFFF        5.65:1
    Danger on white                           #B02A2D / #FFFFFF        6.55:1
    White on danger                           #FFFFFF / #B02A2D        6.55:1
@@ -75,31 +77,31 @@
   --color-muted: #49585f;
   --color-muted: oklch(0.450 0.022 230);
 
-  /* ----- Colour: accent (Deep Teal — the only brand accent) ----- */
-  --color-accent: #006668;
-  --color-accent: oklch(0.455 0.095 196);
+  /* ----- Colour: accent (Logo Blue — the only brand accent) ----- */
+  --color-accent: #0048b0;
+  --color-accent: oklch(0.435 0.177 260);
 
-  --color-accent-hover: #005557;
-  --color-accent-hover: oklch(0.395 0.095 196);
+  --color-accent-hover: #013a8f;
+  --color-accent-hover: oklch(0.375 0.152 260);
 
-  --color-accent-deep: #004c4e;
-  --color-accent-deep: oklch(0.365 0.090 196);
+  --color-accent-deep: #003280;
+  --color-accent-deep: oklch(0.345 0.140 260);
 
-  --color-accent-on: #f6ffff;
-  --color-accent-on: oklch(0.995 0.010 196);
+  --color-accent-on: #fdfdff;
+  --color-accent-on: oklch(0.995 0.002 260);
 
-  --color-accent-soft: #d8f3f3;
-  --color-accent-soft: oklch(0.945 0.028 196);
+  --color-accent-soft: #e3eeff;
+  --color-accent-soft: oklch(0.945 0.026 260);
 
-  --color-accent-tint: #eaf9f9;
-  --color-accent-tint: oklch(0.972 0.016 196);
+  --color-accent-tint: #f1f6ff;
+  --color-accent-tint: oklch(0.972 0.013 260);
 
   /* Light tints — inverse / dark panels only */
-  --color-accent-light: #85e4e4;
-  --color-accent-light: oklch(0.860 0.090 196);
+  --color-accent-light: #b7d2ff;
+  --color-accent-light: oklch(0.860 0.069 260);
 
-  --color-accent-bright: #5edadb;
-  --color-accent-bright: oklch(0.820 0.110 196);
+  --color-accent-bright: #a2c5ff;
+  --color-accent-bright: oklch(0.820 0.090 260);
 
   /* ----- Colour: inverse (hero, dark bands) ----- */
   --color-inverse: #0b2029;
@@ -117,8 +119,8 @@
   --color-inverse-muted: #c1d1d4;
   --color-inverse-muted: oklch(0.850 0.018 210);
 
-  --color-inverse-soft: #c0e7e7;
-  --color-inverse-soft: oklch(0.900 0.040 196);
+  --color-inverse-soft: #ccdfff;
+  --color-inverse-soft: oklch(0.900 0.048 260);
 
   /* ----- Colour: semantic (not a second brand accent) ----- */
   --color-success: #137738;
@@ -130,11 +132,11 @@
   /* ----- Colour: lines, scrims, alpha ----- */
   --color-line: oklch(0.230 0.032 230 / 0.12);
   --color-line-strong: oklch(0.230 0.032 230 / 0.18);
-  --color-accent-a08: oklch(0.455 0.095 196 / 0.08);
-  --color-accent-a12: oklch(0.455 0.095 196 / 0.12);
-  --color-accent-a16: oklch(0.455 0.095 196 / 0.16);
-  --color-accent-a22: oklch(0.455 0.095 196 / 0.22);
-  --color-accent-a35: oklch(0.455 0.095 196 / 0.35);
+  --color-accent-a08: oklch(0.435 0.177 260 / 0.08);
+  --color-accent-a12: oklch(0.435 0.177 260 / 0.12);
+  --color-accent-a16: oklch(0.435 0.177 260 / 0.16);
+  --color-accent-a22: oklch(0.435 0.177 260 / 0.22);
+  --color-accent-a35: oklch(0.435 0.177 260 / 0.35);
   --color-success-a18: oklch(0.500 0.130 150 / 0.18);
   --color-white-a08: oklch(1 0 0 / 0.08);
   --color-white-a10: oklch(1 0 0 / 0.10);
@@ -157,7 +159,7 @@
   );
   --color-atmosphere:
     radial-gradient(ellipse 65% 45% at 85% 8%, var(--color-accent-a12), transparent 58%),
-    radial-gradient(ellipse 55% 40% at 8% 78%, oklch(0.455 0.095 196 / 0.08), transparent 55%),
+    radial-gradient(ellipse 55% 40% at 8% 78%, oklch(0.435 0.177 260 / 0.08), transparent 55%),
     linear-gradient(180deg, var(--color-surface-2) 0%, var(--color-canvas) 48%, var(--color-canvas-mid) 100%);
   --color-inverse-panel: linear-gradient(
     155deg,
@@ -246,8 +248,8 @@
     0 1px 3px oklch(0.230 0.032 230 / 0.04),
     inset 0 1px 0 var(--color-white);
   --shadow-lg: 0 14px 32px oklch(0.230 0.032 230 / 0.14);
-  --shadow-accent: 0 10px 22px oklch(0.455 0.095 196 / 0.32);
-  --shadow-accent-hover: 0 12px 26px oklch(0.455 0.095 196 / 0.42);
+  --shadow-accent: 0 10px 22px oklch(0.435 0.177 260 / 0.32);
+  --shadow-accent-hover: 0 12px 26px oklch(0.435 0.177 260 / 0.42);
 
   /* ----- Back-compat aliases (existing --ll-* / --lla-* pages) ----- */
   --ll-ink: var(--color-ink);
