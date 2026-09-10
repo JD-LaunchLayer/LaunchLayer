@@ -80,6 +80,12 @@
 
     .llsvc-glass > * { position: relative; z-index: 1; }
 
+    /* Finder needs visible horizontal chip scroll; contain/overflow:hidden collapses it in some engines */
+    .llsvc-finder.llsvc-glass {
+      overflow: visible;
+      contain: none;
+    }
+
     /* Hero */
     .llsvc-hero {
       padding: 36px 28px 28px;
@@ -153,7 +159,9 @@
       scrollbar-width: thin;
       padding-bottom: 2px;
       margin: 12px 0 0;
-      margin-right: -4px;
+      min-height: var(--control-min-size);
+      width: 100%;
+      max-width: 100%;
     }
 
     .llsvc-cat,
@@ -178,8 +186,8 @@
 
     .llsvc-cat {
       appearance: none;
-      border: 1px solid var(--color-accent-a35);
-      background: var(--color-accent-tint);
+      border: 1.5px solid var(--color-accent-a35);
+      background: color-mix(in oklab, var(--color-accent-tint) 70%, #dbe7ff);
       color: var(--ll-blue-deep);
       font: inherit;
       font-size: 13px;
@@ -189,12 +197,12 @@
       display: inline-flex;
       align-items: center;
       box-sizing: border-box;
-      border-radius: 12px;
+      border-radius: 10px;
       cursor: pointer;
       transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
     }
 
-    .llsvc-cat:hover { border-color: var(--ll-blue); color: var(--ll-blue); }
+    .llsvc-cat:hover { border-color: var(--ll-blue); color: var(--ll-blue); background: #dbe7ff; }
     .llsvc-cat.is-active {
       background: var(--ll-ink);
       border-color: var(--ll-ink);
@@ -238,6 +246,11 @@
     }
 
     .llsvc-search::placeholder { color: #94a3b8; }
+    .llsvc-search::-webkit-search-cancel-button,
+    .llsvc-search::-webkit-search-decoration {
+      -webkit-appearance: none;
+      appearance: none;
+    }
     .llsvc-search:focus {
       border-color: var(--color-accent-a35);
       box-shadow: 0 0 0 3px var(--color-accent-a12);
@@ -313,7 +326,6 @@
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
-      justify-content: space-between;
       gap: 8px 14px;
       margin-top: 12px;
       min-height: 22px;
@@ -325,6 +337,13 @@
       color: var(--ll-muted);
       flex: 1 1 auto;
       min-width: 0;
+    }
+
+    .llsvc-note {
+      flex: 1 1 100%;
+      font-size: 12.5px;
+      color: var(--ll-muted);
+      margin: 0;
     }
 
     /* Groups + cards */
@@ -787,7 +806,8 @@
       .llsvc-row-side { padding-left: 0; }
       .llsvc-feature { min-height: 220px; }
       /* Keep meta/count clear of the fixed Call Workshop pill */
-      .llsvc-meta { padding-right: min(148px, 42vw); }
+      .llsvc-meta { padding-right: 168px; }
+      .llsvc-note { display: none; }
     }
 
     @media (min-width: 720px) {
@@ -1460,6 +1480,7 @@
       <div class="llsvc-meta">
         <p id="llsvc-count" class="llsvc-count" aria-live="polite"></p>
         <button type="button" id="llsvc-reset" class="llsvc-reset" hidden>Clear filters</button>
+        <p class="llsvc-note">“From” prices are labour starting points — parts quoted before work begins.</p>
       </div>
     </section>
 
@@ -1808,10 +1829,9 @@
       resultsEl.innerHTML = html;
       emptyEl.classList.toggle('is-on', matched.length === 0);
 
-      var countText = filtering
+      countEl.textContent = filtering
         ? ('Showing ' + matched.length + ' of ' + services.length + ' services')
         : (services.length + ' services');
-      countEl.textContent = countText + ' · “From” prices are labour starting points';
       clearEl.classList.toggle('is-on', !!normalize(state.query));
       resetEl.classList.toggle('is-on', filtering);
       resetEl.hidden = !filtering;
