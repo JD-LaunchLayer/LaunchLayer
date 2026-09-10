@@ -183,6 +183,7 @@ html {
   display: inline-flex !important;
   align-items: center !important;
   min-height: var(--control-min-size) !important;
+  min-width: var(--control-min-size) !important;
 }
 
 .inline-nav-links a:hover {

@@ -86,6 +86,7 @@ button.ll-dropdown-trigger {
   text-decoration: none !important;
   padding: 8px 12px !important;
   min-height: var(--control-min-size) !important;
+  min-width: var(--control-min-size) !important;
   box-sizing: border-box !important;
   border-radius: 999px !important;
   position: relative !important;
@@ -243,6 +244,7 @@ button.ll-dropdown-trigger {
   display: inline-flex !important;
   align-items: center !important;
   min-height: var(--control-min-size) !important;
+  min-width: var(--control-min-size) !important;
 }
 
 .footer-matrix-section {
@@ -286,6 +288,7 @@ button.footer-matrix-title {
   display: inline-flex !important;
   align-items: center !important;
   min-height: var(--control-min-size) !important;
+  min-width: var(--control-min-size) !important;
 }
 
 .data-recovery-special-node a {
