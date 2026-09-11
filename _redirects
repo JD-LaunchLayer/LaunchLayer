@@ -8,6 +8,10 @@
 /shop    /custom-pc-builds/  301
 /shop/   /custom-pc-builds/  301
 
+# Leftover Squarespace Services collection URL. Real page is /services/.
+/service-dropdown    /services/  301
+/service-dropdown/   /services/  301
+
 # Startup IT setup content lives on /business/ now.
 /services/startup-it-setup    /business/  301
 /services/startup-it-setup/   /business/  301
