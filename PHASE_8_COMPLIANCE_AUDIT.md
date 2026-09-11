@@ -45,7 +45,7 @@ These are not classic ad pixels, but they are third-party scripts that can set c
 - No Hotjar, Microsoft Clarity, Mixpanel, Plausible, or Matomo
 - No Cookiebot / OneTrust banner (and none is required **if** the remaining third-party widgets above are removed rather than kept)
 
-Google Fonts (`fonts.googleapis.com`) still load on rebuilt pages. That is a third-party request (IP address to Google), not an analytics tag. Self-hosting the fonts would close that off if wanted later.
+Google Fonts (`fonts.googleapis.com`) are no longer loaded. Inter and Space Grotesk are self-hosted from `/assets/fonts/` with `font-display: swap`.
 
 ## 2. Legal identity consistency
 

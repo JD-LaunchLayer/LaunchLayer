@@ -17,10 +17,10 @@
   <meta property="og:image" content="/assets/meta/meta-520e4abe.png">
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/design-tokens.css">
+  <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/css/design-tokens.css">
   <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/custom.css">
@@ -151,7 +151,7 @@
     }
 
     .llabt-hero h1 {
-      font-family: 'Space Grotesk', sans-serif !important;
+      font-family: var(--font-display) !important;
       font-size: clamp(28px, 3.6vw, 38px) !important;
       font-weight: 700 !important;
       line-height: 1.16 !important;
@@ -235,7 +235,7 @@
     .llabt-section-header h2,
     .llabt-impact h2,
     .llabt-founder h2 {
-      font-family: 'Space Grotesk', sans-serif !important;
+      font-family: var(--font-display) !important;
       font-size: clamp(24px, 3vw, 28px) !important;
       font-weight: 700 !important;
       margin: 8px 0 12px 0 !important;
@@ -283,7 +283,7 @@
     }
 
     .llabt-promise-card h3 {
-      font-family: 'Space Grotesk', sans-serif !important;
+      font-family: var(--font-display) !important;
       font-size: 18px !important;
       font-weight: 700 !important;
       margin: 0 0 8px 0 !important;
@@ -397,7 +397,7 @@
     }
 
     .llabt-cta h2 {
-      font-family: 'Space Grotesk', sans-serif !important;
+      font-family: var(--font-display) !important;
       font-size: clamp(26px, 3.2vw, 32px) !important;
       margin: 0 0 10px 0 !important;
       color: #ffffff !important;

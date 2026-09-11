@@ -192,8 +192,8 @@
   );
 
   /* ----- Type: fluid scale (clamp) ----- */
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Space Grotesk", "Space Grotesk Fallback", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
 
   --text-2xs: clamp(0.6875rem, 0.66rem + 0.14vw, 0.75rem);     /* 11–12 */
   --text-xs: clamp(0.75rem, 0.72rem + 0.16vw, 0.8125rem);      /* 12–13 */
