@@ -132,6 +132,11 @@
   /* ----- Colour: lines, scrims, alpha ----- */
   --color-line: oklch(0.230 0.032 230 / 0.12);
   --color-line-strong: oklch(0.230 0.032 230 / 0.18);
+
+  /* Named aliases used by the Services bento page */
+  --color-bg: var(--color-canvas);
+  --color-surface-hover: var(--color-surface-2);
+  --color-border: var(--color-line);
   --color-accent-a08: oklch(0.435 0.177 260 / 0.08);
   --color-accent-a12: oklch(0.435 0.177 260 / 0.12);
   --color-accent-a16: oklch(0.435 0.177 260 / 0.16);
