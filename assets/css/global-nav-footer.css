@@ -47,13 +47,6 @@ html {
   outline-offset: 3px;
 }
 
-/* Wordmark accent — “Layer” in LaunchLayer.
-   Solid logo blue (#0048B0), sampled from the mark. Do not use the pale
-   on-dark tints here: those read as baby blue, not the logo. */
-.text-accent {
-  color: var(--color-accent);
-}
-
 /* SAFETY IMAGE CONSTRAINT */
 .ll-header-logo img, .brand-master-logo {
   height: 38px !important;
