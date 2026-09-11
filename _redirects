@@ -30,3 +30,9 @@
 /liquid-damage-repair-southend/      /southend-pc-repair/#liquid-damage     301
 /macbook-repair-southend             /southend-pc-repair/#macbook-repair    301
 /macbook-repair-southend/            /southend-pc-repair/#macbook-repair    301
+
+# Billericay thin service pages consolidated into the town hub.
+/liquid-damage-repair-billericay       /billericay-pc-repair/#liquid-damage     301
+/liquid-damage-repair-billericay/      /billericay-pc-repair/#liquid-damage     301
+/macbook-repair-billericay             /billericay-pc-repair/#macbook-repair    301
+/macbook-repair-billericay/            /billericay-pc-repair/#macbook-repair    301
