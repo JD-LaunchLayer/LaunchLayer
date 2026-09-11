@@ -27,697 +27,9 @@
   <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/custom.css">
+  <link rel="stylesheet" href="/assets/css/services.css">
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: var(--font-sans) !important;
-      color: var(--color-ink) !important;
-      line-height: var(--leading-body);
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-      background-color: var(--color-canvas) !important;
-      background-image: var(--color-atmosphere) !important;
-      background-attachment: scroll !important;
-    }
-
-    svg:not([width]) { max-width: 100%; height: auto; }
-
-    .llsvc-page {
-      --ll-ink: var(--color-ink);
-      --ll-body: var(--color-body);
-      --ll-muted: var(--color-muted);
-      --ll-line: var(--color-line);
-      --ll-blue: var(--color-accent);
-      --ll-blue-deep: var(--color-accent-deep);
-      --ll-cyan: var(--color-accent);
-      --ll-green: var(--color-success);
-      --ll-green-bg: var(--color-accent-tint);
-      --ll-glass: var(--color-glass);
-      --ll-price-bg: var(--color-inverse);
-      --ll-price-ink: var(--color-inverse-ink);
-
-      position: relative;
-      z-index: 1;
-      max-width: 1080px;
-      margin: 28px auto 72px;
-      padding: 0 20px;
-    }
-
-    .llsvc-glass {
-      position: relative;
-      overflow: hidden;
-      border-radius: 22px;
-      background: var(--ll-glass);
-      border: 1px solid rgba(255, 255, 255, 0.95);
-      box-shadow:
-        0 12px 28px rgba(15, 23, 42, 0.06),
-        0 1px 3px rgba(15, 23, 42, 0.04),
-        inset 0 1px 0 #ffffff;
-      contain: layout paint style;
-    }
-
-    .llsvc-glass > * { position: relative; z-index: 1; }
-
-    /* Finder needs overflow visible so wrapped suggestion chips aren't clipped */
-    .llsvc-finder.llsvc-glass {
-      overflow: visible;
-      contain: none;
-    }
-
-    /* Hero */
-    .llsvc-hero {
-      padding: 36px 28px 28px;
-      margin-bottom: 16px;
-      animation: llsvc-rise 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
-    }
-
-    @keyframes llsvc-rise {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .llsvc-hero { animation: none !important; }
-      .llsvc-card, .llsvc-btn-primary, .llsvc-btn-secondary { transition: none !important; }
-    }
-
-    .llsvc-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--ll-blue);
-      margin-bottom: 12px;
-    }
-
-    .llsvc-eyebrow-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--ll-cyan);
-      box-shadow: 0 0 0 3px var(--color-accent-a16);
-    }
-
-    .llsvc-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(1.75rem, 4vw, 2.35rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      color: var(--ll-ink);
-      max-width: 18ch;
-      margin-bottom: 12px;
-    }
-
-    .llsvc-hero-lead {
-      font-size: 1.05rem;
-      color: var(--ll-body);
-      max-width: 54ch;
-      margin-bottom: 18px;
-    }
-
-    .llsvc-trust-line {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--ll-body);
-      line-height: 1.45;
-      max-width: 54ch;
-    }
-
-    /* Finder */
-    .llsvc-finder {
-      padding: 16px 20px 14px;
-      margin-bottom: 18px;
-    }
-
-    .llsvc-finder-label {
-      font-family: var(--font-display);
-      font-size: 0.95rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--ll-ink);
-      margin-bottom: 10px;
-    }
-
-    .llsvc-search-row {
-      display: block;
-      margin-bottom: 0;
-    }
-
-    .llsvc-search-wrap {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    .llsvc-search-wrap svg {
-      position: absolute;
-      left: 14px;
-      width: 18px;
-      height: 18px;
-      color: var(--ll-muted);
-      pointer-events: none;
-    }
-
-    .llsvc-search {
-      width: 100%;
-      font: inherit;
-      font-size: 15px;
-      color: var(--ll-ink);
-      background: #fff;
-      border: 1px solid var(--ll-line);
-      border-radius: 14px;
-      padding: 13px 48px 13px 42px;
-      min-height: var(--control-min-size);
-      box-sizing: border-box;
-      outline: none;
-      transition: border-color 160ms ease, box-shadow 160ms ease;
-    }
-
-    .llsvc-search::placeholder { color: #94a3b8; }
-    .llsvc-search::-webkit-search-cancel-button,
-    .llsvc-search::-webkit-search-decoration {
-      -webkit-appearance: none;
-      appearance: none;
-    }
-    .llsvc-search:focus {
-      border-color: var(--color-accent-a35);
-      box-shadow: 0 0 0 3px var(--color-accent-a12);
-    }
-
-    .llsvc-clear {
-      position: absolute;
-      right: 6px;
-      width: var(--control-min-size);
-      height: var(--control-min-size);
-      min-width: var(--control-min-size);
-      min-height: var(--control-min-size);
-      border: none;
-      background: transparent;
-      color: var(--ll-muted);
-      border-radius: 8px;
-      cursor: pointer;
-      display: none;
-      align-items: center;
-      justify-content: center;
-    }
-    .llsvc-clear.is-on { display: inline-flex; }
-    .llsvc-clear svg { position: static; width: 16px; height: 16px; }
-    .llsvc-clear:hover { background: #f1f5f9; color: var(--ll-ink); }
-
-    .llsvc-meta {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      gap: 8px 14px;
-      margin-top: 10px;
-      min-height: 22px;
-    }
-
-    .llsvc-count {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--ll-muted);
-      flex: 1 1 auto;
-      min-width: 0;
-    }
-
-    .llsvc-note {
-      flex: 1 1 100%;
-      font-size: 12.5px;
-      color: var(--ll-muted);
-      margin: 0;
-    }
-
-    /* Groups + cards */
-    .llsvc-group {
-      margin-bottom: 18px;
-      content-visibility: auto;
-      contain-intrinsic-size: 280px;
-    }
-
-    .llsvc-group[hidden],
-    .llsvc-row[hidden],
-    .llsvc-feature[hidden] { display: none !important; }
-
-    .llsvc-group-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      margin: 0 4px 10px;
-    }
-
-    .llsvc-group-head h2 {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--ll-ink);
-    }
-
-    .llsvc-group-head span {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--ll-muted);
-    }
-
-    /* Featured visual strip */
-    .llsvc-featured {
-      margin-bottom: 18px;
-    }
-
-    .llsvc-featured-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 12px;
-      margin: 0 4px 10px;
-    }
-
-    .llsvc-featured-head h2 {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-
-    .llsvc-featured-head span {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--ll-muted);
-    }
-
-    .llsvc-featured-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-    }
-
-    @media (min-width: 900px) {
-      .llsvc-featured-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-
-    .llsvc-feature {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      min-height: 240px;
-      padding: 18px;
-      text-decoration: none;
-      color: #fff;
-      border-radius: 22px;
-      overflow: hidden;
-      isolation: isolate;
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
-      transition: transform 180ms ease, box-shadow 180ms ease;
-    }
-
-    .llsvc-feature:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.16);
-    }
-
-    .llsvc-feature:focus-visible {
-      outline: 2px solid var(--ll-blue);
-      outline-offset: 3px;
-    }
-
-    .llsvc-feature-media {
-      position: absolute;
-      inset: 0;
-      z-index: 0;
-    }
-
-    .llsvc-feature-media picture {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    .llsvc-feature-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transform: scale(1.02);
-      transition: transform 320ms ease;
-    }
-
-    .llsvc-feature:hover .llsvc-feature-media img { transform: scale(1.06); }
-
-    .llsvc-feature-scrim {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background:
-        linear-gradient(180deg, rgba(11, 17, 32, 0.22) 0%, rgba(11, 17, 32, 0.58) 45%, rgba(11, 17, 32, 0.9) 100%);
-    }
-
-    .llsvc-feature-body {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      min-width: 0;
-    }
-
-    /* Price first, full width — never fights the title */
-    .llsvc-feature-top {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      min-width: 0;
-    }
-
-    .llsvc-feature h3 {
-      font-family: var(--font-display);
-      font-size: clamp(1.05rem, 2.2vw, 1.2rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
-      max-width: none;
-    }
-
-    .llsvc-feature p {
-      font-size: 0.9rem;
-      line-height: 1.45;
-      color: rgba(255, 255, 255, 0.88);
-    }
-
-    .llsvc-feature-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 2px;
-      font-size: 13px;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .llsvc-feature-cta svg { width: 14px; height: 14px; }
-
-    .llsvc-feature .llsvc-price {
-      align-self: flex-start;
-      background: rgba(255, 255, 255, 0.16);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: none;
-      color: #fff;
-      min-width: 0;
-      max-width: 100%;
-      overflow: visible;
-    }
-
-    .llsvc-feature .llsvc-price.is-free {
-      background: rgba(236, 253, 245, 0.96);
-      color: var(--ll-green);
-      border-color: rgba(4, 120, 87, 0.25);
-    }
-
-    /* Compact price-list panels */
-    .llsvc-panel {
-      padding: 4px;
-      overflow: visible;
-    }
-
-    .llsvc-list {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .llsvc-row {
-      display: grid;
-      grid-template-columns: 48px minmax(0, 1fr);
-      grid-template-areas:
-        "icon copy"
-        "side side";
-      gap: 10px 12px;
-      align-items: start;
-      padding: 14px 12px;
-      text-decoration: none;
-      color: inherit;
-      border-radius: 16px;
-      transition: background 160ms ease;
-    }
-
-    .llsvc-row + .llsvc-row {
-      border-top: 1px solid var(--ll-line);
-      border-radius: 0;
-    }
-
-    .llsvc-row:first-child { border-radius: 16px 16px 0 0; }
-    .llsvc-row:last-child { border-radius: 0 0 16px 16px; }
-    .llsvc-row:only-child { border-radius: 16px; }
-
-    .llsvc-row:hover { background: rgba(239, 246, 255, 0.72); }
-    .llsvc-row:focus-visible { outline: 2px solid var(--ll-blue); outline-offset: -2px; }
-
-    .llsvc-icon {
-      grid-area: icon;
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      background: var(--color-accent-soft);
-      color: var(--color-accent-deep);
-      border: 1px solid var(--color-accent-a16);
-    }
-
-    .llsvc-icon[data-tone="cyan"] {
-      background: var(--color-accent-tint);
-      color: var(--color-accent-deep);
-      border-color: var(--color-accent-a16);
-    }
-    .llsvc-icon[data-tone="ink"] {
-      background: var(--color-inverse);
-      color: var(--color-inverse-ink);
-      border-color: var(--color-inverse);
-    }
-    .llsvc-icon[data-tone="green"] {
-      background: var(--color-accent-tint);
-      color: var(--color-success);
-      border-color: var(--color-success-a18);
-    }
-    .llsvc-icon[data-tone="amber"] {
-      background: #fff7ed;
-      color: #9a3412;
-      border-color: rgba(154, 52, 18, 0.16);
-    }
-
-    .llsvc-icon svg {
-      width: 22px;
-      height: 22px;
-    }
-
-    .llsvc-row-copy {
-      grid-area: copy;
-      min-width: 0;
-    }
-
-    .llsvc-row-copy h3 {
-      font-family: var(--font-display);
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--ll-ink);
-      line-height: 1.25;
-      margin-bottom: 4px;
-    }
-
-    .llsvc-row-copy p {
-      font-size: 0.88rem;
-      color: var(--ll-body);
-      line-height: 1.45;
-    }
-
-    .llsvc-row-side {
-      grid-area: side;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding-left: 60px; /* align under copy */
-      min-width: 0;
-    }
-
-    .llsvc-row-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 12.5px;
-      font-weight: 700;
-      color: var(--ll-blue);
-      white-space: nowrap;
-    }
-
-    .llsvc-row-cta svg { width: 13px; height: 13px; }
-
-    @media (min-width: 820px) {
-      .llsvc-row {
-        grid-template-columns: 52px minmax(0, 1fr) auto;
-        grid-template-areas: "icon copy side";
-        align-items: center;
-        padding: 16px;
-        gap: 14px;
-      }
-
-      .llsvc-row-side {
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
-        padding-left: 0;
-        gap: 8px;
-      }
-    }
-
-    .llsvc-price {
-      flex-shrink: 0;
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: center;
-      min-width: 5.75rem;
-      max-width: 100%;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: var(--ll-price-bg);
-      color: var(--ll-price-ink);
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.18);
-      text-align: right;
-      line-height: 1.2;
-      box-sizing: border-box;
-      overflow: visible;
-    }
-
-    .llsvc-price.is-free {
-      background: var(--ll-green-bg);
-      color: var(--ll-green);
-      border: 1px solid rgba(4, 120, 87, 0.22);
-      box-shadow: none;
-    }
-
-    .llsvc-price-prefix {
-      display: block;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      opacity: 0.72;
-      margin-bottom: 3px;
-      line-height: 1.2;
-    }
-
-    .llsvc-price-value {
-      display: block;
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      padding: 1px 0;
-    }
-
-    .llsvc-price-note {
-      display: block;
-      font-size: 10.5px;
-      font-weight: 600;
-      opacity: 0.72;
-      margin-top: 3px;
-      white-space: nowrap;
-      line-height: 1.2;
-    }
-
-    .llsvc-empty {
-      display: none;
-      padding: 28px 24px;
-      text-align: center;
-      margin-bottom: 18px;
-    }
-    .llsvc-empty.is-on { display: block; }
-    .llsvc-empty h3 {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      margin-bottom: 8px;
-    }
-    .llsvc-empty p { color: var(--ll-body); margin-bottom: 14px; }
-
-    /* CTA */
-    .llsvc-cta {
-      padding: 28px 24px;
-      text-align: center;
-    }
-    .llsvc-cta h2 {
-      font-family: var(--font-display);
-      font-size: clamp(1.35rem, 3vw, 1.7rem);
-      letter-spacing: -0.02em;
-      margin-bottom: 8px;
-    }
-    .llsvc-cta p {
-      color: var(--ll-body);
-      max-width: 42ch;
-      margin: 0 auto 18px;
-    }
-    .llsvc-cta-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-    }
-
-    .llsvc-btn-primary,
-    .llsvc-btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font: inherit;
-      font-size: var(--text-sm);
-      font-weight: 700;
-      text-decoration: none;
-      border-radius: var(--radius-pill);
-      min-height: var(--control-min-size);
-      padding: 0 var(--space-5);
-      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
-    }
-    .llsvc-btn-primary {
-      background: var(--gradient-accent-fill);
-      color: var(--color-accent-on);
-      border: 1px solid var(--color-accent);
-      box-shadow: var(--shadow-accent);
-    }
-    .llsvc-btn-primary:hover { background: var(--color-accent-hover); transform: translateY(-1px); }
-    .llsvc-btn-secondary {
-      background: var(--color-surface);
-      color: var(--color-accent-deep);
-      border: 1px solid var(--color-line);
-    }
-    .llsvc-btn-secondary:hover { border-color: var(--color-accent-a35); color: var(--color-accent); }
-
-    @media (max-width: 560px) {
-      .llsvc-hero { padding: 28px 20px 22px; }
-      .llsvc-finder { padding: 14px 14px 12px; }
-      .llsvc-search { font-size: 14px; padding: 12px 40px 12px 38px; }
-      .llsvc-price { padding: 8px 10px; }
-      .llsvc-price-value { font-size: 1.15rem; }
-      .llsvc-row { padding: 14px 12px; }
-      .llsvc-row-side { padding-left: 0; }
-      .llsvc-feature { min-height: 220px; }
-      /* Keep meta/count clear of the fixed Call Workshop pill */
-      .llsvc-meta { padding-right: 168px; }
-      .llsvc-note { display: none; }
-    }
-  </style>
+  <!-- Page styles live in /assets/css/services.css -->
 
   <!--
     SERVICE CATALOG
@@ -1457,7 +769,7 @@
 
   <main id="main" class="llsvc-page">
 
-    <header class="llsvc-hero llsvc-glass">
+    <header class="llsvc-hero">
       <span class="llsvc-eyebrow">
         <span class="llsvc-eyebrow-dot" aria-hidden="true"></span>
         Wickford &amp; South Essex pricing
@@ -1467,7 +779,7 @@
       <p class="llsvc-trust-line">Free diagnostics · No-Fix-No-Fee · Fixed quotes before work · Free local collection</p>
     </header>
 
-    <section class="llsvc-finder llsvc-glass" aria-label="Find a service">
+    <section class="llsvc-finder" aria-label="Find a service">
       <p class="llsvc-finder-label" id="llsvc-finder-label">Describe what’s wrong</p>
       <div class="llsvc-search-row">
         <div class="llsvc-search-wrap">
@@ -1485,41 +797,126 @@
       </div>
     </section>
 
-    <div id="llsvc-empty" class="llsvc-empty llsvc-glass" role="status">
+    <div id="llsvc-empty" class="llsvc-empty" role="status">
       <h3>No exact match</h3>
       <p>That’s fine — book a free diagnostic and we’ll pin down the fault with a fixed quote.</p>
       <a href="/contact" class="llsvc-btn-primary">Book free diagnostic</a>
     </div>
 
-    <div id="llsvc-results"></div>
+    <div id="llsvc-results" class="service-bento-hierarchy">
 
-    <noscript>
-      <section class="llsvc-glass" style="padding:24px;margin-bottom:18px;">
-        <h2 style="font-family:'Space Grotesk',sans-serif;margin-bottom:12px;">Services &amp; starting prices</h2>
-        <ul style="padding-left:1.2rem;color:#334155;line-height:1.7;">
-          <li>PC &amp; Laptop Diagnostics — FREE</li>
-          <li>50-Point Full System MOT — £75</li>
-          <li>Dust Clean &amp; Overheating Fix — £55</li>
-          <li>SSD &amp; RAM Speed Upgrades — from £65 + parts</li>
-          <li>Custom Gaming PC Builds — from £149 labour</li>
-          <li>Laptop Screen Replacement — from £99</li>
-          <li>Laptop Battery Replacement — from £55 + battery</li>
-          <li>Charging Port Repair — from £65 + parts</li>
-          <li>Keyboard Replacement — from £55 + keyboard</li>
-          <li>Hinge &amp; Lid Repair — from £65 + parts</li>
-          <li>Liquid Spill Repair — from £95</li>
-          <li>Apple MacBook &amp; iMac Repairs — from £85</li>
-          <li>Virus &amp; Malware Removal — £69</li>
-          <li>Fresh Windows Install — £59</li>
-          <li>Windows 11 Upgrade — from £69</li>
-          <li>Data &amp; File Recovery — from £79</li>
-          <li>New Device Setup — from £59</li>
-          <li>Secure Eco Recycling — FREE</li>
-        </ul>
-      </section>
-    </noscript>
+      <a class="service-card-hero" href="/custom-pc-builds" data-service-id="custom-pc">
+        <div>
+          <h2>Custom Gaming PC &amp; Workstation Builds</h2>
+          <p>Bespoke PC builds matched to your budget — parts selection, cable management and 24-hour stability testing included.</p>
+        </div>
+        <span class="service-price-badge">from £149</span>
+      </a>
 
-    <section class="llsvc-cta llsvc-glass">
+      <div class="service-bento-grid">
+        <a href="/laptop-screen-repair-wickford" data-service-id="screen">
+          <h3>Laptop Screen Replacement</h3>
+          <p>Cracked glass, bleeding pixels, vertical lines or flickering displays — precision panel fitting for major Windows laptop brands.</p>
+          <span class="service-price-badge">from £99</span>
+        </a>
+        <a href="/wickford-virus-removal" data-service-id="virus">
+          <h3>Virus, Malware &amp; Scam Removal</h3>
+          <p>Full clean-up of pop-ups, fake antivirus warnings and malware, plus hardened browser and Windows protection afterwards.</p>
+          <span class="service-price-badge">£69</span>
+        </a>
+      </div>
+
+      <h2 class="service-tier-heading" id="llsvc-list-heading">All other repairs</h2>
+      <div class="service-list-compact" aria-labelledby="llsvc-list-heading">
+        <a class="service-list-row" href="/contact" data-service-id="diagnostics">
+          <span class="service-list-title">PC &amp; Laptop Diagnostics</span>
+          <span class="service-list-price">FREE</span>
+        </a>
+        <a class="service-list-row" href="/laptop-mot-wickford-essex" data-service-id="mot">
+          <span class="service-list-title">50-Point Full System MOT</span>
+          <span class="service-list-price">£75</span>
+        </a>
+        <a class="service-list-row" href="/contact" data-service-id="dust-clean">
+          <span class="service-list-title">Dust Clean &amp; Overheating Fix</span>
+          <span class="service-list-price">£55</span>
+        </a>
+        <a class="service-list-row" href="/contact" data-service-id="ssd-ram">
+          <span class="service-list-title">SSD &amp; RAM Speed Upgrades</span>
+          <span class="service-list-price">from £65</span>
+        </a>
+        <a class="service-list-row" href="/wickford-laptop-repair" data-service-id="battery">
+          <span class="service-list-title">Laptop Battery Replacement</span>
+          <span class="service-list-price">from £55</span>
+        </a>
+        <a class="service-list-row" href="/contact" data-service-id="charging-port">
+          <span class="service-list-title">Charging Port &amp; DC Jack Repair</span>
+          <span class="service-list-price">from £65</span>
+        </a>
+        <a class="service-list-row" href="/contact" data-service-id="keyboard">
+          <span class="service-list-title">Laptop Keyboard Replacement</span>
+          <span class="service-list-price">from £55</span>
+        </a>
+        <a class="service-list-row" href="/contact" data-service-id="hinge">
+          <span class="service-list-title">Laptop Hinge &amp; Lid Repair</span>
+          <span class="service-list-price">from £65</span>
+        </a>
+        <a class="service-list-row" href="/contact" data-service-id="component">
+          <span class="service-list-title">General Hardware &amp; Component Repair</span>
+          <span class="service-list-price">from £49</span>
+        </a>
+        <a class="service-list-row" href="/liquid-damage-repair-wickford" data-service-id="liquid">
+          <span class="service-list-title">Liquid Spill Damage Repair</span>
+          <span class="service-list-price">from £95</span>
+        </a>
+        <a class="service-list-row" href="/macbook-repair-wickford" data-service-id="macbook">
+          <span class="service-list-title">Apple MacBook &amp; iMac Repairs</span>
+          <span class="service-list-price">from £85</span>
+        </a>
+        <a class="service-list-row" href="/contact" data-service-id="windows-reinstall">
+          <span class="service-list-title">Fresh Windows Install &amp; Factory Reset</span>
+          <span class="service-list-price">£59</span>
+        </a>
+        <a class="service-list-row" href="/contact" data-service-id="windows11">
+          <span class="service-list-title">Windows 11 Upgrade &amp; Compatibility Fix</span>
+          <span class="service-list-price">from £69</span>
+        </a>
+        <a class="service-list-row" href="/contact" data-service-id="general-fix">
+          <span class="service-list-title">General Fix, Settings &amp; Configuration</span>
+          <span class="service-list-price">£55</span>
+        </a>
+        <a class="service-list-row" href="/contact" data-service-id="wifi">
+          <span class="service-list-title">Home Wi-Fi &amp; Router Setup</span>
+          <span class="service-list-price">from £55</span>
+        </a>
+        <a class="service-list-row" href="/data-recovery" data-service-id="data-recovery">
+          <span class="service-list-title">Data &amp; File Recovery</span>
+          <span class="service-list-price">from £79</span>
+        </a>
+        <a class="service-list-row" href="/contact" data-service-id="backup">
+          <span class="service-list-title">Backup &amp; Cloud Migration</span>
+          <span class="service-list-price">from £49</span>
+        </a>
+        <a class="service-list-row" href="/contact" data-service-id="new-device">
+          <span class="service-list-title">New Device Setup &amp; Data Transfer</span>
+          <span class="service-list-price">from £59</span>
+        </a>
+        <a class="service-list-row" href="/contact" data-service-id="printer">
+          <span class="service-list-title">Printer &amp; Peripheral Setup</span>
+          <span class="service-list-price">from £35</span>
+        </a>
+        <a class="service-list-row" href="/eco-recycling" data-service-id="recycling">
+          <span class="service-list-title">Secure Eco Recycling</span>
+          <span class="service-list-price">FREE</span>
+        </a>
+        <a class="service-list-row" href="/business" data-service-id="business">
+          <span class="service-list-title">Small Business IT Health Check</span>
+          <span class="service-list-price">from £95</span>
+        </a>
+      </div>
+
+    </div>
+
+    <section class="llsvc-cta">
       <h2>Not sure which service you need?</h2>
       <p>Tell us what’s happening in plain English — free diagnostics, fixed quotes, and free local collection across Wickford and South Essex.</p>
       <div class="llsvc-cta-actions">
@@ -1608,14 +1005,6 @@
 
     var aliasIndex = null;
 
-    function escapeHtml(str) {
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-    }
-
     function normalize(text) {
       return String(text || '')
         .toLowerCase()
@@ -1686,149 +1075,51 @@
       return qTokens.every(function (t) { return hay.indexOf(t) !== -1; });
     }
 
-    function priceBlock(svc) {
-      var free = svc.priceKind === 'free';
-      var prefix = svc.pricePrefix ? '<span class="llsvc-price-prefix">' + escapeHtml(svc.pricePrefix) + '</span>' : '';
-      var note = svc.priceNote ? '<span class="llsvc-price-note">' + escapeHtml(svc.priceNote) + '</span>' : '';
-      return (
-        '<div class="llsvc-price' + (free ? ' is-free' : '') + '" aria-label="Price: ' + escapeHtml(svc.priceLabel) + (svc.priceNote ? ' ' + escapeHtml(svc.priceNote) : '') + '">' +
-          prefix +
-          '<span class="llsvc-price-value">' + escapeHtml(svc.priceLabel) + '</span>' +
-          note +
-        '</div>'
-      );
-    }
-
-    var ICONS = {
-      diagnostics: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-3.8-3.8"/><path d="M11 8v6M8 11h6"/></svg>',
-      mot: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19h16"/><path d="M7 19V9l5-5 5 5v10"/><path d="M10 19v-4h4v4"/></svg>',
-      'dust-clean': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18c-3 0-5-2-5-5 0-4 4-6 5-9 1 3 5 5 5 9 0 1-.3 2-.8 2.8"/><path d="M14 18h5a2 2 0 0 0 0-4h-1"/></svg>',
-      'ssd-ram': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="7" width="16" height="10" rx="2"/><path d="M8 7V5M12 7V5M16 7V5M8 17v2M12 17v2M16 17v2"/></svg>',
-      'custom-pc': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 22h8M12 18v4"/><path d="M7 9h4M7 12h2"/></svg>',
-      screen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M7 8l10 5"/></svg>',
-      battery: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="18" height="10" rx="2"/><path d="M20 10h2v4h-2"/><path d="M6 10v4M10 10v4"/></svg>',
-      'charging-port': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v7"/><path d="M8 5h8"/><rect x="7" y="9" width="10" height="11" rx="2"/><path d="M10 13h4"/></svg>',
-      keyboard: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="11" rx="2"/><path d="M6 11h.01M10 11h.01M14 11h.01M18 11h.01M8 15h8"/></svg>',
-      hinge: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h10a4 4 0 0 1 0 8H4"/><path d="M14 11h6"/><circle cx="8" cy="11" r="1.5"/></svg>',
-      component: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="7" width="10" height="10" rx="1"/><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/></svg>',
-      liquid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3s6 7 6 11a6 6 0 1 1-12 0c0-4 6-11 6-11z"/></svg>',
-      macbook: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M2 19h20"/></svg>',
-      virus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>',
-      'windows-reinstall': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6l7-2v16l-7-2V6zM13 5l7-1v16l-7-1V5z"/></svg>',
-      windows11: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h7v7H4zM13 5h7v7h-7zM4 14h7v7H4zM13 14h7v7h-7z"/></svg>',
-      'general-fix': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.2a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.2a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.2a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9c.3.6.9 1 1.5 1H21a2 2 0 1 1 0 4h-.2a1.7 1.7 0 0 0-1.4 1z"/></svg>',
-      wifi: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12.5a9 9 0 0 1 14 0"/><path d="M8.5 15a5 5 0 0 1 7 0"/><circle cx="12" cy="18" r="1.2"/></svg>',
-      'data-recovery': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg>',
-      backup: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v10"/><path d="M8 9l4 4 4-4"/><path d="M5 17h14v3H5z"/></svg>',
-      'new-device': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M10 17h4"/></svg>',
-      printer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 9V4h10v5"/><rect x="5" y="9" width="14" height="8" rx="2"/><path d="M8 17h8v3H8z"/></svg>',
-      recycling: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 8l2-4h6l2 4"/><path d="M5 12l-2 4h6"/><path d="M19 12l2 4h-6"/><path d="M9 20l1.5-3M15 20l-1.5-3"/></svg>',
-      business: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg>'
-    };
-
-    function iconTone(svc) {
-      if (svc.priceKind === 'free') return 'green';
-      if (svc.popular) return 'amber';
-      if (svc.category === 'apple') return 'ink';
-      if (svc.category === 'diagnostics') return 'cyan';
-      return 'blue';
-    }
-
-    function iconHtml(svc) {
-      var svg = ICONS[svc.id] || ICONS.component;
-      var tone = iconTone(svc);
-      return '<span class="llsvc-icon" data-tone="' + tone + '" aria-hidden="true">' + svg + '</span>';
-    }
-
-    function featureHtml(svc) {
-      return (
-        '<a class="llsvc-feature" href="' + escapeHtml(svc.href) + '" data-id="' + escapeHtml(svc.id) + '">' +
-          '<div class="llsvc-feature-media" aria-hidden="true">' +
-            '<picture>' +
-              '<source type="image/avif" srcset="' + escapeHtml(String(svc.image || '').replace(/\.webp$/, '.avif')) + '">' +
-              '<img src="' + escapeHtml(svc.image) + '" alt="" loading="lazy" decoding="async" width="' + (svc.imageWidth || 800) + '" height="' + (svc.imageHeight || 534) + '">' +
-            '</picture>' +
-            '<div class="llsvc-feature-scrim"></div>' +
-          '</div>' +
-          '<div class="llsvc-feature-body">' +
-            '<div class="llsvc-feature-top">' +
-              priceBlock(svc) +
-              '<h3>' + escapeHtml(svc.title) + '</h3>' +
-            '</div>' +
-            '<p>' + escapeHtml(svc.blurb) + '</p>' +
-            '<span class="llsvc-feature-cta">' + escapeHtml(svc.cta) +
-              ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
-            '</span>' +
-          '</div>' +
-        '</a>'
-      );
-    }
-
-    function rowHtml(svc) {
-      return (
-        '<a class="llsvc-row" href="' + escapeHtml(svc.href) + '" data-id="' + escapeHtml(svc.id) + '" data-category="' + escapeHtml(svc.category) + '">' +
-          iconHtml(svc) +
-          '<div class="llsvc-row-copy">' +
-            '<h3>' + escapeHtml(svc.title) + '</h3>' +
-            '<p>' + escapeHtml(svc.blurb) + '</p>' +
-          '</div>' +
-          '<div class="llsvc-row-side">' +
-            '<span class="llsvc-row-cta">' + escapeHtml(svc.cta) +
-              ' <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>' +
-            '</span>' +
-            priceBlock(svc) +
-          '</div>' +
-        '</a>'
-      );
-    }
-
     function renderResults() {
       var services = catalog.services || [];
       var aliasHits = servicesFromAliases(state.query);
-      var matched = services.filter(function (svc) { return matchesService(svc, aliasHits); });
       var filtering = !!normalize(state.query);
+      var matchedIds = {};
+      var matchedCount = 0;
 
-      var byGroup = {};
-      (catalog.groups || []).forEach(function (g) { byGroup[g.id] = []; });
-      matched.forEach(function (svc) {
-        if (!byGroup[svc.category]) byGroup[svc.category] = [];
-        byGroup[svc.category].push(svc);
+      services.forEach(function (svc) {
+        if (!matchesService(svc, aliasHits)) return;
+        matchedIds[svc.id] = true;
+        matchedCount += 1;
       });
 
-      var html = '';
+      var items = resultsEl.querySelectorAll('[data-service-id]');
+      items.forEach(function (el) {
+        var id = el.getAttribute('data-service-id');
+        if (matchedIds[id]) el.removeAttribute('hidden');
+        else el.setAttribute('hidden', '');
+      });
 
-      // Featured visual picks — top 3 matching featured services (or fewer when filtered)
-      var featured = matched
-        .filter(function (s) { return s.featured && s.image; })
-        .sort(function (a, b) { return (a.featuredRank || 99) - (b.featuredRank || 99); })
-        .slice(0, 3);
+      var bento = resultsEl.querySelector('.service-bento-grid');
+      var list = resultsEl.querySelector('.service-list-compact');
+      var listHeading = document.getElementById('llsvc-list-heading');
 
-      if (featured.length) {
-        html +=
-          '<section class="llsvc-featured">' +
-            '<div class="llsvc-featured-head"><h2>Popular right now</h2><span>Quick picks</span></div>' +
-            '<div class="llsvc-featured-grid">' + featured.map(featureHtml).join('') + '</div>' +
-          '</section>';
+      if (bento) {
+        var bentoVisible = bento.querySelectorAll('[data-service-id]:not([hidden])').length;
+        if (bentoVisible) bento.removeAttribute('hidden');
+        else bento.setAttribute('hidden', '');
       }
 
-      var featuredIds = {};
-      featured.forEach(function (s) { featuredIds[s.id] = true; });
+      if (list) {
+        var listVisible = list.querySelectorAll('[data-service-id]:not([hidden])').length;
+        if (listVisible) {
+          list.removeAttribute('hidden');
+          if (listHeading) listHeading.removeAttribute('hidden');
+        } else {
+          list.setAttribute('hidden', '');
+          if (listHeading) listHeading.setAttribute('hidden', '');
+        }
+      }
 
-      (catalog.groups || []).forEach(function (g) {
-        var list = (byGroup[g.id] || []).filter(function (s) { return !featuredIds[s.id]; });
-        if (!list.length) return;
-        html +=
-          '<section class="llsvc-group" data-group="' + escapeHtml(g.id) + '">' +
-            '<div class="llsvc-group-head"><h2>' + escapeHtml(g.title) + '</h2><span>' + list.length + ' service' + (list.length === 1 ? '' : 's') + '</span></div>' +
-            '<div class="llsvc-panel llsvc-glass"><div class="llsvc-list">' + list.map(rowHtml).join('') + '</div></div>' +
-          '</section>';
-      });
-
-      resultsEl.innerHTML = html;
-      emptyEl.classList.toggle('is-on', matched.length === 0);
+      emptyEl.classList.toggle('is-on', matchedCount === 0);
 
       countEl.textContent = filtering
-        ? ('Showing ' + matched.length + ' of ' + services.length + ' services')
+        ? ('Showing ' + matchedCount + ' of ' + services.length + ' services')
         : (services.length + ' services');
       clearEl.classList.toggle('is-on', filtering);
     }
