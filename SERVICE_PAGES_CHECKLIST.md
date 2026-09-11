@@ -19,7 +19,7 @@ Shared CSS: `/assets/css/site-glass.css`
 | Page | Type | Hero |
 |------|------|------|
 | /basildon-pc-repair | Town hub | `basildon-town.jpg` |
-| /billericay-pc-repair | Town hub | `billericay-town.jpg` |
+| /billericay-pc-repair | Town hub (now includes screen, liquid & MacBook sections) | `billericay-town.jpg` |
 | /brands-supported | Brands | `photo-1588872657578-7efd1f1555ed` |
 | /brentwood-pc-repair | Town hub | `brentwood-town.jpg` |
 | /chelmsford-pc-repair | Town hub (now includes screen, liquid & MacBook sections) | `chelmsford-town.jpg` |
@@ -30,7 +30,7 @@ Shared CSS: `/assets/css/site-glass.css`
 | /laptop-mot-wickford-essex | MOT | `image-4307083f.png` |
 | /laptop-screen-repair-wickford | Dedicated service | `image-36da4d28.jpg` |
 | /liquid-damage-repair-basildon | Dedicated service | `image-5e7c1f44.jpg` |
-| /liquid-damage-repair-billericay | Dedicated service | `image-a07b70ec.webp` |
+| /liquid-damage-repair-billericay | Retired → `/billericay-pc-repair/#liquid-damage` (301) | — |
 | /liquid-damage-repair-brentwood | Dedicated service | `image-b673a9d4.jpg` |
 | /liquid-damage-repair-chelmsford | Retired → `/chelmsford-pc-repair/#liquid-damage` (301) | — |
 | /liquid-damage-repair-rayleigh | Retired → `/rayleigh-laptop-service/#liquid-damage` (301) | — |
@@ -38,7 +38,7 @@ Shared CSS: `/assets/css/site-glass.css`
 | /liquid-damage-repair-wickford | Dedicated service | `image-5e7c1f44.jpg` |
 | /macbook-repair | Dedicated service | `image-c27f7c59.jpg` |
 | /macbook-repair-basildon | Dedicated service | `image-c27f7c59.jpg` |
-| /macbook-repair-billericay | Dedicated service | `image-69f0c879.jpg` |
+| /macbook-repair-billericay | Retired → `/billericay-pc-repair/#macbook-repair` (301) | — |
 | /macbook-repair-brentwood | Dedicated service | `image-be974ff5.jpg` |
 | /macbook-repair-chelmsford | Retired → `/chelmsford-pc-repair/#macbook-repair` (301) | — |
 | /macbook-repair-rayleigh | Retired → `/rayleigh-laptop-service/#macbook-repair` (301) | — |
