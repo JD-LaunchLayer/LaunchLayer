@@ -28,8 +28,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 body {
@@ -321,63 +319,109 @@ svg:not([width]) {
 }
 
 .service-card-hero,
-.service-bento-grid > a,
+.service-card-bento,
 .service-category-card {
   background: var(--color-surface, #131b2a);
   border: 1px solid var(--color-border, #243047);
   border-radius: 12px;
+  overflow: hidden;
 }
 
-.service-card-hero {
+.service-card-hero,
+.service-card-bento {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
   width: 100%;
-  padding: 24px;
   min-height: 44px;
+  padding: 0;
   text-decoration: none;
   color: inherit;
 }
 
-.service-card-hero:hover,
-.service-card-hero:focus-visible {
-  background: var(--color-surface-hover, #1c263b);
+.service-card-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-inverse);
+}
+
+.service-card-hero .service-card-media {
+  height: 260px;
+}
+
+.service-card-bento .service-card-media {
+  height: 180px;
+}
+
+.service-category-anchor .service-card-media {
+  height: 132px;
+}
+
+.service-card-media picture,
+.service-card-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-card-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 56px;
+  background: var(--color-inverse);
+}
+
+.service-card-hero .service-price-badge,
+.service-card-bento .service-price-badge {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 1;
+}
+
+.service-card-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px;
+}
+
+.service-card-hero h2,
+.service-card-bento h3,
+.service-category-anchor h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--color-ink);
+  margin: 0;
 }
 
 .service-card-hero h2 {
-  font-family: var(--font-display);
   font-size: clamp(1.25rem, 2.4vw, 1.6rem);
-  font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.2;
-  color: var(--color-ink);
-  margin: 0 0 8px;
 }
 
-.service-card-hero p {
+.service-card-bento h3 {
+  font-size: 1.15rem;
+}
+
+.service-card-copy p {
   margin: 0;
-  max-width: 62ch;
-  font-size: 0.98rem;
+  font-size: 0.92rem;
   line-height: 1.5;
   color: var(--color-body);
 }
 
-.service-card-hero .service-price-badge {
-  align-self: flex-start;
-}
-
-@media (min-width: 720px) {
-  .service-card-hero {
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-
-  .service-card-hero .service-price-badge {
-    align-self: flex-start;
-    flex-shrink: 0;
-  }
+.service-card-hero:hover,
+.service-card-bento:hover,
+.service-card-hero:focus-visible,
+.service-card-bento:focus-visible {
+  background: var(--color-surface-hover, #1c263b);
 }
 
 .service-bento-grid {
@@ -390,40 +434,10 @@ svg:not([width]) {
   .service-bento-grid {
     grid-template-columns: 1fr 1fr;
   }
-}
 
-.service-bento-grid > a {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 24px;
-  min-height: 44px;
-  text-decoration: none;
-  color: inherit;
-}
-
-.service-bento-grid > a:hover,
-.service-bento-grid > a:focus-visible {
-  background: var(--color-surface-hover, #1c263b);
-}
-
-.service-bento-grid h3 {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  color: var(--color-ink);
-  margin: 0;
-}
-
-.service-bento-grid p {
-  margin: 0;
-  flex: 1 1 auto;
-  font-size: 0.92rem;
-  line-height: 1.5;
-  color: var(--color-body);
+  .service-card-hero .service-card-media {
+    height: 300px;
+  }
 }
 
 .service-price-badge,
@@ -438,9 +452,9 @@ svg:not([width]) {
   min-height: 44px;
   padding: 0 14px;
   border-radius: 12px;
-  background: var(--color-surface-hover, #1c263b);
-  border: 1px solid var(--color-border, #243047);
-  color: var(--color-ink);
+  background: var(--color-inverse);
+  border: 1px solid var(--color-white-a20);
+  color: var(--color-inverse-ink);
   font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 700;
@@ -450,59 +464,47 @@ svg:not([width]) {
 }
 
 .service-category-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
+  columns: 1;
+  column-gap: 12px;
 }
 
 @media (min-width: 720px) {
   .service-category-grid {
-    grid-template-columns: 1fr 1fr;
+    columns: 2;
   }
 }
 
 .service-category-card {
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
+  width: 100%;
   min-width: 0;
-  padding: 24px 0 12px;
+  margin: 0 0 12px;
+  padding: 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
 }
 
-.service-category-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.service-category-anchor {
+  position: relative;
+}
+
+.service-category-anchor h2 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
   min-height: 44px;
-  padding: 0 24px 12px;
-}
-
-.service-category-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  flex-shrink: 0;
-  color: var(--color-accent, #22d3ee);
-}
-
-.service-category-icon svg {
-  width: 22px;
-  height: 22px;
-}
-
-.service-category-head h2 {
-  font-family: var(--font-display);
+  padding: 12px 24px;
   font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--color-ink);
-  margin: 0;
+  color: var(--color-inverse-ink);
 }
 
 .service-list-compact {
   display: flex;
   flex-direction: column;
+  padding: 8px 0 12px;
 }
 
 .service-list-row {
@@ -555,12 +557,34 @@ svg:not([width]) {
   display: none !important;
 }
 
+@media (max-width: 1023px) {
+  body {
+    padding-bottom: calc(112px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
+  .llsvc-page {
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+  }
+
+  .launchlayer-master-footer {
+    padding-bottom: calc(88px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
 @media (max-width: 560px) {
   .llsvc-hero,
   .llsvc-finder,
-  .service-card-hero,
-  .service-bento-grid > a {
+  .service-card-copy {
     padding: 24px 20px;
+  }
+
+  .service-card-hero .service-card-media {
+    height: 200px;
+  }
+
+  .service-card-bento .service-card-media {
+    height: 160px;
   }
 
   .llsvc-search {
@@ -576,7 +600,7 @@ svg:not([width]) {
     display: none;
   }
 
-  .service-category-head,
+  .service-category-anchor h2,
   .service-list-row {
     padding-left: 20px;
     padding-right: 20px;
