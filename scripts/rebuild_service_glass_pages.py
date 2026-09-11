@@ -170,15 +170,15 @@ COMPACT_SLUGS = {
     "macbook-repair-basildon",
     "macbook-repair-billericay",
     "macbook-repair-brentwood",
-        "macbook-repair-southend",
+    "macbook-repair-southend",
     "laptop-screen-repair-wickford",
     "wickford-virus-removal",
     "screen-repair-brentwood",
-        "screen-repair-southend",
+    "screen-repair-southend",
     "liquid-damage-repair-basildon",
     "liquid-damage-repair-billericay",
     "liquid-damage-repair-brentwood",
-        "liquid-damage-repair-southend",
+    "liquid-damage-repair-southend",
 }
 
 ALL_SLUGS = sorted(FLOATY_SLUGS | COMPACT_SLUGS)
