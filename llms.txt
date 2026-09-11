@@ -25,8 +25,7 @@ Website: https://launchlayer.uk/
 - [Data recovery](https://launchlayer.uk/data-recovery/): Failed drives and deleted files
 - [Eco recycling](https://launchlayer.uk/eco-recycling/): Free laptop and PC recycling
 - [Laptop MOT Wickford](https://launchlayer.uk/laptop-mot-wickford-essex/): Fixed-price health check and tune-up
-- [Business IT support](https://launchlayer.uk/business/): Small-business IT help in Essex
-- [Startup IT setup](https://launchlayer.uk/services/startup-it-setup/): Getting a new business online (email, devices, basics)
+- [Business IT support](https://launchlayer.uk/business/): Small-business IT help in Essex (devices, email, startup setup, ongoing support)
 - [Business IT pricing](https://launchlayer.uk/business/pricing/): Package pricing for commercial IT setup
 
 ## Local repair pages
