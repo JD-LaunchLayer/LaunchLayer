@@ -47,6 +47,23 @@ html {
   outline-offset: 3px;
 }
 
+/* Wordmark accent — “Layer” in LaunchLayer, matching the header logo mark.
+   Token is --color-accent (logo blue #0048B0), not a second cyan. */
+.text-accent {
+  color: var(--color-accent);
+}
+
+/* Hero / inverse panels: light accent so Layer stays readable on the dark scrim
+   and matches the bright blue in the logo wordmark. */
+.llhm-hero .text-accent,
+.llhm-b2b .text-accent,
+.llhm-cta .text-accent {
+  background: var(--gradient-accent-text-on-dark);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* SAFETY IMAGE CONSTRAINT */
 .ll-header-logo img, .brand-master-logo {
   height: 38px !important;
