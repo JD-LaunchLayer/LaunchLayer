@@ -21,7 +21,7 @@ Shared CSS: `/assets/css/site-glass.css`
 | /basildon-pc-repair | Town hub | `basildon-town.jpg` |
 | /billericay-pc-repair | Town hub (now includes screen, liquid & MacBook sections) | `billericay-town.jpg` |
 | /brands-supported | Brands | `photo-1588872657578-7efd1f1555ed` |
-| /brentwood-pc-repair | Town hub | `brentwood-town.jpg` |
+| /brentwood-pc-repair | Town hub (now includes screen, liquid & MacBook sections) | `brentwood-town.jpg` |
 | /chelmsford-pc-repair | Town hub (now includes screen, liquid & MacBook sections) | `chelmsford-town.jpg` |
 | /custom-pc-builds | Dedicated service | `image-ddefba94.jpg` |
 | /data-recovery | Dedicated service | `image-ce1e457a.jpg` |
@@ -31,7 +31,7 @@ Shared CSS: `/assets/css/site-glass.css`
 | /laptop-screen-repair-wickford | Dedicated service | `image-36da4d28.jpg` |
 | /liquid-damage-repair-basildon | Dedicated service | `image-5e7c1f44.jpg` |
 | /liquid-damage-repair-billericay | Retired → `/billericay-pc-repair/#liquid-damage` (301) | — |
-| /liquid-damage-repair-brentwood | Dedicated service | `image-b673a9d4.jpg` |
+| /liquid-damage-repair-brentwood | Retired → `/brentwood-pc-repair/#liquid-damage` (301) | — |
 | /liquid-damage-repair-chelmsford | Retired → `/chelmsford-pc-repair/#liquid-damage` (301) | — |
 | /liquid-damage-repair-rayleigh | Retired → `/rayleigh-laptop-service/#liquid-damage` (301) | — |
 | /liquid-damage-repair-southend | Retired → `/southend-pc-repair/#liquid-damage` (301) | — |
@@ -39,13 +39,13 @@ Shared CSS: `/assets/css/site-glass.css`
 | /macbook-repair | Dedicated service | `image-c27f7c59.jpg` |
 | /macbook-repair-basildon | Dedicated service | `image-c27f7c59.jpg` |
 | /macbook-repair-billericay | Retired → `/billericay-pc-repair/#macbook-repair` (301) | — |
-| /macbook-repair-brentwood | Dedicated service | `image-be974ff5.jpg` |
+| /macbook-repair-brentwood | Retired → `/brentwood-pc-repair/#macbook-repair` (301) | — |
 | /macbook-repair-chelmsford | Retired → `/chelmsford-pc-repair/#macbook-repair` (301) | — |
 | /macbook-repair-rayleigh | Retired → `/rayleigh-laptop-service/#macbook-repair` (301) | — |
 | /macbook-repair-southend | Retired → `/southend-pc-repair/#macbook-repair` (301) | — |
 | /macbook-repair-wickford | Dedicated service | `image-69f0c879.jpg` |
 | /rayleigh-laptop-service | Town hub (now includes screen, liquid & MacBook sections) | `rayleigh-town.jpg` |
-| /screen-repair-brentwood | Dedicated service | `image-36da4d28.jpg` |
+| /screen-repair-brentwood | Retired → `/brentwood-pc-repair/#screen-repair` (301) | — |
 | /screen-repair-chelmsford | Retired → `/chelmsford-pc-repair/#screen-repair` (301) | — |
 | /screen-repair-rayleigh | Retired → `/rayleigh-laptop-service/#screen-repair` (301) | — |
 | /screen-repair-southend | Retired → `/southend-pc-repair/#screen-repair` (301) | — |

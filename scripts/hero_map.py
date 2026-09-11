@@ -18,9 +18,6 @@ HERO_BY_SLUG = {
     'southend-pc-repair': ('/assets/images/towns/southend-town.jpg', 'Southend High Street — local PC & laptop repair coverage'),
     'rayleigh-laptop-service': ('/assets/images/towns/rayleigh-town.jpg', 'Rayleigh High Street — local laptop service coverage'),
     'macbook-repair-basildon': ('/assets/images/image-c27f7c59.jpg', 'Open MacBook Pro internals — Basildon MacBook repair'),
-    'macbook-repair-brentwood': ('/assets/images/image-be974ff5.jpg', 'Frustrated MacBook user — Brentwood MacBook repair'),
     'liquid-damage-repair-basildon': ('/assets/images/image-5e7c1f44.jpg', 'Water droplet splash — liquid damage repair Basildon'),
-    'liquid-damage-repair-brentwood': ('/assets/images/image-b673a9d4.jpg', 'Bench work on laptop battery and internals after liquid damage'),
-    'screen-repair-brentwood': ('/assets/images/image-36da4d28.jpg', 'Laptop display during use — Brentwood screen repair'),
     'brands-supported': ('/assets/files/photo-1588872657578-7efd1f1555ed', 'Dell and Windows laptop — brands and devices LaunchLayer repairs'),
 }
