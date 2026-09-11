@@ -4,6 +4,16 @@
 /cart    /contact/  301!
 /cart/   /contact/  301!
 
+# Legacy Squarespace /home alias — real homepage is /.
+/home    /  301!
+/home/   /  301!
+
+# Old short URLs consolidated onto the Wickford service pages.
+/laptop-mot-wickford    /laptop-mot-wickford-essex  301!
+/laptop-mot-wickford/   /laptop-mot-wickford-essex  301!
+/macbook-repair         /macbook-repair-wickford    301!
+/macbook-repair/        /macbook-repair-wickford    301!
+
 # Discontinued Target Components product-feed trial. Never a real shop page
 # in this repo — live /shop 404'd to the leftover Squarespace 404.html.
 /shop    /custom-pc-builds/  301!
