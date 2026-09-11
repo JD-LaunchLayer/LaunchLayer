@@ -47,7 +47,7 @@ If the invoice is close to a new Chromebook and the chassis is in three pieces, 
 
 I will not tell a Year 8 that Super Glue is a hinge. I will not wipe a managed device without you knowing. I will not quote a MacBook panel price on a Lenovo education lid.
 
-Collection from Wickford, [Basildon](/basildon-pc-repair), [Billericay](/billericay-pc-repair) and [Rayleigh](/rayleigh-laptop-service) saves a Saturday morning in the car with a flapping lid. Rayleigh and Southend screen pages exist if you are further down the line: [Rayleigh](/screen-repair-rayleigh), [Southend](/screen-repair-southend).
+Collection from Wickford, [Basildon](/basildon-pc-repair), [Billericay](/billericay-pc-repair) and [Rayleigh](/rayleigh-laptop-service) saves a Saturday morning in the car with a flapping lid. Rayleigh and Southend screen pages exist if you are further down the line: [Rayleigh](/rayleigh-laptop-service/#screen-repair), [Southend](/screen-repair-southend).
 
 ## Drop-off
 

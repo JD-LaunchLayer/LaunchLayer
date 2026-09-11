@@ -14,3 +14,11 @@
 /liquid-damage-repair-chelmsford/      /chelmsford-pc-repair/#liquid-damage     301
 /macbook-repair-chelmsford             /chelmsford-pc-repair/#macbook-repair    301
 /macbook-repair-chelmsford/            /chelmsford-pc-repair/#macbook-repair    301
+
+# Rayleigh thin service pages consolidated into the town hub.
+/screen-repair-rayleigh              /rayleigh-laptop-service/#screen-repair     301
+/screen-repair-rayleigh/             /rayleigh-laptop-service/#screen-repair     301
+/liquid-damage-repair-rayleigh       /rayleigh-laptop-service/#liquid-damage     301
+/liquid-damage-repair-rayleigh/      /rayleigh-laptop-service/#liquid-damage     301
+/macbook-repair-rayleigh             /rayleigh-laptop-service/#macbook-repair    301
+/macbook-repair-rayleigh/            /rayleigh-laptop-service/#macbook-repair    301

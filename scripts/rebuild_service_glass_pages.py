@@ -112,10 +112,6 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "/assets/images/image-be974ff5.jpg",
         "Frustrated MacBook user — Brentwood MacBook repair",
     ),
-    "macbook-repair-rayleigh": (
-        "/assets/images/image-69f0c879.jpg",
-        "Silver MacBook — Rayleigh MacBook repair",
-    ),
     "macbook-repair-southend": (
         "/assets/images/image-be974ff5.jpg",
         "MacBook trouble — Southend MacBook repair",
@@ -132,10 +128,6 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "/assets/images/image-b673a9d4.jpg",
         "Bench work on laptop battery and internals after liquid damage",
     ),
-    "liquid-damage-repair-rayleigh": (
-        "/assets/images/image-a07b70ec.webp",
-        "Technician opening a laptop after liquid spill — Rayleigh",
-    ),
     "liquid-damage-repair-southend": (
         "/assets/images/image-b673a9d4.jpg",
         "Hardware recovery after liquid damage — Southend",
@@ -143,10 +135,6 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
     "screen-repair-brentwood": (
         "/assets/images/image-36da4d28.jpg",
         "Laptop display during use — Brentwood screen repair",
-    ),
-    "screen-repair-rayleigh": (
-        "/assets/images/image-de2f0024.jpg",
-        "Open laptop on desk — Rayleigh screen repair",
     ),
     "screen-repair-southend": (
         "/assets/images/image-5043df46.jpg",
@@ -182,18 +170,15 @@ COMPACT_SLUGS = {
     "macbook-repair-basildon",
     "macbook-repair-billericay",
     "macbook-repair-brentwood",
-    "macbook-repair-rayleigh",
-    "macbook-repair-southend",
+        "macbook-repair-southend",
     "laptop-screen-repair-wickford",
     "wickford-virus-removal",
     "screen-repair-brentwood",
-    "screen-repair-rayleigh",
-    "screen-repair-southend",
+        "screen-repair-southend",
     "liquid-damage-repair-basildon",
     "liquid-damage-repair-billericay",
     "liquid-damage-repair-brentwood",
-    "liquid-damage-repair-rayleigh",
-    "liquid-damage-repair-southend",
+        "liquid-damage-repair-southend",
 }
 
 ALL_SLUGS = sorted(FLOATY_SLUGS | COMPACT_SLUGS)
