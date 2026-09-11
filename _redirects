@@ -1,55 +1,56 @@
 # Soft-retire leftover Squarespace cart (no online checkout).
 # Keep the /cart URL working by sending visitors to Contact.
-/cart    /contact/  301
-/cart/   /contact/  301
+# Force (!) so Netlify does not serve existing static files instead of the 301.
+/cart    /contact/  301!
+/cart/   /contact/  301!
 
 # Discontinued Target Components product-feed trial. Never a real shop page
 # in this repo — live /shop 404'd to the leftover Squarespace 404.html.
-/shop    /custom-pc-builds/  301
-/shop/   /custom-pc-builds/  301
+/shop    /custom-pc-builds/  301!
+/shop/   /custom-pc-builds/  301!
 
 # Leftover Squarespace Services collection URL. Real page is /services/.
-/service-dropdown    /services/  301
-/service-dropdown/   /services/  301
+/service-dropdown    /services/  301!
+/service-dropdown/   /services/  301!
 
 # Startup IT setup content lives on /business/ now.
-/services/startup-it-setup    /business/  301
-/services/startup-it-setup/   /business/  301
+/services/startup-it-setup    /business/  301!
+/services/startup-it-setup/   /business/  301!
 
 # Chelmsford thin service pages consolidated into the town hub.
-/screen-repair-chelmsford              /chelmsford-pc-repair/#screen-repair     301
-/screen-repair-chelmsford/             /chelmsford-pc-repair/#screen-repair     301
-/liquid-damage-repair-chelmsford       /chelmsford-pc-repair/#liquid-damage     301
-/liquid-damage-repair-chelmsford/      /chelmsford-pc-repair/#liquid-damage     301
-/macbook-repair-chelmsford             /chelmsford-pc-repair/#macbook-repair    301
-/macbook-repair-chelmsford/            /chelmsford-pc-repair/#macbook-repair    301
+/screen-repair-chelmsford              /chelmsford-pc-repair/#screen-repair     301!
+/screen-repair-chelmsford/             /chelmsford-pc-repair/#screen-repair     301!
+/liquid-damage-repair-chelmsford       /chelmsford-pc-repair/#liquid-damage     301!
+/liquid-damage-repair-chelmsford/      /chelmsford-pc-repair/#liquid-damage     301!
+/macbook-repair-chelmsford             /chelmsford-pc-repair/#macbook-repair    301!
+/macbook-repair-chelmsford/            /chelmsford-pc-repair/#macbook-repair    301!
 
 # Rayleigh thin service pages consolidated into the town hub.
-/screen-repair-rayleigh              /rayleigh-laptop-service/#screen-repair     301
-/screen-repair-rayleigh/             /rayleigh-laptop-service/#screen-repair     301
-/liquid-damage-repair-rayleigh       /rayleigh-laptop-service/#liquid-damage     301
-/liquid-damage-repair-rayleigh/      /rayleigh-laptop-service/#liquid-damage     301
-/macbook-repair-rayleigh             /rayleigh-laptop-service/#macbook-repair    301
-/macbook-repair-rayleigh/            /rayleigh-laptop-service/#macbook-repair    301
+/screen-repair-rayleigh              /rayleigh-laptop-service/#screen-repair     301!
+/screen-repair-rayleigh/             /rayleigh-laptop-service/#screen-repair     301!
+/liquid-damage-repair-rayleigh       /rayleigh-laptop-service/#liquid-damage     301!
+/liquid-damage-repair-rayleigh/      /rayleigh-laptop-service/#liquid-damage     301!
+/macbook-repair-rayleigh             /rayleigh-laptop-service/#macbook-repair    301!
+/macbook-repair-rayleigh/            /rayleigh-laptop-service/#macbook-repair    301!
 
 # Southend thin service pages consolidated into the town hub.
-/screen-repair-southend              /southend-pc-repair/#screen-repair     301
-/screen-repair-southend/             /southend-pc-repair/#screen-repair     301
-/liquid-damage-repair-southend       /southend-pc-repair/#liquid-damage     301
-/liquid-damage-repair-southend/      /southend-pc-repair/#liquid-damage     301
-/macbook-repair-southend             /southend-pc-repair/#macbook-repair    301
-/macbook-repair-southend/            /southend-pc-repair/#macbook-repair    301
+/screen-repair-southend              /southend-pc-repair/#screen-repair     301!
+/screen-repair-southend/             /southend-pc-repair/#screen-repair     301!
+/liquid-damage-repair-southend       /southend-pc-repair/#liquid-damage     301!
+/liquid-damage-repair-southend/      /southend-pc-repair/#liquid-damage     301!
+/macbook-repair-southend             /southend-pc-repair/#macbook-repair    301!
+/macbook-repair-southend/            /southend-pc-repair/#macbook-repair    301!
 
 # Billericay thin service pages consolidated into the town hub.
-/liquid-damage-repair-billericay       /billericay-pc-repair/#liquid-damage     301
-/liquid-damage-repair-billericay/      /billericay-pc-repair/#liquid-damage     301
-/macbook-repair-billericay             /billericay-pc-repair/#macbook-repair    301
-/macbook-repair-billericay/            /billericay-pc-repair/#macbook-repair    301
+/liquid-damage-repair-billericay       /billericay-pc-repair/#liquid-damage     301!
+/liquid-damage-repair-billericay/      /billericay-pc-repair/#liquid-damage     301!
+/macbook-repair-billericay             /billericay-pc-repair/#macbook-repair    301!
+/macbook-repair-billericay/            /billericay-pc-repair/#macbook-repair    301!
 
 # Brentwood thin service pages consolidated into the town hub.
-/screen-repair-brentwood              /brentwood-pc-repair/#screen-repair     301
-/screen-repair-brentwood/             /brentwood-pc-repair/#screen-repair     301
-/liquid-damage-repair-brentwood       /brentwood-pc-repair/#liquid-damage     301
-/liquid-damage-repair-brentwood/      /brentwood-pc-repair/#liquid-damage     301
-/macbook-repair-brentwood             /brentwood-pc-repair/#macbook-repair    301
-/macbook-repair-brentwood/            /brentwood-pc-repair/#macbook-repair    301
+/screen-repair-brentwood              /brentwood-pc-repair/#screen-repair     301!
+/screen-repair-brentwood/             /brentwood-pc-repair/#screen-repair     301!
+/liquid-damage-repair-brentwood       /brentwood-pc-repair/#liquid-damage     301!
+/liquid-damage-repair-brentwood/      /brentwood-pc-repair/#liquid-damage     301!
+/macbook-repair-brentwood             /brentwood-pc-repair/#macbook-repair    301!
+/macbook-repair-brentwood/            /brentwood-pc-repair/#macbook-repair    301!
