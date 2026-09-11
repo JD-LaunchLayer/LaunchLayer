@@ -83,6 +83,39 @@ document.addEventListener('click', function(e) {
   }
 })();
 
+(function fixBarkWidgetImageAlt() {
+  // Bark's embed injects a badge <img> with no alt — fails PSI a11y + SEO.
+  var ALT = 'LaunchLayer on Bark';
+
+  function apply(root) {
+    var scope = root && root.querySelectorAll ? root : document;
+    scope.querySelectorAll('.bark-widget img, .bark-widget-wrapper img').forEach(function (img) {
+      if (!img.hasAttribute('alt')) img.setAttribute('alt', ALT);
+    });
+  }
+
+  apply(document);
+
+  var mount = document.querySelector('.bark-widget-wrapper');
+  if (!mount || typeof MutationObserver !== 'function') return;
+
+  var observer = new MutationObserver(function (mutations) {
+    for (var i = 0; i < mutations.length; i++) {
+      var nodes = mutations[i].addedNodes;
+      for (var j = 0; j < nodes.length; j++) {
+        var node = nodes[j];
+        if (node.nodeType !== 1) continue;
+        if (node.matches && node.matches('img')) {
+          if (!node.hasAttribute('alt')) node.setAttribute('alt', ALT);
+        } else {
+          apply(node);
+        }
+      }
+    }
+  });
+  observer.observe(mount, { childList: true, subtree: true });
+})();
+
 (function loadFeaturableWhenVisible() {
   var mount = document.querySelector('[data-featurable-async]');
   if (!mount) return;
