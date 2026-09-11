@@ -112,10 +112,6 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "/assets/images/image-be974ff5.jpg",
         "Frustrated MacBook user — Brentwood MacBook repair",
     ),
-    "macbook-repair-southend": (
-        "/assets/images/image-be974ff5.jpg",
-        "MacBook trouble — Southend MacBook repair",
-    ),
     "liquid-damage-repair-basildon": (
         "/assets/images/image-5e7c1f44.jpg",
         "Water droplet splash — liquid damage repair Basildon",
@@ -128,17 +124,9 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "/assets/images/image-b673a9d4.jpg",
         "Bench work on laptop battery and internals after liquid damage",
     ),
-    "liquid-damage-repair-southend": (
-        "/assets/images/image-b673a9d4.jpg",
-        "Hardware recovery after liquid damage — Southend",
-    ),
     "screen-repair-brentwood": (
         "/assets/images/image-36da4d28.jpg",
         "Laptop display during use — Brentwood screen repair",
-    ),
-    "screen-repair-southend": (
-        "/assets/images/image-5043df46.jpg",
-        "Active laptop display — Southend screen repair",
     ),
     "brands-supported": (
         "/assets/files/photo-1588872657578-7efd1f1555ed",
@@ -170,15 +158,12 @@ COMPACT_SLUGS = {
     "macbook-repair-basildon",
     "macbook-repair-billericay",
     "macbook-repair-brentwood",
-    "macbook-repair-southend",
     "laptop-screen-repair-wickford",
     "wickford-virus-removal",
     "screen-repair-brentwood",
-    "screen-repair-southend",
     "liquid-damage-repair-basildon",
     "liquid-damage-repair-billericay",
     "liquid-damage-repair-brentwood",
-    "liquid-damage-repair-southend",
 }
 
 ALL_SLUGS = sorted(FLOATY_SLUGS | COMPACT_SLUGS)
