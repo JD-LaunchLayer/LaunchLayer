@@ -37,7 +37,7 @@ Trades laptops that live in a van see the same failure: one-handed open on a ste
 
 Sometimes it is new hinge hardware and a handful of screw inserts. Sometimes the lid back is so shattered that a lid assembly is cleaner than rebuilding confetti. I will tell you which, with a photo, before you approve parts.
 
-This is a structural job. It sits next to screen work on the [Wickford screen repair page](/laptop-screen-repair-wickford) and the town pages for [Rayleigh](/screen-repair-rayleigh), [Southend](/screen-repair-southend) and [Chelmsford](/chelmsford-pc-repair/#screen-repair).
+This is a structural job. It sits next to screen work on the [Wickford screen repair page](/laptop-screen-repair-wickford) and the town pages for [Rayleigh](/rayleigh-laptop-service/#screen-repair), [Southend](/screen-repair-southend) and [Chelmsford](/chelmsford-pc-repair/#screen-repair).
 
 If the machine also charges only when you hold the plug, the same abuse often kills the DC jack. Pair this with the [not charging guide](/blog/laptop-not-charging-wickford-essex).
 

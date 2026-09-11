@@ -33,7 +33,7 @@ Shared CSS: `/assets/css/site-glass.css`
 | /liquid-damage-repair-billericay | Dedicated service | `image-a07b70ec.webp` |
 | /liquid-damage-repair-brentwood | Dedicated service | `image-b673a9d4.jpg` |
 | /liquid-damage-repair-chelmsford | Retired → `/chelmsford-pc-repair/#liquid-damage` (301) | — |
-| /liquid-damage-repair-rayleigh | Dedicated service | `image-a07b70ec.webp` |
+| /liquid-damage-repair-rayleigh | Retired → `/rayleigh-laptop-service/#liquid-damage` (301) | — |
 | /liquid-damage-repair-southend | Dedicated service | `image-b673a9d4.jpg` |
 | /liquid-damage-repair-wickford | Dedicated service | `image-5e7c1f44.jpg` |
 | /macbook-repair | Dedicated service | `image-c27f7c59.jpg` |
@@ -41,13 +41,13 @@ Shared CSS: `/assets/css/site-glass.css`
 | /macbook-repair-billericay | Dedicated service | `image-69f0c879.jpg` |
 | /macbook-repair-brentwood | Dedicated service | `image-be974ff5.jpg` |
 | /macbook-repair-chelmsford | Retired → `/chelmsford-pc-repair/#macbook-repair` (301) | — |
-| /macbook-repair-rayleigh | Dedicated service | `image-69f0c879.jpg` |
+| /macbook-repair-rayleigh | Retired → `/rayleigh-laptop-service/#macbook-repair` (301) | — |
 | /macbook-repair-southend | Dedicated service | `image-be974ff5.jpg` |
 | /macbook-repair-wickford | Dedicated service | `image-69f0c879.jpg` |
-| /rayleigh-laptop-service | Town hub | `rayleigh-town.jpg` |
+| /rayleigh-laptop-service | Town hub (now includes screen, liquid & MacBook sections) | `rayleigh-town.jpg` |
 | /screen-repair-brentwood | Dedicated service | `image-36da4d28.jpg` |
 | /screen-repair-chelmsford | Retired → `/chelmsford-pc-repair/#screen-repair` (301) | — |
-| /screen-repair-rayleigh | Dedicated service | `image-de2f0024.jpg` |
+| /screen-repair-rayleigh | Retired → `/rayleigh-laptop-service/#screen-repair` (301) | — |
 | /screen-repair-southend | Dedicated service | `image-5043df46.jpg` |
 | /southend-pc-repair | Town hub | `southend-town.jpg` |
 | /wickford-laptop-repair | Town hub | `image-d26fc546.png` |
