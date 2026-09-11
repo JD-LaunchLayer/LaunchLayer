@@ -104,21 +104,9 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "/assets/images/image-c27f7c59.jpg",
         "Open MacBook Pro internals — Basildon MacBook repair",
     ),
-    "macbook-repair-brentwood": (
-        "/assets/images/image-be974ff5.jpg",
-        "Frustrated MacBook user — Brentwood MacBook repair",
-    ),
     "liquid-damage-repair-basildon": (
         "/assets/images/image-5e7c1f44.jpg",
         "Water droplet splash — liquid damage repair Basildon",
-    ),
-    "liquid-damage-repair-brentwood": (
-        "/assets/images/image-b673a9d4.jpg",
-        "Bench work on laptop battery and internals after liquid damage",
-    ),
-    "screen-repair-brentwood": (
-        "/assets/images/image-36da4d28.jpg",
-        "Laptop display during use — Brentwood screen repair",
     ),
     "brands-supported": (
         "/assets/files/photo-1588872657578-7efd1f1555ed",
@@ -148,12 +136,9 @@ COMPACT_SLUGS = {
     "macbook-repair",
     "macbook-repair-wickford",
     "macbook-repair-basildon",
-    "macbook-repair-brentwood",
     "laptop-screen-repair-wickford",
     "wickford-virus-removal",
-    "screen-repair-brentwood",
     "liquid-damage-repair-basildon",
-    "liquid-damage-repair-brentwood",
 }
 
 ALL_SLUGS = sorted(FLOATY_SLUGS | COMPACT_SLUGS)
