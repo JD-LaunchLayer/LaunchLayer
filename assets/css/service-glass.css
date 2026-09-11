@@ -81,7 +81,7 @@
 }
 
 .llsg-brand {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: clamp(1.6rem, 3.5vw, 2.1rem);
       font-weight: 700;
       letter-spacing: -0.03em;
@@ -98,7 +98,7 @@
 }
 
 .llsg-hero h1 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: clamp(1.45rem, 3.2vw, 1.95rem);
       font-weight: 700;
       letter-spacing: -0.03em;
@@ -128,7 +128,7 @@
 }
 
 .llsg-price-inline strong {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: 1.55rem;
       font-weight: 700;
       letter-spacing: -0.02em;
@@ -241,7 +241,7 @@
 }
 
 .llsg-section-head h2 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: clamp(1.25rem, 2.6vw, 1.55rem);
       font-weight: 700;
       letter-spacing: -0.02em;
@@ -249,7 +249,7 @@
 }
 
 .llsg-section-head h3 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: clamp(1.1rem, 2.2vw, 1.3rem);
       font-weight: 700;
       letter-spacing: -0.02em;
@@ -307,7 +307,7 @@
 .llsg-check-icon svg { width: 20px; height: 20px; }
 
 .llsg-check-col h3 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: 1.05rem;
       font-weight: 700;
       letter-spacing: -0.02em;
@@ -363,7 +363,7 @@
 }
 
 .llsg-step-num {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 0.08em;
@@ -373,7 +373,7 @@
 }
 
 .llsg-step h3 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: 1.05rem;
       font-weight: 700;
       margin-bottom: 6px;
@@ -405,7 +405,7 @@
 }
 
 .llsg-pricing h2 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: clamp(1.3rem, 2.8vw, 1.7rem);
       letter-spacing: -0.02em;
       margin-bottom: 8px;
@@ -458,7 +458,7 @@
 }
 
 .llsg-pricing-box-amount {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: 3rem;
       font-weight: 700;
       letter-spacing: -0.03em;
@@ -509,7 +509,7 @@
       list-style: none;
       cursor: pointer;
       padding: 14px 16px;
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: 0.98rem;
       font-weight: 700;
       letter-spacing: -0.01em;
@@ -569,7 +569,7 @@
 }
 
 .llsg-related strong {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: 1rem;
       color: var(--ll-ink);
 }
@@ -595,7 +595,7 @@
 }
 
 .llsg-cta h2 {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: var(--font-display);
       font-size: clamp(1.3rem, 2.8vw, 1.65rem);
       letter-spacing: -0.02em;
       margin-bottom: 8px;
@@ -699,7 +699,7 @@
   background: #eff6ff;
 }
 .llsg-card h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.02rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -724,7 +724,7 @@
 .llsg-card-price {
   display: inline-block;
   margin-top: 10px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-display);
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--ll-blue);
@@ -741,7 +741,7 @@
   margin-top: 14px;
 }
 .llsg-story h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.05rem;
   font-weight: 700;
   margin-bottom: 8px;
@@ -804,7 +804,7 @@ body.llsg-body svg:not([width]) { max-width: 100%; height: auto; }
   color: #fff;
 }
 .llsg-banner h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.1rem;
   margin-bottom: 8px;
 }
@@ -918,7 +918,7 @@ body.llsg-body svg:not([width]) { max-width: 100%; height: auto; }
 }
 .llsg-callout h3,
 .llsg-partner h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -978,7 +978,7 @@ body.llsg-body svg:not([width]) { max-width: 100%; height: auto; }
   border: 1px solid var(--color-accent-a16);
 }
 .llsg-promo h3 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.15rem;
   font-weight: 700;
   margin-bottom: 8px;
@@ -1018,14 +1018,14 @@ body.llsg-body svg:not([width]) { max-width: 100%; height: auto; }
 
 .llsg-intake-field legend,
 .llsg-intake-field > label {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-display);
   font-size: 1.02rem;
   font-weight: 700;
   color: var(--ll-ink);
 }
 
 .llsg-intake-field > label span {
-  font-family: Inter, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--ll-muted);

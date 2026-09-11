@@ -105,10 +105,17 @@ def listing_card(meta: dict[str, str]) -> str:
     author = html.escape(meta["author"])
     shown = html.escape(listing_date(meta["date"]))
     css = CATEGORY_CLASS.get(meta["category"], "useful-tips")
+    stem = Path(image.split("?", 1)[0]).stem
+    avif = f"/assets/images/thumbs/{stem}-w800.avif"
+    webp = f"/assets/images/thumbs/{stem}-w800.webp"
     return f'''    <article class="hentry category-{css} author-jordan-duggins post-type-text blog-item entry">
       <section class="blog-image-wrapper">
       <a href="/blog/{slug}" class="image-wrapper" data-animation-role="image">
-<img data-src="{image}" data-image="{image}" data-image-dimensions="1152x864" data-image-focal-point="0.5,0.5" alt="{headline}" data-load="false" src="{image}" width="1152" height="864" sizes="(max-width:767px)200vw,140vw" class="image" style="display:block;position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: 50% 50%;" loading="lazy" decoding="async">
+<picture>
+<source type="image/avif" srcset="{avif}">
+<source type="image/webp" srcset="{webp}">
+<img data-src="{image}" data-image="{image}" data-image-dimensions="1152x864" data-image-focal-point="0.5,0.5" alt="{headline}" data-load="false" src="{image}" width="1152" height="864" sizes="(max-width: 767px) 92vw, 520px" class="image" style="display:block;position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: 50% 50%;" loading="lazy" decoding="async">
+</picture>
 </a>
       </section>
       <section class="blog-item-summary">

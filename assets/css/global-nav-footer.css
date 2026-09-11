@@ -125,7 +125,7 @@ button.ll-dropdown-trigger {
 .ll-header-nav a,
 .ll-header-nav button.ll-dropdown-trigger,
 .ll-dropdown-trigger {
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-sans) !important;
   font-size: 14.5px !important;
   font-weight: 600 !important;
   line-height: 1.2 !important;
@@ -256,7 +256,7 @@ button.ll-dropdown-trigger {
   background-color: var(--color-surface-2) !important;
   border-top: 1px solid #EAEAEA !important;
   padding: 48px 24px 32px 24px !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-sans) !important;
   margin-top: 60px !important;
 }
 
@@ -957,7 +957,7 @@ document.addEventListener('DOMContentLoaded', function() {
   max-width: 850px !important;
   margin: 0 auto !important;
   padding: 60px 24px !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-sans) !important;
 }
 
 .llfaqpg-header {
@@ -1098,7 +1098,7 @@ document.addEventListener('DOMContentLoaded', function() {
   max-width: 850px !important;
   margin: 0 auto !important;
   padding: 60px 24px !important;
-  font-family: 'Inter', sans-serif !important;
+  font-family: var(--font-sans) !important;
 }
 
 .llegal-header {

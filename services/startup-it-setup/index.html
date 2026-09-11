@@ -244,6 +244,9 @@
 <!-- End of Squarespace Headers -->
     
     
+  <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/fonts.css">
     <link rel="stylesheet" href="/assets/css/design-tokens.css">
     <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
@@ -736,8 +739,6 @@
 </div>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
-
 /* ==========================================================================
    LaunchLayer B2B Site — Hero + Pathways + Testimonial
    Scoped under "llbiz-" — a separate namespace from the homepage's
@@ -760,8 +761,8 @@
     --llz-blue-deep: #16309C;
     --llz-cyan: #22D3E0;
 
-    --llz-font-display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
-    --llz-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --llz-font-display: var(--font-display);
+    --llz-font-body: var(--font-sans);
     --llz-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
     background: radial-gradient(circle at 20% 0%, rgba(34,211,224,0.07), transparent 45%), linear-gradient(175deg, var(--llz-ink) 0%, var(--llz-ink-soft) 140%) !important;
@@ -1459,8 +1460,6 @@
 </div>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
-
 /* ==========================================================================
    LaunchLayer B2B — Overview Split + Startup Foundations
    Scoped under "llbov-" — fully self-contained, isolated from the
@@ -1484,8 +1483,8 @@
     --llo-blue-deep: #16309C;
     --llo-cyan: #0FB6C9;
 
-    --llo-font-display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
-    --llo-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --llo-font-display: var(--font-display);
+    --llo-font-body: var(--font-sans);
     --llo-font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
 
     max-width: 1120px !important;
@@ -2004,8 +2003,6 @@
 <script type="text/javascript" src="/assets/animate/widget.js" async></script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap');
-
 .llbcta-wrap, .llbcta-wrap * {
     box-sizing: border-box !important;
     margin: 0;
@@ -2020,8 +2017,8 @@
     --llc-blue-deep: #16309C;
     --llc-cyan: #22D3E0;
 
-    --llc-font-display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
-    --llc-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --llc-font-display: var(--font-display);
+    --llc-font-body: var(--font-sans);
 
     font-family: var(--llc-font-body) !important;
     max-width: 920px !important;
