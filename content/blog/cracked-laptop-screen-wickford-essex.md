@@ -69,7 +69,7 @@ You can drop the laptop at 32 Glebe Road, or I can collect from the doorstep acr
 
 - **[Wickford laptop repair (SS11 / SS12)](/wickford-laptop-repair)** — workshop drop-off and local collection.
 - **[Basildon](/basildon-pc-repair)**, **[Billericay](/billericay-pc-repair)**, and **[Brentwood](/brentwood-pc-repair)** — doorstep pickup for cracked lids and blank displays.
-- **[Rayleigh screen repair](/rayleigh-laptop-service/#screen-repair)**, **[Southend](/screen-repair-southend)**, and **[Chelmsford](/chelmsford-pc-repair/#screen-repair)** if you are further along the line.
+- **[Rayleigh screen repair](/rayleigh-laptop-service/#screen-repair)**, **[Southend](/southend-pc-repair/#screen-repair)**, and **[Chelmsford](/chelmsford-pc-repair/#screen-repair)** if you are further along the line.
 - Or book a slot on the **[Contact](/contact)** page / call **[07367 652987](tel:07367652987)**.
 
 If the crack happened because of a spill rather than a knock, stop here and follow the **[liquid-damage emergency steps](/blog/spilled-water-on-laptop-fix-essex)** instead — liquid and glass cracks are different jobs, and mixing them up wastes time.

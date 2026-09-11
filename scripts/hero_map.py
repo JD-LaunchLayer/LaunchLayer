@@ -20,12 +20,9 @@ HERO_BY_SLUG = {
     'macbook-repair-basildon': ('/assets/images/image-c27f7c59.jpg', 'Open MacBook Pro internals — Basildon MacBook repair'),
     'macbook-repair-billericay': ('/assets/images/image-69f0c879.jpg', 'MacBook on desk — Billericay MacBook repair'),
     'macbook-repair-brentwood': ('/assets/images/image-be974ff5.jpg', 'Frustrated MacBook user — Brentwood MacBook repair'),
-    'macbook-repair-southend': ('/assets/images/image-be974ff5.jpg', 'MacBook trouble — Southend MacBook repair'),
     'liquid-damage-repair-basildon': ('/assets/images/image-5e7c1f44.jpg', 'Water droplet splash — liquid damage repair Basildon'),
     'liquid-damage-repair-billericay': ('/assets/images/image-a07b70ec.webp', 'Open laptop on the bench after a spill — Billericay'),
     'liquid-damage-repair-brentwood': ('/assets/images/image-b673a9d4.jpg', 'Bench work on laptop battery and internals after liquid damage'),
-    'liquid-damage-repair-southend': ('/assets/images/image-b673a9d4.jpg', 'Hardware recovery after liquid damage — Southend'),
     'screen-repair-brentwood': ('/assets/images/image-36da4d28.jpg', 'Laptop display during use — Brentwood screen repair'),
-    'screen-repair-southend': ('/assets/images/image-5043df46.jpg', 'Active laptop display — Southend screen repair'),
     'brands-supported': ('/assets/files/photo-1588872657578-7efd1f1555ed', 'Dell and Windows laptop — brands and devices LaunchLayer repairs'),
 }

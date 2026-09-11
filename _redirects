@@ -22,3 +22,11 @@
 /liquid-damage-repair-rayleigh/      /rayleigh-laptop-service/#liquid-damage     301
 /macbook-repair-rayleigh             /rayleigh-laptop-service/#macbook-repair    301
 /macbook-repair-rayleigh/            /rayleigh-laptop-service/#macbook-repair    301
+
+# Southend thin service pages consolidated into the town hub.
+/screen-repair-southend              /southend-pc-repair/#screen-repair     301
+/screen-repair-southend/             /southend-pc-repair/#screen-repair     301
+/liquid-damage-repair-southend       /southend-pc-repair/#liquid-damage     301
+/liquid-damage-repair-southend/      /southend-pc-repair/#liquid-damage     301
+/macbook-repair-southend             /southend-pc-repair/#macbook-repair    301
+/macbook-repair-southend/            /southend-pc-repair/#macbook-repair    301
