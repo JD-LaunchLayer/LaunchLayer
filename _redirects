@@ -3,6 +3,11 @@
 /cart    /contact/  301
 /cart/   /contact/  301
 
+# Discontinued Target Components product-feed trial. Never a real shop page
+# in this repo — live /shop 404'd to the leftover Squarespace 404.html.
+/shop    /custom-pc-builds/  301
+/shop/   /custom-pc-builds/  301
+
 # Startup IT setup content lives on /business/ now.
 /services/startup-it-setup    /business/  301
 /services/startup-it-setup/   /business/  301
