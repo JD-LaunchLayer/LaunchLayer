@@ -1014,16 +1014,22 @@ body.llsite-body .page-section > .content-wrapper {
 }
 
 .llrevpg-widget-wrap {
+  /* Featurable is a multi-card slick carousel with its own mobile side
+     padding (~28px) for arrows. Do not add extra gutters or max-width the
+     slides — that fights the track math and clips cards unevenly. */
+  box-sizing: border-box !important;
   width: 100% !important;
+  max-width: 100% !important;
   display: block !important;
   position: relative !important;
   z-index: 1 !important;
   flex-shrink: 0 !important;
   isolation: isolate;
+  /* Keep vertical overlap clip from #54; leave horizontal layout to Featurable. */
   overflow: hidden !important;
   min-height: 240px !important;
   margin: 0 0 24px 0 !important;
-  padding: 8px 52px 16px 52px !important;
+  padding: 8px 0 16px 0 !important;
   border-radius: 22px !important;
   background: transparent !important;
   border: 0 !important;
@@ -1032,6 +1038,9 @@ body.llsite-body .page-section > .content-wrapper {
 
 .llrevpg-widget-wrap #featurable-45bf401e-18e6-4818-be5f-51bbb9b69842,
 .llrevpg-widget-wrap .shadow-wrapper {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
   position: relative !important;
   top: auto !important;
   left: auto !important;
@@ -1042,7 +1051,8 @@ body.llsite-body .page-section > .content-wrapper {
   min-height: 0 !important;
   max-height: none !important;
   display: block !important;
-  overflow: hidden !important;
+  /* visible so Featurable's own overflow/slick-list owns horizontal clipping */
+  overflow: visible !important;
 }
 
 body.llsite-body .fe-69553274bf2ec66bbf17c08f,
