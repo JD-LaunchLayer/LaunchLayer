@@ -1014,7 +1014,9 @@ body.llsite-body .page-section > .content-wrapper {
 }
 
 .llrevpg-widget-wrap {
+  box-sizing: border-box !important;
   width: 100% !important;
+  max-width: 100% !important;
   display: block !important;
   position: relative !important;
   z-index: 1 !important;
@@ -1023,7 +1025,10 @@ body.llsite-body .page-section > .content-wrapper {
   overflow: hidden !important;
   min-height: 240px !important;
   margin: 0 0 24px 0 !important;
-  padding: 8px 52px 16px 52px !important;
+  /* Keep the overlap clip from #54, but do not reserve a fixed 52px
+     arrow gutter — that padding + width:100% (content-box) shoved the
+     Featurable carousel off-centre on mobile and clipped the right edge. */
+  padding: 8px 0 16px 0 !important;
   border-radius: 22px !important;
   background: transparent !important;
   border: 0 !important;
@@ -1032,6 +1037,11 @@ body.llsite-body .page-section > .content-wrapper {
 
 .llrevpg-widget-wrap #featurable-45bf401e-18e6-4818-be5f-51bbb9b69842,
 .llrevpg-widget-wrap .shadow-wrapper {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   position: relative !important;
   top: auto !important;
   left: auto !important;

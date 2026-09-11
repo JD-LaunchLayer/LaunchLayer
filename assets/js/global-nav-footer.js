@@ -125,12 +125,13 @@ document.addEventListener('click', function(e) {
   if (!wrap) return;
 
   var css = [
-    ':host { display: block !important; position: relative !important; height: auto !important; overflow: hidden !important; }',
-    ':host > div { position: relative !important; height: auto !important; top: auto !important; }',
-    '.slick-slider, .slick-list, .slick-track, .slick-slide { height: auto !important; max-height: none !important; }',
-    '.slick-slider { position: relative !important; top: auto !important; transform: none !important; }',
+    ':host { display: block !important; position: relative !important; box-sizing: border-box !important; width: 100% !important; max-width: 100% !important; height: auto !important; overflow: hidden !important; margin-left: auto !important; margin-right: auto !important; }',
+    ':host > div { position: relative !important; box-sizing: border-box !important; width: 100% !important; max-width: 100% !important; height: auto !important; top: auto !important; margin-left: auto !important; margin-right: auto !important; }',
+    '.slick-slider, .slick-list, .slick-track, .slick-slide { height: auto !important; max-height: none !important; max-width: 100% !important; }',
+    '.slick-slider { position: relative !important; top: auto !important; transform: none !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; }',
     '[class*="App-module__container"], [class*="Carousel-module__parent"], [class*="Carousel-module__carousel"] {',
     '  position: relative !important; top: auto !important; height: auto !important; margin-top: 0 !important;',
+    '  box-sizing: border-box !important; width: 100% !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important;',
     '}'
   ].join('\n');
 
