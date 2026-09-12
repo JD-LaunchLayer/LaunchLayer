@@ -246,6 +246,13 @@
 
     /* Mobile hero: both CTAs, full-width stack. Call stays visible. */
     @media (max-width: 639px) {
+      .llhm-hero .llhm-highlight {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
       .llhm-hero .llhm-actions {
         flex-direction: column;
         align-items: stretch;
@@ -1166,7 +1173,10 @@
           </span>
         </a>
       </div>
-      <p class="llhm-mac-link" style="margin:1rem 0 0;text-align:center;"><a href="/macbook-repair-wickford/">MacBook repair in Wickford</a></p>
+      <a class="llhm-door-business" href="/macbook-repair-wickford/">
+        MacBook repair in Wickford
+        <span>Screens, batteries &amp; performance →</span>
+      </a>
       <a class="llhm-door-business" href="/business">
         Business IT Support
         <span>Email, security and setup for local firms →</span>
