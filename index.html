@@ -244,6 +244,34 @@
       gap: var(--space-3);
     }
 
+    /* Mobile hero: both CTAs, full-width stack. Call stays visible. */
+    @media (max-width: 639px) {
+      .llhm-hero .llhm-highlight {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+      }
+
+      .llhm-hero .llhm-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-2);
+      }
+      .llhm-hero .llhm-actions .llhm-btn-primary,
+      .llhm-hero .llhm-actions .llhm-btn-secondary {
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+      }
+    }
+
+    @media (min-width: 640px) {
+      .llhm-hero .llhm-actions {
+        flex-wrap: nowrap;
+      }
+    }
+
     .llhm-btn-primary,
     .llhm-btn-secondary {
       display: inline-flex;
@@ -866,7 +894,8 @@
         "https://www.instagram.com/launchlayeruk/",
         "https://www.facebook.com/LaunchLayerWickford/",
         "https://www.linkedin.com/company/launchlayeruk",
-        "https://x.com/LaunchLayerUK"
+        "https://x.com/LaunchLayerUK",
+        "https://www.yell.com/biz/launchlayer-wickford-10962785/"
       ]
     },
     {
@@ -959,7 +988,8 @@
         "https://www.instagram.com/launchlayeruk/",
         "https://www.facebook.com/LaunchLayerWickford/",
         "https://www.linkedin.com/company/launchlayeruk",
-        "https://x.com/LaunchLayerUK"
+        "https://x.com/LaunchLayerUK",
+        "https://www.yell.com/biz/launchlayer-wickford-10962785/"
       ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
@@ -1092,8 +1122,8 @@
         <p class="llhm-lead">Fast, friendly repairs for laptops, PCs, Macs and gaming rigs — with free diagnostics and clear, jargon-free advice.</p>
         <span class="llhm-highlight">No fix, no fee. Free collection across Essex.</span>
         <div class="llhm-actions">
-          <a href="/contact" class="llhm-btn-primary">Get a Free Quote</a>
-          <a href="/services" class="llhm-btn-secondary">View Our Services</a>
+          <a href="/contact" class="llhm-btn-primary">Book Free Diagnostic</a>
+          <a href="tel:07367652987" class="llhm-btn-secondary">Call Workshop</a>
         </div>
       </div>
     </header>
@@ -1143,7 +1173,10 @@
           </span>
         </a>
       </div>
-      <p class="llhm-mac-link" style="margin:1rem 0 0;text-align:center;"><a href="/macbook-repair-wickford/">MacBook repair in Wickford</a></p>
+      <a class="llhm-door-business" href="/macbook-repair-wickford/">
+        MacBook repair in Wickford
+        <span>Screens, batteries &amp; performance →</span>
+      </a>
       <a class="llhm-door-business" href="/business">
         Business IT Support
         <span>Email, security and setup for local firms →</span>
@@ -1190,7 +1223,7 @@
       </div>
 
       <div class="llhm-section-cta">
-        <a href="/contact" class="llhm-btn-primary">Book Your Free Diagnostic</a>
+        <a href="/contact" class="llhm-btn-primary">Book Free Diagnostic</a>
       </div>
     </section>
 
