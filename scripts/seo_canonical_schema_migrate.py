@@ -47,6 +47,13 @@ CANONICAL_GRAPH: dict[str, Any] = {
             "email": "hello@launchlayer.uk",
             "image": "https://launchlayer.uk/assets/meta/meta-520e4abe.png",
             "priceRange": "£35 - £250",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5",
+                "bestRating": "5",
+                "worstRating": "1",
+                "reviewCount": "29",
+            },
             "parentOrganization": {"@id": "https://launchlayer.uk/#organization"},
             "address": {
                 "@type": "PostalAddress",
