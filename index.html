@@ -838,39 +838,188 @@
     }
   </style>
 
+  
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://launchlayer.uk/#website",
-        "url": "https://launchlayer.uk/",
-        "name": "LaunchLayer",
-        "description": "PC, laptop and Mac repair in Wickford and South Essex with free local collection and No-Fix-No-Fee."
-      },
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://launchlayer.uk/#business",
-        "name": "LaunchLayer",
-        "url": "https://launchlayer.uk/",
-        "telephone": "07367 652987",
-        "email": "hello@launchlayer.uk",
-        "image": "https://launchlayer.uk/assets/meta/meta-520e4abe.png",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "32 Glebe Road",
-          "addressLocality": "Wickford",
-          "addressRegion": "Essex",
-          "postalCode": "SS11 8EU",
-          "addressCountry": "GB"
-        },
-        "openingHours": "Mo-Su 09:00-22:00",
-        "areaServed": "South Essex"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://launchlayer.uk/#website",
+      "url": "https://launchlayer.uk/",
+      "name": "LaunchLayer",
+      "description": "PC, laptop and Mac repair in Wickford and South Essex with free local collection and No-Fix-No-Fee.",
+      "publisher": {
+        "@id": "https://launchlayer.uk/#organization"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://launchlayer.uk/#organization",
+      "name": "LaunchLayer Ltd",
+      "legalName": "LaunchLayer Ltd",
+      "url": "https://launchlayer.uk/",
+      "logo": "https://launchlayer.uk/assets/meta/meta-520e4abe.png",
+      "email": "hello@launchlayer.uk",
+      "telephone": "+447367652987",
+      "sameAs": [
+        "https://www.instagram.com/launchlayeruk/",
+        "https://www.facebook.com/LaunchLayerWickford/",
+        "https://www.linkedin.com/company/launchlayeruk",
+        "https://x.com/LaunchLayerUK"
+      ]
+    },
+    {
+      "@type": [
+        "LocalBusiness",
+        "ComputerStore"
+      ],
+      "@id": "https://launchlayer.uk/#localbusiness",
+      "name": "LaunchLayer",
+      "url": "https://launchlayer.uk/",
+      "telephone": "+447367652987",
+      "email": "hello@launchlayer.uk",
+      "image": "https://launchlayer.uk/assets/meta/meta-520e4abe.png",
+      "priceRange": "£35 - £250",
+      "parentOrganization": {
+        "@id": "https://launchlayer.uk/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "32 Glebe Road",
+        "addressLocality": "Wickford",
+        "addressRegion": "Essex",
+        "postalCode": "SS11 8EU",
+        "addressCountry": "GB"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.6107559,
+        "longitude": 0.5330014
+      },
+      "hasMap": "https://www.google.com/maps/search/?api=1&query=32+Glebe+Road+Wickford+SS11+8EU",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "22:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Wickford"
+        },
+        {
+          "@type": "City",
+          "name": "Basildon"
+        },
+        {
+          "@type": "City",
+          "name": "Billericay"
+        },
+        {
+          "@type": "City",
+          "name": "Brentwood"
+        },
+        {
+          "@type": "City",
+          "name": "Rayleigh"
+        },
+        {
+          "@type": "City",
+          "name": "Southend-on-Sea"
+        },
+        {
+          "@type": "City",
+          "name": "Chelmsford"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "South Essex"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/launchlayeruk/",
+        "https://www.facebook.com/LaunchLayerWickford/",
+        "https://www.linkedin.com/company/launchlayeruk",
+        "https://x.com/LaunchLayerUK"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "PC, laptop and Mac services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Laptop Repair & Screen Replacement",
+              "url": "https://launchlayer.uk/wickford-laptop-repair/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Desktop PC Repair & Upgrades",
+              "url": "https://launchlayer.uk/wickford-pc-repair/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "MacBook Repair Wickford",
+              "url": "https://launchlayer.uk/macbook-repair-wickford/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "50-Point Full System MOT",
+              "url": "https://launchlayer.uk/laptop-mot-wickford-essex/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom PC Builds",
+              "url": "https://launchlayer.uk/custom-pc-builds/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Data Recovery",
+              "url": "https://launchlayer.uk/data-recovery/"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Virus & Malware Removal",
+              "url": "https://launchlayer.uk/wickford-virus-removal/"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="ll-skip-link" href="#main">Skip to content</a>
@@ -987,6 +1136,7 @@
           </span>
         </a>
       </div>
+      <p class="llhm-mac-link" style="margin:1rem 0 0;text-align:center;"><a href="/macbook-repair-wickford/">MacBook repair in Wickford</a></p>
       <a class="llhm-door-business" href="/business">
         Business IT Support
         <span>Email, security and setup for local firms →</span>
