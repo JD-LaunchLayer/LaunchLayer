@@ -244,6 +244,23 @@
       gap: var(--space-3);
     }
 
+    /* Mobile hero: primary only. Call stays on the floating pill. */
+    @media (max-width: 639px) {
+      .llhm-hero .llhm-actions .llhm-btn-secondary {
+        display: none;
+      }
+
+      .llhm-hero .llhm-actions .llhm-btn-primary {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 640px) {
+      .llhm-hero .llhm-actions {
+        flex-wrap: nowrap;
+      }
+    }
+
     .llhm-btn-primary,
     .llhm-btn-secondary {
       display: inline-flex;
