@@ -244,14 +244,18 @@
       gap: var(--space-3);
     }
 
-    /* Mobile hero: primary only. Call stays on the floating pill. */
+    /* Mobile hero: both CTAs, full-width stack. Call stays visible. */
     @media (max-width: 639px) {
-      .llhm-hero .llhm-actions .llhm-btn-secondary {
-        display: none;
+      .llhm-hero .llhm-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--space-2);
       }
-
-      .llhm-hero .llhm-actions .llhm-btn-primary {
+      .llhm-hero .llhm-actions .llhm-btn-primary,
+      .llhm-hero .llhm-actions .llhm-btn-secondary {
         width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
       }
     }
 
