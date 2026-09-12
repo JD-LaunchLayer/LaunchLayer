@@ -1,4 +1,4 @@
-/* Small dismissible cookie notice. Widgets load as normal. */
+/* Dismissible cookie notice. Widgets load as normal — not a consent gate. */
 
 :root {
   --ll-consent-banner-h: 0px;

@@ -1,5 +1,4 @@
-/* Low-key cookie notice. Third-party widgets load as normal; this only
-   tells visitors they are in use and can be dismissed. */
+/* Dismissible cookie notice only. Third-party widgets (Maps, Featurable, Bark) load as normal; this does not gate them or collect consent. */
 (function () {
   'use strict';
 
@@ -69,8 +68,8 @@
 
     wrap.innerHTML =
       '<div class="ll-cookie-notice-inner">' +
-        '<p class="ll-cookie-notice-text">This site uses Google Maps, review widgets, and a Bark badge. They may set cookies. <a class="ll-cookie-notice-privacy" href="/privacy-policy">Privacy policy</a></p>' +
-        '<button type="button" class="ll-cookie-notice-dismiss">OK</button>' +
+        '<p class="ll-cookie-notice-text">This site loads Google Maps, review widgets, and a Bark badge as part of the page. Those tools may set cookies. <a class="ll-cookie-notice-privacy" href="/privacy-policy">Privacy policy</a></p>' +
+        '<button type="button" class="ll-cookie-notice-dismiss">Got it</button>' +
       '</div>';
 
     document.body.appendChild(wrap);
