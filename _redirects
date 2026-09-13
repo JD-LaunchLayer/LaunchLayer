@@ -1,244 +1,92 @@
 # =============================================================================
-# ONE-HOP www → apex + trailing slash (FORCE)
+# ONE-HOP: www no-slash HTML → apex + trailing slash (FORCE)
 # =============================================================================
-# Netlify's automatic www→apex keeps the path as requested, then Pretty URLs
-# adds a trailing slash on HTML directories. That is the 2-hop chain Google
-# is following (www/path → apex/path → apex/path/).
+# Live bug: www/path 301s to apex/path, then Pretty URLs 301s to apex/path/.
+# Google is consolidating on the first hop (www, no slash).
 #
-# These absolute-host rules with 301! sit at the top so they override that
-# default www hop and land on the canonical apex + slash URL in one 301.
-# Netlify first-match-wins; more specific rules come first.
+# These absolute-host 301! rules sit at the top so they override Netlify's
+# automatic www→apex redirect and land on the canonical in one hop.
 #
-# Assets and extensioned files must NOT get a trailing slash.
-# Existing Squarespace / legacy consolidations are kept below unchanged.
+# Explicit sitemap paths only. No splat — a /* → /:splat/ catch-all would
+# append a slash to /assets/* and other extensioned files.
+# www WITH slash is already one-hop via the domain redirect (verified live);
+# non-slash rules are enough.
+# Assets are untouched here and keep the existing one-hop www→apex (no slash).
 
-# --- Static assets: keep the path, do not add a slash ---------------------
-https://www.launchlayer.uk/assets/*  https://launchlayer.uk/assets/:splat  301!
-
-# Root / known extensioned files (/*.ext is not valid Netlify splat syntax).
-https://www.launchlayer.uk/sitemap.xml  https://launchlayer.uk/sitemap.xml  301!
-https://www.launchlayer.uk/robots.txt  https://launchlayer.uk/robots.txt  301!
-https://www.launchlayer.uk/llms.txt  https://launchlayer.uk/llms.txt  301!
-https://www.launchlayer.uk/favicon.ico  https://launchlayer.uk/favicon.ico  301!
-https://www.launchlayer.uk/404.html  https://launchlayer.uk/404.html  301!
-
-# --- Legacy consolidations: www → final apex destination in one hop -------
-# Soft-retire leftover Squarespace cart.
-https://www.launchlayer.uk/cart  https://launchlayer.uk/contact/  301!
-https://www.launchlayer.uk/cart/  https://launchlayer.uk/contact/  301!
-
-# Legacy Squarespace /home alias — real homepage is /.
-https://www.launchlayer.uk/home  https://launchlayer.uk/  301!
-https://www.launchlayer.uk/home/  https://launchlayer.uk/  301!
-
-# Old short URLs consolidated onto the Wickford service pages.
-https://www.launchlayer.uk/laptop-mot-wickford  https://launchlayer.uk/laptop-mot-wickford-essex/  301!
-https://www.launchlayer.uk/laptop-mot-wickford/  https://launchlayer.uk/laptop-mot-wickford-essex/  301!
-https://www.launchlayer.uk/macbook-repair  https://launchlayer.uk/macbook-repair-wickford/  301!
-https://www.launchlayer.uk/macbook-repair/  https://launchlayer.uk/macbook-repair-wickford/  301!
-
-# Discontinued Target Components product-feed trial.
-https://www.launchlayer.uk/shop  https://launchlayer.uk/custom-pc-builds/  301!
-https://www.launchlayer.uk/shop/  https://launchlayer.uk/custom-pc-builds/  301!
-
-# Leftover Squarespace Services collection URL.
-https://www.launchlayer.uk/service-dropdown  https://launchlayer.uk/services/  301!
-https://www.launchlayer.uk/service-dropdown/  https://launchlayer.uk/services/  301!
-
-# Startup IT setup content lives on /business/ now.
-https://www.launchlayer.uk/services/startup-it-setup  https://launchlayer.uk/business/  301!
-https://www.launchlayer.uk/services/startup-it-setup/  https://launchlayer.uk/business/  301!
-
-# Chelmsford thin service pages consolidated into the town hub.
-https://www.launchlayer.uk/screen-repair-chelmsford  https://launchlayer.uk/chelmsford-pc-repair/#screen-repair  301!
-https://www.launchlayer.uk/screen-repair-chelmsford/  https://launchlayer.uk/chelmsford-pc-repair/#screen-repair  301!
-https://www.launchlayer.uk/liquid-damage-repair-chelmsford  https://launchlayer.uk/chelmsford-pc-repair/#liquid-damage  301!
-https://www.launchlayer.uk/liquid-damage-repair-chelmsford/  https://launchlayer.uk/chelmsford-pc-repair/#liquid-damage  301!
-https://www.launchlayer.uk/macbook-repair-chelmsford  https://launchlayer.uk/chelmsford-pc-repair/#macbook-repair  301!
-https://www.launchlayer.uk/macbook-repair-chelmsford/  https://launchlayer.uk/chelmsford-pc-repair/#macbook-repair  301!
-
-# Rayleigh thin service pages consolidated into the town hub.
-https://www.launchlayer.uk/screen-repair-rayleigh  https://launchlayer.uk/rayleigh-laptop-service/#screen-repair  301!
-https://www.launchlayer.uk/screen-repair-rayleigh/  https://launchlayer.uk/rayleigh-laptop-service/#screen-repair  301!
-https://www.launchlayer.uk/liquid-damage-repair-rayleigh  https://launchlayer.uk/rayleigh-laptop-service/#liquid-damage  301!
-https://www.launchlayer.uk/liquid-damage-repair-rayleigh/  https://launchlayer.uk/rayleigh-laptop-service/#liquid-damage  301!
-https://www.launchlayer.uk/macbook-repair-rayleigh  https://launchlayer.uk/rayleigh-laptop-service/#macbook-repair  301!
-https://www.launchlayer.uk/macbook-repair-rayleigh/  https://launchlayer.uk/rayleigh-laptop-service/#macbook-repair  301!
-
-# Southend thin service pages consolidated into the town hub.
-https://www.launchlayer.uk/screen-repair-southend  https://launchlayer.uk/southend-pc-repair/#screen-repair  301!
-https://www.launchlayer.uk/screen-repair-southend/  https://launchlayer.uk/southend-pc-repair/#screen-repair  301!
-https://www.launchlayer.uk/liquid-damage-repair-southend  https://launchlayer.uk/southend-pc-repair/#liquid-damage  301!
-https://www.launchlayer.uk/liquid-damage-repair-southend/  https://launchlayer.uk/southend-pc-repair/#liquid-damage  301!
-https://www.launchlayer.uk/macbook-repair-southend  https://launchlayer.uk/southend-pc-repair/#macbook-repair  301!
-https://www.launchlayer.uk/macbook-repair-southend/  https://launchlayer.uk/southend-pc-repair/#macbook-repair  301!
-
-# Billericay thin service pages consolidated into the town hub.
-https://www.launchlayer.uk/liquid-damage-repair-billericay  https://launchlayer.uk/billericay-pc-repair/#liquid-damage  301!
-https://www.launchlayer.uk/liquid-damage-repair-billericay/  https://launchlayer.uk/billericay-pc-repair/#liquid-damage  301!
-https://www.launchlayer.uk/macbook-repair-billericay  https://launchlayer.uk/billericay-pc-repair/#macbook-repair  301!
-https://www.launchlayer.uk/macbook-repair-billericay/  https://launchlayer.uk/billericay-pc-repair/#macbook-repair  301!
-
-# Brentwood thin service pages consolidated into the town hub.
-https://www.launchlayer.uk/screen-repair-brentwood  https://launchlayer.uk/brentwood-pc-repair/#screen-repair  301!
-https://www.launchlayer.uk/screen-repair-brentwood/  https://launchlayer.uk/brentwood-pc-repair/#screen-repair  301!
-https://www.launchlayer.uk/liquid-damage-repair-brentwood  https://launchlayer.uk/brentwood-pc-repair/#liquid-damage  301!
-https://www.launchlayer.uk/liquid-damage-repair-brentwood/  https://launchlayer.uk/brentwood-pc-repair/#liquid-damage  301!
-https://www.launchlayer.uk/macbook-repair-brentwood  https://launchlayer.uk/brentwood-pc-repair/#macbook-repair  301!
-https://www.launchlayer.uk/macbook-repair-brentwood/  https://launchlayer.uk/brentwood-pc-repair/#macbook-repair  301!
-
-# --- Priority money pages + town hubs (explicit, both slash variants) -----
-# Listed first so GSC money URLs cannot fall through a splat quirk.
+# --- Priority money pages + town hubs --------------------------------------
 https://www.launchlayer.uk/wickford-laptop-repair  https://launchlayer.uk/wickford-laptop-repair/  301!
-https://www.launchlayer.uk/wickford-laptop-repair/  https://launchlayer.uk/wickford-laptop-repair/  301!
 https://www.launchlayer.uk/wickford-pc-repair  https://launchlayer.uk/wickford-pc-repair/  301!
-https://www.launchlayer.uk/wickford-pc-repair/  https://launchlayer.uk/wickford-pc-repair/  301!
 https://www.launchlayer.uk/macbook-repair-wickford  https://launchlayer.uk/macbook-repair-wickford/  301!
-https://www.launchlayer.uk/macbook-repair-wickford/  https://launchlayer.uk/macbook-repair-wickford/  301!
 https://www.launchlayer.uk/services  https://launchlayer.uk/services/  301!
-https://www.launchlayer.uk/services/  https://launchlayer.uk/services/  301!
 https://www.launchlayer.uk/laptop-screen-repair-wickford  https://launchlayer.uk/laptop-screen-repair-wickford/  301!
-https://www.launchlayer.uk/laptop-screen-repair-wickford/  https://launchlayer.uk/laptop-screen-repair-wickford/  301!
 https://www.launchlayer.uk/liquid-damage-repair-wickford  https://launchlayer.uk/liquid-damage-repair-wickford/  301!
-https://www.launchlayer.uk/liquid-damage-repair-wickford/  https://launchlayer.uk/liquid-damage-repair-wickford/  301!
 https://www.launchlayer.uk/contact  https://launchlayer.uk/contact/  301!
-https://www.launchlayer.uk/contact/  https://launchlayer.uk/contact/  301!
 https://www.launchlayer.uk/business  https://launchlayer.uk/business/  301!
-https://www.launchlayer.uk/business/  https://launchlayer.uk/business/  301!
 https://www.launchlayer.uk/custom-pc-builds  https://launchlayer.uk/custom-pc-builds/  301!
-https://www.launchlayer.uk/custom-pc-builds/  https://launchlayer.uk/custom-pc-builds/  301!
 https://www.launchlayer.uk/basildon-pc-repair  https://launchlayer.uk/basildon-pc-repair/  301!
-https://www.launchlayer.uk/basildon-pc-repair/  https://launchlayer.uk/basildon-pc-repair/  301!
 https://www.launchlayer.uk/billericay-pc-repair  https://launchlayer.uk/billericay-pc-repair/  301!
-https://www.launchlayer.uk/billericay-pc-repair/  https://launchlayer.uk/billericay-pc-repair/  301!
 https://www.launchlayer.uk/brentwood-pc-repair  https://launchlayer.uk/brentwood-pc-repair/  301!
-https://www.launchlayer.uk/brentwood-pc-repair/  https://launchlayer.uk/brentwood-pc-repair/  301!
 https://www.launchlayer.uk/chelmsford-pc-repair  https://launchlayer.uk/chelmsford-pc-repair/  301!
-https://www.launchlayer.uk/chelmsford-pc-repair/  https://launchlayer.uk/chelmsford-pc-repair/  301!
 https://www.launchlayer.uk/rayleigh-laptop-service  https://launchlayer.uk/rayleigh-laptop-service/  301!
-https://www.launchlayer.uk/rayleigh-laptop-service/  https://launchlayer.uk/rayleigh-laptop-service/  301!
 https://www.launchlayer.uk/southend-pc-repair  https://launchlayer.uk/southend-pc-repair/  301!
-https://www.launchlayer.uk/southend-pc-repair/  https://launchlayer.uk/southend-pc-repair/  301!
 
 # --- Remaining sitemap content pages --------------------------------------
 https://www.launchlayer.uk/about  https://launchlayer.uk/about/  301!
-https://www.launchlayer.uk/about/  https://launchlayer.uk/about/  301!
 https://www.launchlayer.uk/blog  https://launchlayer.uk/blog/  301!
-https://www.launchlayer.uk/blog/  https://launchlayer.uk/blog/  301!
 https://www.launchlayer.uk/blog/7-costly-tech-mistakes-to-avoid  https://launchlayer.uk/blog/7-costly-tech-mistakes-to-avoid/  301!
-https://www.launchlayer.uk/blog/7-costly-tech-mistakes-to-avoid/  https://launchlayer.uk/blog/7-costly-tech-mistakes-to-avoid/  301!
 https://www.launchlayer.uk/blog/ai-for-small-businesses-lessons-from-copilot  https://launchlayer.uk/blog/ai-for-small-businesses-lessons-from-copilot/  301!
-https://www.launchlayer.uk/blog/ai-for-small-businesses-lessons-from-copilot/  https://launchlayer.uk/blog/ai-for-small-businesses-lessons-from-copilot/  301!
 https://www.launchlayer.uk/blog/budget-projectors-and-dust  https://launchlayer.uk/blog/budget-projectors-and-dust/  301!
-https://www.launchlayer.uk/blog/budget-projectors-and-dust/  https://launchlayer.uk/blog/budget-projectors-and-dust/  301!
 https://www.launchlayer.uk/blog/building-a-custom-pc-inside-a-thermaltake-performance-build  https://launchlayer.uk/blog/building-a-custom-pc-inside-a-thermaltake-performance-build/  301!
-https://www.launchlayer.uk/blog/building-a-custom-pc-inside-a-thermaltake-performance-build/  https://launchlayer.uk/blog/building-a-custom-pc-inside-a-thermaltake-performance-build/  301!
 https://www.launchlayer.uk/blog/clicked-phishing-link-emergency-guide  https://launchlayer.uk/blog/clicked-phishing-link-emergency-guide/  301!
-https://www.launchlayer.uk/blog/clicked-phishing-link-emergency-guide/  https://launchlayer.uk/blog/clicked-phishing-link-emergency-guide/  301!
 https://www.launchlayer.uk/blog/cracked-laptop-screen-wickford-essex  https://launchlayer.uk/blog/cracked-laptop-screen-wickford-essex/  301!
-https://www.launchlayer.uk/blog/cracked-laptop-screen-wickford-essex/  https://launchlayer.uk/blog/cracked-laptop-screen-wickford-essex/  301!
 https://www.launchlayer.uk/blog/data-recovery-services-wickford-essex  https://launchlayer.uk/blog/data-recovery-services-wickford-essex/  301!
-https://www.launchlayer.uk/blog/data-recovery-services-wickford-essex/  https://launchlayer.uk/blog/data-recovery-services-wickford-essex/  301!
 https://www.launchlayer.uk/blog/fix-overheating-laptop-wickford-essex  https://launchlayer.uk/blog/fix-overheating-laptop-wickford-essex/  301!
-https://www.launchlayer.uk/blog/fix-overheating-laptop-wickford-essex/  https://launchlayer.uk/blog/fix-overheating-laptop-wickford-essex/  301!
 https://www.launchlayer.uk/blog/fix-pc-game-stuttering-fps-drops-essex  https://launchlayer.uk/blog/fix-pc-game-stuttering-fps-drops-essex/  301!
-https://www.launchlayer.uk/blog/fix-pc-game-stuttering-fps-drops-essex/  https://launchlayer.uk/blog/fix-pc-game-stuttering-fps-drops-essex/  301!
 https://www.launchlayer.uk/blog/fix-wifi-dead-zones-wickford-essex  https://launchlayer.uk/blog/fix-wifi-dead-zones-wickford-essex/  301!
-https://www.launchlayer.uk/blog/fix-wifi-dead-zones-wickford-essex/  https://launchlayer.uk/blog/fix-wifi-dead-zones-wickford-essex/  301!
 https://www.launchlayer.uk/blog/introducing-rail-sign-for-rail-shine  https://launchlayer.uk/blog/introducing-rail-sign-for-rail-shine/  301!
-https://www.launchlayer.uk/blog/introducing-rail-sign-for-rail-shine/  https://launchlayer.uk/blog/introducing-rail-sign-for-rail-shine/  301!
 https://www.launchlayer.uk/blog/is-your-small-business-compliant  https://launchlayer.uk/blog/is-your-small-business-compliant/  301!
-https://www.launchlayer.uk/blog/is-your-small-business-compliant/  https://launchlayer.uk/blog/is-your-small-business-compliant/  301!
 https://www.launchlayer.uk/blog/it-support-for-solopreneurs-wickford-essex  https://launchlayer.uk/blog/it-support-for-solopreneurs-wickford-essex/  301!
-https://www.launchlayer.uk/blog/it-support-for-solopreneurs-wickford-essex/  https://launchlayer.uk/blog/it-support-for-solopreneurs-wickford-essex/  301!
 https://www.launchlayer.uk/blog/laptop-battery-replacement-wickford  https://launchlayer.uk/blog/laptop-battery-replacement-wickford/  301!
-https://www.launchlayer.uk/blog/laptop-battery-replacement-wickford/  https://launchlayer.uk/blog/laptop-battery-replacement-wickford/  301!
 https://www.launchlayer.uk/blog/laptop-fan-noise-fix-essex  https://launchlayer.uk/blog/laptop-fan-noise-fix-essex/  301!
-https://www.launchlayer.uk/blog/laptop-fan-noise-fix-essex/  https://launchlayer.uk/blog/laptop-fan-noise-fix-essex/  301!
 https://www.launchlayer.uk/blog/laptop-not-turning-on-slow-fix  https://launchlayer.uk/blog/laptop-not-turning-on-slow-fix/  301!
-https://www.launchlayer.uk/blog/laptop-not-turning-on-slow-fix/  https://launchlayer.uk/blog/laptop-not-turning-on-slow-fix/  301!
 https://www.launchlayer.uk/blog/laptop-repair-vs-replace-sustainability-essex  https://launchlayer.uk/blog/laptop-repair-vs-replace-sustainability-essex/  301!
-https://www.launchlayer.uk/blog/laptop-repair-vs-replace-sustainability-essex/  https://launchlayer.uk/blog/laptop-repair-vs-replace-sustainability-essex/  301!
 https://www.launchlayer.uk/blog/launchlayer-donates-laptops-to-help-children-in-ukraine-continue-their-education  https://launchlayer.uk/blog/launchlayer-donates-laptops-to-help-children-in-ukraine-continue-their-education/  301!
-https://www.launchlayer.uk/blog/launchlayer-donates-laptops-to-help-children-in-ukraine-continue-their-education/  https://launchlayer.uk/blog/launchlayer-donates-laptops-to-help-children-in-ukraine-continue-their-education/  301!
 https://www.launchlayer.uk/blog/launchlayer-featured-in-childs-wish-magazine-supporting-local-families-in-essex  https://launchlayer.uk/blog/launchlayer-featured-in-childs-wish-magazine-supporting-local-families-in-essex/  301!
-https://www.launchlayer.uk/blog/launchlayer-featured-in-childs-wish-magazine-supporting-local-families-in-essex/  https://launchlayer.uk/blog/launchlayer-featured-in-childs-wish-magazine-supporting-local-families-in-essex/  301!
 https://www.launchlayer.uk/blog/launchlayer-vs-high-street-repair  https://launchlayer.uk/blog/launchlayer-vs-high-street-repair/  301!
-https://www.launchlayer.uk/blog/launchlayer-vs-high-street-repair/  https://launchlayer.uk/blog/launchlayer-vs-high-street-repair/  301!
 https://www.launchlayer.uk/blog/macbook-longevity-guide-billericay  https://launchlayer.uk/blog/macbook-longevity-guide-billericay/  301!
-https://www.launchlayer.uk/blog/macbook-longevity-guide-billericay/  https://launchlayer.uk/blog/macbook-longevity-guide-billericay/  301!
 https://www.launchlayer.uk/blog/macbook-repair-wickford-speed-up-guide  https://launchlayer.uk/blog/macbook-repair-wickford-speed-up-guide/  301!
-https://www.launchlayer.uk/blog/macbook-repair-wickford-speed-up-guide/  https://launchlayer.uk/blog/macbook-repair-wickford-speed-up-guide/  301!
 https://www.launchlayer.uk/blog/make-laptop-last-until-2030  https://launchlayer.uk/blog/make-laptop-last-until-2030/  301!
-https://www.launchlayer.uk/blog/make-laptop-last-until-2030/  https://launchlayer.uk/blog/make-laptop-last-until-2030/  301!
 https://www.launchlayer.uk/blog/pc-dust-thermal-servicing-basildon  https://launchlayer.uk/blog/pc-dust-thermal-servicing-basildon/  301!
-https://www.launchlayer.uk/blog/pc-dust-thermal-servicing-basildon/  https://launchlayer.uk/blog/pc-dust-thermal-servicing-basildon/  301!
 https://www.launchlayer.uk/blog/pc-laptop-buying-guide-essex  https://launchlayer.uk/blog/pc-laptop-buying-guide-essex/  301!
-https://www.launchlayer.uk/blog/pc-laptop-buying-guide-essex/  https://launchlayer.uk/blog/pc-laptop-buying-guide-essex/  301!
 https://www.launchlayer.uk/blog/pc-ready-2026-wickford  https://launchlayer.uk/blog/pc-ready-2026-wickford/  301!
-https://www.launchlayer.uk/blog/pc-ready-2026-wickford/  https://launchlayer.uk/blog/pc-ready-2026-wickford/  301!
 https://www.launchlayer.uk/blog/pc-wakes-up-randomly-fix  https://launchlayer.uk/blog/pc-wakes-up-randomly-fix/  301!
-https://www.launchlayer.uk/blog/pc-wakes-up-randomly-fix/  https://launchlayer.uk/blog/pc-wakes-up-randomly-fix/  301!
 https://www.launchlayer.uk/blog/professional-business-email-setup-essex  https://launchlayer.uk/blog/professional-business-email-setup-essex/  301!
-https://www.launchlayer.uk/blog/professional-business-email-setup-essex/  https://launchlayer.uk/blog/professional-business-email-setup-essex/  301!
 https://www.launchlayer.uk/blog/refund-scam-protection-billericay-brentwood  https://launchlayer.uk/blog/refund-scam-protection-billericay-brentwood/  301!
-https://www.launchlayer.uk/blog/refund-scam-protection-billericay-brentwood/  https://launchlayer.uk/blog/refund-scam-protection-billericay-brentwood/  301!
 https://www.launchlayer.uk/blog/resolving-wi-fi-dead-zones-in-basildon  https://launchlayer.uk/blog/resolving-wi-fi-dead-zones-in-basildon/  301!
-https://www.launchlayer.uk/blog/resolving-wi-fi-dead-zones-in-basildon/  https://launchlayer.uk/blog/resolving-wi-fi-dead-zones-in-basildon/  301!
 https://www.launchlayer.uk/blog/scam-awareness  https://launchlayer.uk/blog/scam-awareness/  301!
-https://www.launchlayer.uk/blog/scam-awareness/  https://launchlayer.uk/blog/scam-awareness/  301!
 https://www.launchlayer.uk/blog/secure-digital-inheritance-guide  https://launchlayer.uk/blog/secure-digital-inheritance-guide/  301!
-https://www.launchlayer.uk/blog/secure-digital-inheritance-guide/  https://launchlayer.uk/blog/secure-digital-inheritance-guide/  301!
 https://www.launchlayer.uk/blog/smart-home-security-wifi-optimization-wickford  https://launchlayer.uk/blog/smart-home-security-wifi-optimization-wickford/  301!
-https://www.launchlayer.uk/blog/smart-home-security-wifi-optimization-wickford/  https://launchlayer.uk/blog/smart-home-security-wifi-optimization-wickford/  301!
 https://www.launchlayer.uk/blog/spilled-water-on-laptop-fix-essex  https://launchlayer.uk/blog/spilled-water-on-laptop-fix-essex/  301!
-https://www.launchlayer.uk/blog/spilled-water-on-laptop-fix-essex/  https://launchlayer.uk/blog/spilled-water-on-laptop-fix-essex/  301!
 https://www.launchlayer.uk/blog/switch-to-passkeys-2026-guide  https://launchlayer.uk/blog/switch-to-passkeys-2026-guide/  301!
-https://www.launchlayer.uk/blog/switch-to-passkeys-2026-guide/  https://launchlayer.uk/blog/switch-to-passkeys-2026-guide/  301!
 https://www.launchlayer.uk/blog/ultimate-guide-pc-maintenance-essex  https://launchlayer.uk/blog/ultimate-guide-pc-maintenance-essex/  301!
-https://www.launchlayer.uk/blog/ultimate-guide-pc-maintenance-essex/  https://launchlayer.uk/blog/ultimate-guide-pc-maintenance-essex/  301!
 https://www.launchlayer.uk/blog/what-parents-really-need-to-know-about-roblox-minecraft-amp-fortnite  https://launchlayer.uk/blog/what-parents-really-need-to-know-about-roblox-minecraft-amp-fortnite/  301!
-https://www.launchlayer.uk/blog/what-parents-really-need-to-know-about-roblox-minecraft-amp-fortnite/  https://launchlayer.uk/blog/what-parents-really-need-to-know-about-roblox-minecraft-amp-fortnite/  301!
 https://www.launchlayer.uk/blog/why-your-wi-fi-slows-down-in-the-evening  https://launchlayer.uk/blog/why-your-wi-fi-slows-down-in-the-evening/  301!
-https://www.launchlayer.uk/blog/why-your-wi-fi-slows-down-in-the-evening/  https://launchlayer.uk/blog/why-your-wi-fi-slows-down-in-the-evening/  301!
 https://www.launchlayer.uk/blog/wickford-in-bloom  https://launchlayer.uk/blog/wickford-in-bloom/  301!
-https://www.launchlayer.uk/blog/wickford-in-bloom/  https://launchlayer.uk/blog/wickford-in-bloom/  301!
 https://www.launchlayer.uk/blog/windows-10-end-of-support-help-essex  https://launchlayer.uk/blog/windows-10-end-of-support-help-essex/  301!
-https://www.launchlayer.uk/blog/windows-10-end-of-support-help-essex/  https://launchlayer.uk/blog/windows-10-end-of-support-help-essex/  301!
 https://www.launchlayer.uk/brands-supported  https://launchlayer.uk/brands-supported/  301!
-https://www.launchlayer.uk/brands-supported/  https://launchlayer.uk/brands-supported/  301!
 https://www.launchlayer.uk/business/pricing  https://launchlayer.uk/business/pricing/  301!
-https://www.launchlayer.uk/business/pricing/  https://launchlayer.uk/business/pricing/  301!
 https://www.launchlayer.uk/data-recovery  https://launchlayer.uk/data-recovery/  301!
-https://www.launchlayer.uk/data-recovery/  https://launchlayer.uk/data-recovery/  301!
 https://www.launchlayer.uk/eco-recycling  https://launchlayer.uk/eco-recycling/  301!
-https://www.launchlayer.uk/eco-recycling/  https://launchlayer.uk/eco-recycling/  301!
 https://www.launchlayer.uk/faqs  https://launchlayer.uk/faqs/  301!
-https://www.launchlayer.uk/faqs/  https://launchlayer.uk/faqs/  301!
 https://www.launchlayer.uk/laptop-mot-wickford-essex  https://launchlayer.uk/laptop-mot-wickford-essex/  301!
-https://www.launchlayer.uk/laptop-mot-wickford-essex/  https://launchlayer.uk/laptop-mot-wickford-essex/  301!
 https://www.launchlayer.uk/liquid-damage-repair-basildon  https://launchlayer.uk/liquid-damage-repair-basildon/  301!
-https://www.launchlayer.uk/liquid-damage-repair-basildon/  https://launchlayer.uk/liquid-damage-repair-basildon/  301!
 https://www.launchlayer.uk/macbook-repair-basildon  https://launchlayer.uk/macbook-repair-basildon/  301!
-https://www.launchlayer.uk/macbook-repair-basildon/  https://launchlayer.uk/macbook-repair-basildon/  301!
 https://www.launchlayer.uk/privacy-policy  https://launchlayer.uk/privacy-policy/  301!
-https://www.launchlayer.uk/privacy-policy/  https://launchlayer.uk/privacy-policy/  301!
 https://www.launchlayer.uk/reviews  https://launchlayer.uk/reviews/  301!
-https://www.launchlayer.uk/reviews/  https://launchlayer.uk/reviews/  301!
 https://www.launchlayer.uk/wickford-virus-removal  https://launchlayer.uk/wickford-virus-removal/  301!
-https://www.launchlayer.uk/wickford-virus-removal/  https://launchlayer.uk/wickford-virus-removal/  301!
-
-# --- www root -------------------------------------------------------------
-https://www.launchlayer.uk/  https://launchlayer.uk/  301!
-https://www.launchlayer.uk  https://launchlayer.uk/  301!
-
-# Fallback for any other HTML path on www (not an asset / not extensioned).
-# Trailing slash on :splat is the Pretty URLs destination, in the same hop.
-# Netlify normalises FROM slashes, so this covers both /path and /path/.
-https://www.launchlayer.uk/*  https://launchlayer.uk/:splat/  301!
 
 # =============================================================================
-# EXISTING LEGACY REDIRECTS (apex / any host) — do not remove
+# EXISTING LEGACY REDIRECTS — do not remove (Squarespace consolidations)
 # =============================================================================
 
 # Soft-retire leftover Squarespace cart (no online checkout).
