@@ -1,17 +1,17 @@
 # =============================================================================
-# ONE-HOP: www no-slash HTML → apex + trailing slash (FORCE)
+# FALLBACK: www no-slash HTML → apex + trailing slash (FORCE)
 # =============================================================================
 # Live bug: www/path 301s to apex/path, then Pretty URLs 301s to apex/path/.
 # Google is consolidating on the first hop (www, no slash).
 #
-# These absolute-host 301! rules sit at the top so they override Netlify's
-# automatic www→apex redirect and land on the canonical in one hop.
+# These #88/#89 absolute-host 301! rules do NOT beat Netlify's domain-level
+# www→apex redirect (it runs before _redirects). Kept intact as a fallback.
+# The real one-hop is netlify/edge-functions/www-to-apex.js (runs first;
+# a returned 301 ends the request chain).
 #
 # Explicit sitemap paths only. No splat — a /* → /:splat/ catch-all would
 # append a slash to /assets/* and other extensioned files.
-# www WITH slash is already one-hop via the domain redirect (verified live);
-# non-slash rules are enough.
-# Assets are untouched here and keep the existing one-hop www→apex (no slash).
+# Assets are untouched here and keep path-preserving www→apex (no slash).
 
 # --- Priority money pages + town hubs --------------------------------------
 https://www.launchlayer.uk/wickford-laptop-repair  https://launchlayer.uk/wickford-laptop-repair/  301!

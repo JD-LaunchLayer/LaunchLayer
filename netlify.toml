@@ -1,0 +1,15 @@
+# Edge Functions run BEFORE _redirects and Pretty URLs.
+# Returning a Response ends the request chain, so Netlify's automatic
+# www→apex domain redirect never gets to emit a no-slash first hop
+# (that is why the #88 absolute-host _redirects list still 2-hops live).
+#
+# Do not set [build] here — publish directory stays whatever the
+# Netlify UI already uses (repo root, no build command).
+
+[[edge_functions]]
+  function = "www-to-apex"
+  path = "/"
+
+[[edge_functions]]
+  function = "www-to-apex"
+  path = "/*"
