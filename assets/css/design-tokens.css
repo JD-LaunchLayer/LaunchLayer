@@ -284,7 +284,11 @@
 }
 
 /* Shared CTA contract: pill shape, 44px minimum hit area, accent fill.
-   :where() keeps specificity at 0 so page CSS can still refine colours. */
+   :where() keeps specificity at 0 so page CSS can still refine colours.
+
+   Alignment (James UI/UX): action rows sit with left-aligned copy
+   (`flex-start`). The only centred exception is a full-bleed closing
+   band — heading + copy + buttons as one unit. */
 :where(
   .llhm-btn-primary,
   .llhm-btn-secondary,
@@ -315,4 +319,29 @@
 :where(.llhm-btn-secondary, .llsite-btn-secondary, .llsg-btn-secondary, .llsvc-btn-secondary, .llabt-btn-secondary):focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 3px;
+}
+
+:where(.llhm-actions, .llsg-actions, .llhm-visit-actions, .llhm-section-cta) {
+  justify-content: flex-start;
+}
+
+:where(.llhm-cta .llhm-actions, .llsg-cta-actions, .llsvc-cta-actions) {
+  justify-content: center;
+}
+
+@media (max-width: 639px) {
+  :where(.llhm-actions, .llsg-actions, .llhm-visit-actions, .llsg-cta-actions, .llsvc-cta-actions) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  :where(.llhm-actions, .llsg-actions, .llhm-visit-actions, .llsg-cta-actions, .llsvc-cta-actions) > a {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  :where(.llhm-section-cta) > a {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
 }
