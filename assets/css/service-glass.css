@@ -167,6 +167,8 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+      justify-content: flex-start;
+      width: 100%;
 }
 
 .llsg-btn-primary,
@@ -614,6 +616,30 @@
       justify-content: center;
 }
 
+@media (max-width: 639px) {
+      .llsg-actions,
+      .llsg-cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .llsg-actions .llsg-btn-primary,
+      .llsg-actions .llsg-btn-secondary,
+      .llsg-cta-actions .llsg-btn-primary,
+      .llsg-cta-actions .llsg-btn-secondary {
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+      }
+}
+
+@media (min-width: 640px) {
+      .llsg-actions {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+      }
+}
+
 @media (max-width: 819px) {
       .llsg-hero {
         grid-template-columns: 1fr;
@@ -634,36 +660,24 @@
 }
   
 
-/* Compact centered hero (no floaty image banner) */
+/* Compact hero (no floaty image banner) — copy + CTAs left-aligned like standard heroes */
 .llsg-hero.llsg-hero-compact {
   display: block;
   min-height: 0;
-  text-align: center;
+  text-align: left;
 }
 .llsg-hero.llsg-hero-compact .llsg-hero-copy {
   padding: 36px 28px 32px;
-  align-items: center;
+  align-items: flex-start;
   max-width: 720px;
-  margin: 0 auto;
+  margin: 0;
 }
 .llsg-hero.llsg-hero-compact .llsg-brand { margin-bottom: 8px; }
 .llsg-hero.llsg-hero-compact h1 {
   max-width: 22ch;
-  margin-left: auto;
-  margin-right: auto;
 }
 .llsg-hero.llsg-hero-compact .llsg-lead {
   max-width: 48ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-.llsg-hero.llsg-hero-compact .llsg-trust,
-.llsg-hero.llsg-hero-compact .llsg-actions {
-  justify-content: center;
-}
-.llsg-hero.llsg-hero-compact .llsg-price-inline {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 /* Accent text inside headings */
@@ -1101,6 +1115,14 @@ body.llsg-body svg:not([width]) { max-width: 100%; height: auto; }
   appearance: none;
   -webkit-appearance: none;
   border: 1px solid var(--color-accent);
+}
+
+@media (max-width: 639px) {
+  .llsg-intake .llsg-btn-primary {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
 }
 
 .llsg-intake-noscript {

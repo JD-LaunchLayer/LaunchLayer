@@ -272,6 +272,19 @@ svg:not([width]) {
   justify-content: center;
 }
 
+@media (max-width: 639px) {
+  .llsvc-cta-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .llsvc-cta-actions .llsvc-btn-primary,
+  .llsvc-cta-actions .llsvc-btn-secondary {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+}
+
 .llsvc-btn-primary,
 .llsvc-btn-secondary {
   display: inline-flex;
