@@ -45,8 +45,8 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "Wickford — local PC repair from our Glebe Road workshop",
     ),
     "liquid-damage-repair-wickford": (
-        "/assets/images/image-5e7c1f44.jpg",
-        "Water splash on wood — liquid spill damage to electronics",
+        "/assets/images/image-e1658f14.webp",
+        "Ultrasonic cleaning tank for liquid damage recovery — LaunchLayer Wickford",
     ),
     "data-recovery": (
         "/assets/images/image-ce1e457a.jpg",
@@ -105,8 +105,8 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "Open MacBook Pro internals — Basildon MacBook repair",
     ),
     "liquid-damage-repair-basildon": (
-        "/assets/images/image-5e7c1f44.jpg",
-        "Water droplet splash — liquid damage repair Basildon",
+        "/assets/images/image-e1658f14.webp",
+        "Ultrasonic cleaning tank for liquid damage recovery — LaunchLayer (Basildon)",
     ),
     "brands-supported": (
         "/assets/files/photo-1588872657578-7efd1f1555ed",

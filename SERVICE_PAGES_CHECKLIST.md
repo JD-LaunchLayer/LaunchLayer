@@ -29,13 +29,13 @@ Shared CSS: `/assets/css/site-glass.css`
 | /laptop-mot-wickford | MOT | `image-4307083f.png` |
 | /laptop-mot-wickford-essex | MOT | `image-50e35116.webp` |
 | /laptop-screen-repair-wickford | Dedicated service | `image-c7fb44a8.webp` |
-| /liquid-damage-repair-basildon | Dedicated service | `image-5e7c1f44.jpg` |
+| /liquid-damage-repair-basildon | Dedicated service | `image-e1658f14.webp` |
 | /liquid-damage-repair-billericay | Retired → `/billericay-pc-repair/#liquid-damage` (301) | — |
 | /liquid-damage-repair-brentwood | Retired → `/brentwood-pc-repair/#liquid-damage` (301) | — |
 | /liquid-damage-repair-chelmsford | Retired → `/chelmsford-pc-repair/#liquid-damage` (301) | — |
 | /liquid-damage-repair-rayleigh | Retired → `/rayleigh-laptop-service/#liquid-damage` (301) | — |
 | /liquid-damage-repair-southend | Retired → `/southend-pc-repair/#liquid-damage` (301) | — |
-| /liquid-damage-repair-wickford | Dedicated service | `image-5e7c1f44.jpg` |
+| /liquid-damage-repair-wickford | Dedicated service | `image-e1658f14.webp` |
 | /macbook-repair | Dedicated service | `image-c27f7c59.jpg` |
 | /macbook-repair-basildon | Dedicated service | `image-c27f7c59.jpg` |
 | /macbook-repair-billericay | Retired → `/billericay-pc-repair/#macbook-repair` (301) | — |

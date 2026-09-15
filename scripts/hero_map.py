@@ -3,7 +3,7 @@ HERO_BY_SLUG = {
     'laptop-mot-wickford': ('/assets/images/image-4307083f.png', 'LaunchLayer Wickford workshop bench ready for a laptop MOT'),
     'wickford-laptop-repair': ('/assets/images/image-d26fc546.png', 'Wickford in Bloom — LaunchLayer’s home town'),
     'wickford-pc-repair': ('/assets/images/towns/wickford-town.jpg', 'Wickford — local PC repair from our Glebe Road workshop'),
-    'liquid-damage-repair-wickford': ('/assets/images/image-5e7c1f44.jpg', 'Water splash on wood — liquid spill damage to electronics'),
+    'liquid-damage-repair-wickford': ('/assets/images/image-e1658f14.webp', 'Ultrasonic cleaning tank for liquid damage recovery — LaunchLayer Wickford'),
     'data-recovery': ('/assets/images/image-ce1e457a.jpg', 'Open hard drive platter and read head — data recovery'),
     'custom-pc-builds': ('/assets/images/image-ffecbd49.webp', 'Custom PC build with RGB lighting — LaunchLayer Wickford'),
     'eco-recycling': ('/assets/images/image-eco-donate-hero.jpg', 'Laptop donation for children — LaunchLayer recycling partnership'),
@@ -18,6 +18,6 @@ HERO_BY_SLUG = {
     'southend-pc-repair': ('/assets/images/towns/southend-town.jpg', 'Southend High Street — local PC & laptop repair coverage'),
     'rayleigh-laptop-service': ('/assets/images/towns/rayleigh-town.jpg', 'Rayleigh High Street — local laptop service coverage'),
     'macbook-repair-basildon': ('/assets/images/image-c27f7c59.jpg', 'Open MacBook Pro internals — Basildon MacBook repair'),
-    'liquid-damage-repair-basildon': ('/assets/images/image-5e7c1f44.jpg', 'Water droplet splash — liquid damage repair Basildon'),
+    'liquid-damage-repair-basildon': ('/assets/images/image-e1658f14.webp', 'Ultrasonic cleaning tank for liquid damage recovery — LaunchLayer (Basildon)'),
     'brands-supported': ('/assets/files/photo-1588872657578-7efd1f1555ed', 'Dell and Windows laptop — brands and devices LaunchLayer repairs'),
 }
