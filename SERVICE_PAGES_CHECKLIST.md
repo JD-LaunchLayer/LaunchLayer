@@ -50,6 +50,6 @@ Shared CSS: `/assets/css/site-glass.css`
 | /screen-repair-rayleigh | Retired → `/rayleigh-laptop-service/#screen-repair` (301) | — |
 | /screen-repair-southend | Retired → `/southend-pc-repair/#screen-repair` (301) | — |
 | /southend-pc-repair | Town hub (now includes screen, liquid & MacBook sections) | `southend-town.jpg` |
-| /wickford-laptop-repair | Town hub | `image-d26fc546.png` |
+| /wickford-laptop-repair | Town hub | `image-eaf7d3df.webp` |
 | /wickford-pc-repair | Town hub | `wickford-town.jpg` |
 | /wickford-virus-removal | Dedicated service | `image-9258d33d.jpg` |
