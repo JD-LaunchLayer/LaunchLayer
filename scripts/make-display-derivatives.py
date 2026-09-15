@@ -16,7 +16,7 @@ IMAGES = ROOT / "assets" / "images"
 THUMBS = IMAGES / "thumbs"
 BLOG_WIDTH = 800
 CONTACT_WIDTH = 1408
-CONTACT_STEM = "image-475642d0"
+CONTACT_STEM = "image-e4549a13"
 
 
 def find_original(stem: str) -> Path | None:

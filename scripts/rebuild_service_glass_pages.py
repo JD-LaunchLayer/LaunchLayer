@@ -29,8 +29,8 @@ CHECK_SVG = (
 # Hero images chosen for relevance — see IMAGE_CHECKLIST at bottom of run.
 HERO_BY_SLUG: dict[str, tuple[str, str]] = {
     "laptop-mot-wickford-essex": (
-        "/assets/images/image-4307083f.png",
-        "LaunchLayer Wickford workshop bench ready for a laptop MOT",
+        "/assets/images/image-50e35116.webp",
+        "Laptop battery service on the LaunchLayer Wickford bench",
     ),
     "laptop-mot-wickford": (
         "/assets/images/image-4307083f.png",
@@ -53,20 +53,20 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "Open hard drive platter and read head — data recovery",
     ),
     "custom-pc-builds": (
-        "/assets/images/image-ddefba94.jpg",
-        "Custom gaming PC with Radeon GPU and RGB liquid cooling",
+        "/assets/images/image-ffecbd49.webp",
+        "Custom PC build with RGB lighting — LaunchLayer Wickford",
     ),
     "eco-recycling": (
         "/assets/images/image-eco-donate-hero.jpg",
         "Laptop donation for children — LaunchLayer recycling partnership",
     ),
     "wickford-virus-removal": (
-        "/assets/images/image-9258d33d.jpg",
-        "Laptop showing malware warning — virus and scam recovery",
+        "/assets/images/image-23ca3c6b.webp",
+        "Full malware scan completed on a customer laptop — LaunchLayer Wickford",
     ),
     "laptop-screen-repair-wickford": (
-        "/assets/images/image-laptop-display-banner.jpg",
-        "Laptop display — screen replacement in Wickford",
+        "/assets/images/image-c7fb44a8.webp",
+        "Laptop screen replacement in progress — LaunchLayer Wickford",
     ),
     "macbook-repair": (
         "/assets/images/image-c27f7c59.jpg",

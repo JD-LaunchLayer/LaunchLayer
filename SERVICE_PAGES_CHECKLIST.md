@@ -23,12 +23,12 @@ Shared CSS: `/assets/css/site-glass.css`
 | /brands-supported | Brands | `photo-1588872657578-7efd1f1555ed` |
 | /brentwood-pc-repair | Town hub (now includes screen, liquid & MacBook sections) | `brentwood-town.jpg` |
 | /chelmsford-pc-repair | Town hub (now includes screen, liquid & MacBook sections) | `chelmsford-town.jpg` |
-| /custom-pc-builds | Dedicated service | `image-ddefba94.jpg` |
+| /custom-pc-builds | Dedicated service | `image-ffecbd49.webp` |
 | /data-recovery | Dedicated service | `image-ce1e457a.jpg` |
 | /eco-recycling | Dedicated service | `image-eco-donate-hero.jpg` |
 | /laptop-mot-wickford | MOT | `image-4307083f.png` |
-| /laptop-mot-wickford-essex | MOT | `image-4307083f.png` |
-| /laptop-screen-repair-wickford | Dedicated service | `image-36da4d28.jpg` |
+| /laptop-mot-wickford-essex | MOT | `image-50e35116.webp` |
+| /laptop-screen-repair-wickford | Dedicated service | `image-c7fb44a8.webp` |
 | /liquid-damage-repair-basildon | Dedicated service | `image-5e7c1f44.jpg` |
 | /liquid-damage-repair-billericay | Retired → `/billericay-pc-repair/#liquid-damage` (301) | — |
 | /liquid-damage-repair-brentwood | Retired → `/brentwood-pc-repair/#liquid-damage` (301) | — |
@@ -52,4 +52,4 @@ Shared CSS: `/assets/css/site-glass.css`
 | /southend-pc-repair | Town hub (now includes screen, liquid & MacBook sections) | `southend-town.jpg` |
 | /wickford-laptop-repair | Town hub | `image-eaf7d3df.webp` |
 | /wickford-pc-repair | Town hub | `wickford-town.jpg` |
-| /wickford-virus-removal | Dedicated service | `image-9258d33d.jpg` |
+| /wickford-virus-removal | Dedicated service | `image-23ca3c6b.webp` |
