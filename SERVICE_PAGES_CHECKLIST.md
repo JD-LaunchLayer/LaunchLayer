@@ -43,7 +43,7 @@ Shared CSS: `/assets/css/site-glass.css`
 | /macbook-repair-chelmsford | Retired → `/chelmsford-pc-repair/#macbook-repair` (301) | — |
 | /macbook-repair-rayleigh | Retired → `/rayleigh-laptop-service/#macbook-repair` (301) | — |
 | /macbook-repair-southend | Retired → `/southend-pc-repair/#macbook-repair` (301) | — |
-| /macbook-repair-wickford | Dedicated service | `image-69f0c879.jpg` |
+| /macbook-repair-wickford | Dedicated service | `image-c27f7c59.jpg` |
 | /rayleigh-laptop-service | Town hub (now includes screen, liquid & MacBook sections) | `rayleigh-town.jpg` |
 | /screen-repair-brentwood | Retired → `/brentwood-pc-repair/#screen-repair` (301) | — |
 | /screen-repair-chelmsford | Retired → `/chelmsford-pc-repair/#screen-repair` (301) | — |
