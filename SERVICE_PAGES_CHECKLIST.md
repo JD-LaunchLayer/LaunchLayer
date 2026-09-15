@@ -23,7 +23,7 @@ Shared CSS: `/assets/css/site-glass.css`
 | /brands-supported | Brands | `photo-1588872657578-7efd1f1555ed` |
 | /brentwood-pc-repair | Town hub (now includes screen, liquid & MacBook sections) | `brentwood-town.jpg` |
 | /chelmsford-pc-repair | Town hub (now includes screen, liquid & MacBook sections) | `chelmsford-town.jpg` |
-| /custom-pc-builds | Dedicated service | `image-ffecbd49.webp` |
+| /custom-pc-builds | Dedicated service | `image-ddefba94.webp` |
 | /data-recovery | Dedicated service | `image-ce1e457a.jpg` |
 | /eco-recycling | Dedicated service | `image-eco-donate-hero.jpg` |
 | /laptop-mot-wickford | MOT | `image-4307083f.png` |

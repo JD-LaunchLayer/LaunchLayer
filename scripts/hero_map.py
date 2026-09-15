@@ -5,7 +5,7 @@ HERO_BY_SLUG = {
     'wickford-pc-repair': ('/assets/images/towns/wickford-town.jpg', 'Wickford — local PC repair from our Glebe Road workshop'),
     'liquid-damage-repair-wickford': ('/assets/images/image-e1658f14.webp', 'Ultrasonic cleaning tank for liquid damage recovery — LaunchLayer Wickford'),
     'data-recovery': ('/assets/images/image-ce1e457a.jpg', 'Open hard drive platter and read head — data recovery'),
-    'custom-pc-builds': ('/assets/images/image-ffecbd49.webp', 'Custom PC build with RGB lighting — LaunchLayer Wickford'),
+    'custom-pc-builds': ('/assets/images/image-ddefba94.webp', 'Custom gaming PC built at LaunchLayer Wickford'),
     'eco-recycling': ('/assets/images/image-eco-donate-hero.jpg', 'Laptop donation for children — LaunchLayer recycling partnership'),
     'wickford-virus-removal': ('/assets/images/image-23ca3c6b.webp', 'Full malware scan completed on a customer laptop — LaunchLayer Wickford'),
     'laptop-screen-repair-wickford': ('/assets/images/image-c7fb44a8.webp', 'Laptop screen replacement in progress — LaunchLayer Wickford'),

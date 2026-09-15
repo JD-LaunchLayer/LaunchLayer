@@ -849,6 +849,11 @@ body.llsg-body svg:not([width]) { max-width: 100%; height: auto; }
 .llsg-hero-band-display img {
   object-position: center 38%;
 }
+/* Liquid-damage tank is a tall portrait; default center crop shows only the basin. */
+.llsg-hero-visual.llsg-hero-tank img,
+.llsg-hero-band.llsg-hero-tank img {
+  object-position: center bottom;
+}
 .llsg-hero-band .llsg-hero-scrim {
   position: absolute;
   inset: 0;

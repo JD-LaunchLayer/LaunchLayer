@@ -53,8 +53,8 @@ HERO_BY_SLUG: dict[str, tuple[str, str]] = {
         "Open hard drive platter and read head — data recovery",
     ),
     "custom-pc-builds": (
-        "/assets/images/image-ffecbd49.webp",
-        "Custom PC build with RGB lighting — LaunchLayer Wickford",
+        "/assets/images/image-ddefba94.webp",
+        "Custom gaming PC built at LaunchLayer Wickford",
     ),
     "eco-recycling": (
         "/assets/images/image-eco-donate-hero.jpg",
