@@ -22,9 +22,9 @@ At **LaunchLayer** I separate **the brick**, **the port**, and **the battery** b
 - **Try another wall socket**, not an overloaded extension. Cheap strips drop voltage under load.
 - **Look at the LED on the brick** (if it has one). Dead LED plus a floppy cable at the strain relief usually means the charger, not the laptop.
 - **Wiggle the barrel or USB-C plug.** If the charge icon flickers, the DC jack or USB-C board is loose — very common on school and van laptops.
-- **Feel the underside by the battery.** Hot, tight, or a bulging palm rest is a [swollen battery](/blog/laptop-battery-replacement-wickford). Unplug it and do not keep charging.
+- **Feel the underside by the battery.** Hot, tight, or a bulging palm rest is a [swollen battery](/blog/laptop-battery-replacement-wickford/). Unplug it and do not keep charging.
 
-If the machine will not turn on at all, even on the mains, use the [won’t turn on guide](/blog/laptop-not-turning-on-slow-fix) instead of this one.
+If the machine will not turn on at all, even on the mains, use the [won’t turn on guide](/blog/laptop-not-turning-on-slow-fix/) instead of this one.
 
 ## Fault 1: the charger (the easy win)
 
@@ -40,7 +40,7 @@ On a lot of 14" business laptops the charge socket is a tiny daughter-board, not
 
 If the lead has been yanked in a rucksack every schoolday, I also check the internal DC cable. The plastic around the jack cracks, then the socket rips the pads off. Same abuse pattern as a lid that no longer sits straight — if the chassis is twisting when you plug in, stop forcing it.
 
-Liquid plus charging is a different emergency. If tea went near the port, follow the [spill steps](/blog/spilled-water-on-laptop-fix-essex) and do not keep plugging it in. Corrosion on a USB-C port looks like “it charges on Tuesdays”.
+Liquid plus charging is a different emergency. If tea went near the port, follow the [spill steps](/blog/spilled-water-on-laptop-fix-essex/) and do not keep plugging it in. Corrosion on a USB-C port looks like “it charges on Tuesdays”.
 
 ## Fault 3: the battery reporting “plugged in, not charging”
 
@@ -52,10 +52,10 @@ Some HP and Lenovo models also sit at 0% or 100% forever because a cheap charger
 
 ## What this is not
 
-A slow laptop that still charges is probably storage or heat, not the port. If it boots like 2014, read the [SSD upgrade guide](/blog/laptop-ssd-upgrade-wickford-essex). If it only dies after an hour of Teams with the fans screaming, that is [overheating](/blog/fix-overheating-laptop-wickford-essex).
+A slow laptop that still charges is probably storage or heat, not the port. If it boots like 2014, read the [SSD upgrade guide](/blog/laptop-ssd-upgrade-wickford-essex/). If it only dies after an hour of Teams with the fans screaming, that is [overheating](/blog/fix-overheating-laptop-wickford-essex/).
 
 ## What to bring to Glebe Road
 
-Bring the charger you actually use, not “the spare in the drawer”. Half of these jobs are a 45W brick on a 90W machine. Collection is free across Wickford and the usual towns — [Wickford laptop repair](/wickford-laptop-repair), [Basildon](/basildon-pc-repair), [Billericay](/billericay-pc-repair), [Rayleigh](/rayleigh-laptop-service) — or book via [Contact](/contact) / **[07367 652987](tel:07367652987)**.
+Bring the charger you actually use, not “the spare in the drawer”. Half of these jobs are a 45W brick on a 90W machine. Collection is free across Wickford and the usual towns — [Wickford laptop repair](/wickford-laptop-repair/), [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) — or book via [Contact](/contact/) / **[07367 652987](tel:07367652987)**.
 
 Drop-off is **32 Glebe Road**. No-Fix, No-Fee still applies. If the board is burned and a repair is not worth it, you do not pay labour for the privilege of the bad news.
