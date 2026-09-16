@@ -1,10 +1,21 @@
-# Daily 08:00 UTC: render Markdown posts whose frontmatter date has arrived,
+# Render Markdown posts whose frontmatter date has arrived,
 # inject listing cards, stamp draft: false, and commit the HTML on main.
+# Dual Europe/London slots avoid GitHub's contested :00 UTC window (scheduled
+# workflows can be delayed or dropped under load — see GitHub docs:
+# "Events that trigger workflows" → schedule). Cursor/`gh workflow run` as
+# the GitHub App integration cannot dispatch this workflow (403 Resource
+# not accessible by integration); humans use the Actions UI or a PAT with
+# `workflow` scope.
 name: Publish scheduled blog posts
 
 on:
   schedule:
-    - cron: "0 8 * * *"
+    # Avoid :00 UTC contention. ~09:17 UK.
+    - cron: "17 9 * * *"
+      timezone: Europe/London
+    # Same-day catch-up if morning dropped. ~18:23 UK.
+    - cron: "23 18 * * *"
+      timezone: Europe/London
   workflow_dispatch:
 
 permissions:
