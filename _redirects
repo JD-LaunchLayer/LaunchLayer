@@ -110,6 +110,23 @@ https://www.launchlayer.uk/wickford-virus-removal  https://launchlayer.uk/wickfo
 /shop    /custom-pc-builds/  301!
 /shop/   /custom-pc-builds/  301!
 
+# --- Phil coverage tidy (soft-404 shop stubs + deleted blogs + www→apex 404s) ---
+/shop/*    /custom-pc-builds/  301!
+
+/blog/laptop-battery-replacement-safety-guide     /blog/laptop-battery-replacement-wickford/  301!
+/blog/laptop-battery-replacement-safety-guide/    /blog/laptop-battery-replacement-wickford/  301!
+/blog/the-truth-about-cheap-laptops-what-to-watch-out-for-before-you-buy     /blog/pc-laptop-buying-guide-essex/  301!
+/blog/the-truth-about-cheap-laptops-what-to-watch-out-for-before-you-buy/    /blog/pc-laptop-buying-guide-essex/  301!
+/blog/how-often-should-you-service-your-laptop-a-local-techs-honest-answer     /blog/ultimate-guide-pc-maintenance-essex/  301!
+/blog/how-often-should-you-service-your-laptop-a-local-techs-honest-answer/    /blog/ultimate-guide-pc-maintenance-essex/  301!
+/blog/top-5-most-common-laptop-issues-and-how-to-fix-them     /blog/laptop-not-turning-on-slow-fix/  301!
+/blog/top-5-most-common-laptop-issues-and-how-to-fix-them/    /blog/laptop-not-turning-on-slow-fix/  301!
+/blog/why-you-shouldnt-ignore-a-swollen-laptop-battery     /blog/laptop-battery-replacement-wickford/  301!
+/blog/why-you-shouldnt-ignore-a-swollen-laptop-battery/    /blog/laptop-battery-replacement-wickford/  301!
+
+/laptop-screen-repair-rayleigh     /rayleigh-laptop-service/  301!
+/laptop-screen-repair-rayleigh/    /rayleigh-laptop-service/  301!
+
 # Leftover Squarespace Services collection URL. Real page is /services/.
 /service-dropdown    /services/  301!
 /service-dropdown/   /services/  301!
