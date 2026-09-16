@@ -96,7 +96,13 @@ def listing_date(iso_date: str) -> str:
     return dt.strftime("%d/%m/%Y")
 
 
-def listing_card(meta: dict[str, str]) -> str:
+def listing_card(meta: dict[str, str], index: int = 1) -> str:
+    """Emit a listing card that matches working Squarespace-era markup.
+
+    SQS alternating layout styles h2.blog-title (list-title size) plus
+    primary/secondary meta, empty excerpt wrapper, and article-index-N.
+    An h1.blog-title picks up heading-1 size and collapses the image box.
+    """
     slug = html.escape(meta["slug"])
     headline = html.escape(meta["headline"])
     image = html.escape(meta["image"])
@@ -108,34 +114,43 @@ def listing_card(meta: dict[str, str]) -> str:
     stem = Path(image.split("?", 1)[0]).stem
     avif = f"/assets/images/thumbs/{stem}-w800.avif"
     webp = f"/assets/images/thumbs/{stem}-w800.webp"
-    return f'''    <article class="hentry category-{css} author-jordan-duggins post-type-text blog-item entry">
+    meta_bits = f'''  <span class="blog-categories-list">
+          <a href="/blog/category/{category_path}" class="blog-categories">{category}</a>
+      </span>
+<span class="blog-author">{author}</span>
+    <time class="blog-date" pubdate data-animation-role="date">{shown}</time>'''
+    return f'''    <article class="hentry category-{css} author-jordan-duggins post-type-text article-index-{index} blog-item entry">
       <section class="blog-image-wrapper">
       <a href="/blog/{slug}" class="image-wrapper" data-animation-role="image">
 <picture>
 <source type="image/avif" srcset="{avif}">
 <source type="image/webp" srcset="{webp}">
-<img data-src="{image}" data-image="{image}" data-image-dimensions="1152x864" data-image-focal-point="0.5,0.5" alt="{headline}" data-load="false" src="{image}" width="1152" height="864" sizes="(max-width: 767px) 92vw, 520px" class="image" style="display:block;position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: 50% 50%;" loading="lazy" decoding="async">
+<img data-src="{image}" data-image="{image}" data-image-dimensions="1152x864" data-image-focal-point="0.5,0.5" alt="{headline}" data-load="false" src="{image}" width="1152" height="864" sizes="(max-width: 767px) 92vw, 520px" class="image" style="display:block;position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: 50% 50%;" loading="lazy" decoding="async" data-loader="sqs">
 </picture>
 </a>
-      </section>
+</section>
       <section class="blog-item-summary">
         <div class="blog-item-text">
           <div class="blog-meta-section">
   <span class="blog-meta-primary">
-      <span class="blog-categories-list">
-          <a href="/blog/category/{category_path}" class="blog-categories">{category}</a>
-      </span>
-      <span class="blog-author">{author}</span>
-    <time class="blog-date" pubdate data-animation-role="date">{shown}</time>
+    {meta_bits}
+  </span>
+  <span class="blog-meta-delimiter"></span>
+    <span class="blog-meta-delimiter blog-category-delimiter"></span>
+  <span class="blog-meta-secondary">
+    {meta_bits}
   </span>
 </div>
-<h1 class="blog-title">
+<h2 class="blog-title">
     <a href="/blog/{slug}" data-no-animation>
     {headline}
   </a>
-</h1>
+</h2>
+<div class="blog-excerpt">
+  <div class="blog-excerpt-wrapper"></div>
+</div>
 <a class="blog-more-link" href="/blog/{slug}" data-animation-role="content">Read More</a>
-        </div>
+</div>
       </section>
     </article>'''
 
@@ -515,13 +530,16 @@ def main() -> int:
     for path, meta, _body in scheduled:
         print(f"Draft until {meta['date']}: {path.relative_to(ROOT)}")
 
-    all_cards = "\n    \n".join(listing_card(meta) for _p, meta, _b in live)
+    all_cards = "\n    \n".join(
+        listing_card(meta, index=i) for i, (_p, meta, _b) in enumerate(live, start=1)
+    )
     patch_listing(LISTING_PAGES["all"], all_cards)
     for category, page in LISTING_PAGES.items():
         if category == "all":
             continue
+        cat_posts = [(p, m, b) for p, m, b in live if m["category"] == category]
         cards = "\n    \n".join(
-            listing_card(meta) for _p, meta, _b in live if meta["category"] == category
+            listing_card(meta, index=i) for i, (_p, meta, _b) in enumerate(cat_posts, start=1)
         )
         patch_listing(page, cards)
     print(f"Listings updated for {len(live)} live Markdown post(s).")
