@@ -4,6 +4,9 @@
 Blog listing thumbs sit at ~40% of the inset column (≈500px CSS, 800px at 2x).
 Contact's hero background is full-bleed against a 1408px source, so that one
 is encoded at native width.
+
+The scheduled publish workflow runs this after build-blog.py so new listing
+cards do not ship with 404 thumbs. Requires Pillow>=11.3 (AVIF in wheels).
 """
 from __future__ import annotations
 
