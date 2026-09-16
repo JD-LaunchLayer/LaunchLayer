@@ -844,8 +844,12 @@ body.llsg-body svg:not([width]) { max-width: 100%; height: auto; }
   display: block;
 }
 /* Liquid-damage heroes only: keep the tank front controls in the crop */
-.llsg-hero-tank img {
+.llsg-hero-visual.llsg-hero-tank img {
   object-position: center bottom;
+}
+/* Compact band is ~160px tall — `bottom` would show the worktop, not the panel */
+.llsg-hero-band.llsg-hero-tank img {
+  object-position: center 70%;
 }
 .llsg-hero-band-display {
   height: 250px;
