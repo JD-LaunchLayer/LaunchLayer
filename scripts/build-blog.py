@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Render Markdown posts in content/blog/ to public HTML at /blog/<slug>/.
 
+Post chrome = fonts.css + design-tokens.css; listing = h2.blog-title from listing_card().
+
 Public URLs never change: the slug in frontmatter is the folder name Google
 already knows. Edit the .md file, then run:
 
@@ -8,6 +10,8 @@ already knows. Edit the .md file, then run:
 
 Hosting stays static — this script writes blog/<slug>/index.html so you can
 keep deploying the folder as-is. Old Squarespace posts are left untouched.
+The builder asserts chrome and listing-card shape after write. Re-scan with
+`--check`. `--self-test` proves a broken template would fail the job.
 """
 from __future__ import annotations
 
@@ -17,11 +21,6 @@ import re
 import sys
 from datetime import datetime
 from pathlib import Path
-
-try:
-    import markdown
-except ImportError:
-    sys.exit("Install the markdown package first: pip install markdown")
 
 ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / "content" / "blog"
@@ -62,6 +61,24 @@ REQUIRED = (
     "og_image",
     "image_alt",
 )
+# Checked independently of the post <head> template so deleting a <link> still fails.
+REQUIRED_POST_CHROME = (
+    "/assets/css/fonts.css",
+    "/assets/css/design-tokens.css",
+)
+_H2_BLOG_TITLE = re.compile(
+    r'<h2\b[^>]*\bclass=["\'][^"\']*\bblog-title\b[^"\']*["\']',
+    re.I,
+)
+_H1_BLOG_TITLE = re.compile(
+    r'<h1\b[^>]*\bclass=["\'][^"\']*\bblog-title\b[^"\']*["\']',
+    re.I,
+)
+_ARTICLE_OPEN = re.compile(r"<article\b", re.I)
+
+
+class PublishGuardError(Exception):
+    """Generated HTML failed the post-chrome or listing-card standard."""
 
 
 def is_live(meta: dict[str, str], today: datetime.date) -> bool:
@@ -97,7 +114,7 @@ def listing_date(iso_date: str) -> str:
 
 
 def listing_card(meta: dict[str, str], index: int = 1) -> str:
-    """Emit a listing card that matches working Squarespace-era markup.
+    """Single emitter for Markdown listing cards (Squarespace-era markup).
 
     SQS alternating layout styles h2.blog-title (list-title size) plus
     primary/secondary meta, empty excerpt wrapper, and article-index-N.
@@ -174,6 +191,165 @@ def patch_listing(path: Path, cards_html: str) -> None:
             raise ValueError(f"Cannot find listing wrapper in {path}")
         text = text.replace(needle, needle + "\n    " + block, 1)
     path.write_text(text, encoding="utf-8")
+    assert_listing_feed(text, path)
+
+
+def _rel(path: Path) -> str:
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
+def assert_post_chrome(html_text: str, path: Path | None = None) -> None:
+    where = _rel(path) if path else "generated post"
+    head_match = re.search(r"<head\b[^>]*>(.*?)</head>", html_text, flags=re.I | re.S)
+    if not head_match:
+        raise PublishGuardError(
+            f"{where}: missing <head>; post chrome cannot be verified."
+        )
+    head = head_match.group(1)
+    missing = [href for href in REQUIRED_POST_CHROME if href not in head]
+    if missing:
+        raise PublishGuardError(
+            f"{where}: <head> missing {', '.join(missing)}. "
+            "Post chrome = fonts.css + design-tokens.css."
+        )
+
+
+def assert_listing_feed(html_text: str, path: Path | None = None) -> None:
+    where = _rel(path) if path else "listing page"
+    start = html_text.find(FEED_START)
+    end = html_text.find(FEED_END)
+    if start < 0 or end < 0:
+        raise PublishGuardError(
+            f"{where}: missing {FEED_START} / {FEED_END}; "
+            "Markdown listing cards cannot be verified."
+        )
+    if end < start:
+        raise PublishGuardError(f"{where}: {FEED_END} appears before {FEED_START}.")
+    feed = html_text[start + len(FEED_START) : end]
+    if _H1_BLOG_TITLE.search(feed):
+        raise PublishGuardError(
+            f"{where}: Markdown feed uses h1.blog-title; "
+            "listing cards must use h2.blog-title from listing_card()."
+        )
+    articles = _ARTICLE_OPEN.findall(feed)
+    titles = _H2_BLOG_TITLE.findall(feed)
+    if articles and len(titles) < len(articles):
+        raise PublishGuardError(
+            f"{where}: {len(articles)} feed card(s) but {len(titles)} h2.blog-title; "
+            'every card between ll-md-feed markers must use h2 class="blog-title" '
+            "from listing_card()."
+        )
+
+
+def _sample_listing_meta() -> dict[str, str]:
+    return {
+        "slug": "guard-sample",
+        "headline": "Guard sample",
+        "image": "/assets/images/sample.jpg",
+        "category": "Useful Tips",
+        "category_path": "Useful+Tips",
+        "author": "Jordan Duggins",
+        "date": "2026-09-16",
+    }
+
+
+def assert_listing_card_emitter() -> None:
+    """listing_card() is the single emitter; it must keep h2 + the #108 shape."""
+    card = listing_card(_sample_listing_meta(), index=1)
+    if _H1_BLOG_TITLE.search(card):
+        raise PublishGuardError(
+            "listing_card() emitted h1.blog-title; it must emit h2.blog-title."
+        )
+    if not _H2_BLOG_TITLE.search(card):
+        raise PublishGuardError('listing_card() must emit h2 class="blog-title".')
+    for marker in (
+        "article-index-1",
+        "blog-meta-primary",
+        "blog-meta-secondary",
+        "blog-excerpt",
+        'data-loader="sqs"',
+    ):
+        if marker not in card:
+            raise PublishGuardError(
+                f"listing_card() lost legacy card shape marker {marker!r}."
+            )
+
+
+def generated_post_paths() -> list[Path]:
+    paths = []
+    for md in sorted(POSTS_DIR.glob("*.md")):
+        html_path = OUT_BLOG / md.stem / "index.html"
+        if html_path.is_file():
+            paths.append(html_path)
+    return paths
+
+
+def check_generated_output() -> None:
+    assert_listing_card_emitter()
+    posts = generated_post_paths()
+    if not posts:
+        raise PublishGuardError(
+            "No generated Markdown posts found under blog/<slug>/index.html."
+        )
+    for path in posts:
+        assert_post_chrome(path.read_text(encoding="utf-8"), path)
+    for path in LISTING_PAGES.values():
+        if path.is_file():
+            assert_listing_feed(path.read_text(encoding="utf-8"), path)
+
+
+def run_self_test() -> None:
+    """Prove the guard fails on broken chrome/cards and passes on current templates."""
+    assert_listing_card_emitter()
+    good_post = """<!doctype html><html><head>
+      <link rel="stylesheet" href="/assets/css/fonts.css">
+      <link rel="stylesheet" href="/assets/css/design-tokens.css">
+    </head><body></body></html>"""
+    assert_post_chrome(good_post, Path("self-test-good.html"))
+    empty_feed = f"{FEED_START}\n    {FEED_END}"
+    assert_listing_feed(empty_feed, Path("empty-feed.html"))
+    good_feed = (
+        f'{FEED_START}\n<article class="blog-item">'
+        f'<h2 class="blog-title">ok</h2></article>\n{FEED_END}'
+    )
+    assert_listing_feed(good_feed, Path("h2-card.html"))
+
+    broken_cases: list[tuple[str, object]] = [
+        (
+            "missing post chrome",
+            lambda: assert_post_chrome(
+                "<html><head></head></html>", Path("broken-chrome.html")
+            ),
+        ),
+        (
+            "missing design-tokens.css",
+            lambda: assert_post_chrome(
+                '<html><head><link rel="stylesheet" href="/assets/css/fonts.css"></head></html>',
+                Path("no-tokens.html"),
+            ),
+        ),
+        (
+            "h1.blog-title listing card",
+            lambda: assert_listing_feed(
+                f'{FEED_START}\n<article class="blog-item">'
+                f'<h1 class="blog-title">x</h1></article>\n{FEED_END}',
+                Path("h1-card.html"),
+            ),
+        ),
+    ]
+    for label, action in broken_cases:
+        try:
+            action()
+        except PublishGuardError:
+            pass
+        else:
+            raise PublishGuardError(
+                f"self-test: expected {label} to fail, but it passed."
+            )
+    print("Blog publish guard self-test passed.")
 
 
 def parse_frontmatter(text: str) -> tuple[dict[str, str], str]:
@@ -292,6 +468,10 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
     if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", meta["slug"]):
         raise ValueError(f"Invalid slug '{meta['slug']}'")
 
+    try:
+        import markdown
+    except ImportError:
+        sys.exit("Install the markdown package first: pip install markdown")
     body_html = markdown.markdown(
         body,
         extensions=["extra", "sane_lists", "smarty"],
@@ -470,7 +650,9 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
     out_file = out_dir / "index.html"
     # Marker so we never hand-edit generated HTML.
     banner = "<!-- Generated from content/blog/%s.md by scripts/build-blog.py. Edit the Markdown, then re-run the script. -->\n" % slug
-    out_file.write_text(banner + page, encoding="utf-8")
+    rendered = banner + page
+    out_file.write_text(rendered, encoding="utf-8")
+    assert_post_chrome(rendered, out_file)
     return out_file
 
 
@@ -495,55 +677,80 @@ def main() -> int:
         "--today",
         help="Override today's date (YYYY-MM-DD) to preview a scheduled publish.",
     )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Validate generated post chrome and listing cards without rebuilding.",
+    )
+    parser.add_argument(
+        "--self-test",
+        action="store_true",
+        help="Prove the guard fails on broken chrome/cards and passes on current templates.",
+    )
     args = parser.parse_args()
-    today = (
-        datetime.strptime(args.today, "%Y-%m-%d").date()
-        if args.today
-        else datetime.now().date()
-    )
+    try:
+        if args.self_test:
+            run_self_test()
+            return 0
+        if args.check:
+            check_generated_output()
+            print("Blog publish guard: ok.")
+            return 0
 
-    loaded = load_posts()
-    scheduled = [(p, m, b) for p, m, b in loaded if not is_live(m, today)]
-    live = [(p, m, b) for p, m, b in loaded if is_live(m, today)]
-    live.sort(key=lambda item: (item[1]["date"], item[1]["slug"]), reverse=True)
-
-    for i, (path, meta, _body) in enumerate(live):
-        newer = live[i - 1][1] if i > 0 else None
-        older = live[i + 1][1] if i + 1 < len(live) else None
-        if newer:
-            meta["prev_slug"] = newer["slug"]
-            meta["prev_title"] = newer["headline"]
-        else:
-            meta.pop("prev_slug", None)
-            meta.pop("prev_title", None)
-        if older:
-            meta["next_slug"] = older["slug"]
-            meta["next_title"] = older["headline"]
-        else:
-            meta["next_slug"] = LEGACY_NEXT_SLUG
-            meta["next_title"] = LEGACY_NEXT_TITLE
-        if not args.today:
-            stamp_published(path, meta)
-        out = render_post(path, meta, _body)
-        print(f"Published {out.relative_to(ROOT)}  ({meta['date']})")
-
-    for path, meta, _body in scheduled:
-        print(f"Draft until {meta['date']}: {path.relative_to(ROOT)}")
-
-    all_cards = "\n    \n".join(
-        listing_card(meta, index=i) for i, (_p, meta, _b) in enumerate(live, start=1)
-    )
-    patch_listing(LISTING_PAGES["all"], all_cards)
-    for category, page in LISTING_PAGES.items():
-        if category == "all":
-            continue
-        cat_posts = [(p, m, b) for p, m, b in live if m["category"] == category]
-        cards = "\n    \n".join(
-            listing_card(meta, index=i) for i, (_p, meta, _b) in enumerate(cat_posts, start=1)
+        today = (
+            datetime.strptime(args.today, "%Y-%m-%d").date()
+            if args.today
+            else datetime.now().date()
         )
-        patch_listing(page, cards)
-    print(f"Listings updated for {len(live)} live Markdown post(s).")
-    return 0
+        assert_listing_card_emitter()
+
+        loaded = load_posts()
+        scheduled = [(p, m, b) for p, m, b in loaded if not is_live(m, today)]
+        live = [(p, m, b) for p, m, b in loaded if is_live(m, today)]
+        live.sort(key=lambda item: (item[1]["date"], item[1]["slug"]), reverse=True)
+
+        for i, (path, meta, _body) in enumerate(live):
+            newer = live[i - 1][1] if i > 0 else None
+            older = live[i + 1][1] if i + 1 < len(live) else None
+            if newer:
+                meta["prev_slug"] = newer["slug"]
+                meta["prev_title"] = newer["headline"]
+            else:
+                meta.pop("prev_slug", None)
+                meta.pop("prev_title", None)
+            if older:
+                meta["next_slug"] = older["slug"]
+                meta["next_title"] = older["headline"]
+            else:
+                meta["next_slug"] = LEGACY_NEXT_SLUG
+                meta["next_title"] = LEGACY_NEXT_TITLE
+            if not args.today:
+                stamp_published(path, meta)
+            out = render_post(path, meta, _body)
+            print(f"Published {out.relative_to(ROOT)}  ({meta['date']})")
+
+        for path, meta, _body in scheduled:
+            print(f"Draft until {meta['date']}: {path.relative_to(ROOT)}")
+
+        all_cards = "\n    \n".join(
+            listing_card(meta, index=i) for i, (_p, meta, _b) in enumerate(live, start=1)
+        )
+        patch_listing(LISTING_PAGES["all"], all_cards)
+        for category, page in LISTING_PAGES.items():
+            if category == "all":
+                continue
+            cat_posts = [(p, m, b) for p, m, b in live if m["category"] == category]
+            cards = "\n    \n".join(
+                listing_card(meta, index=i)
+                for i, (_p, meta, _b) in enumerate(cat_posts, start=1)
+            )
+            patch_listing(page, cards)
+        print(f"Listings updated for {len(live)} live Markdown post(s).")
+        check_generated_output()
+        return 0
+    except PublishGuardError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":

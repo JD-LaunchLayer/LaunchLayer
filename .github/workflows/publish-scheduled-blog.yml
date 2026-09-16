@@ -37,6 +37,11 @@ jobs:
         run: pip install markdown "Pillow>=11.3.0"
       - name: Build posts due today
         run: python3 scripts/build-blog.py
+      - name: Guard post chrome and listing cards
+        # post chrome = fonts + design-tokens; listing = h2 from listing_card()
+        run: |
+          python3 scripts/build-blog.py --self-test
+          python3 scripts/build-blog.py --check
       # Listing <picture> sources are /assets/images/thumbs/{stem}-w800.{avif,webp}.
       # build-blog.py injects those URLs but does not encode the files. Run
       # derivatives before commit so new posts do not ship 404 thumbs (16 Sep SSD).
