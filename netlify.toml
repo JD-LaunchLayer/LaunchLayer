@@ -5,3 +5,8 @@
 [[edge_functions]]
 function = "www-apex-slash"
 path = "/*"
+
+# Serverless functions (contact form / Turnstile) sit beside edge functions.
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

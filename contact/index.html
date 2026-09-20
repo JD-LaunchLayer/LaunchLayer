@@ -69,6 +69,7 @@
 </style>
 
 <script>Static.COOKIE_BANNER_CAPABLE = true;</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <!-- End of Squarespace Headers -->
 
 <link rel="canonical" href="https://launchlayer.uk/contact/" />
@@ -712,11 +713,9 @@ data-sqsp-section="fluid-engine"
       
     >
       <div class="react-form-contents ll-contact-panel">
-        <form class="react-form-contents ll-contact-form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="96029321-6b20-4b14-abf2-a13104aa9d48">
+        <form class="react-form-contents ll-contact-form" action="/api/contact" method="POST">
           <input type="hidden" name="subject" value="New Contact Form Submission - LaunchLayer">
           <input type="hidden" name="from_name" value="LaunchLayer Website">
-          <input type="hidden" name="redirect" value="https://launchlayer.uk/contact/index.html?submitted=true">
           <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
           <div class="field-list">
             <div class="form-item fields name required">
@@ -759,6 +758,10 @@ data-sqsp-section="fluid-engine"
               <label class="title" for="ll-contact-message">How can we help? <span class="required" aria-hidden="true">*</span></label>
               <textarea id="ll-contact-message" class="field-element" name="Message" rows="5" placeholder="Tell us what’s going on with the device, and we’ll take it from there." required></textarea>
             </div>
+            <div class="form-item ll-turnstile">
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAE92s2yvAZLzFUIK" data-theme="dark"></div>
+            </div>
+            <p class="ll-contact-error" hidden role="alert"></p>
             <div class="form-button-wrapper form-button-wrapper--align-center">
               <button type="submit" class="button sqs-system-button sqs-editable-button sqs-button-element--primary ll-contact-submit">Request My Free Diagnostic</button>
             </div>
@@ -1021,6 +1024,24 @@ data-sqsp-section="fluid-engine"
           inset 0 1px 0 rgba(255, 255, 255, 0.06);
       }
 
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-turnstile {
+        min-height: 65px;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-error {
+        margin: 0;
+        padding: 0.75rem 0.9rem;
+        border-radius: 12px;
+        background: rgba(239, 68, 68, 0.14);
+        border: 1px solid rgba(252, 165, 165, 0.4);
+        color: #fecaca;
+        font-size: 0.92rem;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-error[hidden] {
+        display: none;
+      }
+
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-button-wrapper {
         margin-top: 0.35rem;
       }
@@ -1051,6 +1072,13 @@ data-sqsp-section="fluid-engine"
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-submit:active {
         transform: translateY(0);
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-submit:disabled {
+        opacity: 0.65;
+        cursor: wait;
+        transform: none;
+        filter: none;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-success {
@@ -1614,6 +1642,71 @@ if (window.location.search.includes('submitted=true')) {
     if (message && messageEl && !messageEl.value) {
       messageEl.value = message;
     }
+  })();
+  (function submitContactViaFunction() {
+    var form = document.querySelector('.ll-contact-form');
+    if (!form) return;
+    var errorEl = form.querySelector('.ll-contact-error');
+    var submitBtn = form.querySelector('.ll-contact-submit');
+
+    function showError(message) {
+      if (!errorEl) return;
+      errorEl.hidden = false;
+      errorEl.textContent = message;
+    }
+
+    function resetTurnstile() {
+      if (window.turnstile && typeof window.turnstile.reset === 'function') {
+        window.turnstile.reset();
+      }
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (errorEl) {
+        errorEl.hidden = true;
+        errorEl.textContent = '';
+      }
+
+      var tokenInput = form.querySelector('[name="cf-turnstile-response"]');
+      var token = tokenInput && tokenInput.value;
+      if (!token) {
+        showError('Please complete the verification check and try again.');
+        return;
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'X-Requested-With': 'fetch'
+        },
+        body: new FormData(form)
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            return { ok: res.ok, data: data || {} };
+          }).catch(function () {
+            return { ok: res.ok, data: {} };
+          });
+        })
+        .then(function (result) {
+          if (result.data.success) {
+            window.location.assign(result.data.redirect || '/contact/?submitted=true');
+            return;
+          }
+          if (submitBtn) submitBtn.disabled = false;
+          resetTurnstile();
+          showError(result.data.error || 'We could not send your message. Please try again or call the workshop.');
+        })
+        .catch(function () {
+          if (submitBtn) submitBtn.disabled = false;
+          resetTurnstile();
+          showError('We could not send your message. Please try again or call the workshop.');
+        });
+    });
   })();
 }
 </script>
