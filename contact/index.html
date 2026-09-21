@@ -721,13 +721,15 @@ data-sqsp-section="fluid-engine"
             <div class="form-item fields name required">
               <fieldset>
                 <legend class="title">Name <span class="required" aria-hidden="true">*</span></legend>
-                <div class="field first-name">
-                  <div class="caption"><label class="caption-text" for="ll-contact-first">First Name</label></div>
-                  <input id="ll-contact-first" class="field-element" name="First Name" type="text" autocomplete="given-name" placeholder="Alex" required>
-                </div>
-                <div class="field last-name">
-                  <div class="caption"><label class="caption-text" for="ll-contact-last">Last Name</label></div>
-                  <input id="ll-contact-last" class="field-element" name="Last Name" type="text" autocomplete="family-name" placeholder="Taylor" required>
+                <div class="ll-name-row">
+                  <div class="field first-name">
+                    <div class="caption"><label class="caption-text" for="ll-contact-first">First Name</label></div>
+                    <input id="ll-contact-first" class="field-element" name="First Name" type="text" autocomplete="given-name" placeholder="Alex" required>
+                  </div>
+                  <div class="field last-name">
+                    <div class="caption"><label class="caption-text" for="ll-contact-last">Last Name</label></div>
+                    <input id="ll-contact-last" class="field-element" name="Last Name" type="text" autocomplete="family-name" placeholder="Taylor" required>
+                  </div>
                 </div>
               </fieldset>
             </div>
@@ -872,24 +874,53 @@ data-sqsp-section="fluid-engine"
         white-space: nowrap;
       }
 
+      /* Kill Squarespace’s 48% / float / -2% name-row layout so First/Last
+         share the same left and right edges as Email / Phone / Service. */
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields {
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        clear: both !important;
+        box-sizing: border-box !important;
+      }
+
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name fieldset {
+        display: block !important;
         border: 0 !important;
         margin: 0 !important;
         padding: 0 !important;
         min-width: 0 !important;
-        display: contents !important;
+        min-inline-size: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name {
-        display: grid !important;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-        column-gap: 0.85rem !important;
-        row-gap: 0.65rem !important;
-        align-items: start !important;
+        display: block !important;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name legend.title {
-        grid-column: 1 / -1 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        float: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-name-row {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        column-gap: 0.85rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .field,
@@ -910,15 +941,6 @@ data-sqsp-section="fluid-engine"
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .field input {
         width: 100% !important;
         max-width: 100% !important;
-        box-sizing: border-box !important;
-      }
-
-      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item,
-      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields {
-        float: none !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        clear: both !important;
         box-sizing: border-box !important;
       }
 
@@ -1114,10 +1136,9 @@ data-sqsp-section="fluid-engine"
         }
 
         /* Keep First/Last side-by-side, but with a real gap so cells don’t look fused */
-        #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name {
+        #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-name-row {
           grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
           column-gap: 0.75rem !important;
-          row-gap: 0.65rem !important;
         }
 
         #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
@@ -1138,7 +1159,7 @@ data-sqsp-section="fluid-engine"
 
       @media (max-width: 380px) {
         /* Very narrow phones: stack name fields so captions/inputs never collide */
-        #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name {
+        #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-name-row {
           grid-template-columns: 1fr !important;
           row-gap: 0.85rem !important;
         }
