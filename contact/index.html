@@ -48,7 +48,7 @@
   <link rel="stylesheet" href="/assets/css/design-tokens.css">
 <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
-<link rel="stylesheet" href="/assets/css/site-glass.css">
+<link rel="stylesheet" href="/assets/css/site-glass.css?v=contact-axis-1">
 
 <style>
 /* Coverage section: soft glass atmosphere without touching the dark hero/form */
@@ -553,7 +553,7 @@ data-sqsp-section="fluid-engine"
 
   @media (min-width: 768px) {
     .fe-block-6c1dceaebe135ff2c7df {
-      grid-area: 16/6/40/22;
+      grid-area: 16/6/40/22 !important;
       z-index: 2;
 
 }
@@ -631,7 +631,7 @@ data-sqsp-section="fluid-engine"
   @media (min-width: 768px) {
     .fe-block-yui_3_17_2_1_1780042547748_2925 {
       /* Same columns as the form (16/6/40/22) so intro + cards share one axis. */
-      grid-area: 1/6/17/22;
+      grid-area: 1/6/17/22 !important;
       z-index: 6;
 
 }
@@ -1271,6 +1271,37 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
 </div>
 
 </div>
+
+<style id="ll-contact-axis">
+/* Force intro + form onto one centred column (SQS fluid-engine otherwise
+   puts intro in cols 2–26 and the form in cols 6–22). */
+@media (min-width: 768px) {
+  .fe-682e44bcef3a173ba519019c > .fe-block-yui_3_17_2_1_1780042547748_2925 {
+    grid-column: 6 / 22 !important;
+    grid-row: 1 / 16 !important;
+    justify-self: stretch !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+  .fe-682e44bcef3a173ba519019c > .fe-block-6c1dceaebe135ff2c7df {
+    grid-column: 6 / 22 !important;
+    grid-row: 16 / 40 !important;
+    justify-self: stretch !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+.llct-intro,
+.llct-grid {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+</style>
 
 <style class="transform-vars">
     .fe-block-yui_3_17_2_1_1780042547748_2925 {
