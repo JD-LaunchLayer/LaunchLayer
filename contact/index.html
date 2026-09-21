@@ -48,7 +48,7 @@
   <link rel="stylesheet" href="/assets/css/design-tokens.css">
 <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
-<link rel="stylesheet" href="/assets/css/site-glass.css">
+<link rel="stylesheet" href="/assets/css/site-glass.css?v=contact-axis-1">
 
 <style>
 /* Coverage section: soft glass atmosphere without touching the dark hero/form */
@@ -69,6 +69,7 @@
 </style>
 
 <script>Static.COOKIE_BANNER_CAPABLE = true;</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <!-- End of Squarespace Headers -->
 
 <link rel="canonical" href="https://launchlayer.uk/contact/" />
@@ -552,7 +553,7 @@ data-sqsp-section="fluid-engine"
 
   @media (min-width: 768px) {
     .fe-block-6c1dceaebe135ff2c7df {
-      grid-area: 16/6/40/22;
+      grid-area: 16/6/40/22 !important;
       z-index: 2;
 
 }
@@ -629,7 +630,8 @@ data-sqsp-section="fluid-engine"
 
   @media (min-width: 768px) {
     .fe-block-yui_3_17_2_1_1780042547748_2925 {
-      grid-area: 1/2/17/26;
+      /* Same columns as the form (16/6/40/22) so intro + cards share one axis. */
+      grid-area: 1/6/17/22 !important;
       z-index: 6;
 
 }
@@ -712,23 +714,23 @@ data-sqsp-section="fluid-engine"
       
     >
       <div class="react-form-contents ll-contact-panel">
-        <form class="react-form-contents ll-contact-form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="96029321-6b20-4b14-abf2-a13104aa9d48">
+        <form class="react-form-contents ll-contact-form" action="/api/contact" method="POST">
           <input type="hidden" name="subject" value="New Contact Form Submission - LaunchLayer">
           <input type="hidden" name="from_name" value="LaunchLayer Website">
-          <input type="hidden" name="redirect" value="https://launchlayer.uk/contact/index.html?submitted=true">
           <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
           <div class="field-list">
             <div class="form-item fields name required">
               <fieldset>
                 <legend class="title">Name <span class="required" aria-hidden="true">*</span></legend>
-                <div class="field first-name">
-                  <div class="caption"><label class="caption-text" for="ll-contact-first">First Name</label></div>
-                  <input id="ll-contact-first" class="field-element" name="First Name" type="text" autocomplete="given-name" placeholder="Alex" required>
-                </div>
-                <div class="field last-name">
-                  <div class="caption"><label class="caption-text" for="ll-contact-last">Last Name</label></div>
-                  <input id="ll-contact-last" class="field-element" name="Last Name" type="text" autocomplete="family-name" placeholder="Taylor" required>
+                <div class="ll-name-row">
+                  <div class="field first-name">
+                    <div class="caption"><label class="caption-text" for="ll-contact-first">First Name</label></div>
+                    <input id="ll-contact-first" class="field-element" name="First Name" type="text" autocomplete="given-name" placeholder="Alex" required>
+                  </div>
+                  <div class="field last-name">
+                    <div class="caption"><label class="caption-text" for="ll-contact-last">Last Name</label></div>
+                    <input id="ll-contact-last" class="field-element" name="Last Name" type="text" autocomplete="family-name" placeholder="Taylor" required>
+                  </div>
                 </div>
               </fieldset>
             </div>
@@ -759,6 +761,10 @@ data-sqsp-section="fluid-engine"
               <label class="title" for="ll-contact-message">How can we help? <span class="required" aria-hidden="true">*</span></label>
               <textarea id="ll-contact-message" class="field-element" name="Message" rows="5" placeholder="Tell us what’s going on with the device, and we’ll take it from there." required></textarea>
             </div>
+            <div class="form-item ll-turnstile">
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAE92s2yvAZLzFUIK" data-theme="dark"></div>
+            </div>
+            <p class="ll-contact-error" hidden role="alert"></p>
             <div class="form-button-wrapper form-button-wrapper--align-center">
               <button type="submit" class="button sqs-system-button sqs-editable-button sqs-button-element--primary ll-contact-submit">Request My Free Diagnostic</button>
             </div>
@@ -869,24 +875,53 @@ data-sqsp-section="fluid-engine"
         white-space: nowrap;
       }
 
+      /* Kill Squarespace’s 48% / float / -2% name-row layout so First/Last
+         share the same left and right edges as Email / Phone / Service. */
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item,
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields {
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        clear: both !important;
+        box-sizing: border-box !important;
+      }
+
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name fieldset {
+        display: block !important;
         border: 0 !important;
         margin: 0 !important;
         padding: 0 !important;
         min-width: 0 !important;
-        display: contents !important;
+        min-inline-size: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name {
-        display: grid !important;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
-        column-gap: 0.85rem !important;
-        row-gap: 0.65rem !important;
-        align-items: start !important;
+        display: block !important;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name legend.title {
-        grid-column: 1 / -1 !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        float: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-name-row {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        column-gap: 0.85rem !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .field,
@@ -907,15 +942,6 @@ data-sqsp-section="fluid-engine"
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .field input {
         width: 100% !important;
         max-width: 100% !important;
-        box-sizing: border-box !important;
-      }
-
-      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item,
-      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields {
-        float: none !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        clear: both !important;
         box-sizing: border-box !important;
       }
 
@@ -1021,6 +1047,24 @@ data-sqsp-section="fluid-engine"
           inset 0 1px 0 rgba(255, 255, 255, 0.06);
       }
 
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-turnstile {
+        min-height: 65px;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-error {
+        margin: 0;
+        padding: 0.75rem 0.9rem;
+        border-radius: 12px;
+        background: rgba(239, 68, 68, 0.14);
+        border: 1px solid rgba(252, 165, 165, 0.4);
+        color: #fecaca;
+        font-size: 0.92rem;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-error[hidden] {
+        display: none;
+      }
+
       #block-6c1dceaebe135ff2c7df .ll-contact-form .form-button-wrapper {
         margin-top: 0.35rem;
       }
@@ -1051,6 +1095,13 @@ data-sqsp-section="fluid-engine"
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-submit:active {
         transform: translateY(0);
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-submit:disabled {
+        opacity: 0.65;
+        cursor: wait;
+        transform: none;
+        filter: none;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-success {
@@ -1086,10 +1137,9 @@ data-sqsp-section="fluid-engine"
         }
 
         /* Keep First/Last side-by-side, but with a real gap so cells don’t look fused */
-        #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name {
+        #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-name-row {
           grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
           column-gap: 0.75rem !important;
-          row-gap: 0.65rem !important;
         }
 
         #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]),
@@ -1110,7 +1160,7 @@ data-sqsp-section="fluid-engine"
 
       @media (max-width: 380px) {
         /* Very narrow phones: stack name fields so captions/inputs never collide */
-        #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name {
+        #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-name-row {
           grid-template-columns: 1fr !important;
           row-gap: 0.85rem !important;
         }
@@ -1221,6 +1271,37 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
 </div>
 
 </div>
+
+<style id="ll-contact-axis">
+/* Force intro + form onto one centred column (SQS fluid-engine otherwise
+   puts intro in cols 2–26 and the form in cols 6–22). */
+@media (min-width: 768px) {
+  .fe-682e44bcef3a173ba519019c > .fe-block-yui_3_17_2_1_1780042547748_2925 {
+    grid-column: 6 / 22 !important;
+    grid-row: 1 / 16 !important;
+    justify-self: stretch !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+  .fe-682e44bcef3a173ba519019c > .fe-block-6c1dceaebe135ff2c7df {
+    grid-column: 6 / 22 !important;
+    grid-row: 16 / 40 !important;
+    justify-self: stretch !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+.llct-intro,
+.llct-grid {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+</style>
 
 <style class="transform-vars">
     .fe-block-yui_3_17_2_1_1780042547748_2925 {
@@ -1614,6 +1695,71 @@ if (window.location.search.includes('submitted=true')) {
     if (message && messageEl && !messageEl.value) {
       messageEl.value = message;
     }
+  })();
+  (function submitContactViaFunction() {
+    var form = document.querySelector('.ll-contact-form');
+    if (!form) return;
+    var errorEl = form.querySelector('.ll-contact-error');
+    var submitBtn = form.querySelector('.ll-contact-submit');
+
+    function showError(message) {
+      if (!errorEl) return;
+      errorEl.hidden = false;
+      errorEl.textContent = message;
+    }
+
+    function resetTurnstile() {
+      if (window.turnstile && typeof window.turnstile.reset === 'function') {
+        window.turnstile.reset();
+      }
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (errorEl) {
+        errorEl.hidden = true;
+        errorEl.textContent = '';
+      }
+
+      var tokenInput = form.querySelector('[name="cf-turnstile-response"]');
+      var token = tokenInput && tokenInput.value;
+      if (!token) {
+        showError('Please complete the verification check and try again.');
+        return;
+      }
+
+      if (submitBtn) submitBtn.disabled = true;
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'X-Requested-With': 'fetch'
+        },
+        body: new FormData(form)
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            return { ok: res.ok, data: data || {} };
+          }).catch(function () {
+            return { ok: res.ok, data: {} };
+          });
+        })
+        .then(function (result) {
+          if (result.data.success) {
+            window.location.assign(result.data.redirect || '/contact/?submitted=true');
+            return;
+          }
+          if (submitBtn) submitBtn.disabled = false;
+          resetTurnstile();
+          showError(result.data.error || 'We could not send your message. Please try again or call the workshop.');
+        })
+        .catch(function () {
+          if (submitBtn) submitBtn.disabled = false;
+          resetTurnstile();
+          showError('We could not send your message. Please try again or call the workshop.');
+        });
+    });
   })();
 }
 </script>

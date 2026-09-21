@@ -37,6 +37,10 @@ function apexLocation(pathname: string, search: string): string {
 
 export default async (request: Request) => {
   const url = new URL(request.url);
+  // Leave /api/* for serverless functions (POST must not 301 to a slashed URL).
+  if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
+    return;
+  }
   if (hostOf(request) !== WWW_HOST && url.hostname.toLowerCase() !== WWW_HOST) {
     return; // apex: pass through (Pretty URLs)
   }

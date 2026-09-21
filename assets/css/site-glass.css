@@ -191,9 +191,12 @@ body.llsite-body .page-section > .content-wrapper {
   --ll-font-display: var(--font-display);
   --ll-font-body: var(--font-sans);
 
-  max-width: 1120px;
+  /* Fill the same fluid-engine column as .ll-contact-shell / the form panel. */
+  width: 100%;
+  max-width: none;
   margin: 28px auto 8px;
-  padding: 0 16px;
+  padding: 0;
+  box-sizing: border-box;
   font-family: var(--ll-font-body);
   color: var(--ll-ink);
   text-align: left;
@@ -232,8 +235,10 @@ body.llsite-body .page-section > .content-wrapper {
   grid-template-columns: 1fr;
   gap: 14px;
   text-align: left;
-  max-width: 900px;
+  width: 100%;
+  max-width: none;
   margin: 0;
+  box-sizing: border-box;
 }
 
 @media (min-width: 700px) {
