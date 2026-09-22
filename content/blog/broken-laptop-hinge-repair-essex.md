@@ -3,7 +3,7 @@ slug: broken-laptop-hinge-repair-essex
 title: Broken Laptop Hinge Repair Essex | Wickford Workshop
 headline: Broken Laptop Hinge in Essex? Repair It Before the Screen Goes Too
 description: Loose or snapped laptop hinge in Wickford, Rayleigh or Basildon? Why you should stop opening the lid, how hinges kill screens and cables, and when a repair beats a new machine.
-date: 2026-10-21
+date: 2026-12-23
 draft: true
 category: Useful Tips
 category_path: Useful+Tips
