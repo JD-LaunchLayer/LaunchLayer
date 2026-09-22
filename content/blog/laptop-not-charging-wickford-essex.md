@@ -3,7 +3,7 @@ slug: laptop-not-charging-wickford-essex
 title: Laptop Not Charging Wickford | Port, Brick and Battery
 headline: Laptop Plugged In But Not Charging? A Wickford Repair Guide
 description: Wickford laptop plugged in but the battery will not charge? Learn how to tell a dead brick from a broken DC jack or a swollen battery before you buy the wrong part.
-date: 2026-09-23
+date: 2026-12-16
 draft: true
 category: Useful Tips
 category_path: Useful+Tips
