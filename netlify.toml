@@ -1,10 +1,46 @@
-# www → apex + trailing slash is implemented in
-# netlify/edge-functions/www-apex-slash.ts (inline config).
-# It runs only for Host www.launchlayer.uk, and not for /assets/*,
-# so a Deno failure cannot turn static files into an empty 503.
-# Apex Host stays a no-op here: Pretty URLs still own /path → /path/.
-# Returning a 301 from that function ends the chain so the domain-level
-# www→apex hop cannot emit a no-slash first Location (#88 was 2 hops).
+# www → apex + trailing slash in one 301. The function returns that 301
+# and ends the chain, so the domain-level www→apex hop cannot emit a
+# no-slash first Location (#88 was 2 hops).
+#
+# Apex Host is not redirected here: Pretty URLs still own /path → /path/.
+# /assets/* must be excluded. A path of "/*" otherwise runs this Deno
+# function before every CSS, font, and image is served. When that runtime
+# fails, www responds 500 ("Error - Request ID") and an apex cache miss
+# comes back as an empty 503 (fwd-status=503). The domain-level www→apex
+# redirect already preserves asset paths in one hop.
+#
+# excludedPath lives here, not only in the function file. An inline `path`
+# replaces this declaration and drops excludedPath.
+
+[[edge_functions]]
+  function = "www-apex-slash"
+  path = "/*"
+  excludedPath = [
+    "/assets/*",
+    "/*.css",
+    "/*.js",
+    "/*.mjs",
+    "/*.woff",
+    "/*.woff2",
+    "/*.png",
+    "/*.jpg",
+    "/*.jpeg",
+    "/*.webp",
+    "/*.avif",
+    "/*.gif",
+    "/*.svg",
+    "/*.ico",
+    "/*.txt",
+    "/*.xml",
+    "/*.map",
+    "/*.json",
+    "/api/*",
+    "/.netlify/*",
+  ]
+
+  # Apex never enters Deno. Pretty URLs still add the trailing slash there.
+  [edge_functions.header]
+    host = "^www\\.launchlayer\\.uk(:[0-9]+)?$"
 
 # Serverless functions (contact form / Turnstile) sit beside edge functions.
 [functions]

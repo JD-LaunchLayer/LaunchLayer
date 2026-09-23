@@ -1,16 +1,10 @@
 // www.launchlayer.uk → https://launchlayer.uk{path}/ in one 301.
 //
-// Declared inline so this file is the only route config. Apex requests
-// never invoke it (Host filter): Pretty URLs still own /path → /path/.
-// /assets/* and other static files never invoke it either. They were on
-// path "/*", so every CSS/font/image request entered the Edge Functions
-// runtime before the static file was served. That runtime fails closed
-// (www: 500 "Error - Request ID"; apex cache miss: empty 503 with
-// fwd-status=503). The domain-level www→apex redirect already preserves
-// asset paths in one hop, which is all these files need.
+// Route (path + excludedPath) is in netlify.toml. Do not also export `path`
+// here: the bundler then replaces the toml declaration and drops exclusions.
 //
-// onError bypass: if Deno throws on a www HTML request, fall through to
-// that same domain redirect instead of the generic error page.
+// onError bypass: if Deno throws on a www HTML request, fall through to the
+// domain-level www→apex redirect instead of the generic error page.
 
 const WWW_HOST = "www.launchlayer.uk";
 const APEX_ORIGIN = "https://launchlayer.uk";
@@ -46,23 +40,6 @@ function apexLocation(pathname: string, search: string): string {
 }
 
 export const config = {
-  path: "/*",
-  excludedPath: [
-    "/assets",
-    "/assets/*",
-    "/api",
-    "/api/*",
-    "/.netlify/*",
-    "/favicon.ico",
-    "/robots.txt",
-    "/sitemap.xml",
-    "/llms.txt",
-  ],
-  // Any path whose last segment has a file extension (css, woff2, webp, …).
-  excludedPattern: "/.*\\.[A-Za-z0-9]{1,16}$",
-  header: {
-    host: "^www\\.launchlayer\\.uk(?::[0-9]+)?$",
-  },
   onError: "bypass",
 };
 
