@@ -1,10 +1,10 @@
-# Edge Functions run before _redirects. Returning a 301 ends the
-# request chain so Netlify's domain-level www→apex hop cannot emit
-# a no-slash first Location (that is why #88 still 2-hops live).
-
-[[edge_functions]]
-function = "www-apex-slash"
-path = "/*"
+# www → apex + trailing slash is implemented in
+# netlify/edge-functions/www-apex-slash.ts (inline config).
+# It runs only for Host www.launchlayer.uk, and not for /assets/*,
+# so a Deno failure cannot turn static files into an empty 503.
+# Apex Host stays a no-op here: Pretty URLs still own /path → /path/.
+# Returning a 301 from that function ends the chain so the domain-level
+# www→apex hop cannot emit a no-slash first Location (#88 was 2 hops).
 
 # Serverless functions (contact form / Turnstile) sit beside edge functions.
 [functions]
