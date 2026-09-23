@@ -41,11 +41,13 @@ CATEGORY_CLASS = {
 }
 LISTING_PAGES = {
     "all": ROOT / "blog" / "index.html",
-    "Useful Tips": ROOT / "blog" / "category" / "useful+tips" / "index.html",
-    "Cybersecurity": ROOT / "blog" / "category" / "cybersecurity" / "index.html",
-    "Business IT": ROOT / "blog" / "category" / "business+it" / "index.html",
-    "PC Gaming": ROOT / "blog" / "category" / "pc+gaming" / "index.html",
-    "Wickford Community": ROOT / "blog" / "category" / "wickford+community" / "index.html",
+    # On-disk folders stay Title-Case. Netlify already serves the lowercase
+    # URL and 301s the Title-Case URL. A case-only rename fails the deploy.
+    "Useful Tips": ROOT / "blog" / "category" / "Useful+Tips" / "index.html",
+    "Cybersecurity": ROOT / "blog" / "category" / "Cybersecurity" / "index.html",
+    "Business IT": ROOT / "blog" / "category" / "Business+IT" / "index.html",
+    "PC Gaming": ROOT / "blog" / "category" / "PC+Gaming" / "index.html",
+    "Wickford Community": ROOT / "blog" / "category" / "Wickford+Community" / "index.html",
 }
 
 REQUIRED = (
