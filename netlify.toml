@@ -38,10 +38,6 @@
     "/.netlify/*",
   ]
 
-  # Apex never enters Deno. Pretty URLs still add the trailing slash there.
-  [edge_functions.header]
-    host = "^www\\.launchlayer\\.uk(:[0-9]+)?$"
-
 # Serverless functions (contact form / Turnstile) sit beside edge functions.
 [functions]
   directory = "netlify/functions"
