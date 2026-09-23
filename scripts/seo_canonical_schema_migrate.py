@@ -46,7 +46,7 @@ CANONICAL_GRAPH: dict[str, Any] = {
             "telephone": "+447367652987",
             "email": "hello@launchlayer.uk",
             "image": "https://launchlayer.uk/assets/meta/meta-520e4abe.png",
-            "priceRange": "£35 - £250",
+            "priceRange": "£49 - £250",
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "5",
