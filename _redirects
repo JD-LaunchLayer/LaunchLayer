@@ -50,6 +50,7 @@ https://www.launchlayer.uk/blog/laptop-battery-replacement-wickford  https://lau
 https://www.launchlayer.uk/blog/laptop-fan-noise-fix-essex  https://launchlayer.uk/blog/laptop-fan-noise-fix-essex/  301!
 https://www.launchlayer.uk/blog/laptop-not-turning-on-slow-fix  https://launchlayer.uk/blog/laptop-not-turning-on-slow-fix/  301!
 https://www.launchlayer.uk/blog/laptop-repair-vs-replace-sustainability-essex  https://launchlayer.uk/blog/laptop-repair-vs-replace-sustainability-essex/  301!
+https://www.launchlayer.uk/blog/laptop-ssd-upgrade-wickford-essex  https://launchlayer.uk/blog/laptop-ssd-upgrade-wickford-essex/  301!
 https://www.launchlayer.uk/blog/launchlayer-donates-laptops-to-help-children-in-ukraine-continue-their-education  https://launchlayer.uk/blog/launchlayer-donates-laptops-to-help-children-in-ukraine-continue-their-education/  301!
 https://www.launchlayer.uk/blog/launchlayer-featured-in-childs-wish-magazine-supporting-local-families-in-essex  https://launchlayer.uk/blog/launchlayer-featured-in-childs-wish-magazine-supporting-local-families-in-essex/  301!
 https://www.launchlayer.uk/blog/launchlayer-vs-high-street-repair  https://launchlayer.uk/blog/launchlayer-vs-high-street-repair/  301!
@@ -174,3 +175,35 @@ https://www.launchlayer.uk/wickford-virus-removal  https://launchlayer.uk/wickfo
 /liquid-damage-repair-brentwood/      /brentwood-pc-repair/#liquid-damage     301!
 /macbook-repair-brentwood             /brentwood-pc-repair/#macbook-repair    301!
 /macbook-repair-brentwood/            /brentwood-pc-repair/#macbook-repair    301!
+
+# =============================================================================
+# PRECISE LEGACY 301s (23 Sep 2026 audit) — never send unknown 404s to /
+# =============================================================================
+
+# Old /services/pc-repair and /services/laptop-repair stubs. Hard 404 today.
+/services/pc-repair                  /wickford-pc-repair/  301!
+/services/pc-repair/                 /wickford-pc-repair/  301!
+/services/pc-repair/pricing          /services/  301!
+/services/pc-repair/pricing/         /services/  301!
+/services/laptop-repair              /wickford-laptop-repair/  301!
+/services/laptop-repair/             /wickford-laptop-repair/  301!
+/services/laptop-repair/pricing      /services/  301!
+/services/laptop-repair/pricing/     /services/  301!
+
+# Old Squarespace blog slugs still seen in Search Console.
+/blog/why-your-laptop-is-loud-hot-or-overheating-and-how-to-fix-it-oPwe3      /blog/fix-overheating-laptop-wickford-essex/  301!
+/blog/why-your-laptop-is-loud-hot-or-overheating-and-how-to-fix-it-oPwe3/     /blog/fix-overheating-laptop-wickford-essex/  301!
+/blog/what-parents-need-to-know-about-roblox-minecraft-amp-fortnite           /blog/what-parents-really-need-to-know-about-roblox-minecraft-amp-fortnite/  301!
+/blog/what-parents-need-to-know-about-roblox-minecraft-amp-fortnite/          /blog/what-parents-really-need-to-know-about-roblox-minecraft-amp-fortnite/  301!
+
+# Blog category hubs: live URL is lowercase. Title-Case was the old canonical.
+/blog/category/Business+IT            /blog/category/business+it/  301!
+/blog/category/Business+IT/           /blog/category/business+it/  301!
+/blog/category/Useful+Tips            /blog/category/useful+tips/  301!
+/blog/category/Useful+Tips/           /blog/category/useful+tips/  301!
+/blog/category/PC+Gaming              /blog/category/pc+gaming/  301!
+/blog/category/PC+Gaming/             /blog/category/pc+gaming/  301!
+/blog/category/Wickford+Community     /blog/category/wickford+community/  301!
+/blog/category/Wickford+Community/    /blog/category/wickford+community/  301!
+/blog/category/Cybersecurity          /blog/category/cybersecurity/  301!
+/blog/category/Cybersecurity/         /blog/category/cybersecurity/  301!

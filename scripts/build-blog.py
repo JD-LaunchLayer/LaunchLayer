@@ -25,7 +25,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / "content" / "blog"
 OUT_BLOG = ROOT / "blog"
-SITE = "https://www.launchlayer.uk"
+SITE = "https://launchlayer.uk"
 FEED_START = "<!-- ll-md-feed:start -->"
 FEED_END = "<!-- ll-md-feed:end -->"
 LEGACY_NEXT_SLUG = "fix-pc-game-stuttering-fps-drops-essex"
@@ -41,11 +41,11 @@ CATEGORY_CLASS = {
 }
 LISTING_PAGES = {
     "all": ROOT / "blog" / "index.html",
-    "Useful Tips": ROOT / "blog" / "category" / "Useful+Tips" / "index.html",
-    "Cybersecurity": ROOT / "blog" / "category" / "Cybersecurity" / "index.html",
-    "Business IT": ROOT / "blog" / "category" / "Business+IT" / "index.html",
-    "PC Gaming": ROOT / "blog" / "category" / "PC+Gaming" / "index.html",
-    "Wickford Community": ROOT / "blog" / "category" / "Wickford+Community" / "index.html",
+    "Useful Tips": ROOT / "blog" / "category" / "useful+tips" / "index.html",
+    "Cybersecurity": ROOT / "blog" / "category" / "cybersecurity" / "index.html",
+    "Business IT": ROOT / "blog" / "category" / "business+it" / "index.html",
+    "PC Gaming": ROOT / "blog" / "category" / "pc+gaming" / "index.html",
+    "Wickford Community": ROOT / "blog" / "category" / "wickford+community" / "index.html",
 }
 
 REQUIRED = (
@@ -132,7 +132,7 @@ def listing_card(meta: dict[str, str], index: int = 1) -> str:
     avif = f"/assets/images/thumbs/{stem}-w800.avif"
     webp = f"/assets/images/thumbs/{stem}-w800.webp"
     meta_bits = f'''  <span class="blog-categories-list">
-          <a href="/blog/category/{category_path}" class="blog-categories">{category}</a>
+          <a href="/blog/category/{category_path.lower()}/" class="blog-categories">{category}</a>
       </span>
 <span class="blog-author">{author}</span>
     <time class="blog-date" pubdate data-animation-role="date">{shown}</time>'''
@@ -271,11 +271,16 @@ def assert_listing_card_emitter() -> None:
         "blog-meta-secondary",
         "blog-excerpt",
         'data-loader="sqs"',
+        'href="/blog/category/useful+tips/"',
     ):
         if marker not in card:
             raise PublishGuardError(
                 f"listing_card() lost legacy card shape marker {marker!r}."
             )
+    if SITE != "https://launchlayer.uk":
+        raise PublishGuardError(
+            "SITE must be the apex host https://launchlayer.uk (no www)."
+        )
 
 
 def generated_post_paths() -> list[Path]:
@@ -287,6 +292,34 @@ def generated_post_paths() -> list[Path]:
     return paths
 
 
+_CANONICAL_HREF = re.compile(
+    r'<link rel="canonical" href="(https://launchlayer\.uk/blog/[a-z0-9-]+/)"'
+)
+_OG_URL = re.compile(
+    r'<meta property="og:url" content="(https://launchlayer\.uk/blog/[a-z0-9-]+/)"'
+)
+
+
+def assert_apex_slash_canonical(html_text: str, path: Path | None = None) -> None:
+    """Builder posts must self-canonicalise to the apex URL with a trailing slash."""
+    where = _rel(path) if path else "generated post"
+    canonical = _CANONICAL_HREF.search(html_text)
+    og_url = _OG_URL.search(html_text)
+    if not canonical:
+        raise PublishGuardError(
+            f"{where}: canonical must be https://launchlayer.uk/blog/<slug>/ "
+            "(apex, trailing slash, no www)."
+        )
+    if not og_url or og_url.group(1) != canonical.group(1):
+        raise PublishGuardError(
+            f"{where}: og:url must match the apex trailing-slash canonical."
+        )
+    if "https://www.launchlayer.uk" in html_text:
+        raise PublishGuardError(
+            f"{where}: still contains a www.launchlayer.uk URL."
+        )
+
+
 def check_generated_output() -> None:
     assert_listing_card_emitter()
     posts = generated_post_paths()
@@ -295,7 +328,9 @@ def check_generated_output() -> None:
             "No generated Markdown posts found under blog/<slug>/index.html."
         )
     for path in posts:
-        assert_post_chrome(path.read_text(encoding="utf-8"), path)
+        text = path.read_text(encoding="utf-8")
+        assert_post_chrome(text, path)
+        assert_apex_slash_canonical(text, path)
     for path in LISTING_PAGES.values():
         if path.is_file():
             assert_listing_feed(path.read_text(encoding="utf-8"), path)
@@ -446,8 +481,8 @@ def article_schema(meta: dict[str, str], url: str) -> str:
                 "@type": "BreadcrumbList",
                 "@id": f"{url}#breadcrumb",
                 "itemListElement": [
-                    {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE},
-                    {"@type": "ListItem", "position": 2, "name": "Blog", "item": f"{SITE}/blog"},
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
+                    {"@type": "ListItem", "position": 2, "name": "Blog", "item": f"{SITE}/blog/"},
                     {"@type": "ListItem", "position": 3, "name": meta["headline"], "item": url},
                 ],
             },
@@ -478,7 +513,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
         output_format="html",
     )
     slug = meta["slug"]
-    url = f"{SITE}/blog/{slug}"
+    url = f"{SITE}/blog/{slug}/"
     title = html.escape(meta["title"])
     headline = html.escape(meta["headline"])
     description = html.escape(meta["description"])
@@ -570,7 +605,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
               <h1 class="entry-title" itemprop="headline">{headline}</h1>
             </div>
             <div class="blog-item-meta-wrapper">
-              <a href="/blog/category/{category_path}" class="blog-item-category">{category}</a>
+              <a href="/blog/category/{category_path.lower()}/" class="blog-item-category">{category}</a>
               <time class="dt-published" datetime="{published}" itemprop="datePublished">{display_date}</time>
               <span itemprop="author">{author}</span>
             </div>
