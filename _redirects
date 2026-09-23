@@ -197,13 +197,15 @@ https://www.launchlayer.uk/wickford-virus-removal  https://launchlayer.uk/wickfo
 /blog/what-parents-need-to-know-about-roblox-minecraft-amp-fortnite/          /blog/what-parents-really-need-to-know-about-roblox-minecraft-amp-fortnite/  301!
 
 # Blog category hubs: live URL is lowercase. Title-Case was the old canonical.
-/blog/category/Business+IT            /blog/category/business+it/  301!
-/blog/category/Business+IT/           /blog/category/business+it/  301!
-/blog/category/Useful+Tips            /blog/category/useful+tips/  301!
-/blog/category/Useful+Tips/           /blog/category/useful+tips/  301!
-/blog/category/PC+Gaming              /blog/category/pc+gaming/  301!
-/blog/category/PC+Gaming/             /blog/category/pc+gaming/  301!
-/blog/category/Wickford+Community     /blog/category/wickford+community/  301!
-/blog/category/Wickford+Community/    /blog/category/wickford+community/  301!
-/blog/category/Cybersecurity          /blog/category/cybersecurity/  301!
-/blog/category/Cybersecurity/         /blog/category/cybersecurity/  301!
+# Plus signs must be %2B. A raw "+" is a special character and Netlify
+# rejects the whole deploy while parsing _redirects.
+/blog/category/Business%2BIT            /blog/category/business%2Bit/  301!
+/blog/category/Business%2BIT/           /blog/category/business%2Bit/  301!
+/blog/category/Useful%2BTips            /blog/category/useful%2Btips/  301!
+/blog/category/Useful%2BTips/           /blog/category/useful%2Btips/  301!
+/blog/category/PC%2BGaming              /blog/category/pc%2Bgaming/  301!
+/blog/category/PC%2BGaming/             /blog/category/pc%2Bgaming/  301!
+/blog/category/Wickford%2BCommunity     /blog/category/wickford%2Bcommunity/  301!
+/blog/category/Wickford%2BCommunity/    /blog/category/wickford%2Bcommunity/  301!
+/blog/category/Cybersecurity            /blog/category/cybersecurity/  301!
+/blog/category/Cybersecurity/           /blog/category/cybersecurity/  301!
