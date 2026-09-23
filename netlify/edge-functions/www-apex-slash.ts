@@ -40,12 +40,7 @@ function apexLocation(pathname: string, search: string): string {
 }
 
 export const config = {
-  // Host filter stays inline. netlify.toml on this site rejects `header`
-  // on [[edge_functions]] (unknown property), which fails the deploy.
-  // No `path` here, so this merges onto the toml route instead of replacing it.
-  header: {
-    host: "^www\\.launchlayer\\.uk(:[0-9]+)?$",
-  },
+  // Do not set path or pattern here. That replaces the toml route.
   onError: "bypass",
 };
 
