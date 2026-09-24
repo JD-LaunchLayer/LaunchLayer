@@ -1,10 +1,18 @@
-# Edge Functions run before _redirects. Returning a 301 ends the
-# request chain so Netlify's domain-level www→apex hop cannot emit
-# a no-slash first Location (that is why #88 still 2-hops live).
-
+# www → apex + trailing slash in one 301. The function returns that 301
+# and ends the chain, so the domain-level www→apex hop cannot emit a
+# no-slash first Location (#88 was 2 hops). Apex is a no-op inside the
+# function: Pretty URLs still own /path → /path/.
+#
+# Do not use path = "/*". That runs Deno before every static file. When
+# the runtime fails, www returns 500 ("Error - Request ID") and an apex
+# cache miss comes back as an empty 503 (fwd-status=503). excludedPath
+# did not stop those requests on this site. Every public page path is
+# extension-less; CSS, fonts, and images contain a dot, so this pattern
+# never matches them. The domain-level www→apex redirect still preserves
+# asset paths in one hop.
 [[edge_functions]]
-function = "www-apex-slash"
-path = "/*"
+  function = "www-apex-slash"
+  pattern = "^/[^.]*$"
 
 # Serverless functions (contact form / Turnstile) sit beside edge functions.
 [functions]

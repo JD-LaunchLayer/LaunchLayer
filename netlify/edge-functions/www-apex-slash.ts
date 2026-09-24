@@ -1,6 +1,10 @@
 // www.launchlayer.uk → https://launchlayer.uk{path}/ in one 301.
-// Apex Host is a no-op so Pretty URLs still own /path → /path/.
-// /assets/* and file-extension paths stay path-preserving (no forced slash).
+//
+// Route (path + excludedPath) is in netlify.toml. Do not also export `path`
+// here: the bundler then replaces the toml declaration and drops exclusions.
+//
+// onError bypass: if Deno throws on a www HTML request, fall through to the
+// domain-level www→apex redirect instead of the generic error page.
 
 const WWW_HOST = "www.launchlayer.uk";
 const APEX_ORIGIN = "https://launchlayer.uk";
@@ -34,6 +38,11 @@ function apexLocation(pathname: string, search: string): string {
   const slashed = pathname.endsWith("/") ? pathname : `${pathname}/`;
   return `${APEX_ORIGIN}${slashed}${query}`;
 }
+
+export const config = {
+  // Do not set path or pattern here. That replaces the toml route.
+  onError: "bypass",
+};
 
 export default async (request: Request) => {
   const url = new URL(request.url);
