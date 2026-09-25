@@ -534,14 +534,21 @@ svg:not([width]) {
     column-gap: 12px;
     row-gap: 12px;
     columns: auto;
-    height: 1064px;
+    height: 1080px;
   }
 
   .service-category-grid:not(:has(> .service-category-card[hidden])) > .service-category-card {
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: calc(50% - 6px);
     margin: 0;
     flex: 0 0 auto;
+  }
+
+  /* Let the lower card in each column take spare height so the columns end level. */
+  .service-category-grid:not(:has(> .service-category-card[hidden])) > .service-category-card:nth-child(3),
+  .service-category-grid:not(:has(> .service-category-card[hidden])) > .service-category-card:nth-child(4) {
+    flex-grow: 1;
   }
 
   .service-category-grid:not(:has(> .service-category-card[hidden])) > .service-category-card:nth-child(1) { order: 1; }
@@ -552,13 +559,13 @@ svg:not([width]) {
 
 @media (min-width: 768px) {
   .service-category-grid:not(:has(> .service-category-card[hidden])) {
-    height: 992px;
+    height: 1020px;
   }
 }
 
 @media (min-width: 880px) {
   .service-category-grid:not(:has(> .service-category-card[hidden])) {
-    height: 928px;
+    height: 972px;
   }
 }
 

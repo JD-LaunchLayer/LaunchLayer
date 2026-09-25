@@ -171,7 +171,7 @@
   "aliases": [
     {
       "terms": ["blue screen", "bsod", "blue screen of death"],
-      "services": ["diagnostics", "windows-reinstall", "virus", "general-fix"]
+      "services": ["diagnostics", "windows-reinstall", "virus", "software-fix"]
     },
     {
       "terms": ["black screen", "blank screen", "no display", "screen gone black"],
@@ -231,7 +231,7 @@
     },
     {
       "terms": ["scam call", "support scam", "someone remote access"],
-      "services": ["virus", "general-fix"]
+      "services": ["virus", "software-fix"]
     },
     {
       "terms": ["lost files", "deleted files", "recover photos", "hard drive failed"],
@@ -263,7 +263,7 @@
     },
     {
       "terms": ["wifi not working", "can't connect", "cant connect", "no internet"],
-      "services": ["wifi", "general-fix"]
+      "services": ["wifi", "software-fix"]
     },
     {
       "terms": ["not sure", "don't know", "dont know", "something wrong"],
@@ -276,6 +276,10 @@
     {
       "terms": ["accidental damage", "dropped laptop", "dropped my laptop", "dropped it"],
       "services": ["insurance-report", "diagnostics", "screen", "liquid"]
+    },
+    {
+      "terms": ["general fix", "hourly", "labour"],
+      "services": ["hardware-fix", "software-fix"]
     }
   ],
   "groups": [
@@ -571,6 +575,20 @@
       "schemaMinPrice": "49"
     },
     {
+      "id": "hardware-fix",
+      "category": "hardware",
+      "title": "General Hardware Fix",
+      "blurb": "One-off hardware labour in the workshop — up to 30 minutes of hands-on time.",
+      "priceKind": "fixed",
+      "priceLabel": "£55",
+      "priceNote": "/ 30 mins",
+      "href": "/contact",
+      "cta": "Ask about a hardware fix",
+      "problems": [],
+      "keywords": "hardware fix labour hourly general fix hands on workshop",
+      "schemaPrice": "55"
+    },
+    {
       "id": "liquid",
       "category": "hardware",
       "title": "Liquid Spill Damage Repair",
@@ -667,18 +685,18 @@
       "schemaMinPrice": "69"
     },
     {
-      "id": "general-fix",
+      "id": "software-fix",
       "category": "software",
-      "title": "General Fix, Settings & Configuration",
+      "title": "General Software Fix",
       "blurb": "BIOS tweaks, printer quirks, email accounts, browser issues or one-off settings jobs — up to 30 minutes of hands-on workshop time.",
       "priceKind": "fixed",
-      "priceLabel": "£55",
+      "priceLabel": "£45",
       "priceNote": "/ 30 mins",
       "href": "/contact",
-      "cta": "Ask about a custom fix",
+      "cta": "Ask about a software fix",
       "problems": [],
-      "keywords": "settings configuration bios printers email drivers software help",
-      "schemaPrice": "55"
+      "keywords": "settings configuration bios printers email drivers software help general fix hourly labour",
+      "schemaPrice": "45"
     },
     {
       "id": "wifi",
@@ -974,6 +992,17 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
+            "name": "General Hardware Fix",
+            "description": "One-off hardware labour in the workshop — up to 30 minutes of hands-on time.",
+            "url": "https://launchlayer.uk/contact"
+          },
+          "price": "55",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
             "name": "Liquid Spill Damage Repair",
             "description": "Coffee, water or wine on the keyboard? Power off immediately and bring it in — early ultrasonic cleaning dramatically improves recovery odds.",
             "url": "https://launchlayer.uk/liquid-damage-repair-wickford"
@@ -1038,11 +1067,11 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "General Fix, Settings & Configuration",
+            "name": "General Software Fix",
             "description": "BIOS tweaks, printer quirks, email accounts, browser issues or one-off settings jobs — up to 30 minutes of hands-on workshop time.",
             "url": "https://launchlayer.uk/contact"
           },
-          "price": "55",
+          "price": "45",
           "priceCurrency": "GBP"
         },
         {
@@ -1312,6 +1341,10 @@
               <span class="service-list-title">General Hardware &amp; Component Repair</span>
               <span class="service-list-price">from £49</span>
             </a>
+            <a class="service-list-row" href="/contact" data-service-id="hardware-fix">
+              <span class="service-list-title">General Hardware Fix</span>
+              <span class="service-list-price">£55 / 30 mins</span>
+            </a>
             <a class="service-list-row" href="/liquid-damage-repair-wickford" data-service-id="liquid">
               <span class="service-list-title">Liquid Spill Damage Repair</span>
               <span class="service-list-price">from £95</span>
@@ -1378,9 +1411,9 @@
               <span class="service-list-title">Windows 11 Upgrade &amp; Compatibility Fix</span>
               <span class="service-list-price">from £69</span>
             </a>
-            <a class="service-list-row" href="/contact" data-service-id="general-fix">
-              <span class="service-list-title">General Fix, Settings &amp; Configuration</span>
-              <span class="service-list-price">£55</span>
+            <a class="service-list-row" href="/contact" data-service-id="software-fix">
+              <span class="service-list-title">General Software Fix</span>
+              <span class="service-list-price">£45 / 30 mins</span>
             </a>
           </div>
         </section>
