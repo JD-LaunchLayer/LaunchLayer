@@ -268,6 +268,14 @@
     {
       "terms": ["not sure", "don't know", "dont know", "something wrong"],
       "services": ["diagnostics"]
+    },
+    {
+      "terms": ["insurance report", "insurance claim", "insurance letter", "insurer", "damage report", "technical report", "engineer's report", "engineers report", "beyond economical repair", "beyond economic repair", "uneconomical to repair", "not worth repairing", "written off", "write off", "write-off"],
+      "services": ["insurance-report"]
+    },
+    {
+      "terms": ["accidental damage", "dropped laptop", "dropped my laptop", "dropped it"],
+      "services": ["insurance-report", "diagnostics", "screen", "liquid"]
     }
   ],
   "groups": [
@@ -323,6 +331,19 @@
       "imageHeight": 1200,
       "imageAlt": "Laptop on a repair workbench",
       "featuredRank": 1
+    },
+    {
+      "id": "insurance-report",
+      "category": "diagnostics",
+      "title": "Insurance Damage Report",
+      "blurb": "A written report for your insurer after a drop, spill or other accidental damage — what's wrong, the likely cause, and whether it's worth repairing.",
+      "priceKind": "fixed",
+      "priceLabel": "£40",
+      "href": "/contact/",
+      "cta": "Ask about a report",
+      "problems": [],
+      "keywords": "insurance insurer claim technical report damage report engineer report assessment letter accidental damage dropped drop cracked liquid ber beyond economical repair uneconomical write off written off replacement value serial number photos",
+      "schemaPrice": "40"
     },
     {
       "id": "mot",
@@ -808,6 +829,17 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
+            "name": "Insurance Damage Report",
+            "description": "A written report for your insurer after a drop, spill or other accidental damage — what's wrong, the likely cause, and whether it's worth repairing.",
+            "url": "https://launchlayer.uk/contact/"
+          },
+          "price": "40",
+          "priceCurrency": "GBP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
             "name": "50-Point Full System MOT",
             "description": "Deep tune-up for sluggish Windows PCs and laptops: startup clean-up, junk removal, driver health checks and performance optimisation.",
             "url": "https://launchlayer.uk/laptop-mot-wickford-essex"
@@ -1153,13 +1185,17 @@
   <main id="main" class="llsvc-page">
 
     <header class="llsvc-hero">
-      <span class="llsvc-eyebrow">
-        <span class="llsvc-eyebrow-dot" aria-hidden="true"></span>
-        Wickford &amp; South Essex pricing
-      </span>
-      <h1>PC &amp; Laptop Repair Services</h1>
-      <p class="llsvc-hero-lead">Clear starting prices for everyday fixes. Diagnostics stay free — you only approve a fixed quote once we know what’s wrong.</p>
-      <p class="llsvc-trust-line">Free diagnostics · No-Fix-No-Fee · Fixed quotes before work · Free local collection</p>
+      <div class="llsvc-hero-copy">
+        <span class="llsvc-eyebrow">
+          <span class="llsvc-eyebrow-dot" aria-hidden="true"></span>
+          Wickford &amp; South Essex pricing
+        </span>
+        <h1>PC &amp; Laptop Repair Services</h1>
+      </div>
+      <div class="llsvc-hero-aside">
+        <p class="llsvc-hero-lead">Clear starting prices for everyday fixes. Diagnostics stay free — you only approve a fixed quote once we know what’s wrong.</p>
+        <p class="llsvc-trust-line">Free diagnostics · No-Fix-No-Fee · Fixed quotes before work · Free local collection</p>
+      </div>
     </header>
 
     <section class="llsvc-finder" aria-label="Find a service">
@@ -1302,6 +1338,10 @@
             <a class="service-list-row" href="/contact" data-service-id="diagnostics">
               <span class="service-list-title">PC &amp; Laptop Diagnostics</span>
               <span class="service-list-price">FREE</span>
+            </a>
+            <a class="service-list-row" href="/contact/" data-service-id="insurance-report">
+              <span class="service-list-title">Insurance Damage Report</span>
+              <span class="service-list-price">£40</span>
             </a>
             <a class="service-list-row" href="/laptop-mot-wickford-essex" data-service-id="mot">
               <span class="service-list-title">50-Point Full System MOT</span>

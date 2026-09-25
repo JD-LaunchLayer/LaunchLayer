@@ -59,6 +59,36 @@ svg:not([width]) {
   margin-bottom: 16px;
 }
 
+.llsvc-hero-copy,
+.llsvc-hero-aside {
+  min-width: 0;
+}
+
+/* Wide hero: eyebrow and title on the left, intro and trust line on the right. */
+@media (min-width: 960px) {
+  .llsvc-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    column-gap: 48px;
+    align-items: center;
+    padding: 32px 40px;
+  }
+
+  .llsvc-hero h1 {
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  .llsvc-hero-lead {
+    max-width: 46ch;
+    margin-bottom: 14px;
+  }
+
+  .llsvc-trust-line {
+    max-width: 46ch;
+  }
+}
+
 .llsvc-eyebrow {
   display: inline-flex;
   align-items: center;
@@ -487,6 +517,48 @@ svg:not([width]) {
 @media (min-width: 720px) {
   .service-category-grid {
     columns: 2;
+  }
+
+  /*
+    All four cards visible: pack into two columns of similar height.
+    Source order stays Hardware, Speed, Software, Data (mobile and screen readers).
+    Visually: Hardware + Software on the left, Speed + Data on the right.
+    A fixed height is only applied in this full-list state so search can
+    fall back to normal columns when a card is hidden.
+  */
+  .service-category-grid:not(:has(> .service-category-card[hidden])) {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    column-gap: 12px;
+    row-gap: 12px;
+    columns: auto;
+    height: 1064px;
+  }
+
+  .service-category-grid:not(:has(> .service-category-card[hidden])) > .service-category-card {
+    display: block;
+    width: calc(50% - 6px);
+    margin: 0;
+    flex: 0 0 auto;
+  }
+
+  .service-category-grid:not(:has(> .service-category-card[hidden])) > .service-category-card:nth-child(1) { order: 1; }
+  .service-category-grid:not(:has(> .service-category-card[hidden])) > .service-category-card:nth-child(2) { order: 3; }
+  .service-category-grid:not(:has(> .service-category-card[hidden])) > .service-category-card:nth-child(3) { order: 2; }
+  .service-category-grid:not(:has(> .service-category-card[hidden])) > .service-category-card:nth-child(4) { order: 4; }
+}
+
+@media (min-width: 768px) {
+  .service-category-grid:not(:has(> .service-category-card[hidden])) {
+    height: 992px;
+  }
+}
+
+@media (min-width: 880px) {
+  .service-category-grid:not(:has(> .service-category-card[hidden])) {
+    height: 928px;
   }
 }
 
