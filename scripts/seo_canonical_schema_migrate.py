@@ -52,7 +52,7 @@ CANONICAL_GRAPH: dict[str, Any] = {
                 "ratingValue": "5",
                 "bestRating": "5",
                 "worstRating": "1",
-                "reviewCount": "31",
+                "reviewCount": "32",
             },
             "parentOrganization": {"@id": "https://launchlayer.uk/#organization"},
             "address": {
