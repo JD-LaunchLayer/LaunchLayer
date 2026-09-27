@@ -164,6 +164,87 @@ html body .launchlayer-floating-btn:focus-visible { outline:3px solid var(--colo
 }
 /* Deploy previews only: Netlify's fixed drawer is not part of the page and covers Turnstile while scrolling. */
 html body [data-netlify-deploy-id] { display: none !important; }
+/* ===== §18–§25 additions: review fixes + lower sections & footer (mobile) ===== */
+/* §25 R1 Loading state keeps full opacity (Squarespace sets [disabled]{opacity:.8 !important}) */
+#sections #block-6c1dceaebe135ff2c7df .ll-contact-submit.is-loading { opacity: 1 !important; }
+/* §22/§25 R3 Obstacle-triggered hide is instant (no fade) so the pill never paints over content */
+html body .launchlayer-floating-pill-container.ll-fab-blocked { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  /* §25 R2 The suppressed state carried its own transition + translate, so the pill still slid out */
+  html body .launchlayer-floating-pill-container,
+  html body .launchlayer-floating-pill-container.ll-fab-suppressed { transition: none !important; }
+  html body .launchlayer-floating-pill-container.ll-fab-suppressed { transform: none !important; }
+}
+/* §25 R4 360px: keep "Call Workshop" on one line */
+@media (max-width: 374px) { #sections .llct-action { padding: 0 10px; gap: 6px; } }
+
+@media (max-width: 767px) {
+  /* §18 Vertical rhythm: collapse the coverage section's fixed fluid-engine rows and stray spacing */
+  #sections .fe-68cbe96dc7b21932efeeaca1 {
+    display: block !important; min-height: 0 !important; height: auto !important;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(16px, env(safe-area-inset-right, 0px)) !important; box-sizing: border-box !important; }
+  #sections .fe-68cbe96dc7b21932efeeaca1 > .fe-block { grid-area: auto !important; width: 100% !important; }
+  #sections [data-section-id="68cbe96dc7b21932efeeaca2"].page-section,
+  #sections [data-section-id="68cbe96dc7b21932efeeaca2"].page-section > .content-wrapper { padding-top: 0 !important; padding-bottom: 0 !important; min-height: 0 !important; }
+  #sections .llcov-wrap { max-width: 560px !important; margin: 20px auto 16px !important; padding: 0 !important; }
+  html body #page { padding-bottom: 0 !important; }
+  html body .launchlayer-master-footer { margin-top: 0 !important; padding-top: 16px !important;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)) !important; padding-right: max(16px, env(safe-area-inset-right, 0px)) !important; }
+
+  /* §19 One gutter, single inset: card padding 16px */
+  #sections .llcov-panel { padding: 16px !important; border-radius: 20px; }
+  #sections .llcov-grid { gap: 20px !important; }
+  #sections .llcov-lead { margin-bottom: 16px !important; }
+
+  /* §20 Area chips: compact two-column grid (non-interactive, min 36px) */
+  #sections .llcov-loc-grid { display: grid !important; grid-template-columns: repeat(2, auto); justify-content: stretch; gap: 8px !important; margin-bottom: 16px !important; }
+  #sections .llcov-loc-badge { min-height: 36px; box-sizing: border-box; padding: 6px !important; gap: 5px !important;
+    font-size: 0.75rem !important; line-height: 1.25 !important; white-space: normal; }
+  #sections .llcov-dot { width: 6px !important; height: 6px !important; flex: none; }
+  /* below 375px the two longest names only fit on one line at 11.5px with 5px side padding */
+  @media (max-width: 374px) { #sections .llcov-loc-grid { column-gap: 6px !important; } #sections .llcov-loc-badge { font-size: 0.71875rem !important; padding: 6px 5px !important; gap: 4px !important; } }
+
+  /* §21 Contact + hours rows: app-style list rows; the tel row is one full-width tap target */
+  #sections .llcov-ops-card { position: relative; display: grid !important; grid-template-columns: 36px minmax(0, 1fr) auto;
+    column-gap: 12px !important; align-items: center !important; min-height: 56px; padding: 10px 0 !important; box-sizing: border-box; }
+  #sections .llcov-ops-icon { width: 36px !important; height: 36px !important; }
+  #sections .llcov-ops-text h3 { margin: 0 0 2px !important; }
+  #sections .llcov-ops-text a[href^="tel:"] { position: static; }
+  #sections .llcov-ops-text a[href^="tel:"]::after { left: 0; right: 0; top: 0; bottom: 0; height: auto; transform: none; border-radius: 12px; }
+  #sections .llcov-ops-card:has(a[href])::after { content: ""; width: 8px; height: 8px; margin-right: 6px;
+    border-top: 2px solid var(--color-accent); border-right: 2px solid var(--color-accent); transform: rotate(45deg); pointer-events: none; }
+  #sections .llcov-ops-text a[href^="tel:"]:focus-visible { outline: none !important; }
+  #sections .llcov-ops-card:has(a[href]:focus-visible) { outline: 3px solid var(--color-accent); outline-offset: 2px; border-radius: 12px; }
+  #sections .llcov-map-wrap { border-radius: 14px !important; }
+
+  /* §23 Footer (contact page only: this style block ships on /contact/ alone) */
+  html body .launchlayer-master-footer .footer-top-segment,
+  html body .launchlayer-master-footer .footer-matrix-section,
+  html body .launchlayer-master-footer .footer-compliance-bar { max-width: 560px !important; margin-left: auto !important; margin-right: auto !important; box-sizing: border-box; }
+  html body .launchlayer-master-footer .footer-top-segment { margin-bottom: 16px !important; gap: 8px !important; }
+  html body .launchlayer-master-footer .footer-brand-block { max-width: none !important; }
+  html body .launchlayer-master-footer .footer-brand-block > a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }
+  html body .launchlayer-master-footer .brand-tagline-text { margin: 0 !important; }
+  html body .launchlayer-master-footer .inline-nav-links { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0 16px !important; margin: 0 !important; padding: 0 !important; max-width: none !important; width: 100% !important; justify-items: stretch !important; text-align: left !important; }
+  html body .launchlayer-master-footer .inline-nav-links a { display: flex !important; width: 100%; min-height: 44px !important; padding: 0 !important; white-space: normal !important; font-size: 14px !important; }
+  html body .launchlayer-master-footer .footer-matrix-section { margin-bottom: 16px !important; }
+  html body .launchlayer-master-footer .footer-matrix-grid.open { grid-template-columns: 1fr !important; gap: 0 !important; }
+  html body .launchlayer-master-footer .matrix-node a { display: flex !important; width: 100%; min-height: 44px !important; }
+  html body .launchlayer-master-footer .footer-compliance-bar { padding-top: 16px !important; gap: 16px !important; align-items: flex-start !important; }
+  html body .launchlayer-master-footer .footer-legal-stack { text-align: left !important; }
+  html body .launchlayer-master-footer .footer-right-assets { justify-content: flex-start !important; }
+  html body .launchlayer-master-footer .footer-social-strip { justify-content: flex-start !important; margin-left: -14px; gap: 0 4px !important; }
+}
+@media (max-width: 767px) and (min-width: 390px) {
+  #sections .fe-68cbe96dc7b21932efeeaca1 {
+    padding-left: max(var(--space-page-x), env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(var(--space-page-x), env(safe-area-inset-right, 0px)) !important; }
+  html body .launchlayer-master-footer {
+    padding-left: max(var(--space-page-x), env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(var(--space-page-x), env(safe-area-inset-right, 0px)) !important; }
+}
 </style>
 
 <style>
@@ -1819,9 +1900,11 @@ if (window.location.search.includes('submitted=true')) {
     formContainer.innerHTML = '<div class="ll-contact-success" role="status" tabindex="-1"><p>Thank you — your message is on its way.</p><span>We’ll reply to you at hello@launchlayer.uk within our 09:00–22:00 window.</span></div>';
     var successPanel = formContainer.querySelector('.ll-contact-success');
     if (successPanel) {
-      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      successPanel.scrollIntoView({ block: 'start', behavior: reduceMotion ? 'auto' : 'smooth' });
-      successPanel.focus({ preventScroll: true });
+      requestAnimationFrame(function () {
+        var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        successPanel.scrollIntoView({ block: 'start', behavior: reduceMotion ? 'auto' : 'smooth' });
+        successPanel.focus({ preventScroll: true });
+      });
     }
   }
 } else {
@@ -1888,7 +1971,6 @@ if (window.location.search.includes('submitted=true')) {
     }
 
     function markBlocked() {
-      form.setAttribute('aria-invalid', 'true');
     }
 
     form.addEventListener('invalid', function (event) {
@@ -1907,8 +1989,6 @@ if (window.location.search.includes('submitted=true')) {
         errorEl.hidden = true;
         errorEl.textContent = '';
       }
-      form.removeAttribute('aria-invalid');
-
       var tokenInput = form.querySelector('[name="cf-turnstile-response"]');
       var token = tokenInput && tokenInput.value;
       if (!token) {
@@ -1983,15 +2063,34 @@ if (window.location.search.includes('submitted=true')) {
   var pill = document.querySelector('.launchlayer-floating-pill-container');
   if (!pill) return;
   if (!('IntersectionObserver' in window)) { pill.classList.remove('ll-fab-suppressed'); return; }
+  var btn = pill.querySelector('.launchlayer-floating-btn');
   var form = document.querySelector('.ll-contact-form');
-  var watched = [document.querySelector('.llct-actions'), document.getElementById('block-6c1dceaebe135ff2c7df')].filter(Boolean);
-  var onScreen = new Set(), focused = false;
-  function sync() { pill.classList.toggle('ll-fab-suppressed', onScreen.size > 0 || focused); }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { e.isIntersecting ? onScreen.add(e.target) : onScreen.delete(e.target); });
-    sync();
-  }, { rootMargin: '0px 0px 120px 0px' }); /* hide before the form reaches the pill's band */
-  watched.forEach(function (el) { io.observe(el); });
+  /* 1. Redundant while a call action or the form is on screen (fade). */
+  var near = [document.querySelector('.llct-actions'), document.getElementById('block-6c1dceaebe135ff2c7df')].filter(Boolean);
+  /* 2. Never paint over the coverage card (it has its own call row) or footer content (instant). */
+  var under = [].slice.call(document.querySelectorAll('.llcov-panel, .launchlayer-master-footer .footer-top-segment, .launchlayer-master-footer .footer-matrix-section, .launchlayer-master-footer .footer-compliance-bar'));
+  var onScreen = new Set(), blocked = new Set(), focused = false, bandIO = null, key = '';
+  function sync() {
+    pill.classList.toggle('ll-fab-suppressed', onScreen.size > 0 || focused);
+    pill.classList.toggle('ll-fab-blocked', blocked.size > 0);
+  }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { e.isIntersecting ? onScreen.add(e.target) : onScreen.delete(e.target); }); sync();
+  }, { rootMargin: '120px 0px 120px 0px' });
+  near.forEach(function (el) { io.observe(el); });
+  /* The pill's band: its bottom offset (24px, or banner height + 12px while the cookie notice is open) + its height + 16px. */
+  function band() { return Math.ceil((parseFloat(getComputedStyle(pill).bottom) || 24) + ((btn && btn.offsetHeight) || 48) + 16); }
+  function watchBand() {
+    var b = band(), k = innerHeight + ':' + b; if (k === key) return; key = k;
+    if (bandIO) bandIO.disconnect(); blocked.clear();
+    bandIO = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { e.isIntersecting ? blocked.add(e.target) : blocked.delete(e.target); }); sync();
+    }, { rootMargin: (b - innerHeight) + 'px 0px 160px 0px' });
+    under.forEach(function (el) { bandIO.observe(el); });
+  }
+  watchBand();
+  addEventListener('resize', watchBand);
+  new MutationObserver(watchBand).observe(document.body, { attributes: true, attributeFilter: ['class'] });
   if (form) {
     form.addEventListener('focusin', function () { focused = true; sync(); });
     form.addEventListener('focusout', function () { setTimeout(function () { focused = form.contains(document.activeElement); sync(); }, 0); });
