@@ -17,6 +17,8 @@ from typing import Any
 
 from bs4 import BeautifulSoup, NavigableString, Tag
 
+from umami_analytics import apply_umami
+
 ROOT = Path("/workspace")
 HEADER = Path("/tmp/ll-chrome-header.html").read_text()
 FOOTER = Path("/tmp/ll-chrome-footer.html").read_text()
@@ -1086,7 +1088,7 @@ def render_page(page: PageData) -> str:
         f'<script type="application/ld+json">\n{block}\n</script>' for block in page.json_ld
     )
 
-    return f'''<!doctype html>
+    html = f'''<!doctype html>
 <html lang="en-GB">
 <head>
   <meta charset="utf-8">
@@ -1112,6 +1114,7 @@ def render_page(page: PageData) -> str:
   <link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/fonts.css">
   <link rel="stylesheet" href="/assets/css/design-tokens.css">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="13fbd69e-1f5b-4c12-b4b3-0b859486451a" data-domains="launchlayer.uk"></script>
   <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/custom.css">
@@ -1146,6 +1149,7 @@ def render_page(page: PageData) -> str:
 </body>
 </html>
 '''
+    return apply_umami(html, page.slug)
 
 
 def special_case_mot(slug: str) -> None:
@@ -1180,6 +1184,7 @@ def special_case_mot(slug: str) -> None:
             '<script src="/assets/js/global-nav-footer.js" defer></script>',
             '<script src="/assets/js/global-nav-footer.js" defer></script>\n  <script src="/assets/js/cookie-consent.js" defer></script>',
         )
+    src = apply_umami(src, slug)
     (ROOT / slug / "index.html").write_text(src)
 
 

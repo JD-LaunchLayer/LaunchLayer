@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Render Markdown posts in content/blog/ to public HTML at /blog/<slug>/.
 
-Post chrome = fonts.css + design-tokens.css; listing = h2.blog-title from listing_card().
+Post chrome = fonts.css + design-tokens.css + the Umami script; listing = h2.blog-title from listing_card().
 
 Public URLs never change: the slug in frontmatter is the folder name Google
 already knows. Edit the .md file, then run:
@@ -21,6 +21,8 @@ import re
 import sys
 from datetime import datetime
 from pathlib import Path
+
+from umami_analytics import apply_umami
 
 ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / "content" / "blog"
@@ -67,6 +69,9 @@ REQUIRED = (
 REQUIRED_POST_CHROME = (
     "/assets/css/fonts.css",
     "/assets/css/design-tokens.css",
+    "https://cloud.umami.is/script.js",
+    'data-website-id="13fbd69e-1f5b-4c12-b4b3-0b859486451a"',
+    'data-domains="launchlayer.uk"',
 )
 _H2_BLOG_TITLE = re.compile(
     r'<h2\b[^>]*\bclass=["\'][^"\']*\bblog-title\b[^"\']*["\']',
@@ -215,7 +220,7 @@ def assert_post_chrome(html_text: str, path: Path | None = None) -> None:
     if missing:
         raise PublishGuardError(
             f"{where}: <head> missing {', '.join(missing)}. "
-            "Post chrome = fonts.css + design-tokens.css."
+            "Post chrome = fonts.css + design-tokens.css + the Umami script."
         )
 
 
@@ -344,6 +349,7 @@ def run_self_test() -> None:
     good_post = """<!doctype html><html><head>
       <link rel="stylesheet" href="/assets/css/fonts.css">
       <link rel="stylesheet" href="/assets/css/design-tokens.css">
+      <script defer src="https://cloud.umami.is/script.js" data-website-id="13fbd69e-1f5b-4c12-b4b3-0b859486451a" data-domains="launchlayer.uk"></script>
     </head><body></body></html>"""
     assert_post_chrome(good_post, Path("self-test-good.html"))
     empty_feed = f"{FEED_START}\n    {FEED_END}"
@@ -558,6 +564,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
   <link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/fonts.css">
   <link rel="stylesheet" href="/assets/css/design-tokens.css">
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="13fbd69e-1f5b-4c12-b4b3-0b859486451a" data-domains="launchlayer.uk"></script>
   <link rel="stylesheet" href="/assets/css/global-nav-footer.css">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
   <link rel="stylesheet" href="/assets/css/custom.css">
@@ -668,7 +675,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
     </div>
   </footer>
   <div class="launchlayer-floating-pill-container">
-    <a href="tel:07367652987" class="launchlayer-floating-btn" aria-label="Call LaunchLayer Workshop">
+    <a href="tel:07367652987" class="launchlayer-floating-btn" data-umami-event="call-click" data-umami-event-location="footer" aria-label="Call LaunchLayer Workshop">
       <span class="floating-phone-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
@@ -687,7 +694,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
     out_file = out_dir / "index.html"
     # Marker so we never hand-edit generated HTML.
     banner = "<!-- Generated from content/blog/%s.md by scripts/build-blog.py. Edit the Markdown, then re-run the script. -->\n" % slug
-    rendered = banner + page
+    rendered = banner + apply_umami(page, f"blog/{slug}")
     out_file.write_text(rendered, encoding="utf-8")
     assert_post_chrome(rendered, out_file)
     return out_file
