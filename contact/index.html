@@ -162,6 +162,8 @@ html body .launchlayer-floating-btn:focus-visible { outline:3px solid var(--colo
   html body .launchlayer-floating-pill-container { transition: none !important; }
   #sections #block-6c1dceaebe135ff2c7df .ll-contact-submit.is-loading::before { animation: none; border-top-color: rgba(255,255,255,.35); border-right-color: #fff; }
 }
+/* Deploy previews only: Netlify's fixed drawer is not part of the page and covers Turnstile while scrolling. */
+html body [data-netlify-deploy-id] { display: none !important; }
 </style>
 
 <style>
