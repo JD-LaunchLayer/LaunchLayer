@@ -204,29 +204,34 @@ document.addEventListener('click', function(e) {
   // The fixed "Call Workshop" pill hides instantly while any footer block overlaps the strip it
   // occupies, and comes back in the footer's 104px tail. Class-based, so page scripts that also
   // manage the pill (e.g. /contact/) keep working independently.
+  // Measured from the blocks' boxes on scroll. WebKit's IntersectionObserver drops the overlap
+  // at the bottom of a long page once the cookie notice has lifted the pill.
   var pill = document.querySelector('.launchlayer-floating-pill-container');
   var footer = document.querySelector('.launchlayer-master-footer');
-  if (!pill || !footer || !('IntersectionObserver' in window)) return;
+  if (!pill || !footer) return;
   var btn = pill.querySelector('.launchlayer-floating-btn');
   var blocks = [].slice.call(footer.querySelectorAll('.footer-top-segment, .footer-matrix-section, .footer-compliance-bar'));
   if (!blocks.length) return;
-  var over = new Set(), io = null, key = '';
-  function sync() { pill.classList.toggle('ll-fab-footer', over.size > 0); }
   // Band = pill's bottom offset + its height + 16px breathing room (grows while the cookie notice lifts the pill).
   function band() { return Math.ceil((parseFloat(getComputedStyle(pill).bottom) || 24) + ((btn && btn.offsetHeight) || 48) + 16); }
-  function watch() {
-    var b = band(), k = window.innerHeight + ':' + b;
-    if (k === key) return;
-    key = k;
-    if (io) io.disconnect();
-    over.clear();
-    io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) { if (e.isIntersecting) over.add(e.target); else over.delete(e.target); });
-      sync();
-    }, { rootMargin: (b - window.innerHeight) + 'px 0px 160px 0px' });
-    blocks.forEach(function (el) { io.observe(el); });
+  function hiding() {
+    var line = window.innerHeight - band();
+    return blocks.some(function (el) {
+      var r = el.getBoundingClientRect();
+      return r.width && r.bottom > line && r.top < window.innerHeight + 160;
+    });
   }
-  watch();
-  window.addEventListener('resize', watch);
-  new MutationObserver(watch).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+  function sync() { pill.classList.toggle('ll-fab-footer', hiding()); }
+  var noticeWatch;
+  function watchNotice() {
+    var n = document.getElementById('ll-cookie-notice');
+    if (!n || noticeWatch || !window.ResizeObserver) return;
+    noticeWatch = new ResizeObserver(function () { sync(); requestAnimationFrame(sync); });
+    noticeWatch.observe(n);
+  }
+  sync();
+  window.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('resize', sync);
+  watchNotice();
+  new MutationObserver(function () { watchNotice(); sync(); requestAnimationFrame(sync); }).observe(document.body, { attributes: true, attributeFilter: ['class'], childList: true });
 })();
