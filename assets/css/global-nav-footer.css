@@ -250,181 +250,362 @@ button.ll-dropdown-trigger {
 }
 
 /* ----------------------------------------------------
-   MATCHING MASTER FOOTER
+   SITE-WIDE FOOTER (v2, 2026-09-28) — one source of truth
+   Every page carries the same footer markup; this block styles it.
+   - Selectors start `html body .launchlayer-master-footer` so they outrank the
+     legacy footer rules still in custom.css / services.css (loaded later).
+   - Mobile first. Gutter 16px <390, 20px ≥390 (+ safe-area insets).
+   - From 768px the content column is 1040px (the site's 1080px container
+     minus its 20px padding), so the footer lines up with the page above.
+   - Tail: 104px (+ safe area) up to 1023px so the fixed "Call Workshop"
+     pill never covers the last footer line (pill shows ≤768 / ≤1023).
+   - No visible copy lives here; order changes are visual only (flex order).
    ---------------------------------------------------- */
-.launchlayer-master-footer {
-  background-color: var(--color-surface-2) !important;
-  border-top: 1px solid #EAEAEA !important;
-  padding: 48px 24px 32px 24px !important;
-  font-family: var(--font-sans) !important;
+html body .launchlayer-master-footer {
+  --ft-gutter: 16px;
+  --ft-line: var(--color-line);
+  box-sizing: border-box !important;
   margin-top: 60px !important;
+  padding: 28px max(var(--ft-gutter), env(safe-area-inset-right, 0px)) calc(104px + env(safe-area-inset-bottom, 0px)) max(var(--ft-gutter), env(safe-area-inset-left, 0px)) !important;
+  background: var(--color-surface-2) !important;
+  border-top: 1px solid var(--ft-line) !important;
+  font-family: var(--font-sans) !important;
+  color: var(--color-body) !important;
+  text-align: left !important;
+}
+@media (min-width: 390px) {
+  html body .launchlayer-master-footer { --ft-gutter: 20px; }
 }
 
-.footer-top-segment {
-  max-width: 1120px !important;
-  margin: 0 auto 36px auto !important;
+/* The footer tail replaces the old body padding that cleared the pill */
+@media (max-width: 1023px) {
+  html body:has(.launchlayer-master-footer) { padding-bottom: 0 !important; }
+}
+
+/* Three blocks, one column */
+html body .launchlayer-master-footer .footer-top-segment,
+html body .launchlayer-master-footer .footer-matrix-section,
+html body .launchlayer-master-footer .footer-compliance-bar {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 1040px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  float: none !important;
+}
+
+html body .launchlayer-master-footer p { margin: 0 !important; }
+html body .launchlayer-master-footer a { text-decoration: none !important; }
+
+/* Every interactive element: one focus ring, one hover language */
+html body .launchlayer-master-footer a,
+html body .launchlayer-master-footer button {
+  -webkit-tap-highlight-color: transparent;
+  transition: color .15s ease, background-color .15s ease, border-color .15s ease !important;
+}
+html body .launchlayer-master-footer a:focus-visible,
+html body .launchlayer-master-footer button:focus-visible {
+  outline: 3px solid var(--color-accent) !important;
+  outline-offset: 2px !important;
+  border-radius: 6px;
+}
+
+/* ---- 1. Brand + nav ---- */
+html body .launchlayer-master-footer .footer-top-segment {
   display: flex !important;
   flex-direction: column !important;
-  gap: 24px !important;
-}
-
-@media (min-width: 850px) {
-  .footer-top-segment {
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: flex-start !important;
-  }
-}
-
-.footer-brand-block { max-width: 440px !important; }
-.brand-tagline-text { font-size: var(--text-sm) !important; color: var(--color-muted) !important; line-height: var(--leading-body) !important; }
-
-.inline-nav-links {
-  list-style: none !important;
-  display: flex !important;
-  gap: 24px !important;
-  flex-wrap: wrap !important;
-}
-
-.inline-nav-links a {
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  color: var(--color-body) !important;
-  text-decoration: none !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  min-height: var(--control-min-size) !important;
-  min-width: var(--control-min-size) !important;
-}
-
-.footer-matrix-section {
-  max-width: 1120px !important;
-  margin: 0 auto 36px auto !important;
-  border-top: 1px solid #EAEAEA !important;
-  padding-top: 28px !important;
-}
-
-.footer-matrix-title {
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.08em !important;
-  color: var(--color-muted) !important;
-  text-transform: uppercase !important;
-  margin-bottom: 18px !important;
-  min-height: var(--control-min-size) !important;
-}
-
-button.footer-matrix-title {
-  appearance: none !important;
-  background: none !important;
-  border: none !important;
-  width: 100% !important;
-  text-align: left !important;
-  font-family: inherit !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 20px !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
   padding: 0 !important;
 }
-
-.footer-matrix-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
-  gap: 14px 24px !important;
-}
-
-.matrix-node a {
-  font-size: 13.5px !important;
-  color: var(--color-muted) !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
+html body .launchlayer-master-footer .footer-brand-block { max-width: none !important; margin: 0 !important; padding: 0 !important; }
+html body .launchlayer-master-footer .footer-brand-block > a {
   display: inline-flex !important;
   align-items: center !important;
-  min-height: var(--control-min-size) !important;
-  min-width: var(--control-min-size) !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  vertical-align: top;
 }
-
-.data-recovery-special-node a {
-  color: #1D4ED8 !important;
-  font-weight: 700 !important;
-}
-
-.footer-compliance-bar {
-  max-width: 1120px !important;
-  margin: 0 auto !important;
-  border-top: 1px solid #EAEAEA !important;
-  padding-top: 24px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 20px !important;
-  align-items: center !important;
-}
-
-@media (min-width: 768px) {
-  .footer-compliance-bar {
-    flex-direction: row !important;
-    justify-content: space-between !important;
-  }
-}
-
-.footer-legal-stack {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 6px !important;
-  text-align: center !important;
-  max-width: 36rem !important;
-}
-
-@media (min-width: 768px) {
-  .footer-legal-stack {
-    text-align: left !important;
-  }
-}
-
-.copyright-text-notice { font-size: 12.5px !important; color: var(--color-muted) !important; margin: 0 !important; }
-
-.footer-company-line {
-  font-size: 12px !important;
+html body .launchlayer-master-footer .brand-master-logo { display: block !important; width: auto !important; height: 44px !important; max-height: 44px !important; }
+html body .launchlayer-master-footer .brand-tagline-text {
+  margin: 8px 0 0 !important;
+  max-width: 34em !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0 !important;
   color: var(--color-muted) !important;
-  line-height: 1.5 !important;
+}
+
+/* Nav: 2 columns × 3 rows on phones, read top-to-bottom (same order as tabbing) */
+html body .launchlayer-master-footer .inline-nav-links {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: column !important;
+  gap: 8px 16px !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  text-align: left !important;
+  justify-items: stretch !important;
+}
+html body .launchlayer-master-footer .inline-nav-links li { display: block !important; margin: 0 !important; padding: 0 !important; list-style: none !important; }
+html body .launchlayer-master-footer .inline-nav-links li::before { content: none !important; }
+html body .launchlayer-master-footer .inline-nav-links a {
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: var(--font-sans) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0 !important;
+  white-space: normal !important;
+  color: var(--color-body) !important;
+}
+
+/* ---- 2. Coverage disclosure (links stay in the HTML; collapsed on phones only, as today) ---- */
+html body .launchlayer-master-footer .footer-matrix-section {
+  margin-top: 24px !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  border-top: 1px solid var(--ft-line) !important;
+  border-bottom: 1px solid var(--ft-line) !important;
+  border-radius: 0 !important;
+}
+html body .launchlayer-master-footer .footer-matrix-title {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 52px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: none !important;
+  border: 0 !important;
+  font-family: var(--font-sans) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  text-align: left !important;
+  color: var(--color-muted) !important;
+  cursor: pointer !important;
+  touch-action: manipulation;
+  user-select: none;
+  appearance: none;
+}
+html body .launchlayer-master-footer .footer-matrix-title::after {
+  content: "" !important;
+  flex: none !important;
+  width: 8px !important;
+  height: 8px !important;
+  margin: 0 5px 0 0 !important;
+  border: 0 !important;
+  border-right: 2px solid var(--color-accent) !important;
+  border-bottom: 2px solid var(--color-accent) !important;
+  font-size: 0 !important;
+  transform: translateY(-2px) rotate(45deg) !important;
+  transition: transform .2s ease !important;
+}
+html body .launchlayer-master-footer .footer-matrix-title.active::after { transform: translateY(2px) rotate(-135deg) !important; }
+html body .launchlayer-master-footer .footer-matrix-grid { display: none !important; }
+html body .launchlayer-master-footer .footer-matrix-grid.open {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 4px 0 16px !important;
+  border: 0 !important;
+}
+html body .launchlayer-master-footer .matrix-node { margin: 0 !important; padding: 0 !important; }
+html body .launchlayer-master-footer .matrix-node a {
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  padding: 0 !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  line-height: 1.3 !important;
+  color: var(--color-body) !important;
+}
+html body .launchlayer-master-footer .data-recovery-special-node a { color: var(--color-accent) !important; font-weight: 700 !important; }
+
+/* ---- 3. Badge, social, legal (visual order = DOM/tab order for the links: Bark → social; legal text last) ---- */
+html body .launchlayer-master-footer .footer-compliance-bar {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 24px !important;
+  margin-top: 24px !important;
+  margin-bottom: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  text-align: left !important;
+}
+html body .launchlayer-master-footer .footer-right-assets {
+  order: -1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  flex-wrap: nowrap !important;
+  gap: 20px !important;
+  max-width: 100% !important;
   margin: 0 !important;
 }
-
-.footer-right-assets {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  flex-wrap: wrap !important;
-  gap: 16px 24px !important;
-  max-width: 100% !important;
-}
-
-.bark-widget-box {
-  border: 1px solid #1E293B !important;
-  background: #1E293B !important;
-  color: #FFFFFF !important;
-  padding: 6px 12px !important;
-  border-radius: 4px !important;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  text-align: center !important;
-}
-
-.footer-social-strip {
+html body .launchlayer-master-footer .footer-social-strip {
   display: flex !important;
   flex-wrap: wrap !important;
-  gap: 4px 8px !important;
   align-items: center !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
-
-.social-icon-vector {
-  color: #64748B !important;
-  text-decoration: none !important;
+html body .launchlayer-master-footer .social-icon-vector {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  min-width: var(--control-min-size) !important;
-  min-height: var(--control-min-size) !important;
+  box-sizing: border-box !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid var(--color-line-strong) !important;
+  border-radius: var(--radius-md) !important;
+  background: var(--color-surface) !important;
+  color: var(--color-body) !important;
 }
-.social-icon-vector svg { width: 16px !important; height: 16px !important; fill: currentColor !important; }
+/* Invisible square hit area so the rounded corners stay tappable (44×44 box + 3px each side) */
+html body .launchlayer-master-footer .social-icon-vector { position: relative !important; }
+html body .launchlayer-master-footer .social-icon-vector::after { content: ""; position: absolute; inset: -3px; }
+html body .launchlayer-master-footer .social-icon-vector svg { display: block !important; width: 18px !important; height: 18px !important; fill: currentColor !important; }
+/* Nextdoor: official house symbol (about.nextdoor.com), square viewBox; 24px box keeps the house ≥19px tall (Nextdoor minimum size) */
+html body .launchlayer-master-footer .social-icon-vector[href*="nextdoor.co.uk"] svg { width: 24px !important; height: 24px !important; }
+/* Nextdoor Brand Use Guidelines: "The Nextdoor logo should always be used in color for online use." Keep it green on hover too */
+html body .launchlayer-master-footer .social-icon-vector[href*="nextdoor.co.uk"],
+html body .launchlayer-master-footer .social-icon-vector[href*="nextdoor.co.uk"]:hover { color: #1B8751 !important; }
+html body .launchlayer-master-footer .bark-widget-wrapper { margin: 0 !important; line-height: 1.3; }
+/* Before Bark's script paints the badge, its plain link still gets a 44px target */
+html body .launchlayer-master-footer .bark-widget { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 600; color: var(--color-body); }
+html body .launchlayer-master-footer .footer-legal-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 20px 0 0 !important;
+  border-top: 1px solid var(--ft-line) !important;
+  text-align: left !important;
+}
+html body .launchlayer-master-footer .copyright-text-notice {
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: var(--color-muted) !important;
+}
+html body .launchlayer-master-footer .footer-company-line {
+  text-wrap: pretty;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  color: var(--color-muted) !important;
+}
+
+/* Hover (pointer devices only, so taps never leave a stuck state) */
+@media (hover: hover) {
+  html body .launchlayer-master-footer .inline-nav-links a:hover,
+  html body .launchlayer-master-footer .matrix-node a:hover { color: var(--color-accent) !important; text-decoration: underline !important; text-decoration-thickness: 1px !important; text-underline-offset: 3px !important; }
+  html body .launchlayer-master-footer .social-icon-vector:hover { color: var(--color-accent) !important; border-color: var(--color-accent-a35) !important; background: var(--color-accent-tint) !important; }
+}
+
+/* ---- Tablet: brand, then one nav row; coverage open in columns ---- */
+@media (min-width: 768px) {
+  html body .launchlayer-master-footer {
+    padding-top: 48px !important;
+    padding-left: max(20px, env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(20px, env(safe-area-inset-right, 0px)) !important;
+  }
+  html body .launchlayer-master-footer .footer-top-segment { gap: 12px !important; }
+  html body .launchlayer-master-footer .inline-nav-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 8px 28px !important;
+  }
+  html body .launchlayer-master-footer .inline-nav-links a { width: auto !important; font-size: 14px !important; }
+  html body .launchlayer-master-footer .footer-matrix-section { margin-top: 32px !important; padding-top: 20px !important; border-bottom: 0 !important; }
+  html body .launchlayer-master-footer .footer-matrix-title { min-height: 44px !important; margin-bottom: 8px !important; cursor: default !important; }
+  html body .launchlayer-master-footer .footer-matrix-title::after { content: none !important; }
+  html body .launchlayer-master-footer .footer-matrix-grid,
+  html body .launchlayer-master-footer .footer-matrix-grid.open {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important; /* 2 cols at tablet, 3 at 1024, 4 at the 1040px column */
+    gap: 8px 24px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  html body .launchlayer-master-footer .matrix-node a { font-size: 14px !important; }
+  /* Tablet keeps the phone stack for this block: badge + social on one row, legal full width below */
+  html body .launchlayer-master-footer .footer-compliance-bar { margin-top: 32px !important; padding-top: 24px !important; border-top: 1px solid var(--ft-line) !important; }
+  html body .launchlayer-master-footer .footer-right-assets { flex-direction: row !important; align-items: center !important; gap: 24px !important; }
+  html body .launchlayer-master-footer .footer-legal-stack { padding-top: 0 !important; border-top: 0 !important; }
+}
+
+/* ---- Desktop: brand left, nav right; no pill, normal tail ---- */
+@media (min-width: 1024px) {
+  html body .launchlayer-master-footer { padding-top: 56px !important; padding-bottom: calc(40px + env(safe-area-inset-bottom, 0px)) !important; }
+  html body .launchlayer-master-footer .footer-top-segment { flex-direction: row !important; justify-content: space-between !important; align-items: flex-start !important; gap: 48px !important; }
+  html body .launchlayer-master-footer .footer-brand-block { flex: 0 1 380px !important; }
+  html body .launchlayer-master-footer .inline-nav-links { flex: 0 1 auto !important; flex-wrap: nowrap !important; justify-content: flex-end !important; width: auto !important; }
+}
+
+/* ---- Wide: one legal row (© + company line left, Bark + social right) once it fits on one line ---- */
+@media (min-width: 1200px) {
+  html body .launchlayer-master-footer .footer-compliance-bar { flex-direction: row !important; align-items: center !important; justify-content: space-between !important; gap: 24px !important; }
+  html body .launchlayer-master-footer .footer-legal-stack { order: 0 !important; flex: 1 1 auto !important; min-width: 0 !important; }
+  html body .launchlayer-master-footer .footer-right-assets { order: 1 !important; flex: none !important; gap: 16px !important; }
+  html body .launchlayer-master-footer .copyright-text-notice { font-size: 12.5px !important; }
+  html body .launchlayer-master-footer .footer-company-line { font-size: 12px !important; text-wrap: balance; }
+}
+
+/* Call pill: hidden (instantly) while footer content passes under it — toggled by global-nav-footer.js */
+html body .launchlayer-floating-pill-container.ll-fab-footer {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body footer.launchlayer-master-footer *,
+  html body footer.launchlayer-master-footer a,
+  html body footer.launchlayer-master-footer button,
+  html body footer.launchlayer-master-footer .footer-matrix-title::after { transition: none !important; animation: none !important; }
+}
 
 /* ==========================================================================
    RESPONSIVE MOBILE HEADER & HAMBURGER MENU (glass drawer)
@@ -699,127 +880,6 @@ main#page {
 }
 
 /* ==========================================================================
-   MOBILE FOOTER SEO ACCORDION (LaunchLayer Theme)
-   ========================================================================== */
-@media (max-width: 639px) {
-  /* Wrap the SEO title and links in a card container */
-  .footer-matrix-section,
-  footer .sqs-block-content:has(.footer-matrix-title) {
-    background: #F7F8FB !important;
-    border: 1px solid #E4E9F1 !important;
-    border-radius: 12px !important;
-    padding: 14px 16px !important;
-    margin-bottom: 24px !important;
-  }
-
-  /* Ensure title bar is tappable flex row with chevron */
-  .footer-matrix-title {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    font-size: 11px !important;
-    letter-spacing: 0.08em !important;
-    text-transform: uppercase !important;
-    color: var(--color-muted) !important;
-    margin-bottom: 0 !important;
-    cursor: pointer !important;
-  }
-
-  .service-coverage-accordion-header,
-  [class*="service-coverage"] {
-    cursor: pointer !important;
-    touch-action: manipulation;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    pointer-events: auto !important;
-    position: relative;
-    z-index: 10;
-  }
-
-  /* Dropdown/accordion indicator arrow on mobile */
-  .footer-matrix-title::after {
-    content: "▼" !important;
-    font-size: 9px !important;
-    color: #1D4ED8 !important;
-    transition: transform 0.25s ease !important;
-    margin-left: 8px !important;
-    display: inline-block !important;
-  }
-
-  .footer-matrix-section.active .footer-matrix-title::after,
-  .service-coverage-accordion-header.active::after,
-  .footer-matrix-title.active::after {
-    transform: rotate(180deg) !important;
-  }
-
-  .footer-matrix-grid,
-  .footer-matrix-section .grid-section {
-    padding-top: 12px !important;
-    margin-top: 12px !important;
-    border-top: 1px solid #E4E9F1 !important;
-  }
-
-  footer .sqs-block-content ul,
-  footer .footer-nav-links {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px 24px !important;
-    text-align: left !important;
-    padding: 0 16px !important;
-  }
-
-  footer .sqs-block-content ul li a,
-  footer .footer-nav-links a {
-    font-size: 14px !important;
-    font-weight: 600 !important;
-    white-space: nowrap !important;
-  }
-
-  /* Target ANY list or paragraph container holding main nav links inside footer */
-  footer p:has(a),
-  footer ul:has(a),
-  footer .sqs-layout .sqs-block-content p,
-  footer .sqs-layout .sqs-block-content ul {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 12px 8px !important;
-    text-align: center !important;
-    justify-items: center !important;
-    margin: 0 auto 24px auto !important;
-    padding: 0 !important;
-    width: 100% !important;
-    max-width: 340px !important;
-  }
-
-  /* Force links to be clean block flex items */
-  footer p:has(a) a,
-  footer ul:has(a) a,
-  footer .sqs-layout .sqs-block-content a {
-    display: inline-block !important;
-    font-size: 13px !important;
-    font-weight: 600 !important;
-    white-space: nowrap !important;
-    padding: 4px !important;
-  }
-}
-
-/* Lightweight vanilla JS click listener for mobile footer accordion toggling */
-/*
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  document.body.addEventListener('click', function(e) {
-    if (e.target && e.target.classList.contains('footer-matrix-title')) {
-      const section = e.target.closest('.footer-matrix-section');
-      if (section) {
-        section.classList.toggle('active');
-      }
-    }
-  });
-});
-</script>
-*/
-
-/* ==========================================================================
    MOBILE NAVIGATION SUBMENU & SEARCH BAR MOBILES UX CORRECTIONS
    ========================================================================== */
 
@@ -905,49 +965,6 @@ document.addEventListener('DOMContentLoaded', function() {
   max-width: 18px !important;
   max-height: 18px !important;
   display: inline-block;
-}
-
-.service-coverage-accordion-header,
-.footer-matrix-title,
-[class*="service-coverage"] {
-  cursor: pointer !important;
-  touch-action: manipulation !important;
-  user-select: none !important;
-  pointer-events: auto !important;
-}
-
-@media (max-width: 767px) {
-  /* Higher-specificity selectors so later stylesheet grid rules cannot
-     keep the service-coverage panel forced open on mobile. */
-  .footer-matrix-section > .footer-matrix-list,
-  .footer-matrix-section > .service-coverage-panel,
-  .footer-matrix-section > .service-coverage-grid,
-  .footer-matrix-section > .footer-matrix-grid,
-  footer .footer-matrix-grid,
-  footer .footer-matrix-list {
-    display: none !important;
-  }
-
-  .footer-matrix-section > .footer-matrix-list.open,
-  .footer-matrix-section > .service-coverage-panel.open,
-  .footer-matrix-section > .service-coverage-grid.open,
-  .footer-matrix-section > .footer-matrix-grid.open,
-  footer .footer-matrix-grid.open,
-  footer .footer-matrix-list.open {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 12px !important;
-    margin-top: 15px !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .footer-matrix-list,
-  .service-coverage-panel,
-  .service-coverage-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
 }
 
 /* ==========================================================================

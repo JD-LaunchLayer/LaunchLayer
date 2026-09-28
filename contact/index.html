@@ -46,9 +46,182 @@
   <link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/fonts.css">
   <link rel="stylesheet" href="/assets/css/design-tokens.css">
-<link rel="stylesheet" href="/assets/css/global-nav-footer.css">
+<link rel="stylesheet" href="/assets/css/global-nav-footer.css?v=footer-20260928c">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
 <link rel="stylesheet" href="/assets/css/site-glass.css?v=contact-axis-1">
+
+<style id="ll-contact-mobile">
+/* ===== LaunchLayer /contact/ — mobile-first layout (layout/UX only) ===== */
+:root { --ll-header-h: 69px; }
+.llct-actions { display: none; }
+.ll-visually-hidden { position:absolute!important; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+
+/* All widths: hit area, focus, states (no visual change at rest) */
+#sections .llcov-ops-text a[href^="tel:"] { position:relative; }
+#sections .llcov-ops-text a[href^="tel:"]::after { content:""; position:absolute; left:-6px; right:-6px; top:50%; height:44px; transform:translateY(-50%); } /* 44px hit area, zero layout change */
+#sections .llct-action:focus-visible,
+#sections .llct-card a.llct-btn:focus-visible,
+#sections #block-6c1dceaebe135ff2c7df .ll-contact-submit:focus-visible,
+html body .launchlayer-floating-btn:focus-visible { outline:3px solid var(--color-accent-light)!important; outline-offset:3px!important; }
+#sections #block-6c1dceaebe135ff2c7df .ll-contact-form .field-element:focus { box-shadow:0 0 0 3px rgba(34,211,224,.45), inset 0 1px 0 rgba(255,255,255,.06); }
+#sections #block-6c1dceaebe135ff2c7df .ll-contact-form .field-element:user-invalid { border-color:rgba(252,165,165,.7); }
+#sections #block-6c1dceaebe135ff2c7df,
+#sections #block-6c1dceaebe135ff2c7df .ll-contact-error,
+#sections #block-6c1dceaebe135ff2c7df .ll-turnstile,
+#sections .ll-contact-success { scroll-margin-top: calc(var(--ll-header-h) + 12px); scroll-margin-bottom: 24px; }
+#sections #block-6c1dceaebe135ff2c7df .ll-contact-submit { position:relative; }
+#sections #block-6c1dceaebe135ff2c7df .ll-contact-submit.is-loading { opacity:1; cursor:progress; }
+#sections #block-6c1dceaebe135ff2c7df .ll-contact-submit.is-loading::before {
+  content:""; position:absolute; left:18px; top:50%; width:18px; height:18px; margin-top:-9px; box-sizing:border-box;
+  border-radius:50%; border:2px solid rgba(255,255,255,.35); border-top-color:#fff; animation:ll-spin .8s linear infinite; }
+@keyframes ll-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 767px) {
+  :root { --ll-header-h: calc(65px + env(safe-area-inset-top, 0px)); }
+  html body .ll-site-header { padding-top: max(10px, env(safe-area-inset-top, 0px)) !important; }
+
+  /* Gutters (16px <390, 20px ≥390) */
+  #sections .fe-682e44bcef3a173ba519019c {
+    padding-left: max(16px, env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(16px, env(safe-area-inset-right, 0px)) !important;
+    box-sizing: border-box !important; row-gap: 16px !important; }
+
+  /* Hero top spacing */
+  #sections [data-section-id="682e44bcef3a173ba519019d"].page-section { padding-top: 0 !important; }
+  #sections [data-section-id="682e44bcef3a173ba519019d"].page-section > .content-wrapper { padding-top: 20px !important; padding-bottom: 24px !important; }
+
+  /* Reorder: hero → actions → form → cards */
+  #sections .fe-682e44bcef3a173ba519019c > .fe-block-yui_3_17_2_1_1780042547748_2925,
+  #sections #block-yui_3_17_2_1_1780042547748_2925,
+  #sections #block-yui_3_17_2_1_1780042547748_2925 > .sqs-block-content,
+  #sections #block-yui_3_17_2_1_1780042547748_2925 .sqs-code-container,
+  #sections #block-yui_3_17_2_1_1780042547748_2925 .llct-intro { display: contents !important; }
+  #sections .llct-hero, #sections .llct-actions, #sections .llct-grid,
+  #sections .fe-682e44bcef3a173ba519019c > .fe-block-6c1dceaebe135ff2c7df {
+    width: 100% !important; max-width: 560px !important; align-self: center !important; margin-inline: auto !important; }
+  #sections .llct-hero { order: 1; line-height: 1.5; }
+  #sections .llct-actions { order: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  #sections .fe-682e44bcef3a173ba519019c > .fe-block-6c1dceaebe135ff2c7df { order: 3 !important; }
+  #sections .llct-grid { order: 4; gap: 12px; }
+
+  /* Type */
+  #sections #block-yui_3_17_2_1_1780042547748_2925 .llsite-eyebrow { font-size: 12px; line-height: 1; padding: 7px 12px; margin: 0 0 12px; }
+  #sections #block-yui_3_17_2_1_1780042547748_2925 .llsite-brand { font-size: clamp(1.625rem, 1.1rem + 2.2vw, 2.1rem); line-height: 1.1; margin: 0 0 6px; }
+  #sections #block-yui_3_17_2_1_1780042547748_2925 .llsite-h1 { font-size: clamp(1.0625rem, 0.95rem + 0.6vw, 1.1875rem); line-height: 1.3; margin: 0 0 8px; max-width: none; }
+  #sections #block-yui_3_17_2_1_1780042547748_2925 .llsite-lead { font-size: var(--text-md); line-height: 1.55; max-width: 34em; margin: 0; }
+
+  /* Action row */
+  #sections .llct-action { display:flex; align-items:center; justify-content:center; gap:8px; min-height:48px; padding:0 14px;
+    border-radius: var(--radius-pill); font: 700 15px/1.2 var(--font-sans); text-decoration: none !important; box-sizing: border-box; }
+  #sections .llct-action svg { width:18px; height:18px; flex:none; }
+  #sections .llct-action--call { background: var(--gradient-accent-fill) !important; color: var(--color-accent-on) !important; box-shadow: var(--shadow-accent); }
+  #sections .llct-action--book { background: rgba(255,255,255,.08) !important; color: var(--color-inverse-ink) !important; border: 1px solid rgba(255,255,255,.22); }
+  #sections #block-yui_3_17_2_1_1780042547748_2925 .llct-card a.llct-btn { display: none !important; }
+
+  /* Cards (now below the form) */
+  #sections .llct-card { padding: 16px; }
+  #sections .llct-card h2 { font-size: 1rem; margin: 0 0 8px !important; }
+  #sections .llct-card p { font-size: 0.9375rem; }
+
+  /* Form panel + fields */
+  #sections #block-6c1dceaebe135ff2c7df .ll-contact-panel { padding: 16px !important; border-radius: 20px; }
+  #sections #block-6c1dceaebe135ff2c7df .ll-contact-form .field-list { gap: 14px !important; }
+  #sections #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item .title,
+  #sections #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item legend.title {
+    font-size: 0.875rem !important; font-weight: 600; letter-spacing: 0.01em; text-transform: none; line-height: 1.3; margin: 0 0 6px; }
+  #sections #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item.fields.name .caption-text { font-size: 0.8125rem !important; line-height: 1.3 !important; }
+  #sections #block-6c1dceaebe135ff2c7df .ll-contact-form .field-element { font-size: 16px !important; line-height: 1.4 !important; min-height: 48px; }
+  #sections #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-error { font-size: 0.875rem; }
+  #sections #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-submit { min-height: 52px; font-size: 16px !important; }
+
+}
+@media (max-width: 767px) and (min-width: 390px) {
+  #sections .fe-682e44bcef3a173ba519019c {
+    padding-left: max(var(--space-page-x), env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(var(--space-page-x), env(safe-area-inset-right, 0px)) !important; }
+}
+@media (max-width: 374px) { #sections #block-6c1dceaebe135ff2c7df .ll-contact-panel { padding: 12px !important; } }
+@media (max-width: 339px) { #sections .llct-actions { grid-template-columns: 1fr; } }
+@media (hover: none) { #sections .llct-card:hover { transform: none; } }
+
+/* Pill (only shown ≤768px by existing CSS) */
+@media (max-width: 768px) {
+  html body .launchlayer-floating-pill-container {
+    bottom: calc(24px + env(safe-area-inset-bottom, 0px)) !important;
+    transition: opacity .2s ease, transform .2s ease, visibility 0s linear 0s !important; }
+  html body.ll-consent-open .launchlayer-floating-pill-container {
+    bottom: calc(var(--ll-consent-banner-h, 72px) + 12px + env(safe-area-inset-bottom, 0px)) !important; }
+  html body .launchlayer-floating-pill-container.ll-fab-suppressed {
+    opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; transform: translateY(16px) !important;
+    transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #sections .llct-intro, #sections .llct-hero { animation: none !important; }
+  html body .launchlayer-floating-pill-container { transition: none !important; }
+  #sections #block-6c1dceaebe135ff2c7df .ll-contact-submit.is-loading::before { animation: none; border-top-color: rgba(255,255,255,.35); border-right-color: #fff; }
+}
+/* Deploy previews only: Netlify's fixed drawer is not part of the page and covers Turnstile while scrolling. */
+html body [data-netlify-deploy-id] { display: none !important; }
+/* ===== §18–§25 additions: review fixes + lower sections & footer (mobile) ===== */
+/* §25 R1 Loading state keeps full opacity (Squarespace sets [disabled]{opacity:.8 !important}) */
+#sections #block-6c1dceaebe135ff2c7df .ll-contact-submit.is-loading { opacity: 1 !important; }
+/* §22/§25 R3 Obstacle-triggered hide is instant (no fade) so the pill never paints over content */
+html body .launchlayer-floating-pill-container.ll-fab-blocked { opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  /* §25 R2 The suppressed state carried its own transition + translate, so the pill still slid out */
+  html body .launchlayer-floating-pill-container,
+  html body .launchlayer-floating-pill-container.ll-fab-suppressed { transition: none !important; }
+  html body .launchlayer-floating-pill-container.ll-fab-suppressed { transform: none !important; }
+}
+/* §25 R4 360px: keep "Call Workshop" on one line */
+@media (max-width: 374px) { #sections .llct-action { padding: 0 10px; gap: 6px; } }
+
+@media (max-width: 767px) {
+  /* §18 Vertical rhythm: collapse the coverage section's fixed fluid-engine rows and stray spacing */
+  #sections .fe-68cbe96dc7b21932efeeaca1 {
+    display: block !important; min-height: 0 !important; height: auto !important;
+    padding-left: max(16px, env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(16px, env(safe-area-inset-right, 0px)) !important; box-sizing: border-box !important; }
+  #sections .fe-68cbe96dc7b21932efeeaca1 > .fe-block { grid-area: auto !important; width: 100% !important; }
+  #sections [data-section-id="68cbe96dc7b21932efeeaca2"].page-section,
+  #sections [data-section-id="68cbe96dc7b21932efeeaca2"].page-section > .content-wrapper { padding-top: 0 !important; padding-bottom: 0 !important; min-height: 0 !important; }
+  #sections .llcov-wrap { max-width: 560px !important; margin: 20px auto 16px !important; padding: 0 !important; }
+  html body #page { padding-bottom: 0 !important; }
+  html body .launchlayer-master-footer { margin-top: 0 !important; } /* page rhythm only; footer styling lives in global-nav-footer.css */
+
+  /* §19 One gutter, single inset: card padding 16px */
+  #sections .llcov-panel { padding: 16px !important; border-radius: 20px; }
+  #sections .llcov-grid { gap: 20px !important; }
+  #sections .llcov-lead { margin-bottom: 16px !important; }
+
+  /* §20 Area chips: compact two-column grid (non-interactive, min 36px) */
+  #sections .llcov-loc-grid { display: grid !important; grid-template-columns: repeat(2, auto); justify-content: stretch; gap: 8px !important; margin-bottom: 16px !important; }
+  #sections .llcov-loc-badge { min-height: 36px; box-sizing: border-box; padding: 6px !important; gap: 5px !important;
+    font-size: 0.75rem !important; line-height: 1.25 !important; white-space: normal; }
+  #sections .llcov-dot { width: 6px !important; height: 6px !important; flex: none; }
+  /* below 375px the two longest names only fit on one line at 11.5px with 5px side padding */
+  @media (max-width: 374px) { #sections .llcov-loc-grid { column-gap: 6px !important; } #sections .llcov-loc-badge { font-size: 0.71875rem !important; padding: 6px 5px !important; gap: 4px !important; } }
+
+  /* §21 Contact + hours rows: app-style list rows; the tel row is one full-width tap target */
+  #sections .llcov-ops-card { position: relative; display: grid !important; grid-template-columns: 36px minmax(0, 1fr) auto;
+    column-gap: 12px !important; align-items: center !important; min-height: 56px; padding: 10px 0 !important; box-sizing: border-box; }
+  #sections .llcov-ops-icon { width: 36px !important; height: 36px !important; }
+  #sections .llcov-ops-text h3 { margin: 0 0 2px !important; }
+  #sections .llcov-ops-text a[href^="tel:"] { position: static; }
+  #sections .llcov-ops-text a[href^="tel:"]::after { left: 0; right: 0; top: 0; bottom: 0; height: auto; transform: none; border-radius: 12px; }
+  #sections .llcov-ops-card:has(a[href])::after { content: ""; width: 8px; height: 8px; margin-right: 6px;
+    border-top: 2px solid var(--color-accent); border-right: 2px solid var(--color-accent); transform: rotate(45deg); pointer-events: none; }
+  #sections .llcov-ops-text a[href^="tel:"]:focus-visible { outline: none !important; }
+  #sections .llcov-ops-card:has(a[href]:focus-visible) { outline: 3px solid var(--color-accent); outline-offset: 2px; border-radius: 12px; }
+  #sections .llcov-map-wrap { border-radius: 14px !important; }
+
+}
+@media (max-width: 767px) and (min-width: 390px) {
+  #sections .fe-68cbe96dc7b21932efeeaca1 {
+    padding-left: max(var(--space-page-x), env(safe-area-inset-left, 0px)) !important;
+    padding-right: max(var(--space-page-x), env(safe-area-inset-right, 0px)) !important; }
+}
+</style>
 
 <style>
 /* Coverage section: soft glass atmosphere without touching the dark hero/form */
@@ -646,7 +819,108 @@ data-sqsp-section="fluid-engine"
     }
   }
 
-</style><div class="fluid-engine fe-682e44bcef3a173ba519019c"><div class="fe-block fe-block-6c1dceaebe135ff2c7df"><div class="sqs-block website-component-block sqs-block-website-component sqs-block-form form-block" data-block-css="[&quot;https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.form/27be60de-8d5a-490e-aafa-b0438d734062_982/website.components.form.styles.css&quot;]" data-block-scripts="[&quot;https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.form/27be60de-8d5a-490e-aafa-b0438d734062_982/website.components.form.visitor.js&quot;]" data-block-type="1337" data-definition-name="website.components.form" data-sqsp-block="form" data-website-component-id="6c1dceaebe135ff2c7df" id="block-6c1dceaebe135ff2c7df"><div class="sqs-block-content">
+</style><div class="fluid-engine fe-682e44bcef3a173ba519019c"><div class="fe-block fe-block-yui_3_17_2_1_1780042547748_2925"><div class="sqs-block website-component-block sqs-block-website-component sqs-block-code code-block" data-block-css="[&quot;https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.code/72844255-5a8e-48a3-adca-920c6345fee6_855/website.components.code.styles.css&quot;]" data-block-scripts="[&quot;https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.code/72844255-5a8e-48a3-adca-920c6345fee6_855/website.components.code.visitor.js&quot;]" data-block-type="1337" data-definition-name="website.components.code" data-sqsp-block="code" data-website-component-id="yui_3_17_2_1_1780042547748_2925" id="block-yui_3_17_2_1_1780042547748_2925"><div class="sqs-block-content">
+
+<div
+  class="sqs-code-container"
+
+data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quot;,&quot;enableSafeModeText&quot;:&quot;This block contains embedded scripts. Embedded scripts are disabled while you're logged in and editing your site.&quot;,&quot;enableSafeModeTitle&quot;:&quot;Embedded Scripts&quot;,&quot;exitSafeModeButton&quot;:&quot;Exit safe preview&quot;,&quot;exitSafeModeText&quot;:&quot;Please view the page after logging out for accurate rendering.&quot;,&quot;exitSafeModeTitle&quot;:&quot;Safe Preview&quot;,&quot;globalSafeMode&quot;:&quot;Embedded Code: This block contains embedded code that has been disabled.&quot;,&quot;scriptDisabled&quot;:&quot;Script Disabled&quot;}"
+
+>
+  
+    <div class="llct-intro">
+  <div class="llct-hero">
+  <span class="llsite-eyebrow"><span class="llsite-eyebrow-dot" aria-hidden="true"></span> Get In Touch</span>
+  <p class="llsite-brand">LaunchLayer</p>
+  <h1 class="llsite-h1">Contact us for PC &amp; laptop repair quotes</h1>
+  <p class="llsite-lead">Every enquiry gets a real human response — no chatbots, no automated ticket queues. Most messages receive a direct diagnostic reply within 2 hours.</p>
+  </div>
+  <div class="llct-actions">
+    <a href="tel:07367652987" class="llct-action llct-action--call" data-umami-event="call-click" data-umami-event-location="contact-hero">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      Call Workshop
+    </a>
+    <a href="https://calendly.com/launchlayer-consultation" target="_blank" rel="noopener" class="llct-action llct-action--book">Book Free Call <span aria-hidden="true">→</span></a>
+  </div>
+
+  <div class="llct-grid">
+    <div class="llct-card">
+      <h2>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        Fast Diagnostic Form
+      </h2>
+      <p>Fill out our short secure form below. Every project begins with a 100% free system diagnostic and a clear, upfront quote before any engineering work starts.</p>
+    </div>
+
+    <div class="llct-card">
+      <h2>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="11" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        Direct Live Consultation
+      </h2>
+      <p>Want to speak directly to an engineer? Skip the form entirely and pin a dedicated phone call slot straight into our workshop calendar so we can chat when it suits you.</p>
+      <a href="https://calendly.com/launchlayer-consultation" target="_blank" rel="noopener" class="llct-btn">
+        Book Free Call <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<style id="ll-contact-axis">
+/* Force intro + form onto one centred column (SQS fluid-engine otherwise
+   puts intro in cols 2–26 and the form in cols 6–22). */
+@media (min-width: 768px) {
+  .fe-682e44bcef3a173ba519019c > .fe-block-yui_3_17_2_1_1780042547748_2925 {
+    grid-column: 6 / 22 !important;
+    grid-row: 1 / 16 !important;
+    justify-self: stretch !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+  .fe-682e44bcef3a173ba519019c > .fe-block-6c1dceaebe135ff2c7df {
+    grid-column: 6 / 22 !important;
+    grid-row: 16 / 40 !important;
+    justify-self: stretch !important;
+    width: auto !important;
+    max-width: none !important;
+  }
+}
+.llct-intro,
+.llct-grid {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+}
+</style>
+
+<style class="transform-vars">
+    .fe-block-yui_3_17_2_1_1780042547748_2925 {
+      --opacity: 100%;
+      --translate-x: 0px;
+      --translate-y: 0px;
+      --rotation: 0deg;
+      --scale-x: 100%;
+      --scale-y: 100%;
+      --skew-x: 0deg;
+      --skew-y: 0deg;
+      --origin-x: 50%;
+      --origin-y: 50%;
+      --block-transform: none;
+
+      opacity: var(--opacity, 1);
+      transform: var(--block-transform);
+      transform-origin: var(--origin-x) var(--origin-y);
+    }
+  </style><style class="transform-overrides-vars">
+  
+</style>
+
+</div></div></div><div class="fe-block fe-block-6c1dceaebe135ff2c7df"><div class="sqs-block website-component-block sqs-block-website-component sqs-block-form form-block" data-block-css="[&quot;https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.form/27be60de-8d5a-490e-aafa-b0438d734062_982/website.components.form.styles.css&quot;]" data-block-scripts="[&quot;https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.form/27be60de-8d5a-490e-aafa-b0438d734062_982/website.components.form.visitor.js&quot;]" data-block-type="1337" data-definition-name="website.components.form" data-sqsp-block="form" data-website-component-id="6c1dceaebe135ff2c7df" id="block-6c1dceaebe135ff2c7df"><div class="sqs-block-content">
 
 <div class="sqs-site-style-form sqs-background-enabled" >
     
@@ -726,22 +1000,22 @@ data-sqsp-section="fluid-engine"
                 <div class="ll-name-row">
                   <div class="field first-name">
                     <div class="caption"><label class="caption-text" for="ll-contact-first">First Name</label></div>
-                    <input id="ll-contact-first" class="field-element" name="First Name" type="text" autocomplete="given-name" placeholder="Alex" required>
+                    <input id="ll-contact-first" class="field-element" name="First Name" type="text" autocomplete="given-name" autocapitalize="words" autocorrect="off" spellcheck="false" enterkeyhint="next" placeholder="Alex" required>
                   </div>
                   <div class="field last-name">
                     <div class="caption"><label class="caption-text" for="ll-contact-last">Last Name</label></div>
-                    <input id="ll-contact-last" class="field-element" name="Last Name" type="text" autocomplete="family-name" placeholder="Taylor" required>
+                    <input id="ll-contact-last" class="field-element" name="Last Name" type="text" autocomplete="family-name" autocapitalize="words" autocorrect="off" spellcheck="false" enterkeyhint="next" placeholder="Taylor" required>
                   </div>
                 </div>
               </fieldset>
             </div>
             <div class="form-item fields email required">
               <label class="title" for="ll-contact-email">Email <span class="required" aria-hidden="true">*</span></label>
-              <input id="ll-contact-email" class="field-element" name="Email" type="email" autocomplete="email" placeholder="you@example.com" required>
+              <input id="ll-contact-email" class="field-element" name="Email" type="email" autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="next" placeholder="you@example.com" required>
             </div>
             <div class="form-item fields phone">
               <label class="title" for="ll-contact-phone">Phone</label>
-              <input id="ll-contact-phone" class="field-element" name="Phone" type="tel" autocomplete="tel" placeholder="07xxx xxxxxx">
+              <input id="ll-contact-phone" class="field-element" name="Phone" type="tel" autocomplete="tel" inputmode="tel" enterkeyhint="next" placeholder="07xxx xxxxxx">
             </div>
             <div class="form-item fields select required">
               <label class="title" for="ll-contact-service">Which service does this relate to? <span class="required" aria-hidden="true">*</span></label>
@@ -761,12 +1035,13 @@ data-sqsp-section="fluid-engine"
             </div>
             <div class="form-item fields textarea required">
               <label class="title" for="ll-contact-message">How can we help? <span class="required" aria-hidden="true">*</span></label>
-              <textarea id="ll-contact-message" class="field-element" name="Message" rows="5" placeholder="Tell us what’s going on with the device, and we’ll take it from there." required></textarea>
+              <textarea id="ll-contact-message" class="field-element" name="Message" rows="5" autocapitalize="sentences" enterkeyhint="enter" placeholder="Tell us what’s going on with the device, and we’ll take it from there." required></textarea>
             </div>
             <div class="form-item ll-turnstile">
               <div class="cf-turnstile" data-sitekey="0x4AAAAAAE92s2yvAZLzFUIK" data-theme="dark"></div>
             </div>
             <p class="ll-contact-error" hidden role="alert"></p>
+            <p class="ll-contact-status ll-visually-hidden" role="status" aria-live="polite"></p>
             <div class="form-button-wrapper form-button-wrapper--align-center">
               <button type="submit" class="button sqs-system-button sqs-editable-button sqs-button-element--primary ll-contact-submit">Request My Free Diagnostic</button>
             </div>
@@ -1246,98 +1521,6 @@ data-sqsp-section="fluid-engine"
 </style>
 
 </div>
-</div></div></div><div class="fe-block fe-block-yui_3_17_2_1_1780042547748_2925"><div class="sqs-block website-component-block sqs-block-website-component sqs-block-code code-block" data-block-css="[&quot;https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.code/72844255-5a8e-48a3-adca-920c6345fee6_855/website.components.code.styles.css&quot;]" data-block-scripts="[&quot;https://definitions.sqspcdn.com/website-component-definition/static-assets/website.components.code/72844255-5a8e-48a3-adca-920c6345fee6_855/website.components.code.visitor.js&quot;]" data-block-type="1337" data-definition-name="website.components.code" data-sqsp-block="code" data-website-component-id="yui_3_17_2_1_1780042547748_2925" id="block-yui_3_17_2_1_1780042547748_2925"><div class="sqs-block-content">
-
-<div
-  class="sqs-code-container"
-
-data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quot;,&quot;enableSafeModeText&quot;:&quot;This block contains embedded scripts. Embedded scripts are disabled while you're logged in and editing your site.&quot;,&quot;enableSafeModeTitle&quot;:&quot;Embedded Scripts&quot;,&quot;exitSafeModeButton&quot;:&quot;Exit safe preview&quot;,&quot;exitSafeModeText&quot;:&quot;Please view the page after logging out for accurate rendering.&quot;,&quot;exitSafeModeTitle&quot;:&quot;Safe Preview&quot;,&quot;globalSafeMode&quot;:&quot;Embedded Code: This block contains embedded code that has been disabled.&quot;,&quot;scriptDisabled&quot;:&quot;Script Disabled&quot;}"
-
->
-  
-    <div class="llct-intro">
-  <span class="llsite-eyebrow"><span class="llsite-eyebrow-dot" aria-hidden="true"></span> Get In Touch</span>
-  <p class="llsite-brand">LaunchLayer</p>
-  <h1 class="llsite-h1">Contact us for PC &amp; laptop repair quotes</h1>
-  <p class="llsite-lead">Every enquiry gets a real human response — no chatbots, no automated ticket queues. Most messages receive a direct diagnostic reply within 2 hours.</p>
-
-  <div class="llct-grid">
-    <div class="llct-card">
-      <h2>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-        Fast Diagnostic Form
-      </h2>
-      <p>Fill out our short secure form below. Every project begins with a 100% free system diagnostic and a clear, upfront quote before any engineering work starts.</p>
-    </div>
-
-    <div class="llct-card">
-      <h2>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="11" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-        Direct Live Consultation
-      </h2>
-      <p>Want to speak directly to an engineer? Skip the form entirely and pin a dedicated phone call slot straight into our workshop calendar so we can chat when it suits you.</p>
-      <a href="https://calendly.com/launchlayer-consultation" target="_blank" rel="noopener" class="llct-btn">
-        Book Free Call <span aria-hidden="true">→</span>
-      </a>
-    </div>
-  </div>
-</div>
-
-</div>
-
-<style id="ll-contact-axis">
-/* Force intro + form onto one centred column (SQS fluid-engine otherwise
-   puts intro in cols 2–26 and the form in cols 6–22). */
-@media (min-width: 768px) {
-  .fe-682e44bcef3a173ba519019c > .fe-block-yui_3_17_2_1_1780042547748_2925 {
-    grid-column: 6 / 22 !important;
-    grid-row: 1 / 16 !important;
-    justify-self: stretch !important;
-    width: auto !important;
-    max-width: none !important;
-  }
-  .fe-682e44bcef3a173ba519019c > .fe-block-6c1dceaebe135ff2c7df {
-    grid-column: 6 / 22 !important;
-    grid-row: 16 / 40 !important;
-    justify-self: stretch !important;
-    width: auto !important;
-    max-width: none !important;
-  }
-}
-.llct-intro,
-.llct-grid {
-  width: 100% !important;
-  max-width: none !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-  box-sizing: border-box !important;
-}
-</style>
-
-<style class="transform-vars">
-    .fe-block-yui_3_17_2_1_1780042547748_2925 {
-      --opacity: 100%;
-      --translate-x: 0px;
-      --translate-y: 0px;
-      --rotation: 0deg;
-      --scale-x: 100%;
-      --scale-y: 100%;
-      --skew-x: 0deg;
-      --skew-y: 0deg;
-      --origin-x: 50%;
-      --origin-y: 50%;
-      --block-transform: none;
-
-      opacity: var(--opacity, 1);
-      transform: var(--block-transform);
-      transform-origin: var(--origin-x) var(--origin-y);
-    }
-  </style><style class="transform-overrides-vars">
-  
-</style>
-
 </div></div></div></div></div>
     </div>
   
@@ -1549,7 +1732,7 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
 
     <div class="llcov-map-wrap">
       <div class="llcov-map">
-        <img src="/assets/images/image-8d040370.png" width="640" height="382" alt="LaunchLayer Essex Technical Service Coverage Area Map" loading="lazy">
+        <img src="/assets/images/coverage-map.webp" width="1320" height="1133" alt="LaunchLayer Essex Technical Service Coverage Area Map" loading="lazy" decoding="async">
       </div>
     </div>
 
@@ -1626,7 +1809,7 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
         <div class="matrix-node"><a href="/chelmsford-pc-repair/">Chelmsford PC Repair (CM1)</a></div>
         <div class="matrix-node"><a href="/southend-pc-repair/">Southend PC Repairs (SS0)</a></div>
         <div class="matrix-node"><a href="/rayleigh-laptop-service/">Rayleigh Laptop Service (SS6)</a></div>
-        <div class="matrix-node data-recovery-special-node"><a href="/data-recovery/">🛡️ Data Recovery Essex</a></div>
+        <div class="matrix-node data-recovery-special-node"><a href="/data-recovery/">Data Recovery Essex</a></div>
       </div>
     </div>
 
@@ -1642,17 +1825,20 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
           <script src="https://www.bark.com/assets/js/frontend-v2/widgets-v2.64f07b24c109cff4b977db1f82909516.v2.js" defer></script>
         </div>
         <div class="footer-social-strip">
-          <a href="https://www.instagram.com/launchlayeruk/" target="_blank" class="social-icon-vector" title="Instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          <a href="https://www.instagram.com/launchlayeruk/" target="_blank" class="social-icon-vector" title="Instagram" aria-label="LaunchLayer on Instagram (opens in a new tab)">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
           </a>
-          <a href="https://www.facebook.com/LaunchLayerWickford" target="_blank" class="social-icon-vector" title="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <a href="https://www.facebook.com/LaunchLayerWickford" target="_blank" class="social-icon-vector" title="Facebook" aria-label="LaunchLayer on Facebook (opens in a new tab)">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           </a>
-          <a href="https://www.linkedin.com/company/launchlayeruk" target="_blank" class="social-icon-vector" title="LinkedIn">
-            <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+          <a href="https://www.linkedin.com/company/launchlayeruk" target="_blank" class="social-icon-vector" title="LinkedIn" aria-label="LaunchLayer on LinkedIn (opens in a new tab)">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
           </a>
-          <a href="https://x.com/LaunchLayerUK" target="_blank" class="social-icon-vector" title="X">
-            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          <a href="https://x.com/LaunchLayerUK" target="_blank" class="social-icon-vector" title="X" aria-label="LaunchLayer on X (opens in a new tab)">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://nextdoor.co.uk/page/launchlayer-wickford-england" target="_blank" class="social-icon-vector" title="Nextdoor" aria-label="LaunchLayer on Nextdoor (opens in a new tab)">
+            <svg viewBox="0.696 -4.1 66.786 66.786" aria-hidden="true" focusable="false"><path d="M22.1789 8.27054V0.791992H12.2953V14.4821L0.696289 21.7701L5.95482 30.14L12.2953 26.154V53.8538H55.8828V26.154L62.2233 30.14L67.4819 21.7701L34.0863 0.791992L22.1789 8.27054Z"/></svg>
           </a>
         </div>
       </div>
@@ -1665,7 +1851,7 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
 
     <script defer="true" src="/assets/animate/site-bundle.a1eee5fddfc683d04e87734893dff434.js" type="text/javascript"></script>
 
-<div class="launchlayer-floating-pill-container">
+<div class="launchlayer-floating-pill-container ll-fab-suppressed">
     <a href="tel:07367652987" class="launchlayer-floating-btn" aria-label="Call LaunchLayer Workshop" data-umami-event="call-click" data-umami-event-location="footer">
         <span class="floating-phone-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1690,7 +1876,15 @@ n.innerHTML='<style>#ncx-local-notice{position:fixed;left:50%;bottom:18px;transf
 if (window.location.search.includes('submitted=true')) {
   const formContainer = document.querySelector('form');
   if (formContainer) {
-    formContainer.innerHTML = '<div class="ll-contact-success"><p>Thank you — your message is on its way.</p><span>We’ll reply to you at hello@launchlayer.uk within our 09:00–22:00 window.</span></div>';
+    formContainer.innerHTML = '<div class="ll-contact-success" role="status" tabindex="-1"><p>Thank you — your message is on its way.</p><span>We’ll reply to you at hello@launchlayer.uk within our 09:00–22:00 window.</span></div>';
+    var successPanel = formContainer.querySelector('.ll-contact-success');
+    if (successPanel) {
+      requestAnimationFrame(function () {
+        var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        successPanel.scrollIntoView({ block: 'start', behavior: reduceMotion ? 'auto' : 'smooth' });
+        successPanel.focus({ preventScroll: true });
+      });
+    }
   }
 } else {
   (function prefillContactFromBuildIntake() {
@@ -1715,10 +1909,22 @@ if (window.location.search.includes('submitted=true')) {
     var errorEl = form.querySelector('.ll-contact-error');
     var submitBtn = form.querySelector('.ll-contact-submit');
 
+    var statusEl = form.querySelector('.ll-contact-status');
+
+    function motionBehavior() {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      return reduce ? 'auto' : 'smooth';
+    }
+
     function showError(message) {
       if (!errorEl) return;
       errorEl.hidden = false;
       errorEl.textContent = message;
+      var rect = errorEl.getBoundingClientRect();
+      var off = rect.bottom <= 0 || rect.top >= window.innerHeight || rect.top < 0 || rect.bottom > window.innerHeight;
+      if (off) {
+        errorEl.scrollIntoView({ block: 'center', behavior: motionBehavior() });
+      }
     }
 
     function resetTurnstile() {
@@ -1727,21 +1933,52 @@ if (window.location.search.includes('submitted=true')) {
       }
     }
 
+    function setBusy(on) {
+      if (submitBtn) {
+        submitBtn.disabled = !!on;
+        if (on) {
+          submitBtn.setAttribute('aria-busy', 'true');
+          submitBtn.classList.add('is-loading');
+        } else {
+          submitBtn.removeAttribute('aria-busy');
+          submitBtn.classList.remove('is-loading');
+        }
+      }
+      if (on) form.setAttribute('aria-busy', 'true');
+      else form.removeAttribute('aria-busy');
+      if (statusEl) statusEl.textContent = on ? 'Sending your message…' : '';
+    }
+
+    function markBlocked() {
+    }
+
+    form.addEventListener('invalid', function (event) {
+      if (event.target && event.target.setAttribute) event.target.setAttribute('aria-invalid', 'true');
+    }, true);
+
+    form.addEventListener('input', function (event) {
+      var field = event.target;
+      if (!field || field.getAttribute('aria-invalid') !== 'true') return;
+      if (typeof field.checkValidity === 'function' && field.checkValidity()) field.removeAttribute('aria-invalid');
+    });
+
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       if (errorEl) {
         errorEl.hidden = true;
         errorEl.textContent = '';
       }
-
       var tokenInput = form.querySelector('[name="cf-turnstile-response"]');
       var token = tokenInput && tokenInput.value;
       if (!token) {
+        markBlocked();
         showError('Please complete the verification check and try again.');
+        var turnstile = form.querySelector('.ll-turnstile');
+        if (turnstile) turnstile.scrollIntoView({ block: 'center', behavior: motionBehavior() });
         return;
       }
 
-      if (submitBtn) submitBtn.disabled = true;
+      setBusy(true);
 
       fetch(form.action, {
         method: 'POST',
@@ -1783,12 +2020,14 @@ if (window.location.search.includes('submitted=true')) {
             go();
             return;
           }
-          if (submitBtn) submitBtn.disabled = false;
+          setBusy(false);
+          markBlocked();
           resetTurnstile();
           showError(result.data.error || 'We could not send your message. Please try again or call the workshop.');
         })
         .catch(function () {
-          if (submitBtn) submitBtn.disabled = false;
+          setBusy(false);
+          markBlocked();
           resetTurnstile();
           showError('We could not send your message. Please try again or call the workshop.');
         });
@@ -1796,6 +2035,46 @@ if (window.location.search.includes('submitted=true')) {
   })();
 }
 </script>
-<script src="/assets/js/global-nav-footer.js" defer></script>
-<script src="/assets/js/cookie-consent.js" defer></script></body>
+<script src="/assets/js/global-nav-footer.js?v=footer-20260928c" defer></script>
+<script src="/assets/js/cookie-consent.js" defer></script>
+<script>
+(function () {
+  var pill = document.querySelector('.launchlayer-floating-pill-container');
+  if (!pill) return;
+  if (!('IntersectionObserver' in window)) { pill.classList.remove('ll-fab-suppressed'); return; }
+  var btn = pill.querySelector('.launchlayer-floating-btn');
+  var form = document.querySelector('.ll-contact-form');
+  /* 1. Redundant while a call action or the form is on screen (fade). */
+  var near = [document.querySelector('.llct-actions'), document.getElementById('block-6c1dceaebe135ff2c7df')].filter(Boolean);
+  /* 2. Never paint over the coverage card (it has its own call row) or footer content (instant). */
+  var under = [].slice.call(document.querySelectorAll('.llcov-panel, .launchlayer-master-footer .footer-top-segment, .launchlayer-master-footer .footer-matrix-section, .launchlayer-master-footer .footer-compliance-bar'));
+  var onScreen = new Set(), blocked = new Set(), focused = false, bandIO = null, key = '';
+  function sync() {
+    pill.classList.toggle('ll-fab-suppressed', onScreen.size > 0 || focused);
+    pill.classList.toggle('ll-fab-blocked', blocked.size > 0);
+  }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { e.isIntersecting ? onScreen.add(e.target) : onScreen.delete(e.target); }); sync();
+  }, { rootMargin: '120px 0px 120px 0px' });
+  near.forEach(function (el) { io.observe(el); });
+  /* The pill's band: its bottom offset (24px, or banner height + 12px while the cookie notice is open) + its height + 16px. */
+  function band() { return Math.ceil((parseFloat(getComputedStyle(pill).bottom) || 24) + ((btn && btn.offsetHeight) || 48) + 16); }
+  function watchBand() {
+    var b = band(), k = innerHeight + ':' + b; if (k === key) return; key = k;
+    if (bandIO) bandIO.disconnect(); blocked.clear();
+    bandIO = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { e.isIntersecting ? blocked.add(e.target) : blocked.delete(e.target); }); sync();
+    }, { rootMargin: (b - innerHeight) + 'px 0px 160px 0px' });
+    under.forEach(function (el) { bandIO.observe(el); });
+  }
+  watchBand();
+  addEventListener('resize', watchBand);
+  new MutationObserver(watchBand).observe(document.body, { attributes: true, attributeFilter: ['class'] });
+  if (form) {
+    form.addEventListener('focusin', function () { focused = true; sync(); });
+    form.addEventListener('focusout', function () { setTimeout(function () { focused = form.contains(document.activeElement); sync(); }, 0); });
+  }
+})();
+</script>
+</body>
 </html>

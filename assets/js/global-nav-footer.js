@@ -2,6 +2,10 @@ document.addEventListener('click', function(e) {
   const trigger = e.target.closest('.footer-matrix-title, .service-coverage-accordion-header, [data-accordion]');
   if (!trigger) return;
 
+  // The footer coverage list is always open from 768px up: don't toggle it there,
+  // so aria-expanded="true" stays truthful.
+  if (trigger.closest('.launchlayer-master-footer') && !window.matchMedia('(max-width: 767px)').matches) return;
+
   // Ignore clicks that originate on links inside the header (none today,
   // but keep navigation safe if markup changes).
   if (e.target.closest('a') && e.target.closest('a') !== trigger) return;
@@ -23,7 +27,9 @@ document.addEventListener('click', function(e) {
 }, true);
 
 (function syncFooterAccordionState() {
-  const mobile = window.matchMedia('(max-width: 767px)').matches;
+  const mq = window.matchMedia('(max-width: 767px)');
+  function sync() {
+  const mobile = mq.matches;
   document.querySelectorAll('.footer-matrix-title[data-accordion], .service-coverage-accordion-header[data-accordion]').forEach(function (trigger) {
     const section = trigger.closest('.footer-matrix-section');
     const panel =
@@ -32,6 +38,9 @@ document.addEventListener('click', function(e) {
     const open = mobile ? !!(panel && panel.classList.contains('open')) : true;
     trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
+  }
+  sync();
+  if (mq.addEventListener) mq.addEventListener('change', sync);
 })();
 
 (function syncServicesDropdownExpanded() {
@@ -189,4 +198,42 @@ document.addEventListener('click', function(e) {
     if (inject()) observer.disconnect();
   });
   observer.observe(wrap, { childList: true, subtree: true });
+})();
+
+(function keepCallPillOffFooterContent() {
+  // The fixed "Call Workshop" pill hides instantly while any footer block overlaps the strip it
+  // occupies, and comes back in the footer's 104px tail. Class-based, so page scripts that also
+  // manage the pill (e.g. /contact/) keep working independently.
+  // Measured from the blocks' boxes on scroll. WebKit's IntersectionObserver drops the overlap
+  // at the bottom of a long page once the cookie notice has lifted the pill.
+  var pill = document.querySelector('.launchlayer-floating-pill-container');
+  var footer = document.querySelector('.launchlayer-master-footer');
+  if (!pill || !footer) return;
+  var btn = pill.querySelector('.launchlayer-floating-btn');
+  var blocks = [].slice.call(footer.querySelectorAll('.footer-top-segment, .footer-matrix-section, .footer-compliance-bar'));
+  if (!blocks.length) return;
+  // Band = pill's bottom offset + its height + 16px breathing room (grows while the cookie notice lifts the pill).
+  function band() { return Math.ceil((parseFloat(getComputedStyle(pill).bottom) || 24) + ((btn && btn.offsetHeight) || 48) + 16); }
+  function hiding() {
+    var line = window.innerHeight - band();
+    return blocks.some(function (el) {
+      var r = el.getBoundingClientRect();
+      return r.width && r.bottom > line && r.top < window.innerHeight + 160;
+    });
+  }
+  function sync() { pill.classList.toggle('ll-fab-footer', hiding()); }
+  var noticeWatch;
+  function watchNotice() {
+    var n = document.getElementById('ll-cookie-notice');
+    if (!n || noticeWatch || !window.ResizeObserver) return;
+    noticeWatch = new ResizeObserver(function () { sync(); requestAnimationFrame(sync); });
+    noticeWatch.observe(n);
+  }
+  sync();
+  window.addEventListener('scroll', sync, { passive: true });
+  window.addEventListener('resize', sync);
+  watchNotice();
+  // The footer can grow without a scroll event (coverage list opened at the page bottom, late Bark badge paint).
+  if (window.ResizeObserver) new ResizeObserver(function () { sync(); requestAnimationFrame(sync); }).observe(footer);
+  new MutationObserver(function () { watchNotice(); sync(); requestAnimationFrame(sync); }).observe(document.body, { attributes: true, attributeFilter: ['class'], childList: true });
 })();
