@@ -18,6 +18,8 @@ const VIEWPORTS = ALLV.filter(v => WIDTHS.includes(v[0]));
 const CHROMIUM_WIDTHS = (process.env.CHROMIUM_WIDTHS || '1024,1440').split(',').map(Number);
 const vpFor = eng => eng === 'chromium' ? VIEWPORTS.filter(v => CHROMIUM_WIDTHS.includes(v[0])) : VIEWPORTS;
 const STATIC_ROOT = process.env.STATIC_ROOT || (MODE === 'proto' ? path.join(ROOT, 'proto/site') : path.join(ROOT, 'src'));
+// Expected footer social row, in order (SOCIAL_EXPECT=4 checks the e17df3ac state without Nextdoor).
+const SOCIAL = [['instagram.com/launchlayeruk', 'Instagram'], ['facebook.com/LaunchLayerWickford', 'Facebook'], ['linkedin.com/company/launchlayeruk', 'LinkedIn'], ['x.com/LaunchLayerUK', 'X'], ['nextdoor.co.uk/page/launchlayer-wickford-england', 'Nextdoor']].slice(0, +(process.env.SOCIAL_EXPECT || 5));
 const results = [], dump = {};
 const report = (eng, pg, w, name, ok, extra = '') => { results.push({ eng, pg, w, name, ok, extra }); console.log(`${ok ? 'PASS' : 'FAIL'} ${eng} ${w} ${pg} ${name}${extra ? '  — ' + extra : ''}`); };
 const warn = (msg) => { results.push({ warn: msg }); console.log('WARN ' + msg); };
@@ -65,7 +67,8 @@ async function measure(page, w) {
     const cols = [...new Set(nav.map(n => Math.round(n.tl)))], rows = [...new Set(nav.map(n => Math.round(n.top)))];
     out.navCols = cols.length; out.navRows = rows.length;
     // social
-    out.social = qa('.footer-social-strip a', F).map(a => { const b = a.getBoundingClientRect(); return { t: a.title, w: +b.width.toFixed(1), h: +b.height.toFixed(1) }; });
+    out.social = qa('.footer-social-strip a', F).map(a => { const b = a.getBoundingClientRect(); return { t: a.title, x: +b.left.toFixed(1), y: +b.top.toFixed(1), w: +b.width.toFixed(1), h: +b.height.toFixed(1) }; });
+    { const nd = F.querySelector('.footer-social-strip a[href*="nextdoor.co.uk"] svg path'); out.ndSymbol = nd ? { h: +nd.getBoundingClientRect().height.toFixed(2), fill: getComputedStyle(nd).fill } : null; }
     // bark
     const bw = F.querySelector('.bark-widget-wrapper'); out.bark = bw ? { html: bw.innerHTML.replace(/\s+/g, ' ').slice(0, 300), h: Math.round(bw.getBoundingClientRect().height) } : null;
     // coverage disclosure
@@ -177,6 +180,17 @@ async function staticPass(browser) {
   report('static', 'all', '-', 'footer legal/company/tagline text identical', Object.keys(texts).length === 1, Object.keys(texts).length > 1 ? `odd: ${odd(texts).join(', ')}` : '');
   report('static', 'all', '-', 'one global-nav-footer.css href (same ?v=) on every page', Object.keys(css).length === 1, Object.keys(css).join(' vs '));
   report('static', 'all', '-', 'one global-nav-footer.js src (same ?v=) on every page', Object.keys(js).length === 1, Object.keys(js).join(' vs '));
+  // Social row markup on every footer page (template.html included)
+  const socialBad = [];
+  for (const f of rows.map(r => r.f)) {
+    const html = fs.readFileSync(path.join(STATIC_ROOT, f), 'utf8'); const i = html.indexOf('<footer'), foot = html.slice(i, html.indexOf('</footer>', i));
+    const strip = foot.match(/<div class="footer-social-strip">([\s\S]*?)<\/div>/); const as = strip ? [...strip[1].matchAll(/<a\b([^>]*)>\s*<svg\b([^>]*)>[\s\S]*?<\/svg>\s*<\/a>/g)] : [];
+    if (as.length !== SOCIAL.length) { socialBad.push(`${f}: ${as.length} links`); continue; }
+    as.forEach((m, k) => { const [u, name] = SOCIAL[k], A = m[1], V = m[2];
+      const ok = A.includes(`href="https://${u.startsWith('x.com') ? '' : (u.startsWith('nextdoor') ? '' : 'www.')}${u}`) && /class="social-icon-vector"/.test(A) && /target="_blank"/.test(A) && A.includes(`title="${name}"`) && A.includes(`aria-label="LaunchLayer on ${name} (opens in a new tab)"`) && /aria-hidden="true"/.test(V) && /focusable="false"/.test(V);
+      if (!ok) socialBad.push(`${f}: #${k + 1} ${name}`); });
+  }
+  report('static', 'all', '-', `social row: ${SOCIAL.length} links in order (${SOCIAL.map(x => x[1]).join(', ')}), title + aria-label + target, svg aria-hidden/focusable, on every footer page`, !socialBad.length, socialBad.slice(0, 5).join('; ') + (socialBad.length > 5 ? ` (+${socialBad.length - 5})` : ''));
   if (Object.keys(emoji).length > 1) warn(`Data Recovery link text differs by a leading 🛡️ emoji (visible copy, needs Jordan's decision): with emoji ${Object.values(emoji).sort((a, b) => b.length - a.length)[0].length}, without ${odd(emoji).length} (${odd(emoji).slice(0, 4).join(', ')}…)`);
   dump.static = { pages: rows.length, trees: Object.fromEntries(Object.entries(trees).map(([k, v]) => [k.slice(0, 40), v])), css: Object.keys(css), js: Object.keys(js) };
 }
@@ -205,6 +219,9 @@ for (const eng of ENGINES) {
       report(eng, pg, w, 'desktop: nav on one row', r.navRows === 1, `${r.navRows} rows`);
     }
     report(eng, pg, w, 'tap targets ≥44×44 (logo, nav, coverage, social, badge) + 44px hit test', !r.small.length, r.small.slice(0, 5).join('; ') + (r.small.length > 5 ? ` (+${r.small.length - 5})` : ''));
+    { const so = r.social, tops = new Set(so.map(x => Math.round(x.y))), gaps = so.slice(1).map((x, k) => +(x.x - so[k].x - so[k].w).toFixed(1));
+      report(eng, pg, w, `social row: ${SOCIAL.length} buttons, 44×44, one row, gaps ≥8px`, so.length === SOCIAL.length && tops.size === 1 && so.every(x => x.w >= 44 && x.h >= 44) && gaps.every(g => g >= 8), `${so.length} buttons, rows ${tops.size}, sizes ${[...new Set(so.map(x => x.w + '×' + x.h))].join('/')}, gaps ${gaps.join('/')}`);
+      if (SOCIAL.length >= 5) report(eng, pg, w, 'Nextdoor house symbol ≥19px tall on screen (Nextdoor minimum size)', !!r.ndSymbol && r.ndSymbol.h >= 19, r.ndSymbol ? `${r.ndSymbol.h}px tall, fill ${r.ndSymbol.fill}` : 'missing'); }
     report(eng, pg, w, 'tap targets ≥8px apart', !r.close.length, r.close.slice(0, 4).join('; ') + (r.close.length > 4 ? ` (+${r.close.length - 4})` : ''));
     const lowC = r.contrast.filter(c => c.ratio < c.need), lowI = r.icons.filter(c => c.ratio < c.need);
     report(eng, pg, w, 'contrast AA: footer text ≥4.5:1 (large ≥3:1), icons ≥3:1', !lowC.length && !lowI.length && !r.bgImage, (lowC.concat(lowI).map(c => `${c.el || c.t} ${c.fg}/${c.bg} ${c.ratio}`).join('; ') || `min text ${Math.min(...r.contrast.map(c => c.ratio)).toFixed(2)}, min icon ${r.icons.length ? Math.min(...r.icons.map(c => c.ratio)).toFixed(2) : '-'}`) + (r.bgImage ? ' (bg image in footer)' : ''));

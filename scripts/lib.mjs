@@ -42,6 +42,7 @@ export async function open(browser, o) {
   const root = mode === 'proto' ? overlay : null;
   if (viaPreview || root) await ctx.route(SITE + '/**', async r => {
     const u = new URL(r.request().url());
+    if (u.pathname.startsWith('/.netlify/')) { guard.netlifyBlocked++; return r.abort(); } // the SITE route wins over the /.netlify/ route above
     if (u.pathname === '/api/contact' || u.pathname === '/api/send') return r.fallback();
     const f = overlayFile(root, u.pathname);
     if (f) { guard.overlayServed++; return r.fulfill({ status: 200, contentType: MIME[path.extname(f)] || 'application/octet-stream', body: fs.readFileSync(f) }); }

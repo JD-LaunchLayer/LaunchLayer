@@ -36,6 +36,7 @@ CANONICAL_GRAPH: dict[str, Any] = {
                 "https://www.facebook.com/LaunchLayerWickford/",
                 "https://www.linkedin.com/company/launchlayeruk",
                 "https://x.com/LaunchLayerUK",
+                "https://nextdoor.co.uk/page/launchlayer-wickford-england",
             ],
         },
         {
@@ -100,6 +101,7 @@ CANONICAL_GRAPH: dict[str, Any] = {
                 "https://www.facebook.com/LaunchLayerWickford/",
                 "https://www.linkedin.com/company/launchlayeruk",
                 "https://x.com/LaunchLayerUK",
+                "https://nextdoor.co.uk/page/launchlayer-wickford-england",
             ],
             "hasOfferCatalog": {
                 "@type": "OfferCatalog",

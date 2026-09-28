@@ -503,6 +503,11 @@ html body .launchlayer-master-footer .social-icon-vector {
 html body .launchlayer-master-footer .social-icon-vector { position: relative !important; }
 html body .launchlayer-master-footer .social-icon-vector::after { content: ""; position: absolute; inset: -3px; }
 html body .launchlayer-master-footer .social-icon-vector svg { display: block !important; width: 18px !important; height: 18px !important; fill: currentColor !important; }
+/* Nextdoor: official house symbol (about.nextdoor.com), square viewBox; 24px box keeps the house ≥19px tall (Nextdoor minimum size) */
+html body .launchlayer-master-footer .social-icon-vector[href*="nextdoor.co.uk"] svg { width: 24px !important; height: 24px !important; }
+/* Nextdoor Brand Use Guidelines: "The Nextdoor logo should always be used in color for online use." Keep it green on hover too */
+html body .launchlayer-master-footer .social-icon-vector[href*="nextdoor.co.uk"],
+html body .launchlayer-master-footer .social-icon-vector[href*="nextdoor.co.uk"]:hover { color: #1B8751 !important; }
 html body .launchlayer-master-footer .bark-widget-wrapper { margin: 0 !important; line-height: 1.3; }
 /* Before Bark's script paints the badge, its plain link still gets a 44px target */
 html body .launchlayer-master-footer .bark-widget { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; font-weight: 600; color: var(--color-body); }
@@ -584,7 +589,7 @@ html body .launchlayer-master-footer .footer-company-line {
   html body .launchlayer-master-footer .footer-legal-stack { order: 0 !important; flex: 1 1 auto !important; min-width: 0 !important; }
   html body .launchlayer-master-footer .footer-right-assets { order: 1 !important; flex: none !important; gap: 16px !important; }
   html body .launchlayer-master-footer .copyright-text-notice { font-size: 12.5px !important; }
-  html body .launchlayer-master-footer .footer-company-line { font-size: 12px !important; }
+  html body .launchlayer-master-footer .footer-company-line { font-size: 12px !important; text-wrap: balance; }
 }
 
 /* Call pill: hidden (instantly) while footer content passes under it — toggled by global-nav-footer.js */

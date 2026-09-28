@@ -233,5 +233,7 @@ document.addEventListener('click', function(e) {
   window.addEventListener('scroll', sync, { passive: true });
   window.addEventListener('resize', sync);
   watchNotice();
+  // The footer can grow without a scroll event (coverage list opened at the page bottom, late Bark badge paint).
+  if (window.ResizeObserver) new ResizeObserver(function () { sync(); requestAnimationFrame(sync); }).observe(footer);
   new MutationObserver(function () { watchNotice(); sync(); requestAnimationFrame(sync); }).observe(document.body, { attributes: true, attributeFilter: ['class'], childList: true });
 })();
