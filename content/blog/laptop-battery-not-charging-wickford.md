@@ -10,7 +10,7 @@ category_path: Useful+Tips
 author: Jordan Duggins
 image: /assets/images/image-laptop-battery-not-charging-wickford.jpg
 og_image: /assets/meta/meta-laptop-battery-not-charging-wickford.jpg
-image_alt: Laptop on a workshop bench with the charger plugged in and the battery icon on screen
+image_alt: HP laptop on a wooden workshop bench with the bottom cover off, battery and fan visible, and a Windows desktop on the screen
 ---
 
 Windows says the lead is in, then “not charging”, or the percentage sits still while you work. That is a **laptop battery not charging** symptom. It is not, by itself, an order for a new cell.
