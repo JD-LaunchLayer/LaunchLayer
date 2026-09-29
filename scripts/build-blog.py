@@ -544,6 +544,8 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{url}">
   <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/icon-512.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
