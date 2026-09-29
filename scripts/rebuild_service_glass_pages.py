@@ -1097,7 +1097,10 @@ def render_page(page: PageData) -> str:
   <meta name="description" content="{html_lib.escape(page.description)}">
   <meta name="robots" content="{html_lib.escape(page.robots)}">
   <link rel="canonical" href="{html_lib.escape(page.canonical)}">
-  <link rel="icon" type="image/x-icon" href="/assets/images/image-cbf4c0a5.ico?format=100w">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icons/icon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/icon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
 
   <meta property="og:site_name" content="LaunchLayer">
   <meta property="og:title" content="{html_lib.escape(page.og_title)}">
