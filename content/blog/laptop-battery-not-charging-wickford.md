@@ -4,7 +4,7 @@ title: Laptop Battery Not Charging? 5 Things to Check Before You Replace It
 headline: Laptop Battery Not Charging? 5 Things to Check Before You Replace It
 description: Laptop battery not charging in Wickford? Check the cable, the port, Windows and battery health before you buy a new pack. Labour from £55 plus the part.
 date: 2026-09-30
-draft: true
+draft: false
 category: Useful Tips
 category_path: Useful+Tips
 author: Jordan Duggins
