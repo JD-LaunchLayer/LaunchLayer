@@ -1,8 +1,8 @@
 ---
 slug: laptop-battery-not-charging-wickford
-title: Laptop Battery Not Charging? 5 Things to Check Before You Replace It
-headline: Laptop Battery Not Charging? 5 Things to Check Before You Replace It
-description: Laptop battery not charging in Wickford? Check the cable, the port, Windows and battery health before you buy a new pack. Labour from £55 plus the part.
+title: Laptop Plugged In Not Charging? Laptop Battery Not Charging Checks
+headline: Laptop Plugged In Not Charging? Laptop Battery Not Charging Checks
+description: Laptop plugged in not charging? Checks for a laptop battery not charging. Wickford repair from £55 plus the part.
 date: 2026-09-30
 draft: false
 category: Useful Tips
@@ -13,56 +13,80 @@ og_image: /assets/meta/meta-laptop-battery-not-charging-wickford.jpg
 image_alt: A swollen laptop battery with visible bulges resting on a workshop bench
 ---
 
-Windows says the lead is in, then “not charging”, or the percentage sits still while you work. That is a **laptop battery not charging** symptom. It is not, by itself, an order for a new cell.
+Your laptop is plugged in and not charging, or the percentage will not move. That is a laptop battery not charging problem, and it is often the charger, the wall socket, or a Windows setting rather than a dead battery. The checks below are the ones worth trying first.
 
-I see this every week at the Wickford bench. People have already bought a marketplace pack because the icon looked wrong. Sometimes the pack was fine and the cable, the port, a Windows charge limit, or the charging circuit was the actual fault. Replacement is the last step on this page, not the first.
+We see this every week at the Wickford workshop. If you would rather we look at it, call **[07367 652987](tel:07367652987)** or book a **[Wickford laptop repair](/wickford-laptop-repair/)**. Bring the charger you actually use. Diagnostics are free.
 
-This is a symptom checklist for a pack that will not fill. If the case is already bulging or the trackpad is lifting, stop and read the [battery replacement guide](/blog/laptop-battery-replacement-wickford/) — that is a safety job, not a settings tweak. If the machine will not power on at all, even with the mains lead in, use the [won’t turn on guide](/blog/laptop-not-turning-on-slow-fix/) instead. If the brick, the socket and the cell are all in doubt together, bring the charger and I will separate them on the bench rather than selling you a battery on the first phone call. Book the laptop itself through [Wickford laptop repair](/wickford-laptop-repair/).
+## Quick fixes to try first
 
-## 1. The cable and the brick
+Try one step at a time, in this order.
 
-Unplug the lead at both ends and seat it again. Try a different wall socket, not the same overloaded extension. Look at the LED on the brick if it has one. A dead light, a floppy cable at the strain relief, or a phone charger “that fits” on a 65W laptop will all look like a dead battery from the desktop.
+1. **Check the charger.** Unplug it at the laptop and at the wall, then push both ends back in firmly. If the brick has a light, see whether it comes on. A phone charger that happens to fit is often too weak for a laptop, so the battery looks dead when the charger is the problem. Use a supply that matches the wattage printed on the original brick.
+2. **Try another wall socket.** Use a different socket, not the same extension lead.
+3. **Reset the power.** Shut the laptop down, unplug the charger, and hold the power button for a few seconds. Plug the charger back in and switch on. This can clear a stuck “not charging” reading. It does not replace a failed part.
+4. **Restart the laptop.** A normal restart is worth doing once the charger is seated. On Windows 11, “plugged in, not charging” sometimes clears after that.
 
-USB-C is fussy about wattage. A 20W or 30W phone brick may trickle, or refuse to charge while you are in Teams. Match the wattage printed on the original supply before you condemn the cell.
+If it only charges when you hold the plug at an angle, a new battery will not help. The socket is the next thing to check, and we can look at that for you.
 
-If the icon only appears when you hold the plug at a funny angle, the socket is the suspect, not the cell. Stop there and book a look at the port. A new battery will not fix a lead that only works when you prop it on a book.
+## Plugged in, not charging, or stuck at a percentage (Windows 11)
 
-## 2. The port, briefly
+Windows 11 can show the lead as connected and still say “not charging”. The percentage can also sit at the same number all day, often around 80%.
 
-A battery that charges on the kitchen table and dies in a rucksack is often a loose DC jack or USB-C board, not a tired cell. Wiggle the plug once. If the charge icon flickers, stop wiggling. Repeated flexing is how a loose socket rips the pads off.
+On many Dell, Lenovo and HP laptops that stop is on purpose. A charge limit keeps the battery from filling all the way so it lasts longer. Turn the limit off in the manufacturer’s app if you want a full charge. For the curious: the setting is often called conservation mode or battery-health mode. It is a limit you can switch off, not a broken battery.
 
-I will not quote a battery for a port that only works when the lid is at one angle. That handoff is a charging-port job, priced on its own page.
+An older laptop is not finished because the percentage looks lazy after a Windows update. The steps above are the right place to start.
 
-## 3. What Windows is actually reporting
+For the curious: Windows can write a battery report. Open Command Prompt and type `powercfg /batteryreport`, then open the file it saves. It compares the battery’s original size with what it holds now, which is clearer than the percentage in the taskbar.
 
-A lot of “not charging” tickets are software, or a maker’s charge limit doing what it was told.
+If that report still looks healthy and the plug feels solid, the battery is probably not the part to replace. We can confirm that before a pack is ordered.
 
-- **Conservation / battery-health mode** on many Dell, Lenovo and HP machines stops the pack around 80% on purpose. The icon can look stuck. Turn the limit off in the manufacturer app before anyone orders a cell.
-- **“Plugged in, not charging”** after a cheap charger has been used can be a confused fuel gauge. A known-good brick and a battery reset on the bench often clears it. Holding the power button is harmless. It is not a repair.
-- **A Windows battery report** (`powercfg /batteryreport` in a terminal) shows design capacity against full-charge capacity. That number is more honest than the taskbar percentage.
+## Battery, charger or charging port? How to tell
 
-If the report still shows a healthy pack and the port is solid, we are not fitting a new battery for the sake of the icon.
+Use the signs, not the icon on its own.
 
-## 4. Battery health — replace only when the cell has failed
+- **Charger.** The light on the brick stays off, the cable is frayed where it bends, or a different charger of the right wattage fills the battery straight away.
+- **Charging port.** The charge icon appears only when you hold the plug at an angle, or it flickers when the lead moves. Stop wiggling it, because that flexing is what damages the socket. A battery swap will not fix a lead that only works when you prop it on a book. We can check the port on its own.
+- **Battery.** The percentage falls from a lot to nothing in a few minutes, or the laptop dies the moment you unplug a charger you trust. That is a worn cell.
+- **Charging circuit.** This is the part inside the laptop that passes mains power through to the battery. Suspect it when a known-good charger and a firm plug still will not charge. A new battery on a dead circuit does not help, which is why the free diagnostic comes before any part is ordered.
 
-This is the point where a new pack is the right answer, and it is narrower than the adverts suggest.
+If the laptop will not turn on at all, even with the charger plugged in, start with the [won’t turn on guide](/blog/laptop-not-turning-on-slow-fix/).
 
-The percentage collapses from 40% to nothing in a few minutes, the machine dies the moment the lead is pulled, or the report shows the full-charge capacity a long way under the design figure. That is a worn cell. On the bench, battery labour starts **from £55 plus the part**. I quote the exact pack for your model before it is ordered. I do not keep a fantasy price list of “all batteries £X”.
+## When it's a swollen battery: stop using it
 
-If the palm rest is hot, tight, or proud of the keyboard, that is swelling. Unplug it. Do not keep charging it overnight, and do not follow a video that tells you to puncture the pack. That job is the [replacement and safety post](/blog/laptop-battery-replacement-wickford/), and I will not force-charge a puffed cell.
+Stop using the laptop if the case is bulging, the trackpad is lifting, or the palm rest feels hot, tight, or raised above the keyboard. Unplug the charger. Do not keep charging it. Do not puncture the pack.
 
-## 5. The charging circuit, when the pack is not the fault
+That is a safety job, not a settings change. The [battery replacement guide](/blog/laptop-battery-replacement-wickford/) explains what happens next. If you want us to take it from here, bring the laptop in and we will deal with the pack safely.
 
-Known-good charger. Port that does not flicker. Battery report that is still respectable — or a new pack that still will not take a charge. Then the fault is the charging circuit on the board or the small daughter-board behind the socket, not another cell.
+## What repair costs
 
-That is why the free diagnostic comes before the part. A battery fitted onto a dead charge circuit is money spent twice. If the board is not worth saving, you hear that before you pay labour. No-Fix, No-Fee still applies.
+When the battery itself has failed, labour starts **from £55 plus the part**. You get the price for your exact model before any pack is ordered. Diagnostics are free. If we cannot put the fault right, **No-Fix, No-Fee** applies.
 
-## What I will not do
+## Laptop battery repair in Wickford
 
-I will not sell a battery because a phone charger failed to fill a 65W machine. I will not “calibrate” a swollen pack. I will not tell you a 2017 laptop is scrap because the percentage looks lazy after a Windows update.
+The workshop is at **32 Glebe Road**, Wickford. Collection is free across SS11, SS12 and South Essex. Bring the charger you use. Start from [Wickford laptop repair](/wickford-laptop-repair/) or [contact](/contact/), or call **[07367 652987](tel:07367652987)**.
 
-## Bring it to Glebe Road
+## FAQ
 
-Drop-off is **32 Glebe Road**, Wickford. Collection is free across the usual South Essex towns. Start from [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
+### Why is my laptop plugged in but not charging?
 
-Bring the charger you actually use. Diagnostics are free. You get a fixed quote before any pack is ordered, and battery labour is **from £55 plus the part** only when the cell is the fault we found.
+The charger may be too weak or not seated, the wall socket may be dead, Windows 11 may be showing a stuck reading, or a charge limit may be holding the battery at a set percentage. Work through the quick fixes first. A new battery is the answer only when the cell itself has failed.
+
+### Is it the battery or the charger?
+
+Try a charger that matches the wattage on the original brick, in a different wall socket. If the battery then fills, it was the charger or the socket. If the icon only appears when you hold the plug at an angle, it is the port. If a trusted charger is in firmly and the laptop still dies the moment you unplug it, it is the battery.
+
+### Can I use it with a dead battery?
+
+Yes, if the laptop still runs while it is plugged in. You can keep working that way for a while. Stop if the case is swollen: unplug it and do not keep charging it. If it will not switch on even with the charger in, the battery is not the only thing to check.
+
+### How much does a laptop battery replacement cost?
+
+Labour starts from £55 plus the part. Diagnostics are free, and you get the price for your model before any pack is ordered. No-Fix, No-Fee applies if we cannot put the fault right.
+
+### How long does a repair take?
+
+It depends on the model and on the part. The quote comes before any part is ordered, so you know what is involved before anything is bought.
+
+### Is a swollen battery dangerous?
+
+Yes. Stop using the laptop, unplug it, do not puncture the battery, and do not keep charging it.
