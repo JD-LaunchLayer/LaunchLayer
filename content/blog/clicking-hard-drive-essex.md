@@ -56,6 +56,6 @@ If the laptop also has a [broken hinge](/blog/broken-laptop-hinge-repair-essex/)
 
 ## Get it here without making it worse
 
-Do not post a clicking drive in a padded envelope. Carry it in. Or book collection through [Contact](/contact/) / [Wickford PC repair](/wickford-pc-repair/) / **[07367 652987](tel:07367652987)** from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/). Drop-off is **32 Glebe Road**. Tell me whether the photos matter more than the machine. That sentence changes the job.
+Do not post a clicking drive in a padded envelope. Carry it in. Or call **[07367 652987](tel:07367652987)** to arrange collection. Free collection and return is for Wickford SS11 and SS12. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/) is by arrangement. Book through [Contact](/contact/) or [Wickford PC repair](/wickford-pc-repair/). Drop-off is **32 Glebe Road**. Tell me whether the photos matter more than the machine. That sentence changes the job.
 
 No-Fix, No-Fee is for repairs that cannot be done. Recovery is quoted separately because those hours are not a hinge screw.

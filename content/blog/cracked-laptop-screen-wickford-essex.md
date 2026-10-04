@@ -65,7 +65,7 @@ We fit an exact-match, OEM-spec panel and test the lid through a full open-and-c
 
 ## Where do you get a cracked screen repaired in Wickford?
 
-Drop the laptop at **32 Glebe Road**, or use free collection across SS11, SS12 and South Essex. Diagnostics are free. Pricing and brands are on the [Wickford laptop screen repair](/laptop-screen-repair-wickford/) page. You can also start from [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
+Drop the laptop at **32 Glebe Road**, or use free collection in Wickford (SS11 and SS12). For other areas, call 07367 652987 and we will confirm collection. Diagnostics are free. Pricing and brands are on the [Wickford laptop screen repair](/laptop-screen-repair-wickford/) page. You can also start from [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
 
 If the crack happened because of a spill rather than a knock, follow the [liquid-damage steps](/blog/spilled-water-on-laptop-fix-essex/) instead. Liquid and broken glass are different jobs.
 

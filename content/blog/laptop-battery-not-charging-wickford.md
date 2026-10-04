@@ -63,7 +63,7 @@ When the battery itself has failed, labour starts **from £55 plus the part**. Y
 
 ## Laptop battery repair in Wickford
 
-The workshop is at **32 Glebe Road**, Wickford. Collection is free across SS11, SS12 and South Essex. Bring the charger you use. Start from [Wickford laptop repair](/wickford-laptop-repair/) or [contact](/contact/), or call **[07367 652987](tel:07367652987)**.
+The workshop is at **32 Glebe Road**, Wickford. Free collection and return is for Wickford postcodes SS11 and SS12. For other areas, drop off at 32 Glebe Road or call 07367 652987 and we will confirm collection. Bring the charger you use. Start from [Wickford laptop repair](/wickford-laptop-repair/) or [contact](/contact/), or call **[07367 652987](tel:07367652987)**.
 
 ## FAQ
 

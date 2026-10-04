@@ -57,4 +57,4 @@ If every good charger runs the machine and the only complaint is that the pack w
 
 Bring the charger you actually use, including the tired spare in the drawer if that is the one that “sometimes works”. Half of these jobs are a 45W brick on a machine that left the factory with 65W or 90W.
 
-Drop-off is **32 Glebe Road**. Book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**. Collection is free across Wickford and the usual towns. Diagnostics are free, you get a fixed quote before any port is ordered, and No-Fix, No-Fee applies if the board is not worth saving.
+Drop-off is **32 Glebe Road**. Book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**. Free collection and return is for Wickford SS11 and SS12. Collection elsewhere is by arrangement. Diagnostics are free, you get a fixed quote before any port is ordered, and No-Fix, No-Fee applies if the board is not worth saving.

@@ -266,7 +266,7 @@ def extract_meta(soup: BeautifulSoup, slug: str) -> dict[str, str]:
     if links:
         canonical = links[-1].get("href", "").strip()
     if not canonical:
-        canonical = f"https://www.launchlayer.uk/{slug}"
+        canonical = f"https://launchlayer.uk/{slug}/"
 
     og_titles = soup.find_all("meta", property="og:title")
     og_descs = soup.find_all("meta", property="og:description")
@@ -1164,7 +1164,7 @@ def special_case_mot(slug: str) -> None:
     if slug == "laptop-mot-wickford":
         src = src.replace(
             "https://www.launchlayer.uk/laptop-mot-wickford-essex",
-            "https://www.launchlayer.uk/laptop-mot-wickford",
+            "https://launchlayer.uk/laptop-mot-wickford/",
         )
         # keep essex as preferred? Original duplicate on main used wickford path in collection.
         # Leave canonical as /laptop-mot-wickford for this folder.
