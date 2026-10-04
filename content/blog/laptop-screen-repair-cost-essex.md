@@ -49,7 +49,7 @@ Your files almost always stay where they are. A panel swap does not wipe the dri
 3. **You approve it.** No panel gets ordered on a guess.
 4. **No-Fix, No-Fee** if the repair is not worth doing — you do not pay labour to be told the board is finished.
 
-The wider Essex menu, including the £99 screen line next to batteries and ports, is the [2026 repair cost guide](/blog/laptop-repair-cost-essex/). I fit the work with a **90-day lab warranty**, which is the same promise already on the screen page.
+The wider Essex menu, including the £99 screen line next to batteries and ports, is the [2026 repair cost guide](/blog/laptop-repair-cost-essex/). I fit the work with a **12-month hardware warranty on new parts fitted**, which is the same promise already on the screen page. It covers new parts only. It does not cover second-hand or refurbished parts, accidental damage, or software.
 
 ## Book the quote
 
