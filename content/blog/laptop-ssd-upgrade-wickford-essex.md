@@ -66,7 +66,7 @@ If the lid is cracked as well as slow, say so up front. That is a [screen job](/
 
 Diagnostics are free. If the laptop is not worth the upgrade, **No-Fix, No-Fee** applies, so you do not pay labour for a job we do not do.
 
-Drop-off is **32 Glebe Road**, Wickford. Free collection and return is for Wickford postcodes SS11 and SS12. For other areas, drop off at 32 Glebe Road or call 07367 652987 and we will confirm collection. Start from [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
+Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Free collection and return is for Wickford postcodes SS11 and SS12. For other areas, Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Start from [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
 
 ## FAQ
 

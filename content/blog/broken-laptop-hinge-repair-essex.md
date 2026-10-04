@@ -15,7 +15,7 @@ image_alt: Silver laptop with a misaligned lid sitting at an awkward angle on a 
 
 A hinge feels like a small problem until the lid drops sideways in a café. Plastic around the screw bosses cracks, the bezel twists, and the display cable that runs through the hinge gets stretched. That is how a £40 plastic repair becomes a [cracked screen](/blog/cracked-laptop-screen-wickford-essex/).
 
-I repair hinges on school Chromebooks, HP/Dell office lids and a surprising number of “it was fine until I opened it one-handed” MacBooks. Drop off at the Wickford workshop. Free collection and return is for Wickford SS11 and SS12. Collection elsewhere is by arrangement.
+I repair hinges on school Chromebooks, HP/Dell office lids and a surprising number of “it was fine until I opened it one-handed” MacBooks. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Free collection and return is for Wickford SS11 and SS12. Collection elsewhere is by arrangement.
 
 ## Stop doing these three things
 
@@ -53,4 +53,4 @@ I will not super-glue a boss and call it a repair. I will not post a flapping li
 
 ## Book it before the lid folds in half
 
-[Wickford laptop repair](/wickford-laptop-repair/), [Contact](/contact/), or **[07367 652987](tel:07367652987)**. Drop-off is **32 Glebe Road**. Free collection and return is for Wickford SS11 and SS12. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) or [Brentwood](/brentwood-pc-repair/) is by arrangement — call to confirm. Do not post a laptop with a flapping lid. No-Fix, No-Fee if the chassis is beyond a sensible repair.
+[Wickford laptop repair](/wickford-laptop-repair/), [Contact](/contact/), or **[07367 652987](tel:07367652987)**. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Free collection and return is for Wickford SS11 and SS12. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) or [Brentwood](/brentwood-pc-repair/) is by arrangement — call to confirm. Do not post a laptop with a flapping lid. No-Fix, No-Fee if the chassis is beyond a sensible repair.

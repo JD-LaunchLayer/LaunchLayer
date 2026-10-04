@@ -53,6 +53,6 @@ The wider Essex menu, including the £99 screen line next to batteries and ports
 
 ## Book the quote
 
-Call **[07367 652987](tel:07367652987)**, use [Contact](/contact/), or start from [Wickford laptop repair](/wickford-laptop-repair/) and [laptop screen repair Wickford](/laptop-screen-repair-wickford/). Free collection and return is for Wickford SS11 and SS12. Drop-off is **32 Glebe Road**. Collection elsewhere is by arrangement.
+Call **[07367 652987](tel:07367652987)**, use [Contact](/contact/), or start from [Wickford laptop repair](/wickford-laptop-repair/) and [laptop screen repair Wickford](/laptop-screen-repair-wickford/). Free collection and return is for Wickford SS11 and SS12. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Collection elsewhere is by arrangement.
 
 Bring the charger. Say the model if you know it. If the crack came from a spill rather than a knock, say that too — liquid and glass are different jobs, and the [spill steps](/blog/spilled-water-on-laptop-fix-essex/) come first.

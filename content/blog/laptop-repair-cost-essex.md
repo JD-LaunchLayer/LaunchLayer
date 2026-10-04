@@ -17,7 +17,7 @@ People ask what a **laptop repair cost in Essex** actually is, then get a forum 
 
 The order of the job does not change with the postcode. **Diagnostics are free.** I find the fault, then you get a **fixed quote** before any work or any part. If a repair is not worth doing, you do not pay labour for the bad news. That is No-Fix, No-Fee. Parts are quoted before they are ordered — a “from” figure is the labour floor, not a guess at your panel or your battery.
 
-The workshop for this list is [Wickford laptop repair](/wickford-laptop-repair/). Free collection and return is for Wickford SS11 and SS12. Collection from other South Essex towns is by arrangement. Drop-off is **32 Glebe Road**.
+The workshop for this list is [Wickford laptop repair](/wickford-laptop-repair/). Free collection and return is for Wickford SS11 and SS12. Collection from other South Essex towns is by arrangement. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address.
 
 ## Starting prices I will actually say out loud
 

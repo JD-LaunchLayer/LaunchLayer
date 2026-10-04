@@ -22,7 +22,7 @@ At the Wickford bench I separate them before anyone buys a “universal” charg
 Do these two checks before you decide the laptop is dead.
 
 1. **Another wall socket.** Not the same four-way block under the desk. Cheap strips sag when a heater or a second laptop is on them.
-2. **Borrow a known-good charger** of the same tip and the same wattage, or bring yours to the workshop and I will put a bench supply on it. If a second brick charges the laptop straight away, your supply is the fault. If neither brick does, we are looking at the port or further in.
+2. **Borrow a known-good charger** of the same tip and the same wattage, or arrange a drop-off and I will put a bench supply on it. If a second brick charges the laptop straight away, your supply is the fault. If neither brick does, we are looking at the port or further in.
 
 Look at the LED on the brick, if it has one. No light, plus a cable that bends flat where it leaves the block, is usually the charger. That strain-relief crack is a fire risk as well as a charge fault. Do not tape it and keep it in a schoolbag.
 
@@ -57,4 +57,4 @@ If every good charger runs the machine and the only complaint is that the pack w
 
 Bring the charger you actually use, including the tired spare in the drawer if that is the one that “sometimes works”. Half of these jobs are a 45W brick on a machine that left the factory with 65W or 90W.
 
-Drop-off is **32 Glebe Road**. Book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**. Free collection and return is for Wickford SS11 and SS12. Collection elsewhere is by arrangement. Diagnostics are free, you get a fixed quote before any port is ordered, and No-Fix, No-Fee applies if the board is not worth saving.
+Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**. Free collection and return is for Wickford SS11 and SS12. Collection elsewhere is by arrangement. Diagnostics are free, you get a fixed quote before any port is ordered, and No-Fix, No-Fee applies if the board is not worth saving.

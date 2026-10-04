@@ -51,4 +51,4 @@ Free collection and return is for Wickford SS11 and SS12. Collection from [Basil
 
 ## Drop-off
 
-[Wickford laptop repair](/wickford-laptop-repair/), [screen repair](/laptop-screen-repair-wickford/), or [Contact](/contact/) / **[07367 652987](tel:07367652987)**. Drop-off is **32 Glebe Road**. Bring the charger and, if you have it, the school asset tag photo so we can talk to their IT with the right serial. No-Fix, No-Fee if it is not worth saving against the school’s replacement figure.
+[Wickford laptop repair](/wickford-laptop-repair/), [screen repair](/laptop-screen-repair-wickford/), or [Contact](/contact/) / **[07367 652987](tel:07367652987)**. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Bring the charger and, if you have it, the school asset tag photo so we can talk to their IT with the right serial. No-Fix, No-Fee if it is not worth saving against the school’s replacement figure.
