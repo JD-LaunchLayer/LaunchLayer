@@ -58,7 +58,7 @@ MacBooks are a different job. Storage that is soldered on Apple silicon cannot b
 
 ## Who is this for around Wickford?
 
-Wickford and SS11/SS12 drop-offs, plus collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/), [Brentwood](/brentwood-pc-repair/) and the rest of the usual map. School-run laptops, a dusty Dell in a van footwell, and small-office towers that still have a large storage disk next to a tiny boot SSD all belong here.
+Free collection and return is for Wickford SS11/SS12. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/), [Brentwood](/brentwood-pc-repair/) and the rest of the usual map is by arrangement — call to confirm. School-run laptops, a dusty Dell in a van footwell, and small-office towers that still have a large storage disk next to a tiny boot SSD all belong here.
 
 If the lid is cracked as well as slow, say so up front. That is a [screen job](/blog/cracked-laptop-screen-wickford-essex/) plus an SSD, not one mystery quote. Panel labour sits on the [Wickford screen repair](/laptop-screen-repair-wickford/) page.
 
@@ -66,7 +66,7 @@ If the lid is cracked as well as slow, say so up front. That is a [screen job](/
 
 Diagnostics are free. If the laptop is not worth the upgrade, **No-Fix, No-Fee** applies, so you do not pay labour for a job we do not do.
 
-Drop-off is **32 Glebe Road**, Wickford. Collection is free across SS11, SS12 and South Essex. Start from [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
+Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Free collection and return is for Wickford postcodes SS11 and SS12. For other areas, drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Start from [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
 
 ## FAQ
 

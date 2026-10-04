@@ -53,8 +53,8 @@ A subset of “my PC keeps crashing” tickets are leftover remote-access tools 
 
 I will not “reset Windows” as a first move on a disk that might be dying. Reset overwrites the evidence and sometimes the photos. I will not install a driver pack from a random site. I will not tell you a 2014 office tower with one stick of RAM is “fine, ignore the blue screens”.
 
-## Bring it to Wickford
+## Arrange a drop-off
 
-Collection covers Wickford, [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) and [Chelmsford](/chelmsford-pc-repair/). Book through [Wickford PC repair](/wickford-pc-repair/) or [Contact](/contact/) / **[07367 652987](tel:07367652987)**. Drop-off is **32 Glebe Road**.
+Free collection and return is for Wickford SS11 and SS12. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) and [Chelmsford](/chelmsford-pc-repair/) is by arrangement. Book through [Wickford PC repair](/wickford-pc-repair/) or [Contact](/contact/) / **[07367 652987](tel:07367652987)**. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address.
 
 If the crash started after a spill, say so — liquid plus random reboots is the [spill protocol](/blog/spilled-water-on-laptop-fix-essex/), not a driver update. No-Fix, No-Fee: if it is a board that is not worth saving, you hear that before you pay labour.

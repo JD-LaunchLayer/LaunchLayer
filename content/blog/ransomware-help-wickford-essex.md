@@ -55,6 +55,6 @@ If the disk was already dying, an [SSD clone](/blog/laptop-ssd-upgrade-wickford-
 
 ## Book it
 
-Use [Wickford virus removal](/wickford-virus-removal/) or [Contact](/contact/) / **[07367 652987](tel:07367652987)**. Collection across Wickford, [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) and [Chelmsford](/chelmsford-pc-repair/). Drop-off is **32 Glebe Road**. Tell me if any USB drives or NAS boxes were plugged in — they come too.
+Use [Wickford virus removal](/wickford-virus-removal/) or [Contact](/contact/) / **[07367 652987](tel:07367652987)**. Free collection and return is for Wickford SS11 and SS12. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) and [Chelmsford](/chelmsford-pc-repair/) is by arrangement. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Tell me if any USB drives or NAS boxes were plugged in — they come too.
 
 No-Fix, No-Fee applies to a repair that cannot be done. Ransomware is quoted as cleanup plus restore, because hoping is not a line item.

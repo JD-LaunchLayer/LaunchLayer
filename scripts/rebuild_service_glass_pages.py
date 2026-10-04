@@ -179,11 +179,11 @@ class Related:
 
 @dataclass
 class Booking:
-    tag: str = "Diagnostics & Collection"
+    tag: str = "Diagnostics & Wickford Collection"
     amount: str = "FREE"
     features: list[str] = field(default_factory=list)
     primary_href: str = "/contact"
-    primary_label: str = "Book free collection"
+    primary_label: str = "Book free Wickford collection"
     secondary_href: str = "tel:07367652987"
     secondary_label: str = "Call 07367 652987"
 
@@ -266,7 +266,7 @@ def extract_meta(soup: BeautifulSoup, slug: str) -> dict[str, str]:
     if links:
         canonical = links[-1].get("href", "").strip()
     if not canonical:
-        canonical = f"https://www.launchlayer.uk/{slug}"
+        canonical = f"https://launchlayer.uk/{slug}/"
 
     og_titles = soup.find_all("meta", property="og:title")
     og_descs = soup.find_all("meta", property="og:description")
@@ -348,7 +348,7 @@ def extract_booking(root: Tag) -> Booking:
         b.secondary_label = clean_text(secondary.get_text())
     if not b.features:
         b.features = [
-            "Free local collection & return",
+            "Free collection & return (Wickford SS11/SS12)",
             "No-Fix, No-Fee guarantee",
             "Clear fixed quotes upfront",
         ]
@@ -940,7 +940,7 @@ def render_pricing(booking: Booking) -> str:
   <div class="llsg-pricing-box">
     <div class="llsg-pricing-box-label">{html_lib.escape(booking.tag)}</div>
     <div class="llsg-pricing-box-amount">{html_lib.escape(booking.amount)}</div>
-    <p class="llsg-pricing-box-note">Local Wickford workshop · South Essex coverage</p>
+    <p class="llsg-pricing-box-note">Local Wickford workshop · free collection SS11/SS12</p>
     <a href="{html_lib.escape(booking.primary_href)}" class="llsg-btn-primary">{html_lib.escape(booking.primary_label)}</a>
     <a href="{html_lib.escape(booking.secondary_href)}" class="llsg-btn-secondary">{html_lib.escape(booking.secondary_label)}</a>
   </div>
@@ -1164,7 +1164,7 @@ def special_case_mot(slug: str) -> None:
     if slug == "laptop-mot-wickford":
         src = src.replace(
             "https://www.launchlayer.uk/laptop-mot-wickford-essex",
-            "https://www.launchlayer.uk/laptop-mot-wickford",
+            "https://launchlayer.uk/laptop-mot-wickford/",
         )
         # keep essex as preferred? Original duplicate on main used wickford path in collection.
         # Leave canonical as /laptop-mot-wickford for this folder.

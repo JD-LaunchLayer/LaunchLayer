@@ -56,6 +56,6 @@ A slow laptop that still charges is probably storage or heat, not the port. If i
 
 ## What to bring to Glebe Road
 
-Bring the charger you actually use, not “the spare in the drawer”. Half of these jobs are a 45W brick on a 90W machine. Collection is free across Wickford and the usual towns — [Wickford laptop repair](/wickford-laptop-repair/), [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) — or book via [Contact](/contact/) / **[07367 652987](tel:07367652987)**.
+Bring the charger you actually use, not “the spare in the drawer”. Half of these jobs are a 45W brick on a 90W machine. Free collection and return is for Wickford SS11 and SS12. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) and [Rayleigh](/rayleigh-laptop-service/) is by arrangement. Book via [Wickford laptop repair](/wickford-laptop-repair/), [Contact](/contact/) or **[07367 652987](tel:07367652987)**.
 
-Drop-off is **32 Glebe Road**. No-Fix, No-Fee still applies. If the board is burned and a repair is not worth it, you do not pay labour for the privilege of the bad news.
+Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. No-Fix, No-Fee still applies. If the board is burned and a repair is not worth it, you do not pay labour for the privilege of the bad news.

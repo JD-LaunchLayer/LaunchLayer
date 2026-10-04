@@ -1,20 +1,35 @@
 # LaunchLayer
 
-> Independent PC, laptop and MacBook repair workshop in Wickford, Essex, with free local collection across South Essex and a No-Fix-No-Fee approach.
+> Independent PC, laptop and Mac repair workshop at 32 Glebe Road, Wickford, Essex SS11 8EU. Free diagnostics, fixed quotes, No-Fix-No-Fee, and free collection and return in Wickford SS11/SS12.
 
-LaunchLayer is a small local repair and IT business based at 32 Glebe Road, Wickford (SS11 8EU). Work covers home users and small businesses: diagnostics, screen and battery repairs, liquid damage, virus/malware cleanup, data recovery, custom PC builds, and straightforward business IT setup. There is no online checkout — contact or phone to book.
+LaunchLayer is a small independent workshop for home users and small businesses. Diagnostics are free. You get a fixed quote before any paid work starts. If a machine cannot be fixed, you do not pay for labour. Free collection and return is for Wickford postcodes SS11 and SS12. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address.
 
-Phone: 07367 652987
-Email: hello@launchlayer.uk
-Website: https://launchlayer.uk/
+## Contact
+
+- Phone: 07367 652987
+- Email: hello@launchlayer.uk
+- Address: 32 Glebe Road, Wickford, Essex SS11 8EU
+- Hours: Mon–Sun, 09:00–22:00
+- Website: https://launchlayer.uk/
+- Google rating: 5.0 from 32 Google reviews
+
+## Prices
+
+Diagnostics are free. Hardware repairs start from £49. Software fixes start from £45. Laptop battery replacement is £55 labour plus the battery. Charging port (DC jack) repair is £65. Laptop screen fitting is £99 labour plus the panel (MacBook £85 plus the panel). Laptop MOT is £75. Virus removal is £69. Windows reinstall is £59. Full list: [Services & pricing](https://launchlayer.uk/services/).
+
+New parts fitted come with a 12-month hardware warranty. That covers new parts only.
+
+## Service area
+
+Based in Wickford. Free collection and return in SS11 and SS12. Also serves Basildon, Billericay, Brentwood, Chelmsford, Rayleigh and Southend. Collection outside SS11/SS12 is by arrangement. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Stock, Little Burstead, Great Burstead and Queens Park are Billericay (CM11/CM12), not SS11 or SS12.
 
 ## Main pages
 
-- [Home](https://launchlayer.uk/): Overview of services and how free collection works
+- [Home](https://launchlayer.uk/): Workshop overview, free diagnostics and how collection works
 - [Services & pricing](https://launchlayer.uk/services/): Repair prices and common jobs
-- [Contact](https://launchlayer.uk/contact/): Request a quote or book collection
+- [Contact](https://launchlayer.uk/contact/): Book a drop-off or ask about collection
 - [About](https://launchlayer.uk/about/): Who runs the workshop
-- [FAQs](https://launchlayer.uk/faqs/): Common repair and pricing questions
+- [FAQs](https://launchlayer.uk/faqs/): Repair, pricing, hours and collection questions
 - [Reviews](https://launchlayer.uk/reviews/): Customer feedback
 - [Brands supported](https://launchlayer.uk/brands-supported/): Makes and models commonly repaired
 - [Privacy policy](https://launchlayer.uk/privacy-policy/): How personal data is handled
@@ -23,9 +38,9 @@ Website: https://launchlayer.uk/
 
 - [Custom PC builds](https://launchlayer.uk/custom-pc-builds/): Gaming and workstation builds
 - [Data recovery](https://launchlayer.uk/data-recovery/): Failed drives and deleted files
-- [Eco recycling](https://launchlayer.uk/eco-recycling/): Free laptop and PC recycling
-- [Laptop MOT Wickford](https://launchlayer.uk/laptop-mot-wickford-essex/): Fixed-price health check and tune-up
-- [Business IT support](https://launchlayer.uk/business/): Small-business IT help in Essex (devices, email, startup setup, ongoing support)
+- [Eco recycling](https://launchlayer.uk/eco-recycling/): Laptop and PC recycling
+- [Laptop MOT Wickford](https://launchlayer.uk/laptop-mot-wickford-essex/): Fixed-price £75 health check and tune-up
+- [Business IT support](https://launchlayer.uk/business/): Small-business IT help
 - [Business IT pricing](https://launchlayer.uk/business/pricing/): Package pricing for commercial IT setup
 
 ## Local repair pages
@@ -37,6 +52,8 @@ Website: https://launchlayer.uk/
 - [MacBook repair Wickford](https://launchlayer.uk/macbook-repair-wickford/)
 - [Liquid damage repair Wickford](https://launchlayer.uk/liquid-damage-repair-wickford/)
 - [PC repair Basildon](https://launchlayer.uk/basildon-pc-repair/)
+- [MacBook repair Basildon](https://launchlayer.uk/macbook-repair-basildon/)
+- [Liquid damage repair Basildon](https://launchlayer.uk/liquid-damage-repair-basildon/)
 - [PC repair Billericay](https://launchlayer.uk/billericay-pc-repair/)
 - [PC repair Brentwood](https://launchlayer.uk/brentwood-pc-repair/)
 - [PC repair Chelmsford](https://launchlayer.uk/chelmsford-pc-repair/)

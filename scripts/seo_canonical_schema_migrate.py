@@ -19,7 +19,7 @@ CANONICAL_GRAPH: dict[str, Any] = {
             "@id": "https://launchlayer.uk/#website",
             "url": "https://launchlayer.uk/",
             "name": "LaunchLayer",
-            "description": "PC, laptop and Mac repair in Wickford and South Essex with free local collection and No-Fix-No-Fee.",
+            "description": "PC, laptop and Mac repair in Wickford and South Essex, with free collection and return in Wickford SS11/SS12 and No-Fix-No-Fee.",
             "publisher": {"@id": "https://launchlayer.uk/#organization"},
         },
         {

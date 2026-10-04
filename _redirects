@@ -79,6 +79,7 @@ https://www.launchlayer.uk/business/pricing  https://launchlayer.uk/business/pri
 https://www.launchlayer.uk/data-recovery  https://launchlayer.uk/data-recovery/  301!
 https://www.launchlayer.uk/eco-recycling  https://launchlayer.uk/eco-recycling/  301!
 https://www.launchlayer.uk/faqs  https://launchlayer.uk/faqs/  301!
+https://www.launchlayer.uk/faq  https://launchlayer.uk/faqs/  301!
 https://www.launchlayer.uk/laptop-mot-wickford-essex  https://launchlayer.uk/laptop-mot-wickford-essex/  301!
 https://www.launchlayer.uk/liquid-damage-repair-basildon  https://launchlayer.uk/liquid-damage-repair-basildon/  301!
 https://www.launchlayer.uk/macbook-repair-basildon  https://launchlayer.uk/macbook-repair-basildon/  301!
@@ -99,6 +100,10 @@ https://www.launchlayer.uk/wickford-virus-removal  https://launchlayer.uk/wickfo
 # Legacy Squarespace /home alias — real homepage is /.
 /home    /  301!
 /home/   /  301!
+
+# Short FAQ alias. The page lives at /faqs/.
+/faq    /faqs/  301!
+/faq/   /faqs/  301!
 
 # Old short URLs consolidated onto the Wickford service pages.
 /laptop-mot-wickford    /laptop-mot-wickford-essex/  301!
