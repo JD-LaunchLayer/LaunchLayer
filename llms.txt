@@ -15,7 +15,7 @@ LaunchLayer is a small independent workshop for home users and small businesses.
 
 ## Prices
 
-Diagnostics are free. Hardware repairs start from £49. Software fixes start from £45. Laptop battery replacement is £55 labour plus the battery. Charging port (DC jack) repair is £65. Laptop screen fitting is £99 labour plus the panel (MacBook £85 plus the panel). Laptop MOT is £75. Virus removal is £69. Windows reinstall is £59. Home visit - free in Wickford SS11/SS12; £49 elsewhere in South Essex (includes diagnosis and the first hour on site). Anything beyond the first hour, or any repair, is a fixed quote agreed before work starts. Full list: [Services & pricing](https://launchlayer.uk/services/).
+Diagnostics are free. Hardware repairs start from £49. Software fixes start from £45. Laptop battery replacement is £55 labour plus the battery. Charging port (DC jack) repair is £65. Laptop screen fitting is £99 labour plus the panel (MacBook £85 plus the panel). Laptop MOT is £75. Virus removal is £69. Windows reinstall is £59. Home visit - free in Wickford SS11/SS12; £49 elsewhere in South Essex (includes diagnosis and the first hour on site). Anything beyond the first hour, or any repair, is a fixed quote agreed before work starts. If we cannot fix it, you do not pay for labour. When a machine is beyond repair, a part is not worth fitting, or the job would cost more than the computer is worth, we hand it back with no labour charge. Full list: [Services & pricing](https://launchlayer.uk/services/).
 
 New parts fitted come with a 12-month hardware warranty. That covers new parts only.
 
