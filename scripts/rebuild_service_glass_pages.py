@@ -20,6 +20,19 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 from umami_analytics import apply_umami
 
 ROOT = Path("/workspace")
+SITE = "https://launchlayer.uk"
+
+
+def absolute_asset(url: str) -> str:
+    """Social images must be absolute. Root-relative paths are prefixed with the apex host."""
+    value = (url or "").strip()
+    if value.startswith("https://") or value.startswith("http://"):
+        return value
+    if value.startswith("//"):
+        return "https:" + value
+    if value.startswith("/"):
+        return SITE + value
+    return value
 HEADER = Path("/tmp/ll-chrome-header.html").read_text()
 FOOTER = Path("/tmp/ll-chrome-footer.html").read_text()
 
@@ -273,9 +286,12 @@ def extract_meta(soup: BeautifulSoup, slug: str) -> dict[str, str]:
     og_images = soup.find_all("meta", property="og:image")
     tw_images = soup.find_all("meta", attrs={"name": "twitter:image"})
 
-    og_image = og_images[-1].get("content", "").strip() if og_images else "/assets/meta/meta-520e4abe.png"
-    # Strip Squarespace format query noise for cleaner paths but keep if only form
-    twitter_image = tw_images[-1].get("content", "").strip() if tw_images else og_image
+    og_image = absolute_asset(
+        og_images[-1].get("content", "").strip() if og_images else "/assets/meta/meta-520e4abe.png"
+    )
+    twitter_image = absolute_asset(
+        tw_images[-1].get("content", "").strip() if tw_images else og_image
+    )
 
     robots_tags = soup.find_all("meta", attrs={"name": "robots"})
     robots = robots_tags[-1].get("content", "index, follow").strip() if robots_tags else "index, follow"

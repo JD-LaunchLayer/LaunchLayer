@@ -28,6 +28,14 @@ ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = ROOT / "content" / "blog"
 OUT_BLOG = ROOT / "blog"
 SITE = "https://launchlayer.uk"
+ORG_ID = f"{SITE}/#organization"
+# Old Squarespace slugs that were pasted into blog JSON-LD but have no page.
+DEAD_BLOG_SLUGS = {
+    "windows-10-end-of-support-guide-essex",
+    "how-to-spot-tech-support-scams",
+    "laptop-thermal-throttling-fixes",
+    "custom-pc-airflow-optimization-guide",
+}
 FEED_START = "<!-- ll-md-feed:start -->"
 FEED_END = "<!-- ll-md-feed:end -->"
 LEGACY_NEXT_SLUG = "fix-pc-game-stuttering-fps-drops-essex"
@@ -420,6 +428,22 @@ def iso_datetime(iso_date: str) -> str:
     return f"{iso_date}T17:00:00+01:00"
 
 
+def absolute_url(path: str) -> str:
+    """Turn a root-relative asset or page path into an https://launchlayer.uk URL."""
+    value = (path or "").strip()
+    if value.startswith("https://") or value.startswith("http://"):
+        return value
+    if value.startswith("//"):
+        return "https:" + value
+    if not value.startswith("/"):
+        value = "/" + value
+    return f"{SITE}{value}"
+
+
+def launchlayer_org() -> dict:
+    return {"@type": "Organization", "name": "LaunchLayer", "@id": ORG_ID}
+
+
 def pagination_html(meta: dict[str, str]) -> str:
     blocks = []
     prev_slug = meta.get("prev_slug")
@@ -477,12 +501,9 @@ def article_schema(meta: dict[str, str], url: str) -> str:
                 "inLanguage": "en-GB",
                 "url": url,
                 "mainEntityOfPage": url,
-                "image": f"{SITE}{meta['og_image']}",
-                "author": {
-                    "@type": "Person",
-                    "name": meta["author"],
-                },
-                "publisher": {"@id": f"{SITE}/#organization"},
+                "image": absolute_url(meta["og_image"]),
+                "author": launchlayer_org(),
+                "publisher": launchlayer_org(),
                 "isPartOf": {"@id": f"{SITE}/blog/#webpage"},
             },
             {
@@ -529,7 +550,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
     category_path = html.escape(meta["category_path"])
     author = html.escape(meta["author"])
     image = html.escape(meta["image"])
-    og_image = html.escape(meta["og_image"])
+    og_image = html.escape(absolute_url(meta["og_image"]))
     image_alt = html.escape(meta["image_alt"])
     display_date = html.escape(format_display_date(meta["date"]))
     published = html.escape(iso_datetime(meta["date"]))
@@ -654,8 +675,8 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
     <div class="footer-matrix-section">
       <button type="button" class="footer-matrix-title service-coverage-accordion-header" data-accordion aria-expanded="true">Our South Essex Service Coverage</button>
       <div class="footer-matrix-grid">
-        <div class="matrix-node"><a href="/wickford-pc-repair/">Wickford PC Repair (SS11)</a></div>
-        <div class="matrix-node"><a href="/wickford-laptop-repair/">Wickford Laptop Repair (SS12)</a></div>
+        <div class="matrix-node"><a href="/wickford-pc-repair/">Wickford PC Repair</a></div>
+        <div class="matrix-node"><a href="/wickford-laptop-repair/">Wickford Laptop Repair</a></div>
         <div class="matrix-node"><a href="/macbook-repair-wickford/">Wickford MacBook Repair</a></div>
         <div class="matrix-node"><a href="/wickford-virus-removal/">Wickford Virus Removal</a></div>
         <div class="matrix-node"><a href="/basildon-pc-repair/">Basildon PC Repair (SS13-SS16)</a></div>
@@ -725,6 +746,329 @@ def load_posts() -> list[tuple[Path, dict[str, str], str]]:
             raise ValueError(f"{path.name}: filename must match slug '{meta['slug']}'")
         loaded.append((path, meta, body))
     return loaded
+
+
+_META_TAG = re.compile(r"<meta\b[^>]*>", re.I)
+_LINK_TAG = re.compile(r"<link\b[^>]*>", re.I)
+_LDJSON = re.compile(
+    r"<script\s+type=[\"']application/ld\+json[\"']>\s*(.*?)\s*</script>",
+    re.I | re.S,
+)
+
+
+def _attr(tag: str, name: str) -> str:
+    match = re.search(rf"\b{name}=[\"']([^\"']*)[\"']", tag, re.I)
+    return html.unescape(match.group(1)).strip() if match else ""
+
+
+def meta_content(page: str, *, name: str = "", prop: str = "", itemprop: str = "") -> str:
+    for match in _META_TAG.finditer(page):
+        tag = match.group(0)
+        if name and _attr(tag, "name") != name:
+            continue
+        if prop and _attr(tag, "property") != prop:
+            continue
+        if itemprop and _attr(tag, "itemprop") != itemprop:
+            continue
+        if name or prop or itemprop:
+            return _attr(tag, "content")
+    return ""
+
+
+def canonical_href(page: str) -> str:
+    for match in _LINK_TAG.finditer(page):
+        tag = match.group(0)
+        rel = _attr(tag, "rel").lower()
+        if "canonical" in rel.split():
+            return _attr(tag, "href")
+    return ""
+
+
+def slash_url(url: str) -> str:
+    if not url:
+        return url
+    if "#" in url:
+        base, frag = url.split("#", 1)
+        if not base.endswith("/"):
+            base += "/"
+        return f"{base}#{frag}"
+    return url if url.endswith("/") else url + "/"
+
+
+def post_is_indexable(page: str) -> bool:
+    robots = meta_content(page, name="robots").lower()
+    return "noindex" not in robots
+
+
+def post_categories(page: str) -> set[str]:
+    found = set()
+    for match in re.finditer(r'href=["\']/blog/category/([^"\']+)["\']', page, re.I):
+        slug = html.unescape(match.group(1)).strip("/").lower()
+        if slug:
+            found.add(slug)
+    return found
+
+
+def load_public_posts() -> list[dict[str, str]]:
+    """Live blog posts, from the same folders the sitemap should list.
+
+    A post counts when blog/<slug>/index.html exists and is indexable.
+    The four retired Squarespace slugs are never included.
+    """
+    posts: list[dict[str, str]] = []
+    for folder in sorted(p for p in OUT_BLOG.iterdir() if p.is_dir()):
+        if folder.name == "category" or folder.name in DEAD_BLOG_SLUGS:
+            continue
+        path = folder / "index.html"
+        if not path.is_file():
+            continue
+        page = path.read_text(encoding="utf-8")
+        if not post_is_indexable(page):
+            continue
+        url = slash_url(canonical_href(page) or f"{SITE}/blog/{folder.name}/")
+        headline = (
+            meta_content(page, itemprop="headline")
+            or meta_content(page, prop="og:title")
+            or folder.name
+        )
+        headline = re.sub(r"\s+[—–-]\s+LaunchLayer\s*$", "", headline).strip()
+        published = meta_content(page, itemprop="datePublished")
+        modified = meta_content(page, itemprop="dateModified") or published
+        image = absolute_url(
+            meta_content(page, prop="og:image") or meta_content(page, itemprop="image")
+        )
+        description = meta_content(page, name="description")
+        posts.append(
+            {
+                "slug": folder.name,
+                "url": url,
+                "headline": headline,
+                "description": description,
+                "datePublished": published,
+                "dateModified": modified,
+                "image": image,
+                "categories": post_categories(page),
+                "path": str(path),
+                "html": page,
+            }
+        )
+    posts.sort(key=lambda item: (item["datePublished"], item["slug"]), reverse=True)
+    return posts
+
+
+def blog_posting_node(post: dict) -> dict:
+    url = slash_url(post["url"])
+    node = {
+        "@type": "BlogPosting",
+        "@id": f"{url}#article",
+        "headline": post["headline"],
+        "description": post["description"],
+        "datePublished": post["datePublished"],
+        "dateModified": post["dateModified"] or post["datePublished"],
+        "inLanguage": "en-GB",
+        "url": url,
+        "mainEntityOfPage": url,
+        "author": launchlayer_org(),
+        "publisher": launchlayer_org(),
+    }
+    if post.get("image"):
+        node["image"] = post["image"]
+    return node
+
+
+def _dump_ld(data: dict) -> str:
+    body = json.dumps(data, indent=2, ensure_ascii=False)
+    return f'<script type="application/ld+json">\n{body}\n</script>'
+
+
+def _graph_nodes(data: dict) -> list[dict]:
+    if isinstance(data.get("@graph"), list):
+        return [node for node in data["@graph"] if isinstance(node, dict)]
+    if data.get("@type"):
+        return [data]
+    return []
+
+
+def repair_post_schema(post: dict) -> bool:
+    """Replace a copied blog-index CollectionPage with this post's BlogPosting.
+
+    Existing FAQPage nodes in the same script are kept. Generated Markdown
+    posts are left to article_schema() so a rebuild does not fight the template.
+    """
+    path = Path(post["path"])
+    page = post["html"]
+    if "Generated from content/blog/" in page:
+        return False
+    if "BlogPosting" not in page and "CollectionPage" not in page:
+        return False
+
+    def replacer(match: re.Match[str]) -> str:
+        raw = match.group(1).strip()
+        try:
+            data = json.loads(raw)
+        except json.JSONDecodeError:
+            return match.group(0)
+        if not isinstance(data, dict):
+            return match.group(0)
+        nodes = _graph_nodes(data)
+        types = []
+        for node in nodes:
+            kind = node.get("@type")
+            types.extend(kind if isinstance(kind, list) else [kind])
+        if "CollectionPage" not in types and "BlogPosting" not in types:
+            return match.group(0)
+        kept = []
+        for node in nodes:
+            kind = node.get("@type")
+            kind_list = kind if isinstance(kind, list) else [kind]
+            if "CollectionPage" in kind_list or "BlogPosting" in kind_list:
+                continue
+            kept.append(node)
+        graph = {"@context": "https://schema.org", "@graph": [blog_posting_node(post), *kept]}
+        return _dump_ld(graph)
+
+    updated = _LDJSON.sub(replacer, page, count=0)
+    if updated == page:
+        return False
+    path.write_text(updated, encoding="utf-8")
+    post["html"] = updated
+    return True
+
+
+def item_list(posts: list[dict], list_id: str) -> dict:
+    items = []
+    for index, post in enumerate(posts, start=1):
+        items.append(
+            {
+                "@type": "ListItem",
+                "position": index,
+                "url": slash_url(post["url"]),
+                "name": post["headline"],
+            }
+        )
+    return {
+        "@type": "ItemList",
+        "@id": list_id,
+        "name": "Technical Knowledge Base Feed",
+        "numberOfItems": len(items),
+        "itemListElement": items,
+    }
+
+
+def patch_collection_page(
+    path: Path,
+    posts: list[dict],
+    page_url: str,
+    list_id: str,
+    name: str = "",
+    description: str = "",
+) -> bool:
+    if not path.is_file():
+        return False
+    page = path.read_text(encoding="utf-8")
+    page_url = slash_url(page_url)
+
+    def replacer(match: re.Match[str]) -> str:
+        raw = match.group(1).strip()
+        try:
+            data = json.loads(raw)
+        except json.JSONDecodeError:
+            return match.group(0)
+        if not isinstance(data, dict):
+            return match.group(0)
+        nodes = _graph_nodes(data)
+        if not any(node.get("@type") == "CollectionPage" for node in nodes):
+            return match.group(0)
+        for node in nodes:
+            if node.get("@type") != "CollectionPage":
+                continue
+            node["@id"] = f"{page_url}#webpage"
+            node["url"] = page_url
+            if name:
+                node["name"] = name
+            if description:
+                node["description"] = description
+            node["mainEntity"] = item_list(posts, list_id)
+        data["@context"] = "https://schema.org"
+        data["@graph"] = nodes
+        return _dump_ld(data)
+
+    updated = _LDJSON.sub(replacer, page)
+    if updated == page:
+        return False
+    path.write_text(updated, encoding="utf-8")
+    return True
+
+
+def patch_blog_collections(posts: list[dict]) -> None:
+    index = LISTING_PAGES["all"]
+    patch_collection_page(index, posts, f"{SITE}/blog/", f"{SITE}/blog/#feedlist")
+    for category, path in LISTING_PAGES.items():
+        if category == "all":
+            continue
+        slug = category.lower().replace(" ", "+")
+        # On-disk folder is Title-Case. The public canonical is lowercase.
+        page_url = f"{SITE}/blog/category/{slug}/"
+        selected = [post for post in posts if slug in post["categories"]]
+        list_id = f"{page_url}#feedlist"
+        page = path.read_text(encoding="utf-8") if path.is_file() else ""
+        title = meta_content(page, prop="og:title") or category
+        title = re.sub(r"\s+[—–-]\s+LaunchLayer\s*$", "", title).strip()
+        description = meta_content(page, name="description")
+        patch_collection_page(
+            path,
+            selected,
+            page_url,
+            list_id,
+            name=title,
+            description=description,
+        )
+
+
+def sync_sitemap(posts: list[dict]) -> None:
+    """Add live blog URLs the sitemap does not already list.
+
+    Category hubs are included because each one is index,follow with its own
+    canonical. The same post set feeds the blog CollectionPage itemList.
+    """
+    sitemap = ROOT / "sitemap.xml"
+    xml = sitemap.read_text(encoding="utf-8")
+    urls = [slash_url(post["url"]) for post in posts]
+    for category in LISTING_PAGES:
+        if category == "all":
+            continue
+        slug = category.lower().replace(" ", "+")
+        urls.append(f"{SITE}/blog/category/{slug}/")
+    for url in urls:
+        needle = f"<loc>{url}</loc>"
+        if needle in xml:
+            continue
+        block = f"  <url>\n    <loc>{url}</loc>\n  </url>\n"
+        locs = list(re.finditer(r"<loc>(.*?)</loc>", xml))
+        inserted = False
+        for match in locs:
+            if match.group(1) > url:
+                start = xml.rfind("<url>", 0, match.start())
+                xml = xml[:start] + block + xml[start:]
+                inserted = True
+                break
+        if not inserted:
+            xml = xml.replace("</urlset>", block + "</urlset>")
+        print(f"Sitemap + {url}")
+    sitemap.write_text(xml, encoding="utf-8")
+
+
+def refresh_blog_schema() -> None:
+    posts = load_public_posts()
+    repaired = 0
+    for post in posts:
+        if repair_post_schema(post):
+            repaired += 1
+    # Re-read after repairs so headlines/categories reflect the saved HTML.
+    posts = load_public_posts()
+    patch_blog_collections(posts)
+    sync_sitemap(posts)
+    print(f"Blog schema: {repaired} post(s) set to BlogPosting; index lists {len(posts)} live URL(s).")
 
 
 def main() -> int:
@@ -804,6 +1148,7 @@ def main() -> int:
             )
             patch_listing(page, cards)
         print(f"Listings updated for {len(live)} live Markdown post(s).")
+        refresh_blog_schema()
         check_generated_output()
         return 0
     except PublishGuardError as exc:

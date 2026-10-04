@@ -25,18 +25,28 @@ CANONICAL_GRAPH: dict[str, Any] = {
         {
             "@type": "Organization",
             "@id": "https://launchlayer.uk/#organization",
-            "name": "LaunchLayer Ltd",
+            "name": "LaunchLayer",
             "legalName": "LaunchLayer Ltd",
             "url": "https://launchlayer.uk/",
             "logo": "https://launchlayer.uk/assets/meta/meta-520e4abe.png",
             "email": "hello@launchlayer.uk",
             "telephone": "+447367652987",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "32 Glebe Road",
+                "addressLocality": "Wickford",
+                "addressRegion": "Essex",
+                "postalCode": "SS11 8EU",
+                "addressCountry": "GB",
+            },
             "sameAs": [
                 "https://www.instagram.com/launchlayeruk/",
                 "https://www.facebook.com/LaunchLayerWickford/",
                 "https://www.linkedin.com/company/launchlayeruk",
                 "https://x.com/LaunchLayerUK",
                 "https://nextdoor.co.uk/page/launchlayer-wickford-england",
+                "https://www.yell.com/biz/launchlayer-wickford-10962785/",
+                "https://www.bark.com/en/gb/b/launchlayer/2MyKZd/",
             ],
         },
         {
@@ -47,7 +57,7 @@ CANONICAL_GRAPH: dict[str, Any] = {
             "telephone": "+447367652987",
             "email": "hello@launchlayer.uk",
             "image": "https://launchlayer.uk/assets/meta/meta-520e4abe.png",
-            "priceRange": "£49 - £250",
+            "priceRange": "£0 - £250",
             "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "5",
@@ -102,6 +112,8 @@ CANONICAL_GRAPH: dict[str, Any] = {
                 "https://www.linkedin.com/company/launchlayeruk",
                 "https://x.com/LaunchLayerUK",
                 "https://nextdoor.co.uk/page/launchlayer-wickford-england",
+                "https://www.yell.com/biz/launchlayer-wickford-10962785/",
+                "https://www.bark.com/en/gb/b/launchlayer/2MyKZd/",
             ],
             "hasOfferCatalog": {
                 "@type": "OfferCatalog",
