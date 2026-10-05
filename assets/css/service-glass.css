@@ -901,21 +901,6 @@ body.llsg-body svg:not([width]) { max-width: 100%; height: auto; }
   }
 }
 
-/* Keep long hero copy readable on floaty pages */
-.llsg-hero-copy .llsg-lead {
-  display: -webkit-box;
-  -webkit-line-clamp: 6;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-@media (min-width: 820px) {
-  .llsg-hero-copy .llsg-lead {
-    -webkit-line-clamp: unset;
-    overflow: visible;
-    display: block;
-  }
-}
-
 /* 4-step process → tidy 2×2 on desktop instead of orphaned 4th column */
 @media (min-width: 720px) {
   .llsg-steps:has(> .llsg-step:nth-child(4)):not(:has(> .llsg-step:nth-child(5))) {
