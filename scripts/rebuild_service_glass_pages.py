@@ -860,7 +860,7 @@ def parse_page(slug: str) -> PageData:
     # Special: MOT pages already glass on branch — still parse from main if needed
     if slug.startswith("laptop-mot"):
         # Prefer known MOT pricing
-        price_inline = ("£75", "Fixed fee · clean, tune-up & malware sweep")
+        price_inline = ("£60", "Fixed fee · clean, tune-up & malware sweep")
 
     # Data recovery entry point is Simple Logical Recovery from £79 — not the
     # generic workshop £55 starting price used on other service templates.

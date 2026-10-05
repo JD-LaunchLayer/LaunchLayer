@@ -2,7 +2,7 @@
 slug: laptop-battery-not-charging-wickford
 title: Laptop Plugged In Not Charging? Laptop Battery Not Charging Checks
 headline: Laptop Plugged In Not Charging? Laptop Battery Not Charging Checks
-description: Laptop plugged in not charging? Checks for a laptop battery not charging. Wickford repair from £55 plus the part.
+description: Laptop plugged in not charging? Checks for a laptop battery not charging. Wickford repair from £49 plus the part.
 date: 2026-09-30
 draft: false
 category: Useful Tips
@@ -59,7 +59,7 @@ That is a safety job, not a settings change. The [battery replacement guide](/bl
 
 ## What repair costs
 
-When the battery itself has failed, labour starts **from £55 plus the part**. You get the price for your exact model before any pack is ordered. Diagnostics are free. If we cannot put the fault right, **No-Fix, No-Fee** applies.
+When the battery itself has failed, labour starts **from £49 plus the part**. You get the price for your exact model before any pack is ordered. Diagnostics are free. If we cannot put the fault right, **No-Fix, No-Fee** applies.
 
 ## Laptop battery repair in Wickford
 
@@ -81,7 +81,7 @@ Yes, if the laptop still runs while it is plugged in. You can keep working that 
 
 ### How much does a laptop battery replacement cost?
 
-Labour starts from £55 plus the part. Diagnostics are free, and you get the price for your model before any pack is ordered. No-Fix, No-Fee applies if we cannot put the fault right.
+Labour starts from £49 plus the part. Diagnostics are free, and you get the price for your model before any pack is ordered. No-Fix, No-Fee applies if we cannot put the fault right.
 
 ### How long does a repair take?
 
