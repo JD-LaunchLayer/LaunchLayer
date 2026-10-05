@@ -346,3 +346,85 @@ body {
   .row-price { text-align: left; color: var(--color-accent-deep); }
   .row-chev { position: absolute; right: 16px; top: 50%; margin-top: -8px; }
 }
+
+/* ==========================================================================
+   /services/ popular-repair cards: "pop" patch (Option C, hybrid)
+   Target: assets/css/services.css (PR #137, head d523f8d). APPEND this block
+   at the end of the file. Same selectors as the PR, so later = wins; no
+   markup changes. Tokens only (design-tokens.css); no new colours or fonts.
+   Recipe = the home page's opaque "frosted" panel (.llhm-glass:
+   --color-glass + white hairline + --shadow-md) on a brand-tint band.
+   No backdrop-filter, so no fallback needed and no scroll-time GPU cost.
+   ========================================================================== */
+
+/* Brand-tint band behind the grid */
+.llp-pinned {
+  padding: 12px 10px;
+  margin-left: -6px;
+  margin-right: -6px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-accent-a12);
+  background:
+    radial-gradient(ellipse 75% 55% at 100% 0%, var(--color-accent-a16), transparent 62%),
+    linear-gradient(170deg, var(--color-accent-soft) 0%, var(--color-accent-tint) 55%, var(--color-canvas) 100%);
+}
+
+/* Cards: opaque frosted surface, white hairline, soft brand ring + shadow */
+.pin {
+  background: var(--color-glass);                 /* surface → surface-2 → accent-tint */
+  border: 1px solid var(--color-white);
+  box-shadow: 0 0 0 1px var(--color-accent-a12), var(--shadow-md);
+  transition: box-shadow .15s ease, background-color .15s ease, transform .15s ease;
+}
+.pin-amt { color: var(--color-accent-deep); }
+.pin-chev { color: var(--color-accent); }
+
+.pin:hover {
+  background: var(--color-white);
+  border-color: var(--color-white);
+  box-shadow: 0 0 0 1px var(--color-accent-a35), var(--shadow-lg);
+}
+.pin:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 0 1px var(--color-accent-a35), var(--shadow-sm);
+}
+.pin:focus-visible { outline: 3px solid var(--color-accent); outline-offset: 3px; }
+
+/* FREE diagnostics: the one deep-accent cell */
+.pin--diag {
+  background: var(--color-accent-deep);
+  border-color: var(--color-accent-deep);
+  box-shadow: var(--shadow-accent);
+}
+.pin--diag .pin-title,
+.pin--diag .pin-amt { color: var(--color-accent-on); }
+.pin--diag .pin-action,
+.pin--diag .pin-chev,
+.pin--diag:hover .pin-chev { color: var(--color-inverse-soft); }
+.pin--diag:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  box-shadow: var(--shadow-accent-hover);
+}
+.pin--diag:focus-visible { outline-color: var(--color-ink); }
+
+/* Phone: win back the band's padding so the grid sits where it did and the
+   Call pill still lands in a gap at 390×844 (checked) */
+@media (max-width: 719px) {
+  .llp-hero { padding-bottom: 8px; }
+  .llp-pinned .llp-sec-head { margin-bottom: 10px; }
+}
+@media (min-width: 720px) {
+  .llp-pinned { padding: 22px 20px 20px; margin-left: -8px; margin-right: -8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pin { transition: none; }
+  .pin:active { transform: none; }
+}
+
+/* Windows High Contrast: gradients/shadows drop out; keep card edges visible */
+@media (forced-colors: active) {
+  .pin, .pin--diag { border: 1px solid CanvasText; }
+  .llp-pinned { border-color: CanvasText; }
+}
