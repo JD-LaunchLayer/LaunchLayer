@@ -2,7 +2,7 @@
 slug: laptop-repair-cost-essex
 title: How Much Does a Laptop Repair Cost in Essex? 2026 Price Guide
 headline: How Much Does a Laptop Repair Cost in Essex? 2026 Price Guide
-description: Laptop repair cost in Essex, in plain figures. Free diagnostics, then a fixed quote. Hardware from £49, battery from £55 plus the part, screen labour from £99.
+description: Laptop repair cost in Essex, in plain figures. Free diagnostics, then a fixed quote. Hardware from £55, battery from £49 plus the part, screen labour from £99.
 date: 2026-10-14
 draft: true
 category: Useful Tips
@@ -22,11 +22,11 @@ The workshop for this list is [Wickford laptop repair](/wickford-laptop-repair/)
 ## Starting prices I will actually say out loud
 
 - **Diagnostics — FREE.** You are not billed for being told what is wrong.
-- **Hardware and general repair — from £49.** The floor for a straightforward hardware job once we know the fault.
-- **Battery — from £55 plus the part.** Labour starts there. The cell itself is quoted for your model before it is ordered. The symptom checklist is the [battery not charging guide](/blog/laptop-battery-not-charging-wickford/).
+- **Hardware and general repair — from £55.** The floor for a straightforward hardware job once we know the fault.
+- **Battery — from £49 plus the part.** Labour starts there. The cell itself is quoted for your model before it is ordered. The symptom checklist is the [battery not charging guide](/blog/laptop-battery-not-charging-wickford/).
 - **DC jack / charging port — from £65.** Cable versus brick versus socket is the [charger guide](/blog/laptop-charger-not-working-dc-jack/).
 - **Screen labour — from £99 plus the panel.** Not a price that includes the glass. The panel is a separate line, because a Chromebook panel and a touchscreen panel are not the same part. How that quote is built is on [laptop screen repair Wickford](/laptop-screen-repair-wickford/).
-- **50-point MOT — £75.** That is the fixed health check, not £45, and not a hardware repair hiding inside the same fee.
+- **50-point MOT — £60.** That is the fixed health check, not the £45 workshop software fix, and not a hardware repair hiding inside the same fee.
 - **Virus and malware clean-up — £69.**
 - **Fresh Windows install — £59.**
 
@@ -34,13 +34,13 @@ Anything outside this list — a liquid spill, a data recovery, a MacBook assemb
 
 ## What “from” means on the invoice
 
-“From £49” means the labour starts there after a free diagnostic. It does not mean every laptop leaves at £49. A loose hinge, a port and a worn battery are three lines, not one mystery bundle.
+“From £55” means the labour starts there after a free diagnostic. It does not mean every laptop leaves at £55. A loose hinge, a port and a worn battery are three lines, not one mystery bundle.
 
 You approve the quote before I order a part. If the part comes back and the fault was somewhere else, that is my problem to explain before you pay for work you did not agree. No-Fix, No-Fee covers a repair that cannot be done. It is not a coupon off a job that went ahead.
 
 ## Why two neighbours get different totals
 
-Same town, same week, different machines. One needs a software clean at £69. The next needs screen labour from £99 **plus** whatever that exact panel costs from a UK supplier. A third only needs the battery labour from £55 **plus** the cell. Comparing those three invoices as if they were the same job is how people decide a repair “is not worth it” without a quote.
+Same town, same week, different machines. One needs a software clean at £69. The next needs screen labour from £99 **plus** whatever that exact panel costs from a UK supplier. A third only needs the battery labour from £49 **plus** the cell. Comparing those three invoices as if they were the same job is how people decide a repair “is not worth it” without a quote.
 
 If the laptop also will not switch on, start with the [won’t turn on guide](/blog/laptop-not-turning-on-slow-fix/) so we are not pricing a screen for a machine that needs a charge circuit.
 
