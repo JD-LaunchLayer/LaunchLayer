@@ -4,7 +4,7 @@ title: Laptop Charger Not Working? Cable, Port, or the Laptop
 headline: Laptop Charger Not Working? Cable, Port, or the Laptop
 description: Laptop charger not working? We check the cable, the port, and the laptop. Charging port repair is £65. Diagnostics are free.
 date: 2026-10-07
-draft: true
+draft: false
 category: Useful Tips
 category_path: Useful+Tips
 author: Jordan Duggins
