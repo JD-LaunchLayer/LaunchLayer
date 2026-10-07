@@ -10,7 +10,7 @@ category_path: Useful+Tips
 author: Jordan Duggins
 image: /assets/images/image-laptop-repair-cost-essex.jpg
 og_image: /assets/meta/meta-laptop-repair-cost-essex.jpg
-image_alt: Open laptop on a wooden workshop bench beside a handwritten repair quote
+image_alt: Laptop with its base cover removed on a wooden desk, showing the battery, cooling fan and motherboard, with a screwdriver set and removed parts beside it
 ---
 
 People ask what a **laptop repair cost in Essex** actually is, then get a forum thread full of guesses. Here is the list I quote from in Wickford. These are starting points already on the [services and pricing](/services/) page, not a special “blog price”.
