@@ -1,8 +1,8 @@
 ---
 slug: laptop-battery-not-charging-wickford
-title: Laptop Plugged In Not Charging? Laptop Battery Not Charging Checks
-headline: Laptop Plugged In Not Charging? Laptop Battery Not Charging Checks
-description: Laptop plugged in not charging? Checks for a laptop battery not charging. Wickford repair from £49 plus the part.
+title: Laptop Plugged In But Not Charging? Battery and Windows Checks
+headline: Laptop Plugged In But Not Charging, or Stuck at 80%?
+description: Plugged in but not charging, or stuck at 80%? Check charge limits and battery health before buying a battery. From £49 plus the part. Free diagnostics.
 date: 2026-09-30
 draft: false
 category: Useful Tips
@@ -13,20 +13,18 @@ og_image: /assets/meta/meta-laptop-battery-not-charging-wickford.jpg
 image_alt: A swollen laptop battery with visible bulges resting on a workshop bench
 ---
 
-Your laptop is plugged in and not charging, or the percentage will not move. That is a laptop battery not charging problem, and it is often the charger, the wall socket, or a Windows setting rather than a dead battery. The checks below are the ones worth trying first.
+Your laptop runs on the charger and shows the plug icon, but Windows says "plugged in, not charging", the percentage sits at one number, or the battery drains fast once you unplug. The power is getting in. The question is whether the battery will fill and hold it, and often that comes down to a charge limit or a stuck reading rather than a dead battery. The checks below are the ones to try first.
+
+If there is no light on the charger, the laptop will not run on the mains, or it only charges with the plug held at an angle, start with the [charger and charging port guide](/blog/laptop-charger-not-working-dc-jack/) instead.
 
 We see this every week at the Wickford workshop. If you would rather we look at it, call **[07367 652987](tel:07367652987)** or book a **[Wickford laptop repair](/wickford-laptop-repair/)**. Bring the charger you actually use. Diagnostics are free.
 
 ## Quick fixes to try first
 
-Try one step at a time, in this order.
+These assume the laptop runs on the charger and shows the plug icon. Try one step at a time.
 
-1. **Check the charger.** Unplug it at the laptop and at the wall, then push both ends back in firmly. If the brick has a light, see whether it comes on. A phone charger that happens to fit is often too weak for a laptop, so the battery looks dead when the charger is the problem. Use a supply that matches the wattage printed on the original brick.
-2. **Try another wall socket.** Use a different socket, not the same extension lead.
-3. **Reset the power.** Shut the laptop down, unplug the charger, and hold the power button for a few seconds. Plug the charger back in and switch on. This can clear a stuck “not charging” reading. It does not replace a failed part.
-4. **Restart the laptop.** A normal restart is worth doing once the charger is seated. On Windows 11, “plugged in, not charging” sometimes clears after that.
-
-If it only charges when you hold the plug at an angle, a new battery will not help. The socket is the next thing to check, and we can look at that for you.
+1. **Reset the power.** Shut the laptop down, unplug the charger, and hold the power button for a few seconds. Plug the charger back in and switch on. This can clear a stuck "not charging" reading. It does not replace a failed part.
+2. **Restart the laptop.** On Windows 11, "plugged in, not charging" sometimes clears after a normal restart.
 
 ## Plugged in, not charging, or stuck at a percentage (Windows 11)
 
@@ -40,40 +38,34 @@ For the curious: Windows can write a battery report. Open Command Prompt and typ
 
 If that report still looks healthy and the plug feels solid, the battery is probably not the part to replace. We can confirm that before a pack is ordered.
 
-## Battery, charger or charging port? How to tell
+## Is it the battery?
 
-Use the signs, not the icon on its own.
+- **Worn battery.** The percentage falls from a lot to nothing in a few minutes, the laptop switches off without warning on battery, or it dies the moment you unplug a charger you trust. The battery report will usually show it holding far less than its original size.
+- **Charging circuit.** If the laptop runs on the charger, the battery report looks healthy, and it still will not fill, the part passing power to the battery may be at fault. A new battery does not help there, which is why the free diagnostic comes before any part is ordered.
 
-- **Charger.** The light on the brick stays off, the cable is frayed where it bends, or a different charger of the right wattage fills the battery straight away.
-- **Charging port.** The charge icon appears only when you hold the plug at an angle, or it flickers when the lead moves. Stop wiggling it, because that flexing is what damages the socket. A battery swap will not fix a lead that only works when you prop it on a book. We can check the port on its own.
-- **Battery.** The percentage falls from a lot to nothing in a few minutes, or the laptop dies the moment you unplug a charger you trust. That is a worn cell.
-- **Charging circuit.** This is the part inside the laptop that passes mains power through to the battery. Suspect it when a known-good charger and a firm plug still will not charge. A new battery on a dead circuit does not help, which is why the free diagnostic comes before any part is ordered.
+If the laptop will not turn on at all, even with the charger plugged in, start with the [won't turn on guide](/blog/laptop-not-turning-on-slow-fix/).
 
-If the laptop will not turn on at all, even with the charger plugged in, start with the [won’t turn on guide](/blog/laptop-not-turning-on-slow-fix/).
+## If the battery is swollen
 
-## When it's a swollen battery: stop using it
-
-Stop using the laptop if the case is bulging, the trackpad is lifting, or the palm rest feels hot, tight, or raised above the keyboard. Unplug the charger. Do not keep charging it. Do not puncture the pack.
-
-That is a safety job, not a settings change. The [battery replacement guide](/blog/laptop-battery-replacement-wickford/) explains what happens next. If you want us to take it from here, bring the laptop in and we will deal with the pack safely.
+Stop using the laptop if the case is bulging, the trackpad is lifting, or the palm rest is raised above the keyboard. Unplug the charger, do not keep charging it, and do not puncture the pack. The [swollen battery guide](/blog/laptop-battery-replacement-wickford/) explains what happens next.
 
 ## What repair costs
 
-When the battery itself has failed, labour starts **from £49 plus the part**. You get the price for your exact model before any pack is ordered. Diagnostics are free. If we cannot put the fault right, **No-Fix, No-Fee** applies.
+When the battery itself has failed, labour starts **from £49 plus the part**. You get the price for your exact model before any pack is ordered. Diagnostics are free. If we cannot put the fault right, **No-Fix, No-Fee** applies. Typical turnaround is 1-3 working days, and a new battery we fit carries a 12-month warranty.
 
 ## Laptop battery repair in Wickford
 
-Free collection and return is for Wickford postcodes SS11 and SS12. Drop-off at the workshop is arranged in advance. Call 07367 652987 or send a message and we'll confirm a time and the address. Bring the charger you use. Start from [Wickford laptop repair](/wickford-laptop-repair/) or [contact](/contact/), or call **[07367 652987](tel:07367652987)**.
+Free collection and return is for Wickford (SS11 and SS12) only. Elsewhere, collection is by arrangement. Drop-off at the workshop is arranged in advance. Call 07367 652987 or send a message and we'll confirm a time and the address. Bring the charger you use. Start from [Wickford laptop repair](/wickford-laptop-repair/) or [contact](/contact/), or call **[07367 652987](tel:07367652987)**.
 
 ## FAQ
 
 ### Why is my laptop plugged in but not charging?
 
-The charger may be too weak or not seated, the wall socket may be dead, Windows 11 may be showing a stuck reading, or a charge limit may be holding the battery at a set percentage. Work through the quick fixes first. A new battery is the answer only when the cell itself has failed.
+Usually a charge limit is holding the battery at a set percentage, Windows 11 is showing a stuck reading, or the battery is worn. Work through the quick fixes and the battery report first. If the laptop does not run on the charger at all, see the [charger guide](/blog/laptop-charger-not-working-dc-jack/).
 
-### Is it the battery or the charger?
+### How do I know if the battery is worn out?
 
-Try a charger that matches the wattage on the original brick, in a different wall socket. If the battery then fills, it was the charger or the socket. If the icon only appears when you hold the plug at an angle, it is the port. If a trusted charger is in firmly and the laptop still dies the moment you unplug it, it is the battery.
+Run `powercfg /batteryreport` and compare the design capacity with the full charge capacity. If it drops from a lot to nothing in minutes, or dies the moment you unplug, the battery is worn.
 
 ### Can I use it with a dead battery?
 
@@ -85,8 +77,8 @@ Labour starts from £49 plus the part. Diagnostics are free, and you get the pri
 
 ### How long does a repair take?
 
-It depends on the model and on the part. The quote comes before any part is ordered, so you know what is involved before anything is bought.
+Typical turnaround is 1-3 working days. You get the quote before any part is ordered.
 
 ### Is a swollen battery dangerous?
 
-Yes. Stop using the laptop, unplug it, do not puncture the battery, and do not keep charging it.
+Yes. Stop using the laptop, unplug it, do not puncture the battery, and do not keep charging it. See the [swollen battery guide](/blog/laptop-battery-replacement-wickford/).

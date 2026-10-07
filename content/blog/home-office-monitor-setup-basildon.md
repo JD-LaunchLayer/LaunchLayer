@@ -27,7 +27,7 @@ Match:
 - **DisplayLink vs native DisplayPort alt-mode** — some older office laptops need DisplayLink; some hate it. I would rather test than guess from an Amazon title.
 - **One cable** if you actually want one cable. Two dongles and a hope is how USB ports die.
 
-If the laptop only charges from a barrel plug, you need a dock **plus** the original charger, or a USB-C board repair — see [not charging](/blog/laptop-not-charging-wickford-essex/).
+If the laptop only charges from a barrel plug, you need a dock **plus** the original charger, or a USB-C board repair — see [not charging](/blog/laptop-charger-not-working-dc-jack/).
 
 A dock that gets too hot to touch is underspecced or stuffed in a closed cabinet. Give it air. Same rule as the laptop.
 

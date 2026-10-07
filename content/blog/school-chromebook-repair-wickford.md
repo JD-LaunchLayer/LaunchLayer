@@ -37,7 +37,7 @@ Batteries swell on older education stock too. If the trackpad is lifting, that i
 
 Yes, if we keep or re-enrol the device. A screen or hinge swap does not need a wipe. A board replacement might. I will flag that before I start so you can warn the school’s IT person.
 
-Charging from a random USB-C phone brick on a 45W Chromebook is a slow-motion [charging fault](/blog/laptop-not-charging-wickford-essex/). Use the original supply if you still have it.
+Charging from a random USB-C phone brick on a 45W Chromebook is a slow-motion [charging fault](/blog/laptop-charger-not-working-dc-jack/). Use the original supply if you still have it.
 
 A machine that is merely slow, not broken, is rarely a Chromebook storage job — ChromeOS lives in the cloud. If it is a Windows school laptop pretending to be “the Chromebook”, that is a different repair, often an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/).
 

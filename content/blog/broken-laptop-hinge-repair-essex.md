@@ -39,7 +39,7 @@ Sometimes it is new hinge hardware and a handful of screw inserts. Sometimes the
 
 This is a structural job. It sits next to screen work on the [Wickford screen repair page](/laptop-screen-repair-wickford/) and the town pages for [Rayleigh](/rayleigh-laptop-service/#screen-repair), [Southend](/southend-pc-repair/#screen-repair) and [Chelmsford](/chelmsford-pc-repair/#screen-repair).
 
-If the machine also charges only when you hold the plug, the same abuse often kills the DC jack. Pair this with the [not charging guide](/blog/laptop-not-charging-wickford-essex/).
+If the machine also charges only when you hold the plug, the same abuse often kills the DC jack. Pair this with the [not charging guide](/blog/laptop-charger-not-working-dc-jack/).
 
 A slow laptop with a broken hinge is two jobs. I will not hide an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/) inside a hinge quote, and I will not tell you the lid is “cosmetic” if the cable is already striped. If you are weighing repair against a new machine at all, use [repair vs replace](/blog/laptop-repair-vs-replace-sustainability-essex/) as the money conversation, then we price the hinge on its own.
 
