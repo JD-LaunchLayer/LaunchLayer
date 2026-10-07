@@ -10,7 +10,7 @@ category_path: Useful+Tips
 author: Jordan Duggins
 image: /assets/images/image-laptop-charger-not-working-dc-jack.jpg
 og_image: /assets/meta/meta-laptop-charger-not-working-dc-jack.jpg
-image_alt: Laptop charging brick and cable on a repair bench next to an open laptop port
+image_alt: Close-up of a USB-C charging cable plugged into the side of a silver laptop, next to its magnetic charging port and headphone jack
 ---
 
 A laptop charger that is not working is usually the cable or the charger, the DC jack or charging port, or a fault inside the laptop. They fail in different ways, and they are not the same repair. The checks below are the ones worth trying first.
