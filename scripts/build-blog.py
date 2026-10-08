@@ -11,7 +11,10 @@ already knows. Edit the .md file, then run:
 Hosting stays static — this script writes blog/<slug>/index.html so you can
 keep deploying the folder as-is. Old Squarespace posts are left untouched.
 The builder asserts chrome and listing-card shape after write. Re-scan with
-`--check`. `--self-test` proves a broken template would fail the job.
+`--check` (also fails when a published post's image or og_image file is
+missing). `--self-test` proves a broken template, a missing image, or a
+bad sitemap insert would fail the job. Newly published posts are added to
+sitemap.xml.
 """
 from __future__ import annotations
 
@@ -19,6 +22,7 @@ import html
 import json
 import re
 import sys
+import tempfile
 from datetime import datetime
 from pathlib import Path
 
@@ -349,6 +353,7 @@ def check_generated_output() -> None:
     for path in LISTING_PAGES.values():
         if path.is_file():
             assert_listing_feed(path.read_text(encoding="utf-8"), path)
+    assert_published_post_images(load_posts(), datetime.now().date(), ROOT)
 
 
 def run_self_test() -> None:
@@ -400,6 +405,7 @@ def run_self_test() -> None:
             raise PublishGuardError(
                 f"self-test: expected {label} to fail, but it passed."
             )
+    _self_test_sitemap_and_images()
     print("Blog publish guard self-test passed.")
 
 
@@ -1025,37 +1031,313 @@ def patch_blog_collections(posts: list[dict]) -> None:
         )
 
 
-def sync_sitemap(posts: list[dict]) -> None:
-    """Add live blog URLs the sitemap does not already list.
+def is_published(meta: dict[str, str], today: datetime.date) -> bool:
+    """Published means the post is not a draft and its date has arrived.
 
-    Category hubs are included because each one is index,follow with its own
-    canonical. The same post set feeds the blog CollectionPage itemList.
+    draft: true holds a post back even when the date is today or earlier.
+    A missing draft field is treated as not a draft.
     """
-    sitemap = ROOT / "sitemap.xml"
-    xml = sitemap.read_text(encoding="utf-8")
-    urls = [slash_url(post["url"]) for post in posts]
-    for category in LISTING_PAGES:
-        if category == "all":
+    if str(meta.get("draft", "")).lower() in {"true", "yes", "1"}:
+        return False
+    try:
+        posted = datetime.strptime(meta["date"], "%Y-%m-%d").date()
+    except (KeyError, ValueError) as exc:
+        raise PublishGuardError(
+            f"Post '{meta.get('slug', '?')}' has an unreadable date {meta.get('date')!r}."
+        ) from exc
+    return posted <= today
+
+
+def blog_post_url(slug: str) -> str:
+    return f"{SITE}/blog/{slug}/"
+
+
+def repo_asset_path(url_path: str, root: Path) -> Path:
+    value = (url_path or "").split("?", 1)[0].strip()
+    if value.startswith(SITE):
+        value = value[len(SITE) :]
+    return root / value.lstrip("/")
+
+
+def assert_published_post_images(
+    posts: list[tuple[Path, dict[str, str], str]],
+    today: datetime.date,
+    root: Path,
+) -> None:
+    """Fail when a published post's hero or OG file is not in the repo."""
+    missing: list[str] = []
+    for path, meta, _body in posts:
+        if not is_published(meta, today):
             continue
-        slug = category.lower().replace(" ", "+")
-        urls.append(f"{SITE}/blog/category/{slug}/")
+        where = path.name
+        for key in ("image", "og_image"):
+            rel = (meta.get(key) or "").strip()
+            if not rel:
+                missing.append(f"{where}: published post is missing front matter {key}.")
+                continue
+            file_path = repo_asset_path(rel, root)
+            if not file_path.is_file():
+                missing.append(
+                    f"{where}: published post {key} file does not exist: {rel}"
+                )
+    if missing:
+        raise PublishGuardError(
+            "Published post image files are missing:\n- " + "\n- ".join(missing)
+        )
+
+
+def published_post_urls(
+    posts: list[tuple[Path, dict[str, str], str]],
+    today: datetime.date,
+) -> list[str]:
+    return [
+        blog_post_url(meta["slug"])
+        for _path, meta, _body in posts
+        if is_published(meta, today)
+    ]
+
+
+def sitemap_urls_to_add(
+    markdown_posts: list[tuple[Path, dict[str, str], str]],
+    today: datetime.date,
+    public_posts: list[dict] | None = None,
+    include_categories: bool = True,
+) -> list[str]:
+    """URLs the publish pipeline may insert.
+
+    Markdown posts are added only when draft is off and date <= today.
+    A draft or future-dated Markdown post is never added, even if an HTML
+    copy already exists. Legacy HTML-only posts (no Markdown file) and
+    category hubs stay eligible so existing sitemap behaviour is unchanged.
+    """
+    markdown_slugs = {meta["slug"] for _path, meta, _body in markdown_posts}
+    blocked = {
+        blog_post_url(meta["slug"])
+        for _path, meta, _body in markdown_posts
+        if not is_published(meta, today)
+    }
+    urls: list[str] = []
+    seen: set[str] = set()
+
+    def push(url: str) -> None:
+        if url in blocked or url in seen:
+            return
+        urls.append(url)
+        seen.add(url)
+
+    for url in published_post_urls(markdown_posts, today):
+        push(url)
+    for post in public_posts or []:
+        url = slash_url(post["url"])
+        slug = url.rstrip("/").rsplit("/", 1)[-1]
+        if slug in markdown_slugs:
+            continue
+        push(url)
+    if include_categories:
+        for category in LISTING_PAGES:
+            if category == "all":
+                continue
+            slug = category.lower().replace(" ", "+")
+            push(f"{SITE}/blog/category/{slug}/")
+    return urls
+
+
+def insert_sitemap_urls(xml: str, urls: list[str]) -> tuple[str, list[str]]:
+    """Insert missing <loc> entries in alphabetical order.
+
+    Existing entries stay put: nothing is removed or reordered. A URL that
+    is already present is skipped. New entries match the file's shape,
+    <url><loc>...</loc></url>, with no <lastmod>.
+    """
+    added: list[str] = []
     for url in urls:
         needle = f"<loc>{url}</loc>"
         if needle in xml:
             continue
         block = f"  <url>\n    <loc>{url}</loc>\n  </url>\n"
-        locs = list(re.finditer(r"<loc>(.*?)</loc>", xml))
         inserted = False
-        for match in locs:
+        for match in re.finditer(r"<loc>(.*?)</loc>", xml):
             if match.group(1) > url:
                 start = xml.rfind("<url>", 0, match.start())
-                xml = xml[:start] + block + xml[start:]
-                inserted = True
-                break
+                if start >= 0:
+                    # Insert before the whole line so the next entry's indent stays put.
+                    line_start = xml.rfind("\n", 0, start)
+                    line_start = 0 if line_start < 0 else line_start + 1
+                    xml = xml[:line_start] + block + xml[line_start:]
+                    inserted = True
+                    break
         if not inserted:
-            xml = xml.replace("</urlset>", block + "</urlset>")
+            if "</urlset>" not in xml:
+                raise PublishGuardError("sitemap.xml is missing </urlset>.")
+            xml = xml.replace("</urlset>", block + "</urlset>", 1)
+        added.append(url)
+    return xml, added
+
+
+def sync_sitemap(posts: list[dict]) -> None:
+    """Add published blog URLs the sitemap does not already list.
+
+    A Markdown post is published when draft is false (or omitted) and its
+    date is on or before today. Drafts and future-dated posts are skipped.
+    Category hubs stay included because each one is index,follow with its
+    own canonical.
+    """
+    today = datetime.now().date()
+    urls = sitemap_urls_to_add(load_posts(), today, posts, include_categories=True)
+    sitemap = ROOT / "sitemap.xml"
+    xml = sitemap.read_text(encoding="utf-8")
+    updated, added = insert_sitemap_urls(xml, urls)
+    if updated != xml:
+        sitemap.write_text(updated, encoding="utf-8")
+    for url in added:
         print(f"Sitemap + {url}")
-    sitemap.write_text(xml, encoding="utf-8")
+
+
+def _self_test_sitemap_and_images() -> None:
+    """Sitemap inserts are idempotent; drafts, future posts, and missing images fail closed."""
+    today = datetime.strptime("2026-10-07", "%Y-%m-%d").date()
+
+    def meta(slug: str, iso: str, draft: str) -> dict[str, str]:
+        return {
+            "slug": slug,
+            "date": iso,
+            "draft": draft,
+            "image": "/assets/images/x.jpg",
+            "og_image": "/assets/meta/x.jpg",
+        }
+
+    posts = [
+        (Path("already.md"), meta("already", "2026-10-01", "false"), ""),
+        (Path("new-post.md"), meta("new-post", "2026-10-07", "false"), ""),
+        (Path("held.md"), meta("held", "2026-10-01", "true"), ""),
+        (Path("later.md"), meta("later", "2026-10-14", "false"), ""),
+        (Path("later-draft.md"), meta("later-draft", "2026-12-02", "true"), ""),
+    ]
+    public = [
+        {"url": blog_post_url("held")},
+        {"url": blog_post_url("later")},
+        {"url": blog_post_url("legacy-only")},
+    ]
+    urls = sitemap_urls_to_add(posts, today, public, include_categories=False)
+    for slug in ("already", "new-post", "legacy-only"):
+        if blog_post_url(slug) not in urls:
+            raise PublishGuardError(
+                f"self-test: expected {slug} to be eligible for the sitemap."
+            )
+    for slug in ("held", "later", "later-draft"):
+        if blog_post_url(slug) in urls:
+            raise PublishGuardError(
+                f"self-test: {slug} must not be added to the sitemap."
+            )
+
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://launchlayer.uk/blog/already/</loc>
+  </url>
+  <url>
+    <loc>https://launchlayer.uk/blog/zzz/</loc>
+  </url>
+</urlset>
+"""
+    once, added = insert_sitemap_urls(xml, urls)
+    twice, added_again = insert_sitemap_urls(once, urls)
+    if twice != once or added_again:
+        raise PublishGuardError("self-test: sitemap add was not idempotent.")
+    if "<lastmod>" in once:
+        raise PublishGuardError("self-test: sitemap insert added <lastmod>.")
+    new_loc = f"<loc>{blog_post_url('new-post')}</loc>"
+    if once.count(new_loc) != 1:
+        raise PublishGuardError("self-test: new sitemap URL was not added once.")
+    if once.count(f"<loc>{blog_post_url('already')}</loc>") != 1:
+        raise PublishGuardError("self-test: sitemap insert duplicated an existing URL.")
+    for slug in ("held", "later", "later-draft"):
+        if f"<loc>{blog_post_url(slug)}</loc>" in once:
+            raise PublishGuardError(
+                f"self-test: sitemap insert included {slug}."
+            )
+    already_at = once.find(blog_post_url("already"))
+    legacy_at = once.find(blog_post_url("legacy-only"))
+    new_at = once.find(blog_post_url("new-post"))
+    zzz_at = once.find(f"{SITE}/blog/zzz/")
+    if not (0 <= already_at < legacy_at < new_at < zzz_at):
+        raise PublishGuardError(
+            "self-test: sitemap insert did not keep alphabetical order."
+        )
+    if once.find(blog_post_url("already")) > once.find(f"{SITE}/blog/zzz/"):
+        raise PublishGuardError(
+            "self-test: sitemap insert reordered an existing entry."
+        )
+    for slug in ("already", "zzz"):
+        kept = (
+            f"  <url>\n    <loc>{SITE}/blog/{slug}/</loc>\n  </url>"
+        )
+        if kept not in once:
+            raise PublishGuardError(
+                f"self-test: sitemap insert altered the existing {slug} entry."
+            )
+    if set(added) != {blog_post_url("new-post"), blog_post_url("legacy-only")}:
+        raise PublishGuardError(
+            f"self-test: unexpected sitemap adds: {added}"
+        )
+
+
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        image = root / "assets" / "images" / "ok.jpg"
+        og = root / "assets" / "meta" / "ok.jpg"
+        image.parent.mkdir(parents=True)
+        og.parent.mkdir(parents=True)
+        image.write_bytes(b"jpeg")
+        og.write_bytes(b"jpeg")
+        present = {
+            "slug": "ok",
+            "date": "2026-10-07",
+            "draft": "false",
+            "image": "/assets/images/ok.jpg",
+            "og_image": "/assets/meta/ok.jpg",
+        }
+        assert_published_post_images([(Path("ok.md"), present, "")], today, root)
+        absent = {
+            "slug": "needs-photo",
+            "date": "2026-10-07",
+            "draft": "false",
+            "image": "/assets/images/__guard_missing__.jpg",
+            "og_image": "/assets/meta/__guard_missing__.jpg",
+        }
+        try:
+            assert_published_post_images(
+                [(Path("needs-photo.md"), absent, "")], today, root
+            )
+        except PublishGuardError as exc:
+            if "does not exist" not in str(exc):
+                raise PublishGuardError(
+                    "self-test: missing-image guard fired without a clear message."
+                ) from exc
+        else:
+            raise PublishGuardError("self-test: missing-image guard did not fire.")
+        held = {
+            "slug": "held",
+            "date": "2026-10-01",
+            "draft": "true",
+            "image": "/assets/images/__guard_missing__.jpg",
+            "og_image": "/assets/meta/__guard_missing__.jpg",
+        }
+        future = {
+            "slug": "later",
+            "date": "2026-10-14",
+            "draft": "false",
+            "image": "/assets/images/__guard_missing__.jpg",
+            "og_image": "/assets/meta/__guard_missing__.jpg",
+        }
+        assert_published_post_images(
+            [
+                (Path("held.md"), held, ""),
+                (Path("later.md"), future, ""),
+            ],
+            today,
+            root,
+        )
 
 
 def refresh_blog_schema() -> None:
@@ -1082,12 +1364,12 @@ def main() -> int:
     parser.add_argument(
         "--check",
         action="store_true",
-        help="Validate generated post chrome and listing cards without rebuilding.",
+        help="Validate generated post chrome, listing cards, and published image files without rebuilding.",
     )
     parser.add_argument(
         "--self-test",
         action="store_true",
-        help="Prove the guard fails on broken chrome/cards and passes on current templates.",
+        help="Prove chrome, listing, sitemap, and missing-image guards fail closed.",
     )
     args = parser.parse_args()
     try:
