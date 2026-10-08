@@ -10,7 +10,7 @@ category_path: Useful+Tips
 author: Jordan Duggins
 image: /assets/images/image-macbook-not-charging-wickford.jpg
 og_image: /assets/meta/meta-macbook-not-charging-wickford.jpg
-image_alt: MacBook on a repair bench with a MagSafe cable connected
+image_alt: Open MacBook Pro seen from above with a white braided MagSafe charging cable plugged into its left side
 ---
 
 A MacBook that is plugged in and not charging is often macOS holding the battery on purpose. The battery menu may say "Not Charging" or "Charging On Hold", the percentage may sit near 80%, or the MagSafe light may stay amber. Read what the Mac is telling you before you buy a cable or a battery.
