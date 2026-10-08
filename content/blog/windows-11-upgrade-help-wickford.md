@@ -1,8 +1,8 @@
 ---
 slug: windows-11-upgrade-help-wickford
-title: Windows 11 Upgrade Help Wickford | TPM and Incompatible PCs
-headline: Still Blocked from Windows 11 in Wickford? TPM, RAM and Honest Options
-description: Wickford PC says it cannot run Windows 11? What TPM 2.0 and Secure Boot actually mean, what we can enable, and when an SSD or a new machine is the sane path in 2026.
+title: Windows 11 Upgrade Help: TPM, RAM and Your Options
+headline: Still Blocked from Windows 11 in Wickford? TPM, RAM and Your Options
+description: PC blocked from Windows 11? What TPM 2.0 and Secure Boot mean, what we can enable, and when an SSD or a new machine is the sensible path.
 date: 2026-10-28
 draft: true
 category: Useful Tips
@@ -13,41 +13,43 @@ og_image: /assets/meta/meta-windows-11-upgrade-wickford.jpg
 image_alt: Desktop PC and laptop on a home office desk during a software update
 ---
 
-Windows 10’s free ride ended in 2025. If you are reading this in Wickford in late 2026 and the PC still throws “this processor is not supported” or “TPM 2.0 must be enabled”, you are not alone. I wrote a wider [Windows 10 end-of-support piece](/blog/windows-10-end-of-support-help-essex/) when the deadline was the news. This page is the practical upgrade, on the bench, after the deadline.
+Windows 10 reached end of support on 14 October 2025. If you're reading this in Wickford in late 2026 and the PC still says "this processor isn't supported" or "TPM 2.0 must be enabled", you're not alone. The wider background is the [Windows 10 end-of-support piece](/blog/windows-10-end-of-support-help-essex/). This page is the upgrade, on the bench.
 
-Unsupported Windows is not a style choice. It is an unpatched box on the same network as your banking. It is also catnip for [ransomware](/blog/ransomware-help-wickford-essex/).
+Home PCs enrolled in Microsoft's consumer Extended Security Updates keep getting security updates until 12 October 2027. [Microsoft's ESU page](https://www.microsoft.com/en-us/windows/extended-security-updates) says you can enrol any time until the programme ends on that date, and coverage continues through it if you're already enrolled. Consumer ESU isn't for a work PC that's domain-joined or managed by company IT. An unpatched PC on the same network as your banking is a risk, which is why [virus removal](/wickford-virus-removal/) is a different job from this upgrade.
 
-## What the checker is actually moaning about
+Windows 11 upgrade and compatibility fix is **from £69**, after a free diagnostic.
 
-- **TPM 2.0** — a security chip. On a lot of 2018–2020 boards it exists but is switched off in firmware as “PTT” or “fTPM”. I can enable it when the hardware is there.
-- **Secure Boot** — often disabled from a forgotten Linux experiment or a cheap shop install. Usually reversible.
-- **RAM under 4GB** — the checker will refuse. 8GB is the real floor in 2026; 16GB is what I recommend if you keep Chrome open.
-- **Unsupported CPU list** — this is the brick wall. A perfectly good i5-6500 or early Ryzen 1 machine may never be officially happy. Workarounds exist; they are not something I sell as a “supported business PC”.
+## What the checker is flagging
 
-If the PC is also crawling, fix the disk first. A [Wickford SSD upgrade](/blog/laptop-ssd-upgrade-wickford-essex/) plus 16GB RAM makes Windows 11 usable. Windows 11 on a 5400rpm disk is misery, not security.
+- **TPM 2.0.** A security chip. On a lot of 2018–2020 boards it exists but is switched off in firmware as "PTT" or "fTPM". We can enable it when the hardware is there.
+- **Secure Boot.** Often left off after an old Linux experiment or a cheap shop install. Usually reversible.
+- **RAM under 4GB.** The checker will refuse. 8GB is the practical floor in 2026. 16GB is what we suggest if you keep a browser full of tabs.
+- **Unsupported CPU list.** This is the hard stop. A perfectly good i5-6500 or early Ryzen machine may never be officially supported. Workarounds exist. We don't sell one as a supported PC for work email.
 
-## What I will not do
+If the PC is also crawling, fix the disk first. A [Wickford SSD upgrade](/blog/laptop-ssd-upgrade-wickford-essex/) plus 16GB of RAM makes Windows 11 usable. Windows 11 on a slow hard drive is a poor result, not a security upgrade.
 
-I will not bypass the checker on a machine you use for work email and call it done. I will not install a mystery ISO from a forum. I will not pretend a 2014 office tower is a Copilot+ PC — that is a different, and mostly marketing, conversation in the [2026 AI PC note](/blog/pc-ready-2026-wickford/).
+## What we'll actually do
 
-I will take a full backup first. Upgrades fail. That is why the [backup guide](/blog/backup-pc-guide-wickford-essex/) exists.
+On a home PC, we'll explain the trade-off of a workaround before any work. We don't install an ISO from a forum, and we don't call a bypass a supported setup for work email. We take a full copy of your files first. Upgrades fail, and that copy matters more than the installer.
 
-## Honest options, in order
+A 2014 office tower isn't a Copilot+ PC. That's a different conversation in the [2026 AI PC note](/blog/pc-ready-2026-wickford/).
 
-1. **Enable TPM / Secure Boot and upgrade in place** — best when the hardware is actually fine.
-2. **SSD + RAM, then upgrade** — best when the hardware is fine but exhausted.
-3. **Keep the files, replace the box** — best when the CPU is on the unsupported list and you need reliability. [Buying advice](/blog/pc-laptop-buying-guide-essex/) or a [custom build](/custom-pc-builds/) if you want it done once.
+## Options, in order
 
-Gaming towers that blue-screen mid-upgrade usually have heat or disk issues. See the [blue screen post](/blog/windows-blue-screen-fix-essex/). Dusty Basildon towers should get a [thermal clean](/blog/pc-dust-thermal-servicing-basildon/) before anyone starts Setup.exe.
+1. **Enable TPM or Secure Boot and upgrade in place.** Best when the hardware is actually fine.
+2. **SSD and RAM, then upgrade.** Best when the hardware is fine but tired.
+3. **Keep the files, replace the box.** Best when the CPU is on the unsupported list and you need reliability. [Buying advice](/blog/pc-laptop-buying-guide-essex/) or a [custom build](/custom-pc-builds/) if you want it done once.
 
-A laptop that will not hold a charge through an hour-long upgrade is a [charging fault](/blog/laptop-battery-not-charging-wickford/), not a Microsoft problem. Plug in a known-good brick or we stop.
+A tower that crashes in the middle of Setup usually has a heat or disk problem. A dusty tower should get a [thermal clean](/blog/pc-dust-thermal-servicing-basildon/) before anyone starts the installer.
 
-## Licences, files, and “do I need to buy Windows again?”
+A laptop that won't hold a charge through an hour-long upgrade is a [charging fault](/blog/laptop-battery-not-charging-wickford/), not a Microsoft problem. Plug in a known-good brick, or we stop.
 
-Most home PCs already have a digital licence tied to the motherboard. An in-place upgrade keeps that. A clean install on the same board usually activates online. A brand-new custom PC is a different licence conversation — I will not quietly reuse a sticker from a dead Dell on a new AMD box and call it legitimate.
+## Licences, files, and buying Windows again
 
-Your files survive an in-place upgrade if the disk is healthy. If the disk is not healthy, we image first. Always. That is the same discipline as [data recovery](/data-recovery/), just cheaper because we do it before the click-of-death.
+Most home PCs already have a digital licence tied to the motherboard. An in-place upgrade keeps that. A clean install on the same board usually activates online. A brand-new custom PC is a different licence. We won't reuse a sticker from a dead Dell on a new AMD box and call it legitimate.
+
+Your files survive an in-place upgrade if the disk is healthy. If the disk isn't healthy, we copy the files off before Setup. That's the same idea as [data recovery](/data-recovery/), and it's cheaper because we do it before the drive fails.
 
 ## Book the check
 
-Call **[07367 652987](tel:07367652987)** to arrange a drop-off. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. You can also start from [Wickford PC repair](/wickford-pc-repair/) or [Contact](/contact/). Free collection and return is for Wickford SS11 and SS12. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Brentwood](/brentwood-pc-repair/) is by arrangement. I will tell you which of the three options you are actually on before anyone pays for a Windows licence they already own. No-Fix, No-Fee if the machine is not a sensible upgrade candidate.
+Call **[07367 652987](tel:07367652987)** and we'll arrange a time. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Brentwood](/brentwood-pc-repair/) is by arrangement. You can also start from [Wickford PC repair](/wickford-pc-repair/) or [Contact](/contact/). We'll tell you which of the three options you're actually on before anyone pays for a Windows licence they already own. No-Fix, No-Fee if the machine isn't a sensible upgrade.

@@ -13,42 +13,42 @@ og_image: /assets/meta/meta-school-chromebook-wickford.jpg
 image_alt: School-style laptop sliding out of a backpack on a kitchen table
 ---
 
-Autumn term is when the Wickford bench fills with grey plastic lids from local primaries, secondaries and college bags. Chromebooks are tough until they are not: one hinge, one bottle of water, one locker door.
+School Chromebooks come in with cracked lids, bent hinges and spills from a bottle in the bag. One hinge, one locker door, one water bottle.
 
-Schools often invoice parents for “total loss”. Sometimes that is fair. Sometimes the machine needs a screen or a hinge and the invoice is the price of a new unit. I would rather you got a second opinion from Glebe Road before you pay the full replacement figure.
+Schools often invoice parents for a "total loss". Sometimes that's fair. Sometimes the machine needs a screen or a hinge, and the invoice is the price of a new unit. We'd rather you got a second opinion from Glebe Road before you pay the full replacement figure.
 
 ## Check the school policy before you panic
 
-Some Essex schools own the device and recharge damage. Some are parent-owned, school-managed. If it is a managed Chromebook, a repair that wipes the device still enrols again on the school domain. Your child’s files in Google Drive are in the cloud, not on the cracked lid. That is the good news.
+Some Essex schools own the device and recharge damage. Some are parent-owned and school-managed. If it's a managed Chromebook, a repair that wipes the device still enrols again on the school domain. Your child's files in Google Drive are in the cloud, not on the cracked lid. That's the good news.
 
-Do not factory-reset a school-managed Chromebook “to see if it helps” if you do not have the enrolment credentials. You can lock yourself out of a machine the school then has to recover.
+Don't factory-reset a school-managed Chromebook "to see if it helps" if you don't have the enrolment details. You can lock yourself out of a machine the school then has to recover.
 
-Take a photo of the asset tag and the serial before you travel. School IT would rather a serial in a message than a mystery grey slab.
+Take a photo of the asset tag and the serial before you travel. School IT would rather have a serial in a message than a mystery grey slab.
 
-## The three faults I see every September
+## The three faults we see most on school Chromebooks
 
-1. **Screens** — backpack zip, another laptop in the same bag, a drop off the kitchen island. Same rules as the [cracked screen guide](/blog/cracked-laptop-screen-wickford-essex/). Files are almost always fine. Windows and Chromebook panel fitting is a flat **£99 labour** plus the matching panel on the [Wickford screen page](/laptop-screen-repair-wickford/).
-2. **Hinges** — daily open-close plus cheap plastic. Stop using it; read the [hinge post](/blog/broken-laptop-hinge-repair-essex/).
-3. **Spills** — bottle in the bag. **Power off, do not charge, do not put it on a radiator.** [Spill steps](/blog/spilled-water-on-laptop-fix-essex/).
+1. **Screens.** A backpack zip, another laptop in the same bag, a drop off the kitchen side. Same rules as the [cracked screen guide](/blog/cracked-laptop-screen-wickford-essex/). Files are almost always fine. Windows and Chromebook panel fitting is **£99 labour** plus the matching panel on the [Wickford screen page](/laptop-screen-repair-wickford/).
+2. **Hinges.** Daily open and close on cheap plastic. Stop using it. [Hinge repair](/wickford-laptop-repair/) starts from £75.
+3. **Spills.** A bottle in the bag. **Power off, don't charge it, and don't put it on a radiator.** [Spill steps](/blog/spilled-water-on-laptop-fix-essex/).
 
-Batteries swell on older education stock too. If the trackpad is lifting, that is the [battery safety post](/blog/laptop-battery-replacement-wickford/).
+Batteries swell on older education stock too. If the trackpad is lifting, that's the [battery safety post](/blog/laptop-battery-replacement-wickford/).
 
 ## Will Google Classroom still work?
 
-Yes, if we keep or re-enrol the device. A screen or hinge swap does not need a wipe. A board replacement might. I will flag that before I start so you can warn the school’s IT person.
+Yes, if we keep or re-enrol the device. A screen or hinge swap doesn't need a wipe. A board replacement might. We'll flag that before we start, so you can warn the school's IT person.
 
-Charging from a random USB-C phone brick on a 45W Chromebook is a slow-motion [charging fault](/blog/laptop-battery-not-charging-wickford/). Use the original supply if you still have it.
+Charging a 45W Chromebook from a phone brick is a slow [charging fault](/blog/laptop-battery-not-charging-wickford/). Use the original supply if you still have it.
 
-A machine that is merely slow, not broken, is rarely a Chromebook storage job — ChromeOS lives in the cloud. If it is a Windows school laptop pretending to be “the Chromebook”, that is a different repair, often an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/).
+A machine that's merely slow, not broken, is rarely a Chromebook storage job. ChromeOS lives in the cloud. If it's a Windows school laptop that people call "the Chromebook", that's a different repair, often an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/).
 
 ## Worth repairing vs the school invoice
 
-If the invoice is close to a new Chromebook and the chassis is in three pieces, replacement can be saner. If it is a cracked panel on an otherwise straight lid, a local repair is usually the cheaper, faster, less wasteful option — same argument as [repair vs replace](/blog/laptop-repair-vs-replace-sustainability-essex/).
+If the invoice is close to a new Chromebook and the chassis is in three pieces, replacement can be the saner choice. If it's a cracked panel on an otherwise straight lid, a local repair is usually the cheaper and less wasteful option. That's the same argument as [repair vs replace](/blog/laptop-repair-vs-replace-sustainability-essex/).
 
-I will not tell a Year 8 that Super Glue is a hinge. I will not wipe a managed device without you knowing. I will not quote a MacBook panel price on a Lenovo education lid.
+We won't glue a hinge, wipe a managed device without telling you, or quote a MacBook panel on a Lenovo education lid.
 
-Free collection and return is for Wickford SS11 and SS12. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) and [Rayleigh](/rayleigh-laptop-service/) is by arrangement. Rayleigh and Southend screen pages exist if you are further down the line: [Rayleigh](/rayleigh-laptop-service/#screen-repair), [Southend](/southend-pc-repair/#screen-repair).
+Ask about free collection and return in Wickford (SS11 and SS12). Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) and [Rayleigh](/rayleigh-laptop-service/) is by arrangement. Rayleigh and Southend screen pages are there if you're further down the line: [Rayleigh](/rayleigh-laptop-service/#screen-repair), [Southend](/southend-pc-repair/#screen-repair).
 
 ## Drop-off
 
-[Wickford laptop repair](/wickford-laptop-repair/), [screen repair](/laptop-screen-repair-wickford/), or [Contact](/contact/) / **[07367 652987](tel:07367652987)**. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Bring the charger and, if you have it, the school asset tag photo so we can talk to their IT with the right serial. No-Fix, No-Fee if it is not worth saving against the school’s replacement figure.
+Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance. Call **[07367 652987](tel:07367652987)**, or book through [Wickford laptop repair](/wickford-laptop-repair/), [screen repair](/laptop-screen-repair-wickford/) or [Contact](/contact/), and we'll confirm a time. Bring the charger and, if you have it, the school asset-tag photo, so we can talk to their IT with the right serial. No-Fix, No-Fee if it isn't worth saving against the school's replacement figure.

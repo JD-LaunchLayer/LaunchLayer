@@ -12,9 +12,10 @@ Hosting stays static — this script writes blog/<slug>/index.html so you can
 keep deploying the folder as-is. Old Squarespace posts are left untouched.
 The builder asserts chrome and listing-card shape after write. Re-scan with
 `--check` (also fails when a published post's image or og_image file is
-missing). `--self-test` proves a broken template, a missing image, or a
-bad sitemap insert would fail the job. Newly published posts are added to
-sitemap.xml.
+missing, or when a post links to a blog post that is not live by its own
+publish date). `--self-test` proves a broken template, a missing image, a
+bad sitemap insert, or a forward blog link would fail the job. Newly
+published posts are added to sitemap.xml.
 """
 from __future__ import annotations
 
@@ -342,6 +343,86 @@ def assert_apex_slash_canonical(html_text: str, path: Path | None = None) -> Non
         )
 
 
+_BLOG_LINK = re.compile(
+    r"""(?:\]\(|href=["'])/blog/(?!category/)([a-z0-9-]+)/?""",
+    re.I,
+)
+
+
+def blog_link_slugs(body: str) -> list[str]:
+    """Internal /blog/<slug>/ links in a Markdown body. Category hubs are skipped."""
+    return _BLOG_LINK.findall(body)
+
+
+def legacy_blog_slugs(root: Path | None = None) -> set[str]:
+    """Blog folders that already have public HTML and are not Markdown posts.
+
+    A link to one of these is already live. Dead slugs and the category
+    folder are not treated as live posts.
+    """
+    blog = (root or ROOT) / "blog"
+    markdown = {path.stem for path in POSTS_DIR.glob("*.md")}
+    found: set[str] = set()
+    if not blog.is_dir():
+        return found
+    for folder in blog.iterdir():
+        if not folder.is_dir():
+            continue
+        if folder.name in {"category", *DEAD_BLOG_SLUGS} or folder.name in markdown:
+            continue
+        if (folder / "index.html").is_file():
+            found.add(folder.name)
+    return found
+
+
+def assert_blog_links_live_by_publish_date(
+    posts: list[tuple[Path, dict[str, str], str]],
+    legacy_slugs: set[str],
+) -> None:
+    """Fail when a post links to a blog post that is not live on its publish date.
+
+    A Markdown target is live for the source when the target's date is on or
+    before the source date. draft: true does not hold a post back once that
+    date arrives. A legacy HTML post (no Markdown file) is already live.
+    """
+    by_slug = {meta["slug"]: meta for _path, meta, _body in posts}
+    problems: list[str] = []
+    for path, meta, body in posts:
+        try:
+            source_date = datetime.strptime(meta["date"], "%Y-%m-%d").date()
+        except (KeyError, ValueError) as exc:
+            raise PublishGuardError(
+                f"{path.name}: unreadable date {meta.get('date')!r}."
+            ) from exc
+        for slug in blog_link_slugs(body):
+            target = by_slug.get(slug)
+            if target is not None:
+                try:
+                    target_date = datetime.strptime(target["date"], "%Y-%m-%d").date()
+                except (KeyError, ValueError) as exc:
+                    raise PublishGuardError(
+                        f"{slug}: unreadable date {target.get('date')!r}."
+                    ) from exc
+                if target_date <= source_date:
+                    continue
+                problems.append(
+                    f"{meta['slug']} ({meta['date']}) links to /blog/{slug}/ "
+                    f"which publishes {target['date']}."
+                )
+                continue
+            if slug in legacy_slugs:
+                continue
+            problems.append(
+                f"{meta['slug']} ({meta['date']}) links to /blog/{slug}/ "
+                "which is not live by that date."
+            )
+    if problems:
+        raise PublishGuardError(
+            "A post links to a blog post that is not live by its publish date:\n- "
+            + "\n- ".join(problems)
+        )
+
+
 def check_generated_output() -> None:
     assert_listing_card_emitter()
     posts = generated_post_paths()
@@ -356,7 +437,9 @@ def check_generated_output() -> None:
     for path in LISTING_PAGES.values():
         if path.is_file():
             assert_listing_feed(path.read_text(encoding="utf-8"), path)
-    assert_published_post_images(load_posts(), datetime.now().date(), ROOT)
+    loaded = load_posts()
+    assert_published_post_images(loaded, datetime.now().date(), ROOT)
+    assert_blog_links_live_by_publish_date(loaded, legacy_blog_slugs())
 
 
 def run_self_test() -> None:
@@ -409,6 +492,7 @@ def run_self_test() -> None:
                 f"self-test: expected {label} to fail, but it passed."
             )
     _self_test_sitemap_and_images()
+    _self_test_forward_blog_links()
     print("Blog publish guard self-test passed.")
 
 
@@ -1356,6 +1440,47 @@ def _self_test_sitemap_and_images() -> None:
         )
 
 
+def _self_test_forward_blog_links() -> None:
+    """A link to a later post fails. A link to an earlier post or a legacy page passes."""
+    early = {"slug": "early", "date": "2026-10-28"}
+    older = {"slug": "older", "date": "2026-09-01"}
+    later = {"slug": "later", "date": "2026-12-09"}
+    forward = [
+        (Path("early.md"), early, "See the [later note](/blog/later/) and [older](/blog/older/)."),
+        (Path("older.md"), older, ""),
+        (Path("later.md"), later, "Back to [older](/blog/older/)."),
+    ]
+    try:
+        assert_blog_links_live_by_publish_date(forward, set())
+    except PublishGuardError as exc:
+        message = str(exc)
+        if "/blog/later/" not in message or "2026-12-09" not in message:
+            raise PublishGuardError(
+                "self-test: forward-link guard fired without naming the later post."
+            ) from exc
+    else:
+        raise PublishGuardError("self-test: forward blog link did not fail.")
+
+    same_day = [
+        (Path("early.md"), early, "See [older](/blog/older/) and [legacy](/blog/legacy-post/)."),
+        (Path("older.md"), older, "A [category hub](/blog/category/useful-tips/) is not a post."),
+    ]
+    assert_blog_links_live_by_publish_date(same_day, {"legacy-post"})
+
+    missing = [
+        (Path("early.md"), early, "See [nowhere](/blog/not-a-real-post/)."),
+    ]
+    try:
+        assert_blog_links_live_by_publish_date(missing, set())
+    except PublishGuardError as exc:
+        if "not-a-real-post" not in str(exc):
+            raise PublishGuardError(
+                "self-test: missing blog link did not fail clearly."
+            ) from exc
+    else:
+        raise PublishGuardError("self-test: link to a missing blog post did not fail.")
+
+
 def refresh_blog_schema() -> None:
     posts = load_public_posts()
     repaired = 0
@@ -1380,12 +1505,12 @@ def main() -> int:
     parser.add_argument(
         "--check",
         action="store_true",
-        help="Validate generated post chrome, listing cards, and published image files without rebuilding.",
+        help="Validate generated post chrome, listing cards, published image files, and blog links that must already be live.",
     )
     parser.add_argument(
         "--self-test",
         action="store_true",
-        help="Prove chrome, listing, sitemap, and missing-image guards fail closed.",
+        help="Prove chrome, listing, sitemap, missing-image, and forward-link guards fail closed.",
     )
     args = parser.parse_args()
     try:
@@ -1405,6 +1530,7 @@ def main() -> int:
         assert_listing_card_emitter()
 
         loaded = load_posts()
+        assert_blog_links_live_by_publish_date(loaded, legacy_blog_slugs())
         scheduled = [(p, m, b) for p, m, b in loaded if not is_live(m, today)]
         live = [(p, m, b) for p, m, b in loaded if is_live(m, today)]
         live.sort(key=lambda item: (item[1]["date"], item[1]["slug"]), reverse=True)

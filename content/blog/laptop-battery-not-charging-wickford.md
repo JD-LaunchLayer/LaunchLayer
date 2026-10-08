@@ -94,7 +94,7 @@ Diagnostics are free. You get a fixed quote before any part is ordered. Typical 
 
 Bring the charger you actually use, including the spare in the drawer if that's the one that sometimes works.
 
-Drop it at the workshop, or ask about free collection and return in Wickford (SS11 and SS12). Call 07367 652987 or send a message and we'll confirm a time and the address. Book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
+Drop-off at the workshop is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Call **[07367 652987](tel:07367652987)**, or book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), and we'll confirm a time. Elsewhere, collection is by arrangement.
 
 ## FAQ
 
@@ -120,7 +120,7 @@ Yes, if the laptop still runs while it's plugged in. You can keep working that w
 
 ### Do you collect the laptop?
 
-Drop it at the workshop, or ask about free collection and return in Wickford (SS11 and SS12). Call 07367 652987 or send a message and we'll confirm a time and the address.
+Drop-off at the workshop is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Call **[07367 652987](tel:07367652987)**, or book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), and we'll confirm a time. Elsewhere, collection is by arrangement.
 
 ### Is a swollen battery dangerous?
 
