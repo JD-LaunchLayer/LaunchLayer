@@ -10,7 +10,7 @@ category_path: Useful+Tips
 author: Jordan Duggins
 image: /assets/images/image-laptop-screen-repair-cost-essex.jpg
 og_image: /assets/meta/meta-laptop-screen-repair-cost-essex.jpg
-image_alt: Laptop with a cracked lid corner on a workshop bench next to a replacement panel
+image_alt: Laptop on a white table with a damaged screen showing coloured lines and cracks, next to a yellow smartphone
 ---
 
 A **laptop screen repair cost in Essex** is two numbers, not one. **Fitting labour starts from £99. The panel is extra**, quoted for your exact model before I order it. It is not “£100 including the glass”, and it is not a £69 screen. Those figures get repeated online and they are not what this workshop charges.
