@@ -40,7 +40,7 @@ I will take a full backup first. Upgrades fail. That is why the [backup guide](/
 
 Gaming towers that blue-screen mid-upgrade usually have heat or disk issues. See the [blue screen post](/blog/windows-blue-screen-fix-essex/). Dusty Basildon towers should get a [thermal clean](/blog/pc-dust-thermal-servicing-basildon/) before anyone starts Setup.exe.
 
-A laptop that will not hold a charge through an hour-long upgrade is a [charging fault](/blog/laptop-not-charging-wickford-essex/), not a Microsoft problem. Plug in a known-good brick or we stop.
+A laptop that will not hold a charge through an hour-long upgrade is a [charging fault](/blog/laptop-battery-not-charging-wickford/), not a Microsoft problem. Plug in a known-good brick or we stop.
 
 ## Licences, files, and “do I need to buy Windows again?”
 

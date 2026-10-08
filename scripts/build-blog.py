@@ -39,6 +39,9 @@ DEAD_BLOG_SLUGS = {
     "how-to-spot-tech-support-scams",
     "laptop-thermal-throttling-fixes",
     "custom-pc-airflow-optimization-guide",
+    # Merged into laptop-battery-not-charging-wickford. The HTML folder is
+    # deleted and _redirects 301s the old URL.
+    "laptop-charger-not-working-dc-jack",
 }
 FEED_START = "<!-- ll-md-feed:start -->"
 FEED_END = "<!-- ll-md-feed:end -->"
@@ -526,6 +529,17 @@ def article_schema(meta: dict[str, str], url: str) -> str:
     return json.dumps(payload, ensure_ascii=True, indent=2)
 
 
+_TABLE_BLOCK = re.compile(r"<table\b[\s\S]*?</table>", re.I)
+
+
+def wrap_blog_tables(body_html: str) -> str:
+    """Give every Markdown table a scroll container the blog CSS can style."""
+    return _TABLE_BLOCK.sub(
+        lambda match: f'<div class="llblog-table">{match.group(0)}</div>',
+        body_html,
+    )
+
+
 def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
     missing = [key for key in REQUIRED if not meta.get(key)]
     if missing:
@@ -542,10 +556,12 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
         import markdown
     except ImportError:
         sys.exit("Install the markdown package first: pip install markdown")
-    body_html = markdown.markdown(
-        body,
-        extensions=["extra", "sane_lists", "smarty"],
-        output_format="html",
+    body_html = wrap_blog_tables(
+        markdown.markdown(
+            body,
+            extensions=["extra", "sane_lists", "smarty"],
+            output_format="html",
+        )
     )
     slug = meta["slug"]
     url = f"{SITE}/blog/{slug}/"
@@ -819,7 +835,7 @@ def load_public_posts() -> list[dict[str, str]]:
     """Live blog posts, from the same folders the sitemap should list.
 
     A post counts when blog/<slug>/index.html exists and is indexable.
-    The four retired Squarespace slugs are never included.
+    Retired slugs in DEAD_BLOG_SLUGS are never included.
     """
     posts: list[dict[str, str]] = []
     for folder in sorted(p for p in OUT_BLOG.iterdir() if p.is_dir()):

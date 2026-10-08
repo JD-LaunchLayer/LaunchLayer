@@ -55,7 +55,7 @@ I can set a simple weekly image plus cloud for a one- or two-person Wickford fir
 
 DIY is a portable SSD and a cloud account you control. A workshop job is an image of the whole disk *before* we clone onto an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/) or chase a [blue screen](/blog/windows-blue-screen-fix-essex/). Different tools, same idea: a copy that does not live only inside the sick machine.
 
-If the laptop also will not hold a charge, bring the brick — that is the [charging guide](/blog/laptop-not-charging-wickford-essex/), not a backup problem. If it overheats every time File History runs, fix the dust first ([overheating](/blog/fix-overheating-laptop-wickford-essex/)).
+If the laptop also will not hold a charge, bring the brick — that is the [charging guide](/blog/laptop-battery-not-charging-wickford/), not a backup problem. If it overheats every time File History runs, fix the dust first ([overheating](/blog/fix-overheating-laptop-wickford-essex/)).
 
 ## If you already have no backup and the PC is sick
 
