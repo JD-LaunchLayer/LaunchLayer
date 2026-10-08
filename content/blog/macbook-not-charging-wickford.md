@@ -54,7 +54,7 @@ Open Battery settings and look at the battery condition. "Service Recommended" m
 
 ## What a repair costs
 
-MacBook repairs start from £85 plus parts or the panel. You get a fixed quote for your Mac before any part is ordered. Diagnostics are free. **No-Fix, No-Fee** applies if we can't fix it. New parts we fit carry a 12-month warranty.
+MacBook repairs start from £85 plus parts or the panel. You get a fixed quote for your Mac before any part is ordered. Diagnostics are free. **No-Fix, No-Fee** applies if we can't fix it. A new battery or charging port we fit carries a 12-month warranty. That warranty is for those new parts, on battery and charging-port jobs.
 
 ## If it's a Windows laptop
 
@@ -64,7 +64,7 @@ A Windows laptop that won't charge, whether the power isn't getting in or the ba
 
 Bring the adapter and the cable you actually use, including a spare lead if that's the one that sometimes works.
 
-Drop it at the workshop, or ask about free collection and return in Wickford (SS11 and SS12). Call 07367 652987 or send a message and we'll confirm a time and the address. Book through [MacBook repair in Wickford](/macbook-repair-wickford/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**. Diagnostics are free. You get a fixed quote before any part is ordered.
+Drop-off at the workshop is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Diagnostics are free. You get a fixed quote before any part is ordered.
 
 ## FAQ
 
@@ -78,11 +78,11 @@ Amber means charging's underway, or charging is on hold. Green means the battery
 
 ### How long does a MacBook repair take?
 
-You get the quote before any part is ordered. New parts we fit carry a 12-month warranty.
+A battery or charging-port job typically takes 1–3 working days. You get the quote before any part is ordered. New parts we fit on those jobs carry a 12-month warranty.
 
 ### Do you collect the MacBook?
 
-Drop it at the workshop, or ask about free collection and return in Wickford (SS11 and SS12). Call 07367 652987 or send a message and we'll confirm a time and the address.
+Drop-off at the workshop is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address.
 
 ### What if you can't fix it?
 

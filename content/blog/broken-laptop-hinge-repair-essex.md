@@ -13,44 +13,42 @@ og_image: /assets/meta/meta-broken-laptop-hinge-essex.jpg
 image_alt: Silver laptop with a misaligned lid sitting at an awkward angle on a desk
 ---
 
-A hinge feels like a small problem until the lid drops sideways in a café. Plastic around the screw bosses cracks, the bezel twists, and the display cable that runs through the hinge gets stretched. That is how a £40 plastic repair becomes a [cracked screen](/blog/cracked-laptop-screen-wickford-essex/).
+A hinge feels like a small problem until the lid drops sideways. Plastic around the screw bosses cracks, the bezel twists, and the display cable that runs through the hinge gets stretched. That's how a hinge repair becomes a [cracked screen](/blog/cracked-laptop-screen-wickford-essex/) as well.
 
-I repair hinges on school Chromebooks, HP/Dell office lids and a surprising number of “it was fine until I opened it one-handed” MacBooks. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Free collection and return is for Wickford SS11 and SS12. Collection elsewhere is by arrangement.
+We repair hinges on school Chromebooks, HP and Dell office lids, and a lot of MacBooks that were fine until the lid was opened one-handed. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Elsewhere, collection is by arrangement. Call **[07367 652987](tel:07367652987)** and we'll confirm a time.
 
 ## Stop doing these three things
 
-- **Do not keep using it “carefully”.** Every open-close cycle saws the remaining plastic.
-- **Do not tape the lid to the palm rest as a long-term plan.** Tape hides a cable that is already tearing.
-- **Do not force the lid past the crack.** That is how you shatter the panel and rip the Wi-Fi antennas on a MacBook.
+- **Don't keep using it "carefully".** Every open and close saws the remaining plastic.
+- **Don't tape the lid to the palm rest as a long-term plan.** Tape hides a cable that's already tearing.
+- **Don't force the lid past the crack.** That's how the panel shatters and the Wi-Fi antennas rip on a MacBook.
 
 If the picture already has lines, flicker, or a black blob, the cable or panel is already involved. Say that when you book.
 
-## Why cheap lids fail in Essex schoolbags
+## Why cheap lids fail in a school bag
 
-Fourteen-inch plastic chassis plus a heavy 1080p panel plus a rucksack on the 25 bus is a hinge design problem, not a user-fail. The screw sockets are moulded into thin ABS. Once one corner goes, the opposite hinge takes all the torque and follows.
+A 14-inch plastic chassis, a heavy panel, and a rucksack is a hinge design problem. The screw sockets are moulded into thin plastic. Once one corner goes, the opposite hinge takes all the torque and follows.
 
-Aluminium machines fail differently: the boss strips, or the clutch is so tight it cracks the LCD glass. Either way, I would rather see it **before** the cable goes.
+Aluminium machines fail differently: the boss strips, or the hinge is so tight it cracks the glass. Either way, we'd rather see it before the cable goes.
 
-Trades laptops that live in a van see the same failure: one-handed open on a steering wheel, then a twist. The chassis is not designed as a handle.
+Laptops that live in a van see the same failure: a one-handed open, then a twist. The chassis isn't a handle.
 
 ## What a proper hinge repair looks like
 
-Sometimes it is new hinge hardware and a handful of screw inserts. Sometimes the lid back is so shattered that a lid assembly is cleaner than rebuilding confetti. I will tell you which, with a photo, before you approve parts.
+Sometimes it's new hinge hardware and a handful of screw inserts. Sometimes the lid is so shattered that a lid assembly is cleaner than rebuilding it piece by piece. We'll tell you which, with a photo, before you approve parts. Hinge and lid repair starts from £75.
 
 This is a structural job. It sits next to screen work on the [Wickford screen repair page](/laptop-screen-repair-wickford/) and the town pages for [Rayleigh](/rayleigh-laptop-service/#screen-repair), [Southend](/southend-pc-repair/#screen-repair) and [Chelmsford](/chelmsford-pc-repair/#screen-repair).
 
-If the machine also charges only when you hold the plug, the same abuse often kills the DC jack. Pair this with the [not charging guide](/blog/laptop-battery-not-charging-wickford/).
+If the machine also charges only when you hold the plug, the same knock often hurts the charging port. Pair this with the [not charging guide](/blog/laptop-battery-not-charging-wickford/).
 
-A slow laptop with a broken hinge is two jobs. I will not hide an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/) inside a hinge quote, and I will not tell you the lid is “cosmetic” if the cable is already striped. If you are weighing repair against a new machine at all, use [repair vs replace](/blog/laptop-repair-vs-replace-sustainability-essex/) as the money conversation, then we price the hinge on its own.
+A slow laptop with a broken hinge is two jobs. We won't hide an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/) inside a hinge quote, and we won't call the lid cosmetic if the cable is already damaged. If you're weighing a repair against a new machine, use [repair vs replace](/blog/laptop-repair-vs-replace-sustainability-essex/) for the money conversation, then we price the hinge on its own.
 
-## Chromebooks and school machines
+A snapped school Chromebook hinge is usually still worth a look. Photos sent to the school IT person show the damage before a replacement invoice lands. The school side of that job is the [school Chromebook repair guide](/blog/school-chromebook-repair-wickford/).
 
-A snapped Chromebook hinge is usually still worth fixing. The alternative is a new lid from the education supplier at a price that makes parents wince. Same-day photos to the school IT person beat a “total loss” invoice you have not challenged. Screens on those lids are often the [£99 labour plus panel](/laptop-screen-repair-wickford/) job if the glass went at the same time.
+## What we'll do instead
 
-## What I will not do
+We won't glue a screw boss and call it a repair, post a flapping lid back in a jiffy bag, or fit a new panel and ignore a hinge that will crack the new glass.
 
-I will not super-glue a boss and call it a repair. I will not post a flapping lid back to you in a jiffy bag. I will not replace a panel and ignore a hinge that will crack the new glass in a fortnight.
+## Book it before the lid folds
 
-## Book it before the lid folds in half
-
-[Wickford laptop repair](/wickford-laptop-repair/), [Contact](/contact/), or **[07367 652987](tel:07367652987)**. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Free collection and return is for Wickford SS11 and SS12. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) or [Brentwood](/brentwood-pc-repair/) is by arrangement — call to confirm. Do not post a laptop with a flapping lid. No-Fix, No-Fee if the chassis is beyond a sensible repair.
+Call **[07367 652987](tel:07367652987)**, or book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/). Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) or [Brentwood](/brentwood-pc-repair/) is by arrangement. Don't post a laptop with a flapping lid. No-Fix, No-Fee if the chassis is beyond a sensible repair.
