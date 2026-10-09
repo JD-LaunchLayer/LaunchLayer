@@ -1,0 +1,2 @@
+enquiry_id,date,week_start,channel_source,how_heard,service_type,town_area,became_job,job_completed,is_test_or_spam,notes_nonpersonal
+E0001,2026-10-12,2026-10-12,phone,google-maps,laptop-repair,wickford,pending,n,n,example row - delete before use
