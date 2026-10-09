@@ -59,6 +59,57 @@
     <link rel="stylesheet" href="/assets/css/global-nav-footer.css?v=footer-20260928c">
   <link rel="stylesheet" href="/assets/css/cookie-consent.css">
 <link rel="stylesheet" href="/assets/css/site-glass.css">
+<style>
+  /* Opt-out for cookieless statistics. Local to this page. No cookies. */
+  .ll-stats-choice { scroll-margin-top: 88px; }
+  .llegal-segment .ll-stats-status {
+    margin: 0 0 12px 0 !important;
+    font-weight: 600 !important;
+    color: #0b2029 !important;
+  }
+  .ll-stats-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .ll-stats-choice .ll-stats-btn {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 44px !important;
+    margin: 0 !important;
+    padding: 10px 16px !important;
+    border-radius: 999px !important;
+    border: 2px solid #0048b0 !important;
+    background: #0048b0 !important;
+    color: #ffffff !important;
+    font-family: var(--font-sans), sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+    text-transform: none !important;
+    text-decoration: none !important;
+    white-space: normal !important;
+    cursor: pointer !important;
+  }
+  .ll-stats-choice .ll-stats-btn-quiet {
+    background: #ffffff !important;
+    color: #0048b0 !important;
+  }
+  .ll-stats-choice .ll-stats-btn:focus-visible {
+    outline: 3px solid #0048b0 !important;
+    outline-offset: 3px !important;
+  }
+  @media (max-width: 640px) {
+    .ll-stats-actions { flex-direction: column; }
+    .ll-stats-choice .ll-stats-btn { width: 100% !important; }
+  }
+</style>
 <link rel="canonical" href="https://launchlayer.uk/privacy-policy/" />
 <meta property="og:url" content="https://launchlayer.uk/privacy-policy/">
 <script type="application/ld+json">
@@ -316,7 +367,7 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
   <header class="llegal-header">
     <span class="llsite-eyebrow"><span class="llsite-eyebrow-dot" aria-hidden="true"></span> Legal</span>
     <h1>Privacy policy and terms</h1>
-    <p class="llegal-meta">How we handle your data, and the terms that apply when you book a repair or a custom PC. &middot; <strong>Last updated:</strong> 27/09/2026</p>
+    <p class="llegal-meta">How we handle your data, and the terms that apply when you book a repair or a custom PC. &middot; <strong>Last updated:</strong> 09/10/2026</p>
 
     <div class="llegal-identity-badge">
       <p><strong>LaunchLayer Ltd</strong> is registered in England &amp; Wales (Company No: <span class="llegal-code">16460298</span>), is fully VAT registered (<span class="llegal-code">GB495057756</span>), and is registered with the Information Commissioner's Office (ICO) under Registration No: <span class="llegal-code">ZB990726</span>.</p>
@@ -387,7 +438,65 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
       <li><strong>Bark</strong> — the badge in the footer.</li>
     </ul>
     <p>Those tools may set their own cookies. A small notice on the site points here; you can dismiss it. How we handle personal data is covered in the rest of this page.</p>
-    <p>We also use Umami, a cookieless analytics tool, to count anonymous visits and clicks. It does not set cookies and it does not collect personal data.</p>
+    <p><strong>Website statistics (Umami).</strong> We use Umami Cloud (hosted in the EU) to count visits, pages viewed, how people found the site (for example a search engine or a link with a campaign tag) and taps on buttons such as “Call”. We use this only as combined statistics to improve the website, never to identify you or for advertising. Umami doesn’t use cookies. It processes the page address, the site you came from, your browser, device, screen size and language, and an approximate location worked out from your IP address. The IP address isn’t stored. Umami processes this for us as our service provider.</p>
+    <p><strong>Turn it off:</strong> you can object at any time, free of charge. Use the “Turn off website statistics on this device” button below, which saves a small setting in your browser so Umami stops recording your visits. Clearing your browser data removes the setting.</p>
+    <div class="llegal-sub-card ll-stats-choice" id="website-statistics">
+      <p class="ll-stats-status" id="ll-stats-status" role="status" aria-live="polite">Website statistics are on for this device.</p>
+      <div class="ll-stats-actions" role="group" aria-label="Website statistics on this device">
+        <button type="button" class="ll-stats-btn" id="ll-stats-off">Turn off website statistics on this device</button>
+        <button type="button" class="ll-stats-btn ll-stats-btn-quiet" id="ll-stats-on">Turn them back on</button>
+      </div>
+    </div>
+    <script>
+    (function () {
+      var KEY = 'umami.disabled';
+      var statusEl = document.getElementById('ll-stats-status');
+      var offBtn = document.getElementById('ll-stats-off');
+      var onBtn = document.getElementById('ll-stats-on');
+      if (!statusEl || !offBtn || !onBtn) return;
+
+      function readOff() {
+        try {
+          return window.localStorage.getItem(KEY) != null;
+        } catch (err) {
+          return null;
+        }
+      }
+
+      function show(off) {
+        var isOff = !!off;
+        statusEl.textContent = isOff
+          ? 'Website statistics are off on this device.'
+          : 'Website statistics are on for this device.';
+        offBtn.classList.toggle('ll-stats-btn-quiet', isOff);
+        onBtn.classList.toggle('ll-stats-btn-quiet', !isOff);
+        offBtn.setAttribute('aria-pressed', isOff ? 'true' : 'false');
+        onBtn.setAttribute('aria-pressed', isOff ? 'false' : 'true');
+      }
+
+      function save(turnOff) {
+        try {
+          if (turnOff) window.localStorage.setItem(KEY, '1');
+          else window.localStorage.removeItem(KEY);
+          show(readOff());
+        } catch (err) {
+          statusEl.textContent = 'This browser blocked the setting, so we couldn’t change website statistics on this device.';
+        }
+      }
+
+      offBtn.addEventListener('click', function () { save(true); });
+      onBtn.addEventListener('click', function () { save(false); });
+
+      var current = readOff();
+      if (current === null) {
+        statusEl.textContent = 'This browser blocked the setting, so we couldn’t read whether website statistics are on.';
+      } else {
+        show(current);
+      }
+    })();
+    </script>
+    <p><strong>Contact form.</strong> When you send the contact form, your name, email, phone number and message go through our website host (Netlify) and the form service Web3Forms, which emails them to us. Web3Forms keeps submissions encrypted for up to 3 years. Cloudflare Turnstile checks that the form is being sent by a person rather than a bot. It processes technical information such as your IP address and browser details and is used only for security. We use your details to reply to your enquiry (our legitimate interest, or steps towards a contract you asked for).</p>
+    <p><strong>This notice.</strong> If you click “Got it” on the site notice, we store a small setting in your browser so it doesn’t appear again.</p>
   </section>
 
   <hr class="llegal-divider">

@@ -330,6 +330,35 @@ html body .launchlayer-floating-pill-container.ll-fab-blocked { opacity: 0 !impo
   ]
 }
 </script>
+  <script>
+  /* Run before Umami. Its tracker snapshots location.href when the script
+     executes, then hooks history.replaceState. A deferred script still runs
+     after this blocking one, so free-text query params are gone first. */
+  (function () {
+    var KEY = 'll-build-intake';
+    try {
+      var params = new URLSearchParams(window.location.search);
+      if (!params.has('message') && !params.has('games')) return;
+      var message = params.get('message');
+      var stored = {};
+      try {
+        stored = JSON.parse(sessionStorage.getItem(KEY) || '{}') || {};
+      } catch (err) {
+        stored = {};
+      }
+      if (message) {
+        stored.message = message;
+        if (!stored.service && params.get('service')) stored.service = params.get('service');
+        try { sessionStorage.setItem(KEY, JSON.stringify(stored)); } catch (err) {}
+        window.__llStrippedBuildMessage = message;
+      }
+      params.delete('message');
+      params.delete('games');
+      var qs = params.toString();
+      history.replaceState(history.state, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash);
+    } catch (err) {}
+  })();
+  </script>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="13fbd69e-1f5b-4c12-b4b3-0b859486451a" data-domains="launchlayer.uk"></script>
 </head>
 
@@ -1894,9 +1923,25 @@ if (window.location.search.includes('submitted=true')) {
   }
 } else {
   (function prefillContactFromBuildIntake() {
+    var KEY = 'll-build-intake';
     var params = new URLSearchParams(window.location.search);
     var service = params.get('service');
     var message = params.get('message');
+    if (!message && window.__llStrippedBuildMessage) message = window.__llStrippedBuildMessage;
+    var handoff = null;
+    try {
+      handoff = JSON.parse(sessionStorage.getItem(KEY) || 'null');
+    } catch (err) {
+      handoff = null;
+    }
+    if (handoff && typeof handoff === 'object') {
+      if (!message && handoff.message && (service === 'Custom PC Builds' || window.__llStrippedBuildMessage)) {
+        message = handoff.message;
+      }
+    }
+    if (service !== 'Custom PC Builds' && !window.__llStrippedBuildMessage) {
+      try { sessionStorage.removeItem(KEY); } catch (err) {}
+    }
     var serviceEl = document.getElementById('ll-contact-service');
     var messageEl = document.getElementById('ll-contact-message');
     if (service && serviceEl) {
@@ -2009,6 +2054,7 @@ if (window.location.search.includes('submitted=true')) {
             var go = function () {
               if (gone) return;
               gone = true;
+              try { sessionStorage.removeItem('ll-build-intake'); } catch (err) {}
               window.location.assign(result.data.redirect || '/contact/?submitted=true');
             };
             if (!(window.umami && typeof window.umami.track === 'function')) {

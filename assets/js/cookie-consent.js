@@ -1,4 +1,4 @@
-/* Dismissible cookie notice only. Third-party widgets (Maps, Featurable, Bark) load as normal; this does not gate them or collect consent. */
+/* Dismissible site notice only. Umami, Maps, review widgets and Bark load as normal; this does not gate them or collect consent. */
 (function () {
   'use strict';
 
@@ -68,7 +68,7 @@
 
     wrap.innerHTML =
       '<div class="ll-cookie-notice-inner">' +
-        '<p class="ll-cookie-notice-text">This site loads Google Maps, review widgets, and a Bark badge as part of the page. Those tools may set cookies. <a class="ll-cookie-notice-privacy" href="/privacy-policy">Privacy policy</a></p>' +
+        '<p class="ll-cookie-notice-text">This site uses cookieless website statistics (Umami) to improve the site, and loads Google Maps, review widgets and a Bark badge, which may set their own cookies. <a class="ll-cookie-notice-privacy" href="/privacy-policy/#website-statistics">Privacy &amp; opt-out</a></p>' +
         '<button type="button" class="ll-cookie-notice-dismiss">Got it</button>' +
       '</div>';
 
