@@ -100,7 +100,7 @@ def _event_for(href: str) -> str | None:
 def _location_for(tag: str, stack: list[tuple[str, str | None]], page: str) -> str:
     classes = _attr(tag, _CLASS).lower()
     if "launchlayer-floating-btn" in classes or "floating-pill" in classes:
-        return "footer"
+        return "floating"
     for _name, kind in reversed(stack):
         if kind in ("hero", "footer", "header"):
             return kind
@@ -262,7 +262,7 @@ def _self_test() -> None:
         'data-umami-event="directions-click"',
         'data-umami-event="whatsapp-click"',
         'class="launchlayer-floating-btn"',
-        'data-umami-event-location="footer"',
+        'data-umami-event-location="floating"',
     ]
     # Pair locations with the right links by extracting tags.
     tags = re.findall(r"<a\b[^>]*>", out, flags=re.I | re.S)
@@ -275,7 +275,7 @@ def _self_test() -> None:
         "mailto:hello@launchlayer.uk": ("email-click", "services"),
         "https://www.google.com/maps/dir/?api=1&amp;destination=x": ("directions-click", "services"),
         "https://wa.me/447367652987": ("whatsapp-click", "services"),
-        "tel:4": ("call-click", "footer"),
+        "tel:4": ("call-click", "floating"),
     }
     for href, (event, location) in checks.items():
         tag = by_href.get(href)
