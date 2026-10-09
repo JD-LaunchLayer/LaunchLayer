@@ -223,7 +223,7 @@
 <h2 id="ll-build-intake-heading">Tell us what you need</h2>
 <p>Three quick questions. We’ll drop the answers into the enquiry form so you don’t have to type them twice.</p>
 </div>
-<form class="llsg-intake" id="ll-build-intake" action="/contact/" method="get">
+<form class="llsg-intake" id="ll-build-intake" action="/custom-pc-builds/" method="post">
 <fieldset class="llsg-intake-field">
 <legend>What will you use it for?</legend>
 <div class="llsg-intake-choices">
@@ -244,7 +244,7 @@
 </fieldset>
 <div class="llsg-intake-field">
 <label for="ll-build-games">Any specific games? <span>(optional)</span></label>
-<input id="ll-build-games" name="games" type="text" maxlength="200" autocomplete="off" placeholder="e.g. Cyberpunk, Fortnite, MSFS">
+<input id="ll-build-games" type="text" maxlength="200" autocomplete="off" placeholder="e.g. Cyberpunk, Fortnite, MSFS">
 </div>
 <button class="llsg-btn-primary" type="submit">Continue to enquiry form</button>
 <noscript><p class="llsg-intake-noscript">JavaScript is off — <a href="/contact/">open the enquiry form</a> and mention it’s a custom PC build.</p></noscript>
@@ -400,10 +400,15 @@
     var parts = ['Use: ' + useField.value, 'Budget: ' + budgetField.value];
     var games = gamesField && gamesField.value ? gamesField.value.trim() : '';
     if (games) parts.push('Games: ' + games);
-    var params = new URLSearchParams();
-    params.set('service', 'Custom PC Builds');
-    params.set('message', parts.join('. ') + '.');
-    window.location.href = '/contact/?' + params.toString();
+    try {
+      sessionStorage.setItem('ll-contact-prefill', JSON.stringify({
+        service: 'Custom PC Builds',
+        message: parts.join('. ') + '.'
+      }));
+    } catch (err) {
+      /* Storage blocked: still open the form, without putting the text in the URL. */
+    }
+    window.location.assign('/contact/');
   });
 })();
 </script>
