@@ -330,6 +330,29 @@ html body .launchlayer-floating-pill-container.ll-fab-blocked { opacity: 0 !impo
   ]
 }
 </script>
+  <script>
+  (function () {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      if (!params.has('message') && !params.has('games')) return;
+      var key = 'll-contact-prefill';
+      var stored = {};
+      try {
+        stored = JSON.parse(sessionStorage.getItem(key) || '{}') || {};
+      } catch (err) {
+        stored = {};
+      }
+      if (!stored.message && params.get('message')) stored.message = params.get('message');
+      if (!stored.message && params.get('games')) stored.message = params.get('games');
+      if (!stored.service && params.get('service')) stored.service = params.get('service');
+      sessionStorage.setItem(key, JSON.stringify(stored));
+      params.delete('message');
+      params.delete('games');
+      var qs = params.toString();
+      history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash);
+    } catch (err) {}
+  })();
+  </script>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="13fbd69e-1f5b-4c12-b4b3-0b859486451a" data-domains="launchlayer.uk"></script>
 </head>
 
@@ -1880,6 +1903,7 @@ n.innerHTML='<style>#ncx-local-notice{position:fixed;left:50%;bottom:18px;transf
 }catch(e){}})();</script>
 <!-- /NoCodeXport Local Notice --><script>
 if (window.location.search.includes('submitted=true')) {
+  try { sessionStorage.removeItem('ll-contact-prefill'); } catch (err) {}
   const formContainer = document.querySelector('form');
   if (formContainer) {
     formContainer.innerHTML = '<div class="ll-contact-success" role="status" tabindex="-1"><p>Thank you — your message is on its way.</p><span>We’ll reply to you at hello@launchlayer.uk within our 09:00–22:00 window.</span></div>';
@@ -1895,8 +1919,28 @@ if (window.location.search.includes('submitted=true')) {
 } else {
   (function prefillContactFromBuildIntake() {
     var params = new URLSearchParams(window.location.search);
-    var service = params.get('service');
-    var message = params.get('message');
+    var stored = {};
+    try {
+      var raw = sessionStorage.getItem('ll-contact-prefill');
+      if (raw) stored = JSON.parse(raw) || {};
+    } catch (err) {
+      stored = {};
+    }
+    try {
+      sessionStorage.removeItem('ll-contact-prefill');
+    } catch (err) {}
+    if (params.has('message') || params.has('games')) {
+      if (!stored.message && params.get('message')) stored.message = params.get('message');
+      if (!stored.message && params.get('games')) stored.message = params.get('games');
+      params.delete('message');
+      params.delete('games');
+      var qs = params.toString();
+      try {
+        history.replaceState(null, '', window.location.pathname + (qs ? '?' + qs : '') + window.location.hash);
+      } catch (err) {}
+    }
+    var service = stored.service || params.get('service');
+    var message = stored.message;
     var serviceEl = document.getElementById('ll-contact-service');
     var messageEl = document.getElementById('ll-contact-message');
     if (service && serviceEl) {

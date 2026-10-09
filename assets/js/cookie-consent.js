@@ -68,7 +68,7 @@
 
     wrap.innerHTML =
       '<div class="ll-cookie-notice-inner">' +
-        '<p class="ll-cookie-notice-text">This site loads Google Maps, review widgets, and a Bark badge as part of the page. Those tools may set cookies. <a class="ll-cookie-notice-privacy" href="/privacy-policy">Privacy policy</a></p>' +
+        '<p class="ll-cookie-notice-text">This site uses cookieless website statistics (Umami) to improve the site, and loads Google Maps, review widgets and a Bark badge, which may set their own cookies. <a class="ll-cookie-notice-privacy" href="/privacy-policy/#website-statistics">Privacy &amp; opt-out</a></p>' +
         '<button type="button" class="ll-cookie-notice-dismiss">Got it</button>' +
       '</div>';
 
