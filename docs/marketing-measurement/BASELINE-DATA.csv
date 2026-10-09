@@ -1,0 +1,136 @@
+metric,value,unit,period_start,period_end,source,definition,status
+gsc_clicks_last28,64,clicks,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),Clicks from Google web search,measured
+gsc_impressions_last28,11216,impressions,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),Impressions in Google web search,measured
+gsc_ctr_last28,0.57,percent,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),clicks/impressions,measured
+gsc_avg_position_last28,10.6,position,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),impression-weighted average position,measured
+gsc_clicks_prev28,60,clicks,2026-08-12,2026-09-08,GSC sc-domain:launchlayer.uk (final),Clicks from Google web search,measured (sum of daily rows)
+gsc_impressions_prev28,20317,impressions,2026-08-12,2026-09-08,GSC sc-domain:launchlayer.uk (final),Impressions in Google web search,measured (sum of daily rows)
+gsc_ctr_prev28,0.3,percent,2026-08-12,2026-09-08,GSC sc-domain:launchlayer.uk (final),clicks/impressions,measured (sum of daily rows)
+gsc_avg_position_prev28,13.6,position,2026-08-12,2026-09-08,GSC sc-domain:launchlayer.uk (final),impression-weighted average position,measured (sum of daily rows)
+gsc_clicks_last90,193,clicks,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),Clicks from Google web search,measured
+gsc_impressions_last90,52673,impressions,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),Impressions in Google web search,measured
+gsc_ctr_last90,0.37,percent,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),clicks/impressions,measured
+gsc_avg_position_last90,12.7,position,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),impression-weighted average position,measured
+gsc_clicks_prev90,145,clicks,2026-04-10,2026-07-08,GSC sc-domain:launchlayer.uk (final),Clicks from Google web search,measured
+gsc_impressions_prev90,42857,impressions,2026-04-10,2026-07-08,GSC sc-domain:launchlayer.uk (final),Impressions in Google web search,measured
+gsc_ctr_prev90,0.34,percent,2026-04-10,2026-07-08,GSC sc-domain:launchlayer.uk (final),clicks/impressions,measured
+gsc_avg_position_prev90,13.6,position,2026-04-10,2026-07-08,GSC sc-domain:launchlayer.uk (final),impression-weighted average position,measured
+gsc_branded_clicks_last28,4,clicks,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),query matches launch ?layer|launchlayer,measured
+gsc_branded_impressions_last28,47,impressions,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),query matches launch ?layer|launchlayer,measured
+gsc_branded_clicks_prev28,3,clicks,2026-08-12,2026-09-08,GSC sc-domain:launchlayer.uk (final),query matches launch ?layer|launchlayer,measured
+gsc_branded_impressions_prev28,24,impressions,2026-08-12,2026-09-08,GSC sc-domain:launchlayer.uk (final),query matches launch ?layer|launchlayer,measured
+gsc_branded_clicks_last90,16,clicks,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),query matches launch ?layer|launchlayer,measured
+gsc_branded_impressions_last90,127,impressions,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),query matches launch ?layer|launchlayer,measured
+gsc_branded_clicks_prev90,38,clicks,2026-04-10,2026-07-08,GSC sc-domain:launchlayer.uk (final),180-day branded minus last-90 branded,measured (derived)
+gsc_branded_impressions_prev90,164,impressions,2026-04-10,2026-07-08,GSC sc-domain:launchlayer.uk (final),180-day branded minus last-90 branded,measured (derived)
+gsc_named_nonbranded_clicks_last28,10,clicks,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),excluding brand regex; anonymised queries excluded,measured
+gsc_named_nonbranded_impressions_last28,4681,impressions,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),excluding brand regex; anonymised queries excluded,measured
+gsc_named_nonbranded_clicks_last90,27,clicks,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),excluding brand regex; anonymised queries excluded,measured
+gsc_named_nonbranded_impressions_last90,22004,impressions,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),excluding brand regex; anonymised queries excluded,measured
+gsc_anonymised_clicks_last28,50,clicks,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),total minus branded minus named non-branded,measured (derived)
+gsc_anonymised_clicks_last90,150,clicks,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),total minus branded minus named non-branded,measured (derived)
+gsc_named_nonbranded_clicks_prev28,unavailable,clicks,2026-08-12,2026-09-08,GSC sc-domain:launchlayer.uk (final),not queried in this audit,unavailable (not pulled)
+gsc_clicks_mobile_last28,38,clicks,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),device split,measured
+gsc_impressions_mobile_last28,3717,impressions,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),device split,measured
+gsc_clicks_desktop_last28,22,clicks,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),device split,measured
+gsc_impressions_desktop_last28,7374,impressions,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),device split,measured
+gsc_clicks_tablet_last28,4,clicks,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),device split,measured
+gsc_impressions_tablet_last28,125,impressions,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),device split,measured
+gsc_clicks_mobile_last90,95,clicks,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),device split,measured
+gsc_impressions_mobile_last90,17065,impressions,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),device split,measured
+gsc_clicks_desktop_last90,89,clicks,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),device split,measured
+gsc_impressions_desktop_last90,34805,impressions,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),device split,measured
+gsc_clicks_tablet_last90,9,clicks,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),device split,measured
+gsc_impressions_tablet_last90,803,impressions,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),device split,measured
+gsc_local_town_clicks_last28,3,clicks,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),query contains wickford|rayleigh|basildon|billericay|southend|essex|brentwood|chelmsford|benfleet|hockley|woodham|ss11|ss12,measured
+gsc_local_town_impressions_last28,1766,impressions,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),as above,measured
+gsc_local_town_avg_position_last28,18.3,position,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),as above,measured
+gsc_local_town_clicks_prev28,0,clicks,2026-08-12,2026-09-08,GSC sc-domain:launchlayer.uk (final),query contains wickford|rayleigh|basildon|billericay|southend|essex|brentwood|chelmsford|benfleet|hockley|woodham|ss11|ss12,measured
+gsc_local_town_impressions_prev28,2923,impressions,2026-08-12,2026-09-08,GSC sc-domain:launchlayer.uk (final),as above,measured
+gsc_local_town_avg_position_prev28,24.9,position,2026-08-12,2026-09-08,GSC sc-domain:launchlayer.uk (final),as above,measured
+gsc_local_town_clicks_last90,4,clicks,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),query contains wickford|rayleigh|basildon|billericay|southend|essex|brentwood|chelmsford|benfleet|hockley|woodham|ss11|ss12,measured
+gsc_local_town_impressions_last90,7479,impressions,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),as above,measured
+gsc_local_town_avg_position_last90,21.8,position,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),as above,measured
+gsc_local_town_clicks_prev90,9,clicks,2026-04-10,2026-07-08,GSC sc-domain:launchlayer.uk (final),query contains wickford|rayleigh|basildon|billericay|southend|essex|brentwood|chelmsford|benfleet|hockley|woodham|ss11|ss12,measured
+gsc_local_town_impressions_prev90,7375,impressions,2026-04-10,2026-07-08,GSC sc-domain:launchlayer.uk (final),as above,measured
+gsc_local_town_avg_position_prev90,20.2,position,2026-04-10,2026-07-08,GSC sc-domain:launchlayer.uk (final),as above,measured
+gsc_repair_wickford_queries_impressions_last90,no data,impressions,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),computer/laptop/pc/macbook repair + wickford; no named query returned,no data
+gsc_computer_repair_in_rayleigh_impressions_last90,98,impressions,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),query 'computer repair in rayleigh'; 0 clicks; pos 9.4,measured
+gsc_computer_repair_in_rayleigh_impressions_last28,22,impressions,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),0 clicks; pos 10.1,measured
+gsc_computer_repair_basildon_impressions_last90,60,impressions,2026-07-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),query 'computer repair basildon'; 0 clicks; pos 9.0,measured
+gsc_computer_repair_basildon_impressions_last28,19,impressions,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),0 clicks; pos 9.6,measured
+gsc_sitemap_urls_submitted,76,urls,2026-10-09,2026-10-09,GSC sitemaps,"sitemap.xml, 0 errors 0 warnings",measured
+umami_pageviews_full_all,408,pageviews,2026-09-27,2026-10-09,Umami Cloud share API,page loads,measured (bot-inflated)
+umami_visitors_full_all,305,visitors,2026-09-27,2026-10-09,Umami Cloud share API,cookieless unique visitors (approx devices),measured (bot-inflated)
+umami_visits_full_all,330,visits,2026-09-27,2026-10-09,Umami Cloud share API,sessions,measured (bot-inflated)
+umami_bounce_rate_full_all,88.2,percent,2026-09-27,2026-10-09,Umami Cloud share API,bounces/visits,measured (bot-inflated)
+umami_avg_visit_seconds_full_all,13.9,seconds,2026-09-27,2026-10-09,Umami Cloud share API,totaltime/visits,measured (bot-inflated)
+umami_pageviews_sinceinstall_all,371,pageviews,2026-09-27,2026-10-08,Umami Cloud share API,page loads,measured (bot-inflated)
+umami_visitors_sinceinstall_all,272,visitors,2026-09-27,2026-10-08,Umami Cloud share API,cookieless unique visitors (approx devices),measured (bot-inflated)
+umami_visits_sinceinstall_all,296,visits,2026-09-27,2026-10-08,Umami Cloud share API,sessions,measured (bot-inflated)
+umami_bounce_rate_sinceinstall_all,87.2,percent,2026-09-27,2026-10-08,Umami Cloud share API,bounces/visits,measured (bot-inflated)
+umami_avg_visit_seconds_sinceinstall_all,14.4,seconds,2026-09-27,2026-10-08,Umami Cloud share API,totaltime/visits,measured (bot-inflated)
+umami_pageviews_last7_all,223,pageviews,2026-10-02,2026-10-08,Umami Cloud share API,page loads,measured (bot-inflated)
+umami_visitors_last7_all,178,visitors,2026-10-02,2026-10-08,Umami Cloud share API,cookieless unique visitors (approx devices),measured (bot-inflated)
+umami_visits_last7_all,193,visits,2026-10-02,2026-10-08,Umami Cloud share API,sessions,measured (bot-inflated)
+umami_bounce_rate_last7_all,89.1,percent,2026-10-02,2026-10-08,Umami Cloud share API,bounces/visits,measured (bot-inflated)
+umami_avg_visit_seconds_last7_all,8.2,seconds,2026-10-02,2026-10-08,Umami Cloud share API,totaltime/visits,measured (bot-inflated)
+umami_pageviews_full_gb,85,pageviews,2026-09-27,2026-10-09,"Umami Cloud share API, country=GB",page loads,measured
+umami_visitors_full_gb,36,visitors,2026-09-27,2026-10-09,"Umami Cloud share API, country=GB",cookieless unique visitors (approx devices),measured
+umami_visits_full_gb,50,visits,2026-09-27,2026-10-09,"Umami Cloud share API, country=GB",sessions,measured
+umami_bounce_rate_full_gb,54.0,percent,2026-09-27,2026-10-09,"Umami Cloud share API, country=GB",bounces/visits,measured
+umami_avg_visit_seconds_full_gb,31.5,seconds,2026-09-27,2026-10-09,"Umami Cloud share API, country=GB",totaltime/visits,measured
+umami_pageviews_sinceinstall_gb,81,pageviews,2026-09-27,2026-10-08,"Umami Cloud share API, country=GB",page loads,measured
+umami_visitors_sinceinstall_gb,35,visitors,2026-09-27,2026-10-08,"Umami Cloud share API, country=GB",cookieless unique visitors (approx devices),measured
+umami_visits_sinceinstall_gb,49,visits,2026-09-27,2026-10-08,"Umami Cloud share API, country=GB",sessions,measured
+umami_bounce_rate_sinceinstall_gb,55.1,percent,2026-09-27,2026-10-08,"Umami Cloud share API, country=GB",bounces/visits,measured
+umami_avg_visit_seconds_sinceinstall_gb,25.3,seconds,2026-09-27,2026-10-08,"Umami Cloud share API, country=GB",totaltime/visits,measured
+umami_pageviews_last7_gb,62,pageviews,2026-10-02,2026-10-08,"Umami Cloud share API, country=GB",page loads,measured
+umami_visitors_last7_gb,25,visitors,2026-10-02,2026-10-08,"Umami Cloud share API, country=GB",cookieless unique visitors (approx devices),measured
+umami_visits_last7_gb,37,visits,2026-10-02,2026-10-08,"Umami Cloud share API, country=GB",sessions,measured
+umami_bounce_rate_last7_gb,54.1,percent,2026-10-02,2026-10-08,"Umami Cloud share API, country=GB",bounces/visits,measured
+umami_avg_visit_seconds_last7_gb,28.1,seconds,2026-10-02,2026-10-08,"Umami Cloud share API, country=GB",totaltime/visits,measured
+umami_visitors_channel_direct_full_all,262,visitors,2026-09-27,2026-10-09,Umami Cloud share API,Umami channel,measured (bot-inflated)
+umami_visitors_channel_organic_search_full_all,34,visitors,2026-09-27,2026-10-09,Umami Cloud share API,Umami channel,measured (bot-inflated)
+umami_visitors_channel_organic_social_full_all,11,visitors,2026-09-27,2026-10-09,Umami Cloud share API,Umami channel,measured (bot-inflated)
+umami_visitors_channel_referral_full_all,1,visitors,2026-09-27,2026-10-09,Umami Cloud share API,Umami channel,measured (bot-inflated)
+umami_visitors_channel_direct_full_gb,18,visitors,2026-09-27,2026-10-09,"Umami Cloud share API, country=GB",Umami channel,measured
+umami_visitors_channel_organic_search_full_gb,18,visitors,2026-09-27,2026-10-09,"Umami Cloud share API, country=GB",Umami channel,measured
+umami_visitors_channel_organic_social_full_gb,2,visitors,2026-09-27,2026-10-09,"Umami Cloud share API, country=GB",Umami channel,measured
+umami_visitors_channel_referral_full_gb,1,visitors,2026-09-27,2026-10-09,"Umami Cloud share API, country=GB",Umami channel,measured
+umami_referrer_visitors_google.com_full,33,visitors,2026-09-27,2026-10-09,Umami Cloud share API,referrer domain (facebook_total = facebook.com + m.facebook.com),measured
+umami_referrer_visitors_facebook_total_full,7,visitors,2026-09-27,2026-10-09,Umami Cloud share API,referrer domain (facebook_total = facebook.com + m.facebook.com),measured
+umami_referrer_visitors_instagram.com_full,1,visitors,2026-09-27,2026-10-09,Umami Cloud share API,referrer domain (facebook_total = facebook.com + m.facebook.com),measured
+umami_referrer_visitors_linkedin.com_full,1,visitors,2026-09-27,2026-10-09,Umami Cloud share API,referrer domain (facebook_total = facebook.com + m.facebook.com),measured
+umami_referrer_visitors_bing.com_full,1,visitors,2026-09-27,2026-10-09,Umami Cloud share API,referrer domain (facebook_total = facebook.com + m.facebook.com),measured
+umami_referrer_visitors_duckduckgo.com_full,1,visitors,2026-09-27,2026-10-09,Umami Cloud share API,referrer domain (facebook_total = facebook.com + m.facebook.com),measured
+umami_referrer_visitors_uk.search.yahoo.com_full,1,visitors,2026-09-27,2026-10-09,Umami Cloud share API,referrer domain (facebook_total = facebook.com + m.facebook.com),measured
+umami_referrer_visitors_uk.trustpilot.com_full,1,visitors,2026-09-27,2026-10-09,Umami Cloud share API,referrer domain (facebook_total = facebook.com + m.facebook.com),measured
+umami_ai_referrer_visitors_full,no data,visitors,2026-09-27,2026-10-09,Umami Cloud share API,chatgpt/perplexity/copilot/gemini/claude referrers; none seen,no data
+umami_fbclid_visits_full,7,visits,2026-09-27,2026-10-09,Umami Cloud share API,landing URLs with fbclid,measured
+umami_404_pageviews_full,18,pageviews,2026-09-27,2026-10-09,Umami Cloud share API,title 'Page Not Found',measured
+umami_event_call_click_full,6,events,2026-09-27,2026-10-09,Umami Cloud share API,tap on tel: link (not a connected call),measured
+umami_event_call_click_last7,4,events,2026-10-02,2026-10-08,Umami Cloud share API,tap on tel: link (not a connected call),measured
+umami_event_call_click_footer_floating_button_full,3,events,2026-09-27,2026-10-09,Umami Cloud share API,call-click by location property,measured
+umami_event_call_click_hero_full,1,events,2026-09-27,2026-10-09,Umami Cloud share API,call-click by location property,measured
+umami_event_call_click_home_full,1,events,2026-09-27,2026-10-09,Umami Cloud share API,call-click by location property,measured
+umami_event_call_click_contact_full,1,events,2026-09-27,2026-10-09,Umami Cloud share API,call-click by location property,measured
+umami_event_call_click_full_gb,4,events,2026-09-27,2026-10-09,"Umami Cloud share API, country=GB","call-click, GB only",measured
+umami_event_directions_click_full,1,events,2026-09-27,2026-10-09,Umami Cloud share API,maps directions link tap (home page only),measured
+umami_event_email_click_full,no data,events,2026-09-27,2026-10-09,Umami Cloud share API,tracked on 1 mailto link; 0 events,no data
+umami_event_contact_form_submit_full,no data,events,2026-09-27,2026-10-09,Umami Cloud share API,fires after confirmed server success; 0 events; unverified,no data (unverified)
+confirmed_enquiries,unavailable,,,,n/a,not implemented: no enquiry log,unavailable
+enquiries_became_job,unavailable,,,,n/a,not implemented: no enquiry log,unavailable
+phone_calls_received,unavailable,,,,n/a,not implemented: no call tracking; owner call log,unavailable
+gbp_calls,unavailable,,,,n/a,needs external access: GBP Performance export,unavailable
+gbp_direction_requests,unavailable,,,,n/a,needs external access: GBP Performance export,unavailable
+gbp_website_clicks,unavailable,,,,n/a,needs external access: GBP Performance export,unavailable
+gbp_profile_views,unavailable,,,,n/a,needs external access: GBP Performance export,unavailable
+facebook_reach,unavailable,,,,n/a,needs external access: Meta Business Suite,unavailable
+facebook_engagement,unavailable,,,,n/a,needs external access: Meta Business Suite,unavailable
+instagram_reach,unavailable,,,,n/a,needs external access: Meta Business Suite,unavailable
+instagram_engagement,unavailable,,,,n/a,needs external access: Meta Business Suite,unavailable
+bing_clicks,unavailable,,,,n/a,not implemented/unverified: no Bing WMT access,unavailable
+ga4_any,unavailable,,,,n/a,not implemented: GA4 removed 2026-09-10,unavailable
+gbp_review_count,33,reviews,2026-10-05,2026-10-05,owner-reported (GBP),total Google reviews,"owner-reported, not verified"
+gbp_review_rating,5.0,stars,2026-10-05,2026-10-05,owner-reported (GBP),average rating,"owner-reported, not verified"
