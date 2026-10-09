@@ -25,6 +25,8 @@ Umami is **cookieless**, so these fixes need **no consent banner**. If GA4 (or M
 
 ## 3. UTM convention (lowercase, hyphens, no personal data)
 
+> **Superseded by UTM-CONVENTION.md** (underscores, `utm_source=gbp`, and mediums chosen so Umami classifies them correctly). The table below is kept for history only.
+
 | Placement | utm_source | utm_medium | utm_campaign | utm_content (optional) |
 |---|---|---|---|---|
 | GBP website button | google | organic | gbp-listing | – |

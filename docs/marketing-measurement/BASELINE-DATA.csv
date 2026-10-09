@@ -1,3 +1,4 @@
+# IMMUTABLE BASELINE (9 Oct 2026): never edit this file; corrections go in BASELINE-ADDENDUM.md. When importing, treat lines starting with # as comments (pandas: comment='#'; Sheets: delete row 1).
 metric,value,unit,period_start,period_end,source,definition,status
 gsc_clicks_last28,64,clicks,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),Clicks from Google web search,measured
 gsc_impressions_last28,11216,impressions,2026-09-09,2026-10-06,GSC sc-domain:launchlayer.uk (final),Impressions in Google web search,measured

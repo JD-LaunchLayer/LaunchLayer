@@ -1,3 +1,5 @@
+> **Superseded on 9 Oct 2026 by MARKETING-SCORECARD.md** (student edition: weekly activity log, monthly and rolling-28-day performance). Kept for reference.
+
 # Weekly scorecard: template
 
 Owner: Phil (Monday report). Inputs: Sam (social), Jordan (enquiry log, GBP monthly). Student: compiles it and writes notes.
