@@ -3,6 +3,8 @@
  * Replay verified contact submissions into the enquiry sheet.
  *
  * The export contains names and messages. This script never prints those.
+ * It reads the original input names (Service, how_heard, town_area, utm_*,
+ * ll_test), not the labels shown in the notification email.
  * Rows already stored (same submission_id) are left as they are.
  *
  * Usage:
