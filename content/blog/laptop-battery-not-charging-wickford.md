@@ -7,7 +7,7 @@ date: 2026-09-30
 draft: false
 category: Useful Tips
 category_path: Useful+Tips
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-laptop-charger-not-working-dc-jack.jpg
 og_image: /assets/meta/meta-laptop-charger-not-working-dc-jack.jpg
 image_alt: Close-up of a USB-C charging cable plugged into the side of a silver laptop, next to its magnetic charging port and headphone jack

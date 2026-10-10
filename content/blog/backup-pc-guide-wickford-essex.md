@@ -7,7 +7,7 @@ date: 2026-12-02
 draft: true
 category: Useful Tips
 category_path: Useful+Tips
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-backup-pc-wickford.jpg
 og_image: /assets/meta/meta-backup-pc-wickford.jpg
 image_alt: Laptop on a desk next to a portable SSD and an external hard drive

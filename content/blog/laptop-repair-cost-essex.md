@@ -7,7 +7,7 @@ date: 2026-10-14
 draft: true
 category: Useful Tips
 category_path: Useful+Tips
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-laptop-repair-cost-essex.jpg
 og_image: /assets/meta/meta-laptop-repair-cost-essex.jpg
 image_alt: Laptop with its base cover removed on a wooden desk, showing the battery, cooling fan and motherboard, with a screwdriver set and removed parts beside it

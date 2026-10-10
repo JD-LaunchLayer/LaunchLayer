@@ -6,7 +6,7 @@ description: Cracked your laptop screen in Wickford or Essex? What to do next, h
 date: 2026-09-09
 category: Useful Tips
 category_path: Useful+Tips
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-cracked-laptop-screen-wickford.jpg
 og_image: /assets/meta/meta-cracked-laptop-screen-wickford.jpg
 image_alt: Cracked laptop screen on a desk, showing spider-web glass damage and a dark LCD bleed

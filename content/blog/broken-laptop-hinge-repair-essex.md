@@ -7,7 +7,7 @@ date: 2026-12-23
 draft: true
 category: Useful Tips
 category_path: Useful+Tips
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-broken-laptop-hinge-essex.jpg
 og_image: /assets/meta/meta-broken-laptop-hinge-essex.jpg
 image_alt: Silver laptop with a misaligned lid sitting at an awkward angle on a desk

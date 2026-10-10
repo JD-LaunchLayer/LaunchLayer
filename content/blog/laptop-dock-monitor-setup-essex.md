@@ -7,7 +7,7 @@ date: 2026-11-11
 draft: true
 category: Business IT
 category_path: Business+IT
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-laptop-dock-monitor-setup-essex.jpg
 og_image: /assets/meta/meta-laptop-dock-monitor-setup-essex.jpg
 image_alt: Laptop on a desk linked by one USB-C cable to a dock, with a second monitor and a keyboard

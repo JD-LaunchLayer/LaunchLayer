@@ -159,7 +159,7 @@ def listing_card(meta: dict[str, str], index: int = 1) -> str:
       </span>
 <span class="blog-author">{author}</span>
     <time class="blog-date" pubdate data-animation-role="date">{shown}</time>'''
-    return f'''    <article class="hentry category-{css} author-jordan-duggins post-type-text article-index-{index} blog-item entry">
+    return f'''    <article class="hentry category-{css} author-launchlayer post-type-text article-index-{index} blog-item entry">
       <section class="blog-image-wrapper">
       <a href="/blog/{slug}" class="image-wrapper" data-animation-role="image">
 <picture>
@@ -274,7 +274,7 @@ def _sample_listing_meta() -> dict[str, str]:
         "image": "/assets/images/sample.jpg",
         "category": "Useful Tips",
         "category_path": "Useful+Tips",
-        "author": "Jordan Duggins",
+        "author": "The LaunchLayer workshop",
         "date": "2026-09-16",
     }
 
@@ -684,6 +684,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
   <meta property="og:description" content="{description}">
   <meta property="og:url" content="{url}">
   <meta property="og:image" content="{og_image}">
+  <meta name="author" content="{author}">
   <meta property="article:published_time" content="{published}">
   <meta property="article:author" content="{author}">
   <meta name="twitter:card" content="summary_large_image">
@@ -753,7 +754,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
             <div class="blog-item-content e-content llblog-md" itemprop="articleBody">
 {body_html}
             </div>
-            <p class="llblog-author">Written by {author}</p>
+            <p class="llblog-author">{author}</p>
           </div>
         </article>
       </div>

@@ -7,7 +7,7 @@ date: 2026-12-09
 draft: true
 category: Cybersecurity
 category_path: Cybersecurity
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-ransomware-wickford.jpg
 og_image: /assets/meta/meta-ransomware-wickford.jpg
 image_alt: Laptop on a desk at night with a padlock resting on the keyboard

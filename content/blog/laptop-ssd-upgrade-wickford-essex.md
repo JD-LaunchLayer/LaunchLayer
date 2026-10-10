@@ -7,7 +7,7 @@ date: 2026-09-16
 draft: false
 category: Useful Tips
 category_path: Useful+Tips
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-ssd-upgrade-wickford.jpg
 og_image: /assets/meta/meta-ssd-upgrade-wickford.jpg
 image_alt: M.2 SSD next to an open laptop on a wooden desk, ready for a speed upgrade

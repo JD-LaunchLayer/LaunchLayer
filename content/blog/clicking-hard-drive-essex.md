@@ -7,7 +7,7 @@ date: 2026-11-18
 draft: true
 category: Useful Tips
 category_path: Useful+Tips
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-clicking-hard-drive-essex.jpg
 og_image: /assets/meta/meta-clicking-hard-drive-essex.jpg
 image_alt: Open desktop PC on a workbench with a mechanical hard drive being inspected
