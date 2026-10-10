@@ -3,7 +3,7 @@
 //   MODE=live  node scripts/check-footer.mjs            # launchlayer.uk (+ /contact/ from the PR #124 preview)
 //   MODE=proto node scripts/check-footer.mjs            # proto/site overlay (new CSS/JS/markup), rest from live/preview
 // Env: ENGINE=webkit,chromium  PAGES=/,/faqs/  WIDTHS=360,390,430,1024,1440  CHROMIUM_WIDTHS=1024,1440  JSON_OUT=file  SHOTS=dir  STATIC_ROOT=dir
-// Safety: Umami /api/send is fulfilled '{}' and the Umami script host is blocked on every load; /api/contact is stubbed.
+// Safety: Umami /api/send is fulfilled '{}' and the Umami script host is blocked on every load; contact-form POSTs are stubbed.
 import fs from 'node:fs';
 import path from 'node:path';
 import { engines, open, guard, PAGES, slug, ROOT } from './lib.mjs';

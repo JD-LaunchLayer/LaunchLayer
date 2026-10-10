@@ -1,5 +1,5 @@
 // Shared Playwright harness for the LaunchLayer site-wide footer work.
-// Every context: Umami /api/send fulfilled '{}', Umami script host blocked, /api/contact stubbed,
+// Every context: Umami /api/send fulfilled '{}', Umami script host blocked, contact-form POSTs stubbed,
 // Netlify preview drawer blocked. Pages are always addressed as https://launchlayer.uk/* .
 import { webkit, chromium } from 'playwright';
 import fs from 'node:fs';
@@ -34,7 +34,13 @@ export async function open(browser, o) {
   const ctx = await browser.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: m ? 3 : 1, isMobile: m, hasTouch: m, userAgent: m ? UA : (browser.browserType().name() === 'chromium' ? CHROME_UA : undefined), reducedMotion: reduced ? 'reduce' : 'no-preference' });
   await ctx.route('**/api/send', r => { guard.umamiSendFulfilled++; r.fulfill({ status: 200, contentType: 'application/json', body: '{}' }); });
   await ctx.route(/umami\.(is|dev)\//, r => { const u = r.request().url(); if (/\/api\/send/.test(u)) { guard.umamiSendFulfilled++; return r.fulfill({ status: 200, contentType: 'application/json', body: '{}' }); } if (/\.js(\?|$)/.test(u)) { guard.umamiScriptBlocked++; return r.abort(); } guard.umamiOtherFulfilled++; r.fulfill({ status: 200, contentType: 'application/json', body: '{}' }); });
-  await ctx.route('**/api/contact', r => { guard.contactStubbed++; r.fulfill({ status: 500, contentType: 'application/json', body: '{"success":false}' }); });
+  await ctx.route(/launchlayer\.uk\/(?:\?.*)?$/, r => {
+    if (r.request().method() !== 'POST') return r.fallback();
+    const body = r.request().postData() || '';
+    if (!body.includes('form-name=contact') && !body.includes('form-name%3Dcontact')) return r.fallback();
+    guard.contactStubbed++;
+    return r.fulfill({ status: 500, contentType: 'text/plain', body: 'stubbed' });
+  });
   await ctx.route(/\/\.netlify\//, r => { guard.netlifyBlocked++; r.abort(); });
   if (abortBark) await ctx.route(/bark\.com/, r => r.abort());
   const viaPreview = BASE ? true : p.startsWith('/contact');
@@ -43,13 +49,14 @@ export async function open(browser, o) {
   if (viaPreview || root) await ctx.route(SITE + '/**', async r => {
     const u = new URL(r.request().url());
     if (u.pathname.startsWith('/.netlify/')) { guard.netlifyBlocked++; return r.abort(); } // the SITE route wins over the /.netlify/ route above
-    if (u.pathname === '/api/contact' || u.pathname === '/api/send') return r.fallback();
+    if (u.pathname === '/api/send') return r.fallback();
+    if (r.request().method() === 'POST' && u.pathname === '/') return r.fallback();
     const f = overlayFile(root, u.pathname);
     if (f) { guard.overlayServed++; return r.fulfill({ status: 200, contentType: MIME[path.extname(f)] || 'application/octet-stream', body: fs.readFileSync(f) }); }
     if (!viaPreview) return r.fallback();
     try { r.fulfill({ response: await r.fetch({ url: fetchOrigin + u.pathname + u.search }) }); } catch (e) { r.abort(); }
   });
-  ctx.on('request', q => { const u = q.url(); if (/umami|\/api\/send|\/api\/contact/.test(u) && !/cloud\.umami\.is\/script\.js/.test(u)) { /* routed above */ } });
+  ctx.on('request', q => { const u = q.url(); if (/umami|\/api\/send/.test(u) && !/cloud\.umami\.is\/script\.js/.test(u)) { /* routed above */ } });
   if (!firstVisit) await ctx.addInitScript(() => { try { localStorage.setItem('ll_cookie_notice', 'dismissed'); } catch (e) {} });
   const page = await ctx.newPage();
   guard.loads++;

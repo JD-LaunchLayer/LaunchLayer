@@ -14,11 +14,6 @@
   function = "www-apex-slash"
   pattern = "^/[^.]*$"
 
-# Serverless functions (contact form / Turnstile) sit beside edge functions.
-[functions]
-  directory = "netlify/functions"
-  node_bundler = "esbuild"
-
 # No Referrer-Policy was set in this file or in a _headers file.
 # Cross-origin requests send only the origin, so a query string is not
 # passed to Maps, Umami, or other sites. Same-origin requests still send the path.

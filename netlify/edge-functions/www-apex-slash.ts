@@ -46,7 +46,7 @@ export const config = {
 
 export default async (request: Request) => {
   const url = new URL(request.url);
-  // Leave /api/* for serverless functions (POST must not 301 to a slashed URL).
+  // /api/* is not a page. A slash redirect would turn a POST into a GET.
   if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
     return;
   }
