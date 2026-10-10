@@ -1042,11 +1042,7 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
       <div class="react-form-contents ll-contact-panel">
         <form class="react-form-contents ll-contact-form" name="contact" action="/" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact">
-          <input type="hidden" name="subject" value="New Contact Form Submission - LaunchLayer">
-          <input type="hidden" name="utm_source" value="">
-          <input type="hidden" name="utm_medium" value="">
-          <input type="hidden" name="utm_campaign" value="">
-          <input type="hidden" name="ll_test" value="" autocomplete="off">
+          <input type="hidden" name="subject" data-remove-prefix value="New website enquiry – LaunchLayer">
           <p class="ll-form-honeypot">
             <label>Don’t fill this out if you’re human: <input name="bot-field" type="text" tabindex="-1" autocomplete="off"></label>
           </p>
@@ -1057,27 +1053,27 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
                 <div class="ll-name-row">
                   <div class="field first-name">
                     <div class="caption"><label class="caption-text" for="ll-contact-first">First Name</label></div>
-                    <input id="ll-contact-first" class="field-element" name="First Name" type="text" autocomplete="given-name" autocapitalize="words" autocorrect="off" spellcheck="false" enterkeyhint="next" placeholder="Alex" required>
+                    <input id="ll-contact-first" class="field-element" type="text" autocomplete="given-name" autocapitalize="words" autocorrect="off" spellcheck="false" enterkeyhint="next" placeholder="Alex" required>
                   </div>
                   <div class="field last-name">
                     <div class="caption"><label class="caption-text" for="ll-contact-last">Last Name</label></div>
-                    <input id="ll-contact-last" class="field-element" name="Last Name" type="text" autocomplete="family-name" autocapitalize="words" autocorrect="off" spellcheck="false" enterkeyhint="next" placeholder="Taylor" required>
+                    <input id="ll-contact-last" class="field-element" type="text" autocomplete="family-name" autocapitalize="words" autocorrect="off" spellcheck="false" enterkeyhint="next" placeholder="Taylor" required>
                   </div>
                 </div>
               </fieldset>
             </div>
             <div class="form-item fields email required">
               <label class="title" for="ll-contact-email">Email <span class="required" aria-hidden="true">*</span></label>
-              <input id="ll-contact-email" class="field-element" name="Email" type="email" autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="next" placeholder="you@example.com" required>
+              <input id="ll-contact-email" class="field-element" type="email" autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="next" placeholder="you@example.com" required>
             </div>
             <div class="form-item fields phone">
               <label class="title" for="ll-contact-phone">Phone</label>
-              <input id="ll-contact-phone" class="field-element" name="Phone" type="tel" autocomplete="tel" inputmode="tel" enterkeyhint="next" placeholder="07xxx xxxxxx">
+              <input id="ll-contact-phone" class="field-element" type="tel" autocomplete="tel" inputmode="tel" enterkeyhint="next" placeholder="07xxx xxxxxx">
             </div>
             <div class="form-item fields select required">
               <label class="title" for="ll-contact-service">Which service does this relate to? <span class="required" aria-hidden="true">*</span></label>
               <div class="ll-select-wrap">
-                <select id="ll-contact-service" class="field-element" name="Service" required>
+                <select id="ll-contact-service" class="field-element" required>
                   <option value="" disabled selected>Select a service</option>
                   <option value="Laptop Repair">Laptop Repair</option>
                   <option value="PC Repair &amp; Tech Support">PC Repair &amp; Tech Support</option>
@@ -1097,7 +1093,7 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
             <div class="form-item fields select">
               <label class="title" for="ll-contact-heard">How did you hear about us? <span class="ll-optional">(optional)</span></label>
               <div class="ll-select-wrap">
-                <select id="ll-contact-heard" class="field-element" name="how_heard">
+                <select id="ll-contact-heard" class="field-element">
                   <option value="prefer-not-to-say" selected>Prefer not to say</option>
                   <option value="google-search">Google search</option>
                   <option value="google-maps">Google Maps / Business Profile</option>
@@ -1113,7 +1109,7 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
             <div class="form-item fields select">
               <label class="title" for="ll-contact-area">Town or area <span class="ll-optional">(optional)</span></label>
               <div class="ll-select-wrap">
-                <select id="ll-contact-area" class="field-element" name="town_area">
+                <select id="ll-contact-area" class="field-element">
                   <option value="prefer-not-to-say" selected>Prefer not to say</option>
                   <option value="wickford">Wickford</option>
                   <option value="billericay">Billericay</option>
@@ -1128,13 +1124,40 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
             </div>
             <div class="form-item fields textarea required">
               <label class="title" for="ll-contact-message">How can we help? <span class="required" aria-hidden="true">*</span></label>
-              <textarea id="ll-contact-message" class="field-element" name="Message" rows="5" autocapitalize="sentences" enterkeyhint="enter" placeholder="Tell us what’s going on with the device, and we’ll take it from there." required></textarea>
+              <textarea id="ll-contact-message" class="field-element" rows="5" autocapitalize="sentences" enterkeyhint="enter" placeholder="Tell us what’s going on with the device, and we’ll take it from there." required></textarea>
             </div>
             <p class="ll-contact-error" hidden role="alert"></p>
             <p class="ll-contact-status ll-visually-hidden" role="status" aria-live="polite"></p>
             <div class="form-button-wrapper form-button-wrapper--align-center">
               <button type="submit" class="button sqs-system-button sqs-editable-button sqs-button-element--primary ll-contact-submit">Request My Free Diagnostic</button>
             </div>
+          </div>
+          <!-- Netlify’s notification uses these named fields: label text is the email label, and source order is the email order. The visible controls above stay unnamed so customers see the same form. -->
+          <div class="ll-mail-fields">
+            <label class="ll-visually-hidden" for="ll-mail-first">First name</label>
+            <input id="ll-mail-first" type="hidden" name="First Name" value="" autocomplete="off">
+            <label class="ll-visually-hidden" for="ll-mail-last">Last name</label>
+            <input id="ll-mail-last" type="hidden" name="Last Name" value="" autocomplete="off">
+            <label class="ll-visually-hidden" for="ll-mail-phone">Phone</label>
+            <input id="ll-mail-phone" type="hidden" name="Phone" value="" autocomplete="off">
+            <label class="ll-visually-hidden" for="ll-mail-email">Email</label>
+            <input id="ll-mail-email" type="hidden" name="Email" value="" autocomplete="off">
+            <label class="ll-visually-hidden" for="ll-mail-service">What it's about</label>
+            <input id="ll-mail-service" type="hidden" name="Service" value="" autocomplete="off">
+            <label class="ll-visually-hidden" for="ll-mail-message">Their message</label>
+            <input id="ll-mail-message" type="hidden" name="Message" value="" autocomplete="off">
+            <label class="ll-visually-hidden" for="ll-mail-heard">Heard about us via</label>
+            <input id="ll-mail-heard" type="hidden" name="how_heard" value="" autocomplete="off">
+            <label class="ll-visually-hidden" for="ll-mail-area">Town</label>
+            <input id="ll-mail-area" type="hidden" name="town_area" value="" autocomplete="off">
+            <label class="ll-visually-hidden" for="ll-utm-source">Came from link (source)</label>
+            <input id="ll-utm-source" type="hidden" name="utm_source" value="" autocomplete="off">
+            <label class="ll-visually-hidden" for="ll-utm-medium">Came from link (medium)</label>
+            <input id="ll-utm-medium" type="hidden" name="utm_medium" value="" autocomplete="off">
+            <label class="ll-visually-hidden" for="ll-utm-campaign">Came from link (campaign)</label>
+            <input id="ll-utm-campaign" type="hidden" name="utm_campaign" value="" autocomplete="off">
+            <label class="ll-visually-hidden" for="ll-test-flag">Test flag</label>
+            <input id="ll-test-flag" type="hidden" name="ll_test" value="" disabled autocomplete="off">
           </div>
         </form>
       </div>
@@ -1969,7 +1992,8 @@ n.innerHTML='<style>#ncx-local-notice{position:fixed;left:50%;bottom:18px;transf
 +'<button class="ncx-x" type="button" aria-label="Dismiss" onclick="this.parentNode.remove()">✕</button>';
 (document.body||document.documentElement).appendChild(n);
 }catch(e){}})();</script>
-<!-- /NoCodeXport Local Notice --><script>
+<!-- /NoCodeXport Local Notice --><script src="/assets/js/contact-form-email.js?v=email-20261010a"></script>
+<script>
 if (window.location.search.includes('submitted=true')) {
   try { sessionStorage.removeItem('ll-contact-prefill'); } catch (err) {}
   const formContainer = document.querySelector('form');
@@ -1988,12 +2012,16 @@ if (window.location.search.includes('submitted=true')) {
   (function setContactTestFlag() {
     var form = document.querySelector('.ll-contact-form');
     if (!form || !form.elements || !form.elements.ll_test) return;
+    var field = form.elements.ll_test;
+    field.disabled = true;
+    field.value = '';
     try {
       var params = new URLSearchParams(window.location.search);
       if (!params.has('ll_test')) return;
       var value = params.get('ll_test') || '';
       if (!/^[A-Za-z0-9_-]{1,64}$/.test(value)) return;
-      form.elements.ll_test.value = value;
+      field.disabled = false;
+      field.value = value;
     } catch (err) {}
   })();
   (function prefillContactFromBuildIntake() {
@@ -2075,6 +2103,32 @@ if (window.location.search.includes('submitted=true')) {
     function markBlocked() {
     }
 
+    function serviceFieldValue() {
+      var serviceField = document.getElementById('ll-contact-service');
+      return serviceField && serviceField.value ? serviceField.value : '';
+    }
+
+    function syncContactMailFields() {
+      var pairs = [
+        ['ll-contact-first', 'll-mail-first'],
+        ['ll-contact-last', 'll-mail-last'],
+        ['ll-contact-phone', 'll-mail-phone'],
+        ['ll-contact-email', 'll-mail-email'],
+        ['ll-contact-service', 'll-mail-service'],
+        ['ll-contact-message', 'll-mail-message'],
+        ['ll-contact-heard', 'll-mail-heard'],
+        ['ll-contact-area', 'll-mail-area']
+      ];
+      pairs.forEach(function (pair) {
+        var from = document.getElementById(pair[0]);
+        var to = document.getElementById(pair[1]);
+        if (from && to) to.value = from.value;
+      });
+    }
+
+    form.addEventListener('input', syncContactMailFields);
+    form.addEventListener('change', syncContactMailFields);
+
     form.addEventListener('invalid', function (event) {
       if (event.target && event.target.setAttribute) event.target.setAttribute('aria-invalid', 'true');
     }, true);
@@ -2092,8 +2146,30 @@ if (window.location.search.includes('submitted=true')) {
         errorEl.textContent = '';
       }
       setBusy(true);
+      syncContactMailFields();
+      if (window.llNotificationSubject && form.elements.subject) {
+        var townField = document.getElementById('ll-contact-area');
+        var townLabel = '';
+        if (townField && townField.selectedIndex >= 0 && townField.options[townField.selectedIndex]) {
+          townLabel = townField.options[townField.selectedIndex].text;
+        }
+        form.elements.subject.value = window.llNotificationSubject(
+          serviceFieldValue(),
+          townField ? townField.value : '',
+          townLabel
+        );
+      }
+      var trackingNames = ['utm_source', 'utm_medium', 'utm_campaign'];
+      trackingNames.forEach(function (name) {
+        var field = form.elements[name];
+        if (field && !String(field.value || '').trim()) field.disabled = true;
+      });
 
       var body = new URLSearchParams(new FormData(form)).toString();
+      trackingNames.forEach(function (name) {
+        var field = form.elements[name];
+        if (field) field.disabled = false;
+      });
       fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -2101,8 +2177,7 @@ if (window.location.search.includes('submitted=true')) {
       })
         .then(function (res) {
           if (!res.ok) throw new Error('form');
-          var serviceField = document.getElementById('ll-contact-service');
-          var serviceName = serviceField && serviceField.value ? serviceField.value : '';
+          var serviceName = serviceFieldValue();
           var gone = false;
           var go = function () {
             if (gone) return;
