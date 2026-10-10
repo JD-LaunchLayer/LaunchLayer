@@ -19,7 +19,7 @@ const MAX_BAND = 48; // SPEC §17: largest empty vertical band below the form (m
 const MIME = { '.html': 'text/html; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.webp': 'image/webp', '.avif': 'image/avif', '.jpg': 'image/jpeg', '.css': 'text/css', '.js': 'text/javascript' };
 const localFile = p => { if (!LOCAL_ROOT) return null; for (const c of [p, p.endsWith('/') ? p + 'index.html' : null]) { if (!c) continue; const f = path.join(LOCAL_ROOT, decodeURIComponent(c)); if (f.startsWith(path.resolve(LOCAL_ROOT)) && fs.existsSync(f) && fs.statSync(f).isFile()) return f; } return null; };
 const UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Mobile/15E148 Safari/604.1';
-const OPTIONS = ['', 'General Enquiry', 'Custom PC Builds', 'PC Repair & Tech Support', 'Insurance Damage Report', 'Scam Support', 'E-Waste or Tech Donation', 'Startup IT Setup', 'Website Setup'];
+const OPTIONS = ['', 'Laptop Repair', 'PC Repair & Tech Support', 'MacBook Repair', 'Screen Replacement', 'Data Recovery', 'Custom PC Builds', 'Startup IT Setup', 'Website Setup', 'Scam Support', 'Insurance Damage Report', 'E-Waste or Tech Donation', 'General Enquiry'];
 let failed = false;
 const report = (w, name, ok, extra = '') => { if (!ok) failed = true; console.log(`${w}px ${ok ? 'PASS' : 'FAIL'} ${name}${extra ? '  — ' + extra : ''}`); };
 
@@ -176,7 +176,7 @@ for (const [w, h] of [[360, 780], [390, 844], [430, 932], [1440, 900]]) {
   if (m) report(w, 'hero + panels inside 16px gutters', !r.outside.length, r.outside.slice(0, 4).join('; '));
   report(w, 'hero below sticky header at load', r.hero.top >= r.hero.header, `eyebrow top ${r.hero.top.toFixed(1)} / header bottom ${r.hero.header.toFixed(1)}`);
   report(w, 'form controls ≥16px (no iOS focus zoom)', r.fonts.every(f => f >= 16), r.fonts.join(', '));
-  report(w, 'Service options unchanged', JSON.stringify(r.options) === JSON.stringify(OPTIONS));
+  report(w, 'Service options match the approved list', JSON.stringify(r.options) === JSON.stringify(OPTIONS));
   report(w, 'Netlify form name, action, honeypot, and fields intact', r.hidden);
   report(w, 'tap targets ≥44px', !r.small.length, r.small.join('; '));
   report(w, 'every tel: link carries data-umami-event="call-click"', !r.untracked.length, r.untracked.join('; '));

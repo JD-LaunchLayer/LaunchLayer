@@ -297,7 +297,7 @@ test("the output row is an allowlist and contains no personal data", () => {
   assert.equal(row.enquiry_id, "W0042");
   assert.equal(row.date, "2026-10-12");
   assert.equal(row.week_start, "2026-10-12");
-  assert.equal(row.channel_source, "website-form");
+  assert.equal(row.channel_source, "web-form");
   assert.equal(row.how_heard, "google-maps");
   assert.equal(row.service_type, "pc-repair");
   assert.equal(row.town_area, "wickford");
@@ -313,21 +313,202 @@ test("the output row is an allowlist and contains no personal data", () => {
   assert.equal(row.enquiry_id.startsWith("E"), false);
 });
 
-test("service labels map to stable slugs", () => {
-  const expected = {
-    "General Enquiry": "general-enquiry",
-    "Custom PC Builds": "custom-pc-builds",
+const ALLOWED_HOW_HEARD = new Set([
+  "google-search",
+  "google-maps",
+  "facebook",
+  "instagram",
+  "nextdoor",
+  "bark",
+  "friend-family",
+  "recommendation",
+  "returning",
+  "passing",
+  "ai-assistant",
+  "other",
+  "unknown",
+  "not-asked",
+]);
+
+const ALLOWED_SERVICE = new Set([
+  "laptop-repair",
+  "pc-repair",
+  "macbook",
+  "screen",
+  "liquid-damage",
+  "data-recovery",
+  "virus-removal",
+  "custom-build",
+  "business-it",
+  "general",
+  "insurance-report",
+  "scam-support",
+  "e-waste",
+  "startup-it-setup",
+  "website-setup",
+  "other",
+  "unknown",
+  "not-asked",
+]);
+
+const ALLOWED_TOWN = new Set([
+  "wickford",
+  "billericay",
+  "basildon",
+  "rayleigh",
+  "brentwood",
+  "chelmsford",
+  "southend",
+  "other",
+  "unknown",
+  "not-asked",
+]);
+
+function decodeEntities(text) {
+  return text.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+}
+
+function selectOptions(html, id) {
+  const start = html.indexOf(`id="${id}"`);
+  assert.notEqual(start, -1, `missing select ${id}`);
+  const open = html.lastIndexOf("<select", start);
+  const close = html.indexOf("</select>", start);
+  const block = html.slice(open, close);
+  const options = [];
+  const re = /<option\b([^>]*)>([^<]*)<\/option>/g;
+  let match;
+  while ((match = re.exec(block))) {
+    const valueMatch = /value="([^"]*)"/.exec(match[1]);
+    options.push({
+      value: decodeEntities(valueMatch ? valueMatch[1] : ""),
+      label: decodeEntities(match[2].trim()),
+    });
+  }
+  return options;
+}
+
+function rowFromFields(fields) {
+  const payload = submission();
+  const data = { ...baseData() };
+  for (const [key, value] of Object.entries(fields)) {
+    if (value === undefined) delete data[key];
+    else data[key] = value;
+  }
+  payload.data = data;
+  return buildEnquiryRow(pickAllowlisted(payload), { context: "production" });
+}
+
+test("every contact dropdown maps to an allowed reporting value", () => {
+  const contact = readFileSync(join(ROOT, "contact/index.html"), "utf8");
+  const builds = readFileSync(join(ROOT, "custom-pc-builds/index.html"), "utf8");
+  const mapper = readFileSync(join(ROOT, "lib/enquiry-log.mjs"), "utf8");
+  assert.equal(mapper.includes("website-form"), false);
+
+  const services = selectOptions(contact, "ll-contact-service");
+  const heard = selectOptions(contact, "ll-contact-heard");
+  const towns = selectOptions(contact, "ll-contact-area");
+  const chosenServices = services.filter((option) => option.value);
+  assert.equal(chosenServices.length, 12);
+
+  for (const option of chosenServices) {
+    const row = rowFromFields({ Service: option.value });
+    assert.equal(ALLOWED_SERVICE.has(row.service_type), true, option.value);
+    assert.equal(row.channel_source, "web-form");
+    assert.equal(JSON.stringify(row).includes("website-form"), false);
+  }
+  for (const option of heard) {
+    const row = rowFromFields({ how_heard: option.value });
+    assert.equal(ALLOWED_HOW_HEARD.has(row.how_heard), true, option.value);
+  }
+  for (const option of towns) {
+    const row = rowFromFields({ town_area: option.value });
+    assert.equal(ALLOWED_TOWN.has(row.town_area), true, option.value);
+  }
+
+  const serviceExpected = {
+    "General Enquiry": "general",
+    "Custom PC Builds": "custom-build",
     "PC Repair & Tech Support": "pc-repair",
-    "Insurance Damage Report": "insurance-damage-report",
+    "Insurance Damage Report": "insurance-report",
     "Scam Support": "scam-support",
     "E-Waste or Tech Donation": "e-waste",
     "Startup IT Setup": "startup-it-setup",
     "Website Setup": "website-setup",
+    "Laptop Repair": "laptop-repair",
+    "MacBook Repair": "macbook",
+    "Screen Replacement": "screen",
+    "Data Recovery": "data-recovery",
   };
-  for (const [label, slug] of Object.entries(expected)) {
-    const row = buildEnquiryRow(pickAllowlisted(submission({}, { Service: label })), { context: "production" });
-    assert.equal(row.service_type, slug);
+  for (const [label, slug] of Object.entries(serviceExpected)) {
+    assert.equal(rowFromFields({ Service: label }).service_type, slug);
+    assert.equal(chosenServices.some((option) => option.value === label), true, label);
   }
+
+  const heardExpected = {
+    "prefer-not-to-say": "unknown",
+    "google-search": "google-search",
+    "google-maps": "google-maps",
+    facebook: "facebook",
+    instagram: "instagram",
+    nextdoor: "nextdoor",
+    recommendation: "recommendation",
+    "returning-customer": "returning",
+    other: "other",
+  };
+  for (const [value, slug] of Object.entries(heardExpected)) {
+    assert.equal(rowFromFields({ how_heard: value }).how_heard, slug);
+  }
+  assert.equal(rowFromFields({ how_heard: "returning-customer" }).how_heard, "returning");
+
+  const townExpected = {
+    "prefer-not-to-say": "unknown",
+    wickford: "wickford",
+    billericay: "billericay",
+    basildon: "basildon",
+    rayleigh: "rayleigh",
+    brentwood: "brentwood",
+    chelmsford: "chelmsford",
+    southend: "southend",
+    other: "other",
+  };
+  for (const [value, slug] of Object.entries(townExpected)) {
+    assert.equal(rowFromFields({ town_area: value }).town_area, slug);
+  }
+
+  const missing = rowFromFields({
+    Service: undefined,
+    how_heard: undefined,
+    town_area: undefined,
+  });
+  assert.equal(missing.service_type, "not-asked");
+  assert.equal(missing.how_heard, "not-asked");
+  assert.equal(missing.town_area, "not-asked");
+
+  const blank = rowFromFields({
+    Service: "   ",
+    how_heard: "",
+    town_area: "prefer-not-to-say",
+  });
+  assert.equal(blank.service_type, "unknown");
+  assert.equal(blank.how_heard, "unknown");
+  assert.equal(blank.town_area, "unknown");
+
+  const unmapped = rowFromFields({
+    Service: "liquid-damage",
+    how_heard: "bark",
+    town_area: "SS11 7AB",
+  });
+  assert.equal(unmapped.service_type, "unknown");
+  assert.equal(unmapped.how_heard, "unknown");
+  assert.equal(unmapped.town_area, "unknown");
+  assert.equal(JSON.stringify(unmapped).includes("website-form"), false);
+  assert.equal(unmapped.channel_source, "web-form");
+  assert.equal(["y", "n", "pending"].includes(unmapped.became_job), true);
+  assert.equal(["y", "n"].includes(unmapped.job_completed), true);
+  assert.equal(["y", "n"].includes(unmapped.is_test_or_spam), true);
+
+  assert.match(builds, /service:\s*'Custom PC Builds'/);
+  assert.equal(services.some((option) => option.value === "Custom PC Builds"), true);
 });
 
 test("log lines only carry a safe id and a status", () => {
@@ -451,7 +632,7 @@ test("a successful append signs a spreadsheets-only JWT and writes the allowlist
     "W0042",
     "2026-10-12",
     "2026-10-12",
-    "website-form",
+    "web-form",
     "google-maps",
     "pc-repair",
     "wickford",
