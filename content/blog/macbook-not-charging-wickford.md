@@ -2,7 +2,7 @@
 slug: macbook-not-charging-wickford
 title: MacBook Not Charging? MagSafe, USB-C and Battery Checks
 headline: MacBook Plugged In But Not Charging? What macOS Is Telling You
-description: MacBook not charging, or stuck at 80% with the MagSafe light amber? What macOS is telling you, and when it is the cable, port or battery. Free diagnostics.
+description: MacBook not charging in Wickford, or stuck at 80%? What the light means, and when it is the cable, port or battery. Free diagnostics.
 date: 2026-12-16
 draft: true
 category: Useful Tips

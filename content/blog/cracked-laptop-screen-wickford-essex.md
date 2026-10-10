@@ -2,7 +2,7 @@
 slug: cracked-laptop-screen-wickford-essex
 title: Cracked Laptop Screen Wickford | What to Do Next
 headline: Cracked Your Laptop Screen in Wickford? What to Do Next (And What Not to Do)
-description: Cracked your laptop screen in Wickford or Essex? Learn what to do next, how to keep your files safe, and when a local panel replacement beats buying new.
+description: Cracked your laptop screen in Wickford or Essex? What to do next, how to keep files safe, and when a panel replacement beats buying new.
 date: 2026-09-09
 category: Useful Tips
 category_path: Useful+Tips

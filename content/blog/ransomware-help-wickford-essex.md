@@ -2,7 +2,7 @@
 slug: ransomware-help-wickford-essex
 title: Ransomware Help Wickford | Locked Files Essex
 headline: Ransomware in Wickford: What to Do If Your Files Are Locked
-description: Files renamed, a ransom note on the desktop, Wickford or Essex PC unusable? Immediate steps, why you should not pay from the kitchen table, and how local backup and cleanup work.
+description: Ransom note on a Wickford or Essex PC? Immediate steps, why you should not pay from the kitchen table, and how backup and cleanup work.
 date: 2026-12-09
 draft: true
 category: Cybersecurity
