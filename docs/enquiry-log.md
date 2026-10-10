@@ -16,7 +16,7 @@ Blank optional answers are `unknown` when the field was sent empty (including â€
 
 ## Reporting values
 
-The contact form still shows ordinary labels, and Netlify still receives those labels. The sheet gets the short value.
+The contact form still shows ordinary labels. Netlify Forms still receives the same field names as before (`Service`, `how_heard`, `town_area`, and the campaign tags), so a replay of an older submission still maps. The notification email uses friendlier labels. The sheet gets the short value.
 
 Website rows use `web-form` as `channel_source`.
 
