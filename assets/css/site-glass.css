@@ -264,16 +264,13 @@ body.llsite-body .page-section > .content-wrapper {
   flex-direction: column;
   align-items: stretch;
   text-align: left;
-  /* Mobile: hug content. Equal-height cards only from 700px (2-col grid). */
+  /* Hug the copy. The 2-column grid stretches the pair to one height.
+     min-height:100% with the default content-box overflowed the card
+     padding out of the grid cell and onto the form. */
+  box-sizing: border-box;
   height: auto;
   min-height: 0;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@media (min-width: 700px) {
-  .llct-card {
-    min-height: 100%;
-  }
 }
 
 .llct-card:hover { transform: translateY(-3px); }

@@ -896,21 +896,45 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
 
 <style id="ll-contact-axis">
 /* Force intro + form onto one centred column (SQS fluid-engine otherwise
-   puts intro in cols 2–26 and the form in cols 6–22). */
+   puts intro in cols 2–26 and the form in cols 6–22).
+
+   Desktop/tablet also used to lock the intro to rows 1–15 and the form to
+   row 16. Those rows stay near their minimum (the code block's min-height
+   is zeroed globally), so the cards overflow the cell and paint over the
+   form. Two content-sized rows keep the cards fully above the form. */
 @media (min-width: 768px) {
+  .fe-682e44bcef3a173ba519019c {
+    grid-template-rows: auto auto !important;
+    align-content: start !important;
+    row-gap: 1.5rem !important;
+  }
   .fe-682e44bcef3a173ba519019c > .fe-block-yui_3_17_2_1_1780042547748_2925 {
     grid-column: 6 / 22 !important;
-    grid-row: 1 / 16 !important;
+    grid-row: 1 / 2 !important;
     justify-self: stretch !important;
+    align-self: start !important;
     width: auto !important;
     max-width: none !important;
+    height: auto !important;
+    min-height: auto !important;
   }
   .fe-682e44bcef3a173ba519019c > .fe-block-6c1dceaebe135ff2c7df {
     grid-column: 6 / 22 !important;
-    grid-row: 16 / 40 !important;
+    grid-row: 2 / 3 !important;
     justify-self: stretch !important;
+    align-self: start !important;
     width: auto !important;
     max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  #sections #block-yui_3_17_2_1_1780042547748_2925.sqs-block-code,
+  #sections #block-yui_3_17_2_1_1780042547748_2925 .sqs-block-content,
+  #sections #block-yui_3_17_2_1_1780042547748_2925 .sqs-code-container,
+  #sections #block-yui_3_17_2_1_1780042547748_2925 .llct-intro {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
   }
 }
 .llct-intro,
