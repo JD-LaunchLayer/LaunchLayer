@@ -10,9 +10,45 @@ A website row records the service, the optional “how did you hear about us?”
 
 It does not store the name, email address, phone number, or message. Those stay in Netlify Forms.
 
-Blank optional answers are `unknown` when the field was sent empty (including “Prefer not to say”), or `not-asked` when an older submission has no such field. Campaign tags that are missing or not a short plain label are `none`. Nothing is guessed.
+Blank optional answers are `unknown` when the field was sent empty (including “Prefer not to say”), or `not-asked` when an older submission has no such field. A value that is not one of the form choices below is also `unknown`. Nothing is guessed. Campaign tags that are missing or not a short plain label are `none`.
 
-`became_job` starts as `pending`. `job_completed` starts as `n`. Change those in the sheet when the job moves on.
+`became_job` starts as `pending`. `job_completed` starts as `n`. Change those in the sheet when the job moves on. The function only appends new website rows. It does not rewrite rows that are already there, so older categories stay as they were typed.
+
+## Reporting values
+
+The contact form still shows ordinary labels, and Netlify still receives those labels. The sheet gets the short value.
+
+Website rows use `web-form` as `channel_source`.
+
+| Form answer | Sheet value |
+|---|---|
+| General Enquiry | `general` |
+| Custom PC Builds | `custom-build` |
+| PC Repair & Tech Support | `pc-repair` |
+| Insurance Damage Report | `insurance-report` |
+| Scam Support | `scam-support` |
+| E-Waste or Tech Donation | `e-waste` |
+| Startup IT Setup | `startup-it-setup` |
+| Website Setup | `website-setup` |
+| Laptop Repair | `laptop-repair` |
+| MacBook Repair | `macbook` |
+| Screen Replacement | `screen` |
+| Data Recovery | `data-recovery` |
+| Prefer not to say, or a blank optional answer | `unknown` |
+| Google search | `google-search` |
+| Google Maps / Business Profile | `google-maps` |
+| Facebook | `facebook` |
+| Instagram | `instagram` |
+| Nextdoor | `nextdoor` |
+| Recommendation | `recommendation` |
+| Returning customer | `returning` |
+| Other (how they heard) | `other` |
+| Wickford, Billericay, Basildon, Rayleigh, Brentwood, Chelmsford, Southend | the same town name |
+| Other / outside area | `other` |
+
+`became_job` is `pending` on a new website row, and later `y` or `n`. `job_completed` and `is_test_or_spam` are `y` or `n`.
+
+Some categories are only used when a row is typed in by hand, for example a phone call. The website does not write those. They include `bark`, `friend-family`, `passing` and `ai-assistant` for how someone heard about us, and `liquid-damage`, `virus-removal` and `business-it` for the kind of work.
 
 ## Test rows
 
