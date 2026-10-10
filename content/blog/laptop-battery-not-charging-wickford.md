@@ -78,6 +78,8 @@ If the laptop runs on the charger, the report looks healthy, and it still won't 
 
 If the laptop won't turn on at all, even with the charger plugged in, start with the [won't turn on guide](/blog/laptop-not-turning-on-slow-fix/).
 
+If it's a desktop PC that won't power on, see our [PC repair in Wickford](/wickford-pc-repair/) page.
+
 ## If the battery is swollen
 
 Stop using the laptop if the case is bulging, the trackpad's lifting, or the palm rest is raised above the keyboard. Unplug the charger, don't keep charging it, and don't puncture the pack. The [swollen battery guide](/blog/laptop-battery-replacement-wickford/) explains what happens next.
