@@ -71,7 +71,6 @@ html body .launchlayer-floating-btn:focus-visible { outline:3px solid var(--colo
 #sections #block-6c1dceaebe135ff2c7df .ll-contact-form .field-element:user-invalid { border-color:rgba(252,165,165,.7); }
 #sections #block-6c1dceaebe135ff2c7df,
 #sections #block-6c1dceaebe135ff2c7df .ll-contact-error,
-#sections #block-6c1dceaebe135ff2c7df .ll-turnstile,
 #sections .ll-contact-success { scroll-margin-top: calc(var(--ll-header-h) + 12px); scroll-margin-bottom: 24px; }
 #sections #block-6c1dceaebe135ff2c7df .ll-contact-submit { position:relative; }
 #sections #block-6c1dceaebe135ff2c7df .ll-contact-submit.is-loading { opacity:1; cursor:progress; }
@@ -164,7 +163,7 @@ html body .launchlayer-floating-btn:focus-visible { outline:3px solid var(--colo
   html body .launchlayer-floating-pill-container { transition: none !important; }
   #sections #block-6c1dceaebe135ff2c7df .ll-contact-submit.is-loading::before { animation: none; border-top-color: rgba(255,255,255,.35); border-right-color: #fff; }
 }
-/* Deploy previews only: Netlify's fixed drawer is not part of the page and covers Turnstile while scrolling. */
+/* Deploy previews only: Netlify's fixed drawer is not part of the page and covers the form while scrolling. */
 html body [data-netlify-deploy-id] { display: none !important; }
 /* ===== §18–§25 additions: review fixes + lower sections & footer (mobile) ===== */
 /* §25 R1 Loading state keeps full opacity (Squarespace sets [disabled]{opacity:.8 !important}) */
@@ -246,7 +245,6 @@ html body .launchlayer-floating-pill-container.ll-fab-blocked { opacity: 0 !impo
 </style>
 
 <script>Static.COOKIE_BANNER_CAPABLE = true;</script>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <!-- End of Squarespace Headers -->
 
 <link rel="canonical" href="https://launchlayer.uk/contact/" />
@@ -1018,10 +1016,12 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
       
     >
       <div class="react-form-contents ll-contact-panel">
-        <form class="react-form-contents ll-contact-form" action="/api/contact" method="POST">
+        <form class="react-form-contents ll-contact-form" name="contact" action="/" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
           <input type="hidden" name="subject" value="New Contact Form Submission - LaunchLayer">
-          <input type="hidden" name="from_name" value="LaunchLayer Website">
-          <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1" autocomplete="off">
+          <p class="ll-form-honeypot">
+            <label>Don’t fill this out if you’re human: <input name="bot-field" type="text" tabindex="-1" autocomplete="off"></label>
+          </p>
           <div class="field-list">
             <div class="form-item fields name required">
               <fieldset>
@@ -1065,9 +1065,6 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
             <div class="form-item fields textarea required">
               <label class="title" for="ll-contact-message">How can we help? <span class="required" aria-hidden="true">*</span></label>
               <textarea id="ll-contact-message" class="field-element" name="Message" rows="5" autocapitalize="sentences" enterkeyhint="enter" placeholder="Tell us what’s going on with the device, and we’ll take it from there." required></textarea>
-            </div>
-            <div class="form-item ll-turnstile">
-              <div class="cf-turnstile" data-sitekey="0x4AAAAAAE92s2yvAZLzFUIK" data-theme="dark"></div>
             </div>
             <p class="ll-contact-error" hidden role="alert"></p>
             <p class="ll-contact-status ll-visually-hidden" role="status" aria-live="polite"></p>
@@ -1353,19 +1350,12 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
           inset 0 1px 0 rgba(255, 255, 255, 0.06);
       }
 
-      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-turnstile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        min-height: 65px;
-      }
-
-      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-turnstile .cf-turnstile {
-        display: flex;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: auto;
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-form-honeypot {
+        position: absolute !important;
+        left: -10000px !important;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
       }
 
       #block-6c1dceaebe135ff2c7df .ll-contact-form .ll-contact-error {
@@ -1953,7 +1943,7 @@ if (window.location.search.includes('submitted=true')) {
       messageEl.value = message;
     }
   })();
-  (function submitContactViaFunction() {
+  (function submitContactForm() {
     var form = document.querySelector('.ll-contact-form');
     if (!form) return;
     var errorEl = form.querySelector('.ll-contact-error');
@@ -1974,12 +1964,6 @@ if (window.location.search.includes('submitted=true')) {
       var off = rect.bottom <= 0 || rect.top >= window.innerHeight || rect.top < 0 || rect.bottom > window.innerHeight;
       if (off) {
         errorEl.scrollIntoView({ block: 'center', behavior: motionBehavior() });
-      }
-    }
-
-    function resetTurnstile() {
-      if (window.turnstile && typeof window.turnstile.reset === 'function') {
-        window.turnstile.reset();
       }
     }
 
@@ -2018,67 +2002,41 @@ if (window.location.search.includes('submitted=true')) {
         errorEl.hidden = true;
         errorEl.textContent = '';
       }
-      var tokenInput = form.querySelector('[name="cf-turnstile-response"]');
-      var token = tokenInput && tokenInput.value;
-      if (!token) {
-        markBlocked();
-        showError('Please complete the verification check and try again.');
-        var turnstile = form.querySelector('.ll-turnstile');
-        if (turnstile) turnstile.scrollIntoView({ block: 'center', behavior: motionBehavior() });
-        return;
-      }
-
       setBusy(true);
 
-      fetch(form.action, {
+      var body = new URLSearchParams(new FormData(form)).toString();
+      fetch('/', {
         method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'X-Requested-With': 'fetch'
-        },
-        body: new FormData(form)
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body
       })
         .then(function (res) {
-          return res.json().then(function (data) {
-            return { ok: res.ok, data: data || {} };
-          }).catch(function () {
-            return { ok: res.ok, data: {} };
-          });
-        })
-        .then(function (result) {
-          if (result.data.success) {
-            var serviceField = document.getElementById('ll-contact-service');
-            var serviceName = serviceField && serviceField.value ? serviceField.value : '';
-            var gone = false;
-            var go = function () {
-              if (gone) return;
-              gone = true;
-              window.location.assign(result.data.redirect || '/contact/?submitted=true');
-            };
-            if (!(window.umami && typeof window.umami.track === 'function')) {
-              go();
-              return;
-            }
-            try {
-              var tracked = window.umami.track('contact-form-submit', { service: serviceName });
-              if (tracked && typeof tracked.finally === 'function') {
-                tracked.finally(go);
-                setTimeout(go, 700);
-                return;
-              }
-            } catch (err) {}
+          if (!res.ok) throw new Error('form');
+          var serviceField = document.getElementById('ll-contact-service');
+          var serviceName = serviceField && serviceField.value ? serviceField.value : '';
+          var gone = false;
+          var go = function () {
+            if (gone) return;
+            gone = true;
+            window.location.assign('/contact/?submitted=true');
+          };
+          if (!(window.umami && typeof window.umami.track === 'function')) {
             go();
             return;
           }
-          setBusy(false);
-          markBlocked();
-          resetTurnstile();
-          showError(result.data.error || 'We could not send your message. Please try again or call the workshop.');
+          try {
+            var tracked = window.umami.track('contact-form-submit', { service: serviceName });
+            if (tracked && typeof tracked.finally === 'function') {
+              tracked.finally(go);
+              setTimeout(go, 700);
+              return;
+            }
+          } catch (err) {}
+          go();
         })
         .catch(function () {
           setBusy(false);
           markBlocked();
-          resetTurnstile();
           showError('We could not send your message. Please try again or call the workshop.');
         });
     });
