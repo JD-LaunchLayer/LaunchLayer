@@ -105,6 +105,10 @@ https://www.launchlayer.uk/wickford-virus-removal  https://launchlayer.uk/wickfo
 /faq    /faqs/  301!
 /faq/   /faqs/  301!
 
+# Old brands URL still indexed by Bing. The page lives at /brands-supported/.
+/brands-we-repair    https://launchlayer.uk/brands-supported/  301!
+/brands-we-repair/   https://launchlayer.uk/brands-supported/  301!
+
 # Old short URLs consolidated onto the Wickford service pages.
 /laptop-mot-wickford    /laptop-mot-wickford-essex/  301!
 /laptop-mot-wickford/   /laptop-mot-wickford-essex/  301!

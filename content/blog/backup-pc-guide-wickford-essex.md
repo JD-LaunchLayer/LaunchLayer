@@ -2,7 +2,7 @@
 slug: backup-pc-guide-wickford-essex
 title: How to Back Up a PC in Wickford | Simple Essex Guide
 headline: How to Back Up Your PC in Wickford Before It Dies
-description: A plain-English backup guide for Wickford homes and small businesses. 3-2-1 without the jargon, what to copy first, and when a local workshop should take the disk.
+description: A plain-English backup guide for Wickford homes and small businesses. What to copy first, and when a local workshop should take the disk.
 date: 2026-12-02
 draft: true
 category: Useful Tips

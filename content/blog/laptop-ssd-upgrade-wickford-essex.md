@@ -2,7 +2,7 @@
 slug: laptop-ssd-upgrade-wickford-essex
 title: Laptop SSD Upgrade Wickford | Fix a Slow Machine
 headline: Slow Laptop in Wickford? An SSD Upgrade Is Usually the Fix
-description: If your Wickford laptop takes minutes to boot, a hard drive is often the bottleneck. Learn how an SSD upgrade works, what we clone, and when a new machine is the wrong answer.
+description: If your Wickford laptop takes minutes to boot, a hard drive is often the bottleneck. How an SSD upgrade works, and when a new machine is wrong.
 date: 2026-09-16
 draft: false
 category: Useful Tips

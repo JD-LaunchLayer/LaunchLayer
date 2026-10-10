@@ -2,7 +2,7 @@
 slug: laptop-dock-monitor-setup-essex
 title: USB-C Dock and Second Monitor Setup for Your Laptop
 headline: Adding a Monitor and USB-C Dock to Your Laptop, Without the Headaches
-description: Want one cable for a monitor, keyboard and charger? How to pick a USB-C dock that matches your laptop's wattage and ports, and when a slow desk is the laptop.
+description: Want one cable for a monitor, keyboard and charger? How to pick a USB-C dock that matches your laptop's wattage and ports.
 date: 2026-11-11
 draft: true
 category: Business IT

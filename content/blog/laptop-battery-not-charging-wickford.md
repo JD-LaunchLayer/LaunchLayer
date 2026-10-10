@@ -2,7 +2,7 @@
 slug: laptop-battery-not-charging-wickford
 title: Laptop Plugged In Not Charging? Charger, Port or Battery
 headline: Laptop Plugged In Not Charging? Charger, Port or Battery
-description: Laptop plugged in but not charging? Check the charger, the cable, the port and the battery before you buy a part. Port repair is £65. Free diagnostics.
+description: Laptop plugged in but not charging in Wickford? Check the charger, cable, port and battery. Port repair is £65. Free diagnostics.
 date: 2026-09-30
 draft: false
 category: Useful Tips
