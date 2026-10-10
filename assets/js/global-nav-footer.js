@@ -237,3 +237,39 @@ document.addEventListener('click', function(e) {
   if (window.ResizeObserver) new ResizeObserver(function () { sync(); requestAnimationFrame(sync); }).observe(footer);
   new MutationObserver(function () { watchNotice(); sync(); requestAnimationFrame(sync); }).observe(document.body, { attributes: true, attributeFilter: ['class'], childList: true });
 })();
+
+(function rememberCampaignLink() {
+  // First campaign link in this tab only. sessionStorage, not a cookie.
+  // Values are a short plain label. Anything else is dropped.
+  var KEY = 'll-utm';
+  var SAFE = /^[a-z0-9_-]{1,40}$/;
+  function clean(value) {
+    if (!value) return '';
+    var text = String(value).trim().toLowerCase();
+    return SAFE.test(text) ? text : '';
+  }
+  try {
+    var params = new URLSearchParams(location.search);
+    var incoming = {
+      s: clean(params.get('utm_source')),
+      m: clean(params.get('utm_medium')),
+      c: clean(params.get('utm_campaign'))
+    };
+    if (incoming.s || incoming.m || incoming.c) {
+      var existing = null;
+      try { existing = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (err) { existing = null; }
+      var already = existing && (existing.s || existing.m || existing.c);
+      if (!already) sessionStorage.setItem(KEY, JSON.stringify(incoming));
+    }
+  } catch (err) {}
+  try {
+    var form = document.querySelector('.ll-contact-form');
+    if (!form || !form.elements) return;
+    var stored = null;
+    try { stored = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (err) { stored = null; }
+    if (!stored) return;
+    if (form.elements.utm_source) form.elements.utm_source.value = clean(stored.s);
+    if (form.elements.utm_medium) form.elements.utm_medium.value = clean(stored.m);
+    if (form.elements.utm_campaign) form.elements.utm_campaign.value = clean(stored.c);
+  } catch (err) {}
+})();
