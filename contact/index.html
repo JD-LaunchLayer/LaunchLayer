@@ -1458,6 +1458,13 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
         color: rgba(187, 247, 208, 0.86);
       }
 
+      #block-6c1dceaebe135ff2c7df .ll-contact-success a[href^="tel:"] {
+        color: inherit;
+        font-weight: 700;
+        text-decoration-line: underline;
+        text-underline-offset: 0.15em;
+      }
+
       @media (max-width: 640px) {
         #block-6c1dceaebe135ff2c7df .ll-contact-panel {
           padding: 1.05rem !important;
@@ -1920,7 +1927,7 @@ if (window.location.search.includes('submitted=true')) {
   try { sessionStorage.removeItem('ll-contact-prefill'); } catch (err) {}
   const formContainer = document.querySelector('form');
   if (formContainer) {
-    formContainer.innerHTML = '<div class="ll-contact-success" role="status" tabindex="-1"><p>Thank you — your message is on its way.</p><span>We’ll reply to you at hello@launchlayer.uk within our 09:00–22:00 window.</span></div>';
+    formContainer.innerHTML = '<div class="ll-contact-success" role="status" tabindex="-1"><p>Thank you — your message is on its way.</p><span>We\'ll reply from hello@launchlayer.uk, usually the same day. If it\'s urgent, call <a href="tel:07367652987" data-umami-event="call-click" data-umami-event-location="contact-thanks">07367 652987</a>.</span></div>';
     var successPanel = formContainer.querySelector('.ll-contact-success');
     if (successPanel) {
       requestAnimationFrame(function () {
