@@ -7,7 +7,7 @@ date: 2026-10-28
 draft: true
 category: Useful Tips
 category_path: Useful+Tips
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-windows-11-upgrade-wickford.jpg
 og_image: /assets/meta/meta-windows-11-upgrade-wickford.jpg
 image_alt: Desktop PC and laptop on a home office desk during a software update

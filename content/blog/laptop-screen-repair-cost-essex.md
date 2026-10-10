@@ -7,7 +7,7 @@ date: 2026-10-21
 draft: true
 category: Useful Tips
 category_path: Useful+Tips
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-laptop-screen-repair-cost-essex.jpg
 og_image: /assets/meta/meta-laptop-screen-repair-cost-essex.jpg
 image_alt: Laptop on a white table with a damaged screen showing coloured lines and cracks, next to a yellow smartphone

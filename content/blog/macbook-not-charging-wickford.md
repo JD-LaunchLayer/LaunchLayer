@@ -7,7 +7,7 @@ date: 2026-12-16
 draft: true
 category: Useful Tips
 category_path: Useful+Tips
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-macbook-not-charging-wickford.jpg
 og_image: /assets/meta/meta-macbook-not-charging-wickford.jpg
 image_alt: Open MacBook Pro seen from above with a white braided MagSafe charging cable plugged into its left side

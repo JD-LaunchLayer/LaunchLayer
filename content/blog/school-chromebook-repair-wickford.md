@@ -7,7 +7,7 @@ date: 2026-11-04
 draft: true
 category: Useful Tips
 category_path: Useful+Tips
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-school-chromebook-wickford.jpg
 og_image: /assets/meta/meta-school-chromebook-wickford.jpg
 image_alt: School-style laptop sliding out of a backpack on a kitchen table

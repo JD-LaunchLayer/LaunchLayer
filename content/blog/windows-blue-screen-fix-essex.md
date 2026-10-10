@@ -7,7 +7,7 @@ date: 2026-11-25
 draft: true
 category: Useful Tips
 category_path: Useful+Tips
-author: Jordan Duggins
+author: The LaunchLayer workshop
 image: /assets/images/image-windows-blue-screen-essex.jpg
 og_image: /assets/meta/meta-windows-blue-screen-essex.jpg
 image_alt: Laptop on a desk showing a blue crash screen in a dim home office
