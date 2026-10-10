@@ -1043,6 +1043,10 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
         <form class="react-form-contents ll-contact-form" name="contact" action="/" method="POST" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact">
           <input type="hidden" name="subject" value="New Contact Form Submission - LaunchLayer">
+          <input type="hidden" name="utm_source" value="">
+          <input type="hidden" name="utm_medium" value="">
+          <input type="hidden" name="utm_campaign" value="">
+          <input type="hidden" name="ll_test" value="" autocomplete="off">
           <p class="ll-form-honeypot">
             <label>Don’t fill this out if you’re human: <input name="bot-field" type="text" tabindex="-1" autocomplete="off"></label>
           </p>
@@ -1083,6 +1087,38 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
                   <option value="E-Waste or Tech Donation">E-Waste or Tech Donation</option>
                   <option value="Startup IT Setup">Startup IT Setup</option>
                   <option value="Website Setup">Website Setup</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-item fields select">
+              <label class="title" for="ll-contact-heard">How did you hear about us? <span class="ll-optional">(optional)</span></label>
+              <div class="ll-select-wrap">
+                <select id="ll-contact-heard" class="field-element" name="how_heard">
+                  <option value="prefer-not-to-say" selected>Prefer not to say</option>
+                  <option value="google-search">Google search</option>
+                  <option value="google-maps">Google Maps / Business Profile</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="nextdoor">Nextdoor</option>
+                  <option value="recommendation">Recommendation</option>
+                  <option value="returning-customer">Returning customer</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-item fields select">
+              <label class="title" for="ll-contact-area">Town or area <span class="ll-optional">(optional)</span></label>
+              <div class="ll-select-wrap">
+                <select id="ll-contact-area" class="field-element" name="town_area">
+                  <option value="prefer-not-to-say" selected>Prefer not to say</option>
+                  <option value="wickford">Wickford</option>
+                  <option value="billericay">Billericay</option>
+                  <option value="basildon">Basildon</option>
+                  <option value="rayleigh">Rayleigh</option>
+                  <option value="brentwood">Brentwood</option>
+                  <option value="chelmsford">Chelmsford</option>
+                  <option value="southend">Southend</option>
+                  <option value="other">Other / outside area</option>
                 </select>
               </div>
             </div>
@@ -1200,6 +1236,13 @@ data-localized="{&quot;enableSafeModeButton&quot;:&quot;Preview in safe mode&quo
         letter-spacing: 0;
         text-transform: none;
         white-space: nowrap;
+      }
+
+      #block-6c1dceaebe135ff2c7df .ll-contact-form .form-item .title .ll-optional {
+        text-transform: none;
+        letter-spacing: 0;
+        font-weight: 500;
+        color: var(--ll-form-muted);
       }
 
       /* Kill Squarespace’s 48% / float / -2% name-row layout so First/Last
@@ -1938,6 +1981,17 @@ if (window.location.search.includes('submitted=true')) {
     }
   }
 } else {
+  (function setContactTestFlag() {
+    var form = document.querySelector('.ll-contact-form');
+    if (!form || !form.elements || !form.elements.ll_test) return;
+    try {
+      var params = new URLSearchParams(window.location.search);
+      if (!params.has('ll_test')) return;
+      var value = params.get('ll_test') || '';
+      if (!/^[A-Za-z0-9_-]{1,64}$/.test(value)) return;
+      form.elements.ll_test.value = value;
+    } catch (err) {}
+  })();
   (function prefillContactFromBuildIntake() {
     var params = new URLSearchParams(window.location.search);
     var stored = {};
@@ -2074,7 +2128,7 @@ if (window.location.search.includes('submitted=true')) {
   })();
 }
 </script>
-<script src="/assets/js/global-nav-footer.js?v=footer-20260928c" defer></script>
+<script src="/assets/js/global-nav-footer.js?v=footer-20261010a" defer></script>
 <script src="/assets/js/cookie-consent.js" defer></script>
 <script>
 (function () {
