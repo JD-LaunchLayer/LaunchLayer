@@ -360,7 +360,7 @@ def main() -> None:
     removed = [line for line in old_lines if line not in new_lines]
     if removed:
         fail(f"virus page removed lines: {removed}")
-    price_line = "    <p>Virus, malware &amp; scam removal: £69 fixed price. Diagnostics are free; No-Fix-No-Fee.</p>"
+    price_line = "    <p>Virus, malware &amp; scam removal: £69 fixed price. Diagnostics are free; No-Fix-No-Fee on labour.</p>"
     if added != [price_line]:
         fail(f"virus page diff is not only the £69 line: {added}")
     ok("virus page adds only the £69 line; JSON-LD unchanged")
