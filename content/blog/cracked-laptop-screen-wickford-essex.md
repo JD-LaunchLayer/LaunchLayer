@@ -44,7 +44,7 @@ These can come from a failing LCD, a display cable problem, or the backlight, th
 
 ## Will I lose my photos, coursework, or work files?
 
-Almost never. A screen replacement swaps the panel. Your SSD or hard drive, your Windows or macOS profile and your documents stay where they are, so if the laptop still powers on, your data is already safe inside.
+Almost never. A screen replacement swaps the panel and normally leaves the storage untouched. Your SSD or hard drive, your Windows or macOS profile and your documents stay where they are. Back up first where you can.
 
 If the lid shows no picture at all, try connecting a spare HDMI or USB-C monitor. Seeing your desktop on the TV is a good sign the rest of the laptop is working. If nothing appears on any screen, that's a different fault, and we'll tell you before you pay for a panel.
 
