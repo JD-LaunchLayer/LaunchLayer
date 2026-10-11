@@ -2,7 +2,7 @@
 slug: laptop-repair-cost-essex
 title: Laptop Repair Cost in Essex: 2026 Price Guide
 headline: How Much Does a Laptop Repair Cost in Essex? 2026 Price Guide
-description: Laptop repair cost in Essex. Free diagnostics, then a fixed quote. Hardware from £55, battery from £49 plus the part, screen labour from £99.
+description: Laptop repair cost in Essex. Free diagnostics, then a fixed quote. Hardware from £55, battery from £49 plus the part, screen labour is a flat £99 plus the panel.
 date: 2026-10-14
 draft: true
 category: Useful Tips
@@ -25,7 +25,7 @@ The workshop behind this list is [Wickford laptop repair](/wickford-laptop-repai
 - Hardware and general repair starts from £55.
 - Battery labour starts from £49 plus the part, and the battery itself is quoted for your model before it's ordered.
 - A DC jack or charging port is a flat £65 where the port is removable or sits on its own small board. Ports soldered to the main board are priced separately, quoted after diagnosis. The [plugged in not charging guide](/blog/laptop-battery-not-charging-wickford/) helps you narrow down whether it's the charger, the cable or the port.
-- Screen labour starts from £99 plus the panel. The panel is a separate line, because a Chromebook panel and a touchscreen panel aren't the same part. How that quote is built is explained on [laptop screen repair Wickford](/laptop-screen-repair-wickford/).
+- Screen labour is a flat £99 plus the panel. The panel is a separate line, because a Chromebook panel and a touchscreen panel aren't the same part. How that quote is built is explained on [laptop screen repair Wickford](/laptop-screen-repair-wickford/).
 - Hinge and lid work starts from £75.
 - Keyboard labour starts from £55 plus the part.
 - An SSD or RAM upgrade starts from £65 plus the parts.
@@ -49,7 +49,7 @@ You approve the quote before we order a part. If the part arrives and the fault 
 
 ## Why two neighbours get different totals
 
-Same town, same week, different machines. One needs a virus and malware clean-up at £69. The next needs screen labour from £99 **plus** the cost of that exact panel from a UK supplier. A third only needs battery labour from £49 **plus** the battery. Comparing them as one job is how people write off a repair without ever getting a quote.
+Same town, same week, different machines. One needs a virus and malware clean-up at £69. The next needs screen labour at a flat £99 **plus** the cost of that exact panel from a UK supplier. A third only needs battery labour from £49 **plus** the battery. Comparing them as one job is how people write off a repair without ever getting a quote.
 
 If the laptop also won't switch on, start with the [won't turn on guide](/blog/laptop-not-turning-on-slow-fix/), so we aren't pricing a screen for a machine that has a separate power fault.
 
