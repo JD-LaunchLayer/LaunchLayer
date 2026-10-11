@@ -40,7 +40,7 @@ The labour floor barely moves. The panel does, for ordinary reasons:
 
 That's why a neighbour's invoice isn't your quote. Diagnostics are free so the split is clear before you agree.
 
-Your files almost always stay where they are. A panel swap doesn't wipe the drive. If the lid shows nothing, an external monitor tells us whether the rest of the machine is healthy before anyone pays for glass.
+Your files almost always stay where they're. A panel swap doesn't wipe the drive. If the lid shows nothing, an external monitor tells us whether the rest of the machine is healthy before anyone pays for glass.
 
 ## What you pay, and when
 
@@ -53,6 +53,6 @@ The wider Essex menu, including the £99 screen line next to batteries and ports
 
 ## Book the quote
 
-Call **[07367 652987](tel:07367652987)**, use [Contact](/contact/), or start from [Wickford laptop repair](/wickford-laptop-repair/) and [laptop screen repair Wickford](/laptop-screen-repair-wickford/). Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Elsewhere, collection is by arrangement.
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Free collection and return is across Wickford (SS11 and SS12). Elsewhere, collection is by arrangement. You can also start from [Wickford laptop repair](/wickford-laptop-repair/) and [laptop screen repair Wickford](/laptop-screen-repair-wickford/).
 
 Bring the charger. Say the model if you know it. If the crack came from a spill rather than a knock, say that too. Liquid and glass are different jobs, and the [spill steps](/blog/spilled-water-on-laptop-fix-essex/) come first.

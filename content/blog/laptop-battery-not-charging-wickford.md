@@ -70,9 +70,9 @@ Windows 11 can show the lead as connected and still say "not charging". The perc
 
 On many Dell, Lenovo and HP laptops that stop is on purpose. A charge limit keeps the battery from filling all the way so it lasts longer. Turn the limit off in the manufacturer's app if you want a full charge. The setting's often called conservation mode or battery-health mode. It's a limit you can switch off, not a broken battery.
 
-Windows can write a battery report. Open Command Prompt and type `powercfg /batteryreport`, then open the file it saves. It compares the battery's original size with what it holds now, which is clearer than the percentage in the taskbar.
+Windows can write a battery report. Open Command Prompt and type `powercfg /batteryreport`, then open the file it saves. It compares the battery's original capacity with what it holds now, which is clearer than the percentage in the taskbar.
 
-A worn battery shows up as a percentage that falls from a lot to nothing in a few minutes, a laptop that switches off without warning on battery, or one that dies the moment you unplug a charger you trust. The report will usually show it holding far less than its original size.
+A worn battery shows up as a percentage that falls from a lot to nothing in a few minutes, a laptop that switches off without warning on battery, or one that dies the moment you unplug a charger you trust. The report will usually show it holding far less than its original capacity.
 
 If the laptop runs on the charger, the report looks healthy, and it still won't fill, the part passing power to the battery may be at fault. A new battery doesn't help there, which is why the free diagnostic comes before any part is ordered.
 
@@ -90,13 +90,13 @@ Charging port and DC jack repair is **£65**. That's the labour for the port job
 
 When the battery itself has failed, labour starts **from £49 plus the part**. You get the price for your exact model before any pack is ordered.
 
-Diagnostics are free. You get a fixed quote before any part is ordered. Typical turnaround for a charging port or battery is 1–3 working days, and those new parts carry a 12-month warranty. If we can't fix it, **No-Fix, No-Fee** applies: you don't pay for labour.
+Diagnostics are free. You get a fixed quote before any part is ordered. A charging port or battery repair is usually back in 1–3 working days, and new parts fitted on those repairs carry a 12-month warranty. If we can't fix it, **No-Fix, No-Fee** applies: you don't pay for labour.
 
 ## Bringing it in
 
 Bring the charger you actually use, including the spare in the drawer if that's the one that sometimes works.
 
-Drop-off at the workshop is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address.
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Free collection and return is across Wickford (SS11 and SS12). Elsewhere, collection is by arrangement.
 
 ## FAQ
 
@@ -114,7 +114,7 @@ Charging port and DC jack repair is £65. Battery labour starts from £49 plus t
 
 ### How long does a repair take?
 
-Typical turnaround is 1–3 working days for a charging port or a battery we fit. You get the quote before any part is ordered, and those new parts carry a 12-month warranty.
+A charging port or battery repair is usually back in 1–3 working days. You get the quote before any part is ordered, and new parts fitted on those repairs carry a 12-month warranty.
 
 ### Can I use it with a dead battery?
 
@@ -122,7 +122,7 @@ Yes, if the laptop still runs while it's plugged in. You can keep working that w
 
 ### Do you collect the laptop?
 
-Drop-off at the workshop is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address.
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Free collection and return is across Wickford (SS11 and SS12). Elsewhere, collection is by arrangement.
 
 ### Is a swollen battery dangerous?
 

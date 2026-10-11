@@ -53,6 +53,6 @@ We can also check the laptop isn't a [scam leftover](/blog/scam-awareness/) remo
 
 ## We can set the desk up
 
-Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Collection from Basildon is by arrangement. Call **[07367 652987](tel:07367652987)**, or book through [Basildon PC repair](/basildon-pc-repair/), [Wickford PC repair](/wickford-pc-repair/) or [Contact](/contact/), and we'll confirm a time. Bring the laptop, the charger you use, and the monitor if you've already bought one. We'd rather tell you the dock is wrong before you open three more boxes.
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address. Free collection and return is across Wickford (SS11 and SS12). Collection from Basildon is by arrangement. You can book through [Basildon PC repair](/basildon-pc-repair/), [Wickford PC repair](/wickford-pc-repair/) or [Contact](/contact/). Bring the laptop, the charger you use, and the monitor if you've already bought one. We'd rather tell you the dock is wrong before you open three more boxes.
 
 A home visit is free in Wickford (SS11 and SS12), and £49 elsewhere in South Essex, including the first hour. No-Fix, No-Fee applies to the labour on a hardware repair that isn't viable. A setup visit is quoted as a setup visit.

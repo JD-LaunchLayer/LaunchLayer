@@ -13,21 +13,21 @@ og_image: /assets/meta/meta-ssd-upgrade-wickford.jpg
 image_alt: M.2 SSD next to an open laptop on a wooden desk, ready for a speed upgrade
 ---
 
-If your laptop takes two minutes to reach the desktop, freezes when you open Photos, or sounds like a tiny tractor every time you save a file, it is probably not “too old”. It is probably still running a spinning hard drive.
+If your laptop takes two minutes to reach the desktop, freezes when you open Photos, or sounds like a tiny tractor every time you save a file, it's probably not “too old”. It's probably still running a spinning hard drive.
 
-In Wickford we see this every week: a perfectly decent i5 or Ryzen machine from 2018–2021, with 8 or 16GB of RAM, and a 5400rpm disk that cannot keep up with Windows 11. A solid-state drive (SSD) is a drive with no moving parts. Fitting one is usually the biggest speed change you can make without replacing the laptop. Try that before you shop for a new machine.
+In Wickford we see this every week: a perfectly decent i5 or Ryzen machine from 2018–2021, with 8 or 16GB of RAM, and a 5400rpm disk that can't keep up with Windows 11. A solid-state drive (SSD) is a drive with no moving parts. Fitting one is usually the biggest speed change you can make without replacing the laptop. Try that before you shop for a new machine.
 
-This is not the same job as a [full clean because it will not turn on](/blog/laptop-not-turning-on-slow-fix/), and it is not automatically a reason to [buy new](/blog/laptop-repair-vs-replace-sustainability-essex/). It is a parts swap that copies your files across.
+This isn't the same job as a [full clean because it won't turn on](/blog/laptop-not-turning-on-slow-fix/), and it's not automatically a reason to [buy new](/blog/laptop-repair-vs-replace-sustainability-essex/). It's a parts swap that copies your files across.
 
 ## Is it the hard drive, or is Windows just being slow?
 
 Three clues show up together:
 
 1. **The drive light, or the chassis, chatters** when you copy a folder or open Outlook. SSDs are silent. A mechanical disk moves its heads to find each file.
-2. **Task Manager → Performance → Disk** sits at 100% while the processor is almost idle. The disk is the queue, not a virus by default.
-3. **It was fast in 2019 and miserable in 2026** with the same apps. Windows, Chrome and Teams grew. The spinning disk did not.
+2. **In Task Manager, open Performance, then Disk.** If Disk sits at 100% while the processor is almost idle, the disk is the queue, not a virus by default.
+3. **It was fast in 2019 and miserable in 2026** with the same apps. Windows, Chrome and Teams grew. The spinning disk didn't.
 
-Heat can also make a machine feel slow. If the fans scream and it only crawls after twenty minutes, read the [overheating guide](/blog/fix-overheating-laptop-wickford-essex/) first. An SSD will not fix a laptop that is slowing itself down because it is too hot.
+Heat can also make a machine feel slow. If the fans scream and it only crawls after twenty minutes, read the [overheating guide](/blog/fix-overheating-laptop-wickford-essex/) first. An SSD won't fix a laptop that's slowing itself down because it's too hot.
 
 A machine that takes five minutes to boot and clicks or grinds as it does so is a dying disk, not a slow one. Stop using it and treat it as a [data recovery](/data-recovery/) problem. Copying a failing disk “to see if it helps” is how family photos disappear.
 
@@ -38,15 +38,15 @@ The usual job keeps the Windows you already have. We copy the existing drive —
 1. Copy your existing drive.
 2. Fit a 2.5" SATA SSD or an M.2 NVMe module, whichever the laptop can take.
 3. Put that copy on the new drive, give it the free space, and check that it boots.
-4. Check the old disk’s health first, so a dying drive is not copied onto a new one without you knowing.
+4. Check the old disk’s health first, so a dying drive isn't copied onto a new one without you knowing.
 
-How long it takes depends on the job and on the part. We agree the timing with you before we start. You keep your PIN, your Outlook profile, and the folder of PDFs you could not recreate.
+How long it takes depends on the job and on the part. We agree the timing with you before we start. You keep your PIN, your Outlook profile, and the folder of PDFs you couldn't recreate.
 
 ## SATA or NVMe: which drive will the laptop take?
 
-SATA and NVMe are two shapes of SSD. Thin 2016–2019 office laptops often only take a 2.5" SATA SSD. That is still five to ten times faster than a spinning disk for boot and documents. Newer machines and most custom PCs take M.2 NVMe, which is the better choice for photo work and games.
+SATA and NVMe are two shapes of SSD. Thin 2016–2019 office laptops often only take a 2.5" SATA SSD. That's still five to ten times faster than a spinning disk for boot and documents. Newer machines and most custom PCs take M.2 NVMe, which is the better choice for photo work and games.
 
-The motherboard decides the fastest drive it can use. A Gen5 stick in a Gen3 slot only runs at Gen3 speed, so we fit a drive that matches the slot you have. If you are building a new PC rather than upgrading a laptop, the [custom PC page](/custom-pc-builds/) is the cleaner route.
+The motherboard decides the fastest drive it can use. A Gen5 stick in a Gen3 slot only runs at Gen3 speed, so we fit a drive that matches the slot you have. If you're building a new PC rather than upgrading a laptop, the [custom PC page](/custom-pc-builds/) is the cleaner route.
 
 Capacity is the other honest conversation. 256GB felt huge in 2016. In 2026 it fills with Teams caches and phone backups. 500GB is the sensible floor for a home laptop, and 1TB if you keep raw photos or a Steam library on the machine.
 
@@ -54,19 +54,19 @@ Capacity is the other honest conversation. 256GB felt huge in 2016. In 2026 it f
 
 Not if the copy is done properly. Your Windows login, Outlook profiles and Steam library stay put. The old disk can be kept as a USB backup for a fortnight if you want a safety net. That copy is a snapshot of the laptop on the day we do it, not a backup habit. If the only photos live on that laptop, say so before we start.
 
-MacBooks are a different job. Storage that is soldered on Apple silicon cannot be swapped. Intel Macs with a removable SSD still can. That sits on the [MacBook speed guide](/blog/macbook-repair-wickford-speed-up-guide/). If you are not sure which Mac you have, [MacBook repair in Wickford](/macbook-repair-wickford/) is the right first stop.
+MacBooks are a different job. Storage that's soldered on Apple silicon can't be swapped. Intel Macs with a removable SSD still can. That sits on the [MacBook speed guide](/blog/macbook-repair-wickford-speed-up-guide/). If you're not sure which Mac you have, [MacBook repair in Wickford](/macbook-repair-wickford/) is the right first stop.
 
 ## Who is this for around Wickford?
 
-Free collection and return is for Wickford SS11/SS12. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/), [Brentwood](/brentwood-pc-repair/) and the rest of the usual map is by arrangement. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. School-run laptops, a dusty Dell in a van footwell, and small-office towers that still have a large storage disk next to a tiny boot SSD all belong here.
+Free collection and return is for Wickford SS11/SS12. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/), [Brentwood](/brentwood-pc-repair/) and the rest of the usual map is by arrangement. Drop-off at the workshop is arranged in advance. Call 07367 652987 or send a message and we'll confirm a time and the address. School-run laptops, a dusty Dell in a van footwell, and small-office towers that still have a large storage disk next to a tiny boot SSD all belong here.
 
-If the lid is cracked as well as slow, say so up front. That is a [screen job](/blog/cracked-laptop-screen-wickford-essex/) plus an SSD, not one mystery quote. Panel labour sits on the [Wickford screen repair](/laptop-screen-repair-wickford/) page.
+If the lid is cracked as well as slow, say so up front. That's a [screen job](/blog/cracked-laptop-screen-wickford-essex/) plus an SSD, not one mystery quote. Panel labour sits on the [Wickford screen repair](/laptop-screen-repair-wickford/) page.
 
 ## How do you book an SSD upgrade in Wickford?
 
-Diagnostics are free. If the laptop is not worth the upgrade, **No-Fix, No-Fee** applies, so you do not pay labour for a job we do not do.
+Diagnostics are free. If the laptop isn't worth the upgrade, **No-Fix, No-Fee** applies, so you don't pay labour for a job we don't do.
 
-Drop-off at **32 Glebe Road**, Wickford, is arranged in advance. Free collection and return is across Wickford (SS11 and SS12). Elsewhere, ask about collection - call 07367 652987 or send a message and we'll confirm a time and the address. Start from [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
+Free collection and return is for Wickford postcodes SS11 and SS12. Elsewhere, collection is by arrangement. Drop-off at the workshop is arranged in advance. Call 07367 652987 or send a message and we'll confirm a time and the address. Start from [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
 
 ## FAQ
 
@@ -88,7 +88,7 @@ No. The laptop decides whether it takes a 2.5" SATA drive or an M.2 NVMe drive, 
 
 ### Do I need a new laptop instead?
 
-Not if the rest of the machine is still fine and the slow part is the spinning disk. A cracked screen or a laptop that will not turn on is a different job, and we will say so before you pay for a drive.
+Not if the rest of the machine is still fine and the slow part is the spinning disk. A cracked screen or a laptop that won't turn on is a different job, and we'll say so before you pay for a drive.
 
 ### What if the old drive is clicking?
 

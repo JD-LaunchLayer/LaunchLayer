@@ -15,7 +15,7 @@ image_alt: Silver laptop with a misaligned lid sitting at an awkward angle on a 
 
 A hinge feels like a small problem until the lid drops sideways. Plastic around the screw bosses cracks, the bezel twists, and the display cable that runs through the hinge gets stretched. That's how a hinge repair becomes a [cracked screen](/blog/cracked-laptop-screen-wickford-essex/) as well.
 
-We repair hinges on school Chromebooks, HP and Dell office lids, and a lot of MacBooks that were fine until the lid was opened one-handed. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Elsewhere, collection is by arrangement. Call **[07367 652987](tel:07367652987)** and we'll confirm a time.
+We repair hinges on school Chromebooks, HP and Dell office lids, and a lot of MacBooks that were fine until the lid was opened one-handed. Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address. Free collection and return is across Wickford (SS11 and SS12). Elsewhere, collection is by arrangement.
 
 ## Stop doing these three things
 
@@ -47,8 +47,8 @@ A snapped school Chromebook hinge is usually still worth a look. Photos sent to 
 
 ## What we'll do instead
 
-We won't glue a screw boss and call it a repair, post a flapping lid back in a jiffy bag, or fit a new panel and ignore a hinge that will crack the new glass.
+We won't glue a screw boss and call it a repair, post a flapping lid back in a jiffy bag, or fit a new panel and ignore a hinge that'll crack the new glass.
 
 ## Book it before the lid folds
 
-Call **[07367 652987](tel:07367652987)**, or book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/). Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) or [Brentwood](/brentwood-pc-repair/) is by arrangement. Don't post a laptop with a flapping lid. No-Fix, No-Fee on labour if the chassis is beyond a sensible repair.
+Call **[07367 652987](tel:07367652987)**, or book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/). Drop-off at the workshop is arranged in advance. Call 07367 652987 or send a message and we'll confirm a time and the address. Free collection and return is across Wickford (SS11 and SS12). Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) or [Brentwood](/brentwood-pc-repair/) is by arrangement. Don't post a laptop with a flapping lid. No-Fix, No-Fee on labour if the chassis is beyond a sensible repair.
