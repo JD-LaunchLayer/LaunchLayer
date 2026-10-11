@@ -96,7 +96,7 @@ Diagnostics are free. You get a fixed quote before any part is ordered. A chargi
 
 Bring the charger you actually use, including the spare in the drawer if that's the one that sometimes works.
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Free collection and return is for Wickford SS11 and SS12 only. Elsewhere, collection is by arrangement.
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Free collection and return is across Wickford (SS11 and SS12). Elsewhere, collection is by arrangement.
 
 ## FAQ
 
@@ -122,7 +122,7 @@ Yes, if the laptop still runs while it's plugged in. You can keep working that w
 
 ### Do you collect the laptop?
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Free collection and return is for Wickford SS11 and SS12 only. Elsewhere, collection is by arrangement.
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Free collection and return is across Wickford (SS11 and SS12). Elsewhere, collection is by arrangement.
 
 ### Is a swollen battery dangerous?
 

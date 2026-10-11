@@ -2,7 +2,7 @@
 slug: laptop-screen-repair-cost-essex
 title: Laptop Screen Repair Cost in Essex (2026)
 headline: Laptop Screen Repair Cost in Essex (2026)
-description: Laptop screen repair cost in Essex is fitting from £99 plus the panel. Why two cracks aren't the same quote, and what we check first.
+description: Laptop screen repair cost in Essex is fitting at £99 plus the panel. Why two cracks aren't the same quote, and what we check first.
 date: 2026-10-21
 draft: true
 category: Useful Tips
@@ -13,7 +13,7 @@ og_image: /assets/meta/meta-laptop-screen-repair-cost-essex.jpg
 image_alt: Laptop on a white table with a damaged screen showing coloured lines and cracks, next to a yellow smartphone
 ---
 
-A **laptop screen repair cost in Essex** is two numbers, not one. **Fitting labour starts from £99. The panel is extra**, quoted for your exact model before we order it. It isn't one price that includes the glass. Figures like that get repeated online, and they aren't what this workshop charges.
+A **laptop screen repair cost in Essex** is two numbers, not one. **Fitting labour is £99. The panel is extra**, quoted for your exact model before we order it. It isn't one price that includes the glass. Figures like that get repeated online, and they aren't what this workshop charges.
 
 We fit panels at **32 Glebe Road** in Wickford. The money page for the job is [laptop screen repair Wickford](/laptop-screen-repair-wickford/). The town booking page is [Wickford laptop repair](/wickford-laptop-repair/). Every other starting price sits on [services and pricing](/services/).
 
@@ -21,7 +21,7 @@ If you've just cracked the lid and you want the "don't poke the glass" steps, th
 
 ## Labour and the panel are separate lines
 
-The £99 is the work: stripping the bezel, moving the hinges carefully, fitting the matching panel, and testing the lid through a full open and close. It's a **from £99** labour floor for Windows laptops and Chromebooks.
+The £99 is the work: stripping the bezel, moving the hinges carefully, fitting the matching panel, and testing the lid through a full open and close. It's a flat **£99** labour charge for Windows laptops and Chromebooks.
 
 The second line is the panel itself. We price that from the trade invoice for your model, and you see it before it's ordered. A basic HD panel and a touchscreen assembly don't cost the same, so we don't print a table of prices that pretends every lid is identical. If we don't have your exact part number, the honest answer is that we'll quote it.
 
@@ -45,7 +45,7 @@ Your files almost always stay where they're. A panel swap doesn't wipe the drive
 ## What you pay, and when
 
 1. **Free diagnostic.** We confirm it's the panel, a cable, or something else.
-2. **Fixed quote.** Labour from £99, plus the panel price for that model, before the part is ordered.
+2. **Fixed quote.** Labour is £99, plus the panel price for that model, before the part is ordered.
 3. **You approve it.** No panel gets ordered on a guess.
 4. **No-Fix, No-Fee** if the repair isn't worth doing. You don't pay labour to be told the board is finished.
 
@@ -53,6 +53,6 @@ The wider Essex menu, including the £99 screen line next to batteries and ports
 
 ## Book the quote
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Free collection and return is for Wickford SS11 and SS12 only. Elsewhere, collection is by arrangement. You can also start from [Wickford laptop repair](/wickford-laptop-repair/) and [laptop screen repair Wickford](/laptop-screen-repair-wickford/).
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Free collection and return is across Wickford (SS11 and SS12). Elsewhere, collection is by arrangement. You can also start from [Wickford laptop repair](/wickford-laptop-repair/) and [laptop screen repair Wickford](/laptop-screen-repair-wickford/).
 
 Bring the charger. Say the model if you know it. If the crack came from a spill rather than a knock, say that too. Liquid and glass are different jobs, and the [spill steps](/blog/spilled-water-on-laptop-fix-essex/) come first.

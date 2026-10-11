@@ -57,6 +57,6 @@ If the disk was already dying, an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/
 
 ## Book it
 
-Use [Wickford virus removal](/wickford-virus-removal/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**. Drop-off at the workshop is arranged in advance. Call 07367 652987 or send a message and we'll confirm a time and the address. Free collection and return is for Wickford SS11 and SS12 only. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) and [Chelmsford](/chelmsford-pc-repair/) is by arrangement. Tell us if any USB drives or network boxes were plugged in. They come too.
+Use [Wickford virus removal](/wickford-virus-removal/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**. Drop-off at the workshop is arranged in advance. Call 07367 652987 or send a message and we'll confirm a time and the address. Free collection and return is across Wickford (SS11 and SS12). Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) and [Chelmsford](/chelmsford-pc-repair/) is by arrangement. Tell us if any USB drives or network boxes were plugged in. They come too.
 
-No-Fix, No-Fee applies to a repair that can't be done. Ransomware is quoted as cleanup plus restore, because hoping isn't a line item.
+No-Fix, No-Fee applies to the labour on a repair that can't be done. Ransomware is quoted as cleanup plus restore, because hoping isn't a line item.

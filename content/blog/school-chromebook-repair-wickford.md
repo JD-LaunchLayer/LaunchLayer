@@ -51,4 +51,4 @@ Ask about free collection and return in Wickford (SS11 and SS12). Collection fro
 
 ## Drop-off
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. You can also book through [Wickford laptop repair](/wickford-laptop-repair/) or [screen repair](/laptop-screen-repair-wickford/). Bring the charger and, if you have it, the school asset-tag photo, so we can talk to their IT with the right serial. No-Fix, No-Fee if it isn't worth saving against the school's replacement figure.
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. You can also book through [Wickford laptop repair](/wickford-laptop-repair/) or [screen repair](/laptop-screen-repair-wickford/). Bring the charger and, if you have it, the school asset-tag photo, so we can talk to their IT with the right serial. No-Fix, No-Fee on labour if it isn't worth saving against the school's replacement figure.
