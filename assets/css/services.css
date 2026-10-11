@@ -245,6 +245,14 @@ body {
   color: var(--color-ink);
 }
 .row-chev { flex: none; color: var(--color-muted); }
+.row-note {
+  margin: 0;
+  padding: 0 16px 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--color-body);
+}
 
 /* ---------- Bottom CTA ---------- */
 .llp-cta {
@@ -345,6 +353,7 @@ body {
   .row-title { flex: 1 1 100%; }
   .row-price { text-align: left; color: var(--color-accent-deep); }
   .row-chev { position: absolute; right: 16px; top: 50%; margin-top: -8px; }
+  .row-note { padding-right: 44px; }
 }
 
 /* ==========================================================================
