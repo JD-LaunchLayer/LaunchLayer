@@ -18,12 +18,12 @@ A backpack zip, a kitchen worktop, a schoolbag on the C2C. One knock is all it t
 
 A cracked laptop screen looks catastrophic. In most cases it is not. Your files usually sit on a drive that has nothing to do with the panel, and a proper replacement is almost always cheaper than a new machine. In Wickford we replace cracked, bleeding and flickering screens for homes and businesses across South Essex every week. Here is what to do next.
 
-> **DO THIS FIRST**
+> Before you do anything else:
 >
-> - **DO NOT** press, poke, or “flex” the glass to see if it still works. That turns a small LCD leak into a full black-out.
-> - **DO NOT** peel shattered glass off a MacBook or touchscreen. Loose shards cut ribbon cables and fingers.
-> - **DO** shut the lid gently if the glass is loose, and stop using the laptop on your lap until the panel is secure.
-> - **DO** plug in an external monitor if you still need files, emails, or school work today. The computer itself is usually fine.
+> - Don't press, poke, or flex the glass to see if it still works. That turns a small LCD leak into a full black-out.
+> - Don't peel shattered glass off a MacBook or touchscreen. Loose shards cut ribbon cables and fingers.
+> - Shut the lid gently if the glass is loose, and stop using the laptop on your lap until the panel is secure.
+> - Plug in an external monitor if you still need files, emails, or school work today. The computer itself is usually fine.
 
 ## What kind of screen damage are you looking at?
 
@@ -53,7 +53,7 @@ High-street advice is often “it is not worth fixing.” That is usually becaus
 
 - **Windows and Chromebook screens:** a flat £99 fitting labour plus the exact trade price of your matching panel.
 - **MacBook displays:** a flat £85 fitting labour plus the panel. Apple lids are a different assembly, which is why the labour is priced separately.
-- **Turnaround:** most jobs are 1 to 3 working days, depending on how quickly the UK supplier can ship your exact model.
+- Most of these jobs are back in 1 to 3 working days, depending on how quickly the UK supplier can ship your exact model. New parts fitted on a screen repair carry a 12-month warranty.
 
 If the laptop was already slow, overheating, or on a dying battery, we can talk about combining the screen with a speed refresh. A cracked panel on an otherwise decent machine is one of the highest-value repairs we do. You keep your files, your licences, and a machine you already know.
 
@@ -65,7 +65,7 @@ We fit an exact-match, OEM-spec panel and test the lid through a full open-and-c
 
 ## Where do you get a cracked screen repaired in Wickford?
 
-Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Free collection and return is for Wickford postcodes SS11 and SS12. Elsewhere, collection is by arrangement - call 07367 652987. Diagnostics are free. Pricing and brands are on the [Wickford laptop screen repair](/laptop-screen-repair-wickford/) page. You can also start from [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
+Drop-off at the workshop is arranged in advance. Call 07367 652987 or send a message and we'll confirm a time and the address. Free collection and return is for Wickford postcodes SS11 and SS12. Elsewhere, collection is by arrangement. Diagnostics are free. Pricing and brands are on the [Wickford laptop screen repair](/laptop-screen-repair-wickford/) page. You can also start from [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
 
 If the crack happened because of a spill rather than a knock, follow the [liquid-damage steps](/blog/spilled-water-on-laptop-fix-essex/) instead. Liquid and broken glass are different jobs.
 

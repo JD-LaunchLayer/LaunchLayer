@@ -17,27 +17,27 @@ People ask what a **laptop repair cost in Essex** actually is, then get a forum 
 
 The order of the job doesn't change with the postcode. **Diagnostics are free.** We find the fault, then you get a **fixed quote** before any work or any part. If a repair isn't worth doing, you don't pay labour for the bad news. That's No-Fix, No-Fee. Parts are quoted before they're ordered. A "from" figure is the labour floor, not a guess at your panel or your battery.
 
-The workshop for this list is [Wickford laptop repair](/wickford-laptop-repair/). Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Collection from other South Essex towns is by arrangement. Call **[07367 652987](tel:07367652987)** and we'll confirm a time.
+The workshop for this list is [Wickford laptop repair](/wickford-laptop-repair/). Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address. Free collection and return is for Wickford SS11 and SS12 only. Collection from other South Essex towns is by arrangement.
 
 ## Starting prices
 
-- **Diagnostics — free.** You aren't billed for being told what's wrong.
-- **Hardware and general repair — from £55.** The floor for a straightforward hardware job once we know the fault.
-- **Battery — from £49 plus the part.** Labour starts there. The cell itself is quoted for your model before it's ordered.
-- **DC jack / charging port — £65.** Cable versus brick versus socket is the [plugged in not charging guide](/blog/laptop-battery-not-charging-wickford/).
-- **Screen labour — from £99 plus the panel.** The panel is a separate line, because a Chromebook panel and a touchscreen panel aren't the same part. How that quote is built is on [laptop screen repair Wickford](/laptop-screen-repair-wickford/).
-- **Hinge and lid — from £75.**
-- **Keyboard — from £55 plus the part.**
-- **SSD or RAM upgrade — from £65 plus parts.**
-- **MacBook — from £85 plus parts or the panel.**
-- **50-point MOT — £60.** That's the fixed health check, not the £45 software fix, and not a hardware repair hiding inside the same fee.
-- **General software fix — £45 for up to 60 minutes.**
-- **Virus and malware clean-up — £69.** That's the fixed clean-up on [services and pricing](/services/). It isn't the software fix, and it isn't a ransomware job.
-- **Fresh Windows install — £59.**
-- **Windows 11 upgrade — from £69.**
-- **Liquid damage — from £95.**
-- **Insurance damage report — £40.**
-- **Home visits — free in Wickford (SS11 and SS12), £49 elsewhere in South Essex, including the first hour.**
+- Diagnostics are free. You aren't billed for being told what's wrong.
+- Hardware and general repair starts from £55. That is the floor for a straightforward hardware job once we know the fault.
+- Battery labour starts from £49 plus the part. The cell itself is quoted for your model before it's ordered.
+- A DC jack or charging port is £65. How to tell a cable from a brick from a socket is in the [plugged in not charging guide](/blog/laptop-battery-not-charging-wickford/).
+- Screen labour starts from £99 plus the panel. The panel is a separate line, because a Chromebook panel and a touchscreen panel aren't the same part. How that quote is built is on [laptop screen repair Wickford](/laptop-screen-repair-wickford/).
+- Hinge and lid work starts from £75.
+- Keyboard labour starts from £55 plus the part.
+- An SSD or RAM upgrade starts from £65 plus the parts.
+- MacBook repairs start from £85 plus the parts or the panel.
+- The 50-point MOT is £60. That's the fixed health check, not the £45 software fix, and not a hardware repair hiding inside the same fee.
+- A general software fix is £45 for up to 60 minutes.
+- Virus, malware and scam removal is £69. That's the fixed clean-up on [services and pricing](/services/). It isn't the software fix, and it isn't ransomware data recovery.
+- A fresh Windows install is £59.
+- A Windows 11 upgrade starts from £69.
+- Liquid damage starts from £95.
+- An insurance damage report is £40.
+- Home visits are free in Wickford (SS11 and SS12), and £49 elsewhere in South Essex, including the first hour.
 
 Data recovery is quoted on its own. The full menu is on [services and pricing](/services/).
 

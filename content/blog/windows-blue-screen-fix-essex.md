@@ -47,7 +47,7 @@ We keep a known-good RAM tester and a disk copier on the Wickford bench, so we a
 
 ## When a blue screen is really a scam leftover
 
-Some "my PC keeps crashing" jobs are leftover remote-access tools from a fake refund call. If you had a pop-up that told you to ring a number, read the [phishing first-hour guide](/blog/clicked-phishing-link-emergency-guide/) and the [scam overview](/blog/scam-awareness/) before we talk hardware. Removing "support" software you never asked for is step one. Event Viewer is step two.
+Some jobs people describe as the PC keeps crashing are leftover remote-access tools from a fake refund call. If you had a pop-up that told you to ring a number, read the [phishing first-hour guide](/blog/clicked-phishing-link-emergency-guide/) and the [scam overview](/blog/scam-awareness/) before we talk hardware. Removing "support" software you never asked for is step one. Event Viewer is step two.
 
 ## What we'll do instead
 
@@ -55,6 +55,6 @@ A suspect disk gets copied before anyone resets Windows. A reset can overwrite t
 
 ## Arrange a drop-off
 
-Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) and [Chelmsford](/chelmsford-pc-repair/) is by arrangement. Call **[07367 652987](tel:07367652987)**, or book through [Wickford PC repair](/wickford-pc-repair/) or [Contact](/contact/), and we'll confirm a time.
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Free collection and return is for Wickford SS11 and SS12 only. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) and [Chelmsford](/chelmsford-pc-repair/) is by arrangement. You can also book through [Wickford PC repair](/wickford-pc-repair/).
 
 If the crash started after a spill, say so. Liquid plus random reboots is the [spill protocol](/blog/spilled-water-on-laptop-fix-essex/), not a driver update. No-Fix, No-Fee: if it's a board that isn't worth saving, you hear that before you pay labour.
