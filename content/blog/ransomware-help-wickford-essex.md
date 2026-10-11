@@ -15,7 +15,7 @@ image_alt: Laptop on a desk at night with a padlock resting on the keyboard
 
 If every document has a strange extension, a notepad file on the desktop demands Bitcoin, or the wallpaper has been replaced with a countdown, you're dealing with ransomware. It isn't a "virus scan will fix it" pop-up. The files are encrypted.
 
-This isn't the fixed-price virus clean-up at £69. Ransomware is quoted as cleanup plus restore once we've seen it.
+Virus, malware and scam removal is a fixed £69. That price is the clean-up, not ransomware data recovery. Ransomware is quoted on its own, as cleanup plus restore, once we've seen the machine.
 
 This is different from a [phishing link you've just clicked](/blog/clicked-phishing-link-emergency-guide/) (act in minutes) and different from a [refund scam call](/blog/refund-scam-protection-billericay-brentwood/). The damage is already on the disk. What you do next decides whether we restore from backup or talk about [data recovery](/data-recovery/).
 
@@ -57,6 +57,6 @@ If the disk was already dying, an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/
 
 ## Book it
 
-Use [Wickford virus removal](/wickford-virus-removal/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) and [Chelmsford](/chelmsford-pc-repair/) is by arrangement. Tell us if any USB drives or network boxes were plugged in. They come too.
+Use [Wickford virus removal](/wickford-virus-removal/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**. Drop-off at the workshop is arranged in advance. Call 07367 652987 or send a message and we'll confirm a time and the address. Free collection and return is for Wickford SS11 and SS12 only. Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) and [Chelmsford](/chelmsford-pc-repair/) is by arrangement. Tell us if any USB drives or network boxes were plugged in. They come too.
 
 No-Fix, No-Fee applies to a repair that can't be done. Ransomware is quoted as cleanup plus restore, because hoping isn't a line item.
