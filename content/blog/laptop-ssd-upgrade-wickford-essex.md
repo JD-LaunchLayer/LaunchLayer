@@ -27,7 +27,7 @@ Three clues tend to show up together:
 2. **In Task Manager, open Performance, then Disk.** If Disk sits at 100% while the processor is almost idle, the disk is likely the bottleneck. That alone doesn't mean a virus.
 3. **It was fast in 2019 and miserable in 2026** with the same apps. Windows, Chrome and Teams have grown, and the spinning disk hasn't.
 
-Heat can also make a machine feel slow. If the fans roar and it only crawls after twenty minutes, read the [overheating guide](/blog/fix-overheating-laptop-wickford-essex/) first, because an SSD won't fix a laptop that's slowing itself down to stay cool.
+Heat can also make a machine feel slow. If the fans roar and it only crawls after twenty minutes, read the [overheating guide](/blog/laptop-fan-noise-fix-essex/) first, because an SSD won't fix a laptop that's slowing itself down to stay cool.
 
 A machine that takes five minutes to boot and clicks or grinds while it does can have a failing disk, not just a slow one. Stop using it and treat it as a [data recovery](/data-recovery/) problem. We'll assess the drive before any copy is attempted, and explain the costs before work starts.
 

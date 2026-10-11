@@ -45,6 +45,9 @@ DEAD_BLOG_SLUGS = {
     # Merged into laptop-battery-not-charging-wickford. The HTML folder is
     # deleted and _redirects 301s the old URL.
     "laptop-charger-not-working-dc-jack",
+    # Retired in favour of laptop-fan-noise-fix-essex. The HTML folder is
+    # deleted and _redirects 301s every variant in one hop.
+    "fix-overheating-laptop-wickford-essex",
 }
 FEED_START = "<!-- ll-md-feed:start -->"
 FEED_END = "<!-- ll-md-feed:end -->"

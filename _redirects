@@ -40,7 +40,10 @@ https://www.launchlayer.uk/blog/building-a-custom-pc-inside-a-thermaltake-perfor
 https://www.launchlayer.uk/blog/clicked-phishing-link-emergency-guide  https://launchlayer.uk/blog/clicked-phishing-link-emergency-guide/  301!
 https://www.launchlayer.uk/blog/cracked-laptop-screen-wickford-essex  https://launchlayer.uk/blog/cracked-laptop-screen-wickford-essex/  301!
 https://www.launchlayer.uk/blog/data-recovery-services-wickford-essex  https://launchlayer.uk/blog/data-recovery-services-wickford-essex/  301!
-https://www.launchlayer.uk/blog/fix-overheating-laptop-wickford-essex  https://launchlayer.uk/blog/fix-overheating-laptop-wickford-essex/  301!
+# Retired post: www with or without a slash goes straight to the fan-noise
+# canonical. A www-to-apex hop would land on the old path and need a second 301.
+https://www.launchlayer.uk/blog/fix-overheating-laptop-wickford-essex  https://launchlayer.uk/blog/laptop-fan-noise-fix-essex/  301!
+https://www.launchlayer.uk/blog/fix-overheating-laptop-wickford-essex/  https://launchlayer.uk/blog/laptop-fan-noise-fix-essex/  301!
 https://www.launchlayer.uk/blog/fix-pc-game-stuttering-fps-drops-essex  https://launchlayer.uk/blog/fix-pc-game-stuttering-fps-drops-essex/  301!
 https://www.launchlayer.uk/blog/fix-wifi-dead-zones-wickford-essex  https://launchlayer.uk/blog/fix-wifi-dead-zones-wickford-essex/  301!
 https://www.launchlayer.uk/blog/introducing-rail-sign-for-rail-shine  https://launchlayer.uk/blog/introducing-rail-sign-for-rail-shine/  301!
@@ -202,8 +205,13 @@ https://www.launchlayer.uk/wickford-virus-removal  https://launchlayer.uk/wickfo
 /services/laptop-repair/pricing/     /services/  301!
 
 # Old Squarespace blog slugs still seen in Search Console.
-/blog/why-your-laptop-is-loud-hot-or-overheating-and-how-to-fix-it-oPwe3      /blog/fix-overheating-laptop-wickford-essex/  301!
-/blog/why-your-laptop-is-loud-hot-or-overheating-and-how-to-fix-it-oPwe3/     /blog/fix-overheating-laptop-wickford-essex/  301!
+# The overheating post is retired. Apex with or without a slash, and the old
+# Squarespace slug, each 301 straight to the fan-noise canonical. The www
+# rules at the top do the same, so none of these chain.
+/blog/fix-overheating-laptop-wickford-essex                                  /blog/laptop-fan-noise-fix-essex/  301!
+/blog/fix-overheating-laptop-wickford-essex/                                 /blog/laptop-fan-noise-fix-essex/  301!
+/blog/why-your-laptop-is-loud-hot-or-overheating-and-how-to-fix-it-oPwe3      /blog/laptop-fan-noise-fix-essex/  301!
+/blog/why-your-laptop-is-loud-hot-or-overheating-and-how-to-fix-it-oPwe3/     /blog/laptop-fan-noise-fix-essex/  301!
 /blog/what-parents-need-to-know-about-roblox-minecraft-amp-fortnite           /blog/what-parents-really-need-to-know-about-roblox-minecraft-amp-fortnite/  301!
 /blog/what-parents-need-to-know-about-roblox-minecraft-amp-fortnite/          /blog/what-parents-really-need-to-know-about-roblox-minecraft-amp-fortnite/  301!
 

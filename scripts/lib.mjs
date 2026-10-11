@@ -65,7 +65,7 @@ export async function open(browser, o) {
   if (o.settle !== false) await settle(page);
   return { ctx, page, m };
 }
-export const PAGES = ['/', '/contact/', '/wickford-laptop-repair/', '/blog/fix-overheating-laptop-wickford-essex/', '/blog/cracked-laptop-screen-wickford-essex/', '/faqs/', '/reviews/', '/privacy-policy/', '/services/'];
+export const PAGES = ['/', '/contact/', '/wickford-laptop-repair/', '/blog/laptop-fan-noise-fix-essex/', '/blog/cracked-laptop-screen-wickford-essex/', '/faqs/', '/reviews/', '/privacy-policy/', '/services/'];
 export const slug = p => (p === '/' ? 'home' : p.replace(/^\/|\/$/g, '').replace(/[\/+]/g, '_'));
 
 // Instant scrolling for measurement (the site sets smooth scrolling) and one pass down the page so
