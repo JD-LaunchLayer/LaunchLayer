@@ -13,42 +13,45 @@ og_image: /assets/meta/meta-school-chromebook-wickford.jpg
 image_alt: School-style laptop sliding out of a backpack on a kitchen table
 ---
 
-School Chromebooks come in with cracked lids, bent hinges and spills from a bottle in the bag. One hinge, one locker door, one water bottle.
 
-Schools often invoice parents for a "total loss". Sometimes that's fair. Sometimes the machine needs a screen or a hinge, and the invoice is the price of a new unit. We'd rather you got a second opinion from Glebe Road before you pay the full replacement figure.
+School Chromebooks come in with cracked lids, bent hinges and spills from a water bottle in the bag.
+
+Sometimes the machine only needs a screen or a hinge. If the school has quoted for a replacement, check whether an independent repair is allowed before paying or booking. If it is, a second opinion from us on Glebe Road can help you compare.
 
 ## Check the school policy before you panic
 
-Some Essex schools own the device and recharge damage. Some are parent-owned and school-managed. If it's a managed Chromebook, a repair that wipes the device still enrols again on the school domain. Your child's files in Google Drive are in the cloud, not on the cracked lid. That's the good news.
+Check the device agreement to see who owns the Chromebook, who pays for damage and who can authorise repairs. If it isn't clear, ask the school's IT contact.
 
-Don't factory-reset a school-managed Chromebook "to see if it helps" if you don't have the enrolment details. You can lock yourself out of a machine the school then has to recover.
+Anything your child saved to Google Drive and synced is in the cloud, not on the cracked lid. Files kept only in the Downloads folder, or work done offline that never synced, live on the device and can be lost if it's wiped.
 
-Take a photo of the asset tag and the serial before you travel. School IT would rather have a serial in a message than a mystery grey slab.
+Please do not factory-reset a school-managed Chromebook "to see if it helps". Whether it re-enrols cleanly afterwards depends on how the school has set up its management, and you could end up locked out of a device the school then has to recover.
+
+Before you set off, take a photo of the asset tag and the serial number. The asset tag is the school's own ID sticker, so it helps their IT team match the repair to the right device on their records.
 
 ## The three faults we see most on school Chromebooks
 
-1. **Screens.** A backpack zip, another laptop in the same bag, a drop off the kitchen side. Same rules as the [cracked screen guide](/blog/cracked-laptop-screen-wickford-essex/). Files are almost always fine. Windows and Chromebook panel fitting is **£99 labour** plus the matching panel on the [Wickford screen page](/laptop-screen-repair-wickford/).
-2. **Hinges.** Daily open and close on cheap plastic. Stop using it. [Hinge repair](/wickford-laptop-repair/) starts from £75.
-3. **Spills.** A bottle in the bag. **Power off, don't charge it, and don't put it on a radiator.** [Spill steps](/blog/spilled-water-on-laptop-fix-essex/).
+1. **Screens.** A backpack zip, another laptop in the same bag, or a drop off the kitchen worktop. The [cracked screen guide](/blog/cracked-laptop-screen-wickford-essex/) applies here too. Panel fitting for Windows laptops and Chromebooks is **£99 labour** plus the matching panel, as on the [Wickford screen page](/laptop-screen-repair-wickford/).
+2. **Hinges.** Daily opening and closing wears out cheap plastic, so stop using it once the hinge goes. [Hinge repair](/wickford-laptop-repair/) starts from £75.
+3. **Spills.** Usually a bottle leaking in the bag. **Power it off, do not charge it, and do not put it on a radiator.** Then follow the [spill steps](/blog/spilled-water-on-laptop-fix-essex/).
 
-Batteries swell on older education stock too. If the trackpad is lifting, that's the [battery safety post](/blog/laptop-battery-replacement-wickford/).
+Batteries in older Chromebooks can swell too. If the trackpad is lifting, stop using it and read the [battery safety post](/blog/laptop-battery-replacement-wickford/).
 
 ## Will Google Classroom still work?
 
-Yes, if we keep or re-enrol the device. A screen or hinge swap doesn't need a wipe. A board replacement might. We'll flag that before we start, so you can warn the school's IT person.
+Usually, yes. A screen or hinge swap doesn't need a wipe, so the device should stay enrolled. A main board replacement might need re-enrolment, and whether that's straightforward depends on the school's management setup, so we'll tell you before we start and you can check with their IT contact.
 
-Charging a 45W Chromebook from a phone brick is a slow [charging fault](/blog/laptop-battery-not-charging-wickford/). Use the original supply if you still have it.
+Charging a 45W Chromebook from an underpowered charger is slow and can look like a [charging fault](/blog/laptop-battery-not-charging-wickford/), so use the original charger if you still have it.
 
-A machine that's merely slow, not broken, is rarely a Chromebook storage job. ChromeOS lives in the cloud. If it's a Windows school laptop that people call "the Chromebook", that's a different repair, often an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/).
+If a Chromebook is just slow, many school tasks use cloud services, so we'd check what's causing the slowdown before suggesting an upgrade. A Windows school laptop that gets called "the Chromebook" is a different repair, and that's often an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/).
 
 ## Worth repairing vs the school invoice
 
-If the invoice is close to a new Chromebook and the chassis is in three pieces, replacement can be the saner choice. If it's a cracked panel on an otherwise straight lid, a local repair is usually the cheaper and less wasteful option. That's the same argument as [repair vs replace](/blog/laptop-repair-vs-replace-sustainability-essex/).
+If the invoice is close to the price of a new Chromebook and the case is in three pieces, replacing it can be the sensible choice. A cracked panel on an otherwise straight lid is usually cheaper and less wasteful to repair locally, for the reasons in [repair vs replace](/blog/laptop-repair-vs-replace-sustainability-essex/).
 
-We won't glue a hinge, wipe a managed device without telling you, or quote a MacBook panel on a Lenovo education lid.
-
-Ask about free collection and return in Wickford (SS11 and SS12). Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) and [Rayleigh](/rayleigh-laptop-service/) is by arrangement. Rayleigh and Southend screen pages are there if you're further down the line: [Rayleigh](/rayleigh-laptop-service/#screen-repair), [Southend](/southend-pc-repair/#screen-repair).
+We'll arrange safe collection or return with you. Collection and return is free in Wickford SS11/SS12; elsewhere, please ask. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) or [Rayleigh](/rayleigh-laptop-service/), you can also drop it at the workshop by arrangement. If it's mainly the screen, the screen sections for [Rayleigh](/rayleigh-laptop-service/#screen-repair) and [Southend](/southend-pc-repair/#screen-repair) cover that job.
 
 ## Drop-off
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. You can also book through [Wickford laptop repair](/wickford-laptop-repair/) or [screen repair](/laptop-screen-repair-wickford/). Bring the charger and, if you have it, the school asset-tag photo, so we can talk to their IT with the right serial. No-Fix, No-Fee on labour if it isn't worth saving against the school's replacement figure.
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/), or book through [Wickford laptop repair](/wickford-laptop-repair/) or [screen repair](/laptop-screen-repair-wickford/), and we'll confirm a time and the address.
+
+Bring the charger and the asset-tag photo, and let us know if the school has said anything about who can repair it. Diagnostics are free, and if it isn't worth saving, No-Fix, No-Fee means you don't pay for labour.
