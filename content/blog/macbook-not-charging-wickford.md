@@ -22,7 +22,7 @@ If you'd rather we look at it, call **[07367 652987](tel:07367652987)** or book 
 Try one step at a time. Stop when the battery starts to fill.
 
 1. **Read the battery menu.** "Charging On Hold", or a percentage sitting around 80%, is often Optimised Battery Charging or a Charge Limit. Choose "Charge to Full Now" if you need it full today.
-2. **Match the wattage.** If the menu says "Not Charging" and the Mac still runs, the adapter may be too small. Use one of at least the wattage that came with the Mac.
+2. **Check the adapter.** If the menu says "Not Charging" and the Mac still runs, the adapter may be underpowered. Use a compatible adapter of at least the wattage that came with the Mac.
 3. **Swap the cable and the port.** Some USB-C cables carry data only and won't charge. Try another charging cable, then another port.
 4. **Look at the MagSafe light,** on a Mac that has one. Amber means charging or on hold. Green means full.
 
@@ -30,31 +30,31 @@ Try one step at a time. Stop when the battery starts to fill.
 
 Open the battery menu. "Charging On Hold" means Optimised Battery Charging is waiting. A Charge Limit can hold charging around 80% as well. When you need the battery full, choose "Charge to Full Now" from that menu.
 
-Battery health management can pause charging until the battery drops to 93% or lower. That pause is the Mac looking after the pack. It isn't a failed battery.
+Battery health management can also pause charging until the battery drops to 93% or lower. That pause is the Mac looking after the battery, not a sign it has failed.
 
 ## Not Charging on a low-wattage adapter
 
-"Not Charging" can also mean the adapter's too small. The Mac runs on the power it's getting, and the battery doesn't fill. Use an adapter of at least the wattage of the one that came with the Mac. A phone charger that happens to fit is a common cause of this.
+"Not Charging" can also mean the adapter is underpowered for the Mac. The Mac runs on the power it's getting, but there's nothing spare to fill the battery. Use a compatible adapter of at least the wattage of the one that came with the Mac. A smaller USB-C charger that happens to fit, such as one meant for a phone, can cause this.
 
 ## What the MagSafe 3 light means
 
-On a Mac with MagSafe 3, the light on the connector is amber while charging's underway or charging is on hold. It turns green when the battery's fully charged. Amber with the percentage sitting still is often the hold above, not a broken port.
+On a Mac with MagSafe 3, the light on the connector is amber while charging's underway or charging is on hold. It turns green when the battery's fully charged. Amber with the percentage sitting still is often the charging hold described above, rather than a port fault.
 
 MagSafe 3 is on MacBook Pro models introduced in 2021 or later, except the 13-inch M2 MacBook Pro from 2022, and on MacBook Air models introduced in 2022 or later. Earlier MacBooks use an older MagSafe, or USB-C only. A MagSafe 3 lead doesn't fit those older chargers.
 
-The Mac charges from one port at a time. A second plug, in MagSafe or in USB-C, doesn't make it charge faster. It uses the source that provides the most power.
+The Mac charges from one port at a time, so a second plug, MagSafe or USB-C, won't make it charge faster. It uses whichever source provides the most power.
 
 ## USB-C cables that won't charge
 
-Some USB-C cables carry data only and won't charge the Mac. If the Mac doesn't see the adapter, try another charging cable and another port. Use a cable that's meant to charge, with an adapter of at least the original wattage.
+If the Mac doesn't see the adapter, try another charging cable and another port. Use a cable that's meant to charge, with an adapter of at least the original wattage.
 
 ## Service Recommended
 
-Open Battery settings and look at the battery condition. "Service Recommended" means the battery needs replacing. Check the cable and the adapter first, so a worn pack isn't blamed for a lead that never charged.
+Open Battery settings and look at the battery condition. "Service Recommended" means the battery isn't holding charge the way it did when new, and it's worth having it checked with a view to replacement. Check the cable and the adapter first, so a worn battery isn't blamed for a lead that never charged.
 
 ## What a repair costs
 
-MacBook repairs start from £85 plus parts or the panel. You get a fixed quote for your Mac before any part is ordered. Diagnostics are free. **No-Fix, No-Fee** applies to the labour if we can't fix it. A new battery or charging port we fit carries a 12-month warranty. That warranty is for those new parts, on battery and charging-port jobs.
+MacBook repairs start from £85 plus parts or the panel. A MacBook charging port is £65 + parts where the port is removable or on a separate board; soldered ports are quoted after diagnosis. Diagnostics are free, you get a fixed quote before any part is ordered, and **No-Fix, No-Fee** applies, so if we can't fix it you don't pay for labour. A new battery or charging port we fit carries a 12-month warranty, which covers those new parts on battery and charging-port jobs.
 
 ## If it's a Windows laptop
 
@@ -62,15 +62,15 @@ A Windows laptop that won't charge, whether the power isn't getting in or the ba
 
 ## What to bring
 
-Bring the adapter and the cable you actually use, including a spare lead if that's the one that sometimes works.
+Bring the adapter and the cable you actually use, including a spare lead if that's the one that sometimes works, so we can compare them with a known-good compatible charger.
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Free collection and return is across Wickford (SS11 and SS12). Elsewhere, collection is by arrangement. Diagnostics are free. You get a fixed quote before any part is ordered.
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return is free in Wickford SS11/SS12; elsewhere, please ask.
 
 ## FAQ
 
 ### Why does my MacBook say Not Charging?
 
-It can be Optimised Battery Charging or a Charge Limit holding the battery around 80%, an adapter below the original wattage, or a USB-C cable that doesn't charge. Check the battery menu, then the adapter and the cable.
+It can be Optimised Battery Charging or a Charge Limit holding the battery around 80%, an underpowered adapter, or a USB-C cable that doesn't charge. Check the battery menu, then the adapter and the cable.
 
 ### What does an amber MagSafe light mean?
 
@@ -78,11 +78,11 @@ Amber means charging's underway, or charging is on hold. Green means the battery
 
 ### How long does a MacBook repair take?
 
-A battery or charging-port job typically takes 1–3 working days. You get the quote before any part is ordered. New parts we fit on those jobs carry a 12-month warranty.
+A battery or charging-port job typically takes 1–3 working days. New parts we fit on those jobs carry a 12-month warranty.
 
 ### Do you collect the MacBook?
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Free collection and return is across Wickford (SS11 and SS12). Elsewhere, collection is by arrangement.
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return is free in Wickford SS11/SS12; elsewhere, please ask.
 
 ### What if you can't fix it?
 

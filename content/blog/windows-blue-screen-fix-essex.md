@@ -13,48 +13,48 @@ og_image: /assets/meta/meta-windows-blue-screen-essex.jpg
 image_alt: Laptop on a desk showing a blue crash screen in a dim home office
 ---
 
-A blue screen looks like the machine has died. Most of the time it hasn't. Windows hit a fault it couldn't recover from, wrote a crash dump, and restarted. The useful bit is **why**, and whether your files are still on the disk.
+A blue screen looks like the machine has died, but most of the time it hasn't. Windows hit a fault it couldn't recover from, saved a crash report (a "dump"), and restarted. What matters is **why**, and whether your files are still safe on the disk.
 
-We see blue screens from Wickford homes and small offices. The pattern is almost never "Windows is broken, buy a new PC". It's a driver, a dying disk, bad RAM, heat, or a half-finished update.
+We see blue screens from Wickford homes and small offices, and the answer is almost never "Windows is broken, buy a new PC". The usual suspects are a driver, a failing disk, faulty RAM, heat, or a half-finished update.
 
 ## Do this before you start clicking Reset
 
 1. **Let it reboot once.** If it comes back, you still have a machine we can diagnose.
-2. **Photograph the QR or stop code** if it sits long enough. `KERNEL_DATA_INPAGE_ERROR`, `IRQL_NOT_LESS_OR_EQUAL` and `CRITICAL_PROCESS_DIED` point at different hardware.
-3. **Don't run a random "repair" program** from the first advert. That's how a crash becomes a [malware cleanup](/wickford-virus-removal/).
-4. If it loops and never reaches the desktop, stop power-cycling it over and over. That's how a weak disk gets worse.
+2. **Photograph the QR or stop code** if it stays on screen long enough. `KERNEL_DATA_INPAGE_ERROR`, `IRQL_NOT_LESS_OR_EQUAL` and `CRITICAL_PROCESS_DIED` tend to point in different directions.
+3. **Do not run a random "repair" program** from the first advert you see. That's how a crash turns into a [malware cleanup](/wickford-virus-removal/).
+4. **If it loops and never reaches the desktop, stop power-cycling it.** Repeated restarts can make a weak disk worse.
 
-If the PC is also clicking or grinding, stop here and read the [clicking hard drive guide](/blog/clicking-hard-drive-essex/). Keeping it running makes the files harder to save. The [data recovery page](/data-recovery/) and the [data recovery blog](/blog/data-recovery-services-wickford-essex/) are the next step if the photos matter.
+If the PC is also clicking or grinding, stop here and read the [clicking hard drive guide](/blog/clicking-hard-drive-essex/), because keeping it running can make the files harder to save. If the photos matter, the [data recovery page](/data-recovery/) and the [data recovery blog](/blog/data-recovery-services-wickford-essex/) explain what happens next, including how we assess the drive and explain costs before any work.
 
 ## What the common stop codes mean on the bench
 
-We're paraphrasing, not quoting a Microsoft manual:
+Our plain-English summaries, not Microsoft's wording. A stop code is a clue, not a verdict:
 
-- **DISK / INPAGE errors.** Windows couldn't read a page from storage. A failing hard drive, a SATA cable in a dusty tower, or an SSD that's run out of spare blocks.
-- **MEMORY_MANAGEMENT / PAGE_FAULT.** RAM. A cheap stick, a machine that sat in a hot conservatory, or a laptop that was dropped.
-- **DRIVER / VIDEO TDR.** A graphics driver, or a GPU that's overheating. If you game, this sits next to the [stuttering guide](/blog/fix-pc-game-stuttering-fps-drops-essex/).
-- **CRITICAL_PROCESS_DIED after an update.** A botched Windows 11 feature update, often on a machine that barely passed the checker. That's a backup-first job, not a second attempt at Setup.
+- **DISK / INPAGE errors.** Windows couldn't read data it needed from storage. Possible causes include a failing hard drive, a connection problem inside the machine, or a worn-out SSD.
+- **MEMORY_MANAGEMENT / PAGE_FAULT.** Often linked to RAM, the computer's working memory.
+- **DRIVER / VIDEO TDR.** Often a graphics driver, or a graphics card that's overheating. If you game, this sits alongside the [stuttering guide](/blog/fix-pc-game-stuttering-fps-drops-essex/).
+- **CRITICAL_PROCESS_DIED after an update.** This can follow a Windows 11 feature update that didn't finish cleanly. Treat it as backup-first, not a second go at Setup.
 
-Heat still matters. A tower full of pet hair will blue-screen under a video call as readily as it'll in a game. Pair this with the [dust and thermal notes for Basildon](/blog/pc-dust-thermal-servicing-basildon/) if the crashes only happen after an hour.
+Heat still matters. A tower clogged with pet hair can crash during a video call as well as in a game. If crashes only start after an hour, see the [dust and thermal notes for Basildon](/blog/pc-dust-thermal-servicing-basildon/) too.
 
-A laptop that blue-screens only on battery, or only when the charger is wiggled, is sometimes power delivery rather than Windows. Use the [not charging guide](/blog/laptop-battery-not-charging-wickford/) as well.
+A laptop that blue-screens only on battery, or only when the charging lead moves, may have a power problem rather than a Windows one. Please don't move the lead to test it; see the [not charging guide](/blog/laptop-battery-not-charging-wickford/).
 
 ## Safe mode is a test, not a lifestyle
 
-If you can boot Safe Mode and it's stable, we're looking at software or a GPU driver. If it still crashes in Safe Mode, we're looking at RAM, storage or the board. That split saves you buying a Windows licence you don't need.
+If the PC boots into Safe Mode and stays stable, software or a graphics driver becomes more likely. If it still crashes in Safe Mode, RAM, storage or the board become more likely. That split can save you buying a Windows licence you don't need.
 
-We keep a known-good RAM tester and a disk copier on the Wickford bench, so we aren't gambling with your family photos. If the disk is the suspect, we copy it before anyone clones it. A slow machine that hasn't crashed yet might only need an [SSD upgrade](/blog/laptop-ssd-upgrade-wickford-essex/). A crashing one needs that copy first.
+We keep a known-good RAM tester and a disk copier on the Wickford bench, so we aren't gambling with your family photos. If the disk is the suspect, we assess it before any copy is attempted. A slow machine that hasn't crashed yet might only need an [SSD upgrade](/blog/laptop-ssd-upgrade-wickford-essex/).
 
 ## When a blue screen is really a scam leftover
 
-Some jobs people describe as the PC keeps crashing are leftover remote-access tools from a fake refund call. If you had a pop-up that told you to ring a number, read the [phishing first-hour guide](/blog/clicked-phishing-link-emergency-guide/) and the [scam overview](/blog/scam-awareness/) before we talk hardware. Removing "support" software you never asked for is step one. Event Viewer is step two.
+Some machines described as "it keeps crashing" turn out to have remote-access tools left behind by a fake refund call. If a pop-up ever told you to ring a number, read the [phishing first-hour guide](/blog/clicked-phishing-link-emergency-guide/) and the [scam overview](/blog/scam-awareness/) before we talk hardware. Removing "support" software you never asked for comes first, and then we look at the crash logs in Event Viewer.
 
 ## What we'll do instead
 
-A suspect disk gets copied before anyone resets Windows. A reset can overwrite the photos. Driver packs from random sites stay off the machine, and a 2014 tower that keeps crashing isn't something to ignore.
+A suspect disk gets assessed before anyone resets Windows, because a reset can overwrite the photos. We keep driver packs from random sites off the machine.
 
 ## Arrange a drop-off
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Free collection and return is across Wickford (SS11 and SS12). Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) and [Chelmsford](/chelmsford-pc-repair/) is by arrangement. You can also book through [Wickford PC repair](/wickford-pc-repair/).
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return is free in Wickford SS11/SS12; elsewhere, please ask. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/), you can drop it at the workshop or book through [Wickford PC repair](/wickford-pc-repair/).
 
-If the crash started after a spill, say so. Liquid plus random reboots is the [spill protocol](/blog/spilled-water-on-laptop-fix-essex/), not a driver update. No-Fix, No-Fee: if it's a board that isn't worth saving, you hear that before you pay labour.
+If the crashes started after a spill, tell us, because liquid plus random reboots means following the [spill protocol](/blog/spilled-water-on-laptop-fix-essex/), not updating a driver. No-Fix, No-Fee: if the board isn't worth saving, you'll hear that before you pay any labour.
