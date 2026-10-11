@@ -55,7 +55,7 @@ We can set up a simple weekly backup plus cloud for a one- or two-person Wickfor
 
 DIY is a portable SSD and a cloud account you control. In the workshop, before we move a machine onto an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/) or investigate a [blue screen](/blog/windows-blue-screen-fix-essex/), we check the drive and make a copy of it. Different tools, same idea: a copy that doesn't live only inside the sick machine.
 
-If the laptop also won't hold a charge, bring the charger, and see the [charging guide](/blog/laptop-battery-not-charging-wickford/). If it overheats whenever File History runs, sort the dust first ([overheating](/blog/fix-overheating-laptop-wickford-essex/)).
+If the laptop also won't hold a charge, bring the charger, and see the [charging guide](/blog/laptop-battery-not-charging-wickford/). If it overheats whenever File History runs, sort the dust first ([overheating](/blog/laptop-fan-noise-fix-essex/)).
 
 ## If you already have no backup and the PC is sick
 

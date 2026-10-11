@@ -2,7 +2,7 @@
 slug: laptop-screen-repair-cost-essex
 title: Laptop Screen Repair Cost in Essex (2026)
 headline: Laptop Screen Repair Cost in Essex (2026)
-description: Laptop screen repair cost in Essex is fitting from £99 plus the panel. Why two cracks aren't the same quote, and what we check first.
+description: Laptop screen repair cost in Essex is fitting at a flat £99 plus the panel. Why two cracks aren't the same quote, and what we check first.
 date: 2026-10-21
 draft: true
 category: Useful Tips
@@ -13,7 +13,7 @@ og_image: /assets/meta/meta-laptop-screen-repair-cost-essex.jpg
 image_alt: Laptop on a white table with a damaged screen showing coloured lines and cracks, next to a yellow smartphone
 ---
 
-A **laptop screen repair cost in Essex** is two numbers, not one. **Fitting labour starts from £99, and the panel is extra**, quoted for your exact model before we order it. You may see single all-in prices online, but that isn't how we price it.
+A **laptop screen repair cost in Essex** is two numbers, not one. **Fitting labour is a flat £99, and the panel is extra**, quoted for your exact model before we order it. You may see single all-in prices online, but that isn't how we price it.
 
 We fit panels at **32 Glebe Road** in Wickford. The full details for the job are on [laptop screen repair Wickford](/laptop-screen-repair-wickford/), you can book through [Wickford laptop repair](/wickford-laptop-repair/), and every other starting price is on [services and pricing](/services/).
 
@@ -21,7 +21,7 @@ If you've just cracked the lid and want the "don't poke the glass" steps, start 
 
 ## Labour and the panel are separate lines
 
-The £99 is the work: removing the bezel, working carefully around the hinges, fitting the matching panel, and testing the lid through a full open and close. It's a **from £99** labour starting point for Windows laptops and Chromebooks.
+The £99 is the work: removing the bezel, working carefully around the hinges, fitting the matching panel, and testing the lid through a full open and close. It's a **flat £99** for labour on Windows laptops and Chromebooks.
 
 The second line is the panel itself. We price it for your model, and you see that price before it's ordered. A basic HD panel and a touchscreen assembly don't cost the same, so we don't publish a table that pretends every lid is identical. If we don't have your exact part number yet, we'll quote it once we do.
 
@@ -45,7 +45,7 @@ Your files almost always stay where they are, because a panel swap doesn't wipe 
 ## What you pay, and when
 
 1. **Free diagnostic.** We check whether it's the panel, a cable or something else.
-2. **Fixed quote.** Labour from £99, plus the panel price for that model, before the part is ordered.
+2. **Fixed quote.** Labour is a flat £99, plus the panel price for that model, before the part is ordered.
 3. **You approve it.** No panel gets ordered on a guess.
 4. **No-Fix, No-Fee** if the repair isn't worth doing, so you don't pay labour to be told the board has failed.
 
