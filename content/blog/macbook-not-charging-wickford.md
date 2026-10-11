@@ -54,7 +54,7 @@ Open Battery settings and look at the battery condition. "Service Recommended" m
 
 ## What a repair costs
 
-MacBook repairs start from £85 plus parts or the panel. You get a fixed quote for your Mac before any part is ordered. Diagnostics are free. **No-Fix, No-Fee** applies if we can't fix it. A new battery or charging port we fit carries a 12-month warranty. That warranty is for those new parts, on battery and charging-port jobs.
+MacBook repairs start from £85 plus parts or the panel. You get a fixed quote for your Mac before any part is ordered. Diagnostics are free. **No-Fix, No-Fee** applies to the labour if we can't fix it. A new battery or charging port we fit carries a 12-month warranty. That warranty is for those new parts, on battery and charging-port jobs.
 
 ## If it's a Windows laptop
 

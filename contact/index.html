@@ -1998,7 +1998,7 @@ if (window.location.search.includes('submitted=true')) {
   try { sessionStorage.removeItem('ll-contact-prefill'); } catch (err) {}
   const formContainer = document.querySelector('form');
   if (formContainer) {
-    formContainer.innerHTML = '<div class="ll-contact-success" role="status" tabindex="-1"><p>Thank you — your message is on its way.</p><span>We\'ll reply from hello@launchlayer.uk, usually the same day. If it\'s urgent, call <a href="tel:07367652987" data-umami-event="call-click" data-umami-event-location="contact-thanks">07367 652987</a>.</span></div>';
+    formContainer.innerHTML = '<div class="ll-contact-success" role="status" tabindex="-1"><p>Thank you — your message is on its way.</p><span>We\'ll reply from hello@launchlayer.uk, within 2 hours. If it\'s urgent, call <a href="tel:07367652987" data-umami-event="call-click" data-umami-event-location="contact-thanks">07367 652987</a>.</span></div>';
     var successPanel = formContainer.querySelector('.ll-contact-success');
     if (successPanel) {
       requestAnimationFrame(function () {

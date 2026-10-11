@@ -58,4 +58,4 @@ If the laptop also has a loose hinge or a [cracked lid](/blog/cracked-laptop-scr
 
 Don't post a clicking drive in a padded envelope. Call **[07367 652987](tel:07367652987)** to arrange collection. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance, or ask about free collection and return in Wickford (SS11 and SS12). Collection from [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/) is by arrangement. Book through [Contact](/contact/) or [Wickford PC repair](/wickford-pc-repair/). Tell us whether the photos matter more than the machine. That sentence changes the job.
 
-No-Fix, No-Fee is for repairs that can't be done. Recovery is quoted separately, because those hours aren't a hinge screw.
+No-Fix, No-Fee means no labour charge when a repair can't be done. Recovery is quoted separately, because those hours aren't a hinge screw.

@@ -90,7 +90,7 @@ Charging port and DC jack repair is **£65**. That's the labour for the port job
 
 When the battery itself has failed, labour starts **from £49 plus the part**. You get the price for your exact model before any pack is ordered.
 
-Diagnostics are free. You get a fixed quote before any part is ordered. Typical turnaround is 1–3 working days, and new parts we fit carry a 12-month warranty. If we can't fix it, **No-Fix, No-Fee** applies: you don't pay for labour.
+Diagnostics are free. You get a fixed quote before any part is ordered. Typical turnaround for a charging port or battery is 1–3 working days, and those new parts carry a 12-month warranty. If we can't fix it, **No-Fix, No-Fee** applies: you don't pay for labour.
 
 ## Bringing it in
 
@@ -114,7 +114,7 @@ Charging port and DC jack repair is £65. Battery labour starts from £49 plus t
 
 ### How long does a repair take?
 
-Typical turnaround is 1–3 working days for a charging port or a battery we fit. You get the quote before any part is ordered, and new parts we fit carry a 12-month warranty.
+Typical turnaround is 1–3 working days for a charging port or a battery we fit. You get the quote before any part is ordered, and those new parts carry a 12-month warranty.
 
 ### Can I use it with a dead battery?
 
