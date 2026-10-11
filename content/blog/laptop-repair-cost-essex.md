@@ -22,7 +22,7 @@ The workshop for this list is [Wickford laptop repair](/wickford-laptop-repair/)
 ## Starting prices
 
 - Diagnostics are free. You aren't billed for being told what's wrong.
-- Hardware and general repair starts from £55. That is the floor for a straightforward hardware job once we know the fault.
+- Hardware and general repair starts from £55. That's the floor for a straightforward hardware job once we know the fault.
 - Battery labour starts from £49 plus the part. The cell itself is quoted for your model before it's ordered.
 - A DC jack or charging port is £65. How to tell a cable from a brick from a socket is in the [plugged in not charging guide](/blog/laptop-battery-not-charging-wickford/).
 - Screen labour starts from £99 plus the panel. The panel is a separate line, because a Chromebook panel and a touchscreen panel aren't the same part. How that quote is built is on [laptop screen repair Wickford](/laptop-screen-repair-wickford/).

@@ -47,7 +47,7 @@ A snapped school Chromebook hinge is usually still worth a look. Photos sent to 
 
 ## What we'll do instead
 
-We won't glue a screw boss and call it a repair, post a flapping lid back in a jiffy bag, or fit a new panel and ignore a hinge that will crack the new glass.
+We won't glue a screw boss and call it a repair, post a flapping lid back in a jiffy bag, or fit a new panel and ignore a hinge that'll crack the new glass.
 
 ## Book it before the lid folds
 

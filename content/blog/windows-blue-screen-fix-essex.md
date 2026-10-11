@@ -35,7 +35,7 @@ We're paraphrasing, not quoting a Microsoft manual:
 - **DRIVER / VIDEO TDR.** A graphics driver, or a GPU that's overheating. If you game, this sits next to the [stuttering guide](/blog/fix-pc-game-stuttering-fps-drops-essex/).
 - **CRITICAL_PROCESS_DIED after an update.** A botched Windows 11 feature update, often on a machine that barely passed the checker. That's a backup-first job, not a second attempt at Setup.
 
-Heat still matters. A tower full of pet hair will blue-screen under a video call as readily as it will in a game. Pair this with the [dust and thermal notes for Basildon](/blog/pc-dust-thermal-servicing-basildon/) if the crashes only happen after an hour.
+Heat still matters. A tower full of pet hair will blue-screen under a video call as readily as it'll in a game. Pair this with the [dust and thermal notes for Basildon](/blog/pc-dust-thermal-servicing-basildon/) if the crashes only happen after an hour.
 
 A laptop that blue-screens only on battery, or only when the charger is wiggled, is sometimes power delivery rather than Windows. Use the [not charging guide](/blog/laptop-battery-not-charging-wickford/) as well.
 

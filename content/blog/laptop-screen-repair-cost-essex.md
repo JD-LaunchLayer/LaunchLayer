@@ -40,7 +40,7 @@ The labour floor barely moves. The panel does, for ordinary reasons:
 
 That's why a neighbour's invoice isn't your quote. Diagnostics are free so the split is clear before you agree.
 
-Your files almost always stay where they are. A panel swap doesn't wipe the drive. If the lid shows nothing, an external monitor tells us whether the rest of the machine is healthy before anyone pays for glass.
+Your files almost always stay where they're. A panel swap doesn't wipe the drive. If the lid shows nothing, an external monitor tells us whether the rest of the machine is healthy before anyone pays for glass.
 
 ## What you pay, and when
 
