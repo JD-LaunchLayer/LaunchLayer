@@ -340,11 +340,11 @@ html body .launchlayer-master-footer .brand-tagline-text {
   color: var(--color-muted) !important;
 }
 
-/* Nav: 2 columns × 3 rows on phones, read top-to-bottom (same order as tabbing) */
+/* Nav: 2 columns × 4 rows on phones, read top-to-bottom (same order as tabbing) */
 html body .launchlayer-master-footer .inline-nav-links {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: repeat(4, auto);
   grid-auto-flow: column !important;
   gap: 8px 16px !important;
   width: 100% !important;
