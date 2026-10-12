@@ -1,12 +1,18 @@
 {
-  "source": "FACTS.md (Jordan-confirmed), plus owner clarifications of 11 Oct 2026. No-Fix, No-Fee is confirmed and means no labour charge if we cannot fix it. The flat £65 DC jack / charging port price applies only to ports that are removable or on their own small board. Ports soldered to the main board are quoted after diagnosis.",
+  "source": "Owner-confirmed facts, refreshed 12 Oct 2026. Workshop is Wickford only. Customers approve a fixed quote before work. The flat £65 DC jack / charging port price is only for removable or separate-board ports; ports soldered to the main board have no fixed price and are quoted after diagnosis. Hardware labour starts from £49. Software starts from £45.",
   "business": {
     "name": "LaunchLayer",
     "address": "32 Glebe Road, Wickford, Essex SS11 8EU",
     "phone": "07367 652987",
     "phone_digits": "07367652987",
     "email": "hello@launchlayer.uk",
-    "byline": "The LaunchLayer workshop"
+    "byline": "The LaunchLayer workshop",
+    "public_name": "LaunchLayer",
+    "never_use": ["Jordan Duggins", "Duggins"]
+  },
+  "location": {
+    "workshop": "Wickford only",
+    "do_not_claim": "Do not claim a Basildon or Laindon workshop, base, or that the business is in Basildon or Laindon."
   },
   "postcodes": {
     "workshop": "SS11 8EU",
@@ -14,31 +20,38 @@
     "free_home_visit": ["SS11", "SS12"]
   },
   "drop_off": "Drop-off at the workshop is arranged in advance.",
-  "collection": "Free collection and return across Wickford (SS11/SS12). Elsewhere, phrase it positively. Never 'only for'.",
+  "collection": "Free collection and return for SS11 and SS12 only. Elsewhere, collection is by arrangement.",
+  "before_work": "Customers approve a fixed quote before work.",
   "prices": [
-    {"service": "diagnostics", "amount_gbp": 0, "wording": "FREE"},
+    {"service": "diagnostics", "amount_gbp": 0, "wording": "FREE", "timing": "typically within 24 hours, never guaranteed"},
     {"service": "recycling", "amount_gbp": 0, "wording": "free"},
     {"service": "home_visit_ss11_ss12", "amount_gbp": 0, "wording": "free"},
     {"service": "home_visit_elsewhere", "amount_gbp": 49, "wording": "£49 elsewhere, includes diagnosis and the first hour"},
-    {"service": "general_hardware", "amount_gbp": 55, "qualifier": "from"},
+    {"service": "hardware", "amount_gbp": 49, "qualifier": "from", "note": "Hardware labour starts from £49."},
+    {"service": "general_hardware", "amount_gbp": 55, "qualifier": "from", "note": "General hardware and component repair. The hardware floor is still £49."},
     {"service": "battery", "amount_gbp": 49, "qualifier": "from", "plus": "part"},
     {"service": "hinge_lid", "amount_gbp": 75, "qualifier": "from"},
     {"service": "keyboard", "amount_gbp": 55, "qualifier": "from", "plus": "part"},
     {"service": "ssd_ram", "amount_gbp": 65, "qualifier": "from", "plus": "parts"},
     {"service": "mac", "amount_gbp": 85, "qualifier": "from", "plus": "parts/panel"},
-    {"service": "screen", "amount_gbp": 99, "plus": "panel"},
-    {"service": "dc_jack_charging_port", "amount_gbp": 65, "qualifier": "flat", "applies_to": "Ports that are removable, or that sit on their own small board.", "quoted_after_diagnosis": "Ports soldered to the main board."},
+    {"service": "screen", "amount_gbp": 99, "plus": "panel", "never": "same day or next day"},
+    {"service": "dc_jack_charging_port", "amount_gbp": 65, "qualifier": "flat", "applies_to": "Removable or separate-board ports only: ports that are removable, or that sit on their own small board.", "quoted_after_diagnosis": "Ports soldered to the main board have no fixed price and are quoted after diagnosis."},
     {"service": "liquid_damage", "amount_gbp": 95, "qualifier": "from"},
     {"service": "dust_clean", "amount_gbp": 55},
     {"service": "mot", "amount_gbp": 60},
     {"service": "insurance_report", "amount_gbp": 40},
-    {"service": "software_fix", "amount_gbp": 45, "wording": "£45 for up to 60 mins (workshop)"},
+    {"service": "software", "amount_gbp": 45, "qualifier": "from"},
+    {"service": "software_fix", "amount_gbp": 45, "qualifier": "from", "wording": "from £45; general software fix is £45 for up to 60 mins (workshop)"},
     {"service": "windows_install", "amount_gbp": 59},
     {"service": "windows_11_upgrade", "amount_gbp": 69, "qualifier": "from"},
     {"service": "virus_malware_scam", "amount_gbp": 69, "qualifier": "fixed", "diagnosis": "typically within 24 hours, never guaranteed"},
-    {"service": "custom_pc_assembly", "amount_gbp": 149}
+    {"service": "custom_pc_assembly", "amount_gbp": 149},
+    {"service": "website_1_to_3_pages", "amount_gbp": 249},
+    {"service": "website_5_pages", "amount_gbp": 379},
+    {"service": "website_care_plan", "amount_gbp": 19, "period": "month"},
+    {"service": "website_launch_offer", "amount_gbp": 199, "placement": "body text only"}
   ],
-  "allowed_price_amounts_gbp": [0, 40, 45, 49, 55, 59, 60, 65, 69, 75, 85, 95, 99, 149],
+  "allowed_price_amounts_gbp": [0, 19, 40, 45, 49, 55, 59, 60, 65, 69, 75, 85, 95, 99, 149, 199, 249, 379],
   "warranty": {
     "months": 12,
     "on": "new parts fitted",
@@ -46,26 +59,60 @@
   },
   "turnaround": {
     "working_days": "1-3",
-    "applies_only_to": ["screen", "charging port", "DC jack", "battery"]
+    "applies_only_to": ["screen", "charging port", "DC jack", "battery"],
+    "screen_repair": "never same day or next day"
   },
   "custom_pc": {
     "assembly_gbp": 149,
-    "parts_warranty": "Parts keep the manufacturer's warranty and we help with claims.",
-    "build_work_years": 2
+    "parts_warranty": "Parts keep the manufacturer's warranty.",
+    "build_work_years": 2,
+    "banned_phrases": ["at cost"]
+  },
+  "website_design": {
+    "path": "/website-design-wickford/",
+    "prices": [
+      {"pages": "1-3", "amount_gbp": 249},
+      {"pages": "5", "amount_gbp": 379}
+    ],
+    "care_plan": {
+      "amount_gbp": 19,
+      "period": "month",
+      "tie_in": "rolling monthly, no tie-in",
+      "includes": ["hosting", "SSL", "backups", "updates", "20 minutes of edits a month"]
+    },
+    "includes": ["mobile design", "contact form", "click-to-call", "basic SEO", "Google Business Profile setup"],
+    "domain_at_cost": "Allowed on /website-design-wickford/ only. Banned for custom PC builds.",
+    "launch_offer": {
+      "amount_gbp": 199,
+      "placement": "body text only",
+      "never": ["title", "meta", "schema", "social"]
+    },
+    "no_fix_no_fee": false
   },
   "contact_reply": "We'll reply within 2 hours",
   "hours": "Mon-Sun 09:00-22:00",
   "confirmed_claims": [
     {
       "phrase": "No-Fix, No-Fee",
-      "meaning": "No charge for labour if we cannot fix it. It is not a waiver of every charge."
+      "meaning": "Repairs only, not setup. No labour charge if it can't be fixed, the part is not worth fitting, or the cost exceeds the device value. It does not apply to the website service."
+    },
+    {
+      "phrase": "fixed quote before work",
+      "meaning": "Customers approve a fixed quote before work."
+    },
+    {
+      "phrase": "Wickford only",
+      "meaning": "The workshop is in Wickford only. Do not claim Basildon or Laindon."
     }
   ],
   "unconfirmed_claims": [
     "same-day",
     "90-day warranty",
     "£50 screen fitting",
-    "£65 screen fitting"
+    "£65 screen fitting",
+    "business email price",
+    "VAT",
+    "website build timescale"
   ],
   "banned_phrases": [
     "in today's digital landscape",
@@ -87,6 +134,9 @@
     "professional intervention",
     "architecture",
     "matrix",
-    "configuration"
+    "configuration",
+    "at cost",
+    "Jordan Duggins",
+    "Duggins"
   ]
 }
