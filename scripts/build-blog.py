@@ -856,6 +856,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
         <li><a href="/">Home</a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/brands-supported">Brands Supported</a></li>
+        <li><a href="/website-design-wickford/">Websites</a></li>
         <li><a href="/reviews">Reviews</a></li>
         <li><a href="/faqs">FAQs</a></li>
         <li><a href="/privacy-policy">Privacy</a></li>
