@@ -77,6 +77,12 @@ https://www.launchlayer.uk/blog/what-parents-really-need-to-know-about-roblox-mi
 https://www.launchlayer.uk/blog/why-your-wi-fi-slows-down-in-the-evening  https://launchlayer.uk/blog/why-your-wi-fi-slows-down-in-the-evening/  301!
 https://www.launchlayer.uk/blog/wickford-in-bloom  https://launchlayer.uk/blog/wickford-in-bloom/  301!
 https://www.launchlayer.uk/blog/windows-10-end-of-support-help-essex  https://launchlayer.uk/blog/windows-10-end-of-support-help-essex/  301!
+# Dead blog paths: www without a slash goes straight to the apex
+# trailing-slash page. A www-to-apex hop would land on the old path.
+https://www.launchlayer.uk/blog/ai-for-small-businesses-lessons-from-the-uks-copilot-trial  https://launchlayer.uk/blog/ai-for-small-businesses-lessons-from-copilot/  301!
+https://www.launchlayer.uk/blog/how-to-tell-when-your-laptop-needs-a-clean-inside  https://launchlayer.uk/blog/laptop-fan-noise-fix-essex/  301!
+https://www.launchlayer.uk/blog/why-your-laptop-slows-down-over-time-and-what-you-can-do-about-it  https://launchlayer.uk/blog/laptop-not-turning-on-slow-fix/  301!
+https://www.launchlayer.uk/blog/gaming-laptops-vs-desktops-which-lasts-longer-and-why  https://launchlayer.uk/blog/pc-laptop-buying-guide-essex/  301!
 https://www.launchlayer.uk/brands-supported  https://launchlayer.uk/brands-supported/  301!
 https://www.launchlayer.uk/business/pricing  https://launchlayer.uk/business/pricing/  301!
 https://www.launchlayer.uk/data-recovery  https://launchlayer.uk/data-recovery/  301!
@@ -214,6 +220,16 @@ https://www.launchlayer.uk/wickford-virus-removal  https://launchlayer.uk/wickfo
 /blog/why-your-laptop-is-loud-hot-or-overheating-and-how-to-fix-it-oPwe3/     /blog/laptop-fan-noise-fix-essex/  301!
 /blog/what-parents-need-to-know-about-roblox-minecraft-amp-fortnite           /blog/what-parents-really-need-to-know-about-roblox-minecraft-amp-fortnite/  301!
 /blog/what-parents-need-to-know-about-roblox-minecraft-amp-fortnite/          /blog/what-parents-really-need-to-know-about-roblox-minecraft-amp-fortnite/  301!
+
+# Dead blog paths. Apex with or without a slash 301s straight to the live post.
+/blog/ai-for-small-businesses-lessons-from-the-uks-copilot-trial              /blog/ai-for-small-businesses-lessons-from-copilot/  301!
+/blog/ai-for-small-businesses-lessons-from-the-uks-copilot-trial/             /blog/ai-for-small-businesses-lessons-from-copilot/  301!
+/blog/how-to-tell-when-your-laptop-needs-a-clean-inside                       /blog/laptop-fan-noise-fix-essex/  301!
+/blog/how-to-tell-when-your-laptop-needs-a-clean-inside/                      /blog/laptop-fan-noise-fix-essex/  301!
+/blog/why-your-laptop-slows-down-over-time-and-what-you-can-do-about-it       /blog/laptop-not-turning-on-slow-fix/  301!
+/blog/why-your-laptop-slows-down-over-time-and-what-you-can-do-about-it/      /blog/laptop-not-turning-on-slow-fix/  301!
+/blog/gaming-laptops-vs-desktops-which-lasts-longer-and-why                   /blog/pc-laptop-buying-guide-essex/  301!
+/blog/gaming-laptops-vs-desktops-which-lasts-longer-and-why/                  /blog/pc-laptop-buying-guide-essex/  301!
 
 # Blog category hubs: live URL is lowercase. Title-Case was the old canonical.
 # Plus signs must be %2B. A raw "+" is a special character and Netlify
