@@ -12,10 +12,12 @@ Hosting stays static — this script writes blog/<slug>/index.html so you can
 keep deploying the folder as-is. Old Squarespace posts are left untouched.
 The builder asserts chrome and listing-card shape after write. Re-scan with
 `--check` (also fails when a published post's image or og_image file is
-missing, or when a post links to a blog post that is not live by its own
-publish date). `--self-test` proves a broken template, a missing image, a
-bad sitemap insert, or a forward blog link would fail the job. Newly
-published posts are added to sitemap.xml.
+missing, when a post links to a blog post that is not live by its own
+publish date, when a listing still uses a Squarespace ?offset= pager, or
+when a live post is missing from /blog/ or a future-dated post is already
+listed). `--self-test` proves a broken template, a missing image, a
+bad sitemap insert, a forward blog link, or a broken index pager would
+fail the job. Newly published posts are added to sitemap.xml.
 """
 from __future__ import annotations
 
@@ -43,6 +45,9 @@ DEAD_BLOG_SLUGS = {
     # Merged into laptop-battery-not-charging-wickford. The HTML folder is
     # deleted and _redirects 301s the old URL.
     "laptop-charger-not-working-dc-jack",
+    # Retired in favour of laptop-fan-noise-fix-essex. The HTML folder is
+    # deleted and _redirects 301s every variant in one hop.
+    "fix-overheating-laptop-wickford-essex",
 }
 FEED_START = "<!-- ll-md-feed:start -->"
 FEED_END = "<!-- ll-md-feed:end -->"
@@ -423,6 +428,80 @@ def assert_blog_links_live_by_publish_date(
         )
 
 
+_OFFSET_HREF = re.compile(r"""href=["'][^"']*\?offset=""")
+_INDEX_BLOG_HREF = re.compile(r'href="/blog/([a-z0-9-]+)/?"')
+
+
+def assert_no_squarespace_offset(html_text: str, path: Path | None = None) -> None:
+    """Squarespace ?offset= links reload the same static page."""
+    where = _rel(path) if path else "listing page"
+    if _OFFSET_HREF.search(html_text):
+        raise PublishGuardError(
+            f"{where}: still links to a Squarespace ?offset= page. "
+            "The static site ignores that query, so Older posts reloads the same page."
+        )
+
+
+def assert_index_lists_slugs(
+    index_html: str,
+    required: set[str],
+    forbidden: set[str],
+    path: Path | None = None,
+) -> None:
+    """The one /blog/ index must link every live post and no future post."""
+    where = _rel(path) if path else "blog/index.html"
+    linked = set(_INDEX_BLOG_HREF.findall(index_html))
+    missing = sorted(required - linked)
+    early = sorted(forbidden & linked)
+    problems: list[str] = []
+    if missing:
+        problems.append("live posts missing from the index: " + ", ".join(missing))
+    if early:
+        problems.append("not due yet but already listed: " + ", ".join(early))
+    if problems:
+        raise PublishGuardError(f"{where}: " + "; ".join(problems) + ".")
+
+
+def assert_blog_index_complete(today: datetime.date) -> None:
+    """One index lists every live post. Future-dated posts stay off it."""
+    for path in LISTING_PAGES.values():
+        if path.is_file():
+            assert_no_squarespace_offset(path.read_text(encoding="utf-8"), path)
+    index_path = LISTING_PAGES["all"]
+    index_html = index_path.read_text(encoding="utf-8")
+    markdown = {meta["slug"]: meta for _path, meta, _body in load_posts()}
+    required: set[str] = set()
+    forbidden: set[str] = set()
+    for slug, meta in markdown.items():
+        if not is_live(meta, today):
+            forbidden.add(slug)
+    for folder in OUT_BLOG.iterdir():
+        if not folder.is_dir() or folder.name == "category" or folder.name in DEAD_BLOG_SLUGS:
+            continue
+        page_path = folder / "index.html"
+        if not page_path.is_file():
+            continue
+        page = page_path.read_text(encoding="utf-8")
+        if not post_is_indexable(page):
+            continue
+        slug = folder.name
+        if slug in forbidden:
+            continue
+        meta = markdown.get(slug)
+        if meta is None:
+            published = meta_content(page, itemprop="datePublished")
+            if published:
+                try:
+                    posted = datetime.strptime(published[:10], "%Y-%m-%d").date()
+                except ValueError:
+                    posted = None
+                if posted and posted > today:
+                    forbidden.add(slug)
+                    continue
+        required.add(slug)
+    assert_index_lists_slugs(index_html, required, forbidden, index_path)
+
+
 def check_generated_output() -> None:
     assert_listing_card_emitter()
     posts = generated_post_paths()
@@ -438,8 +517,10 @@ def check_generated_output() -> None:
         if path.is_file():
             assert_listing_feed(path.read_text(encoding="utf-8"), path)
     loaded = load_posts()
-    assert_published_post_images(loaded, datetime.now().date(), ROOT)
+    today = datetime.now().date()
+    assert_published_post_images(loaded, today, ROOT)
     assert_blog_links_live_by_publish_date(loaded, legacy_blog_slugs())
+    assert_blog_index_complete(today)
 
 
 def run_self_test() -> None:
@@ -493,6 +574,7 @@ def run_self_test() -> None:
             )
     _self_test_sitemap_and_images()
     _self_test_forward_blog_links()
+    _self_test_index_reach()
     print("Blog publish guard self-test passed.")
 
 
@@ -774,6 +856,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
         <li><a href="/">Home</a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/brands-supported">Brands Supported</a></li>
+        <li><a href="/website-design-wickford/">Websites</a></li>
         <li><a href="/reviews">Reviews</a></li>
         <li><a href="/faqs">FAQs</a></li>
         <li><a href="/privacy-policy">Privacy</a></li>
@@ -1482,6 +1565,43 @@ def _self_test_forward_blog_links() -> None:
         raise PublishGuardError("self-test: link to a missing blog post did not fail.")
 
 
+def _self_test_index_reach() -> None:
+    """Offset pagers, a missing live post, and an early future post must fail."""
+    good = '<a href="/blog/live-post">Live</a>'
+    assert_no_squarespace_offset(good, Path("ok-index.html"))
+    assert_index_lists_slugs(good, {"live-post"}, {"future-post"}, Path("ok-index.html"))
+    cases = [
+        (
+            "Squarespace offset pager",
+            lambda: assert_no_squarespace_offset(
+                '<a href="/blog?offset=1771861260004" rel="next">Older Posts</a>',
+                Path("offset.html"),
+            ),
+        ),
+        (
+            "live post missing from the index",
+            lambda: assert_index_lists_slugs(
+                good, {"live-post", "older-post"}, set(), Path("gap.html")
+            ),
+        ),
+        (
+            "future post listed early",
+            lambda: assert_index_lists_slugs(
+                good + '<a href="/blog/future-post">Later</a>',
+                {"live-post"},
+                {"future-post"},
+                Path("early.html"),
+            ),
+        ),
+    ]
+    for label, action in cases:
+        try:
+            action()
+        except PublishGuardError:
+            continue
+        raise PublishGuardError(f"self-test: expected {label} to fail, but it passed.")
+
+
 def refresh_blog_schema() -> None:
     posts = load_public_posts()
     repaired = 0
@@ -1506,7 +1626,7 @@ def main() -> int:
     parser.add_argument(
         "--check",
         action="store_true",
-        help="Validate generated post chrome, listing cards, published image files, and blog links that must already be live.",
+        help="Validate generated post chrome, listing cards, published image files, blog links that must already be live, and that /blog/ lists every live post without a Squarespace offset pager.",
     )
     parser.add_argument(
         "--self-test",
