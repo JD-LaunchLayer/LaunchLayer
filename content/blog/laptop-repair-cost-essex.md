@@ -21,7 +21,7 @@ The workshop behind this list is [Wickford laptop repair](/wickford-laptop-repai
 
 ## Starting prices
 
-- Diagnostics are free,.
+- Diagnostics are free.
 - Hardware and general repair starts from £55.
 - Battery labour starts from £49 plus the part, and the battery itself is quoted for your model before it's ordered.
 - A DC jack or charging port is a flat £65 where the port is removable or sits on its own small board. Ports soldered to the main board are priced separately, quoted after diagnosis. The [plugged in not charging guide](/blog/laptop-battery-not-charging-wickford/) helps you narrow down whether it's the charger, the cable or the port.
@@ -29,17 +29,17 @@ The workshop behind this list is [Wickford laptop repair](/wickford-laptop-repai
 - Hinge and lid work starts from £75.
 - Keyboard labour starts from £55 plus the part.
 - An SSD or RAM upgrade starts from £65 plus the parts.
-- MacBook repairs start from £85 plus the parts or the panel.
-- The MOT is £60. That's a fixed health check, separate from the £45 software fix and from any hardware repair.
+- [MacBook repairs](/macbook-repair-wickford/) start from £85 plus the parts or the panel.
+- [The MOT](/laptop-mot-wickford-essex/) is £60. That's a fixed health check, separate from the £45 software fix and from any hardware repair.
 - A general software fix is £45 for up to 60 minutes.
-- Virus, malware and scam removal is a fixed £69, as on [services and pricing](/services/). It's separate from the software fix, and it doesn't cover ransomware data recovery.
+- [Virus, malware and scam removal](/wickford-virus-removal/) is a fixed £69, as on [services and pricing](/services/). It's separate from the software fix, and it doesn't cover ransomware data recovery.
 - A fresh Windows install is £59.
 - A Windows 11 upgrade starts from £69.
 - Liquid damage starts from £95.
 - An insurance damage report is £40.
 - Home visits are free in Wickford (SS11 and SS12), and £49 elsewhere in South Essex, including diagnosis and the first hour.
 
-Data recovery is quoted on its own, after we've assessed the drive. The full list is on [services and pricing](/services/).
+[Data recovery](/data-recovery/) is quoted on its own, after we've assessed the drive. The full list is on [services and pricing](/services/).
 
 ## What "from" means on the invoice
 
