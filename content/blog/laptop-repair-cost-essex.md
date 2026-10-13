@@ -17,7 +17,7 @@ People ask what a **laptop repair cost in Essex** actually is, then find a forum
 
 The order of the job is the same wherever you live. **Diagnostics are free.** We find the fault, and then you get a **fixed quote** before any work starts or any part is ordered. If a repair isn't worth doing, No-Fix, No-Fee means you don't pay labour for the bad news. A "from" figure is the labour starting point, not a guess at the price of your panel or battery.
 
-The workshop behind this list is [Wickford laptop repair](/wickford-laptop-repair/). Drop-off at the workshop is arranged in advance: call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return is free in Wickford SS11/SS12; elsewhere, please ask.
+The workshop behind this list is [LaunchLayer](/wickford-laptop-repair/). Drop-off at the workshop is arranged in advance: call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return is free in Wickford SS11/SS12; elsewhere, please ask.
 
 ## Starting prices
 
@@ -41,17 +41,13 @@ The workshop behind this list is [Wickford laptop repair](/wickford-laptop-repai
 
 [Data recovery](/data-recovery/) is quoted on its own, after we've assessed the drive. The full list is on [services and pricing](/services/).
 
+If the laptop also won't switch on, start with the [won't turn on guide](/blog/laptop-not-turning-on-slow-fix/), so we aren't pricing a screen for a machine that has a separate power fault.
+
 ## What "from" means on the invoice
 
 "From £55" means the labour starts there, after a free diagnostic. It doesn't mean every laptop leaves at £55. A loose hinge, a port and a worn battery are three separate lines, so you can see what each one costs.
 
 You approve the quote before we order a part. If the part arrives and the fault turns out to be somewhere else, we'll explain that before you pay for any work you didn't agree to. No-Fix, No-Fee covers the labour when a repair can't be done, rather than taking money off a job that went ahead.
-
-## Why two neighbours get different totals
-
-Same town, same week, different machines. One needs a virus and malware clean-up at £69. The next needs screen labour at a flat £99 **plus** the cost of that exact panel from a UK supplier. A third only needs battery labour from £49 **plus** the battery. Comparing them as one job is how people write off a repair without ever getting a quote.
-
-If the laptop also won't switch on, start with the [won't turn on guide](/blog/laptop-not-turning-on-slow-fix/), so we aren't pricing a screen for a machine that has a separate power fault.
 
 ## Book the diagnostic, not a guess
 
