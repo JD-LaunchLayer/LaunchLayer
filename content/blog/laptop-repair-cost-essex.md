@@ -4,7 +4,7 @@ title: Laptop Repair Cost in Essex: 2026 Price Guide
 headline: How Much Does a Laptop Repair Cost in Essex? 2026 Price Guide
 description: Laptop repair cost in Essex. Free diagnostics, then a fixed quote. Hardware from £55, battery from £49 plus the part, screen labour is a flat £99 plus the panel.
 date: 2026-10-14
-draft: true
+draft: false
 category: Useful Tips
 category_path: Useful+Tips
 author: The LaunchLayer workshop
