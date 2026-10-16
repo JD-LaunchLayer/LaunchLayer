@@ -13,7 +13,7 @@ og_image: /assets/meta/meta-laptop-dock-monitor-setup-essex.jpg
 image_alt: Laptop on a desk linked by one USB-C cable to a dock, with a second monitor and a keyboard
 ---
 
-A kitchen table and a 14" laptop is a commute, not a desk. A better setup is one monitor, a dock, a keyboard, and a laptop that isn't cooking on someone's lap.
+A kitchen table and a 14" laptop is a commute, not a desk. We set up spare rooms in Basildon, Laindon and Wickford with one monitor, a dock, a keyboard, and a laptop that isn't cooking on someone's lap.
 
 If calls still drop once the desk is sorted, the next suspect is the Wi-Fi, and the [Basildon Wi-Fi guide](/blog/resolving-wi-fi-dead-zones-in-basildon/) covers that. Start with the ports, though, because a mismatched dock can look like a slow connection.
 
@@ -33,7 +33,7 @@ A dock that's too hot to touch may be underpowered for the job, or it may just b
 
 ## The monitor: 1080p is still fine
 
-You don't need a 4K panel for Word and Outlook. A height-adjustable 24–27" screen at 1080p or 1440p is plenty, with an HDMI or DisplayPort cable that actually fits the dock.
+You don't need a 4K panel for Word and Outlook. A height-adjustable 24–27" screen at 1080p or 1440p is plenty, with an HDMI or DisplayPort cable that actually fits the dock. A curved gaming monitor isn't the right buy for a bookkeeper in Laindon.
 
 If the laptop lid is cracked, fix that first. A [screen replacement](/blog/cracked-laptop-screen-wickford-essex/) plus an external monitor is a common pair: the lid for travel, the bigger screen on the desk. Wickford panel labour is on the [screen repair page](/laptop-screen-repair-wickford/).
 
