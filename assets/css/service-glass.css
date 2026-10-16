@@ -707,6 +707,15 @@
   border: 1px solid var(--ll-line);
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
 }
+a.llsg-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+a.llsg-card:focus-visible {
+  outline: 3px solid var(--ll-blue);
+  outline-offset: 2px;
+}
 .llsg-card:hover {
   transform: translateY(-1px);
   border-color: var(--color-accent-a22);

@@ -20,6 +20,7 @@ FIXTURE_SERVICES = ROOT / "scripts" / "fixtures" / "services-index-main.html"
 FIXTURE_VIRUS = ROOT / "scripts" / "fixtures" / "wickford-virus-removal-main.html"
 SERVICES = ROOT / "services" / "index.html"
 VIRUS = ROOT / "wickford-virus-removal" / "index.html"
+PRICING = ROOT / "business" / "pricing" / "index.html"
 
 # Pinned card name -> directory data-service-id -> OfferCatalog name (None if live had no offer).
 CARDS = [
@@ -345,6 +346,24 @@ def main() -> None:
     if "24-hour" in new_services:
         note("catalog JSON still says '24-hour stability testing'; that sentence is not shown on the page")
     ok("no new 90-day, Express, 24h, 24 hour, star, or review-count copy")
+
+    services_main = main_html(new_services)
+    if "Website setup" in services_main or "Small business websites" in services_main:
+        fail("website setup group is still on /services/")
+    ok("website setup group removed from /services/")
+
+    if not PRICING.is_file():
+        fail("missing business/pricing/index.html")
+    pricing_main = main_html(PRICING.read_text(encoding="utf-8"))
+    if "Website setup" not in pricing_main:
+        fail("business pricing is missing the Website setup heading")
+    if "Small business websites" not in pricing_main:
+        fail("business pricing is missing the Small business websites card")
+    if "£249" not in pricing_main:
+        fail("business pricing is missing the £249 website price")
+    if "/website-design-wickford/" not in pricing_main:
+        fail("business pricing is missing the website-design link")
+    ok("website setup card is on /business/pricing/ at £249")
 
     if "llsvc-search" in new_services or "Describe what’s wrong" in new_services or "Describe what's wrong" in new_services:
         fail("search box still present")
