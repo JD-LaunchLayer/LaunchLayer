@@ -82,6 +82,13 @@
       "includes": ["hosting", "SSL", "backups", "updates", "20 minutes of edits a month"]
     },
     "includes": ["mobile design", "contact form", "click-to-call", "basic SEO", "Google Business Profile setup"],
+    "card": {
+      "heading": "Website setup",
+      "title": "Small business websites",
+      "from_gbp": 249,
+      "href": "/website-design-wickford/",
+      "shown_on": "/business/pricing/"
+    },
     "domain_at_cost": "Allowed on /website-design-wickford/ only. Banned for custom PC builds.",
     "launch_offer": {
       "amount_gbp": 199,
