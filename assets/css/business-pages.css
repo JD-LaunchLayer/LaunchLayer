@@ -1,0 +1,203 @@
+/* Visual lift for /business/ and /business/pricing/.
+   Tokens only. Opaque frost, no backdrop-filter. */
+
+.llbiz-hero.llsg-glass {
+  background:
+    radial-gradient(ellipse 70% 80% at 0% 0%, var(--color-accent-a22), transparent 58%),
+    linear-gradient(165deg, var(--color-accent-soft) 0%, var(--color-surface) 48%, var(--color-accent-tint) 100%);
+  border-color: var(--color-accent-a12);
+  box-shadow: 0 0 0 1px var(--color-accent-a12), var(--shadow-md);
+}
+
+.llbiz-hero.llsg-glass::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  left: 42%;
+  top: -90px;
+  border-radius: var(--radius-pill);
+  background: radial-gradient(circle, var(--color-accent-a22), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.llbiz-hero h1 { max-width: 22ch; }
+.llbiz-hero .llsg-lead { max-width: 48ch; }
+
+.llbiz-hero .llsg-hero-visual {
+  min-height: 280px;
+  align-self: stretch;
+  background: var(--color-accent-deep);
+}
+
+.llbiz-hero .llsg-hero-scrim {
+  background: linear-gradient(
+    200deg,
+    oklch(0.345 0.140 260 / 0.04),
+    oklch(0.345 0.140 260 / 0.34)
+  );
+}
+
+.llbiz-hero .llsg-hero-visual picture,
+.llbiz-split-media picture {
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.llbiz-hero .llsg-hero-visual img,
+.llbiz-split-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}
+
+/* Brand-tint band, same recipe as the services pin cards */
+.llbiz-band.llsg-glass,
+.llbiz-feature.llsg-glass,
+.llbiz-cta.llsg-glass {
+  background:
+    radial-gradient(ellipse 75% 55% at 100% 0%, var(--color-accent-a16), transparent 62%),
+    linear-gradient(170deg, var(--color-accent-soft) 0%, var(--color-accent-tint) 55%, var(--color-canvas) 100%);
+  border-color: var(--color-accent-a12);
+}
+
+.llbiz-band .llsg-section-head h2::after,
+.llbiz-split-copy h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--gradient-accent-fill);
+}
+
+.llbiz-band .llsg-card,
+.llbiz-feature .llsg-card,
+.llbiz-split-copy .llsg-card,
+.llbiz-band .llsg-related a {
+  background: var(--color-glass);
+  border: 1px solid var(--color-white);
+  box-shadow: 0 0 0 1px var(--color-accent-a12), var(--shadow-md);
+}
+
+.llbiz-band .llsg-card:hover,
+.llbiz-feature .llsg-card:hover,
+.llbiz-split-copy .llsg-card:hover,
+.llbiz-band .llsg-related a:hover {
+  background: var(--color-white);
+  border-color: var(--color-white);
+  box-shadow: 0 0 0 1px var(--color-accent-a35), var(--shadow-lg);
+}
+
+.llbiz-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  border-radius: var(--radius-md);
+  color: var(--color-accent-deep);
+  background: var(--color-accent-soft);
+  border: 1px solid var(--color-accent-a16);
+}
+
+.llbiz-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.llbiz-icon[data-tone="fill"] {
+  color: var(--color-accent-on);
+  background: var(--gradient-accent-fill);
+  border-color: transparent;
+}
+
+.llsg-card.llbiz-card-accent {
+  background: var(--gradient-accent-fill);
+  border-color: transparent;
+  box-shadow: var(--shadow-accent);
+}
+
+.llsg-card.llbiz-card-accent h3,
+.llsg-card.llbiz-card-accent p,
+.llsg-card.llbiz-card-accent .llsg-card-price {
+  color: var(--color-accent-on);
+}
+
+.llsg-card.llbiz-card-accent .llbiz-icon {
+  color: var(--color-accent-on);
+  background: oklch(1 0 0 / 0.16);
+  border-color: oklch(1 0 0 / 0.28);
+}
+
+a.llsg-card.llbiz-card-accent:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  box-shadow: var(--shadow-accent-hover);
+}
+
+.llsg-section.llbiz-feature { padding: 0; }
+
+.llbiz-split {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.llbiz-split-media {
+  position: relative;
+  min-height: 240px;
+  background: var(--color-accent-deep);
+}
+
+.llbiz-split-copy { padding: 28px 26px 8px; }
+
+.llbiz-feature > .llsg-card-grid { padding: 8px 22px 22px; }
+
+@media (min-width: 820px) {
+  .llbiz-split {
+    grid-template-columns: 0.86fr 1.14fr;
+    min-height: 320px;
+  }
+  .llbiz-split-flip { grid-template-columns: 1.14fr 0.86fr; }
+  .llbiz-split-flip .llbiz-split-media { order: 2; }
+  .llbiz-split-copy { padding: 32px 28px; }
+  .llbiz-hero .llsg-hero-visual { min-height: 100%; }
+}
+
+@media (max-width: 819px) {
+  .llbiz-hero .llsg-hero-visual {
+    min-height: 210px;
+    order: -1;
+  }
+  .llbiz-split-media { min-height: 200px; }
+  .llbiz-split-copy { padding: 22px 18px 6px; }
+  .llbiz-feature > .llsg-card-grid { padding: 8px 16px 18px; }
+  .llsg-card.llbiz-card-accent .llsg-card-price { color: var(--color-accent-on); }
+}
+
+@media (min-width: 720px) {
+  a.llsg-card.llsg-card-wide {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 18px;
+    align-items: center;
+  }
+  a.llsg-card.llsg-card-wide .llbiz-icon { margin-bottom: 0; }
+  a.llsg-card.llsg-card-wide .llbiz-card-main h3 { margin-bottom: 4px; }
+  a.llsg-card.llsg-card-wide .llsg-card-price {
+    margin-top: 0;
+    font-size: 1.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .llbiz-band .llsg-card,
+  .llbiz-split-copy .llsg-card,
+  .llbiz-band .llsg-related a { transition: none; }
+}
