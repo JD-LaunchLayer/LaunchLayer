@@ -15,7 +15,7 @@ next_title: Why Your Games are Stuttering (FPS Drops): Software vs. Hardware Bot
 ---
 
 
-A backpack zip, a kitchen worktop, a schoolbag on the C2C. One knock is all it takes, and suddenly the lid has a spider-web of cracks, a black "ink blot" spreading across the picture, or a set of coloured lines where the display used to be.
+A bag zip, a kitchen worktop, a drop on the way to work. One knock is all it takes, and suddenly the lid has a spider-web of cracks, a black "ink blot" spreading across the picture, or a set of coloured lines where the display used to be.
 
 A cracked laptop screen looks catastrophic, but in most cases it's not. Your files usually sit on a drive that has nothing to do with the panel, and a replacement is often worth pricing before you buy new. In Wickford we replace cracked, bleeding and flickering screens for homes and businesses across South Essex. Here's what to do next.
 
