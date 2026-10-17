@@ -17,7 +17,7 @@ If your laptop takes two minutes to reach the desktop, freezes when you open Pho
 
 A common example is a perfectly decent i5 or Ryzen machine from 2018–2021, with 8 or 16GB of RAM, and a 5400rpm disk that struggles to keep up with Windows 11. A solid-state drive (SSD) is a drive with no moving parts, and fitting one is usually the biggest speed change you can make without replacing the laptop. It's worth trying before you shop for a new machine.
 
-This isn't the same job as a [full clean because it won't turn on](/blog/laptop-not-turning-on-slow-fix/), and a slow laptop isn't automatically a reason to [buy new](/blog/laptop-repair-vs-replace-sustainability-essex/). It's a parts swap that moves your files across.
+An SSD upgrade is a different job from fixing a laptop that [won't turn on](/blog/laptop-not-turning-on-slow-fix/). A slow machine isn't automatically a reason to [buy new](/blog/laptop-repair-vs-replace-sustainability-essex/). It's a parts swap that moves your files across.
 
 ## Is it the hard drive, or is Windows just being slow?
 
@@ -58,15 +58,15 @@ MacBooks are a different job. Storage that's soldered on Apple silicon Macs can'
 
 ## Who is this for around Wickford?
 
-School-run laptops, a dusty Dell in a van footwell, and small-office towers with a large storage disk next to a tiny boot SSD all belong here. Drop-off at the workshop is arranged in advance: call 07367 652987 or send a message and we'll confirm a time and the address. If you're in [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Brentwood](/brentwood-pc-repair/), you're welcome to drop it at the workshop too.
+We do this for family laptops, work laptops and office PCs. Call 07367 652987 to book a drop-off, and we'll confirm a time. If you're in [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Brentwood](/brentwood-pc-repair/), you're welcome to bring it to the workshop too.
 
 If the lid is cracked as well as slow, mention it up front, because that's a [screen job](/blog/cracked-laptop-screen-wickford-essex/) plus an SSD, priced as two clear lines. Panel labour is on the [Wickford screen repair](/laptop-screen-repair-wickford/) page.
 
 ## How do you book an SSD upgrade in Wickford?
 
-Diagnostics are free, and an SSD or RAM upgrade is from £65 + parts. If the laptop isn't worth the upgrade, **No-Fix, No-Fee** applies, so you don't pay labour for a job we don't do.
+Diagnostics are free, and an SSD or RAM upgrade is from £65 + parts. If an upgrade isn't worth it, we'll tell you before you pay anything.
 
-We'll arrange safe collection or return with you. Collection and return is free in Wickford SS11/SS12; elsewhere, please ask. Drop-off at the workshop is arranged in advance. Book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
+Collection and return is free in Wickford SS11 and SS12. Elsewhere, please ask. Book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
 
 ## FAQ
 
