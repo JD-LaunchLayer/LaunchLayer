@@ -13,11 +13,11 @@ og_image: /assets/meta/meta-laptop-repair-cost-essex.jpg
 image_alt: Laptop with its base cover removed on a wooden desk, showing the battery, cooling fan and motherboard, with a screwdriver set and removed parts beside it
 ---
 
-People ask what a **laptop repair cost in Essex** actually is, then find a forum thread full of guesses. Here's the list we quote from in Wickford. These are the same starting prices as on the [services and pricing](/services/) page, not a special "blog price".
+People ask what a **laptop repair cost in Essex** actually is, then find a forum thread full of guesses. Here's the list we quote from in Wickford. These are our normal starting prices, the same as on our [services and pricing](/services/) page.
 
-The order of the job is the same wherever you live. **Diagnostics are free.** We find the fault, and then you get a **fixed quote** before any work starts or any part is ordered. If a repair isn't worth doing, No-Fix, No-Fee means you don't pay labour for the bad news. A "from" figure is the labour starting point, not a guess at the price of your panel or battery.
+The order of the job is the same wherever you live. **Diagnostics are free.** We find the fault, and then you get a **fixed quote** before any work starts or any part is ordered. If a repair isn't worth doing, you don't pay labour for the bad news. 'From' is where the labour starts. We price your part separately.
 
-The workshop behind this list is [LaunchLayer](/wickford-laptop-repair/). Drop-off at the workshop is arranged in advance: call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return is free in Wickford SS11/SS12. Elsewhere in South Essex, please ask.
+That's us at [LaunchLayer](/wickford-laptop-repair/), in Wickford. Call **[07367 652987](tel:07367652987)** and we'll book a drop-off, or you can ask about collection. Collection and return is free in Wickford SS11 and SS12. Elsewhere in South Essex, please ask.
 
 ## Starting prices
 
@@ -47,7 +47,7 @@ If the laptop also won't switch on, start with the [won't turn on guide](/blog/l
 
 "From £55" means the labour starts there, after a free diagnostic. It doesn't mean every laptop leaves at £55. A loose hinge, a port and a worn battery are three separate lines, so you can see what each one costs.
 
-You approve the quote before we order a part. If the part arrives and the fault turns out to be somewhere else, we'll explain that before you pay for any work you didn't agree to. No-Fix, No-Fee covers the labour when a repair can't be done, rather than taking money off a job that went ahead.
+You approve the quote before we order a part. If the part arrives and the fault turns out to be somewhere else, we'll explain that before you pay for any work you didn't agree to. If we can't do the repair, you don't pay labour.
 
 ## Book the diagnostic, not a guess
 
