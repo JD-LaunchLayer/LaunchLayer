@@ -1265,11 +1265,33 @@ def special_case_mot(slug: str) -> None:
     (ROOT / slug / "index.html").write_text(src)
 
 
+def town_page_keeps_copy(slug: str) -> None:
+    """Town pages are hand-written. A rebuild must not flatten that copy."""
+    html = (ROOT / slug / "index.html").read_text()
+    if "llsg-hero-town" not in html:
+        raise RuntimeError(f"{slug} is missing llsg-hero-town")
+    if 'loading="eager"' not in html or 'fetchpriority="high"' not in html:
+        raise RuntimeError(f"{slug} hero image is not eager with high fetch priority")
+    print(f"OK {slug}: kept hand-written town copy")
+
+
 def main() -> None:
     checklist = []
     errors = []
     for slug in ALL_SLUGS:
         try:
+            if slug in TOWN_SLUGS:
+                town_page_keeps_copy(slug)
+                checklist.append(
+                    {
+                        "slug": slug,
+                        "layout": "floaty (hand-written town page)",
+                        "hero": HERO_BY_SLUG[slug][0],
+                        "alt": HERO_BY_SLUG[slug][1],
+                        "notes": "Unique town copy kept; hero class and eager image checked",
+                    }
+                )
+                continue
             if slug.startswith("laptop-mot"):
                 special_case_mot(slug)
                 hero = HERO_BY_SLUG[slug]
