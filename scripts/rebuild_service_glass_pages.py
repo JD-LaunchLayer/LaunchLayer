@@ -1019,6 +1019,7 @@ HERO_ONE_LINER = (
 )
 WEBSITE_HERO_LINE = "Built and looked after in Wickford."
 MOT_HERO_LINE = "A £60 health check for your laptop at our Wickford workshop."
+CUSTOM_PC_HERO_LINE = "Built, burn-in tested and set up at our Wickford workshop."
 COLLECTION_ONLY_BADGE = frozenset({
     "laptop-mot-wickford-essex",
     "laptop-mot-wickford",
@@ -1053,6 +1054,8 @@ def hero_line(slug: str) -> str:
         return WEBSITE_HERO_LINE
     if slug.startswith("laptop-mot"):
         return MOT_HERO_LINE
+    if slug == "custom-pc-builds":
+        return CUSTOM_PC_HERO_LINE
     return HERO_ONE_LINER
 
 
