@@ -52,7 +52,7 @@ If the lid shows no picture at all, try connecting a spare HDMI or USB-C monitor
 
 You'll often hear that a screen isn't worth fixing. Sometimes that's true, but it's worth getting a proper quote first. In 2026 a typical Wickford repair looks like this:
 
-- **Windows and Chromebook screens:** a flat £99 fitting labour plus your matching panel, priced before it's ordered.
+- **Windows and Chromebook screens:** a flat £50 fitting labour plus your matching panel, priced before it's ordered.
 - **MacBook displays:** from £85 + parts/panel. Apple lids are a different assembly, which is why the labour is priced separately.
 - Most of these jobs are back in 1 to 3 working days, depending on how quickly the UK supplier can ship your exact model. New parts fitted on a screen repair carry a 12-month warranty.
 
@@ -84,7 +84,7 @@ Not if the glass is loose or a black blot is spreading. Close the lid gently and
 
 ### How much does a laptop screen replacement cost?
 
-Windows and Chromebook screens are £99 fitting labour plus the matching panel. MacBook displays are from £85 + parts/panel.
+Windows and Chromebook screens are £50 fitting labour plus the matching panel. MacBook screen fitting is £85 plus the panel, and Mac panels usually cost more.
 
 ### How long does a screen repair take?
 

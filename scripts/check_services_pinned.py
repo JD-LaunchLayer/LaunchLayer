@@ -24,7 +24,7 @@ PRICING = ROOT / "business" / "pricing" / "index.html"
 
 # Pinned card name -> directory data-service-id -> OfferCatalog name (None if live had no offer).
 CARDS = [
-    ("PC & Laptop Diagnostics", "diagnostics", "PC & Laptop Diagnostics"),
+    ("PC & Laptop Diagnostics", "diagnostics", None),
     ("Laptop Screen Replacement", "screen", "Laptop Screen Replacement"),
     ("Laptop Repair", "laptop-hub", None),
     ("PC Repair", "pc-hub", None),
@@ -207,8 +207,10 @@ def offers(html: str) -> dict[str, str]:
             name = item["itemOffered"]["name"]
             if "price" in item:
                 found[name] = str(item["price"])
-            else:
+            elif "priceSpecification" in item and "minPrice" in item["priceSpecification"]:
                 found[name] = str(item["priceSpecification"]["minPrice"])
+            else:
+                note(f"{name}: offer has no numeric price")
     return found
 
 
@@ -371,18 +373,9 @@ def main() -> None:
         fail("catalog JSON removed, but scripts/seo_canonical_schema_migrate.py still reads it")
     ok("search UI removed; #llsvc-catalog kept because the schema migrate script reads it")
 
-    if ld_blocks(old_virus) != ld_blocks(new_virus):
-        fail("virus page JSON-LD changed")
-    old_lines = old_virus.splitlines()
-    new_lines = new_virus.splitlines()
-    added = [line for line in new_lines if line not in old_lines]
-    removed = [line for line in old_lines if line not in new_lines]
-    if removed:
-        fail(f"virus page removed lines: {removed}")
-    price_line = "    <p>Virus, malware &amp; scam removal: £69 fixed price. Diagnostics are free; No-Fix-No-Fee on labour.</p>"
-    if added != [price_line]:
-        fail(f"virus page diff is not only the £69 line: {added}")
-    ok("virus page adds only the £69 line; JSON-LD unchanged")
+    if old_virus != new_virus:
+        fail("virus page is not byte-for-byte identical to the fixture")
+    ok("virus page identical to fixture")
 
     print("PASS  services pinned layout check")
 

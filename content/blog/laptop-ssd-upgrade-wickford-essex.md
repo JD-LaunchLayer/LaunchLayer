@@ -1,7 +1,7 @@
 ---
 slug: laptop-ssd-upgrade-wickford-essex
 title: Laptop SSD Upgrade Wickford | Fix a Slow Machine
-headline: Slow Laptop in Wickford? An SSD Upgrade Is Usually the Fix
+headline: Slow laptop? When an SSD upgrade can help
 description: If your Wickford laptop takes minutes to boot, a hard drive is often the bottleneck. How an SSD upgrade works, and when a new machine is wrong.
 date: 2026-09-16
 draft: false
@@ -44,7 +44,7 @@ How long it takes depends on the laptop and the part, and we agree the timing wi
 
 ## SATA or NVMe: which drive will the laptop take?
 
-SATA and NVMe are two types of SSD. Thin office laptops from around 2016–2019 often only take a 2.5" SATA SSD, which is still much faster than a spinning disk for booting and opening documents. Newer machines and most custom PCs take M.2 NVMe, the better choice for photo work and games.
+The right SSD depends on the exact laptop model and its storage connections. We check compatibility before quoting for a drive.
 
 The motherboard decides the fastest drive it can use. A Gen5 stick in a Gen3 slot only runs at Gen3 speed, so we fit a drive that matches the slot you have. If you're building a new PC rather than upgrading a laptop, the [custom PC page](/custom-pc-builds/) is the cleaner route.
 
@@ -64,7 +64,7 @@ If the lid is cracked as well as slow, mention it up front, because that's a [sc
 
 ## How do you book an SSD upgrade in Wickford?
 
-Diagnostics are free, and an SSD or RAM upgrade is from £65 + parts. If an upgrade isn't worth it, we'll tell you before you pay anything.
+Diagnostics are free. SSD upgrade £65 + drive (includes fitting and data transfer). RAM, where it can be upgraded, starts from £49 plus the part. Much RAM is soldered. If an upgrade isn't worth it, we'll tell you before you pay anything.
 
 Collection and return is free in Wickford SS11 and SS12. Elsewhere, please ask. Book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
 

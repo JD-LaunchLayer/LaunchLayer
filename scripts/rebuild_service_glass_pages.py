@@ -196,7 +196,7 @@ class Booking:
     amount: str = "FREE"
     features: list[str] = field(default_factory=list)
     primary_href: str = "/contact"
-    primary_label: str = "Book free Wickford collection"
+    primary_label: str = "Book free SS11/SS12 collection"
     secondary_href: str = "tel:07367652987"
     secondary_label: str = "Call 07367 652987"
 
@@ -760,7 +760,7 @@ def extract_sections(root: Tag, prefix: str) -> tuple[list[Section], list[str]]:
         low = title.lower()
         if low in seen_titles:
             continue
-        if should_skip_title(title):
+        if should_skip_title(title) or low in DROPPED_SECTION_TITLES:
             continue
 
         node_cls = " ".join(node.get("class") or [])
@@ -845,6 +845,8 @@ def parse_page(slug: str) -> PageData:
             href = a.get("href") or "#"
             label = clean_text(a.get_text()) or "Learn more"
             link_html += f'<p style="margin-top:12px"><a href="{html_lib.escape(href)}">{html_lib.escape(label)}</a></p>'
+        if title.lower() in DROPPED_SECTION_TITLES:
+            continue
         if title or body:
             story_blocks.append(
                 f'<div class="llsg-story"><h3>{html_lib.escape(title)}</h3><p>{html_lib.escape(body)}</p>{img_html}{link_html}</div>'
@@ -874,7 +876,7 @@ def parse_page(slug: str) -> PageData:
         root,
         prefix,
         fallback_title=f"Ready to book {h1_text}?",
-        fallback_lead="Free diagnostics. Clear fixed quotes. Local Wickford workshop.",
+        fallback_lead=HERO_ONE_LINER,
     )
 
     # If no related links found, add sensible defaults
@@ -1009,34 +1011,61 @@ def render_related(related: list[Related]) -> str:
 </section>'''
 
 
+HERO_ONE_LINER = (
+    "Free diagnostics. Fixed quote before we start. "
+    "You speak to the technician who does the job."
+)
+WEBSITE_HERO_LINE = (
+    "Websites for local businesses, from £249. "
+    "Built and looked after in Wickford."
+)
+COLLECTION_ONLY_BADGE = frozenset({
+    "laptop-mot-wickford-essex",
+    "laptop-mot-wickford",
+    "data-recovery",
+})
+# These headings are removed from the built pages. A rebuild must not put them back.
+DROPPED_SECTION_TITLES = {
+    "overheating, noisy fans and business computers",
+    "can you make a sluggish old computer fast again?",
+}
+
+
+def hero_badge(slug: str) -> str:
+    if slug == "website-design-wickford":
+        return ""
+    if slug in COLLECTION_ONLY_BADGE:
+        return "Free SS11/SS12 collection"
+    return "No-Fix, No-Fee · Free SS11/SS12 collection"
+
+
+def hero_line(slug: str) -> str:
+    if slug == "website-design-wickford":
+        return WEBSITE_HERO_LINE
+    return HERO_ONE_LINER
+
+
 def render_hero_floaty(page: PageData) -> str:
     src, alt = HERO_BY_SLUG.get(
         page.slug,
         ("/assets/images/image-4307083f.png", "LaunchLayer Wickford workshop"),
     )
     trust = "".join(f"<span>{html_lib.escape(t)}</span>" for t in page.trust[:4])
-    price = ""
-    if page.price_inline:
-        price = f'''<div class="llsg-price-inline" aria-label="Price {html_lib.escape(page.price_inline[0])}">
-  <strong>{html_lib.escape(page.price_inline[0])}</strong>
-  <span>{html_lib.escape(page.price_inline[1])}</span>
-</div>'''
-    elif page.booking.amount.upper() == "FREE":
-        price = f'''<div class="llsg-price-inline" aria-label="Free diagnostics">
-  <strong>FREE</strong>
-  <span>{html_lib.escape(page.booking.tag)}</span>
-</div>'''
+    # From-prices stay in the section under the hero, not in a hero price box.
 
+    badge = hero_badge(page.slug)
+    eyebrow = ""
+    if badge:
+        eyebrow = f'''    <span class="llsg-eyebrow">
+      <span class="llsg-eyebrow-dot" aria-hidden="true"></span>
+      {html_lib.escape(badge)}
+    </span>
+'''
     return f'''<header class="llsg-hero llsg-glass">
   <div class="llsg-hero-copy">
-    <span class="llsg-eyebrow">
-      <span class="llsg-eyebrow-dot" aria-hidden="true"></span>
-      {html_lib.escape(page.eyebrow)}
-    </span>
-    <p class="llsg-brand">Launch<span>Layer</span></p>
+{eyebrow}    <p class="llsg-brand">Launch<span>Layer</span></p>
     <h1>{page.h1_html}</h1>
-    <p class="llsg-lead">{page.lead_html}</p>
-    {price}
+    <p class="llsg-lead">{html_lib.escape(hero_line(page.slug))}</p>
     <div class="llsg-trust">{trust}</div>
     <div class="llsg-actions">
       <a href="{html_lib.escape(page.booking.primary_href)}" class="llsg-btn-primary">{html_lib.escape(page.booking.primary_label)}</a>
@@ -1053,12 +1082,6 @@ def render_hero_floaty(page: PageData) -> str:
 def render_hero_compact(page: PageData) -> str:
     src, alt = HERO_BY_SLUG.get(page.slug, (None, None))  # type: ignore
     trust = "".join(f"<span>{html_lib.escape(t)}</span>" for t in page.trust[:4])
-    price = ""
-    if page.price_inline:
-        price = f'''<div class="llsg-price-inline" aria-label="Price {html_lib.escape(page.price_inline[0])}">
-  <strong>{html_lib.escape(page.price_inline[0])}</strong>
-  <span>{html_lib.escape(page.price_inline[1])}</span>
-</div>'''
     band = ""
     if src:
         band = f'''<div class="llsg-hero-band" aria-hidden="true">
@@ -1071,16 +1094,19 @@ def render_hero_compact(page: PageData) -> str:
   <div class="llsg-hero-scrim"></div>
 </div>'''
 
+    badge = hero_badge(page.slug)
+    eyebrow = ""
+    if badge:
+        eyebrow = f'''    <span class="llsg-eyebrow">
+      <span class="llsg-eyebrow-dot" aria-hidden="true"></span>
+      {html_lib.escape(badge)}
+    </span>
+'''
     return f'''<header class="llsg-hero llsg-hero-compact llsg-glass">
   <div class="llsg-hero-copy">
-    <span class="llsg-eyebrow">
-      <span class="llsg-eyebrow-dot" aria-hidden="true"></span>
-      {html_lib.escape(page.eyebrow)}
-    </span>
-    <p class="llsg-brand">Launch<span>Layer</span></p>
+{eyebrow}    <p class="llsg-brand">Launch<span>Layer</span></p>
     <h1>{page.h1_html}</h1>
-    <p class="llsg-lead">{page.lead_html}</p>
-    {price}
+    <p class="llsg-lead">{html_lib.escape(hero_line(page.slug))}</p>
     <div class="llsg-trust">{trust}</div>
     <div class="llsg-actions">
       <a href="{html_lib.escape(page.booking.primary_href)}" class="llsg-btn-primary">{html_lib.escape(page.booking.primary_label)}</a>

@@ -38,7 +38,10 @@ SITE = "https://launchlayer.uk"
 ORG_ID = f"{SITE}/#organization"
 # Same exception as /website-design-wickford/: the company line drops the
 # repairs promise. Every other generated post keeps it.
-FOOTER_WITHOUT_NO_FIX_NO_FEE = frozenset({"laptop-ssd-upgrade-wickford-essex"})
+FOOTER_WITHOUT_NO_FIX_NO_FEE = frozenset({
+    "laptop-ssd-upgrade-wickford-essex",
+    "data-recovery-services-wickford-essex",
+})
 # Old Squarespace slugs that were pasted into blog JSON-LD but have no page.
 DEAD_BLOG_SLUGS = {
     "windows-10-end-of-support-guide-essex",
@@ -745,6 +748,13 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
     image_alt = html.escape(meta["image_alt"])
     display_date = html.escape(format_display_date(meta["date"]))
     published = html.escape(iso_datetime(meta["date"]))
+    hero_note = ""
+    if slug == "laptop-ssd-upgrade-wickford-essex":
+        hero_note = (
+            '              <p class="llblog-badge">Free SS11/SS12 collection</p>\n'
+            "              <p>Free diagnostics. Fixed quote before we start. "
+            "You speak to the technician who does the job.</p>\n"
+        )
     company_line = "LaunchLayer Ltd · Company no. 16460298 · 32 Glebe Road, Wickford, Essex SS11 8EU"
     if slug not in FOOTER_WITHOUT_NO_FIX_NO_FEE:
         company_line += " · No-Fix-No-Fee"
@@ -833,7 +843,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
             </figure>
             <div class="blog-item-title">
               <h1 class="entry-title" itemprop="headline">{headline}</h1>
-            </div>
+{hero_note}            </div>
             <div class="blog-item-meta-wrapper">
               <a href="/blog/category/{category_path.lower()}/" class="blog-item-category">{category}</a>
               <time class="dt-published" datetime="{published}" itemprop="datePublished">{display_date}</time>

@@ -1,5 +1,5 @@
 {
-  "source": "Owner-confirmed facts, refreshed 16 Oct 2026. The workshop is in Wickford and we serve South Essex, including Basildon, Laindon and the other towns already on the site. Free collection and return is SS11 and SS12 only. Customers approve a fixed quote before work. The flat £65 DC jack / charging port price is only for removable or separate-board ports; ports soldered to the main board have no fixed price and are quoted after diagnosis. Hardware labour starts from £49. Software starts from £45.",
+  "source": "Owner-confirmed facts, refreshed 19 Oct 2026. Prices include VAT. The workshop is in Wickford and we serve South Essex. Free collection and return is SS11 and SS12 only. Customers approve a fixed quote before work. Hardware repairs start from £49. Windows and Chromebook screen fitting is £50 plus the panel. MacBook screen fitting is £85 plus the panel, and Mac panels usually cost more. Outside SS11/SS12, home visits are priced by location; we'll confirm the cost before booking.",
   "business": {
     "name": "LaunchLayer",
     "address": "32 Glebe Road, Wickford, Essex SS11 8EU",
@@ -8,7 +8,10 @@
     "email": "hello@launchlayer.uk",
     "byline": "The LaunchLayer workshop",
     "public_name": "LaunchLayer",
-    "never_use": ["Jordan Duggins", "Duggins"]
+    "never_use": [
+      "Jordan Duggins",
+      "Duggins"
+    ]
   },
   "location": {
     "workshop": "Wickford",
@@ -17,83 +20,280 @@
   },
   "postcodes": {
     "workshop": "SS11 8EU",
-    "free_collection_and_return": ["SS11", "SS12"],
-    "free_home_visit": ["SS11", "SS12"]
+    "free_collection_and_return": [
+      "SS11",
+      "SS12"
+    ]
   },
   "drop_off": "Drop-off at the workshop is arranged in advance.",
   "collection": "Free collection and return for SS11 and SS12 only. Elsewhere, collection is by arrangement.",
   "before_work": "Customers approve a fixed quote before work.",
   "prices": [
-    {"service": "diagnostics", "amount_gbp": 0, "wording": "FREE", "timing": "typically within 24 hours, never guaranteed"},
-    {"service": "recycling", "amount_gbp": 0, "wording": "free"},
-    {"service": "home_visit_ss11_ss12", "amount_gbp": 0, "wording": "free"},
-    {"service": "home_visit_elsewhere", "amount_gbp": 49, "wording": "£49 elsewhere, includes diagnosis and the first hour"},
-    {"service": "hardware", "amount_gbp": 49, "qualifier": "from", "note": "Hardware labour starts from £49."},
-    {"service": "general_hardware", "amount_gbp": 55, "qualifier": "from", "note": "General hardware and component repair. The hardware floor is still £49."},
-    {"service": "battery", "amount_gbp": 49, "qualifier": "from", "plus": "part"},
-    {"service": "hinge_lid", "amount_gbp": 75, "qualifier": "from"},
-    {"service": "keyboard", "amount_gbp": 55, "qualifier": "from", "plus": "part"},
-    {"service": "ssd_ram", "amount_gbp": 65, "qualifier": "from", "plus": "parts"},
-    {"service": "mac", "amount_gbp": 85, "qualifier": "from", "plus": "parts/panel"},
-    {"service": "screen", "amount_gbp": 99, "plus": "panel", "never": "same day or next day"},
-    {"service": "dc_jack_charging_port", "amount_gbp": 65, "qualifier": "flat", "applies_to": "Removable or separate-board ports only: ports that are removable, or that sit on their own small board.", "quoted_after_diagnosis": "Ports soldered to the main board have no fixed price and are quoted after diagnosis."},
-    {"service": "liquid_damage", "amount_gbp": 95, "qualifier": "from"},
-    {"service": "dust_clean", "amount_gbp": 55},
-    {"service": "mot", "amount_gbp": 60},
-    {"service": "insurance_report", "amount_gbp": 40},
-    {"service": "software", "amount_gbp": 45, "qualifier": "from"},
-    {"service": "software_fix", "amount_gbp": 45, "qualifier": "from", "wording": "from £45; general software fix is £45 for up to 60 mins (workshop)"},
-    {"service": "windows_install", "amount_gbp": 59},
-    {"service": "windows_11_upgrade", "amount_gbp": 69, "qualifier": "from"},
-    {"service": "virus_malware_scam", "amount_gbp": 69, "qualifier": "fixed", "diagnosis": "typically within 24 hours, never guaranteed"},
-    {"service": "custom_pc_assembly", "amount_gbp": 149},
-    {"service": "website_1_to_3_pages", "amount_gbp": 249},
-    {"service": "website_5_pages", "amount_gbp": 379},
-    {"service": "website_care_plan", "amount_gbp": 19, "period": "month"},
-    {"service": "website_launch_offer", "amount_gbp": 199, "placement": "body text only"}
+    {
+      "service": "diagnostics",
+      "amount_gbp": 0,
+      "wording": "FREE",
+      "timing": "typically within 24 hours, never guaranteed"
+    },
+    {
+      "service": "recycling",
+      "amount_gbp": 0,
+      "wording": "free"
+    },
+    {
+      "service": "home_visit_ss11_ss12",
+      "wording": "Outside SS11/SS12, home visits are priced by location; we'll confirm the cost before booking."
+    },
+    {
+      "service": "home_visit_elsewhere",
+      "wording": "Outside SS11/SS12, home visits are priced by location; we'll confirm the cost before booking."
+    },
+    {
+      "service": "hardware",
+      "amount_gbp": 49,
+      "qualifier": "from",
+      "note": "Hardware labour starts from £49."
+    },
+    {
+      "service": "general_hardware",
+      "amount_gbp": 49,
+      "qualifier": "from",
+      "note": "General hardware and component repair, and the general hardware fix, start from £49."
+    },
+    {
+      "service": "battery",
+      "amount_gbp": 49,
+      "qualifier": "from",
+      "plus": "part"
+    },
+    {
+      "service": "hinge_lid",
+      "amount_gbp": 75,
+      "qualifier": "from"
+    },
+    {
+      "service": "keyboard",
+      "amount_gbp": 55,
+      "qualifier": "from",
+      "plus": "part"
+    },
+    {
+      "service": "ssd",
+      "amount_gbp": 65,
+      "note": "SSD upgrade £65 + drive (includes fitting and data transfer).",
+      "plus": "drive",
+      "includes": "fitting and data transfer"
+    },
+    {
+      "service": "mac",
+      "amount_gbp": 85,
+      "qualifier": "from",
+      "plus": "parts/panel",
+      "note": "MacBook repairs start from £85. MacBook screen fitting is £85 plus the panel, and Mac panels usually cost more."
+    },
+    {
+      "service": "screen",
+      "amount_gbp": 50,
+      "plus": "panel",
+      "never": "same day or next day",
+      "note": "Windows and Chromebook fitting is £50 plus the panel."
+    },
+    {
+      "service": "dc_jack_charging_port",
+      "amount_gbp": 65,
+      "qualifier": "flat",
+      "applies_to": "Removable or separate-board ports only: ports that are removable, or that sit on their own small board.",
+      "quoted_after_diagnosis": "Ports soldered to the main board have no fixed price and are quoted after diagnosis."
+    },
+    {
+      "service": "liquid_damage",
+      "amount_gbp": 95,
+      "qualifier": "from"
+    },
+    {
+      "service": "dust_clean",
+      "amount_gbp": 55
+    },
+    {
+      "service": "mot",
+      "amount_gbp": 60
+    },
+    {
+      "service": "insurance_report",
+      "amount_gbp": 40
+    },
+    {
+      "service": "software",
+      "amount_gbp": 45,
+      "qualifier": "from"
+    },
+    {
+      "service": "software_fix",
+      "amount_gbp": 45,
+      "qualifier": "from",
+      "wording": "from £45; general software fix is £45 for up to 60 mins (workshop)"
+    },
+    {
+      "service": "windows_install",
+      "amount_gbp": 59
+    },
+    {
+      "service": "windows_11_upgrade",
+      "amount_gbp": 69,
+      "qualifier": "from"
+    },
+    {
+      "service": "virus_malware_scam",
+      "amount_gbp": 69,
+      "qualifier": "fixed",
+      "diagnosis": "typically within 24 hours, never guaranteed"
+    },
+    {
+      "service": "custom_pc_assembly",
+      "status": "awaiting confirmation",
+      "note": "Assembly price, 2-year build cover and parts manufacturer warranty are awaiting confirmation. Do not publish them."
+    },
+    {
+      "service": "website_1_to_3_pages",
+      "amount_gbp": 249
+    },
+    {
+      "service": "website_5_pages",
+      "amount_gbp": 379
+    },
+    {
+      "service": "website_care_plan",
+      "amount_gbp": 19,
+      "period": "month"
+    },
+    {
+      "service": "website_launch_offer",
+      "amount_gbp": 199,
+      "placement": "body text only"
+    },
+    {
+      "service": "ram",
+      "amount_gbp": 49,
+      "qualifier": "from",
+      "plus": "parts",
+      "note": "RAM moves under general hardware. Much RAM is soldered."
+    },
+    {
+      "service": "mac_screen",
+      "amount_gbp": 85,
+      "plus": "panel",
+      "note": "Flat £85 plus the panel. Mac panels usually cost more."
+    },
+    {
+      "service": "data_recovery_tiers",
+      "wording": "£79 / £90–£150 / from £350. When a drive needs a lab, we refer it to a specialist partner on their terms, and the cost is quoted before any work starts."
+    }
   ],
-  "allowed_price_amounts_gbp": [0, 19, 40, 45, 49, 55, 59, 60, 65, 69, 75, 85, 95, 99, 149, 199, 249, 379],
+  "allowed_price_amounts_gbp": [
+    0,
+    19,
+    40,
+    45,
+    49,
+    50,
+    55,
+    59,
+    60,
+    65,
+    69,
+    75,
+    79,
+    85,
+    90,
+    95,
+    99,
+    150,
+    199,
+    249,
+    350,
+    379
+  ],
   "warranty": {
     "months": 12,
     "on": "new parts fitted",
-    "applies_only_to": ["screen", "charging port", "DC jack", "battery"]
+    "applies_only_to": [
+      "screen",
+      "charging port",
+      "DC jack",
+      "battery"
+    ]
   },
   "turnaround": {
     "working_days": "1-3",
-    "applies_only_to": ["screen", "charging port", "DC jack", "battery"],
+    "applies_only_to": [
+      "screen",
+      "charging port",
+      "DC jack",
+      "battery"
+    ],
     "screen_repair": "never same day or next day"
   },
   "custom_pc": {
-    "assembly_gbp": 149,
-    "parts_warranty": "Parts keep the manufacturer's warranty.",
-    "build_work_years": 2,
-    "banned_phrases": ["at cost"]
+    "burn_in": "Every build includes a burn-in test and performance report.",
+    "awaiting_confirmation": [
+      "assembly price",
+      "2-year build-work cover",
+      "parts manufacturer warranty"
+    ],
+    "banned_phrases": [
+      "at cost"
+    ]
   },
   "website_design": {
     "path": "/website-design-wickford/",
     "prices": [
-      {"pages": "1-3", "amount_gbp": 249},
-      {"pages": "5", "amount_gbp": 379}
+      {
+        "pages": "1-3",
+        "amount_gbp": 249
+      },
+      {
+        "pages": "5",
+        "amount_gbp": 379
+      }
     ],
     "care_plan": {
       "amount_gbp": 19,
       "period": "month",
       "tie_in": "rolling monthly, no tie-in",
-      "includes": ["hosting", "SSL", "backups", "updates", "20 minutes of edits a month"]
+      "includes": [
+        "hosting",
+        "SSL",
+        "backups",
+        "updates",
+        "20 minutes of edits a month"
+      ]
     },
-    "includes": ["mobile design", "contact form", "click-to-call", "basic SEO", "Google Business Profile setup"],
+    "includes": [
+      "mobile design",
+      "contact form",
+      "click-to-call",
+      "basic SEO",
+      "Google Business Profile setup"
+    ],
     "card": {
       "heading": "Website setup",
       "title": "Small business websites",
       "from_gbp": 249,
       "href": "/website-design-wickford/",
-      "shown_on": "/business/pricing/"
+      "shown_on": "/business/pricing/",
+      "note": "The website card is from £249. It is not a repair from-price."
     },
-    "domain_at_cost": "Allowed on /website-design-wickford/ only. Banned for custom PC builds.",
+    "hero": "Websites for local businesses, from £249. Built and looked after in Wickford.",
+    "domain": "Domains are charged at the registrar's price.",
     "launch_offer": {
       "amount_gbp": 199,
       "placement": "body text only",
-      "never": ["title", "meta", "schema", "social"]
+      "never": [
+        "title",
+        "meta",
+        "schema",
+        "social"
+      ]
     },
     "no_fix_no_fee": false
   },
@@ -116,10 +316,8 @@
   "unconfirmed_claims": [
     "same-day",
     "90-day warranty",
-    "£50 screen fitting",
     "£65 screen fitting",
     "business email price",
-    "VAT",
     "website build timescale"
   ],
   "banned_phrases": [
@@ -146,5 +344,6 @@
     "at cost",
     "Jordan Duggins",
     "Duggins"
-  ]
+  ],
+  "vat": "Prices include VAT."
 }
