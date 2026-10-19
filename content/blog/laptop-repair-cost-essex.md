@@ -2,7 +2,7 @@
 slug: laptop-repair-cost-essex
 title: Laptop Repair Cost in Essex: 2026 Price Guide
 headline: How Much Does a Laptop Repair Cost in Essex? 2026 Price Guide
-description: Laptop repair cost in Essex. Free diagnostics, then a fixed quote. Hardware from £55, battery from £49 plus the part, screen labour is a flat £99 plus the panel.
+description: Laptop repair cost in Essex. Free diagnostics, then a fixed quote. Hardware from £49, battery from £49 plus the part, Windows screen fitting is £50 plus the panel.
 date: 2026-10-14
 draft: false
 category: Useful Tips
@@ -22,13 +22,13 @@ That's us at [LaunchLayer](/wickford-laptop-repair/), in Wickford. Call **[07367
 ## Starting prices
 
 - Diagnostics are free.
-- Hardware and general repair starts from £55.
+- Hardware and general repair starts from £49.
 - Battery labour starts from £49 plus the part, and the battery itself is quoted for your model before it's ordered.
 - A DC jack or charging port is a flat £65 where the port is removable or sits on its own small board. Ports soldered to the main board are priced separately, quoted after diagnosis. The [plugged in not charging guide](/blog/laptop-battery-not-charging-wickford/) helps you narrow down whether it's the charger, the cable or the port.
-- Screen labour is a flat £99 plus the panel. The panel is a separate line, because a Chromebook panel and a touchscreen panel aren't the same part. How that quote is built is explained on [laptop screen repair Wickford](/laptop-screen-repair-wickford/).
+- Windows and Chromebook screen fitting is £50 plus the panel. MacBook screen fitting is £85 plus the panel, and Mac panels usually cost more. The panel is a separate line, because a Chromebook panel and a touchscreen panel aren't the same part. How that quote is built is explained on [laptop screen repair Wickford](/laptop-screen-repair-wickford/).
 - Hinge and lid work starts from £75.
 - Keyboard labour starts from £55 plus the part.
-- An SSD or RAM upgrade starts from £65 plus the parts.
+- SSD upgrade £65 + drive (includes fitting and data transfer). RAM, where it can be upgraded, starts from £49 plus the part. Much RAM is soldered.
 - [MacBook repairs](/macbook-repair-wickford/) start from £85 plus the parts or the panel.
 - [The MOT](/laptop-mot-wickford-essex/) is £60. That's a fixed health check, separate from the £45 software fix and from any hardware repair.
 - A general software fix is £45 for up to 60 minutes.
@@ -37,7 +37,7 @@ That's us at [LaunchLayer](/wickford-laptop-repair/), in Wickford. Call **[07367
 - A Windows 11 upgrade starts from £69.
 - Liquid damage starts from £95.
 - An insurance damage report is £40.
-- Home visits are free in Wickford (SS11 and SS12), and £49 elsewhere in South Essex, including diagnosis and the first hour.
+- Outside SS11/SS12, home visits are priced by location; we'll confirm the cost before booking.
 
 [Data recovery](/data-recovery/) is quoted on its own, after we've assessed the drive. The full list is on [services and pricing](/services/).
 
@@ -45,7 +45,7 @@ If the laptop also won't switch on, start with the [won't turn on guide](/blog/l
 
 ## What "from" means on the invoice
 
-"From £55" means the labour starts there, after a free diagnostic. It doesn't mean every laptop leaves at £55. A loose hinge, a port and a worn battery are three separate lines, so you can see what each one costs.
+"From £49" means the labour starts there, after a free diagnostic. It doesn't mean every laptop leaves at £49. Keyboard labour still starts from £55, and a dust clean stays £55. A loose hinge, a port and a worn battery are three separate lines, so you can see what each one costs.
 
 You approve the quote before we order a part. If the part arrives and the fault turns out to be somewhere else, we'll explain that before you pay for any work you didn't agree to. If we can't do the repair, you don't pay labour.
 

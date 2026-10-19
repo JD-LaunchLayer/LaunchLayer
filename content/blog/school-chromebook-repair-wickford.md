@@ -30,7 +30,7 @@ Before you set off, take a photo of the asset tag and the serial number. The ass
 
 ## The three faults we see most on school Chromebooks
 
-1. **Screens.** A backpack zip, another laptop in the same bag, or a drop off the kitchen worktop. The [cracked screen guide](/blog/cracked-laptop-screen-wickford-essex/) applies here too. Panel fitting for Windows laptops and Chromebooks is **£99 labour** plus the matching panel, as on the [Wickford screen page](/laptop-screen-repair-wickford/).
+1. **Screens.** A backpack zip, another laptop in the same bag, or a drop off the kitchen worktop. The [cracked screen guide](/blog/cracked-laptop-screen-wickford-essex/) applies here too. Panel fitting for Windows laptops and Chromebooks is **£50** plus the matching panel, as on the [Wickford screen page](/laptop-screen-repair-wickford/).
 2. **Hinges.** Daily opening and closing wears out cheap plastic, so stop using it once the hinge goes. [Hinge repair](/wickford-laptop-repair/) starts from £75.
 3. **Spills.** Usually a bottle leaking in the bag. **Power it off, do not charge it, and do not put it on a radiator.** Then follow the [spill steps](/blog/spilled-water-on-laptop-fix-essex/).
 

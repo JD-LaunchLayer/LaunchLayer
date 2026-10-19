@@ -57,4 +57,4 @@ Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367
 
 Bring the laptop, the charger you use, and the monitor if you've already bought one. We'd rather tell you a dock won't suit your laptop before you open three more boxes.
 
-A home visit is free in Wickford (SS11 and SS12), and £49 elsewhere in South Essex, including diagnosis and the first hour. No-Fix, No-Fee applies to a hardware repair that isn't viable, so you don't pay for labour. A setup visit is quoted as a setup visit.
+Outside SS11/SS12, home visits are priced by location; we'll confirm the cost before booking. No-Fix, No-Fee applies to a hardware repair that isn't viable, so you don't pay for labour. A setup visit is quoted as a setup visit.

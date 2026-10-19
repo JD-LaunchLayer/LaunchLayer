@@ -38,7 +38,10 @@ SITE = "https://launchlayer.uk"
 ORG_ID = f"{SITE}/#organization"
 # Same exception as /website-design-wickford/: the company line drops the
 # repairs promise. Every other generated post keeps it.
-FOOTER_WITHOUT_NO_FIX_NO_FEE = frozenset({"laptop-ssd-upgrade-wickford-essex"})
+FOOTER_WITHOUT_NO_FIX_NO_FEE = frozenset({
+    "laptop-ssd-upgrade-wickford-essex",
+    "data-recovery-services-wickford-essex",
+})
 # Old Squarespace slugs that were pasted into blog JSON-LD but have no page.
 DEAD_BLOG_SLUGS = {
     "windows-10-end-of-support-guide-essex",

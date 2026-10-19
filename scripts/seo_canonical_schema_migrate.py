@@ -19,7 +19,7 @@ CANONICAL_GRAPH: dict[str, Any] = {
             "@id": "https://launchlayer.uk/#website",
             "url": "https://launchlayer.uk/",
             "name": "LaunchLayer",
-            "description": "PC, laptop and Mac repair in Wickford and South Essex, with free collection and return in Wickford SS11/SS12 and No-Fix-No-Fee.",
+            "description": "PC, laptop and Mac repair in Wickford and South Essex. Free collection and return in Wickford SS11 and SS12. For repairs, there is no labour charge if it can't be fixed, the part isn't worth fitting, or the repair would cost more than the computer is worth.",
             "publisher": {"@id": "https://launchlayer.uk/#organization"},
         },
         {
@@ -657,7 +657,7 @@ def build_services_static_schema(catalog: dict[str, Any]) -> dict[str, Any]:
                 "@id": "https://launchlayer.uk/services/#webpage",
                 "url": "https://launchlayer.uk/services/",
                 "name": "PC & Laptop Repair Prices Wickford | Services & Pricing | LaunchLayer",
-                "description": "Clear PC and laptop repair prices in Wickford and South Essex. Free diagnostics, fixed quotes, No-Fix-No-Fee.",
+                "description": "Computer, laptop and Mac repair prices in Wickford. Free diagnostics, hardware fixes from £49 and software fixes from £45. Fixed quote before work.",
                 "isPartOf": {"@id": "https://launchlayer.uk/#website"},
                 "about": {"@id": "https://launchlayer.uk/#localbusiness"},
                 "provider": {"@id": "https://launchlayer.uk/#localbusiness"},
