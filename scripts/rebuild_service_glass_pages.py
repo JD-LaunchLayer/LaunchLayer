@@ -1009,34 +1009,40 @@ def render_related(related: list[Related]) -> str:
 </section>'''
 
 
+HERO_ONE_LINER = (
+    "Free diagnostics. Fixed quote before we start. "
+    "You speak to the technician who does the job."
+)
+COLLECTION_ONLY_BADGE = frozenset({
+    "laptop-mot-wickford-essex",
+    "laptop-mot-wickford",
+    "data-recovery",
+})
+
+
+def hero_badge(slug: str) -> str:
+    if slug in COLLECTION_ONLY_BADGE:
+        return "Free SS11/SS12 collection"
+    return "No-Fix, No-Fee · Free SS11/SS12 collection"
+
+
 def render_hero_floaty(page: PageData) -> str:
     src, alt = HERO_BY_SLUG.get(
         page.slug,
         ("/assets/images/image-4307083f.png", "LaunchLayer Wickford workshop"),
     )
     trust = "".join(f"<span>{html_lib.escape(t)}</span>" for t in page.trust[:4])
-    price = ""
-    if page.price_inline:
-        price = f'''<div class="llsg-price-inline" aria-label="Price {html_lib.escape(page.price_inline[0])}">
-  <strong>{html_lib.escape(page.price_inline[0])}</strong>
-  <span>{html_lib.escape(page.price_inline[1])}</span>
-</div>'''
-    elif page.booking.amount.upper() == "FREE":
-        price = f'''<div class="llsg-price-inline" aria-label="Free diagnostics">
-  <strong>FREE</strong>
-  <span>{html_lib.escape(page.booking.tag)}</span>
-</div>'''
+    # From-prices stay in the section under the hero, not in a hero price box.
 
     return f'''<header class="llsg-hero llsg-glass">
   <div class="llsg-hero-copy">
     <span class="llsg-eyebrow">
       <span class="llsg-eyebrow-dot" aria-hidden="true"></span>
-      {html_lib.escape(page.eyebrow)}
+      {html_lib.escape(hero_badge(page.slug))}
     </span>
     <p class="llsg-brand">Launch<span>Layer</span></p>
     <h1>{page.h1_html}</h1>
-    <p class="llsg-lead">{page.lead_html}</p>
-    {price}
+    <p class="llsg-lead">{html_lib.escape(HERO_ONE_LINER)}</p>
     <div class="llsg-trust">{trust}</div>
     <div class="llsg-actions">
       <a href="{html_lib.escape(page.booking.primary_href)}" class="llsg-btn-primary">{html_lib.escape(page.booking.primary_label)}</a>
@@ -1053,12 +1059,6 @@ def render_hero_floaty(page: PageData) -> str:
 def render_hero_compact(page: PageData) -> str:
     src, alt = HERO_BY_SLUG.get(page.slug, (None, None))  # type: ignore
     trust = "".join(f"<span>{html_lib.escape(t)}</span>" for t in page.trust[:4])
-    price = ""
-    if page.price_inline:
-        price = f'''<div class="llsg-price-inline" aria-label="Price {html_lib.escape(page.price_inline[0])}">
-  <strong>{html_lib.escape(page.price_inline[0])}</strong>
-  <span>{html_lib.escape(page.price_inline[1])}</span>
-</div>'''
     band = ""
     if src:
         band = f'''<div class="llsg-hero-band" aria-hidden="true">
@@ -1075,12 +1075,11 @@ def render_hero_compact(page: PageData) -> str:
   <div class="llsg-hero-copy">
     <span class="llsg-eyebrow">
       <span class="llsg-eyebrow-dot" aria-hidden="true"></span>
-      {html_lib.escape(page.eyebrow)}
+      {html_lib.escape(hero_badge(page.slug))}
     </span>
     <p class="llsg-brand">Launch<span>Layer</span></p>
     <h1>{page.h1_html}</h1>
-    <p class="llsg-lead">{page.lead_html}</p>
-    {price}
+    <p class="llsg-lead">{html_lib.escape(HERO_ONE_LINER)}</p>
     <div class="llsg-trust">{trust}</div>
     <div class="llsg-actions">
       <a href="{html_lib.escape(page.booking.primary_href)}" class="llsg-btn-primary">{html_lib.escape(page.booking.primary_label)}</a>

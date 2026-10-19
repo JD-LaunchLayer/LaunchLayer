@@ -45,7 +45,7 @@ If the laptop also won't switch on, start with the [won't turn on guide](/blog/l
 
 ## What "from" means on the invoice
 
-"From £49" means the labour starts there, after a free diagnostic. It doesn't mean every laptop leaves at £49. Keyboard labour still starts from £55, and a dust clean stays £55. A loose hinge, a port and a worn battery are three separate lines, so you can see what each one costs.
+Hardware repairs start from £49, after a free diagnostic. Keyboard replacement is from £55 plus the part, and a dust clean is £55. A loose hinge, a port and a worn battery are three separate lines, so you can see what each one costs.
 
 You approve the quote before we order a part. If the part arrives and the fault turns out to be somewhere else, we'll explain that before you pay for any work you didn't agree to. If we can't do the repair, you don't pay labour.
 
