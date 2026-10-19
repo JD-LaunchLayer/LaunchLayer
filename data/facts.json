@@ -283,7 +283,8 @@
       "shown_on": "/business/pricing/",
       "note": "The website card is from £249. It is not a repair from-price."
     },
-    "domain_at_cost": "Allowed on /website-design-wickford/ only. Banned for custom PC builds.",
+    "hero": "Websites for local businesses, from £249. Built and looked after in Wickford.",
+    "domain": "Domains are charged at the registrar's price.",
     "launch_offer": {
       "amount_gbp": 199,
       "placement": "body text only",
