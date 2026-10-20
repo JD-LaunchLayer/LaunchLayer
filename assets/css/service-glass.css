@@ -640,6 +640,15 @@
       }
 }
 
+/* Hero labels stay on one line. A short row wraps a whole button. */
+.llsg-hero .llsg-actions {
+      flex-wrap: wrap;
+}
+.llsg-hero .llsg-btn-primary,
+.llsg-hero .llsg-btn-secondary {
+      white-space: nowrap;
+}
+
 @media (max-width: 819px) {
       .llsg-hero {
         grid-template-columns: 1fr;
