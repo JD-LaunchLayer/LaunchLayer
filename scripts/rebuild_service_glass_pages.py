@@ -321,6 +321,8 @@ def extract_json_ld(soup: BeautifulSoup, root: Tag | None) -> list[str]:
 def extract_trust(root: Tag, prefix: str) -> list[str]:
     facts = []
     for sel in [
+        ".llsg-trust > span",
+        ".llbrand-trust > span",
         f".{prefix}-fact",
         ".llbrand-fact",
         f".{prefix}-facts span",
@@ -1015,14 +1017,22 @@ HERO_ONE_LINER = (
     "Free diagnostics. Fixed quote before we start. "
     "You speak to the technician who does the job."
 )
-WEBSITE_HERO_LINE = (
-    "Websites for local businesses, from £249. "
-    "Built and looked after in Wickford."
-)
+WEBSITE_HERO_LINE = "Built and looked after in Wickford."
+MOT_HERO_LINE = "A £60 health check for your laptop at our Wickford workshop."
+CUSTOM_PC_HERO_LINE = "Built, burn-in tested and set up at our Wickford workshop."
 COLLECTION_ONLY_BADGE = frozenset({
     "laptop-mot-wickford-essex",
     "laptop-mot-wickford",
     "data-recovery",
+    "custom-pc-builds",
+})
+TOWN_SLUGS = frozenset({
+    "basildon-pc-repair",
+    "billericay-pc-repair",
+    "brentwood-pc-repair",
+    "chelmsford-pc-repair",
+    "southend-pc-repair",
+    "rayleigh-laptop-service",
 })
 # These headings are removed from the built pages. A rebuild must not put them back.
 DROPPED_SECTION_TITLES = {
@@ -1042,7 +1052,22 @@ def hero_badge(slug: str) -> str:
 def hero_line(slug: str) -> str:
     if slug == "website-design-wickford":
         return WEBSITE_HERO_LINE
+    if slug.startswith("laptop-mot"):
+        return MOT_HERO_LINE
+    if slug == "custom-pc-builds":
+        return CUSTOM_PC_HERO_LINE
     return HERO_ONE_LINER
+
+
+def hero_trust_html(page: PageData) -> str:
+    items = list(page.trust[:4])
+    if page.slug in TOWN_SLUGS:
+        items = [
+            item
+            for item in items
+            if item.strip().casefold() != "no-fix, no-fee guarantee"
+        ]
+    return "".join(f"<span>{html_lib.escape(item)}</span>" for item in items)
 
 
 def render_hero_floaty(page: PageData) -> str:
@@ -1050,7 +1075,7 @@ def render_hero_floaty(page: PageData) -> str:
         page.slug,
         ("/assets/images/image-4307083f.png", "LaunchLayer Wickford workshop"),
     )
-    trust = "".join(f"<span>{html_lib.escape(t)}</span>" for t in page.trust[:4])
+    trust = hero_trust_html(page)
     # From-prices stay in the section under the hero, not in a hero price box.
 
     badge = hero_badge(page.slug)
@@ -1061,7 +1086,12 @@ def render_hero_floaty(page: PageData) -> str:
       {html_lib.escape(badge)}
     </span>
 '''
-    return f'''<header class="llsg-hero llsg-glass">
+    hero_class = "llsg-hero llsg-glass"
+    if page.slug in TOWN_SLUGS:
+        # Town heroes keep HTML order. service-glass.css puts the photo after
+        # the booking buttons below 768px and crops it to 16:9.
+        hero_class = "llsg-hero llsg-hero-town llsg-glass"
+    return f'''<header class="{hero_class}">
   <div class="llsg-hero-copy">
 {eyebrow}    <p class="llsg-brand">Launch<span>Layer</span></p>
     <h1>{page.h1_html}</h1>
@@ -1081,7 +1111,7 @@ def render_hero_floaty(page: PageData) -> str:
 
 def render_hero_compact(page: PageData) -> str:
     src, alt = HERO_BY_SLUG.get(page.slug, (None, None))  # type: ignore
-    trust = "".join(f"<span>{html_lib.escape(t)}</span>" for t in page.trust[:4])
+    trust = hero_trust_html(page)
     band = ""
     if src:
         band = f'''<div class="llsg-hero-band" aria-hidden="true">
@@ -1119,6 +1149,9 @@ def render_hero_compact(page: PageData) -> str:
 
 def render_page(page: PageData) -> str:
     hero = render_hero_floaty(page) if page.layout == "floaty" else render_hero_compact(page)
+    footer = FOOTER
+    if page.slug == "custom-pc-builds":
+        footer = footer.replace(" · No-Fix-No-Fee", "").replace(" · No-Fix, No-Fee", "")
     sections = "\n".join(render_section(s) for s in page.sections)
     stories = "\n".join(
         f'<section class="llsg-section llsg-glass">{s}</section>' for s in page.story_blocks
@@ -1189,7 +1222,7 @@ def render_page(page: PageData) -> str:
     </section>
   </main>
 
-{FOOTER}
+{footer}
 
   <script src="/assets/js/global-nav-footer.js" defer></script>
   <script src="/assets/js/cookie-consent.js" defer></script>
@@ -1235,11 +1268,33 @@ def special_case_mot(slug: str) -> None:
     (ROOT / slug / "index.html").write_text(src)
 
 
+def town_page_keeps_copy(slug: str) -> None:
+    """Town pages are hand-written. A rebuild must not flatten that copy."""
+    html = (ROOT / slug / "index.html").read_text()
+    if "llsg-hero-town" not in html:
+        raise RuntimeError(f"{slug} is missing llsg-hero-town")
+    if 'loading="eager"' not in html or 'fetchpriority="high"' not in html:
+        raise RuntimeError(f"{slug} hero image is not eager with high fetch priority")
+    print(f"OK {slug}: kept hand-written town copy")
+
+
 def main() -> None:
     checklist = []
     errors = []
     for slug in ALL_SLUGS:
         try:
+            if slug in TOWN_SLUGS:
+                town_page_keeps_copy(slug)
+                checklist.append(
+                    {
+                        "slug": slug,
+                        "layout": "floaty (hand-written town page)",
+                        "hero": HERO_BY_SLUG[slug][0],
+                        "alt": HERO_BY_SLUG[slug][1],
+                        "notes": "Unique town copy kept; hero class and eager image checked",
+                    }
+                )
+                continue
             if slug.startswith("laptop-mot"):
                 special_case_mot(slug)
                 hero = HERO_BY_SLUG[slug]

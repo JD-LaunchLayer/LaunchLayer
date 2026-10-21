@@ -661,6 +661,15 @@
       }
 }
 
+/* Hero labels stay on one line. A short row wraps a whole button. */
+.llsg-hero .llsg-actions {
+      flex-wrap: wrap;
+}
+.llsg-hero .llsg-btn-primary,
+.llsg-hero .llsg-btn-secondary {
+      white-space: nowrap;
+}
+
 @media (max-width: 819px) {
       .llsg-hero {
         grid-template-columns: 1fr;
@@ -678,6 +687,24 @@
         padding-top: 14px;
         border-top: 1px solid var(--ll-line);
       }
+}
+
+/* Town heroes: text and booking buttons before the photo on phones.
+   HTML order stays copy then photo. Desktop grid is unchanged. */
+@media (max-width: 767px) {
+  .llsg-hero.llsg-hero-town {
+    display: flex;
+    flex-direction: column;
+  }
+  .llsg-hero.llsg-hero-town .llsg-hero-copy {
+    order: 1;
+  }
+  .llsg-hero.llsg-hero-town .llsg-hero-visual {
+    order: 2;
+    min-height: 0;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
 }
   
 

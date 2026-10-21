@@ -150,8 +150,9 @@
     },
     {
       "service": "custom_pc_assembly",
-      "status": "awaiting confirmation",
-      "note": "Assembly price, 2-year build cover and parts manufacturer warranty are awaiting confirmation. Do not publish them."
+      "amount_gbp": 149,
+      "plus": "parts",
+      "wording": "Assembly is £149 plus the agreed parts. Every build includes a burn-in test and performance report. Our build work is covered for two years; parts keep the manufacturer's warranty."
     },
     {
       "service": "website_1_to_3_pages",
@@ -207,6 +208,7 @@
     90,
     95,
     99,
+    149,
     150,
     199,
     249,
@@ -235,11 +237,9 @@
   },
   "custom_pc": {
     "burn_in": "Every build includes a burn-in test and performance report.",
-    "awaiting_confirmation": [
-      "assembly price",
-      "2-year build-work cover",
-      "parts manufacturer warranty"
-    ],
+    "assembly": "Assembly is £149 plus the agreed parts.",
+    "build_cover": "Our build work is covered for two years.",
+    "parts_warranty": "Parts keep the manufacturer's warranty.",
     "banned_phrases": [
       "at cost"
     ]
@@ -283,7 +283,7 @@
       "shown_on": "/business/pricing/",
       "note": "The website card is from £249. It is not a repair from-price."
     },
-    "hero": "Websites for local businesses, from £249. Built and looked after in Wickford.",
+    "hero": "Built and looked after in Wickford.",
     "domain": "Domains are charged at the registrar's price.",
     "launch_offer": {
       "amount_gbp": 199,
