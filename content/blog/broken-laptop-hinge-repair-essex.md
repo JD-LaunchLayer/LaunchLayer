@@ -48,7 +48,7 @@ A snapped hinge on a school Chromebook is usually still worth a look, but ask th
 
 ## What we'll do instead
 
-We repair the screw mounts properly rather than gluing them, and we sort the hinge before fitting any new panel, so the old fault doesn't crack the new glass. We'll arrange safe collection or return with you. Collection and return is free in Wickford SS11/SS12; elsewhere, please ask.
+We repair the screw mounts properly rather than gluing them, and we sort the hinge before fitting any new panel, so the old fault doesn't crack the new glass. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask.
 
 ## Book it before the lid folds
 

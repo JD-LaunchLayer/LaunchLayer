@@ -61,6 +61,6 @@ If the laptop also has a loose hinge or a [cracked lid](/blog/cracked-laptop-scr
 
 Please do not post a clicking drive. Drop-off at the workshop is arranged in advance: call **[07367 652987](tel:07367652987)** or [send a message](/contact/), and we'll confirm a time and the address. You can also book through [Wickford PC repair](/wickford-pc-repair/).
 
-We'll arrange safe collection or return with you. Collection and return is free in Wickford SS11/SS12; elsewhere, please ask. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/), you can also drop it at the workshop by arrangement.
+We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/), you can also drop it at the workshop by arrangement.
 
 When you get in touch, tell us whether the photos matter more than the machine. The diagnosis is free, and No-Fix, No-Fee means you don't pay labour on a repair we can't do. Recovery is quoted separately.

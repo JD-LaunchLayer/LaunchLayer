@@ -52,6 +52,6 @@ Your files survive an in-place upgrade if the disk is healthy. If the disk isn't
 
 ## Book the check
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return is free in Wickford SS11/SS12; elsewhere, please ask. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Brentwood](/brentwood-pc-repair/), you're welcome to drop it at the workshop, or book through [Wickford PC repair](/wickford-pc-repair/).
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Brentwood](/brentwood-pc-repair/), you're welcome to drop it at the workshop, or book through [Wickford PC repair](/wickford-pc-repair/).
 
 We'll tell you which option your PC is on before you pay for anything, including a licence you may already own. If the machine isn't a sensible upgrade, No-Fix, No-Fee means you don't pay for labour.

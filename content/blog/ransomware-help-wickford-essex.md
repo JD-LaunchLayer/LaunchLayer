@@ -57,6 +57,6 @@ If the disk was already failing, an [SSD](/blog/laptop-ssd-upgrade-wickford-esse
 
 ## Book it
 
-Book through [Wickford virus removal](/wickford-virus-removal/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**. Drop-off at the workshop is arranged in advance. We'll arrange safe collection or return with you. Collection and return is free in Wickford SS11/SS12; elsewhere, please ask. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/), you can also drop it at the workshop.
+Book through [Wickford virus removal](/wickford-virus-removal/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**. Drop-off at the workshop is arranged in advance. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/), you can also drop it at the workshop.
 
 Tell us if any USB drives or network storage boxes were plugged in, and bring those too, without plugging them back into anything. No-Fix, No-Fee applies to a repair that can't be done, so you don't pay labour. Ransomware is quoted as clean-up plus restore.
