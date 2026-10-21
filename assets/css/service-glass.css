@@ -722,6 +722,30 @@
     aspect-ratio: 16 / 9;
     overflow: hidden;
   }
+
+  /* Wickford PC repair, custom builds, and data recovery.
+     Each photo URL is unique to that hero, so other pages stay as they are.
+     HTML order stays copy then photo. */
+  .llsg-hero:has(img[src="/assets/images/towns/wickford-town.jpg"]),
+  .llsg-hero:has(img[src="/assets/images/image-ddefba94.webp"]),
+  .llsg-hero:has(img[src="/assets/images/image-ce1e457a.webp"]) {
+    display: flex;
+    flex-direction: column;
+  }
+  .llsg-hero:has(img[src="/assets/images/towns/wickford-town.jpg"]) .llsg-hero-copy,
+  .llsg-hero:has(img[src="/assets/images/image-ddefba94.webp"]) .llsg-hero-copy,
+  .llsg-hero:has(img[src="/assets/images/image-ce1e457a.webp"]) .llsg-hero-copy {
+    order: 1;
+  }
+  .llsg-hero:has(img[src="/assets/images/towns/wickford-town.jpg"]) .llsg-hero-visual,
+  .llsg-hero:has(img[src="/assets/images/image-ddefba94.webp"]) .llsg-hero-visual,
+  .llsg-hero:has(img[src="/assets/images/image-ce1e457a.webp"]) .llsg-hero-visual {
+    order: 2;
+    min-height: 0;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
 }
   
 
