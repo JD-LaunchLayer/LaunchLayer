@@ -127,7 +127,7 @@ def directory_rows(html: str) -> dict[str, tuple[str, str, str]]:
     body = main_html(html)
     found: dict[str, tuple[str, str, str]] = {}
     for match in re.finditer(
-        r'<a class="row" href="([^"]+)" data-service-id="([^"]+)">'
+        r'<a class="row" href="([^"]+)" (?:id|data-service-id)="([^"]+)">'
         r'<span class="row-title">(.*?)</span>'
         r'<span class="row-price">(.*?)</span>',
         body,
@@ -178,7 +178,7 @@ def pin_cards(html: str) -> dict[str, tuple[str, str, str]]:
     body = main_html(html)
     found: dict[str, tuple[str, str, str]] = {}
     for match in re.finditer(
-        r'<a class="pin[^"]*" href="([^"]+)" data-service-id="([^"]+)">(.*?)</a>',
+        r'<a class="pin[^"]*" href="([^"]+)" data-(?:pin|service-id)="([^"]+)">(.*?)</a>',
         body,
         re.S,
     ):
@@ -331,11 +331,31 @@ def main() -> None:
         fail("websites row missing from the directory")
     ok("28 directory links are <a href> in the raw HTML")
 
+    # These eight are the fragment targets for /services/#<id>. They live once
+    # each as id= on the price row. The popular pins use data-pin so the
+    # fragment is not duplicated.
+    anchor_ids = {
+        "battery",
+        "diagnostics",
+        "laptop-hub",
+        "macbook",
+        "mot",
+        "pc-hub",
+        "screen",
+        "virus",
+    }
     added_ids = service_ids(new_services) - service_ids(old_services)
     removed_ids = service_ids(old_services) - service_ids(new_services)
-    if removed_ids or added_ids != {"websites"}:
+    if removed_ids != anchor_ids or added_ids != {"websites"}:
         fail(f"data-service-id set changed: added {sorted(added_ids)} removed {sorted(removed_ids)}")
-    ok(f"data-service-id set kept, plus websites ({len(service_ids(new_services))} ids)")
+    row_ids = set(re.findall(r'<a class="row" href="[^"]+" id="([^"]+)"', new_services))
+    if row_ids != anchor_ids:
+        fail(f"price-row anchors {sorted(row_ids)} != {sorted(anchor_ids)}")
+    for sid in anchor_ids:
+        count = len(re.findall(rf'id="{re.escape(sid)}"', new_services))
+        if count != 1:
+            fail(f"/services/#{sid} id count is {count}, expected 1")
+    ok(f"data-service-id set kept except the 8 price anchors, plus websites ({len(service_ids(new_services))} ids)")
 
     if call_clicks(old_services) != call_clicks(new_services):
         fail(f"call-click attrs changed: {call_clicks(new_services)}")
