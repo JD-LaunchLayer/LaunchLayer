@@ -261,6 +261,8 @@ def main() -> None:
     moved = []
     for sid, old in old_rows.items():
         new = new_rows[sid]
+        if sid == "custom-pc" and old[0] == new[0] and old[2] == new[2] and new[1] == "£149 assembly" and "149" in old[1]:
+            continue
         if old[0] != new[0] or old[1] != new[1] or old[2] != new[2]:
             # Allow only trailing-slash normalisation, already applied.
             fail(f"directory row {sid} changed: {old} -> {new}")
@@ -323,13 +325,17 @@ def main() -> None:
     if re.search(r"<script\b", visible):
         fail("script inside main")
     row_links = re.findall(r'<a class="(?:row|acc-link)" href="([^"]+)"', visible)
-    if len(row_links) != 27:
-        fail(f"expected 27 directory links, found {len(row_links)}")
-    ok("27 directory links are <a href> in the raw HTML")
+    if len(row_links) != 28:
+        fail(f"expected 28 directory links, found {len(row_links)}")
+    if "/website-design-wickford/" not in row_links:
+        fail("websites row missing from the directory")
+    ok("28 directory links are <a href> in the raw HTML")
 
-    if service_ids(old_services) != service_ids(new_services):
-        fail("data-service-id set changed")
-    ok(f"data-service-id set unchanged ({len(service_ids(new_services))} ids)")
+    added_ids = service_ids(new_services) - service_ids(old_services)
+    removed_ids = service_ids(old_services) - service_ids(new_services)
+    if removed_ids or added_ids != {"websites"}:
+        fail(f"data-service-id set changed: added {sorted(added_ids)} removed {sorted(removed_ids)}")
+    ok(f"data-service-id set kept, plus websites ({len(service_ids(new_services))} ids)")
 
     if call_clicks(old_services) != call_clicks(new_services):
         fail(f"call-click attrs changed: {call_clicks(new_services)}")

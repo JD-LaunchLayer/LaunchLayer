@@ -48,7 +48,7 @@ If a Chromebook is just slow, many school tasks use cloud services, so we'd chec
 
 If the invoice is close to the price of a new Chromebook and the case is in three pieces, replacing it can be the sensible choice. A cracked panel on an otherwise straight lid is usually cheaper and less wasteful to repair locally, for the reasons in [repair vs replace](/blog/laptop-repair-vs-replace-sustainability-essex/).
 
-We'll arrange safe collection or return with you. Collection and return is free in Wickford SS11/SS12; elsewhere, please ask. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) or [Rayleigh](/rayleigh-laptop-service/), you can also drop it at the workshop by arrangement. If it's mainly the screen, the screen sections for [Rayleigh](/rayleigh-laptop-service/#screen-repair) and [Southend](/southend-pc-repair/#screen-repair) cover that job.
+We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) or [Rayleigh](/rayleigh-laptop-service/), you can also drop it at the workshop by arrangement. If it's mainly the screen, the screen sections for [Rayleigh](/rayleigh-laptop-service/#screen-repair) and [Southend](/southend-pc-repair/#screen-repair) cover that job.
 
 ## Drop-off
 
