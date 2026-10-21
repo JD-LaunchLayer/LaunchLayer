@@ -705,6 +705,23 @@
     width: 100%;
     aspect-ratio: 16 / 9;
   }
+
+  /* Wickford laptop repair only. This photo URL is unique to that page,
+     so other service heroes stay as they are. HTML order stays copy then photo. */
+  .llsg-hero:has(img[src="/assets/images/image-eaf7d3df.webp"]) {
+    display: flex;
+    flex-direction: column;
+  }
+  .llsg-hero:has(img[src="/assets/images/image-eaf7d3df.webp"]) .llsg-hero-copy {
+    order: 1;
+  }
+  .llsg-hero:has(img[src="/assets/images/image-eaf7d3df.webp"]) .llsg-hero-visual {
+    order: 2;
+    min-height: 0;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
 }
   
 
