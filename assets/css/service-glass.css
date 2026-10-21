@@ -419,6 +419,13 @@
       margin-bottom: 14px;
 }
 
+.llsg-pricing a:not(.llsg-btn-primary):not(.llsg-btn-secondary) {
+      color: #fff;
+}
+.llsg-pricing a:not(.llsg-btn-primary):not(.llsg-btn-secondary):hover {
+      color: #e2e8f0;
+}
+
 .llsg-pricing-perks {
       list-style: none;
       display: flex;
