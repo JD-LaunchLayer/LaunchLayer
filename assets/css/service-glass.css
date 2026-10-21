@@ -847,7 +847,8 @@ body.llsg-body svg:not([width]) { max-width: 100%; height: auto; }
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-top: 8px;
+  margin: 8px 0 0;
+  padding: 0;
 }
 .llsg-bullets li {
   display: grid;
