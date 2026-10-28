@@ -4,7 +4,7 @@ title: Windows 11 Upgrade Help: TPM, RAM and Your Options
 headline: Still Blocked from Windows 11 in Wickford? TPM, RAM and Your Options
 description: PC blocked from Windows 11? What TPM 2.0 and Secure Boot mean, what we can enable, and when an SSD or a new machine is the sensible path.
 date: 2026-10-28
-draft: true
+draft: false
 category: Useful Tips
 category_path: Useful+Tips
 author: The LaunchLayer workshop
