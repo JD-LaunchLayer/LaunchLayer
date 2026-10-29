@@ -87,9 +87,8 @@
     {
       "service": "mac",
       "amount_gbp": 85,
-      "qualifier": "from",
-      "plus": "parts/panel",
-      "note": "MacBook battery is from £49 + part. MacBook keyboard replacement is from £55. MacBook screen fitting is £85 plus the panel, and Mac panels usually cost more."
+      "plus": "panel",
+      "note": "MacBook screen fitting £85 + panel; batteries from £49 + part; keyboards from £55. Mac panels usually cost more."
     },
     {
       "service": "screen",

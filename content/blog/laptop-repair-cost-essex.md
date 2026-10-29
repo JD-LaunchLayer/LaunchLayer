@@ -29,7 +29,7 @@ That's us at [LaunchLayer](/wickford-laptop-repair/), in Wickford. Call **[07367
 - Hinge and lid work starts from £75.
 - Keyboard labour starts from £55 plus the part.
 - SSD upgrade £65 + drive (includes fitting and data transfer). RAM, where it can be upgraded, starts from £49 plus the part. Much RAM is soldered.
-- [MacBook repairs](/macbook-repair-wickford/) start from £85 plus the parts or the panel.
+- [MacBook repairs](/macbook-repair-wickford/): MacBook screen fitting £85 + panel; batteries from £49 + part; keyboards from £55.
 - [The MOT](/laptop-mot-wickford-essex/) is £60. That's a fixed health check, separate from the £45 software fix and from any hardware repair.
 - A general software fix is £45 for up to 60 minutes.
 - [Virus, malware and scam removal](/wickford-virus-removal/) is a fixed £69, as on [services and pricing](/services/). It's separate from the software fix, and it doesn't cover ransomware data recovery.
