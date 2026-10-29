@@ -22,9 +22,9 @@ If the files matter, we'll explain the [data recovery](/data-recovery/) options 
 
 ## What you're hearing
 
-Mechanical drives (3.5" in desktops, 2.5" in laptops) have read heads that move over spinning platters. Some noise is normal: a soft whirr as the disk spins up, a quiet tick or two as the heads park when it sleeps, and light chatter while it's busy reading.
+Mechanical drives (3.5" in desktops, 2.5" in laptops) have read heads (the drive's moving parts that sit over the spinning discs). Some noise is normal: a soft whirr as the disk spins up, a quiet tick or two as those moving parts park when it sleeps, and light chatter while it's busy reading.
 
-What's not normal is the same click repeating every second or two, a click followed by the drive spinning down and up again, or a grinding or scraping noise. That pattern usually means the heads are struggling to read and retrying. SSDs have no moving parts, so if your laptop only has an SSD, a tick or rattle is coming from something else, such as the fan, and is still worth getting checked.
+What's not normal is the same click repeating every second or two, a click followed by the drive spinning down and up again, or a grinding or scraping noise. That pattern usually means the moving parts are struggling to read and retrying. SSDs have no moving parts, so if your laptop only has an SSD, a tick or rattle is coming from something else, such as the fan, and is still worth getting checked.
 
 Windows may also show:
 
