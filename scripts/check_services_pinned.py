@@ -388,7 +388,9 @@ def main() -> None:
     if "Small business websites" not in pricing_main:
         fail("business pricing is missing the Small business websites card")
     website_price = "£249 (1-3 pages) or £379 (5 pages) + £19/month care"
-    if website_price not in pricing_main:
+    pricing_text = re.sub(r"<[^>]+>", "", pricing_main)
+    pricing_text = re.sub(r"\s+", " ", pricing_text)
+    if website_price not in pricing_text:
         fail("business pricing is missing the website price wording")
     if "£450 bundle" not in pricing_main:
         fail("business pricing is missing the £450 bundle")

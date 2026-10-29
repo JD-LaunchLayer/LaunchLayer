@@ -424,6 +424,12 @@ a.blog-categories {
   line-height: var(--leading-body);
   margin-bottom: var(--space-5);
 }
+#wickford-computer-repair .ll-chips + p {
+  margin-top: var(--space-4);
+  margin-bottom: 0;
+  font-size: var(--text-sm);
+  line-height: var(--leading-body);
+}
 .ll-chips { margin: 0 -0.75rem; } /* mobile: lets 2 columns fit one-line labels */
 @media (min-width: 720px) { .ll-chips { margin: 0; } }
 .ll-chip-grid {
@@ -514,7 +520,7 @@ a.ll-chip:focus-visible {
   a.ll-chip { transition: none; }
 }
 /* Reserve the measured height so content-visibility:auto does not jump */
-#wickford-computer-repair { contain-intrinsic-size: auto 829px; }
+#wickford-computer-repair { contain-intrinsic-size: auto 909px; }
 @media (min-width: 720px) {
-  #wickford-computer-repair { contain-intrinsic-size: auto 535px; }
+  #wickford-computer-repair { contain-intrinsic-size: auto 595px; }
 }
