@@ -41,6 +41,7 @@ ORG_ID = f"{SITE}/#organization"
 FOOTER_WITHOUT_NO_FIX_NO_FEE = frozenset({
     "laptop-ssd-upgrade-wickford-essex",
     "data-recovery-services-wickford-essex",
+    "clicking-hard-drive-essex",
 })
 # Old Squarespace slugs that were pasted into blog JSON-LD but have no page.
 DEAD_BLOG_SLUGS = {

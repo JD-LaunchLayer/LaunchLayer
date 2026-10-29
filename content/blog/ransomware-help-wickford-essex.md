@@ -38,7 +38,7 @@ If the only copy lived on that laptop, we treat it as a recovery case and explai
 
 A blue screen in the middle of all this can have several causes. See the [blue screen guide](/blog/windows-blue-screen-fix-essex/), but still disconnect it and power it off.
 
-## Common ways it gets in
+## Common ways ransomware gets in
 
 - A fake delivery PDF.
 - A compromised file-share link.

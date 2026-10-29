@@ -18,7 +18,7 @@ We can repair a loose or broken hinge, and the sooner you bring it in, the less 
 
 We fix hinges on school Chromebooks, HP and Dell office laptops, and MacBooks that were fine until the lid got opened one-handed. Drop-off at the workshop is arranged in advance, so call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address.
 
-## Three things to avoid until we've seen it
+## Three things to avoid with a loose hinge until we've seen it
 
 - **Rest it rather than using it "carefully".** Each open and close wears down the plastic that's still holding.
 - **Leave the lid free rather than taping or propping it in place.** Tape can hide a display cable that's already tearing.
