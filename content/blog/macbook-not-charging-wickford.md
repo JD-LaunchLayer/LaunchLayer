@@ -54,7 +54,7 @@ Open Battery settings and look at the battery condition. "Service Recommended" m
 
 ## What a repair costs
 
-MacBook repairs start from £85 plus parts or the panel. A MacBook charging port is £65 + parts where the port is removable or on a separate board; soldered ports are quoted after diagnosis. Diagnostics are free, you get a fixed quote before any part is ordered, and **No-Fix, No-Fee** applies, so if we can't fix it you don't pay for labour. A new battery or charging port we fit carries a 12-month warranty, which covers those new parts on battery and charging-port jobs.
+MacBook repairs, including a charging port, start from £85 plus parts or the panel. A soldered port is quoted after diagnosis. Diagnostics are free, you get a fixed quote before any part is ordered, and **No-Fix, No-Fee** applies, so if we can't fix it you don't pay for labour. A new battery or charging port we fit carries a 12-month warranty, which covers those new parts on battery and charging-port jobs.
 
 ## If it's a Windows laptop
 

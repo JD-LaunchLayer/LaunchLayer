@@ -18,11 +18,13 @@ A loose hinge feels like a small thing until the lid starts dropping to one side
 
 We fix hinges on school Chromebooks, HP and Dell office laptops, and MacBooks that were fine until the lid got opened one-handed. Drop-off at the workshop is arranged in advance, so call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address.
 
-## Stop doing these three things
+## What to do with a loose hinge
 
-- **Do not keep using it "carefully".** Each open and close wears down the plastic that's still holding.
-- **Do not tape the lid to the palm rest for long.** Tape can hide a display cable that's already tearing.
-- **Do not force the lid past the crack.** That's how the screen panel shatters, and on a MacBook it can tear the Wi-Fi antenna cables too.
+We'll look at the hinge and the display cable, then tell you whether a repair is worth it before any parts are ordered. Until then, these three steps give the screen the best chance:
+
+- **Leave it as it is.** Each open and close wears down the plastic that's still holding.
+- **Tape is only a short-term hold.** It can hide a display cable that's already tearing, so send us a photo rather than relying on it.
+- **Leave the lid where it is.** Pushing it past the crack is how the screen panel shatters, and on a MacBook it can tear the Wi-Fi antenna cables too.
 
 When you get in touch, please send a couple of photos of the laptop as it is now, without opening or moving the lid any further. If you've already noticed lines, flicker or a dark patch during normal use, tell us that too, because it suggests the display cable may be involved.
 

@@ -18,13 +18,13 @@ School Chromebooks come in with cracked lids, bent hinges and spills from a wate
 
 Sometimes the machine only needs a screen or a hinge. If the school has quoted for a replacement, check whether an independent repair is allowed before paying or booking. If it is, a second opinion from us on Glebe Road can help you compare.
 
-## Check the school policy before you panic
+## Check what the school covers first
 
 Check the device agreement to see who owns the Chromebook, who pays for damage and who can authorise repairs. If it isn't clear, ask the school's IT contact.
 
 Anything your child saved to Google Drive and synced is in the cloud, not on the cracked lid. Files kept only in the Downloads folder, or work done offline that never synced, live on the device and can be lost if it's wiped.
 
-Please do not factory-reset a school-managed Chromebook "to see if it helps". Whether it re-enrols cleanly afterwards depends on how the school has set up its management, and you could end up locked out of a device the school then has to recover.
+A factory reset on a school-managed Chromebook can lock you out, depending on how the school has set it up. Check with their IT contact, or bring it to us, before wiping it.
 
 Before you set off, take a photo of the asset tag and the serial number. The asset tag is the school's own ID sticker, so it helps their IT team match the repair to the right device on their records.
 

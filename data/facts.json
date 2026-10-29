@@ -8,9 +8,9 @@
     "email": "hello@launchlayer.uk",
     "byline": "The LaunchLayer workshop",
     "public_name": "LaunchLayer",
-    "never_use": [
-      "Jordan Duggins",
-      "Duggins"
+    "never_use_sha256": [
+      "2142a0311d7620763e99c2d73a64af153da706759eecdec59b160d76f7f2ee48",
+      "b42791f158ef4332719f8b7d3cbf7bfca08a26f6350b1bf0b626f9deca9a3837"
     ]
   },
   "location": {
@@ -187,7 +187,7 @@
     },
     {
       "service": "data_recovery_tiers",
-      "wording": "£79 / £90–£150 / from £350. When a drive needs a lab, we refer it to a specialist partner on their terms, and the cost is quoted before any work starts."
+      "wording": "£79 / £90–£150. When a drive needs a lab, we refer it to a specialist partner on their terms, and the cost is quoted before any work starts."
     }
   ],
   "allowed_price_amounts_gbp": [
@@ -207,12 +207,10 @@
     85,
     90,
     95,
-    99,
     149,
     150,
     199,
     249,
-    350,
     379
   ],
   "warranty": {
@@ -341,9 +339,7 @@
     "architecture",
     "matrix",
     "configuration",
-    "at cost",
-    "Jordan Duggins",
-    "Duggins"
+    "at cost"
   ],
   "vat": "Prices include VAT."
 }

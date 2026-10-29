@@ -16,7 +16,7 @@ image_alt: Open desktop PC on a workbench with a mechanical hard drive being ins
 
 A repeated clicking or grinding from a desktop or an older laptop often points to a failing hard drive. It isn't something Disk Cleanup or a Windows tweak will sort out, and every extra hour of use can turn a recoverable drive into one we can't read.
 
-If you remember one thing: **power it off, do not run chkdsk, do not clone it yourself overnight, and call 07367 652987 to arrange a drop-off.** Chkdsk is Windows' built-in disk repair tool, and on a failing drive it can make things worse.
+If a drive is clicking, switch it off and give us a ring. That gives us the best chance of getting your files back. Call **[07367 652987](tel:07367652987)** and we'll arrange a drop-off. Chkdsk is Windows' built-in disk checker, and on a failing drive it can make things worse, so we'll do the checks here. A home clone overnight can do the same.
 
 If the files matter, we'll explain the [data recovery](/data-recovery/) options and costs before discussing an [SSD upgrade](/blog/laptop-ssd-upgrade-wickford-essex/). The [data recovery blog](/blog/data-recovery-services-wickford-essex/) explains how recovery works.
 
@@ -34,20 +34,20 @@ Windows may also show:
 
 SMART is the drive's own health check, and a warning matters even if the drive's quiet. A blue screen with disk errors can be the same problem showing up a different way.
 
-## What not to do
-
-- **Do not put the drive in the freezer.**
-- **Do not keep pressing Reset** until it "comes back".
-- **Do not install a recovery app on the failing disk.** You can overwrite the files you want back.
-- **Do not post it to an address from an advert** if the data can't be replaced. Ask first how they copy the drive.
-
-If you've got a backup, a failing drive is a hardware swap. Without one, treat it as urgent. Ransomware on a clicking disk is two problems at once, so power the machine off, keep it off the network, and look at [Wickford virus removal](/wickford-virus-removal/) once it's isolated.
-
 ## What we do on the bench
 
-We assess the drive before anything else, treating it as failing until we know otherwise, and then decide whether a recovery copy is safe to attempt. If the files come off cleanly, we'll talk about moving you onto an SSD, and the PC will boot far faster. If they don't, the job becomes recovery, with prices and limits on the [data recovery](/data-recovery/) page.
+We assess the drive before anything else, and then decide whether a recovery copy is safe to attempt. If the files come off cleanly, we'll talk about moving you onto an SSD, and the PC will boot far faster. If they don't, the job becomes recovery, with prices and limits on the [data recovery](/data-recovery/) page.
 
-Laptops that are just slow, with no clicking, can often skip recovery and go straight to an SSD; we quote those separately. Please don't run a Windows 11 upgrade on a drive that's clicking, because it's a quick way to lose the only copy of your photos. The [upgrade help](/blog/windows-11-upgrade-help-wickford/) assumes a disk that still reads properly.
+Laptops that are just slow, with no clicking, can often skip recovery and go straight to an SSD; we quote those separately. A Windows 11 upgrade on a clicking drive can lose the only copy of your photos, so we'll check the drive first. The [upgrade help](/blog/windows-11-upgrade-help-wickford/) assumes a disk that still reads properly.
+
+## A few things that can make it worse
+
+- **The freezer doesn't help.** Leave the drive at room temperature and bring it in.
+- **Pressing Reset again and again** while it "comes back" keeps the heads working.
+- **A recovery app installed on the failing disk** can overwrite the files you want back. We'll copy them off first.
+- **Posting it to an address from an advert** is a risk if the data can't be replaced. Ask first how they copy the drive.
+
+If you've got a backup, a failing drive is a hardware swap. Without one, the sooner it's switched off, the better the chance. Ransomware on a clicking disk is two problems at once, so power the machine off, keep it off the network, and look at [Wickford virus removal](/wickford-virus-removal/) once it's isolated.
 
 ## Towers vs laptops
 

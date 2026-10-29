@@ -21,8 +21,8 @@ A cracked laptop screen looks catastrophic, but in most cases it's not. Your fil
 
 > Before you do anything else:
 >
-> - Do not press, poke or flex the glass to see if it still works. That can turn a small LCD leak into a full black-out.
-> - Do not peel shattered glass off a MacBook or touchscreen. Loose shards can cut ribbon cables and fingers.
+> - Try not to press, poke or flex the glass to see if it still works. That can turn a small LCD leak into a full black-out.
+> - If a MacBook or touchscreen has loose glass, leave it for us to remove. Loose shards can cut ribbon cables and fingers.
 > - If the glass is loose, close the lid gently once and leave it closed. Stop using the laptop on your lap until the panel is secure.
 > - Plug in an external monitor if you still need files, emails or school work today. The computer itself is usually fine.
 
@@ -80,7 +80,7 @@ Almost never. The old panel comes off and a new one goes on, while the drive and
 
 ### Should I keep using a cracked screen?
 
-Not if the glass is loose or a black blot is spreading. Close the lid gently and use an external monitor if you still need the files today. Do not press the glass to test it.
+Not if the glass is loose or a black blot is spreading. Close the lid gently and use an external monitor if you still need the files today. Try not to press the cracked glass, as that can spread the crack.
 
 ### How much does a laptop screen replacement cost?
 

@@ -46,7 +46,7 @@ How long it takes depends on the laptop and the part, and we agree the timing wi
 
 The right SSD depends on the exact laptop model and its storage connections. We check compatibility before quoting for a drive.
 
-The motherboard decides the fastest drive it can use. A Gen5 stick in a Gen3 slot only runs at Gen3 speed, so we fit a drive that matches the slot you have. If you're building a new PC rather than upgrading a laptop, the [custom PC page](/custom-pc-builds/) is the cleaner route.
+The motherboard decides the fastest drive it can use. A Gen5 stick (a newer, faster drive type) in a Gen3 slot (an older, slower connection) only runs at the older speed, so we fit a drive that matches the slot you have. If you're building a new PC rather than upgrading a laptop, the [custom PC page](/custom-pc-builds/) is the cleaner route.
 
 Capacity is the other honest conversation. 256GB felt huge in 2016, but in 2026 it fills up with Teams caches and phone backups. 500GB is a sensible floor for a home laptop, and 1TB makes sense if you keep raw photos or a Steam library on the machine.
 

@@ -29,7 +29,7 @@ Try one step at a time.
 
 Try a known-good charger that's compatible with your laptop, with the right tip, voltage and wattage. If a second charger fills the laptop straight away, the first charger is the likely fault. When neither works, the port or something inside the laptop becomes more likely.
 
-Look at the light on the brick, if it has one. No light, and a cable that bends flat where it leaves the block, usually points to a failed charger. A cracked strain relief, the rubber collar where the cable meets the brick, is a fire risk as well as a charge fault. Do not tape it up and keep using it.
+Look at the light on the brick, if it has one. No light, and a cable that bends flat where it leaves the block, usually points to a failed charger. A cracked strain relief, the rubber collar where the cable meets the brick, is a fire risk as well as a charge fault. Please unplug it and stop using it. It isn't safe to keep charging. Bring it in and we'll make it safe.
 
 A USB-C lead can fail on its own, even when the brick's fine. A frayed cable that still clicks in will drop power as soon as the laptop moves. Swap the lead before you decide the port has failed.
 
@@ -84,7 +84,7 @@ A desktop that won't power on is a different job, usually the power supply or th
 
 ## If the battery is swollen
 
-Stop using the laptop if the case is bulging, the trackpad's lifting, or the palm rest is raised above the keyboard. Unplug the charger, do not keep charging it, and do not puncture the pack. The [swollen battery guide](/blog/laptop-battery-replacement-wickford/) explains what happens next.
+If the case is bulging, the trackpad's lifting, or the palm rest is raised above the keyboard, please unplug it and stop using it. It isn't safe to keep charging, and the pack shouldn't be punctured. Bring it in and we'll make it safe. The [swollen battery guide](/blog/laptop-battery-replacement-wickford/) explains what happens next.
 
 ## What repair costs
 

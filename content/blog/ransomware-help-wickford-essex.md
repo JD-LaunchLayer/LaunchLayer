@@ -23,8 +23,8 @@ This is different from a [phishing link you've just clicked](/blog/clicked-phish
 
 1. **Turn the machine off.** Not sleep: hold the power button. Every extra minute can encrypt more shared folders and USB drives.
 2. **Unplug USB backups.** If a backup stick is still plugged in, it may already be encrypted, which is why the [backup guide](/blog/backup-pc-guide-wickford-essex/) says to unplug them.
-3. **Do not pay in a panic.** Paying doesn't guarantee you'll get a key, and it marks you as someone who pays. It's a decision for clear facts, not a countdown.
-4. **Do not run a "miracle decryptor" you found on social media.** Some are genuine research tools, but many are a second infection.
+3. **Pause before you pay.** We'll talk through whether a key is even likely, with the facts in front of you, rather than a countdown on the screen. Paying is a decision you can make once you've heard that.
+4. **Leave unknown decryptors alone.** A tool from social media can be a second infection. We'll check whether a known tool exists for that strain.
 
 If this started after a remote helper "from Microsoft" got in touch, read the [scam awareness post](/blog/scam-awareness/) as well, because the ransomware may be the second half of the same scam.
 

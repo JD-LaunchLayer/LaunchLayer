@@ -172,7 +172,7 @@ def listing_card(meta: dict[str, str], index: int = 1) -> str:
     <time class="blog-date" pubdate data-animation-role="date">{shown}</time>'''
     return f'''    <article class="hentry category-{css} author-launchlayer post-type-text article-index-{index} blog-item entry">
       <section class="blog-image-wrapper">
-      <a href="/blog/{slug}" class="image-wrapper" data-animation-role="image">
+      <a href="/blog/{slug}/" class="image-wrapper" data-animation-role="image">
 <picture>
 <source type="image/avif" srcset="{avif}">
 <source type="image/webp" srcset="{webp}">
@@ -193,14 +193,14 @@ def listing_card(meta: dict[str, str], index: int = 1) -> str:
   </span>
 </div>
 <h2 class="blog-title">
-    <a href="/blog/{slug}" data-no-animation>
+    <a href="/blog/{slug}/" data-no-animation>
     {headline}
   </a>
 </h2>
 <div class="blog-excerpt">
   <div class="blog-excerpt-wrapper"></div>
 </div>
-<a class="blog-more-link" href="/blog/{slug}" data-animation-role="content">Read More</a>
+<a class="blog-more-link" href="/blog/{slug}/" data-animation-role="content">Read More</a>
 </div>
       </section>
     </article>'''
@@ -622,7 +622,13 @@ def absolute_url(path: str) -> str:
 
 
 def launchlayer_org() -> dict:
-    return {"@type": "Organization", "name": "LaunchLayer", "@id": ORG_ID}
+    return {
+        "@type": "Organization",
+        "@id": ORG_ID,
+        "name": "LaunchLayer",
+        "url": f"{SITE}/",
+        "logo": f"{SITE}/assets/meta/meta-520e4abe.png",
+    }
 
 
 def pagination_html(meta: dict[str, str]) -> str:
@@ -632,7 +638,7 @@ def pagination_html(meta: dict[str, str]) -> str:
     if prev_slug:
         title = html.escape(meta.get("prev_title") or prev_slug)
         blocks.append(
-            f'''    <a href="/blog/{html.escape(prev_slug)}" class="item-pagination-link item-pagination-link--prev">
+            f'''    <a href="/blog/{html.escape(prev_slug)}/" class="item-pagination-link item-pagination-link--prev">
       <div class="item-pagination-icon icon icon--stroke">
         <svg class="caret-left-icon--small" viewBox="0 0 9 16">
           <polyline fill="none" stroke-miterlimit="10" points="7.3,14.7 2.5,8 7.3,1.2"/>
@@ -647,7 +653,7 @@ def pagination_html(meta: dict[str, str]) -> str:
     if next_slug:
         title = html.escape(meta.get("next_title") or next_slug)
         blocks.append(
-            f'''    <a href="/blog/{html.escape(next_slug)}" class="item-pagination-link item-pagination-link--next">
+            f'''    <a href="/blog/{html.escape(next_slug)}/" class="item-pagination-link item-pagination-link--next">
       <div class="pagination-title-wrapper">
         <div class="visually-hidden">Next</div>
         <h2 class="item-pagination-title">{title}</h2>
@@ -808,7 +814,7 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
   <header class="ll-site-header">
     <div class="ll-header-wrap">
       <a href="/" class="ll-header-logo">
-        <img src="/assets/images/image-0961fde4.png" alt="LaunchLayer" style="height: 38px; width: auto; display: block;" onError="this.onerror=null;this.src='/assets/images/image-cbf4c0a5.ico';">
+        <img src="/assets/images/image-0961fde4.png" alt="LaunchLayer" width="640" height="307" style="height: 38px; width: auto; display: block;" onError="this.onerror=null;this.src='/assets/images/image-cbf4c0a5.ico';">
       </a>
       <input type="checkbox" id="ll-burger-toggle" class="ll-burger-input" style="display:none;">
       <label for="ll-burger-toggle" class="ll-burger-btn" aria-label="Toggle Menu">
@@ -816,19 +822,19 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
       </label>
       <ul class="ll-header-nav">
         <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="/about/">About</a></li>
         <li class="ll-dropdown-container">
           <span class="ll-dropdown-trigger">
             Services
             <svg class="ll-dropdown-chevron" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 1l4 4 4-4"/></svg>
           </span>
           <ul class="ll-dropdown-menu">
-            <li><a href="/services">All Services &amp; Pricing</a></li>
-            <li><a href="/custom-pc-builds">Custom PC Builds</a></li>
-            <li><a href="/business">Business Solutions</a></li>
+            <li><a href="/services/">All Services &amp; Pricing</a></li>
+            <li><a href="/custom-pc-builds/">Custom PC Builds</a></li>
+            <li><a href="/business/">Business Solutions</a></li>
           </ul>
         </li>
-        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
       </ul>
     </div>
   </header>
@@ -870,12 +876,12 @@ def render_post(path: Path, meta: dict[str, str], body: str) -> Path:
       </div>
       <ul class="inline-nav-links">
         <li><a href="/">Home</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/brands-supported">Brands Supported</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/brands-supported/">Brands Supported</a></li>
         <li><a href="/website-design-wickford/">Websites</a></li>
-        <li><a href="/reviews">Reviews</a></li>
-        <li><a href="/faqs">FAQs</a></li>
-        <li><a href="/privacy-policy">Privacy</a></li>
+        <li><a href="/reviews/">Reviews</a></li>
+        <li><a href="/faqs/">FAQs</a></li>
+        <li><a href="/privacy-policy/">Privacy</a></li>
       </ul>
     </div>
     <div class="footer-matrix-section">
