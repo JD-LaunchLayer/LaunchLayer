@@ -53,6 +53,6 @@ The wider Essex price list, including the £50 screen line alongside batteries a
 
 ## Book the quote
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask. You can also book through [Wickford laptop repair](/wickford-laptop-repair/) or [laptop screen repair Wickford](/laptop-screen-repair-wickford/).
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, collection is by arrangement. You can also book through [Wickford laptop repair](/wickford-laptop-repair/) or [laptop screen repair Wickford](/laptop-screen-repair-wickford/).
 
 Bring the charger, and tell us the model if you know it. If the crack came from a spill rather than a knock, say so, because liquid and glass are different jobs and the [spill steps](/blog/spilled-water-on-laptop-fix-essex/) come first.

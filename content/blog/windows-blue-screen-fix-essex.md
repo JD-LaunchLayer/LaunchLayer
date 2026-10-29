@@ -55,6 +55,6 @@ A suspect disk gets assessed before anyone resets Windows, because a reset can o
 
 ## Arrange a drop-off
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/), you can drop it at the workshop or book through [Wickford PC repair](/wickford-pc-repair/).
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, collection is by arrangement. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/), you can drop it at the workshop or book through [Wickford PC repair](/wickford-pc-repair/).
 
 If the crashes started after a spill, tell us, because liquid plus random reboots means following the [spill protocol](/blog/spilled-water-on-laptop-fix-essex/), not updating a driver. No-Fix, No-Fee: if the board isn't worth saving, you'll hear that before you pay any labour.

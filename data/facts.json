@@ -187,7 +187,7 @@
     },
     {
       "service": "data_recovery_tiers",
-      "wording": "£79 / £90–£150. When a drive needs a lab, we refer it to a specialist partner on their terms, and the cost is quoted before any work starts."
+      "wording": "£79 / £90–£150 / from £350. When a drive needs a lab, we refer it to a specialist partner on their terms, and the cost is quoted before any work starts."
     }
   ],
   "allowed_price_amounts_gbp": [
@@ -211,6 +211,7 @@
     150,
     199,
     249,
+    350,
     379
   ],
   "warranty": {

@@ -27,7 +27,7 @@ Based in Wickford. Free collection and return in SS11 and SS12. Home visits are 
 
 - [Home](https://launchlayer.uk/): Workshop overview, free diagnostics and how collection works
 - [Services & pricing](https://launchlayer.uk/services/): Repair prices and common jobs
-- [Contact](https://launchlayer.uk/contact/): Book a drop-off or ask about collection
+- [Contact](https://launchlayer.uk/contact/): Book a drop-off. Collection outside SS11/SS12 is by arrangement
 - [About](https://launchlayer.uk/about/): Who runs the workshop
 - [FAQs](https://launchlayer.uk/faqs/): Repair, pricing, hours and collection questions
 - [Reviews](https://launchlayer.uk/reviews/): Customer feedback

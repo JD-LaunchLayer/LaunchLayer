@@ -50,10 +50,10 @@ A snapped hinge on a school Chromebook is usually still worth a look, but ask th
 
 ## What we'll do instead
 
-We repair the screw mounts properly rather than gluing them, and we sort the hinge before fitting any new panel, so the old fault doesn't crack the new glass. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask.
+We repair the screw mounts properly rather than gluing them, and we sort the hinge before fitting any new panel, so the old fault doesn't crack the new glass. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, collection is by arrangement.
 
 ## Book it before the lid folds
 
 Call **[07367 652987](tel:07367652987)**, or book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), and we'll arrange a drop-off time.
 
-If you're in [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) or [Brentwood](/brentwood-pc-repair/), you can drop it at the workshop by arrangement or ask about collection. Please do not post a laptop with a flapping lid. If the case is beyond sensible repair, No-Fix, No-Fee applies, so you don't pay for labour.
+If you're in [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) or [Brentwood](/brentwood-pc-repair/), you can drop it at the workshop by arrangement or collection is by arrangement. Please do not post a laptop with a flapping lid. If the case is beyond sensible repair, No-Fix, No-Fee applies, so you don't pay for labour.

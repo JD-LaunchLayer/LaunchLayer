@@ -66,7 +66,7 @@ We fit a panel matched to your model and test the lid through a full open-and-cl
 
 ## Where do you get a cracked screen repaired in Wickford?
 
-Drop-off at the workshop is arranged in advance, so call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask.
+Drop-off at the workshop is arranged in advance, so call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, collection is by arrangement.
 
 Diagnostics are free, and pricing and brands are on the [Wickford laptop screen repair](/laptop-screen-repair-wickford/) page. You can also book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/).
 

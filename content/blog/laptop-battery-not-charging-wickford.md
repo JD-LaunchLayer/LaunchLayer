@@ -98,7 +98,7 @@ You get a fixed quote before any part is ordered. A charging port or battery rep
 
 Bring the charger you actually use, plus the spare from the drawer if that's the one that sometimes works, so we can compare it with a known-good compatible charger.
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask.
+Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, collection is by arrangement.
 
 ## FAQ
 
@@ -124,7 +124,7 @@ Yes, if the laptop still runs while it's plugged in. Stop if the case is swollen
 
 ### Do you collect the laptop?
 
-We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask. Drop-off at the workshop is arranged in advance: call **[07367 652987](tel:07367652987)** or [send a message](/contact/).
+We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, collection is by arrangement. Drop-off at the workshop is arranged in advance: call **[07367 652987](tel:07367652987)** or [send a message](/contact/).
 
 ### Is a swollen battery dangerous?
 

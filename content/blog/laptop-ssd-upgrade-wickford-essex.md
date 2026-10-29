@@ -66,7 +66,7 @@ If the lid is cracked as well as slow, mention it up front, because that's a [sc
 
 Diagnostics are free. SSD upgrade £65 + drive (includes fitting and data transfer). RAM, where it can be upgraded, starts from £49 plus the part. Much RAM is soldered. If an upgrade isn't worth it, we'll tell you before you pay anything.
 
-Collection and return are free in Wickford SS11 and SS12. Elsewhere, please ask. Book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
+Collection and return are free in Wickford SS11 and SS12. Elsewhere, collection is by arrangement. Book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
 
 ## FAQ
 
