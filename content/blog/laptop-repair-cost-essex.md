@@ -17,7 +17,7 @@ People ask what a **laptop repair cost in Essex** actually is, then find a forum
 
 The order of the job is the same wherever you live. **Diagnostics are free.** We find the fault, and then you get a **fixed quote** before any work starts or any part is ordered. If a repair isn't worth doing, you don't pay labour for the bad news. 'From' is where the labour starts. We price your part separately.
 
-That's us at [LaunchLayer](/wickford-laptop-repair/), in Wickford. Call **[07367 652987](tel:07367652987)** and we'll book a drop-off, or collection is by arrangement. Collection and return are free in Wickford SS11 and SS12. Elsewhere in South Essex, collection is by arrangement.
+That's us at [LaunchLayer](/wickford-laptop-repair/), in Wickford. Call **[07367 652987](tel:07367652987)** and we'll book a drop-off, or we can collect it: free in SS11/SS12, and by arrangement elsewhere.
 
 ## Starting prices
 
