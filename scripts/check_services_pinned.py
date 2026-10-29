@@ -325,11 +325,11 @@ def main() -> None:
     if re.search(r"<script\b", visible):
         fail("script inside main")
     row_links = re.findall(r'<a class="(?:row|acc-link)" href="([^"]+)"', visible)
-    if len(row_links) != 28:
-        fail(f"expected 28 directory links, found {len(row_links)}")
-    if "/website-design-wickford/" not in row_links:
-        fail("websites row missing from the directory")
-    ok("28 directory links are <a href> in the raw HTML")
+    if len(row_links) != 27:
+        fail(f"expected 27 directory links, found {len(row_links)}")
+    if "/website-design-wickford/" in row_links:
+        fail("websites row is still in the /services/ directory")
+    ok("27 directory links are <a href> in the raw HTML")
 
     # These eight are the fragment targets for /services/#<id>. They live once
     # each as id= on the price row. The popular pins use data-pin so the
@@ -346,7 +346,7 @@ def main() -> None:
     }
     added_ids = service_ids(new_services) - service_ids(old_services)
     removed_ids = service_ids(old_services) - service_ids(new_services)
-    if removed_ids != anchor_ids or added_ids != {"websites"}:
+    if removed_ids != anchor_ids or added_ids != set():
         fail(f"data-service-id set changed: added {sorted(added_ids)} removed {sorted(removed_ids)}")
     row_ids = set(re.findall(r'<a class="row" href="[^"]+" id="([^"]+)"', new_services))
     if row_ids != anchor_ids:
@@ -355,7 +355,7 @@ def main() -> None:
         count = len(re.findall(rf'id="{re.escape(sid)}"', new_services))
         if count != 1:
             fail(f"/services/#{sid} id count is {count}, expected 1")
-    ok(f"data-service-id set kept except the 8 price anchors, plus websites ({len(service_ids(new_services))} ids)")
+    ok(f"data-service-id set kept except the 8 price anchors ({len(service_ids(new_services))} ids)")
 
     if call_clicks(old_services) != call_clicks(new_services):
         fail(f"call-click attrs changed: {call_clicks(new_services)}")
@@ -387,11 +387,16 @@ def main() -> None:
         fail("business pricing is missing the Website setup heading")
     if "Small business websites" not in pricing_main:
         fail("business pricing is missing the Small business websites card")
-    if "£249" not in pricing_main:
-        fail("business pricing is missing the £249 website price")
+    website_price = "£249 (1-3 pages) or £379 (5 pages) + £19/month care"
+    if website_price not in pricing_main:
+        fail("business pricing is missing the website price wording")
+    if "£450 bundle" not in pricing_main:
+        fail("business pricing is missing the £450 bundle")
+    if "£199" in pricing_main or "£199" in services_main:
+        fail("£199 launch offer is on /services/ or business pricing")
     if "/website-design-wickford/" not in pricing_main:
         fail("business pricing is missing the website-design link")
-    ok("website setup card is on /business/pricing/ at £249")
+    ok("website prices are on /business/pricing/, not /services/")
 
     if "llsvc-search" in new_services or "Describe what’s wrong" in new_services or "Describe what's wrong" in new_services:
         fail("search box still present")
