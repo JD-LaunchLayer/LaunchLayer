@@ -13,32 +13,32 @@ og_image: /assets/meta/meta-ransomware-wickford.jpg
 image_alt: Laptop on a desk at night with a padlock resting on the keyboard
 ---
 
-If every document has a strange extension, a notepad file on the desktop demands Bitcoin, or the wallpaper has been replaced with a countdown, you're dealing with ransomware. A virus scan won't undo it, because the files themselves have been encrypted (scrambled so they can't be opened without a key).
+There are clear steps, and we'll help. If every document has a strange extension (file ending), a notepad file on the desktop demands payment in cryptocurrency, or the wallpaper has been replaced with a countdown, you're dealing with ransomware. A virus scan won't undo it, because the files themselves have been encrypted (scrambled so they can't be opened without a key).
 
-Virus, malware and scam removal is a fixed £69, but that price covers the clean-up, not ransomware data recovery. Ransomware is quoted separately, as clean-up plus restore, once we've seen the machine.
+Our fixed £69 price is for virus, malware and scam removal. Ransomware jobs are quoted separately, after we've seen the machine.
 
 This is different from a [phishing link you've just clicked](/blog/clicked-phishing-link-emergency-guide/), where you need to act within minutes, and from a [refund scam call](/blog/refund-scam-protection-billericay-brentwood/). The damage is already on the disk, and what you do next decides whether we restore from a backup or talk about [data recovery](/data-recovery/).
 
-## Do this immediately
+## Do these first
 
-1. **Turn the machine off.** Not sleep: hold the power button. Every extra minute can encrypt more shared folders and USB drives.
+1. **Disconnect it from the network.** Unplug the network cable and turn off Wi-Fi. If files are still being renamed, or you can't disconnect it, hold the power button until it switches off (not sleep). Every extra minute can encrypt more shared folders and USB drives.
 2. **Unplug USB backups.** If a backup stick is still plugged in, it may already be encrypted, which is why the [backup guide](/blog/backup-pc-guide-wickford-essex/) says to unplug them.
-3. **Pause before you pay.** We'll talk through whether a key is even likely, with the facts in front of you, rather than a countdown on the screen. Paying is a decision you can make once you've heard that.
-4. **Leave unknown decryptors alone.** A tool from social media can be a second infection. We'll check whether a known tool exists for that strain.
+3. **Take a breath before you pay anything.** Paying doesn't guarantee you'll get access to your files, your computer will still be infected, and you're more likely to be targeted again. It's a decision for clear facts, not a countdown.
+4. **Be wary of any 'decryptor' you found on social media or in an advert.** It may be a second infection or a scam. Free decryptors for some types of ransomware are listed at No More Ransom (nomoreransom.org), but not every type has one.
 
-If this started after a remote helper "from Microsoft" got in touch, read the [scam awareness post](/blog/scam-awareness/) as well, because the ransomware may be the second half of the same scam.
+If this started after a remote helper "from Microsoft" got in touch, read the [scam awareness post](/blog/scam-awareness/) as well, because remote-access software left on the PC can give someone a way back in. If anyone has connected to your computer remotely, let us know so we can check for it.
 
-## What we can and can't do in Wickford
+## What we can do in Wickford, and one limit
 
-**Can:** isolate the PC, assess the drive before any copy is made, check whether a known decryptor exists for that strain, remove the malware, and restore from a **clean** backup or cloud version history. OneDrive and Google Drive sometimes keep older versions from before the encryption.
+**Can:** assess the drive before any copy is made, check whether a known decryptor exists for that strain, remove the malware, and restore from a **clean** backup or cloud version history. OneDrive and Google Drive keep earlier versions of your files for a limited time (about 30 days on OneDrive, 25 days on Google Drive), so they may hold copies from before the encryption.
 
-**Can't:** promise to reverse every modern strain without a backup. Nobody can honestly guarantee that.
+**One honest limit:** we can't promise to reverse every modern strain (version) of ransomware without a backup.
 
-If the only copy lived on that laptop, we treat it as a recovery case and explain the costs before any work starts. Please do not keep trying to open the encrypted files, as that can damage what's left.
+If the only copy lived on that laptop, we treat it as a recovery case and explain the costs before any work starts. Please keep the encrypted files exactly as they are, without renaming, deleting or trying to repair them, in case a decryptor becomes available later.
 
-A blue screen in the middle of all this can have several causes, including the disk or the encryption itself. See the [blue screen guide](/blog/windows-blue-screen-fix-essex/), but still power the machine off.
+A blue screen in the middle of all this can have several causes. See the [blue screen guide](/blog/windows-blue-screen-fix-essex/), but still disconnect it and power it off.
 
-## How it usually gets in
+## Common ways it gets in
 
 - A fake delivery PDF.
 - A compromised file-share link.
@@ -51,12 +51,12 @@ If your business kept its invoices in one Documents folder, read [IT for solopre
 
 ## Aftercare
 
-Before we hand a cleaned PC back, we close the obvious gaps, such as open remote-access tools and a reused admin password. We also check the cloud isn't still serving encrypted copies as the "current" version, and only then talk about speed.
+Before we hand a cleaned PC back, we'll close the usual ways back in, such as remote-access software left on it, and help you change any reused passwords, starting with the admin account (the main login that controls the PC). We'll also check the cloud isn't still serving encrypted copies as the "current" version, and only then talk about speed.
 
-If the disk was already failing, an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/) comes after a safe copy, not instead of one. If there's no backup at all, we're clear about [data recovery](/data-recovery/) costs before any hours are spent.
+If the disk was already failing, an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/) (a faster drive) comes after a safe copy, not instead of one. If there's no backup at all, we're clear about [data recovery](/data-recovery/) costs before any hours are spent.
 
 ## Book it
 
-Book through [Wickford virus removal](/wickford-virus-removal/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**. Drop-off at the workshop is arranged in advance. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, collection is by arrangement. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/), you can also drop it at the workshop.
+Book through [Wickford virus removal](/wickford-virus-removal/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**. Drop-off at the workshop is arranged in advance. Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/), you can also drop it at the workshop.
 
-Tell us if any USB drives or network storage boxes were plugged in, and bring those too, without plugging them back into anything. No-Fix, No-Fee applies to a repair that can't be done, so you don't pay labour. Ransomware is quoted as clean-up plus restore.
+Tell us if any USB drives or network storage boxes were plugged in, and bring those too, without plugging them back into anything. Not sure where you stand? Book a free diagnostic and we'll take a look.

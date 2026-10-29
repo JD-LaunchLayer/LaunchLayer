@@ -14,11 +14,11 @@ image_alt: Open desktop PC on a workbench with a mechanical hard drive being ins
 ---
 
 
-A repeated clicking or grinding from a desktop or an older laptop often points to a failing hard drive. It isn't something Disk Cleanup or a Windows tweak will sort out, and every extra hour of use can turn a recoverable drive into one we can't read.
+Good news first: a clicking drive may still be recoverable if you stop using it now. A repeated clicking or grinding from a desktop or an older laptop often points to a failing hard drive. It isn't something Disk Cleanup or a Windows tweak will sort out, and every extra hour of use can make recovery harder.
 
-If a drive is clicking, switch it off and give us a ring. That gives us the best chance of getting your files back. Call **[07367 652987](tel:07367652987)** and we'll arrange a drop-off. Chkdsk is Windows' built-in disk checker, and on a failing drive it can make things worse, so we'll do the checks here. A home clone overnight can do the same.
+If you remember one thing: **power it off and call 07367 652987 to arrange a drop-off.** Please leave chkdsk (a Windows tool that scans and repairs a disk, and can make things worse on a drive that's physically failing) alone, and leave copying or cloning the drive to us, because long read attempts can damage a failing drive further.
 
-If the files matter, we'll explain the [data recovery](/data-recovery/) options and costs before discussing an [SSD upgrade](/blog/laptop-ssd-upgrade-wickford-essex/). The [data recovery blog](/blog/data-recovery-services-wickford-essex/) explains how recovery works.
+If the files matter, we'll explain the [data recovery](/data-recovery/) options and costs before discussing an [SSD upgrade](/blog/laptop-ssd-upgrade-wickford-essex/) (a faster drive with no moving parts). The [data recovery blog](/blog/data-recovery-services-wickford-essex/) explains how recovery works.
 
 ## What you're hearing
 
@@ -29,29 +29,29 @@ What's not normal is the same click repeating every second or two, a click follo
 Windows may also show:
 
 - Disk at 100% in Task Manager while nothing is copying
-- "Windows repaired your drive" after every boot
-- SMART warnings, "care", "predictive failure"
+- "Scanning and repairing drive" appearing every time it starts
+- A SMART warning (from the BIOS, the PC's start-up settings, or a drive-health tool), such as "Caution" or "predictive failure"
 
 SMART is the drive's own health check, and a warning matters even if the drive's quiet. A blue screen with disk errors can be the same problem showing up a different way.
 
+## What to avoid, and why
+
+- **Do not put the drive in the freezer.**
+- **Do not keep pressing Reset** until it "comes back".
+- **Do not install a recovery app on the failing disk.** You can overwrite the files you want back.
+- **Do not post it to an address from an advert** if the data can't be replaced. Ask first how they copy the drive.
+
+If you've got a backup, a failing drive is a hardware swap. Without one, treat it as urgent. Ransomware on a clicking disk is two problems at once. Disconnect it from the network first, then switch it off so the failing drive isn't worked any harder, and call us before trying anything else.
+
 ## What we do on the bench
 
-We assess the drive before anything else, and then decide whether a recovery copy is safe to attempt. If the files come off cleanly, we'll talk about moving you onto an SSD, and the PC will boot far faster. If they don't, the job becomes recovery, with prices and limits on the [data recovery](/data-recovery/) page.
+We assess the drive first. If a clicking drive needs opening, that's a job for a specialist clean-room lab, so we refer it to Fields Data Recovery on their terms, and we quote before any work starts. Once your files are safe, we'll talk about moving you onto an SSD, and the PC will usually start much faster. Prices and limits are on the [data recovery](/data-recovery/) page.
 
-Laptops that are just slow, with no clicking, can often skip recovery and go straight to an SSD; we quote those separately. A Windows 11 upgrade on a clicking drive can lose the only copy of your photos, so we'll check the drive first. The [upgrade help](/blog/windows-11-upgrade-help-wickford/) assumes a disk that still reads properly.
-
-## A few things that can make it worse
-
-- **The freezer doesn't help.** Leave the drive at room temperature and bring it in.
-- **Pressing Reset again and again** while it "comes back" keeps the heads working.
-- **A recovery app installed on the failing disk** can overwrite the files you want back. We'll copy them off first.
-- **Posting it to an address from an advert** is a risk if the data can't be replaced. Ask first how they copy the drive.
-
-If you've got a backup, a failing drive is a hardware swap. Without one, the sooner it's switched off, the better the chance. Ransomware on a clicking disk is two problems at once, so power the machine off, keep it off the network, and look at [Wickford virus removal](/wickford-virus-removal/) once it's isolated.
+Laptops that are just slow, with no clicking, can skip recovery and go straight to an SSD (£65 plus the drive, including fitting and data transfer). Please don't run a Windows 11 upgrade on a drive that's clicking, because it's a quick way to lose the only copy of your photos. The [upgrade help](/blog/windows-11-upgrade-help-wickford/) assumes a disk that still reads properly.
 
 ## Towers vs laptops
 
-In a desktop, the noise usually comes from the obvious 3.5" disk. Laptops hide a 2.5" drive under a hatch or the whole bottom panel.
+In a desktop, the noise usually comes from the larger 3.5" disk. Laptops hide a 2.5" drive under a hatch or the whole bottom panel.
 
 If a gaming tower also stutters, the [FPS guide](/blog/fix-pc-game-stuttering-fps-drops-essex/) is the next step once the disk is safe.
 
@@ -61,6 +61,6 @@ If the laptop also has a loose hinge or a [cracked lid](/blog/cracked-laptop-scr
 
 Please do not post a clicking drive. Drop-off at the workshop is arranged in advance: call **[07367 652987](tel:07367652987)** or [send a message](/contact/), and we'll confirm a time and the address. You can also book through [Wickford PC repair](/wickford-pc-repair/).
 
-We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, collection is by arrangement. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/), you can also drop it at the workshop by arrangement.
+Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/), you can also drop it at the workshop by appointment.
 
-When you get in touch, tell us whether the photos matter more than the machine. The diagnosis is free, and No-Fix, No-Fee means you don't pay labour on a repair we can't do. Recovery is quoted separately.
+When you get in touch, tell us whether the photos matter more than the machine. You can book a free diagnostic. We'll tell you what's wrong and what it costs before any work starts. Recovery is quoted separately.
