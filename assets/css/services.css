@@ -251,6 +251,10 @@ body {
   min-width: 0;
   max-width: 100%;
 }
+@media (min-width: 720px) {
+  #macbook { flex-wrap: wrap; }
+  #macbook .row-title { flex: 1 1 100%; }
+}
 .price-phrase { white-space: nowrap; }
 .row-chev { flex: none; color: var(--color-muted); }
 .row-note {
@@ -424,15 +428,6 @@ body {
   box-shadow: var(--shadow-accent-hover);
 }
 .pin--diag:focus-visible { outline-color: var(--color-ink); }
-
-/* MacBook tile note is one price phrase. Below 1100px a single column
-   is too narrow for it, so the card spans enough columns to stay on the page. */
-@media (max-width: 719px) {
-  .llp-pins > li:has(> a[data-pin="macbook"]) { grid-column: 1 / -1; }
-}
-@media (min-width: 720px) and (max-width: 1099px) {
-  .llp-pins > li:has(> a[data-pin="macbook"]) { grid-column: span 2; }
-}
 
 /* Phone: win back the band's padding so the grid sits where it did and the
    Call pill still lands in a gap at 390×844 (checked) */

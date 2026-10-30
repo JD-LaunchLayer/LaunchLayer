@@ -47,6 +47,7 @@ FOOTER_WITHOUT_NO_FIX_NO_FEE = frozenset({
     "backup-pc-guide-wickford-essex",
     "ransomware-help-wickford-essex",
     "laptop-dock-monitor-setup-essex",
+    "professional-business-email-setup-essex",
 })
 # Old Squarespace slugs that were pasted into blog JSON-LD but have no page.
 DEAD_BLOG_SLUGS = {
@@ -975,8 +976,16 @@ _LDJSON = re.compile(
 
 
 def _attr(tag: str, name: str) -> str:
-    match = re.search(rf"\b{name}=[\"']([^\"']*)[\"']", tag, re.I)
-    return html.unescape(match.group(1)).strip() if match else ""
+    """Read one attribute. A double-quoted value may contain apostrophes."""
+    match = re.search(
+        rf"""\b{re.escape(name)}=(?:"([^"]*)"|'([^']*)')""",
+        tag,
+        re.I,
+    )
+    if not match:
+        return ""
+    value = match.group(1) if match.group(1) is not None else match.group(2)
+    return html.unescape(value or "").strip()
 
 
 def meta_content(page: str, *, name: str = "", prop: str = "", itemprop: str = "") -> str:
@@ -1135,14 +1144,48 @@ def repair_post_schema(post: dict) -> bool:
             types.extend(kind if isinstance(kind, list) else [kind])
         if "CollectionPage" not in types and "BlogPosting" not in types:
             return match.group(0)
+        full = post.get("description") or ""
         kept = []
+        replaced_posting = False
+        changed = False
         for node in nodes:
             kind = node.get("@type")
             kind_list = kind if isinstance(kind, list) else [kind]
-            if "CollectionPage" in kind_list or "BlogPosting" in kind_list:
+            if "CollectionPage" in kind_list:
+                replaced_posting = True
+                changed = True
+                continue
+            if "BlogPosting" in kind_list:
+                current = node.get("description") or ""
+                # _attr used to stop at an apostrophe, so "won't" was stored as "won".
+                cut = (
+                    bool(full)
+                    and current != full
+                    and full.startswith(current)
+                    and len(full) > len(current)
+                    and full[len(current)] in {"'", "’"}
+                )
+                if cut:
+                    node["description"] = full
+                    changed = True
+                kept.append(node)
+                replaced_posting = True
                 continue
             kept.append(node)
-        graph = {"@context": "https://schema.org", "@graph": [blog_posting_node(post), *kept]}
+        if not changed:
+            return match.group(0)
+        graph_nodes = [blog_posting_node(post), *kept] if "CollectionPage" in types and not any(
+            (n.get("@type") == "BlogPosting") for n in kept
+        ) else kept
+        if "CollectionPage" in types and not any(
+            (n.get("@type") if not isinstance(n.get("@type"), list) else "") == "BlogPosting"
+            or (isinstance(n.get("@type"), list) and "BlogPosting" in n.get("@type"))
+            for n in kept
+        ):
+            graph_nodes = [blog_posting_node(post), *kept]
+        else:
+            graph_nodes = kept
+        graph = {"@context": "https://schema.org", "@graph": graph_nodes}
         return _dump_ld(graph)
 
     updated = _LDJSON.sub(replacer, page, count=0)

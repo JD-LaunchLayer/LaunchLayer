@@ -312,12 +312,16 @@ def main() -> None:
         if pin_name != card_name:
             fail(f"pin {sid} name {pin_name!r} != {card_name!r}")
         if sid == "macbook":
-            # The row leads with the £85 screen phrase. The tile and the
-            # offer stay from £49, and the row still says batteries from £49.
-            if price_number(pin_price) != 49 or "from £49" not in row_price:
-                fail(f"macbook pin/row price {pin_price!r} / {row_price!r}")
-            if "£85 + panel" not in row_price or "from £55" not in row_price:
-                fail(f"macbook row is missing a price phrase: {row_price!r}")
+            # The row is the screen, battery and keyboard line only.
+            # The tile and the offer stay from £49. The charging-port
+            # sentence stays on the MacBook page, not in this row.
+            expected = "MacBook screen fitting £85 + panel; batteries from £49 + part; keyboards from £55"
+            if row_price != expected:
+                fail(f"macbook row price {row_price!r} != {expected!r}")
+            if price_number(pin_price) != 49 or "from £49" not in pin_price:
+                fail(f"macbook pin price {pin_price!r}")
+            if "charging port" in row_price.lower():
+                fail("macbook row still includes the charging-port sentence")
         elif price_number(pin_price) != price_number(row_price):
             fail(f"pin {sid} price {pin_price!r} != directory {row_price!r}")
         if pin_href != row_href:
