@@ -837,7 +837,7 @@
       "blurb": "Screens, batteries, logic-board diagnostics and macOS tune-ups for MacBook Pro, Air and iMac — specialist care without Apple Store pricing.",
       "priceKind": "from",
       "pricePrefix": "From",
-      "priceLabel": "£85 + parts/panel",
+      "priceLabel": "£49 + part",
       "href": "/macbook-repair-wickford/",
       "cta": "See MacBook services",
       "problems": [
@@ -847,7 +847,7 @@
         "slow"
       ],
       "keywords": "mac apple macbook imac macos retina logic board",
-      "schemaMinPrice": "85",
+      "schemaMinPrice": "49",
       "featured": true,
       "image": "/assets/images/cards/photo-1517336714731-489689fd1ca8-w800.webp",
       "imageWidth": 800,
@@ -1004,7 +1004,7 @@
       "id": "recycling",
       "category": "data",
       "title": "Secure Eco Recycling",
-      "blurb": "Arrange a drop-off for unwanted PCs and laptops — we securely wipe personal data and recycle components responsibly across South Essex. Drop-off is arranged in advance, not a walk-in.",
+      "blurb": "Drop-off is by appointment for unwanted PCs and laptops — we securely wipe personal data and recycle components responsibly across South Essex.",
       "priceKind": "free",
       "priceLabel": "FREE",
       "href": "/eco-recycling",
@@ -1031,10 +1031,34 @@
         "@id": "https://launchlayer.uk/#website"
       },
       "about": {
-        "@id": "https://launchlayer.uk/#localbusiness"
+        "@type": "LocalBusiness",
+        "@id": "https://launchlayer.uk/#localbusiness",
+        "name": "LaunchLayer",
+        "url": "https://launchlayer.uk/",
+        "telephone": "+447367652987",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "32 Glebe Road",
+          "addressLocality": "Wickford",
+          "addressRegion": "Essex",
+          "postalCode": "SS11 8EU",
+          "addressCountry": "GB"
+        }
       },
       "provider": {
-        "@id": "https://launchlayer.uk/#localbusiness"
+        "@type": "LocalBusiness",
+        "@id": "https://launchlayer.uk/#localbusiness",
+        "name": "LaunchLayer",
+        "url": "https://launchlayer.uk/",
+        "telephone": "+447367652987",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "32 Glebe Road",
+          "addressLocality": "Wickford",
+          "addressRegion": "Essex",
+          "postalCode": "SS11 8EU",
+          "addressCountry": "GB"
+        }
       }
     },
     {
@@ -1059,7 +1083,7 @@
             "@type": "Service",
             "name": "50-Point Full System MOT",
             "description": "Deep tune-up for sluggish Windows PCs and laptops: startup clean-up, junk removal, driver health checks and performance optimisation.",
-            "url": "https://launchlayer.uk/laptop-mot-wickford-essex"
+            "url": "https://launchlayer.uk/laptop-mot-wickford-essex/"
           },
           "price": "60",
           "priceCurrency": "GBP"
@@ -1070,7 +1094,7 @@
             "@type": "Service",
             "name": "Dust Clean & Overheating Fix",
             "description": "Stop thermal throttling and noisy fans. We clear dust blockages and refresh dry thermal paste so your machine runs cooler and quieter.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "price": "55",
           "priceCurrency": "GBP"
@@ -1081,13 +1105,16 @@
             "@type": "Service",
             "name": "SSD & RAM Upgrades",
             "description": "SSD upgrade £65 + drive (includes fitting and data transfer). RAM, where it can be upgraded, starts from £49 plus the part. Much RAM is soldered, so we check the model first.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "65",
-            "priceCurrency": "GBP"
-          }
+            "priceCurrency": "GBP",
+            "description": "£65 + drive"
+          },
+          "price": "65",
+          "priceCurrency": "GBP"
         },
         {
           "@type": "Offer",
@@ -1095,7 +1122,7 @@
             "@type": "Service",
             "name": "Custom Gaming PC & Workstation Builds",
             "description": "Assembly is £149 plus the agreed parts. Every build includes a burn-in test and performance report. Our build work is covered for two years; parts keep the manufacturer's warranty.",
-            "url": "https://launchlayer.uk/custom-pc-builds"
+            "url": "https://launchlayer.uk/custom-pc-builds/"
           },
           "price": "149",
           "priceCurrency": "GBP"
@@ -1104,32 +1131,18 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Websites",
-            "description": "from £249 / £379 + £19/month care",
-            "url": "https://launchlayer.uk/website-design-wickford/"
-          },
-          "priceCurrency": "GBP",
-          "priceSpecification": {
-            "@type": "PriceSpecification",
-            "minPrice": "249",
-            "priceCurrency": "GBP",
-            "valueAddedTaxIncluded": true,
-            "description": "from £249 / £379 + £19/month care"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
             "name": "Laptop Screen Replacement",
             "description": "Windows and Chromebook screen fitting is £50 plus the panel. MacBook screen fitting is £85 plus the panel, and Mac panels usually cost more.",
-            "url": "https://launchlayer.uk/laptop-screen-repair-wickford"
+            "url": "https://launchlayer.uk/laptop-screen-repair-wickford/"
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "50",
-            "priceCurrency": "GBP"
-          }
+            "priceCurrency": "GBP",
+            "description": "£50 + panel"
+          },
+          "price": "50",
+          "priceCurrency": "GBP"
         },
         {
           "@type": "Offer",
@@ -1142,8 +1155,11 @@
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "49",
-            "priceCurrency": "GBP"
-          }
+            "priceCurrency": "GBP",
+            "description": "from £49"
+          },
+          "price": "49",
+          "priceCurrency": "GBP"
         },
         {
           "@type": "Offer",
@@ -1151,7 +1167,7 @@
             "@type": "Service",
             "name": "Charging Port & DC Jack Repair",
             "description": "A flat £65 for a removable charging port or a port on its own small board. Ports soldered to the main board are quoted after diagnosis.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "price": "65",
           "priceCurrency": "GBP"
@@ -1162,13 +1178,16 @@
             "@type": "Service",
             "name": "Laptop Keyboard Replacement",
             "description": "Sticky, missing or unresponsive keys after wear or a spill. We source compatible keyboards and refit them cleanly.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "55",
-            "priceCurrency": "GBP"
-          }
+            "priceCurrency": "GBP",
+            "description": "from £55"
+          },
+          "price": "55",
+          "priceCurrency": "GBP"
         },
         {
           "@type": "Offer",
@@ -1176,13 +1195,16 @@
             "@type": "Service",
             "name": "Laptop Hinge & Lid Repair",
             "description": "Wobbly lids, cracked hinge mounts or screens that won't stay open — structural repairs before the damage spreads to the chassis.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "75",
-            "priceCurrency": "GBP"
-          }
+            "priceCurrency": "GBP",
+            "description": "from £75"
+          },
+          "price": "75",
+          "priceCurrency": "GBP"
         },
         {
           "@type": "Offer",
@@ -1190,13 +1212,16 @@
             "@type": "Service",
             "name": "General Hardware & Component Repair",
             "description": "Trackpads, fans, Wi-Fi cards, USB ports and other component faults — diagnosed free, then fixed at a clear labour + parts rate.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "49",
-            "priceCurrency": "GBP"
-          }
+            "priceCurrency": "GBP",
+            "description": "from £49"
+          },
+          "price": "49",
+          "priceCurrency": "GBP"
         },
         {
           "@type": "Offer",
@@ -1204,7 +1229,7 @@
             "@type": "Service",
             "name": "General Hardware Fix",
             "description": "One-off hardware labour in the workshop — up to 1 hour of hands-on time.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "price": "49",
           "priceCurrency": "GBP"
@@ -1215,27 +1240,33 @@
             "@type": "Service",
             "name": "Liquid Spill Damage Repair",
             "description": "Coffee, water or wine on the keyboard? Switch it off and stop charging it. A spill clean starts from £95, which covers opening, cleaning and drying. Further board work is quoted separately.",
-            "url": "https://launchlayer.uk/liquid-damage-repair-wickford"
+            "url": "https://launchlayer.uk/liquid-damage-repair-wickford/"
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "95",
-            "priceCurrency": "GBP"
-          }
+            "priceCurrency": "GBP",
+            "description": "from £95"
+          },
+          "price": "95",
+          "priceCurrency": "GBP"
         },
         {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
             "name": "Apple MacBook & iMac Repairs",
-            "description": "Screens, batteries, logic-board diagnostics and macOS tune-ups for MacBook Pro, Air and iMac — specialist care without Apple Store pricing.",
-            "url": "https://launchlayer.uk/macbook-repair-wickford"
+            "description": "MacBook screen fitting £85 + panel; batteries from £49 + part; keyboards from £55. A charging port is a flat £65 where the port is removable or on its own small board; soldered ports are quoted after diagnosis.",
+            "url": "https://launchlayer.uk/macbook-repair-wickford/"
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
-            "minPrice": "85",
-            "priceCurrency": "GBP"
-          }
+            "minPrice": "49",
+            "priceCurrency": "GBP",
+            "description": "MacBook batteries from £49 + part; screen fitting £85 + panel"
+          },
+          "price": "49",
+          "priceCurrency": "GBP"
         },
         {
           "@type": "Offer",
@@ -1243,7 +1274,7 @@
             "@type": "Service",
             "name": "Virus, Malware & Scam Removal",
             "description": "Full clean-up of pop-ups, fake antivirus warnings and malware, plus hardened browser and Windows protection afterwards.",
-            "url": "https://launchlayer.uk/wickford-virus-removal"
+            "url": "https://launchlayer.uk/wickford-virus-removal/"
           },
           "price": "69",
           "priceCurrency": "GBP"
@@ -1254,7 +1285,7 @@
             "@type": "Service",
             "name": "Fresh Windows Install & Factory Reset",
             "description": "Clean, updated Windows installation to clear corruption and slowdowns — product key preserved and essential drivers restored.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "price": "59",
           "priceCurrency": "GBP"
@@ -1265,13 +1296,16 @@
             "@type": "Service",
             "name": "Windows 11 Upgrade & Compatibility Fix",
             "description": "Hardware checks, then a guided upgrade with drivers sorted, or an honest answer if the machine isn't suitable.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "69",
-            "priceCurrency": "GBP"
-          }
+            "priceCurrency": "GBP",
+            "description": "from £69"
+          },
+          "price": "69",
+          "priceCurrency": "GBP"
         },
         {
           "@type": "Offer",
@@ -1279,7 +1313,7 @@
             "@type": "Service",
             "name": "General Software Fix",
             "description": "BIOS tweaks, printer quirks, email accounts, browser issues or one-off settings jobs — up to 60 minutes of hands-on workshop time.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "price": "45",
           "priceCurrency": "GBP"
@@ -1290,13 +1324,16 @@
             "@type": "Service",
             "name": "Home Wi-Fi & Router Setup",
             "description": "New router installs, dead spots and device reconnects.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "55",
-            "priceCurrency": "GBP"
-          }
+            "priceCurrency": "GBP",
+            "description": "from £55"
+          },
+          "price": "55",
+          "priceCurrency": "GBP"
         },
         {
           "@type": "Offer",
@@ -1304,13 +1341,16 @@
             "@type": "Service",
             "name": "Data & File Recovery",
             "description": "Recover photos, documents and work files from failing drives, accidental deletes or machines that won't boot.",
-            "url": "https://launchlayer.uk/data-recovery"
+            "url": "https://launchlayer.uk/data-recovery/"
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "79",
-            "priceCurrency": "GBP"
-          }
+            "priceCurrency": "GBP",
+            "description": "from £79"
+          },
+          "price": "79",
+          "priceCurrency": "GBP"
         },
         {
           "@type": "Offer",
@@ -1318,13 +1358,16 @@
             "@type": "Service",
             "name": "Backup & Cloud Migration",
             "description": "Set up local and cloud backups, or move your files to OneDrive, Google Drive or an external drive.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "49",
-            "priceCurrency": "GBP"
-          }
+            "priceCurrency": "GBP",
+            "description": "from £49"
+          },
+          "price": "49",
+          "priceCurrency": "GBP"
         },
         {
           "@type": "Offer",
@@ -1332,13 +1375,16 @@
             "@type": "Service",
             "name": "New Device Setup & Data Transfer",
             "description": "Setup, moving your files across and security settings.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "59",
-            "priceCurrency": "GBP"
-          }
+            "priceCurrency": "GBP",
+            "description": "from £59"
+          },
+          "price": "59",
+          "priceCurrency": "GBP"
         },
         {
           "@type": "Offer",
@@ -1346,13 +1392,16 @@
             "@type": "Service",
             "name": "Printer & Peripheral Setup",
             "description": "Wireless printers, scanners and common peripherals installed and tested on Windows or Mac — without the driver headache.",
-            "url": "https://launchlayer.uk/contact"
+            "url": "https://launchlayer.uk/contact/"
           },
           "priceSpecification": {
             "@type": "PriceSpecification",
             "minPrice": "35",
-            "priceCurrency": "GBP"
-          }
+            "priceCurrency": "GBP",
+            "description": "from £35"
+          },
+          "price": "35",
+          "priceCurrency": "GBP"
         }
       ]
     }
@@ -1448,13 +1497,6 @@
         </a>
       </li>
       <li>
-        <a class="pin" href="/macbook-repair-wickford/" data-pin="macbook">
-          <h3 class="pin-title">MacBook &amp; iMac Repairs</h3>
-          <p class="pin-price"><span class="pin-from">from</span> <span class="pin-amt">£85</span> <span class="pin-note">+ parts/panel</span></p>
-          <svg class="pin-chev" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </li>
-      <li>
         <a class="pin" href="/laptop-mot-wickford-essex/" data-pin="mot">
           <h3 class="pin-title">50-Point Full System MOT</h3>
           <p class="pin-price"><span class="pin-amt">£60</span></p>
@@ -1465,6 +1507,13 @@
         <a class="pin" href="/wickford-virus-removal/" data-pin="virus">
           <h3 class="pin-title">Virus, Malware &amp; Scam Removal</h3>
           <p class="pin-price"><span class="pin-amt">£69</span></p>
+          <svg class="pin-chev" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </li>
+      <li>
+        <a class="pin" href="/macbook-repair-wickford/" data-pin="macbook">
+          <h3 class="pin-title">MacBook &amp; iMac Repairs</h3>
+          <p class="pin-price"><span class="pin-from">from</span> <span class="pin-amt">£49</span> <span class="pin-note"><span class="price-phrase">+ part</span> · <span class="price-phrase">screens £85 + panel</span></span></p>
           <svg class="pin-chev" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </li>
@@ -1487,13 +1536,13 @@
             <li><a class="row" href="/wickford-laptop-repair/" id="laptop-hub"><span class="row-title">Wickford Laptop Repair</span><span class="row-price">from £49</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
             <li><a class="row" href="/laptop-screen-repair-wickford/" id="screen"><span class="row-title">Laptop Screen Replacement</span><span class="row-price">£50 + panel</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
             <li><a class="row" href="/wickford-laptop-repair/" id="battery"><span class="row-title">Laptop Battery Replacement</span><span class="row-price">from £49 + part</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
-            <li><a class="row" href="/contact/" data-service-id="charging-port"><span class="row-title">Charging Port &amp; DC Jack Repair</span><span class="row-price">£65</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><p class="row-note">£65 covers a removable port, or a port on its own small board. A port soldered to the main board is quoted after diagnosis.</p></li>
+            <li><a class="row" href="/contact/" data-service-id="charging-port"><span class="row-title">Charging Port &amp; DC Jack Repair</span><span class="row-price">£65 (soldered ports quoted after diagnosis)</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><p class="row-note">£65 covers a removable port, or a port on its own small board. A port soldered to the main board is quoted after diagnosis.</p></li>
             <li><a class="row" href="/contact/" data-service-id="keyboard"><span class="row-title">Laptop Keyboard Replacement</span><span class="row-price">from £55 + part</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
             <li><a class="row" href="/contact/" data-service-id="hinge"><span class="row-title">Laptop Hinge &amp; Lid Repair</span><span class="row-price">from £75</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
             <li><a class="row" href="/contact/" data-service-id="component"><span class="row-title">General Hardware &amp; Component Repair</span><span class="row-price">from £49</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
             <li><a class="row" href="/contact/" data-service-id="hardware-fix"><span class="row-title">General Hardware Fix</span><span class="row-price">£49 for up to 1 hour</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
             <li><a class="row" href="/liquid-damage-repair-wickford/" data-service-id="liquid"><span class="row-title">Liquid Spill Damage Repair</span><span class="row-price">from £95</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
-            <li><a class="row" href="/macbook-repair-wickford/" id="macbook"><span class="row-title">Apple MacBook &amp; iMac Repairs</span><span class="row-price">from £85 + parts/panel</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a class="row" href="/macbook-repair-wickford/" id="macbook"><span class="row-title">Apple MacBook &amp; iMac Repairs</span><span class="row-price">MacBook <span class="price-phrase">screen fitting £85 + panel</span>; batteries <span class="price-phrase">from £49 + part</span>; keyboards <span class="price-phrase">from £55</span></span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
           </ul>
         </details>
         <details class="acc" id="speed">
@@ -1506,7 +1555,7 @@
             <li><a class="row" href="/contact/" id="diagnostics"><span class="row-title">PC &amp; Laptop Diagnostics</span><span class="row-price">FREE</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
             <li><a class="row" href="/contact/" data-service-id="insurance-report"><span class="row-title">Insurance Damage Report</span><span class="row-price">£40</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
             <li><a class="row" href="/laptop-mot-wickford-essex/" id="mot"><span class="row-title">50-Point Full System MOT</span><span class="row-price">£60</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
-            <li><a class="row" href="/contact/" data-service-id="dust-clean"><span class="row-title">Dust Clean &amp; Overheating Fix</span><span class="row-price">£55</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+            <li><a class="row" href="/contact/" data-service-id="dust-clean"><span class="row-title">Dust Clean &amp; Overheating Fix</span><span class="row-price">£55</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><p class="row-note">£55 includes a full internal dust removal and fresh thermal paste.</p></li>
             <li><a class="row" href="/contact/" data-service-id="ssd-ram"><span class="row-title">SSD &amp; RAM Upgrades</span><span class="row-price">SSD £65 + drive</span><svg class="row-chev" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><p class="row-note">SSD upgrade £65 + drive (includes fitting and data transfer). RAM, where it can be upgraded, starts from £49 plus the part. Much RAM is soldered, so we check the model first.</p></li>
           </ul>
         </details>
@@ -1541,11 +1590,6 @@
         <a class="acc-link" href="/custom-pc-builds/" data-service-id="custom-pc">
           <h3 class="acc-h">Custom Gaming PC &amp; Workstation Builds</h3>
           <span class="acc-link-price">£149 assembly</span>
-          <svg class="acc-icon acc-icon--go" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a class="acc-link" href="/website-design-wickford/" data-service-id="websites">
-          <h3 class="acc-h">Websites</h3>
-          <span class="acc-link-price">from £249 / £379 + £19/month care</span>
           <svg class="acc-icon acc-icon--go" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" focusable="false"><path d="M7.5 4.5 13 10l-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>

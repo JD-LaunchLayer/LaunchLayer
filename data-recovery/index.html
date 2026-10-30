@@ -14,7 +14,7 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/icons/icon-512.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
 <meta content="LaunchLayer" property="og:site_name"/>
-<meta content="Data Recovery Wickford | Lost Files, Hard Drives &amp; SSDs | LaunchLayer" property="og:title"/>
+<meta content="Data Recovery Wickford | Lost Files &amp; Hard Drives | LaunchLayer" property="og:title"/>
 <meta content="Recover deleted photos, documents and work files in Wickford and South Essex. Free assessment and a clear quote." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://launchlayer.uk/data-recovery/" property="og:url"/>
@@ -40,19 +40,43 @@
       "@type": "WebPage",
       "@id": "https://launchlayer.uk/data-recovery/#webpage",
       "url": "https://launchlayer.uk/data-recovery/",
-      "name": "Data Recovery Wickford | Lost Files, Hard Drives & SSDs | LaunchLayer",
+      "name": "Data Recovery Wickford | Lost Files & Hard Drives | LaunchLayer",
       "description": "Recover deleted photos, documents and work files from laptops, hard drives, SSDs and USB sticks in Wickford and South Essex. From £79.",
       "isPartOf": {
         "@id": "https://launchlayer.uk/#website"
       },
       "about": {
-        "@id": "https://launchlayer.uk/#localbusiness"
+        "@type": "LocalBusiness",
+        "@id": "https://launchlayer.uk/#localbusiness",
+        "name": "LaunchLayer",
+        "url": "https://launchlayer.uk/",
+        "telephone": "+447367652987",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "32 Glebe Road",
+          "addressLocality": "Wickford",
+          "addressRegion": "Essex",
+          "postalCode": "SS11 8EU",
+          "addressCountry": "GB"
+        }
       },
       "mainEntity": {
         "@id": "https://launchlayer.uk/data-recovery/#service"
       },
       "provider": {
-        "@id": "https://launchlayer.uk/#localbusiness"
+        "@type": "LocalBusiness",
+        "@id": "https://launchlayer.uk/#localbusiness",
+        "name": "LaunchLayer",
+        "url": "https://launchlayer.uk/",
+        "telephone": "+447367652987",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "32 Glebe Road",
+          "addressLocality": "Wickford",
+          "addressRegion": "Essex",
+          "postalCode": "SS11 8EU",
+          "addressCountry": "GB"
+        }
       }
     },
     {
@@ -62,17 +86,21 @@
       "serviceType": "Data recovery",
       "description": "Recover photos, documents and work files from deleted folders, failed hard drives, SSDs and USB sticks at LaunchLayer’s Wickford workshop.",
       "provider": {
-        "@id": "https://launchlayer.uk/#localbusiness"
+        "@type": "LocalBusiness",
+        "@id": "https://launchlayer.uk/#localbusiness",
+        "name": "LaunchLayer",
+        "url": "https://launchlayer.uk/",
+        "telephone": "+447367652987",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "32 Glebe Road",
+          "addressLocality": "Wickford",
+          "addressRegion": "Essex",
+          "postalCode": "SS11 8EU",
+          "addressCountry": "GB"
+        }
       },
       "url": "https://launchlayer.uk/data-recovery/",
-      "offers": {
-        "@type": "AggregateOffer",
-        "url": "https://launchlayer.uk/data-recovery",
-        "priceCurrency": "GBP",
-        "lowPrice": "79.00",
-        "offerCount": "3",
-        "description": "Deleted files and healthy drives from £79. Corrupted or failing drives £90–£150. Clicking or physically damaged drives from £350."
-      },
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Data recovery options",
@@ -81,34 +109,43 @@
             "@type": "Offer",
             "name": "Deleted files & healthy drives",
             "description": "Recover photos and documents after emptying the recycle bin, formatting a memory card, or when a laptop will not turn on but the drive is still healthy.",
-            "url": "https://launchlayer.uk/data-recovery",
+            "url": "https://launchlayer.uk/data-recovery/",
             "priceSpecification": {
               "@type": "PriceSpecification",
               "minPrice": "79.00",
-              "priceCurrency": "GBP"
-            }
+              "priceCurrency": "GBP",
+              "description": "from £79.00"
+            },
+            "price": "79.00",
+            "priceCurrency": "GBP"
           },
           {
             "@type": "Offer",
             "name": "Corrupted or failing drives",
             "description": "Recover files when Windows asks you to format the disk, folders have vanished, or the drive is throwing read errors.",
-            "url": "https://launchlayer.uk/data-recovery",
+            "url": "https://launchlayer.uk/data-recovery/",
             "priceSpecification": {
               "@type": "PriceSpecification",
               "minPrice": "90.00",
               "maxPrice": "150.00",
-              "priceCurrency": "GBP"
-            }
+              "priceCurrency": "GBP",
+              "description": "from £90.00"
+            },
+            "price": "90.00",
+            "priceCurrency": "GBP"
           },
           {
             "@type": "Offer",
             "name": "Clicking or physically damaged drives",
-            "description": "Clean-room lab recovery for dropped, clicking or grinding hard drives that should not be opened on a normal workbench.",
-            "url": "https://launchlayer.uk/data-recovery",
+            "description": "From £350. We send clicking or physically damaged drives to Fields Data Recovery, on their terms.",
+            "url": "https://launchlayer.uk/data-recovery/",
+            "price": "350",
+            "priceCurrency": "GBP",
             "priceSpecification": {
               "@type": "PriceSpecification",
-              "minPrice": "350.00",
-              "priceCurrency": "GBP"
+              "minPrice": "350",
+              "priceCurrency": "GBP",
+              "description": "From £350"
             }
           }
         ]
@@ -161,7 +198,7 @@
           "name": "What should I do if my hard drive is clicking?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Turn it off and unplug it. Clicking usually means the drive is physically failing. Keep using it and you can destroy the files. Don’t open the case. Call 07367 652987 to arrange a drop-off and we'll assess whether it needs the specialist lab."
+            "text": "Switch it off and unplug it. If a drive is clicking, we send it to our partner clean-room lab, Fields Data Recovery, so it isn’t damaged any further. Call 07367 652987. Drop-off is by appointment, and we'll assess it."
           }
         },
         {
@@ -265,14 +302,14 @@
 </div>
 <div class="llsg-card">
 <h3>Clicking or physically damaged drives</h3>
-<p>Choose this when the drive was dropped, is clicking or grinding, or won’t spin up. That needs a specialist clean-room lab. We partner with Fields Data Recovery rather than opening the drive here, which can make the damage permanent.</p>
+<p>Choose this when the drive was dropped, is clicking or grinding, or won’t spin up. We send those to our partner clean-room lab, Fields Data Recovery, and they quote before any work starts.</p>
 <span class="llsg-card-price">From £350</span>
 </div></div>
 </section>
 <section class="llsg-section llsg-glass">
 <div class="llsg-section-head">
-<h2>Signs you should stop using the drive</h2>
-<p>Keep using a failing drive and you can overwrite the files we’re trying to save. If any of this sounds familiar, power it off and call 07367 652987 to arrange a drop-off.</p>
+<h2>If you think the drive is failing</h2>
+<p>Switching a failing drive off straight away gives us the best chance of saving your files. We'll tell you honestly what's likely before you pay anything. If any of this sounds familiar, power it off and call 07367 652987. Drop-off is by appointment.</p>
 </div>
 <div class="llsg-card-grid"><div class="llsg-card">
 <h3><svg fill="none" stroke="currentColor" stroke-width="3" style="color: #dc2626; width: 18px; height: 18px;" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="17"></line></svg>The computer won’t start</h3>
@@ -280,18 +317,18 @@
 </div>
 <div class="llsg-card">
 <h3><svg fill="none" stroke="currentColor" stroke-width="3" style="color: #dc2626; width: 18px; height: 18px;" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="17"></line></svg>Files have vanished</h3>
-<p>Folders disappear, copies fail, or you get a read error. Don’t keep trying to copy — that can make recovery harder.</p>
+<p>Folders disappear, copies fail, or you get a read error. Switching it off gives us a better chance of getting the files back.</p>
 </div>
 <div class="llsg-card llsg-card-wide">
 <h3><svg fill="none" stroke="currentColor" stroke-width="3" style="color: #dc2626; width: 18px; height: 18px;" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="8" y2="12"></line><line x1="12" x2="12.01" y1="16" y2="17"></line></svg>“You need to format this disk”</h3>
 <p>A USB stick, SD card or external drive asks you to format before you can use it. Cancel that prompt and don’t format it — we can often recover the files first.</p>
 </div></div>
 </section>
-<section class="llsg-callout llsg-glass"><h3>If the drive is clicking, turn it off now</h3><p>Clicking, grinding or repeated ticking means the hard drive is physically failing. Leave it running and the files can be lost for good. Don’t open the case. Call 07367 652987 to arrange a drop-off and we'll assess it — we won’t open a clicking drive on the workshop bench.</p></section>
+<section class="llsg-callout llsg-glass"><h3>If the drive is clicking, turn it off now</h3><p>If a drive is clicking, switch it off and give us a ring. We send it to our partner clean-room lab, Fields Data Recovery, so it isn’t damaged any further. Call 07367 652987. Drop-off is by appointment.</p></section>
 <section class="llsg-partner llsg-glass">
 <div>
 <h3>Clean-room lab recovery</h3>
-<p>If the drive is clicking, dropped or won’t spin, it shouldn’t be opened on a normal workbench. We send those to Fields Data Recovery, a specialist clean-room lab.</p>
+<p>If the drive is clicking, dropped or won’t spin, we send it to Fields Data Recovery, a specialist clean-room lab, so it isn’t damaged any further.</p>
 <p style="margin-top:12px"><a href="https://www.fields-data-recovery.co.uk/?account=ZmpkdXJzTVdrNDBwM2s1amJ6UXpkMk0rOFNDaXlpZWl5ZFZKb0Q4ejJoTT0=&amp;source=referral_link">Start a lab recovery case →</a></p>
 </div>
 <img alt="Scan to register with Fields Data Recovery" decoding="async" height="140" loading="lazy" src="/assets/images/image-c56d767f.png" width="140"/>
@@ -326,7 +363,7 @@
 <p>Yes. If the screen is smashed or the laptop is dead, but the hard drive or SSD inside is still healthy, we can take the drive out in the Wickford workshop and copy your files to a USB stick. That starts at £79.</p>
 </details><details class="llsg-faq-item">
 <summary>What should I do if my hard drive is clicking?</summary>
-<p>Turn it off and unplug it. Clicking usually means the drive is physically failing. Keep using it and you can destroy the files. Don’t open the case. Call 07367 652987 to arrange a drop-off and we'll assess whether it needs the specialist lab.</p>
+<p>Switch it off and unplug it. If a drive is clicking, we send it to our partner clean-room lab, Fields Data Recovery, so it isn’t damaged any further. Call 07367 652987. Drop-off is by appointment, and we'll assess it.</p>
 </details><details class="llsg-faq-item">
 <summary>What happens if the drive needs a lab?</summary>
 <p>When a drive needs a lab, we refer it to a specialist partner on their terms, and the cost is quoted before any work starts.</p>

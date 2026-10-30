@@ -407,3 +407,120 @@ a.blog-categories {
     margin-bottom: -40px !important;
   }
 }
+
+/* Wickford computer-repair section: lead copy + service chips (mock) */
+#wickford-computer-repair > p {
+  max-width: 68ch;
+  margin-bottom: var(--space-3);
+}
+#wickford-computer-repair > p:first-of-type {
+  font-size: var(--text-md);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--color-ink);
+}
+#wickford-computer-repair > p + p {
+  font-size: var(--text-sm);
+  line-height: var(--leading-body);
+  margin-bottom: var(--space-5);
+}
+#wickford-computer-repair .ll-chips + p {
+  margin-top: var(--space-4);
+  margin-bottom: 0;
+  font-size: var(--text-sm);
+  line-height: var(--leading-body);
+}
+.ll-chips { margin: 0 -0.75rem; } /* mobile: lets 2 columns fit one-line labels */
+@media (min-width: 720px) { .ll-chips { margin: 0; } }
+.ll-chip-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+.ll-chip-grid > li { margin: 0; padding: 0; display: flex; min-width: 0; }
+@media (max-width: 719px) {
+  .ll-chip-grid > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+a.ll-chip {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4375rem;
+  min-height: 3.25rem;
+  min-width: 0;
+  padding: 0.625rem 0.5625rem;
+  box-sizing: border-box;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-ink);
+  text-decoration: none;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+a.ll-chip:hover {
+  background: var(--color-accent-tint);
+  border-color: var(--color-accent-a35);
+}
+a.ll-chip:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+.ll-chip-icon {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+  border-radius: var(--radius-sm);
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  border: 1px solid var(--color-accent-a16);
+}
+.ll-chip-icon svg { display: block; width: 17px; height: 17px; }
+.ll-chip-text {
+  display: block;
+  min-width: 0;
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+}
+.ll-chip-text::first-letter { text-transform: uppercase; }
+.ll-chip-note {
+  display: block;
+  margin-top: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.78125rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--color-muted);
+}
+@media (max-width: 359px) {
+  .ll-chip-text { font-size: 0.875rem; }
+}
+@media (min-width: 720px) {
+  .ll-chip-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-3); }
+  a.ll-chip { gap: var(--space-3); min-height: 4rem; padding: var(--space-3) var(--space-4); border-radius: var(--radius-lg); }
+  .ll-chip-icon { width: 38px; height: 38px; border-radius: var(--radius-md); }
+  .ll-chip-icon svg { width: 22px; height: 22px; }
+  .ll-chip-text { font-size: var(--text-md); letter-spacing: 0; }
+  .ll-chip-note { font-size: var(--text-xs); }
+}
+@media (prefers-reduced-motion: reduce) {
+  a.ll-chip { transition: none; }
+}
+/* Reserve the measured height so content-visibility:auto does not jump */
+#wickford-computer-repair { contain-intrinsic-size: auto 909px; }
+@media (min-width: 720px) {
+  #wickford-computer-repair { contain-intrinsic-size: auto 595px; }
+}

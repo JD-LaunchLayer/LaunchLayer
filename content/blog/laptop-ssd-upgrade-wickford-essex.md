@@ -46,7 +46,7 @@ How long it takes depends on the laptop and the part, and we agree the timing wi
 
 The right SSD depends on the exact laptop model and its storage connections. We check compatibility before quoting for a drive.
 
-The motherboard decides the fastest drive it can use. A Gen5 stick in a Gen3 slot only runs at Gen3 speed, so we fit a drive that matches the slot you have. If you're building a new PC rather than upgrading a laptop, the [custom PC page](/custom-pc-builds/) is the cleaner route.
+The motherboard decides the fastest drive it can use. A Gen5 stick (a newer, faster drive type) in a Gen3 slot (an older, slower connection) only runs at the older speed, so we fit a drive that matches the slot you have. If you're building a new PC rather than upgrading a laptop, the [custom PC page](/custom-pc-builds/) is the cleaner route.
 
 Capacity is the other honest conversation. 256GB felt huge in 2016, but in 2026 it fills up with Teams caches and phone backups. 500GB is a sensible floor for a home laptop, and 1TB makes sense if you keep raw photos or a Steam library on the machine.
 
@@ -58,7 +58,7 @@ MacBooks are a different job. Storage that's soldered on Apple silicon Macs can'
 
 ## Who is this for around Wickford?
 
-We do this for family laptops, work laptops and office PCs. Call 07367 652987 to book a drop-off, and we'll confirm a time. If you're in [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Brentwood](/brentwood-pc-repair/), you're welcome to bring it to the workshop too.
+We do this for family laptops, work laptops and office PCs. Call 07367 652987. Drop-off is by appointment, and we'll confirm a time. If you're in [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Brentwood](/brentwood-pc-repair/), you're welcome to bring it to the workshop too.
 
 If the lid is cracked as well as slow, mention it up front, because that's a [screen job](/blog/cracked-laptop-screen-wickford-essex/) plus an SSD, priced as two clear lines. Panel labour is on the [Wickford screen repair](/laptop-screen-repair-wickford/) page.
 
@@ -66,7 +66,7 @@ If the lid is cracked as well as slow, mention it up front, because that's a [sc
 
 Diagnostics are free. SSD upgrade £65 + drive (includes fitting and data transfer). RAM, where it can be upgraded, starts from £49 plus the part. Much RAM is soldered. If an upgrade isn't worth it, we'll tell you before you pay anything.
 
-Collection and return are free in Wickford SS11 and SS12. Elsewhere, please ask. Book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
+Collection and return are free in Wickford SS11 and SS12. Elsewhere, collection is by arrangement. Book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), or call **[07367 652987](tel:07367652987)**.
 
 ## FAQ
 

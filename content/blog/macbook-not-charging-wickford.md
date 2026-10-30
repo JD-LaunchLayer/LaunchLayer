@@ -21,14 +21,14 @@ If you'd rather we look at it, call **[07367 652987](tel:07367652987)** or book 
 
 Try one step at a time. Stop when the battery starts to fill.
 
-1. **Read the battery menu.** "Charging On Hold", or a percentage sitting around 80%, is often Optimised Battery Charging or a Charge Limit. Choose "Charge to Full Now" if you need it full today.
+1. **Read the battery menu.** "Charging On Hold", or a percentage sitting around 80%, is often Optimised Battery Charging or a Charge Limit you've set. Choose "Charge to Full Now" if you need it full today.
 2. **Check the adapter.** If the menu says "Not Charging" and the Mac still runs, the adapter may be underpowered. Use a compatible adapter of at least the wattage that came with the Mac.
 3. **Swap the cable and the port.** Some USB-C cables carry data only and won't charge. Try another charging cable, then another port.
 4. **Look at the MagSafe light,** on a Mac that has one. Amber means charging or on hold. Green means full.
 
 ## Not Charging or Charging On Hold
 
-Open the battery menu. "Charging On Hold" means Optimised Battery Charging is waiting. A Charge Limit can hold charging around 80% as well. When you need the battery full, choose "Charge to Full Now" from that menu.
+Open the battery menu. "Charging On Hold" means Optimised Battery Charging is waiting. On newer Macs (Apple silicon, running macOS Tahoe 26.4 or later), you can set a Charge Limit between 80% and 100% in Battery settings. It holds charging at the level you chose, and the menu then says "Charged to [x]% Limit". When you need the battery full, choose "Charge to Full Now" from that menu.
 
 Battery health management can also pause charging until the battery drops to 93% or lower. That pause is the Mac looking after the battery, not a sign it has failed.
 
@@ -38,7 +38,7 @@ Battery health management can also pause charging until the battery drops to 93%
 
 ## What the MagSafe 3 light means
 
-On a Mac with MagSafe 3, the light on the connector is amber while charging's underway or charging is on hold. It turns green when the battery's fully charged. Amber with the percentage sitting still is often the charging hold described above, rather than a port fault.
+On a Mac with MagSafe 3, the light on the connector is amber while charging's underway or charging is on hold. It turns green when the battery's fully charged. Steady amber with the percentage sitting still is often the charging hold described above, rather than a port fault. If the light flashes amber repeatedly, that can point to a charging problem: Apple suggests wiping the port and connector with a dry cloth, restarting, and trying another cable.
 
 MagSafe 3 is on MacBook Pro models introduced in 2021 or later, except the 13-inch M2 MacBook Pro from 2022, and on MacBook Air models introduced in 2022 or later. Earlier MacBooks use an older MagSafe, or USB-C only. A MagSafe 3 lead doesn't fit those older chargers.
 
@@ -54,7 +54,7 @@ Open Battery settings and look at the battery condition. "Service Recommended" m
 
 ## What a repair costs
 
-MacBook repairs start from £85 plus parts or the panel. A MacBook charging port is £65 + parts where the port is removable or on a separate board; soldered ports are quoted after diagnosis. Diagnostics are free, you get a fixed quote before any part is ordered, and **No-Fix, No-Fee** applies, so if we can't fix it you don't pay for labour. A new battery or charging port we fit carries a 12-month warranty, which covers those new parts on battery and charging-port jobs.
+MacBook screen fitting is £85 plus the panel. A MacBook charging port is a flat £65 where the port is removable or on its own small board; ports soldered to the main board are quoted after diagnosis. Diagnostics are free, you get a fixed quote before any part is ordered, and **No-Fix, No-Fee** applies, so if we can't fix it you don't pay for labour. A new battery or charging port we fit carries a 12-month warranty, which covers those new parts on battery and charging-port jobs.
 
 ## If it's a Windows laptop
 
@@ -64,13 +64,13 @@ A Windows laptop that won't charge, whether the power isn't getting in or the ba
 
 Bring the adapter and the cable you actually use, including a spare lead if that's the one that sometimes works, so we can compare them with a known-good compatible charger.
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask.
+Drop-off at the workshop is by appointment. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement.
 
 ## FAQ
 
 ### Why does my MacBook say Not Charging?
 
-It can be Optimised Battery Charging or a Charge Limit holding the battery around 80%, an underpowered adapter, or a USB-C cable that doesn't charge. Check the battery menu, then the adapter and the cable.
+It's often Optimised Battery Charging holding the battery near 80%, or a Charge Limit you've set in Battery settings. It can also be an underpowered adapter or a USB-C cable that doesn't charge. Check the battery menu first, then the adapter and the cable.
 
 ### What does an amber MagSafe light mean?
 
@@ -82,7 +82,7 @@ A battery or charging-port job typically takes 1–3 working days. New parts we 
 
 ### Do you collect the MacBook?
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask.
+Drop-off at the workshop is by appointment. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement.
 
 ### What if you can't fix it?
 

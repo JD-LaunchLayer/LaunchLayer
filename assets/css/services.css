@@ -244,6 +244,18 @@ body {
   font-variant-numeric: tabular-nums lining-nums;
   color: var(--color-ink);
 }
+/* MacBook row: the sentence wraps, and each price phrase stays on one line. */
+#macbook .row-price {
+  white-space: normal;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+}
+@media (min-width: 720px) {
+  #macbook { flex-wrap: wrap; }
+  #macbook .row-title { flex: 1 1 100%; }
+}
+.price-phrase { white-space: nowrap; }
 .row-chev { flex: none; color: var(--color-muted); }
 .row-note {
   margin: 0;

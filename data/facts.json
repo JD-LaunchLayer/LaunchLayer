@@ -8,9 +8,9 @@
     "email": "hello@launchlayer.uk",
     "byline": "The LaunchLayer workshop",
     "public_name": "LaunchLayer",
-    "never_use": [
-      "Jordan Duggins",
-      "Duggins"
+    "never_use_sha256": [
+      "2142a0311d7620763e99c2d73a64af153da706759eecdec59b160d76f7f2ee48",
+      "b42791f158ef4332719f8b7d3cbf7bfca08a26f6350b1bf0b626f9deca9a3837"
     ]
   },
   "location": {
@@ -25,7 +25,7 @@
       "SS12"
     ]
   },
-  "drop_off": "Drop-off at the workshop is arranged in advance.",
+  "drop_off": "Drop-off at the workshop is by appointment.",
   "collection": "Free collection and return for SS11 and SS12 only. Elsewhere, collection is by arrangement.",
   "before_work": "Customers approve a fixed quote before work.",
   "prices": [
@@ -87,9 +87,8 @@
     {
       "service": "mac",
       "amount_gbp": 85,
-      "qualifier": "from",
-      "plus": "parts/panel",
-      "note": "MacBook repairs start from £85. MacBook screen fitting is £85 plus the panel, and Mac panels usually cost more."
+      "plus": "panel",
+      "note": "MacBook screen fitting £85 + panel; batteries from £49 + part; keyboards from £55. A charging port is a flat £65 where the port is removable or on its own small board; soldered ports are quoted after diagnosis. Mac panels usually cost more."
     },
     {
       "service": "screen",
@@ -207,7 +206,6 @@
     85,
     90,
     95,
-    99,
     149,
     150,
     199,
@@ -341,9 +339,7 @@
     "architecture",
     "matrix",
     "configuration",
-    "at cost",
-    "Jordan Duggins",
-    "Duggins"
+    "at cost"
   ],
   "vat": "Prices include VAT."
 }

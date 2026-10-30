@@ -13,6 +13,7 @@ Style notes are flags. They do not by themselves fail the run.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -34,6 +35,22 @@ PRICE_RE = re.compile(r"£\s?(\d{1,3}(?:,\d{3})*|\d+)(?:\.(\d{2}))?")
 NUMBER_RE = re.compile(r"\d+(?:,\d{3})*(?:\.\d+)?")
 PERCENT_RE = re.compile(r"\d+(?:\.\d+)?\s*%")
 HEADING_RE = re.compile(r"^(#{1,3})\s+(.+?)\s*$", re.M)
+
+
+
+def banned_name_hits(text: str, digests: list[str]) -> bool:
+    """True when a hashed never-use name appears. The plaintext is not stored."""
+    wanted = set(digests or [])
+    if not wanted:
+        return False
+    words = re.findall(r"[A-Za-z][A-Za-z'’\\-]+", text)
+
+    def digest(value: str) -> str:
+        return hashlib.sha256(value.casefold().encode()).hexdigest()
+
+    if any(digest(word) in wanted for word in words):
+        return True
+    return any(digest(f"{words[i]} {words[i + 1]}") in wanted for i in range(len(words) - 1))
 
 
 def load_facts() -> dict:
@@ -345,6 +362,8 @@ def compare_texts(source_text: str, rewrite_text: str, facts: dict) -> tuple[boo
     for phrase in facts["banned_phrases"]:
         if contains_phrase(rewrite_text, phrase):
             failures.append(f"banned phrase: {phrase}")
+    if banned_name_hits(rewrite_text, facts.get("business", {}).get("never_use_sha256", [])):
+        failures.append("banned name")
 
     source_unconfirmed = set(unconfirmed_hits(source_text))
     for claim in unconfirmed_hits(rewrite_text):
@@ -383,7 +402,7 @@ FIXTURE = """---
 slug: sample-post
 title: Laptop screen repair | Wickford
 headline: Laptop screen repair
-description: Fitting the panel is £99.
+description: Fitting the panel is £50.
 seo_primary: laptop screen repair
 ---
 
@@ -397,7 +416,7 @@ We check the hinges and quote the work.
 
 Call 07367 652987 or see [Wickford screen repair](/laptop-screen-repair-wickford/#cost).
 
-The labour is £99.
+The labour is £50.
 
 FILLER
 """
@@ -425,7 +444,7 @@ def self_test() -> int:
         "No-Fix, No-Fee still listed as unconfirmed",
         failures,
     )
-    for claim in ("same-day", "90-day warranty", "£50 screen fitting", "£65 screen fitting"):
+    for claim in ("same-day", "90-day warranty", "£65 screen fitting"):
         _assert(claim in facts["unconfirmed_claims"], f"unconfirmed list missing {claim}", failures)
     _assert(
         "labour" in facts["confirmed_claims"][0]["meaning"].lower(),
@@ -470,7 +489,7 @@ def self_test() -> int:
         failures,
     )
     _assert(manifest["phones"] == ["07367652987"], f"phones {manifest['phones']}", failures)
-    _assert(manifest["prices"] == [99, 99], f"prices {manifest['prices']}", failures)
+    _assert(manifest["prices"] == [50, 50], f"prices {manifest['prices']}", failures)
     _assert(manifest["word_count"] == word_count(body), "word count", failures)
 
     no_primary = source.replace("seo_primary: laptop screen repair\n", "")
@@ -491,7 +510,7 @@ def self_test() -> int:
 
     check_fail(source.replace("slug: sample-post", "slug: other-post"), "slug changed")
     check_fail(source.replace("title: Laptop screen repair | Wickford", "title: Other title | Wickford"), "title changed")
-    check_fail(source.replace("description: Fitting the panel is £99.", "description: A different description."), "description changed")
+    check_fail(source.replace("description: Fitting the panel is £50.", "description: A different description."), "description changed")
     check_fail(source.replace("headline: Laptop screen repair", "headline: A different headline"), "H1 changed")
     check_fail(source.replace("## What we check", "## What we look at"), "locked H2/H3")
     check_fail(source.replace("Laptop screen repair starts", "The job starts"), "primary phrase count")
@@ -520,9 +539,9 @@ def self_test() -> int:
         "internal link target missing",
     )
     check_fail(source.replace("07367 652987", "07111 111111"), "phone")
-    check_fail(source.replace("The labour is £99.", "The labour is £50."), "price")
-    check_fail(source.replace("The labour is £99.", "The labour is £99 and about 12%."), "new percentages")
-    check_fail(source.replace("The labour is £99.", "The labour is £99 in 4 visits."), "new numbers")
+    check_fail(source.replace("The labour is £50.", "The labour is £85."), "price")
+    check_fail(source.replace("The labour is £50.", "The labour is £99 and about 12%."), "new percentages")
+    check_fail(source.replace("The labour is £50.", "The labour is £99 in 4 visits."), "new numbers")
     check_fail(source + "\n\nThis is a seamless repair.\n", "banned phrase")
     check_fail(source + "\n\nWe can often do this same-day.\n", "unconfirmed")
 

@@ -29,7 +29,7 @@ Try one step at a time.
 
 Try a known-good charger that's compatible with your laptop, with the right tip, voltage and wattage. If a second charger fills the laptop straight away, the first charger is the likely fault. When neither works, the port or something inside the laptop becomes more likely.
 
-Look at the light on the brick, if it has one. No light, and a cable that bends flat where it leaves the block, usually points to a failed charger. A cracked strain relief, the rubber collar where the cable meets the brick, is a fire risk as well as a charge fault. Do not tape it up and keep using it.
+Look at the light on the brick, if it has one. No light, and a cable that bends flat where it leaves the block, usually points to a failed charger. A cracked strain relief, the rubber collar where the cable meets the brick, is a fire risk as well as a charge fault. Please unplug it and stop using it. It isn't safe to keep charging. Stop using the lead and call us; we'll check the charger and quote for a replacement.
 
 A USB-C lead can fail on its own, even when the brick's fine. A frayed cable that still clicks in will drop power as soon as the laptop moves. Swap the lead before you decide the port has failed.
 
@@ -84,7 +84,7 @@ A desktop that won't power on is a different job, usually the power supply or th
 
 ## If the battery is swollen
 
-Stop using the laptop if the case is bulging, the trackpad's lifting, or the palm rest is raised above the keyboard. Unplug the charger, do not keep charging it, and do not puncture the pack. The [swollen battery guide](/blog/laptop-battery-replacement-wickford/) explains what happens next.
+If the case is bulging, the trackpad's lifting, or the palm rest is raised above the keyboard, please unplug it and stop using it. It isn't safe to keep charging, and the pack shouldn't be punctured. Stop using it, unplug it and don't charge it, then give us a call and we'll tell you the safest way to get it to us. The [swollen battery guide](/blog/laptop-battery-replacement-wickford/) explains what happens next.
 
 ## What repair costs
 
@@ -98,7 +98,7 @@ You get a fixed quote before any part is ordered. A charging port or battery rep
 
 Bring the charger you actually use, plus the spare from the drawer if that's the one that sometimes works, so we can compare it with a known-good compatible charger.
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask.
+Drop-off at the workshop is by appointment. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, collection is by arrangement.
 
 ## FAQ
 
@@ -124,7 +124,7 @@ Yes, if the laptop still runs while it's plugged in. Stop if the case is swollen
 
 ### Do you collect the laptop?
 
-We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, please ask. Drop-off at the workshop is arranged in advance: call **[07367 652987](tel:07367652987)** or [send a message](/contact/).
+We'll arrange safe collection or return with you. Collection and return are free in Wickford SS11/SS12; elsewhere, collection is by arrangement. Drop-off at the workshop is by appointment: call **[07367 652987](tel:07367652987)** or [send a message](/contact/).
 
 ### Is a swollen battery dangerous?
 

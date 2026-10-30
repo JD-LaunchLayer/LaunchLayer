@@ -2,7 +2,7 @@
 
 > Independent PC, laptop and Mac repair workshop at 32 Glebe Road, Wickford, Essex SS11 8EU. Free diagnostics, fixed quotes, No-Fix-No-Fee, and free collection and return in Wickford SS11/SS12.
 
-LaunchLayer is a small independent workshop for home users and small businesses. Diagnostics are free. You get a fixed quote before any paid work starts. If a machine cannot be fixed, you do not pay for labour. Free collection and return is for Wickford postcodes SS11 and SS12. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address.
+LaunchLayer is a small independent workshop for home users and small businesses. Diagnostics are free. You get a fixed quote before any paid work starts. If a machine cannot be fixed, you do not pay for labour. Free collection and return is for Wickford postcodes SS11 and SS12. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is by appointment - call 07367 652987 or send a message and we'll confirm a time and the address.
 
 ## Contact
 
@@ -15,19 +15,19 @@ LaunchLayer is a small independent workshop for home users and small businesses.
 
 ## Prices
 
-Diagnostics are free. Hardware repairs start from £55. Software fixes are £45 for up to 60 minutes in the workshop. A general hardware fix is £55 for up to 1 hour. Laptop battery replacement is from £49 plus the part. Charging port (DC jack) repair is £65. Laptop screen fitting is £99 labour plus the panel (MacBook £85 plus the panel). Apple MacBook and iMac repairs start from £85 plus parts or the panel. Laptop MOT is £60. Virus removal is £69. Windows reinstall is £59. A Windows 11 upgrade and compatibility fix is from £69. Backup and cloud migration is from £49. Home Wi-Fi and router setup is from £55. New device setup and data transfer is from £59. Home visit - free in Wickford SS11/SS12; £49 elsewhere in South Essex (includes diagnosis and the first hour on site). Anything beyond the first hour, or any repair, is a fixed quote agreed before work starts. If we cannot fix it, you do not pay for labour. When a machine is beyond repair, a part is not worth fitting, or the job would cost more than the computer is worth, we hand it back with no labour charge. Full list: [Services & pricing](https://launchlayer.uk/services/).
+Diagnostics are free. Hardware repairs start from £49. Software fixes are £45 for up to 60 minutes in the workshop. A general hardware fix is £49 for up to 1 hour. Laptop battery replacement is from £49 plus the part. Charging port (DC jack) repair is £65 if the port is removable; soldered ports are quoted after diagnosis. Laptop screen fitting is £50 + panel (MacBook £85 plus the panel). MacBook screen fitting £85 + panel; batteries from £49 + part; keyboards from £55. Laptop MOT is £60. Virus removal is £69. Windows reinstall is £59. A Windows 11 upgrade and compatibility fix is from £69. Backup and cloud migration is from £49. Home Wi-Fi and router setup is from £55. New device setup and data transfer is from £59. Home visits are free in Wickford SS11/SS12. Outside SS11/SS12, home visits are priced by location; we'll confirm the cost before booking. Anything beyond the agreed visit, or any repair, is a fixed quote agreed before work starts. If we cannot fix it, you do not pay for labour. When a machine is beyond repair, a part is not worth fitting, or the job would cost more than the computer is worth, we hand it back with no labour charge. Full list: [Services & pricing](https://launchlayer.uk/services/).
 
 New parts fitted come with a 12-month hardware warranty. That covers new parts only.
 
 ## Service area
 
-Based in Wickford. Free collection and return in SS11 and SS12. Home visits are free in SS11 and SS12, and £49 elsewhere in South Essex (includes diagnosis and the first hour on site). Also serves Basildon, Billericay, Brentwood, Chelmsford, Rayleigh and Southend. Collection outside SS11/SS12 is by arrangement. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is arranged in advance - call 07367 652987 or send a message and we'll confirm a time and the address. Stock, Little Burstead, Great Burstead and Queens Park are Billericay (CM11/CM12), not SS11 or SS12.
+Based in Wickford. Free collection and return in SS11 and SS12. Home visits are free in SS11 and SS12. Outside SS11/SS12, home visits are priced by location; we'll confirm the cost before booking. Also serves Basildon, Billericay, Brentwood, Chelmsford, Rayleigh and Southend. Collection outside SS11/SS12 is by arrangement. Drop-off at the workshop (32 Glebe Road, Wickford SS11 8EU) is by appointment - call 07367 652987 or send a message and we'll confirm a time and the address. Stock, Little Burstead, Great Burstead and Queens Park are Billericay (CM11/CM12), not SS11 or SS12.
 
 ## Main pages
 
 - [Home](https://launchlayer.uk/): Workshop overview, free diagnostics and how collection works
 - [Services & pricing](https://launchlayer.uk/services/): Repair prices and common jobs
-- [Contact](https://launchlayer.uk/contact/): Book a drop-off or ask about collection
+- [Contact](https://launchlayer.uk/contact/): Drop-off is by appointment. Collection outside SS11/SS12 is by arrangement
 - [About](https://launchlayer.uk/about/): Who runs the workshop
 - [FAQs](https://launchlayer.uk/faqs/): Repair, pricing, hours and collection questions
 - [Reviews](https://launchlayer.uk/reviews/): Customer feedback

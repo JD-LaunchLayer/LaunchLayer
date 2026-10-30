@@ -17,7 +17,7 @@ People ask what a **laptop repair cost in Essex** actually is, then find a forum
 
 The order of the job is the same wherever you live. **Diagnostics are free.** We find the fault, and then you get a **fixed quote** before any work starts or any part is ordered. If a repair isn't worth doing, you don't pay labour for the bad news. 'From' is where the labour starts. We price your part separately.
 
-That's us at [LaunchLayer](/wickford-laptop-repair/), in Wickford. Call **[07367 652987](tel:07367652987)** and we'll book a drop-off, or you can ask about collection. Collection and return are free in Wickford SS11 and SS12. Elsewhere in South Essex, please ask.
+That's us at [LaunchLayer](/wickford-laptop-repair/), in Wickford. Call **[07367 652987](tel:07367652987)**. Drop-off is by appointment. Collection and return are free in Wickford SS11 and SS12, and elsewhere in South Essex collection is by arrangement.
 
 ## Starting prices
 
@@ -29,7 +29,7 @@ That's us at [LaunchLayer](/wickford-laptop-repair/), in Wickford. Call **[07367
 - Hinge and lid work starts from £75.
 - Keyboard labour starts from £55 plus the part.
 - SSD upgrade £65 + drive (includes fitting and data transfer). RAM, where it can be upgraded, starts from £49 plus the part. Much RAM is soldered.
-- [MacBook repairs](/macbook-repair-wickford/) start from £85 plus the parts or the panel.
+- [MacBook repairs](/macbook-repair-wickford/): MacBook screen fitting £85 + panel; batteries from £49 + part; keyboards from £55.
 - [The MOT](/laptop-mot-wickford-essex/) is £60. That's a fixed health check, separate from the £45 software fix and from any hardware repair.
 - A general software fix is £45 for up to 60 minutes.
 - [Virus, malware and scam removal](/wickford-virus-removal/) is a fixed £69, as on [services and pricing](/services/). It's separate from the software fix, and it doesn't cover ransomware data recovery.
