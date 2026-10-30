@@ -122,18 +122,47 @@ def main_html(html: str) -> str:
     return match.group(0)
 
 
+def plain_text(text: str) -> str:
+    """Visible text, so a nowrap span inside a price does not change the check."""
+    text = re.sub(r"<[^>]+>", "", text)
+    text = unescape(text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def span_inner(html: str, start: int) -> tuple[str, int]:
+    """Read a <span> whose content starts at start. Allows nested spans."""
+    depth = 1
+    i = start
+    token = re.compile(r"</?span\b[^>]*>", re.I)
+    while True:
+        match = token.search(html, i)
+        if not match:
+            fail("unbalanced span in a services row")
+        if match.group(0).lower().startswith("</"):
+            depth -= 1
+            if depth == 0:
+                return html[start:match.start()], match.end()
+        else:
+            depth += 1
+        i = match.end()
+
+
 def directory_rows(html: str) -> dict[str, tuple[str, str, str]]:
     """id -> (name, price text, normalised href) from the price list only."""
     body = main_html(html)
     found: dict[str, tuple[str, str, str]] = {}
     for match in re.finditer(
         r'<a class="row" href="([^"]+)" (?:id|data-service-id)="([^"]+)">'
-        r'<span class="row-title">(.*?)</span>'
-        r'<span class="row-price">(.*?)</span>',
+        r'<span class="row-title">',
         body,
     ):
-        href, sid, name, price = match.groups()
-        found[sid] = (unescape(name), unescape(price), norm_href(href))
+        href, sid = match.group(1), match.group(2)
+        name, after_name = span_inner(body, match.end())
+        price_open = re.match(r'<span class="row-price">', body[after_name:])
+        if not price_open:
+            fail(f"directory row {sid} has no row-price")
+        price, _after_price = span_inner(body, after_name + price_open.end())
+        found[sid] = (plain_text(name), plain_text(price), norm_href(href))
     custom = re.search(
         r'<a class="acc-link" href="([^"]+)" data-service-id="([^"]+)">'
         r'\s*<h3 class="acc-h">(.*?)</h3>\s*'
@@ -158,7 +187,7 @@ def old_directory(html: str) -> dict[str, tuple[str, str, str]]:
         html,
     ):
         href, sid, name, price = match.groups()
-        found[sid] = (unescape(name), unescape(price), norm_href(href))
+        found[sid] = (plain_text(name), plain_text(price), norm_href(href))
     # Photo cards: take the badge and the h3 inside each card anchor.
     for match in re.finditer(
         r'<a class="service-card[^"]*" href="([^"]*)" data-service-id="([^"]*)">(.*?)</a>',
@@ -282,7 +311,14 @@ def main() -> None:
         row_name, row_price, row_href = new_rows[sid]
         if pin_name != card_name:
             fail(f"pin {sid} name {pin_name!r} != {card_name!r}")
-        if price_number(pin_price) != price_number(row_price):
+        if sid == "macbook":
+            # The row leads with the £85 screen phrase. The tile and the
+            # offer stay from £49, and the row still says batteries from £49.
+            if price_number(pin_price) != 49 or "from £49" not in row_price:
+                fail(f"macbook pin/row price {pin_price!r} / {row_price!r}")
+            if "£85 + panel" not in row_price or "from £55" not in row_price:
+                fail(f"macbook row is missing a price phrase: {row_price!r}")
+        elif price_number(pin_price) != price_number(row_price):
             fail(f"pin {sid} price {pin_price!r} != directory {row_price!r}")
         if pin_href != row_href:
             fail(f"pin {sid} href {pin_href} != directory {row_href}")

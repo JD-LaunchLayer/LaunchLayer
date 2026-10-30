@@ -16,7 +16,7 @@ image_alt: Silver laptop with a misaligned lid sitting at an awkward angle on a 
 
 We can repair a loose or broken hinge, and the sooner you bring it in, the less there is to fix. A loose hinge feels like a small thing until the lid starts dropping to one side. Once one side gives, the plastic around the screws cracks, the bezel (the frame around the screen) twists, and the display cable that runs through the hinge can get stretched or pinched every time you open it. That's how a hinge repair can turn into a [cracked screen](/blog/cracked-laptop-screen-wickford-essex/) as well.
 
-We fix hinges on school Chromebooks, HP and Dell office laptops, and MacBooks that were fine until the lid got opened one-handed. Drop-off at the workshop is arranged in advance, so call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address.
+We fix hinges on school Chromebooks, HP and Dell office laptops, and MacBooks that were fine until the lid got opened one-handed. Drop-off at the workshop is by appointment, so call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address.
 
 ## Three things to avoid with a loose hinge until we've seen it
 
@@ -50,6 +50,6 @@ We repair the screw mounts properly rather than gluing them, and we sort the hin
 
 ## Book it before the lid folds
 
-Call **[07367 652987](tel:07367652987)**, or book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/), and we'll arrange a drop-off time.
+Call **[07367 652987](tel:07367652987)**, or book through [Wickford laptop repair](/wickford-laptop-repair/) or [Contact](/contact/). Drop-off is by appointment.
 
 If you're in [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/) or [Brentwood](/brentwood-pc-repair/), you can drop it at the workshop by appointment. A laptop with a flapping lid is best brought to us rather than posted. Not sure how bad it is? Send us a couple of photos or book a free diagnostic. If the case is beyond sensible repair, No-Fix, No-Fee applies, so you don't pay for labour.

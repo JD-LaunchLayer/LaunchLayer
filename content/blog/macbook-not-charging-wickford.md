@@ -64,7 +64,7 @@ A Windows laptop that won't charge, whether the power isn't getting in or the ba
 
 Bring the adapter and the cable you actually use, including a spare lead if that's the one that sometimes works, so we can compare them with a known-good compatible charger.
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement.
+Drop-off at the workshop is by appointment. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement.
 
 ## FAQ
 
@@ -82,7 +82,7 @@ A battery or charging-port job typically takes 1–3 working days. New parts we 
 
 ### Do you collect the MacBook?
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement.
+Drop-off at the workshop is by appointment. Call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement.
 
 ### What if you can't fix it?
 

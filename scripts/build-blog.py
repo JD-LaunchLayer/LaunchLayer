@@ -42,6 +42,11 @@ FOOTER_WITHOUT_NO_FIX_NO_FEE = frozenset({
     "laptop-ssd-upgrade-wickford-essex",
     "data-recovery-services-wickford-essex",
     "clicking-hard-drive-essex",
+    # Setup and advice, not a repair. No-Fix, No-Fee stays on repair posts.
+    "windows-11-upgrade-help-wickford",
+    "backup-pc-guide-wickford-essex",
+    "ransomware-help-wickford-essex",
+    "laptop-dock-monitor-setup-essex",
 })
 # Old Squarespace slugs that were pasted into blog JSON-LD but have no page.
 DEAD_BLOG_SLUGS = {

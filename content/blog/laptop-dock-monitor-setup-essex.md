@@ -53,7 +53,7 @@ If a call or pop-up ever got you to install remote-access software, tell us. We'
 
 ## We can set the desk up
 
-Drop-off at the workshop is arranged in advance. Call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address. Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement. You can book through [Basildon PC repair](/basildon-pc-repair/), [Wickford PC repair](/wickford-pc-repair/) or [Contact](/contact/).
+Drop-off at the workshop is by appointment. Call **[07367 652987](tel:07367652987)** or send a message and we'll confirm a time and the address. Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement. You can book through [Basildon PC repair](/basildon-pc-repair/), [Wickford PC repair](/wickford-pc-repair/) or [Contact](/contact/).
 
 Bring the laptop, the charger you use, and the monitor if you've already bought one. We'd rather tell you a dock won't suit your laptop before you open three more boxes. Not sure what you need? Call us or book a free diagnostic and we'll take a look.
 

@@ -58,7 +58,7 @@ MacBooks are a different job. Storage that's soldered on Apple silicon Macs can'
 
 ## Who is this for around Wickford?
 
-We do this for family laptops, work laptops and office PCs. Call 07367 652987 to book a drop-off, and we'll confirm a time. If you're in [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Brentwood](/brentwood-pc-repair/), you're welcome to bring it to the workshop too.
+We do this for family laptops, work laptops and office PCs. Call 07367 652987. Drop-off is by appointment, and we'll confirm a time. If you're in [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Brentwood](/brentwood-pc-repair/), you're welcome to bring it to the workshop too.
 
 If the lid is cracked as well as slow, mention it up front, because that's a [screen job](/blog/cracked-laptop-screen-wickford-essex/) plus an SSD, priced as two clear lines. Panel labour is on the [Wickford screen repair](/laptop-screen-repair-wickford/) page.
 

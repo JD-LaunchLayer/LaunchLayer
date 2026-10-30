@@ -16,7 +16,7 @@ image_alt: Open desktop PC on a workbench with a mechanical hard drive being ins
 
 Good news first: a clicking drive may still be recoverable if you stop using it now. A repeated clicking or grinding from a desktop or an older laptop often points to a failing hard drive. It isn't something Disk Cleanup or a Windows tweak will sort out, and every extra hour of use can make recovery harder.
 
-If you remember one thing: **power it off and call 07367 652987 to arrange a drop-off.** Please leave chkdsk (a Windows tool that scans and repairs a disk, and can make things worse on a drive that's physically failing) alone, and leave copying or cloning the drive to us, because long read attempts can damage a failing drive further.
+If you remember one thing: **power it off and call 07367 652987. Drop-off is by appointment.** Please leave chkdsk (a Windows tool that scans and repairs a disk, and can make things worse on a drive that's physically failing) alone, and leave copying or cloning the drive to us, because long read attempts can damage a failing drive further.
 
 If the files matter, we'll explain the [data recovery](/data-recovery/) options and costs before discussing an [SSD upgrade](/blog/laptop-ssd-upgrade-wickford-essex/) (a faster drive with no moving parts). The [data recovery blog](/blog/data-recovery-services-wickford-essex/) explains how recovery works.
 
@@ -59,7 +59,7 @@ If the laptop also has a loose hinge or a [cracked lid](/blog/cracked-laptop-scr
 
 ## Get it here without making it worse
 
-Please do not post a clicking drive. Drop-off at the workshop is arranged in advance: call **[07367 652987](tel:07367652987)** or [send a message](/contact/), and we'll confirm a time and the address. You can also book through [Wickford PC repair](/wickford-pc-repair/).
+Please do not post a clicking drive. Drop-off at the workshop is by appointment: call **[07367 652987](tel:07367652987)** or [send a message](/contact/), and we'll confirm a time and the address. You can also book through [Wickford PC repair](/wickford-pc-repair/).
 
 Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement. From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Chelmsford](/chelmsford-pc-repair/), you can also drop it at the workshop by appointment.
 

@@ -59,6 +59,6 @@ If the laptop also won't hold a charge, bring the charger, and see the [charging
 
 ## If you don't have a backup yet and the PC is poorly
 
-Stop using it. Drop-off at the workshop is arranged in advance: call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement.
+Stop using it. Drop-off at the workshop is by appointment: call **[07367 652987](tel:07367652987)** or [send a message](/contact/) and we'll confirm a time and the address. Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement.
 
 The job is then recovery first and an SSD second, not the other way round. If the machine still has life once the files are safe, book it in through [Wickford laptop repair](/wickford-laptop-repair/). We'll tell you what's wrong and what it costs before any work starts. Recovery is quoted separately, as on the [data recovery](/data-recovery/) page, once we've assessed the drive.

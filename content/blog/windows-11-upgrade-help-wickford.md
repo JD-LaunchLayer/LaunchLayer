@@ -60,7 +60,7 @@ When your drive is healthy, your files survive an upgrade in place. If it isn't,
 
 ## Book the check
 
-Call **[07367 652987](tel:07367652987)** or [send a message](/contact/). Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement. Drop-off at the workshop is arranged in advance, and we'll confirm the details.
+Call **[07367 652987](tel:07367652987)** or [send a message](/contact/). Collection and return are free in Wickford (SS11/SS12). Elsewhere, collection is by arrangement. Drop-off at the workshop is by appointment, and we'll confirm the details.
 
 From [Basildon](/basildon-pc-repair/), [Billericay](/billericay-pc-repair/), [Rayleigh](/rayleigh-laptop-service/) or [Brentwood](/brentwood-pc-repair/), you can drop it at the workshop, or book through [Wickford PC repair](/wickford-pc-repair/).
 
