@@ -4,7 +4,7 @@ title: School Chromebook Repair Wickford | Essex Education Laptops
 headline: School Chromebook Broken? Repair Options in Wickford and Essex
 description: Cracked or water-damaged school Chromebook in Wickford? What schools will cover, and when a local repair beats a replacement invoice.
 date: 2026-11-04
-draft: true
+draft: false
 category: Useful Tips
 category_path: Useful+Tips
 author: The LaunchLayer workshop
