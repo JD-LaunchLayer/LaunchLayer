@@ -24,25 +24,25 @@ Check the device agreement to see who owns the Chromebook, who pays for damage a
 
 Anything your child saved to Google Drive and synced is in the cloud, not on the cracked lid. Files kept only in the Downloads folder, or work done offline that never synced, live on the device and can be lost if it's wiped.
 
-Please leave a school-managed Chromebook as it is rather than factory-resetting it ("Powerwash") "to see if it helps". Google's help says a work or school Chromebook can't be reset by the user, because that is for the school's administrator, and a reset erases everything saved on the device. Once it's wiped, it normally re-enrols itself (links back to their system) when it next goes online, but that depends on how the school has set it up, so their IT contact is the best person to ask.
+It's tempting to try a factory reset (Chromebooks call it a "Powerwash") to see if it helps, but on a school Chromebook it's best left to the school. A reset wipes anything saved only on the device, and the school's IT contact can tell you what's safe to do.
 
 Before you set off, take a photo of the asset tag and the serial number. The asset tag is the school's own ID sticker, so it helps their IT team match the repair to the right device on their records.
 
 ## The three faults we see most on school Chromebooks
 
 1. **Screens.** A backpack zip, another laptop in the same bag, or a drop off the kitchen worktop. The [cracked screen guide](/blog/cracked-laptop-screen-wickford-essex/) applies here too. Panel fitting for Windows laptops and Chromebooks is **£50** plus the matching panel, as on the [Wickford screen page](/laptop-screen-repair-wickford/).
-2. **Hinges.** Daily opening and closing wears out cheap plastic, so stop using it once the hinge goes. [Hinge repair](/wickford-laptop-repair/) starts from £75.
+2. **Hinges.** Daily opening and closing wears out cheap plastic. If the hinge feels loose or cracks, it's best to stop using it until it's looked at. [Hinge repair](/wickford-laptop-repair/) starts from £75.
 3. **Spills.** Usually a bottle leaking in the bag. **Power it off, leave it uncharged and keep it away from radiators.** Then follow the [spill steps](/blog/spilled-water-on-laptop-fix-essex/).
 
 Batteries in older Chromebooks can swell too. If the trackpad is lifting, stop using it and read the [battery safety post](/blog/laptop-battery-replacement-wickford/).
 
 ## Will Google Classroom still work?
 
-Usually, yes. A screen or hinge repair doesn't involve wiping the device, so it should stay enrolled with the school. We can replace the main board too. If a repair ever meant wiping it, we'd tell you before we start, and the school's IT contact would need to re-enrol it.
+Usually, yes. A screen or hinge repair doesn't involve wiping the device, so it should stay enrolled with the school. We can replace the main board (the laptop's central circuit board) too. If a repair ever meant wiping it, we'd tell you before we start, and the school's IT contact would need to re-enrol it.
 
-A Chromebook charged from an underpowered charger can charge slowly and can look like a [charging fault](/blog/laptop-battery-not-charging-wickford/), so use the original charger if you still have it.
+If it's charging slowly, try the charger it came with first. A weaker charger, like a phone or spare one, can make it look like a [charging fault](/blog/laptop-battery-not-charging-wickford/) when it isn't.
 
-If a Chromebook is just slow, many lessons and homework tasks use cloud services, so we'd check what's causing the slowdown before suggesting an upgrade. A Windows laptop that gets called "the Chromebook" is a different repair, and that's often an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/) (a faster, modern storage drive).
+If a Chromebook is just slow, we'll find out what's causing it before suggesting any upgrade. A Windows laptop that gets called "the Chromebook" is a different repair, and that's often an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/) (a faster, modern storage drive).
 
 ## Worth repairing vs the school invoice
 
