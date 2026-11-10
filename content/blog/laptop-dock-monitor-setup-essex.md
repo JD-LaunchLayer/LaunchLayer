@@ -13,7 +13,7 @@ og_image: /assets/meta/meta-laptop-dock-monitor-setup-essex.jpg
 image_alt: Laptop on a desk linked by one USB-C cable to a dock, with a second monitor and a keyboard
 ---
 
-A kitchen table and a 14" laptop is a commute, not a desk. We set up spare rooms in Basildon, Laindon and Wickford with one monitor, a dock, and a keyboard.
+Working off a 14" laptop at the kitchen table gets old fast. We set up home desks in Basildon, Laindon and Wickford with one monitor, a dock and a keyboard.
 
 If calls still drop once the desk is sorted, the next suspect is the Wi-Fi, and the [Basildon Wi-Fi guide](/blog/resolving-wi-fi-dead-zones-in-basildon/) covers that. Start with the ports, though, because a mismatched dock can look like a slow connection.
 
@@ -24,8 +24,8 @@ A dock is a small box that plugs into one USB-C port on your laptop and gives yo
 Check:
 
 - **Wattage.** The dock has to pass on at least what your original charger supplies. If that's 65W, look for a dock that delivers 65W to the laptop, not just one whose power supply is rated 65W, because the dock uses some of that power itself.
-- **DisplayLink or DisplayPort Alt Mode.** Two ways of sending video over USB. DisplayPort Alt Mode needs the laptop's USB-C port to support video output and needs no driver. DisplayLink works over ordinary USB but needs a driver installed on the laptop. Check which one your laptop supports before you buy, or ask us and we'll check it for you.
-- **One cable,** if you actually want one cable.
+- **How it gets the picture to your screen.** Docks do this in one of two ways. Some (called DisplayPort Alt Mode) only work if your laptop's USB-C port can send video. Others (called DisplayLink) work over an ordinary USB port but need a small piece of software installed first. Not sure which your laptop needs? Ask us and we'll check before you buy.
+- **One cable.** If you'd like a single lead to the laptop, check the dock can handle charging, screens and USB through it.
 
 If the laptop only charges from a round 'barrel' plug and has no USB-C charging, a standard USB-C dock won't power it, so keep the original charger plugged in.
 
@@ -39,9 +39,9 @@ If the laptop lid is cracked, fix that first. A [screen replacement](/blog/crack
 
 Two monitors work well if the dock and the laptop can both run them.
 
-## Heat, and the closed-lid myth
+## Keep the laptop cool on the desk
 
-Running a laptop closed-lid on a cushion can lead to [fan noise and thermal throttling](/blog/laptop-fan-noise-fix-essex/), where the laptop slows itself down to stay cool. A stand that lets the underside breathe helps. Dusty towers next to radiators get the [thermal service](/blog/pc-dust-thermal-servicing-basildon/).
+Running a laptop closed-lid on a cushion can lead to [fan noise and thermal throttling](/blog/laptop-fan-noise-fix-essex/), where the laptop slows itself down to stay cool. A stand that lets the underside breathe helps. If a desktop PC is dusty or sits by a radiator, our [dust and cooling service](/blog/pc-dust-thermal-servicing-basildon/) can help.
 
 If the machine still has a spinning hard disk, a dock won't make Outlook faster, but an [SSD](/blog/laptop-ssd-upgrade-wickford-essex/) (a modern, much faster type of storage drive) usually will. And if Windows 11 went onto 8GB of RAM (the computer's working memory) and a hard drive, read the [upgrade help](/blog/windows-11-upgrade-help-wickford/) before buying a bigger screen.
 
