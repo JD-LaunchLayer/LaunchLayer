@@ -4,7 +4,7 @@ title: Clicking Hard Drive Essex | Stop and Save Your Files
 headline: Clicking Hard Drive? Stop Using It and Save Your Files (Essex)
 description: Essex PC clicking or grinding from the disk? Power off now, what SMART warnings mean, and how Wickford data recovery fits.
 date: 2026-11-18
-draft: true
+draft: false
 category: Useful Tips
 category_path: Useful+Tips
 author: The LaunchLayer workshop
