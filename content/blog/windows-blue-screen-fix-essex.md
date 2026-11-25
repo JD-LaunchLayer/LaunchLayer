@@ -4,7 +4,7 @@ title: Windows Blue Screen Fix Essex | Crash Guide Wickford
 headline: Windows Blue Screen in Essex? What the Crash Means (And What to Do)
 description: Essex PC or laptop showing a Windows blue screen? Safe first steps, what STOP codes tell you, and when it is a disk, RAM or driver fault.
 date: 2026-11-25
-draft: true
+draft: false
 category: Useful Tips
 category_path: Useful+Tips
 author: The LaunchLayer workshop
