@@ -41,6 +41,11 @@ export async function open(browser, o) {
     guard.contactStubbed++;
     return r.fulfill({ status: 500, contentType: 'text/plain', body: 'stubbed' });
   });
+  await ctx.route(/launchlayer\.uk\/api\/contact(?:\?.*)?$/, r => {
+    if (r.request().method() !== 'POST') return r.fallback();
+    guard.contactStubbed++;
+    return r.fulfill({ status: 500, contentType: 'text/plain', body: 'stubbed' });
+  });
   await ctx.route(/\/\.netlify\//, r => { guard.netlifyBlocked++; r.abort(); });
   if (abortBark) await ctx.route(/bark\.com/, r => r.abort());
   const viaPreview = BASE ? true : p.startsWith('/contact');
@@ -50,7 +55,7 @@ export async function open(browser, o) {
     const u = new URL(r.request().url());
     if (u.pathname.startsWith('/.netlify/')) { guard.netlifyBlocked++; return r.abort(); } // the SITE route wins over the /.netlify/ route above
     if (u.pathname === '/api/send') return r.fallback();
-    if (r.request().method() === 'POST' && u.pathname === '/') return r.fallback();
+    if (r.request().method() === 'POST' && (u.pathname === '/' || u.pathname === '/api/contact')) return r.fallback();
     const f = overlayFile(root, u.pathname);
     if (f) { guard.overlayServed++; return r.fulfill({ status: 200, contentType: MIME[path.extname(f)] || 'application/octet-stream', body: fs.readFileSync(f) }); }
     if (!viaPreview) return r.fallback();

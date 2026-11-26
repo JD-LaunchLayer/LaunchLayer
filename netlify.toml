@@ -14,6 +14,21 @@
   function = "www-apex-slash"
   pattern = "^/[^.]*$"
 
+# Refuse a direct contact-form POST that skipped Turnstile. The function
+# at /api/contact is excluded inside the guard so the verified forward
+# can still reach Netlify Forms.
+[[edge_functions]]
+  function = "contact-post-guard"
+  pattern = "^/[^.]*$"
+
+[[edge_functions]]
+  function = "contact-post-guard"
+  path = "/index.html"
+
+[[edge_functions]]
+  function = "contact-post-guard"
+  path = "/contact/index.html"
+
 # No Referrer-Policy was set in this file or in a _headers file.
 # Cross-origin requests send only the origin, so a query string is not
 # passed to Maps, Umami, or other sites. Same-origin requests still send the path.
