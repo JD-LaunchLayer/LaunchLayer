@@ -35,12 +35,17 @@ async function open(browser, w, h, { firstVisit = false } = {}) {
     guard.contactStubbed++;
     return r.fulfill({ status: 500, contentType: 'text/plain', body: 'stubbed' });
   });
+  await ctx.route(/launchlayer\.uk\/api\/contact(?:\?.*)?$/, r => {
+    if (r.request().method() !== 'POST') return r.fallback();
+    guard.contactStubbed++;
+    return r.fulfill({ status: 500, contentType: 'text/plain', body: 'stubbed' });
+  });
   ctx.on('request', q => { const u = q.url(); if (/umami|\/api\/send|form-name=contact|form-name%3Dcontact/.test(u + (q.postData() || ''))) { const k = q.method() + ' ' + u.split('?')[0]; guard.seen[k] = (guard.seen[k] || 0) + 1; } });
   if (!firstVisit) await ctx.addInitScript(() => localStorage.setItem('ll_cookie_notice', 'dismissed'));
   const page = await ctx.newPage();
   const events = [];
   await page.route('**/api/send', r => { guard.umamiSend++; const p = r.request().postDataJSON()?.payload || {}; if (p.name) events.push({ name: p.name, data: p.data }); r.fulfill({ status: 200, body: '{}' }); });
-  if (BASE !== SITE || LOCAL_ROOT) await page.route(SITE + '/**', async r => { const u = new URL(r.request().url()); if (u.pathname === '/api/send' || (r.request().method() === 'POST' && u.pathname === '/')) return r.fallback();
+  if (BASE !== SITE || LOCAL_ROOT) await page.route(SITE + '/**', async r => { const u = new URL(r.request().url()); if (u.pathname === '/api/send' || (r.request().method() === 'POST' && (u.pathname === '/' || u.pathname === '/api/contact'))) return r.fallback();
     const f = localFile(u.pathname); if (f) return r.fulfill({ status: 200, contentType: MIME[path.extname(f)] || 'application/octet-stream', body: fs.readFileSync(f) });
     if (BASE === SITE) return r.fallback(); r.fulfill({ response: await r.fetch({ url: BASE + u.pathname + u.search }) }); });
   await page.goto(PAGE, { waitUntil: 'load' });
@@ -164,7 +169,7 @@ for (const [w, h] of [[360, 780], [390, 844], [430, 932], [1440, 900]]) {
     const form = q('.ll-contact-form');
     const netlifyAttr = form && form.getAttribute('data-netlify');
     const honeypotAttr = form && form.getAttribute('netlify-honeypot');
-    out.hidden = !!form && ['form-name', 'subject', 'bot-field', 'First Name', 'Last Name', 'Email', 'Phone', 'Service', 'Message'].every(n => form.querySelector(`[name="${n}"]`)) && form.getAttribute('action') === '/' && form.getAttribute('name') === 'contact' && (form.querySelector('[name="form-name"]') || {}).value === 'contact' && (netlifyAttr == null || netlifyAttr === 'true') && (honeypotAttr == null || honeypotAttr === 'bot-field');
+    out.hidden = !!form && ['form-name', 'subject', 'bot-field', 'First Name', 'Last Name', 'Email', 'Phone', 'Service', 'Message'].every(n => form.querySelector(`[name="${n}"]`)) && form.getAttribute('action') === '/api/contact' && form.getAttribute('name') === 'contact' && (form.querySelector('[name="form-name"]') || {}).value === 'contact' && (netlifyAttr == null || netlifyAttr === 'true') && (honeypotAttr == null || honeypotAttr === 'bot-field');
     for (const e of document.querySelectorAll('main a[href], main button, main input:not([type=hidden]):not([name=bot-field]), main select, main textarea, .launchlayer-floating-btn')) {
       const b = e.getBoundingClientRect(), ps = getComputedStyle(e, '::after'), pw = parseFloat(ps.width) || 0, ph = parseFloat(ps.height) || 0, hw = Math.max(b.width, ps.position === 'absolute' ? pw : 0), hh = Math.max(b.height, ps.position === 'absolute' ? ph : 0); if (b.width && (hw < 44 || hh < 44)) out.small.push(`${e.tagName} "${(e.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 30)}" ${b.width.toFixed(0)}x${b.height.toFixed(0)}`);
     }
@@ -189,11 +194,11 @@ for (const [w, h] of [[360, 780], [390, 844], [430, 932], [1440, 900]]) {
     await call.click(); await page.waitForTimeout(1200);
     report(w, 'Umami call-click fires', events.some(e => e.name === 'call-click'), JSON.stringify(events));
     // Submit flow with a stubbed Netlify Forms POST (slow 2xx). No real enquiry is sent.
-    await page.route(/launchlayer\.uk\/(?:\?.*)?$/, async r => {
+    await page.route(/launchlayer\.uk\/api\/contact(?:\?.*)?$/, async r => {
       if (r.request().method() !== 'POST') return r.fallback();
       guard.contactStubbed++;
       await new Promise(res => setTimeout(res, 1500));
-      return r.fulfill({ status: 200, contentType: 'text/plain', body: 'ok' });
+      return r.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' });
     });
     await page.fill('#ll-contact-first', 'Test'); await page.fill('#ll-contact-last', 'User'); await page.fill('#ll-contact-email', 'test@example.com');
     await page.selectOption('#ll-contact-service', 'Insurance Damage Report'); await page.fill('#ll-contact-message', 'Automated layout check — stubbed, not sent.');
