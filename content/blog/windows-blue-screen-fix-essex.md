@@ -20,9 +20,9 @@ A blue screen rarely means you need a new PC. Common causes are a driver (the sm
 ## Do this before you start clicking Reset
 
 1. **Let it reboot once.** If it comes back, you still have a machine we can diagnose.
-2. **Photograph the stop code (the error name in capital letters)** if it stays on screen long enough. Older versions of Windows show it on a blue screen; Windows 11 24H2 and later show a black screen that is gone within moments. `KERNEL_DATA_INPAGE_ERROR`, `IRQL_NOT_LESS_OR_EQUAL` and `CRITICAL_PROCESS_DIED` tend to point in different directions.
-3. **Do not run a random "repair" program** from the first advert you see. That's how a crash turns into a [malware cleanup](/wickford-virus-removal/).
-4. **If it loops and never reaches the desktop, stop power-cycling it.** Repeated restarts can make a weak disk worse.
+2. **Photograph the stop code (the error name in capital letters)** if it stays on screen long enough. Older versions of Windows show it on a blue screen; newer Windows 11 updates (24H2 onwards) show a black screen that is gone within moments. `KERNEL_DATA_INPAGE_ERROR`, `IRQL_NOT_LESS_OR_EQUAL` and `CRITICAL_PROCESS_DIED` tend to point in different directions.
+3. **Hold off on "repair" programs from adverts.** Those downloads can turn a crash into a [malware cleanup](/wickford-virus-removal/), and a free diagnostic will tell you what's actually wrong.
+4. **If it loops and never reaches the desktop, switch it off and leave it off.** Repeated restarts can make a weak disk worse, and we can take it from there.
 
 If the PC is also clicking or grinding, stop here and read the [clicking hard drive guide](/blog/clicking-hard-drive-essex/), because keeping it running can make the files harder to save. If the photos matter, the [data recovery page](/data-recovery/) and the [data recovery blog](/blog/data-recovery-services-wickford-essex/) explain what happens next, including how we assess the drive and explain costs before any work.
 
@@ -32,26 +32,26 @@ Our plain-English summaries, not Microsoft's wording. A stop code is a clue, not
 
 - **DISK / INPAGE errors.** Windows couldn't read data it needed from storage. Possible causes include a failing hard drive, a connection problem inside the machine, or a worn-out SSD (a newer kind of drive with no moving parts).
 - **MEMORY_MANAGEMENT / PAGE_FAULT.** Can point to faulty RAM or to a driver. Windows has a built-in Memory Diagnostic test.
-- **DRIVER / VIDEO TDR.** Often a graphics driver, or a graphics card that's overheating. If you game, this sits alongside the [stuttering guide](/blog/fix-pc-game-stuttering-fps-drops-essex/).
-- **CRITICAL_PROCESS_DIED.** A process Windows can't run without has stopped or been damaged. Causes include a driver, damaged system files, disk corruption or faulty hardware. Treat it as backup-first, not a second go at Setup.
+- **DRIVER / VIDEO TDR.** The graphics side stopped responding and Windows couldn't bring it back. Often a graphics driver, or a graphics card that's overheating. If you game, this sits alongside the [stuttering guide](/blog/fix-pc-game-stuttering-fps-drops-essex/).
+- **CRITICAL_PROCESS_DIED.** A process Windows can't run without has stopped or been damaged. Causes include a driver, damaged system files, disk corruption or faulty hardware. Save your files first, rather than reinstalling Windows straight away.
 
 Heat still matters. A tower clogged with pet hair can crash during a video call as well as in a game. If crashes only start after an hour, see the [dust and thermal notes for Basildon](/blog/pc-dust-thermal-servicing-basildon/) too.
 
-A laptop that blue-screens only on battery, or only when the charging lead moves, may have a power problem rather than a Windows one. Please don't move the lead to test it; see the [not charging guide](/blog/laptop-battery-not-charging-wickford/).
+A laptop that blue-screens only on battery, or only when the charging lead moves, may have a power problem rather than a Windows one. Rather than wiggling the lead to test it, leave it be and see the [not charging guide](/blog/laptop-battery-not-charging-wickford/).
 
 ## Safe Mode is a test, not a fix
 
-If the PC boots into Safe Mode (a stripped-back Windows that loads only the basics) and stays stable, software or a graphics driver becomes more likely. If it still crashes in Safe Mode, RAM, storage or the board become more likely. That split tells us whether to look at software first or at the hardware.
+If the PC boots into Safe Mode (a stripped-back Windows that loads only the basics) and stays stable, software or a graphics driver becomes more likely. If it still crashes in Safe Mode, RAM, storage or the main board become more likely. That split tells us whether to look at software first or at the hardware.
 
 If it points to the drive or memory, we'll test them before going further. If the disk is the suspect, we'll handle it carefully, because your files and photos matter, and talk you through any data recovery options and costs before anything is copied. A slow machine that hasn't crashed yet might only need an [SSD upgrade](/blog/laptop-ssd-upgrade-wickford-essex/).
 
 ## Rule out leftover scam software
 
-Remote-access tools left behind by a fake refund or tech-support call can give a scammer a way back into your PC, and they are worth ruling out on a machine that keeps misbehaving. If a pop-up ever told you to ring a number, read the [phishing first-hour guide](/blog/clicked-phishing-link-emergency-guide/) and the [scam overview](/blog/scam-awareness/) before we talk hardware. Removing "support" software you never asked for comes first, and then we look at the crash logs in Event Viewer.
+Remote-access tools left behind by a fake refund or tech-support call can give a scammer a way back into your PC, and they are worth ruling out on a machine that keeps misbehaving. If a pop-up ever told you to ring a number, read the [phishing first-hour guide](/blog/clicked-phishing-link-emergency-guide/) and the [scam overview](/blog/scam-awareness/) before we talk hardware. Removing "support" software you never asked for comes first, and then we look at the crash logs in Event Viewer (Windows' built-in record of errors).
 
-## What we'll do instead
+## Before anyone resets Windows
 
-A suspect disk gets assessed before anyone resets Windows, because "Reset this PC" with "Remove everything" deletes your files. We keep driver packs from random sites off the machine.
+If the disk might be failing, we check it before anyone resets Windows, because "Reset this PC" with "Remove everything" deletes your files. Any drivers we fit come from the manufacturer's own site, not a bundle from a random download page.
 
 ## Arrange a drop-off
 
